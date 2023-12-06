@@ -1,4 +1,6 @@
-<mark>Es fehlen Links und die zugehörigen Dateien.</mark>
+> [!NOTE]
+> Es fehlen Links und die zugehörigen Dateien.
+
 # Generischer Anforderungskatalog
 
 Die hier dargestellten Inhalte stellen einen Überblick über verschiedene generische Anforderungen an ein Datentreuhändermodell dar, die im Rahmen des Projektes erhoben wurden. Sie basieren auf den durchgeführten Experteninterviews, aus denen verschiedene Inhalte extrahiert und anschließend verfeinert wurden. Die Anforderungen werden als generisch bezeichnet, da sie für die meisten Arten von Datentreuhändern relevant sind und somit eine Basis für weitere Erhebungen und Workshops darstellen. Vorschläge, wie weitere Inhalte erarbeitet werden können, finden sich unter  [Methoden zur Erhebung domänenspezifischer Anforderungen](https://ras.iese.de/confluence/pages/viewpage.action?pageId=494829752). Bei der Erhebung der Daten kam es vereinzelt zu Widersprüchen zwischen den Experten und den daraus abgeleiteten Anforderungen. Die Daten sind daher mit Vorsicht zu betrachten und für den Anwendungsfall zu validieren.
