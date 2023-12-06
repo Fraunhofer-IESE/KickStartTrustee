@@ -110,7 +110,7 @@ Durch diese Zuordnung wird es den Lesern des Dokumentes erleichtert, relevante I
 ### Interviews
 
 Zur Erhebung der Daten wurden Interviews mit verschiedensten Experten unterschiedlicher Domänen durchgeführt. Basierend auf diesen Daten wurden die verschiedenen Kategorien abgeleitet und Zugehörigkeiten bestimmt. Insgesamt wurden 13 Interviews mit ein oder mehreren Experten durchgeführt. Die Struktur der durchgeführten Interviews findet sich hier: 
-LINK ZU ERHEBUNG DOMÄNENSPEZIFISCHER ANFORDERUNGEN EINFÜGEN
+LINK ZUR DATEI
 
 ### Potentiale
 
