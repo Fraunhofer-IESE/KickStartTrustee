@@ -1,5 +1,6 @@
 # Anwendungsbeispiele
 Im folgenden werden verschiedene Anwendungsbeispiele für einen Datentreuhänder oder ein Projekt zur Erstellung dessen aufgeführt, die durch Interviews, Umfragen oder andere Recherchen erhoben wurden.
+Zum Zeitpunkt der Untersuchung befinden sich manche Projekte noch in ein einer relativ frühen Phase, weshalb zu manchen Punkten noch keine Aussagen getroffen werden können. In diesen Fällen wird dies durch  :no_entry:  entsprechend gekennzeichnet.
 
 Jedes Anwendungsbeispiel unterliegt dabei folgender Struktur:
 
@@ -45,4 +46,11 @@ Jedes Anwendungsbeispiel unterliegt dabei folgender Struktur:
         -   Werbung
         -   Datenverkauf 
 
-Zum Zeitpunkt der Untersuchung befinden sich manche Projekte noch in ein einer relativ frühen Phase, weshalb zu manchen Punkten noch keine Aussagen getroffen werden können. In diesen Fällen wird dies durch  :no_entry:  entsprechend gekennzeichnet.
+## Unterseiten
+- [Domänenübergreifend]()
+- [Energie]()
+- [Finanzen]()
+- [Infrastruktur]()
+- [Land- und Forstwirtschaft]
+- [Medizin]()
+- [Personal Information Management Systeme]()
