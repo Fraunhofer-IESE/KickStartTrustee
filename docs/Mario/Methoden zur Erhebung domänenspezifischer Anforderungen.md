@@ -28,19 +28,19 @@ Beide Sektionen folgen dabei folgender Struktur:
     1.  Diese Fragen sind besonders wichtig für die Person(en), die den Workshop oder ein anderes Format ausrichten, da sie dabei helfen, den Fokus auf wichtige Themenpunkte zu behalten. Zusätzlich gibt es Vorschläge für Templates, um wichtige Fragen zu erarbeiten und festzuhalten.
 3.  Gesamtziel
 4.  Korrelierende Anforderungen
-    1.  Der vierte Punkt bezieht sich auf die Anforderungen des [generischen Anforderungskatalog](https://ras.iese.de/confluence/display/KIC/Generischer+Anforderungskatalog)  und gibt Hinweise auf mögliche Verknüpfungen und Beziehungen zwischen den Workshopinhalten und den in Interviews erhobenen Anforderungen.
+    1.  Der vierte Punkt bezieht sich auf die Anforderungen des [generischen Anforderungskatalog](Generischer%20Anforderungskatalog.md) und gibt Hinweise auf mögliche Verknüpfungen und Beziehungen zwischen den Workshopinhalten und den in Interviews erhobenen Anforderungen.
 
 Die dritte Sektion befasst sich mit Features, Funktionalitäten und anderen Inhalten, die dem Datentreuhänder einen Mehrwert bieten können, aber nicht zwangsläufig notwendig sind, um diesen nutzbar zu machen. Beispielhaft werden hierzu ein paar mögliche Anknüpfungspunkte genannt.
 
 In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sowohl andere Datentreuhänder, als auch andere Systeme in der eigenen Domäne sollten in diesem Schritt betrachtet und mit dem zukünftigen System verglichen werden. Dazu werden bestimmte Aspekte hervorgehoben und auf ihre Vor- und Nachteile hin untersucht.
 
-![(Info)](https://ras.iese.de/confluence/s/bot8z8/8804/i3ha0q/_/images/icons/emoticons/information.svg)  Jede der folgenden Thematiken kann in einem oder mehreren Workshops adressiert werden. Dies sollte je nach Anwendungsfall und den Teilnehmern entschieden werden.
+Jede der folgenden Thematiken kann in einem oder mehreren Workshops adressiert werden. Dies sollte je nach Anwendungsfall und den Teilnehmern entschieden werden.
 <a name="kategorisierung"></a>
 ### Erstellung einer Kategorisierung der Daten, die der Datentreuhänder verwalten soll
 
 1.  **_Schritte_**:
     1.  Prozess(e) As-Is aufmalen
-        1.  ![(Info)](https://ras.iese.de/confluence/s/bot8z8/8804/i3ha0q/_/images/icons/emoticons/information.svg)  Falls es mehrere relevante Parteien gibt, die unterschiedliche Prozesse (und unterschiedliche Daten) beschreiben, sollten diese jeweils einzeln erfasst werden, aber auch als Gesamtheit betrachtet werden.
+        1.  Falls es mehrere relevante Parteien gibt, die unterschiedliche Prozesse (und unterschiedliche Daten) beschreiben, sollten diese jeweils einzeln erfasst werden, aber auch als Gesamtheit betrachtet werden.
         2.  Beispiele für Modellierungstechniken:
             1.  Business Model Processing Notation (BPMN)  [https://www.bpmn.de/lexikon/bpmn/](https://www.bpmn.de/lexikon/bpmn/)
             2.  Unified Modeling Language (UML) Aktivitätsdiagramme
@@ -53,7 +53,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
     3.  Wer nutzt die Daten und wozu?
     4.  Wer gibt die Daten weiter und warum?
     5.  Gibt es existierende standardisierte Formate der Daten?
-    6.  ![As-Is](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Daten.jpg) [PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Daten.pdf)
+    6.  <img src='Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Daten.jpg' width=500> [PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Daten.pdf)
 3.  _**Gesamtziel**_:
     1.  Es soll ein klares Verständnis der Daten, die in dem Datentreuhänder fließen, geschaffen und alle Rahmenbedingungen geklärt oder zumindest erfasst werden.
 4.  _**Korrelierende Anforderungen**_:
@@ -109,7 +109,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
                 -   Datenumgang und Vermittlung ist eigene Entscheidung der Datentreuhand
             -   Fremdbestimmt
                 -   Datengeber entscheiden selbst über den Umgang ihrer Daten
-        4.  ![Rahmen](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Vorstellung%20konkretisieren.jpg)[PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Vorstellung%20konkretisieren.pdf)
+        4. <img src='Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Vorstellung%20konkretisieren.jpg' width=500>[PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Vorstellung%20konkretisieren.pdf)
 3.  _**Gesamtziel**_:
     1.  Einen Überblick über das zu entstehende System erhalten und etwaige rechtliche und ökonomische Fragestellungen und Anforderungen identifizieren
 4.  _**Korrelierende Anforderungen**_:
@@ -132,8 +132,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
 
 <a name="zusatz"></a>
 ### Zusätzliche Features/Funktionen/Bedingungen erfassen und bewerten
-
-![Zusatz](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Additional%20Feature.jpg) [PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Additional%20Feature.pdf)
+<img src='Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Additional%20Feature.jpg' width=300>[PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Additional%20Feature.pdf)
 
 1.  **Bezahlung**
     1.  Zum Beispiel: Der Datentreuhänder bietet (Online-)Zahlungen über die Plattform an
@@ -152,8 +151,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
 
 <a name="marktvergleich"></a>
 ### Marktvergleich/-analyse - was macht den neuen Datentreuhänder besonders?
-
-![Marktvergleich](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.jpg) [PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.jpdf)
+<img src='Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.jpg' width=500>[PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.jpdf)
 
 1.  Bsp. für Besonderheiten:
     1.  Ist die erste (Datentreuhänder-)Plattform für diese Art von Daten
