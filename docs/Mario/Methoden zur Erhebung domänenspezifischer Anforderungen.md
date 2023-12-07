@@ -53,7 +53,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
     3.  Wer nutzt die Daten und wozu?
     4.  Wer gibt die Daten weiter und warum?
     5.  Gibt es existierende standardisierte Formate der Daten?
-    6.  ![](https://ras.iese.de/confluence/download/thumbnails/623738938/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Daten%20%283%29.jpg?version=1&modificationDate=1698404658458&api=v2) [![](https://ras.iese.de/confluence/rest/documentConversion/latest/conversion/thumbnail/622657617/1)](https://ras.iese.de/confluence/download/attachments/494829752/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Daten%20%281%29.pdf?version=1&modificationDate=1698239542756&api=v2) PDF
+    6.  ![As-Is](Erhebung domänenspezifischer Anforderungen/Erhebung domänenspezifischer Anforderungen - Daten.jpg)
 3.  _**Gesamtziel**_:
     1.  Es soll ein klares Verständnis der Daten, die in dem Datentreuhänder fließen, geschaffen und alle Rahmenbedingungen geklärt oder zumindest erfasst werden.
 4.  _**Korrelierende Anforderungen**_:
