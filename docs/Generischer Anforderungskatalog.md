@@ -47,6 +47,7 @@ Durch dieses Verständnis werden wichtige Stakeholder darin unterstützt relevan
 
 Die Inhalte sind besonders interessant für Projektmanager und -Leiter sowie für alle Stakeholder, die an der Entwicklung und der Erhebung von Anforderungen und Konzeptionen teilhaben.
 
+&uarr; [zurück zur Übersicht](#top)
 <a name="inhalte"></a>
 ## Inhalte
 
@@ -163,7 +164,7 @@ Die Anforderungen an einen Datentreuhänder beschäftigen sich in vielen Aspekte
 
 Anforderungen haben teilweise nicht genug technische Informationen, um das System ausreichend zu beschreiben. Systemanforderungen begeben sich etwas tiefer in die Materie und machen Anforderungen konkreter. Sie basieren somit in der Regel auf (DTH-)Anforderungen, die durch die Systemanforderungen umgesetzt werden.
 
- 
+&uarr; [zurück zur Übersicht](#top)
 
 > Bei den Lösungsansätzen fehlen noch Beschreibungen, bei denen mir
 > Informationen oder Hintergründe fehlen, um diese Aufzufüllen.
