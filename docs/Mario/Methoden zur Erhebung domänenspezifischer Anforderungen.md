@@ -109,7 +109,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
                 -   Datenumgang und Vermittlung ist eigene Entscheidung der Datentreuhand
             -   Fremdbestimmt
                 -   Datengeber entscheiden selbst über den Umgang ihrer Daten
-        4.  ![Rahmen](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Vorstellung%20konkretisieren.jpg)
+        4.  ![Rahmen](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Vorstellung%20konkretisieren.jpg)[PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Vorstellung%20konkretisieren.pdf)
 3.  _**Gesamtziel**_:
     1.  Einen Überblick über das zu entstehende System erhalten und etwaige rechtliche und ökonomische Fragestellungen und Anforderungen identifizieren
 4.  _**Korrelierende Anforderungen**_:
@@ -133,6 +133,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
 <a name="zusatz"></a>
 ### Zusätzliche Features/Funktionen/Bedingungen erfassen und bewerten
 
+![Zusatz](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Additional%20Feature.jpg) [PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Additional%20Feature.pdf)
 
 1.  **Bezahlung**
     1.  Zum Beispiel: Der Datentreuhänder bietet (Online-)Zahlungen über die Plattform an
@@ -152,7 +153,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
 <a name="marktvergleich"></a>
 ### Marktvergleich/-analyse - was macht den neuen Datentreuhänder besonders?
 
-![](https://ras.iese.de/confluence/download/thumbnails/623738938/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.jpg?version=1&modificationDate=1698404658546&api=v2) [![](https://ras.iese.de/confluence/rest/documentConversion/latest/conversion/thumbnail/623738925/1)](https://ras.iese.de/confluence/download/attachments/494829752/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.pdf?version=1&modificationDate=1698404293839&api=v2) PDF
+![Marktvergleich](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.jpg) [PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.jpdf)
 
 1.  Bsp. für Besonderheiten:
     1.  Ist die erste (Datentreuhänder-)Plattform für diese Art von Daten
