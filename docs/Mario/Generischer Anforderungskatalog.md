@@ -132,7 +132,8 @@ Durch diese Zuordnung wird es den Lesern des Dokumentes erleichtert, relevante I
 ### Interviews
 
 Zur Erhebung der Daten wurden Interviews mit verschiedensten Experten unterschiedlicher Domänen durchgeführt. Basierend auf diesen Daten wurden die verschiedenen Kategorien abgeleitet und Zugehörigkeiten bestimmt. Insgesamt wurden 13 Interviews mit ein oder mehreren Experten durchgeführt. Die Struktur der durchgeführten Interviews findet sich hier: 
-LINK ZUR DATEI
+[Interviewleitfragen_Template](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601177/Interviewleitfragen_Template.1.docx)
+
 
 <a name="potentiale"></a>
 ### Potentiale
@@ -163,6 +164,12 @@ Die Anforderungen an einen Datentreuhänder beschäftigen sich in vielen Aspekte
 ### Systemanforderungen
 
 Anforderungen haben teilweise nicht genug technische Informationen, um das System ausreichend zu beschreiben. Systemanforderungen begeben sich etwas tiefer in die Materie und machen Anforderungen konkreter. Sie basieren somit in der Regel auf (DTH-)Anforderungen, die durch die Systemanforderungen umgesetzt werden.
+
+[KickStartTrusteeExport](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601196/KickStartTrusteeExport.1.docx)[KickStartTrusteeExport](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601198/KickStartTrusteeExport.1.pdf)
+![Generische Anforderungen Übersicht - Komplettübersicht ohne Kommentare.pdf](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601200/Generische.Anforderungen.Ubersicht.-.Komplettubersicht.ohne.Kommentare.pdf)
+[Anforderungen](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601202/Anforderungen.1.xlsx)
+[Anforderungs_Details](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601203/Anforderungs_Details.1.xlsx)
+
 
 &uarr; [zurück zur Übersicht](#top)
 
