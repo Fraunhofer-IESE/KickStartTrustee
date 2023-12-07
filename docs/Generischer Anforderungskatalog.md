@@ -24,7 +24,7 @@ Folgende Inhalte finden sich auf dieser Seite:
 -   Eine PDF und ein Worddokument, welche das volle Spektrum der Anforderungen und ihrer Herkunft beschreiben. Zusätzlich zu den Anforderungen wurden Herausforderungen, Potentiale, Eigenschaften, Anwendungsbeispiele sowie Zugehörigkeiten zu Domänen abgeleitet und entsprechend verknüpft.
 -   Eine PNG, die eine Übersicht der Anforderungen zeigt und sie in einen Kontext einbindet. Die Anforderungen werden in dieser Ansicht in verschiedenen Weisen kategorisiert. Zum einen gibt es 6 inhaltliche Kategorien:
 
-1.  1.  Onboarding/Konto
+    1.  Onboarding/Konto
     2.  Datenerfassung/Einbindung
     3.  Datenvermittlung
     4.  Datenverwaltung
