@@ -20,7 +20,7 @@ Wie Datengeber, Datennutzer und Datentreuhänder im Verhältnis zueinander stehe
 1.  der betroffene Person auf die sich die Daten beziehen (Datenschutz) / dem betroffenen Unternehmen, welche die Rechte an den Daten hat (IP-Schutz)
 2.  dem Dateninhaber, der die Daten technisch dem Datentreuhänder zur Verfügung stellen kann.
 
-![](Übersicht Datentreuhänder.pdf)
+![](%C3%9Cbersicht%20Datentreuh%C3%A4nder.pdf)
 
 Will man die Definition enger fassen, stößt man schnell an Grenzen und der Konzens in der Literatur endet. Dies liegt daran, dass sich Datentreuhändern je nach Domäne und Anwendungsbeispiel stark in ihren Anforderungen und Funktionen unterscheiden können. Eine zu enge Fassung des Begriffs ist darüber hinaus auch nicht unbedingt zielführend, da es die Entwicklung von Datentreuhandmodellen hemmen würde  [BS21]. Im folgenden werden wir die einzelnen (unterstrichenen) Komponenten der Definition genauer ansehen, welche aus den genannten Gründen mehr als "Interpretationshilfe" denn als "harte" Definition zu verstehen sind.
 
