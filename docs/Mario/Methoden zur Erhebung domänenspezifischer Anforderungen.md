@@ -53,7 +53,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
     3.  Wer nutzt die Daten und wozu?
     4.  Wer gibt die Daten weiter und warum?
     5.  Gibt es existierende standardisierte Formate der Daten?
-    6.  ![As-Is](Erhebung domänenspezifischer Anforderungen/Erhebung domänenspezifischer Anforderungen - Daten.jpg)
+    6.  ![As-Is](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Daten.jpg) [PDF](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Daten.pdf)
 3.  _**Gesamtziel**_:
     1.  Es soll ein klares Verständnis der Daten, die in dem Datentreuhänder fließen, geschaffen und alle Rahmenbedingungen geklärt oder zumindest erfasst werden.
 4.  _**Korrelierende Anforderungen**_:
@@ -109,7 +109,7 @@ In der letzten Sektion geht es um den Vergleich und die Analyse des Marktes. Sow
                 -   Datenumgang und Vermittlung ist eigene Entscheidung der Datentreuhand
             -   Fremdbestimmt
                 -   Datengeber entscheiden selbst über den Umgang ihrer Daten
-        4.  
+        4.  ![Rahmen](Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen/Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen%20-%20Vorstellung%20konkretisieren.jpg)
 3.  _**Gesamtziel**_:
     1.  Einen Überblick über das zu entstehende System erhalten und etwaige rechtliche und ökonomische Fragestellungen und Anforderungen identifizieren
 4.  _**Korrelierende Anforderungen**_:
