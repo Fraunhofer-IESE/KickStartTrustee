@@ -22,7 +22,7 @@ Die hier dargestellten Inhalte stellen einen Überblick über verschiedene gener
 Folgende Inhalte finden sich auf dieser Seite:
 
 -   Eine PDF und ein Worddokument, welche das volle Spektrum der Anforderungen und ihrer Herkunft beschreiben. Zusätzlich zu den Anforderungen wurden Herausforderungen, Potentiale, Eigenschaften, Anwendungsbeispiele sowie Zugehörigkeiten zu Domänen abgeleitet und entsprechend verknüpft.
--   Eine PNG, die eine Übersicht der Anforderungen zeigt und sie in einen Kontext einbindet. Die Anforderungen werden in dieser Ansicht in verschiedenen Weisen kategorisiert. Zum einen gibt es 6 inhaltliche Kategorien:
+-   Eine Bild, das eine Übersicht der Anforderungen zeigt und sie in einen Kontext einbindet. Die Anforderungen werden in dieser Ansicht in verschiedenen Weisen kategorisiert. Zum einen gibt es 6 inhaltliche Kategorien:
 
     1.  Onboarding/Konto
     2.  Datenerfassung/Einbindung
@@ -166,9 +166,13 @@ Die Anforderungen an einen Datentreuhänder beschäftigen sich in vielen Aspekte
 Anforderungen haben teilweise nicht genug technische Informationen, um das System ausreichend zu beschreiben. Systemanforderungen begeben sich etwas tiefer in die Materie und machen Anforderungen konkreter. Sie basieren somit in der Regel auf (DTH-)Anforderungen, die durch die Systemanforderungen umgesetzt werden.
 
 [KickStartTrusteeExport_docx](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601196/KickStartTrusteeExport.1.docx)
+
 [KickStartTrusteeExport__PDF](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601198/KickStartTrusteeExport.1.pdf)
-[Generische Anforderungen Übersicht - Komplettübersicht ohne Kommentare_pdf](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601200/Generische.Anforderungen.Ubersicht.-.Komplettubersicht.ohne.Kommentare.pdf)
+
+![Generische Anforderungen Übersicht - Komplettübersicht ohne Kommentare_pdf](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601200/Generische.Anforderungen.Ubersicht.-.Komplettubersicht.ohne.Kommentare.pdf)
+
 [Anforderungen_xlsx](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601202/Anforderungen.1.xlsx)
+
 [Anforderungs_Details_xlsx](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601203/Anforderungs_Details.1.xlsx)
 
 
