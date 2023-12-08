@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # Sustainable Finance
 
 -   [Problemstellung](#problemstellung)

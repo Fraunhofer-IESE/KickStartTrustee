@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # MANDAT
 
 -   [Problemstellung](#problemstellung)

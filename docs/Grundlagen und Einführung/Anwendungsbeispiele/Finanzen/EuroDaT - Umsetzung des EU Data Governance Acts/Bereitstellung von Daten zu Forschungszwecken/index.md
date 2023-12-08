@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # Bereitstellung von Daten zu Forschungszwecken
 - [Problemstellung](#problemstellung)
 - [Ziele und Werteversprechen](#ziele)

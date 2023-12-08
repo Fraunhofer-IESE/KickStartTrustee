@@ -1,4 +1,3 @@
-&larr; [Zurück](..)
 # Inhaltsverzeichnis
 - [Überschrift](#ueberschrift)
   - [Nutzen](#nutzen)

@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # FAIRWinDS
 
 -   [Problemstellung](#problemstellung)

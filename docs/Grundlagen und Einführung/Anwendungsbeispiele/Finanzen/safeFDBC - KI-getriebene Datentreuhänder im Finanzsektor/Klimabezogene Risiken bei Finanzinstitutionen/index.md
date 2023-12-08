@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # Klimabezogene Risiken bei Finanzinstitutionen
 Leider gibt es zum Zeitpunkt der Untersuchung nur sehr wenige Informationen über das Vorhaben, weshabl nur Ziele und Werteversprechen formuliert werden konnten.
 

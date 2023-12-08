@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # Bekämpfung von Geldwäsche
 
 -   [Problemstellung](#problemstellung)

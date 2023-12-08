@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # safeFDBC: Ki-getriebene Datentreuhänder im Finanzsektor
 
 [https://safefbdc.com/index.php/safefbdc-projektsteckbrief/](https://safefbdc.com/index.php/safefbdc-projektsteckbrief/)

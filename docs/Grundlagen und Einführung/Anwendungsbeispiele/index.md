@@ -1,4 +1,3 @@
-&larr; [Zurück](..)
 # Anwendungsbeispiele
 Im folgenden werden verschiedene Anwendungsbeispiele für einen Datentreuhänder oder ein Projekt zur Erstellung dessen aufgeführt, die durch Interviews, Umfragen oder andere Recherchen erhoben wurden.
 Zum Zeitpunkt der Untersuchung befinden sich manche Projekte noch in ein einer relativ frühen Phase, weshalb zu manchen Punkten noch keine Aussagen getroffen werden können. In diesen Fällen wird dies durch  :no_entry:  entsprechend gekennzeichnet.

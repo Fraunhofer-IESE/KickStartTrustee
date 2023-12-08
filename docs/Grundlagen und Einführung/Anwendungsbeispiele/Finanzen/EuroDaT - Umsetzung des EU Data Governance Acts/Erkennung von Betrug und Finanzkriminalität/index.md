@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # Erkennung von Betrug und Finanzkriminalität
 -   [Problemstellung](#problemstellung)
 -   [Ziele und Werteversprechen](#ziele)

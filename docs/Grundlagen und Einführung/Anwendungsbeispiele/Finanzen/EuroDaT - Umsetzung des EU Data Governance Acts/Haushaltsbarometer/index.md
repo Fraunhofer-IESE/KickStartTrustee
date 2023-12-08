@@ -1,4 +1,4 @@
-&larr; [Zurück](..)
+
 # Haushaltsbarometer
 
 -   [Problemstellung](#problemstellung)
