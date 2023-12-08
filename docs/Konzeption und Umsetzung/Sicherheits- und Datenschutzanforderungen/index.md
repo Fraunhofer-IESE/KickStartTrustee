@@ -41,7 +41,7 @@ Da hinter einem DTH prinzipiell auch ein Unternehmen steht, das diesen DTH entwi
 
 Abbildung 1 zeigt den Umfang des Sicherheitskonzepts für den DTH und dessen übergeordnete Organisation.
 
-![](Picture1.pdf)
+<img src='Scope.png' width=500>[PDF](Scope.pdf)
 
 Abbildung 1: Sowohl der der DTH als auch die Security-Landkarte lassen sich aus mehreren Sichten betrachten. Die Grafik zeigt diese Sichten und die Positionierung dieser Arbeit innerhalb der Sichten.
 
@@ -90,7 +90,8 @@ Im Zentrum der DSGVO stehen zum einen die Grundsätze zur Verarbeitung personenb
 
 Assets haben einen zentralen Stellenwert beim Thema Datensicherheit und Datenschutz. Als Asset werden Daten, Systeme und andere Entitäten verstanden, in denen ein Stakeholder einen Wert sieht und welche daher schützenswert sind. Geschützt werden die Assets durch technische und organisatorische Maßnahmen (TOMs), welche die Risiken für ein Asset verringern. Als Risiko wird dabei eine Kombination aus dem zu erwartenden Schaden (welcher sich aus dem Wert des Assets ergibt) und der Eintrittswahrscheinlichkeit verstanden. Die Eintrittswahrscheinlichkeit ist dabei von möglichen Angriffsszenarien und der Motivation der Angreifer abhängig. Diese Zusammenhänge werden in Abbildung 3 dargestellt.
 
-![](Picture2.pdf)
+<img src='Zusammenhaenge.png' width=500>[PDF](Zusammenhaenge.pdf)
+
 
 Abbildung 2: Zusammenhänge im Bereich Security
 
@@ -123,7 +124,7 @@ Die Vermittlung von Daten ist die Kernaufgabe eines DTHs. Diese Daten sind wertv
 
 Neben den Daten selbst sind auch die Systeme (Hardware und Software), welche diese Daten verarbeiten, Assets.
 
-![](Picture3.pdf)
+<img src='Daten.png' width=500>[PDF](Daten.pdf)
 
 Abbildung 3: Kategorisierung von Daten
 
