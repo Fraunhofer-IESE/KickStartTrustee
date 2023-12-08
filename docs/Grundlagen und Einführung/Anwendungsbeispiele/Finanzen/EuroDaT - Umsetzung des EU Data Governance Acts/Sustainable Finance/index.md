@@ -1,3 +1,4 @@
+&larr; [Zurück](..)
 # Sustainable Finance
 
 -   [Problemstellung](#problemstellung)
@@ -47,7 +48,7 @@ Finanzen
 
 -   Fremdbestimmte Auswertungstreuhand
     -   Aggregation der Daten zu einem gemeinsamen Ranking ohne Rückschluss wer die Einschätzungen abgegeben hat
-    
+
 <a name="daten"></a>
 ## Art der Daten
 

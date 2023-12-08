@@ -1,4 +1,4 @@
-
+&larr; [Zurück](..)
 # Konsequenzen geldpolitischer Entscheidungen
 
 -   [Problemstellung](#problemstellung)

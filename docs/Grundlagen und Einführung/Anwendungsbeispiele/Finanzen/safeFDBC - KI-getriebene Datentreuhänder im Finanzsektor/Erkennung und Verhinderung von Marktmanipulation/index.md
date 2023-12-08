@@ -1,3 +1,4 @@
+&larr; [Zurück](..)
 # Erkennung und Verhinderung von Marktmanipulation
 Leider gibt es zum Zeitpunkt der Untersuchung nur sehr wenige Informationen über das Vorhaben, weshabl nur Ziele und Werteversprechen formuliert werden konnten.
 
