@@ -228,13 +228,13 @@ Die folgende Liste ist nicht notwendigerweise vollständig, aber umfasst "Zusatz
 
 ### Beispiele
 | Digitalisierung | Konvertierung | Anonymisierung | Prüfung     | Aggregation | Anreicherung  |   
-|-----------------|---------------|----------------|-------------|-------------|---------------|---|
-| MobiDataSol     | FAIRWinDS     | Ddtrust        | BreedFides  | FAIRWinDS   | BreedFides    |   |
-| TRANSIT         | MobiDataSol   | DeRe           | FAIRWinDS   | MobiDataSol | FAIRWinDS     |   |
-|                 | TRANSIT       | FAIRWinDS      | MobiDataSol | S3I-X       | TRANSIT       |   |
-|                 |               | S3I-X          |             | TRANSIT     |               |   |
-|                 |               | TRANSIT        |             |             |               |   |
-|                 |               | TreuMoDa       |             |             |               |   |
+|-----------------|---------------|----------------|-------------|-------------|---------------|
+| MobiDataSol     | FAIRWinDS     | Ddtrust        | BreedFides  | FAIRWinDS   | BreedFides    |
+| TRANSIT         | MobiDataSol   | DeRe           | FAIRWinDS   | MobiDataSol | FAIRWinDS     |
+|                 | TRANSIT       | FAIRWinDS      | MobiDataSol | S3I-X       | TRANSIT       |
+|                 |               | S3I-X          |             | TRANSIT     |               |
+|                 |               | TRANSIT        |             |             |               |
+|                 |               | TreuMoDa       |             |             |               |
 
   
 # Zusammenfassung und Beispiele
