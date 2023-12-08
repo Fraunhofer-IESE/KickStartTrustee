@@ -1,0 +1,12 @@
+# MobiDataSol
+-   [Problemstellung](#problemstellung)
+-   [Ziele und Werteversprechen](#ziele)
+-   [DTH-Satzschablone](#schablone)
+-   [Domäne](#domaene)
+-   [Involvierte Personen/Unternehmen](#involv)
+-   [Modell](#modell)
+-   [Art der Daten](#daten)
+-   [Speicherung](#speicherung)
+-   [Übermittlung](#uebermittlung)
+-   [Finanzierung](#finanzierung)
+
