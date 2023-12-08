@@ -1,10 +1,9 @@
-**Idee / Ziel:**
+# Idee / Ziel:
 
 In einer digitalisierten Welt, in der sensible Daten und Informationen tagtäglich produziert, verarbeitet und gespeichert werden, ist ein umfassendes Sicherheitsmanagement unerlässlich. Datentreuhänder (DTH) und DTH betreibende Unternehmen übernehmen dabei eine besondere Verantwortung für die Sicherheit und den Schutz dieser Daten und Informationen. Ein umfassendes Sicherheitsdokument kann hierbei helfen, alle relevanten Aspekte der IT-Sicherheit zu identifizieren, Risiken zu bewerten und Maßnahmen zu ergreifen, um ein hohes Sicherheitsniveau zu gewährleisten. Dieses Dokument bietet einen umfassenden Maßnahmenkatalog für die grundlegenden Konzepte der IT-Sicherheit bei DTH und zeigt, wie den ein Sicherheitskonzept entsprechend der spezifischen Anforderungen von DTH und deren Betreibern umgesetzt werden kann.
 
 Ziel ist es, ein durchgängiges Sicherheitskonzept für DTH und DTH betreibende Unternehmen zu entwickeln. Dieser Baustein beschreibt dahingehend die intendierte Vorgehensweise und zählt die umzusetzenden Sicherheitsanforderungen auf. Diese sind die Grundlage für das Ableiten von technischen und organisatorischen Maßnahmen und eines Sicherheitskonzept, was jedoch außerhalb des Rahmens dieses Bausteins liegt. Dieser Baustein orientiert sich im Wesentlichen am IT-Grundschutz des Bundesamts für Sicherheit und Informationstechnik (BSI). Hierbei werden nicht sämtliche Inhalte des IT-Grundschutzes hervorgehoben, sondern lediglich solche, die für DTH von besonderer Relevanz sind.
 
-# Inhalt
 
 # Motivation und Ziele
 
