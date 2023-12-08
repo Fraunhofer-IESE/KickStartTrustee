@@ -49,13 +49,10 @@ Psychologie, Medizin, KI-Forschung, Ingenieurswesen, Geschichtswissenschaft
 <a name="modell"></a>
 ## Modell
 
--   Selbstbestimmte Auswertungstreuhand
-    -   Wie werden Daten weiterverarbeitet?
 -   Fremdbestimmte Auswertungstreuhand
     -   Pseudonymisierung/Anonymisierung
 -   Zugangstreuhand
     -   Zugang zu Rohdaten nach Entscheidung des Datengebers
--   Verwaltungstreuhand
 
 <a name="daten"></a>
 ## Art der Daten

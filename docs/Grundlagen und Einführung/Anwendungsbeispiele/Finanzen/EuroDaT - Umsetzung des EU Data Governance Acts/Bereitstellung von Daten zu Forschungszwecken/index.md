@@ -13,29 +13,29 @@
 **[Bereitstellung von Daten zu Forschungszwecken](https://www.eurodat.org/bereitstellung-von-daten-zu-forschungszwecken)**
 
 <a name="problemstellung"></a>
-# Problemstellung
+## Problemstellung
 
 Es herrscht großer Mangel bei der wirtschaftswissenschaftlichen Forschung ("Mikrodaten"). Bereits existierende Datensätze lassen sich aufgrund juristischer Fragestellungen nicht ohne Weiteres nutzen.
 
 <a name="ziele"></a>
-# Ziele und Werteversprechen
+## Ziele und Werteversprechen
 
 Datengeber können Mikrodaten über den Datentreuhänder freigeben. Für Institutionen, die ansonsten aus juristischen Gründen keine Daten freigeben dürfen, haben mit der Freigabe über den Datentreuhänder die Chance, Informationen in einem geschützten Umfeld (Anonymisierung, Pseudonymisierung) an Datennehmer zu überreichen.
 
 ![](https://www.eurodat.org/fileadmin/user_upload/EUD_Geldmarktpolitische_Forschung.svg)
 
 <a name="schablone"></a>
-# DTH-Satzschablone
+## DTH-Satzschablone
 
 EuroDaT  **bietet** **vertraulichen und digitalen** Zugang  **zu**  Mikrodaten  **der** Bürger  **zur Verfügung gestellt von**  Behörden  **für**  Forschungseinrichtungen.
 
 <a name="domaene"></a>
-# Domäne
+## Domäne
 
 Finanzen
 
 <a name="involv"></a>
-# Involvierte Personen/Unternehmen
+## Involvierte Personen/Unternehmen
 
 -   Datengeber
     -   Behörden
@@ -46,17 +46,12 @@ Finanzen
     -   Mitarbeiter der Behörden?
 
 <a name="modell"></a>
-# Modell
+## Modell
 
--   Selbstbestimmte Auswertungstreuhand
-    -   Wie werden Daten weiterverarbeitet?
 -   Fremdbestimmte Auswertungstreuhand
-    -   Wie werden Daten weiterverarbeitet?
--   Zugangstreuhand
--   Verwaltungstreuhand
 
 <a name="daten"></a>
-# Art der Daten
+## Art der Daten
 
 Wirtschaftswissenschaftliche Daten
 
@@ -66,16 +61,16 @@ Wirtschaftswissenschaftliche Daten
     -   Angaben über Unternehmen
 
 <a name="speicherung"></a>
-# Speicherung
+## Speicherung
 
 :no_entry:  Forschungsprojekt
 
 <a name="uebermittlung"></a>
-# Übermittlung
+## Übermittlung
 
 Datengeber geben verschlüsselte Daten weiter an EuroDat. EuroDat entschlüsselt Daten, filtert, gibt diese frei und wertet sie aus. Das Ergebnis geht dann als Report an die Forschung.
 
 <a name="finanzierung"></a>
-# Finanzierung
+## Finanzierung
 
 :no_entry:  Forschungsprojekt

@@ -50,12 +50,8 @@ Finanzen
 <a name="modell"></a>
 ## Modell
 
--   Selbstbestimmte Auswertungstreuhand
-    -   Wie werden Daten weiterverarbeitet?
 -   Fremdbestimmte Auswertungstreuhand
     -   Analyse der Transaktionen in Bezug auf Geldwäsche und Finanzkriminalität
--   Zugangstreuhand
--   Verwaltungstreuhand
 
 <a name="daten"></a>
 ## Art der Daten

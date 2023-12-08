@@ -45,13 +45,9 @@ Finanzen
 <a name="modell"></a>
 ## Modell
 
--   Selbstbestimmte Auswertungstreuhand
-    -   Wie werden Daten weiterverarbeitet?
 -   Fremdbestimmte Auswertungstreuhand
     -   Aggregation der Daten zu einem gemeinsamen Ranking ohne Rückschluss wer die Einschätzungen abgegeben hat
--   Zugangstreuhand
--   Verwaltungstreuhand
-
+    
 <a name="daten"></a>
 ## Art der Daten
 

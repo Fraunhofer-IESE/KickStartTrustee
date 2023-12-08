@@ -50,16 +50,12 @@ Energie
 <a name="modell"></a>
 ## Modell
 
--   Selbstbestimmte Auswertungstreuhand
-    -   Wie werden Daten weiterverarbeitet?
 -   Fremdbestimmte Auswertungstreuhand
     -   Konvertierte Daten (einheitliches Format)
     -   Anonymisierung, Pseudonymsierung
     -   Prüfung und Bewertung der Qualität
     -   Aggregation/Auswertung
     -   Anreichung durch zusätzliche Daten/Verarbeitungsschritte
--   Zugangstreuhand
--   Verwaltungstreuhand
 
 <a name="daten"></a>
 ## Art der Daten
