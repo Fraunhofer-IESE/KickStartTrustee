@@ -1,3 +1,4 @@
+&larr; [Zurück](..)
 # Anwendungsbeispiele
 Im folgenden werden verschiedene Anwendungsbeispiele für einen Datentreuhänder oder ein Projekt zur Erstellung dessen aufgeführt, die durch Interviews, Umfragen oder andere Recherchen erhoben wurden.
 Zum Zeitpunkt der Untersuchung befinden sich manche Projekte noch in ein einer relativ frühen Phase, weshalb zu manchen Punkten noch keine Aussagen getroffen werden können. In diesen Fällen wird dies durch  :no_entry:  entsprechend gekennzeichnet.
@@ -47,10 +48,10 @@ Jedes Anwendungsbeispiel unterliegt dabei folgender Struktur:
         -   Datenverkauf 
 
 ## Unterseiten
-- [Domänenübergreifend](Dom%C3%A4nen%C3%BCbergreifend/index.md)
-- [Energie](Energie/index.md)
-- [Finanzen](Finanzen/index.md)
-- [Infrastruktur](Infrastruktur/index.md)
-- [Land- und Forstwirtschaft](<Land- und Forstwirtschaft/index.md>)
-- [Medizin](Medizin/index.md)
-- [Personal Information Management Systeme](<Personal Information Management Systeme (PIMS)/index.md>)
+- [Domänenübergreifend](Dom%C3%A4nen%C3%BCbergreifend/)
+- [Energie](Energie/)
+- [Finanzen](Finanzen/)
+- [Infrastruktur](Infrastruktur/)
+- [Land- und Forstwirtschaft](<Land- und Forstwirtschaft/>)
+- [Medizin](Medizin/)
+- [Personal Information Management Systeme](<Personal Information Management Systeme (PIMS)/>)

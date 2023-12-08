@@ -1,3 +1,4 @@
+&larr; [Zurück](..)
 # Inhaltsverzeichnis
 - [Überschrift](#ueberschrift)
   - [Nutzen](#nutzen)
@@ -28,7 +29,7 @@ Beide Sektionen folgen dabei folgender Struktur:
     -  Diese Fragen sind besonders wichtig für die Person(en), die den Workshop oder ein anderes Format ausrichten, da sie dabei helfen, den Fokus auf wichtige Themenpunkte zu behalten. Zusätzlich gibt es Vorschläge für Templates, um wichtige Fragen zu erarbeiten und festzuhalten.
 3.  Gesamtziel
 4.  Korrelierende Anforderungen
-    -  Der vierte Punkt bezieht sich auf die Anforderungen des [generischen Anforderungskatalogs](<../Generischer Anforderungskatalog/index.md>) und gibt Hinweise auf mögliche Verknüpfungen und Beziehungen zwischen den Workshopinhalten und den in Interviews erhobenen Anforderungen.
+    -  Der vierte Punkt bezieht sich auf die Anforderungen des [generischen Anforderungskatalogs](<../Generischer Anforderungskatalog/>) und gibt Hinweise auf mögliche Verknüpfungen und Beziehungen zwischen den Workshopinhalten und den in Interviews erhobenen Anforderungen.
 
 Die dritte Sektion befasst sich mit Features, Funktionalitäten und anderen Inhalten, die dem Datentreuhänder einen Mehrwert bieten können, aber nicht zwangsläufig notwendig sind, um diesen nutzbar zu machen. Beispielhaft werden hierzu ein paar mögliche Anknüpfungspunkte genannt.
 
