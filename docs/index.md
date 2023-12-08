@@ -7,14 +7,14 @@ Dieser klärt diverse Begrifflichkeiten und enthält eine Reihe von Methoden und
 ## Grundlagen und Einführung
 Dieses Kapitel soll ein grundlegendes Verständnis des Bereichs "Datentreuhänder" schaffen. Dazu gehören allgemeine Begriffsklärungen, die Unterscheidung verschiedener Datentreuhänderarten, Anwendungsbeispiele sowie die rechtliche Einordnung. Außerdem soll in dieser Phase der Leitfaden und dessen Vorteile und Anwendung motiviert und vermittelt werden.
 
-[Zum Kapitel "Grundlagen und Einführung"](Grundlagen%20und%20Einf%C3%BChrung/index.md)
+[Zum Kapitel "Grundlagen und Einführung"](Grundlagen%20und%20Einf%C3%BChrung/)
 
 ## Angebotsentwicklung
 Dieses Kapitel unterstützt Personen oder Unternehmen, die daran interessiert sind selbst ein Datentreuhand-Modell anzubieten, dabei eine Vision und Mission zu erarbeiten, sich selbst in die Landkarte einzuordnen und frühzeitig die Tragfähigkeit ihres Datentreuhandmodells zu bewerten.
 
-[Zum Kapitel "Angebotsentwicklung"](Angebotsentwicklung/index.md)
+[Zum Kapitel "Angebotsentwicklung"](Angebotsentwicklung/)
 
 ## Konzeption und Umsetzung
 Dieses Kapitel widmet sich der Umsetzung der Datentreuhandlösung. Dazu bietet der Leitfaden grundlegende Bausteine und methodische Unterstützung zur Erhebung, Konzeption und Erstellung von Anforderungen, Softwarearchitektur, Sicherheitsmaßnahmen. Der Leitfaden unterstützt außerdem bei der Auswahl der geeigneten Grundlagentechnologien und stellt generische Software- und UI-Komponenten bereit.
 
-[Zum Kapitel "Konzeption und Umsetzung"](Konzeption%20und%20Umsetzung/index.md)
+[Zum Kapitel "Konzeption und Umsetzung"](Konzeption%20und%20Umsetzung/)
