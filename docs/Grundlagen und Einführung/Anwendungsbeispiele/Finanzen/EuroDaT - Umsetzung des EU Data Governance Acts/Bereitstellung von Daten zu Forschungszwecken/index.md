@@ -73,7 +73,7 @@ Wirtschaftswissenschaftliche Daten
 <a name="uebermittlung"></a>
 # Übermittlung
 
-Datengeber geben verschlüsselte Daten weiter an EuroDat. EuroDat entschlüsselt Daten, filtert, gibt diese frei und wertet sie aus. Das Ergebnis geht dann als Report an die Forschung
+Datengeber geben verschlüsselte Daten weiter an EuroDat. EuroDat entschlüsselt Daten, filtert, gibt diese frei und wertet sie aus. Das Ergebnis geht dann als Report an die Forschung.
 
 <a name="finanzierung"></a>
 # Finanzierung
