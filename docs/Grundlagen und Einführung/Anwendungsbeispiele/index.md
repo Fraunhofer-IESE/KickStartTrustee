@@ -51,6 +51,6 @@ Jedes Anwendungsbeispiel unterliegt dabei folgender Struktur:
 - [Energie]()
 - [Finanzen]()
 - [Infrastruktur]()
-- [Land- und Forstwirtschaft]
+- [Land- und Forstwirtschaft]()
 - [Medizin]()
 - [Personal Information Management Systeme]()
