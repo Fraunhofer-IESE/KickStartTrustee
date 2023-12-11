@@ -15,7 +15,7 @@
 <a name="ueberschrift"></a>
 # Generischer Anforderungskatalog
 
-Die hier dargestellten Inhalte stellen einen Überblick über verschiedene generische Anforderungen an ein Datentreuhändermodell dar, die im Rahmen des Projektes erhoben wurden. Sie basieren auf den durchgeführten Experteninterviews, aus denen verschiedene Inhalte extrahiert und anschließend verfeinert wurden. Die Anforderungen werden als generisch bezeichnet, da sie für die meisten Arten von Datentreuhändern relevant sind und somit eine Basis für weitere Erhebungen und Workshops darstellen. Vorschläge, wie weitere Inhalte erarbeitet werden können, finden sich unter  [Methoden zur Erhebung domänenspezifischer Anforderungen](Methoden%20zur%20Erhebung%20dom%C3%A4nenspezifischer%20Anforderungen.md). Bei der Erhebung der Daten kam es vereinzelt zu Widersprüchen zwischen den Experten und den daraus abgeleiteten Anforderungen. Die Daten sind daher mit Vorsicht zu betrachten und für den Anwendungsfall zu validieren.
+Die hier dargestellten Inhalte stellen einen Überblick über verschiedene generische Anforderungen an ein Datentreuhändermodell dar, die im Rahmen des Projektes erhoben wurden. Sie basieren auf den durchgeführten Experteninterviews, aus denen verschiedene Inhalte extrahiert und anschließend verfeinert wurden. Die Anforderungen werden als generisch bezeichnet, da sie für die meisten Arten von Datentreuhändern relevant sind und somit eine Basis für weitere Erhebungen und Workshops darstellen. Vorschläge, wie weitere Inhalte erarbeitet werden können, finden sich unter [Methoden zur Erhebung domänenspezifischer Anforderungen](<../Methoden zur Erhebung domänenspezifischer Anforderungen/index.md>). Bei der Erhebung der Daten kam es vereinzelt zu Widersprüchen zwischen den Experten und den daraus abgeleiteten Anforderungen. Die Daten sind daher mit Vorsicht zu betrachten und für den Anwendungsfall zu validieren.
 
 Folgende Inhalte finden sich auf dieser Seite:
 
@@ -45,7 +45,6 @@ Durch dieses Verständnis werden wichtige Stakeholder darin unterstützt relevan
 
 Die Inhalte sind besonders interessant für Projektmanager und -Leiter sowie für alle Stakeholder, die an der Entwicklung und der Erhebung von Anforderungen und Konzeptionen teilhaben.
 
-&uarr; [zurück zur Übersicht](#top)
 <a name="inhalte"></a>
 ## Inhalte
 
@@ -130,7 +129,7 @@ Durch diese Zuordnung wird es den Lesern des Dokumentes erleichtert, relevante I
 ### Interviews
 
 Zur Erhebung der Daten wurden Interviews mit verschiedensten Experten unterschiedlicher Domänen durchgeführt. Basierend auf diesen Daten wurden die verschiedenen Kategorien abgeleitet und Zugehörigkeiten bestimmt. Insgesamt wurden 13 Interviews mit ein oder mehreren Experten durchgeführt. Die Struktur der durchgeführten Interviews findet sich hier: 
-[Interviewleitfragen_Template](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601177/Interviewleitfragen_Template.1.docx)
+[Interviewleitfragen_Template](Dateien/Interviewleitfragen_Template.docx)
 
 
 <a name="potentiale"></a>
@@ -163,20 +162,17 @@ Die Anforderungen an einen Datentreuhänder beschäftigen sich in vielen Aspekte
 
 Anforderungen haben teilweise nicht genug technische Informationen, um das System ausreichend zu beschreiben. Systemanforderungen begeben sich etwas tiefer in die Materie und machen Anforderungen konkreter. Sie basieren somit in der Regel auf (DTH-)Anforderungen, die durch die Systemanforderungen umgesetzt werden.
 
-[KickStartTrusteeExport_docx](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601196/KickStartTrusteeExport.1.docx)
+[KickStartTrusteeExport_docx](Dateien/KickStartTrustee_AnforderungenExport.docx)
 
-[KickStartTrusteeExport__PDF](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601198/KickStartTrusteeExport.1.pdf)
+[KickStartTrusteeExport_PDF](Dateien/KickStartTrustee_AnforderungenExport.pdf)
 
-![Generische Anforderungen Übersicht - Komplettübersicht ohne Kommentare_pdf](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601200/Generische.Anforderungen.Ubersicht.-.Komplettubersicht.ohne.Kommentare.pdf)
+![Alt Komplettübersicht_SVG](<Dateien/Generische Anforderungen Komplettübersicht.svg>)
+[PDF](<Dateien/Generische Anforderungen Komplettübersicht.pdf>)
 
-[Anforderungen_xlsx](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601202/Anforderungen.1.xlsx)
+[Anforderungen_xlsx](Dateien/Anforderungen.xlsx)
 
-[Anforderungs_Details_xlsx](https://github.com/Fraunhofer-IESE/KickStartTrustee/files/13601203/Anforderungs_Details.1.xlsx)
-
+[Anforderungs_Details_xlsx](Dateien/Anforderungs_Details.xlsx)
 
 &uarr; [zurück zur Übersicht](#top)
-
-> Bei den Lösungsansätzen fehlen noch Beschreibungen, bei denen mir
-> Informationen oder Hintergründe fehlen, um diese Aufzufüllen.
 
 *[DTH]:Datentreuhänder
