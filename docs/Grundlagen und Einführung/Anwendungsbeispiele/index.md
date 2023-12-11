@@ -53,4 +53,3 @@ Jedes Anwendungsbeispiel unterliegt dabei folgender Struktur:
 - [Infrastruktur](Infrastruktur/)
 - [Land- und Forstwirtschaft](<Land- und Forstwirtschaft/>)
 - [Medizin](Medizin/)
-- [Personal Information Management Systeme](<Personal Information Management Systeme (PIMS)/>)
