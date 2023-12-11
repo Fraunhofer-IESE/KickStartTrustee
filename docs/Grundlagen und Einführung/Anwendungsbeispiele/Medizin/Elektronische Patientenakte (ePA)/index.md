@@ -11,7 +11,7 @@
 -   [Übermittlung](#uebermittlung)
 -   [Finanzierung](#finanzierung)
 
-https://www.bundesgesundheitsministerium.de/elektronische-patientenakte
+[https://www.bundesgesundheitsministerium.de/elektronische-patientenakte](https://www.bundesgesundheitsministerium.de/elektronische-patientenakte)
 
 <a name="problemstellung"></a>
 ## Problemstellung
