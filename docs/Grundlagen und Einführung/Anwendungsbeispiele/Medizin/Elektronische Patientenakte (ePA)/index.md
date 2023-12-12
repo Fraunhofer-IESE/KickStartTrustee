@@ -70,12 +70,7 @@ Medizin
 <a name="modell"></a>
 ## Modell
 
--   Selbstbestimmte Auswertungstreuhand
-    -   Wie werden Daten weiterverarbeitet?
--   Fremdbestimmte Auswertungstreuhand
-    -   Wie werden Daten weiterverarbeitet?
 -   Zugangstreuhand
--   Verwaltungstreuhand
 
 <a name="daten"></a>
 ## Art der Daten

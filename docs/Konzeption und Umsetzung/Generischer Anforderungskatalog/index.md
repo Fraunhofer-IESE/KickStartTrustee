@@ -160,7 +160,7 @@ Die Anforderungen an einen Datentreuhänder beschäftigen sich in vielen Aspekte
 <a name="systemanforderungen"></a>
 ### Systemanforderungen
 
-Anforderungen haben teilweise nicht genug technische Informationen, um das System ausreichend zu beschreiben. Systemanforderungen begeben sich etwas tiefer in die Materie und machen Anforderungen konkreter. Sie basieren somit in der Regel auf (DTH-)Anforderungen, die durch die Systemanforderungen umgesetzt werden.
+Anforderungen haben teilweise nicht genug technische Informationen, um das System ausreichend zu beschreiben. Systemanforderungen begeben sich etwas tiefer in die Materie und machen Anforderungen konkreter. Sie basieren somit in der Regel auf (DTH-)Anforderungen, welche durch diese Systemanforderungen umgesetzt werden.
 
 [KickStartTrusteeExport_docx](Dateien/KickStartTrustee_AnforderungenExport.docx)
 
