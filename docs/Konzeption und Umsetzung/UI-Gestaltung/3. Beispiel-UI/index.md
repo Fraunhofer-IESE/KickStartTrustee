@@ -7,6 +7,7 @@ Eine aktuelle Version ist auch über den Adobe XD Link verfügbar:  [https://xd.
 <style>
 	td {
 		min-width: 300px;
+		vertical-align: top;
 	}
 </style>
 
@@ -20,7 +21,7 @@ Eine aktuelle Version ist auch über den Adobe XD Link verfügbar:  [https://xd.
 	</tr>
 	<tr>
 		<td>
-		Standardansicht der Landing Page mit Sidebar, einem optionalen News Bereich und Beispielcontent. Statt den Diagrammen könnten auch Statistiken zu den Datennutzern angezeigt werden. Der jeweile Mehrwert ist vom DTH-Kontext abhängig.<br>
+		Standardansicht der Landing Page mit Sidebar, einem optionalen News Bereich und Beispielcontent. Statt den Diagrammen könnten auch Statistiken zu den Datennutzern angezeigt werden. Der jeweile Mehrwert ist vom DTH-Kontext abhängig.<br><br>
 		<img src="img_1.png"/>
 		</td>
 		<td>Standardansicht der Datensätze<br><br><img src="img_2.png" style="width: 500px;"/></td>
