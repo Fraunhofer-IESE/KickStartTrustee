@@ -44,6 +44,7 @@ Daten sind das zentrale Element eines jeden Datentreuhandmodells. Dabei gibt es 
     4.  Nachteile für den Datentreuhänder: Der Datentreuhänder ist am Datenaustausch selbst nicht beteiligt und kann daher keinerlei Dienste hierfür bereitstellen (z. B. Qualitätssicherung, Konvertierung oder Auswertungen)
 
 ### Beispiele
+
 | Zentraler Router | Zentrale Datenhaltung | P2P         |
 |------------------|-----------------------|-------------|
 | BreedFides       | Ddtrust               | BreedFides  |
@@ -81,6 +82,7 @@ In unserem Framework unterscheiden wir drei grundlegende Modelle. Diese ergeben 
     6.  Nachteile für die Datennutzer: Ggf. nicht alle Auswertungen möglich; Kein Zugriff auf die Rohdaten
 
 ### Beispiele
+
 | Zugangstreuhand | Verwaltungstreuhand | Mehrwerttreuhand  |
 |-----------------|---------------------|-------------------|
 | BreedFides      | MobiDataSol 		|                   |
@@ -111,6 +113,7 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 7.  Erfüllung von  **Auflagen**
 
 ### Beispiele
+
 | Förderung digitaler Souveränität | Förderung von Datensouveränität | Förderung der wirtschaftlichen Verwertung von Daten | Förderung von Innovation | Förderung von Wissenschaft und Forschung | Förderung von fairem Wettbewerb | Erfüllung von Auflagen  |
 |----------------------------------|---------------------------------|-----------------------------------------------------|--------------------------|------------------------------------------|---------------------------------|-------------------------|
 | BreedFides                       | BreedFides                      | BreedFides                                          |                          | BreedFides                               | BreedFides                      | MobiDataSol             |
@@ -134,6 +137,7 @@ Datengeber und Datennutzer können in folgende Kategorien fallen:
 4.  **Forschung (Research)**
 
 ### Beispiele
+
 |                                     | Geschäftliche Nutzer | Private Nutzer und Verbraucher | Öffentliche Verwaltung und Behörden | Forschung    |
 |-------------------------------------|----------------------|--------------------------------|-------------------------------------|--------------|
 | **Geschäftliche Nutzer**                | **B2B:**                 | **C2B:**                           | **A2B:**                                | **R2B:**         |
@@ -178,6 +182,7 @@ Wir unterscheiden die folgenden möglichen Arten der Finanzierung:
 7.  **Querfinanzierung** durch andere Dienste des Datentreuhänders
 
 ### Beispiele
+
 | Datengeber zahlt pro Transaktion | Datengeber zahlt einen Pauschalbetrag | Datennutzer zahlt pro Transaktion | Datennutzer zahlt einen Pauschalbetrag | Shareholder | Dritte    | Querfinanzierung  |
 |----------------------------------|---------------------------------------|-----------------------------------|----------------------------------------|-------------|-----------|-------------------|
 | MANDAT                           | MANDAT                                | TreuMoDa                 		   | TRANSIT                                | MobiDataSol | FAIRWinDS | FAIRWinDS         |
@@ -202,6 +207,7 @@ Wir unterscheiden folgende Kategorien, da sie diese sich aufgrund unterschiedlic
 4.  Individuell schützenswerte Daten bei denen die Anforderungen direkt vom Datengeber kommen.
 
 ### Beispiele
+
 | Personenbezogene Daten | Besondere Kategorien personenbezogener Daten | Geschäftsgeheimnisse | Individueller Schutzbedarf  |
 |------------------------|----------------------------------------------|----------------------|-----------------------------|
 | Ddtrust                | Ddtrust                                      | Ddtrust              | S3I-X                       |
@@ -227,6 +233,7 @@ Die folgende Liste ist nicht notwendigerweise vollständig, aber umfasst "Zusatz
 6.  **Anreicherung:**  Der Datentreuhänder ergänzt Daten um deren Nutzen für die Datennutzer zu erhöhen.
 
 ### Beispiele
+
 | Digitalisierung | Konvertierung | Anonymisierung | Prüfung     | Aggregation | Anreicherung  |   
 |-----------------|---------------|----------------|-------------|-------------|---------------|
 | MobiDataSol     | FAIRWinDS     | Ddtrust        | BreedFides  | FAIRWinDS   | BreedFides    |
