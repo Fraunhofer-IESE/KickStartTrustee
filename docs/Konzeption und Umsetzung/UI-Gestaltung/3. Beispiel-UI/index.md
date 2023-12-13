@@ -4,6 +4,12 @@ Diese Tabelle bietet eine Gesamtübersicht über den UI Prototypen, die in UI-Mo
   
 Eine aktuelle Version ist auch über den Adobe XD Link verfügbar:  [https://xd.adobe.com/view/e4e9b719-f5cb-4f11-93be-b8be73077d25-b1ba/](https://xd.adobe.com/view/e4e9b719-f5cb-4f11-93be-b8be73077d25-b1ba/)  
 
+<style>
+	th {
+		min-width: 500px;
+	}
+</style>
+
 <table>
 	<tr>
 		<th>Landing Page</th>
@@ -13,7 +19,10 @@ Eine aktuelle Version ist auch über den Adobe XD Link verfügbar:  [https://xd.
 		<th>Weitere Funktionen</th>
 	</tr>
 	<tr>
-		<td>Standardansicht der Landing Page mit Sidebar, einem optionalen News Bereich und Beispielcontent. Statt den Diagrammen könnten auch Statistiken zu den Datennutzern angezeigt werden. Der jeweile Mehrwert ist vom DTH-Kontext abhängig.<br><img src="img_1.png"/></td>
+		<td>
+		Standardansicht der Landing Page mit Sidebar, einem optionalen News Bereich und Beispielcontent. Statt den Diagrammen könnten auch Statistiken zu den Datennutzern angezeigt werden. Der jeweile Mehrwert ist vom DTH-Kontext abhängig.<br>
+		<img src="img_1.png" width="500px" />
+		</td>
 		<td>Standardansicht der Datensätze<br><img src="img_2.png" style="width: 500px;"/></td>
 		<td rowspan="2"></td>
 		<td>Daten hochladen (Auswahl: Dokumentenscan oder Upload über PC)<br><img src="img_3.png"/></td>
