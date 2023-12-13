@@ -3,3 +3,4 @@
 - [Definition](Definition)
 - [Landkarte](Landkarte)
 - [Anwendungsbeispiele](Anwendungsbeispiele)
+- [Glossar](Glossar)
