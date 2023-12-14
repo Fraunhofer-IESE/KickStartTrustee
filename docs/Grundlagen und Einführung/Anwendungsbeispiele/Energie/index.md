@@ -1,4 +1,0 @@
-
-# Energie
-
-- [FAIRWinDS](FAIRWinDS/)
