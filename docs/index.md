@@ -40,7 +40,7 @@ Hauptansprechpartner: [Bernd Rauch und Denis Feth](mailto:bernd.rauch@iese.fraun
   - **Prof. Dr. Louisa Specht-Riemenschneider** 
 
 ## Lizenz
-Die hier veröffentlichten Inhalte des Projekts [KickStartTrustee](fraunhofer-iese.github.io/KickStartTrustee) © 2023 vom [Fraunhofer IESE](https://www.iese.fraunhofer.de/) stehen unter der [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1)-Lizenz <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="./assets/cc.svg"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="./assets/by.svg">
+Die hier veröffentlichten Inhalte des Projekts [KickStartTrustee](https://fraunhofer-iese.github.io/KickStartTrustee) © 2023 vom [Fraunhofer IESE](https://www.iese.fraunhofer.de/) stehen unter der [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1)-Lizenz <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="./assets/cc.svg"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="./assets/by.svg">
 
 ## Danksagung
 
