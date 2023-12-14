@@ -1,4 +1,3 @@
-
 # Methode zur Visionserstellung
 
 ## Einführung zum Kapitel
@@ -229,31 +228,11 @@ Die Teilnehmer*innen sollten während der Session immer wieder an die verbleiden
 
 Tabelle  2: Priorisierungsmatrix für Ideen.
 
-  
+|                   | Geringe Kosten                                                                              | Hohe   Kosten                                                                            |
+|-------------------|---------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| Kleine Auswirkung | »Nebentätigkeiten«      Kann man sie durch Transformation in einen anderen Bereich bringen? | »Undankbare   Aufgaben«      Die Finger von diesen Ideen lassen.                         |
+| Große Auswirkung  | »Quick   Wins«      Sofort umsetzen, wichtige Ideen.                                        | »Große   Projekte«      Vielsprechende Visionen. Ideen, die einen Vorsprung ermöglichen. |
 
-Geringe Kosten
-
-Hohe Kosten
-
-Kleine Auswirkung
-
-»Nebentätigkeiten«
-
-_Kann man sie durch Transformation in einen anderen Bereich bringen?_
-
-»Undankbare Aufgaben«
-
-_Die Finger von diesen Ideen lassen._
-
-Große Auswirkung
-
-»Quick Wins«
-
-_Sofort umsetzen, wichtige Ideen._
-
-»Große Projekte«
-
-_Vielsprechende Visionen. Ideen, die einen Vorsprung ermöglichen._
 
 ### Erstes Lösungsszenario
 
