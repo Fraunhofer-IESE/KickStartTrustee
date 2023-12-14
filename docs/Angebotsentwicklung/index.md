@@ -1,3 +1,3 @@
 # Angebotsentwicklung
 
-- [Methode zur Visionsentwicklung](Methode%20zur%20Visionsentwicklung)
+- [Methode zur Visionserstellung](Methode%20zur%20Visionserstellung)
