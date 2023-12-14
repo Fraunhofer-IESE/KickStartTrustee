@@ -1,4 +1,7 @@
-# Inhaltsverzeichnis
+<a name="ueberschrift"></a>
+# Generischer Anforderungskatalog
+
+## Inhaltsverzeichnis
 - [Generischer Anforderungskatalog](#ueberschrift)
     - [Motivation und Ziel](#motivation-und-ziel)
     - [Relevante Stakeholder](#stakeholder)
@@ -12,8 +15,7 @@
         - [Anforderungen](#anforderungen)
         - [Systemanforderungen](#systemanforderungen)
 
-<a name="ueberschrift"></a>
-# Generischer Anforderungskatalog
+# Überblick
 
 Die hier dargestellten Inhalte stellen einen Überblick über verschiedene generische Anforderungen an ein Datentreuhändermodell dar, die im Rahmen des Projektes erhoben wurden. Sie basieren auf den durchgeführten Experteninterviews, aus denen verschiedene Inhalte extrahiert und anschließend verfeinert wurden. Die Anforderungen werden als generisch bezeichnet, da sie für die meisten Arten von Datentreuhändern relevant sind und somit eine Basis für weitere Erhebungen und Workshops darstellen. Vorschläge, wie weitere Inhalte erarbeitet werden können, finden sich unter [Methoden zur Erhebung domänenspezifischer Anforderungen](<../Methoden zur Erhebung domänenspezifischer Anforderungen/index.md>). Bei der Erhebung der Daten kam es vereinzelt zu Widersprüchen zwischen den Experten und den daraus abgeleiteten Anforderungen. Die Daten sind daher mit Vorsicht zu betrachten und für den Anwendungsfall zu validieren.
 
