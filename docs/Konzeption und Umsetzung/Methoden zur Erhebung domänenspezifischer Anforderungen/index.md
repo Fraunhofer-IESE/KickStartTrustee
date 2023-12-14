@@ -1,16 +1,7 @@
-# Inhaltsverzeichnis
-- [Überschrift](#ueberschrift)
-  - [Nutzen](#nutzen)
-  - [Workshops](#workshops)
-    - [Erstellung einer Kategorisierung der Daten](#kategorisierung)
-    - [Den Rahmen des Datentreuhänders (-Modell) bestimmen](#rahmen)
-    - [Zusätzliche Features/Funktionen/Bedingungen erfassen und bewerten](#zusatz)
-    - [Marktvergleich/-analyse - was macht den neuen Datentreuhänder besonders?](#marktvergleich)
-<a name="ueberschrift"></a>
 # Methoden zur Erhebung domänenspezifischer Anforderungen
 
 <a name="nutzen"></a>
-## Nutzen
+## Motivation
 
 Der Inhalt dieser Seite richtet sich primär an Projektmanager und Requirement Engineers und soll bei der Erhebung von Anforderungen eines Datentreuhänders helfen. Insbesondere sollen Ideen und Anreize geschaffen werden, um Workshops und andere Formate aufzusetzen und dadurch domänenspezifische Anforderungen zu identifizieren.
 
