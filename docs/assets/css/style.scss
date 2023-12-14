@@ -1,0 +1,14 @@
+---
+---
+
+$header-bg-color: #245a7c;
+$header-bg-color-secondary: #245a7c;
+
+$section-headings-color: #005b7f;
+
+@import "{{ site.theme }}";
+
+#content {
+	max-width: 96rem;
+}
+
