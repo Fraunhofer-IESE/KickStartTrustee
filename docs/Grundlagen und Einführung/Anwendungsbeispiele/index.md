@@ -11,8 +11,8 @@ Jedes Anwendungsbeispiel wird anhand folgender Struktur beschrieben:
 -   Problemstellung
 -   Ziele und Werteversprechen
 -   Datentreuhandangebot nach folgendem Schema:
-    -   Deutsch: <Name des DTH-Dienstes> **bietet** **vertrauliche(n) und digitale(n)** <Verwaltung, Zugang oder Auswertung> **von/zu** <schützenswerten Daten> **der** <Betroffenen Personen oder Unternehmen> **zur Verfügung gestellt von** <Datengeber> **für** <Datennutzer>.
-    -   Englisch: <Data Trustee Service> **offers** **digital and confidential** <management, access or processing> **of** <protectable data> **of** <data subject or companies> **provided by** <data holders> **to** <data users>.
+    -   Deutsch: <Name des DTH-Dienstes> bietet vertrauliche(n) und digitale(n) <Verwaltung, Zugang oder Auswertung> von/zu <schützenswerten Daten> der <Betroffenen Personen oder Unternehmen> zur Verfügung gestellt von <Datengeber> für <Datennutzer>.
+    -   Englisch: <Data Trustee Service> offers digital and confidential <management, access or processing> of <protectable data> of <data subject or companies> provided by <data holders> to <data users>.
 -   Domäne (In welchem Wirtschaftszweig ist das Datentreuhandmodell verortet?)
 -   Involvierte Personen/Unternehmen (Wer ist Datengeber, Datennutzer, betroffene Person/Unternehmen?)
 -   Treuhandmodell (Welches Modell wird umgesetzt?)
