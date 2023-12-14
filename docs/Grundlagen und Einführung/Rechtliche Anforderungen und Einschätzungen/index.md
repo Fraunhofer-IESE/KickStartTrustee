@@ -18,4 +18,4 @@ Anschließend zeigen wir diejenigen datenschutzrechtlichen Anforderungen auf, di
 ## Anforderungen des Data Governance Acts
 Anschließend werden die Anforderungen des Data Governance Acts (DGA) an Datentreuhänder dargelegt.
 
-[Zu den Anforderungen aus dem DGA](DGA-Anforderungen)
+[Zu den Anforderungen aus dem DGA (Kapitel D)](DGA-Anforderungen)

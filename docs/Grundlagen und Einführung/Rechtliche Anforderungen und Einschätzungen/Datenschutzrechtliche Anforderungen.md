@@ -4,25 +4,18 @@ Der Grundlagen-Layer folgt im Wesentlichen den Vorgaben des Datenschutzrechts, w
 
 Für die Datenverarbeitung im Grundlagen- und Funktions-Layer werden zunächst die allgemeinen datenschutzrechtlichen Vorgaben erörtert, d.h. es wird die Eröffnung des Anwendungsbereichs des Datenschutzrechts erläutert, hier also der DSGVO (unter C.I.1.), des BDSG (unter C.I.1.c.1)) und des TTDSG (unter C.I.1.c.2)). Anschließend wird die Rechtfertigung der Datenverarbeitung im Grundlagen- und Funktions-Layer nach der DSGVO geprüft (unter C.I.2.). Darauf folgt die Darstellung der datenschutzrechtlichen Pflichten, die bei dem Einsatz der Datentreuhand einzuhalten sind. Diese Ausführungen sind von zentraler Bedeutung, denn die fehlende Beachtung dieser Pflichten kann zu aufsichtsbehördlichen Sanktionen und zivilrechtlicher Haftung führen (unter C.I.3.). Anschließend werden die Anforderungen des TTDSG an die Datentreuhand dargestellt (unter C.II.).
 
-[I. Anforderungen aus der DSGVO](#i-anforderungen-aus-der-dsgvo)
+Dieses Kapitel gliedert sich im Weiteren wie folgt:
 
-[I.1. Anwendungsbereich der DSGVO](#1-anwendungsbereich-der-dsgvo)
-
-[I.2. Rechtmäßigkeit der identifizierten Datenverarbeitungsschritte](#2-rechtmäßigkeit-der-identifizierten-datenverarbeitungsschritte)
-
-[I.3. Datenschutzrechtliche Pflichten des Datentreuhänders](#3-datenschutzrechtliche-pflichten-des-datentreuhänders)
-
-[II. TTDSG-Vorgaben an die Datentreuhand](#ii-ttdsg-vorgaben-an-die-datentreuhand)
-
-[II.1. Technische und organisatorische Vorkehrungen](#1-technische-und-organisatorische-vorkehrungen)
-
-[II.2. Verarbeitung personenbezogener Daten Minderjähriger](#2-verarbeitung-personenbezogener-daten-minderjähriger)
-
-[II.3. Auskunft über Bestands- und Nutzungsdaten](#3-auskunft-über-bestands--und-nutzungsdaten)
-
-[II.4. Schutz der Privatsphäre bei Endeinrichtungen](#4-schutz-der-privatsphäre-bei-endeinrichtungen)
-
-[II.5. Anerkennungsmöglichkeit von Diensten zur Verwaltung von Einwilligungen durch § 26 TTDSG](#5-anerkennungsmöglichkeit-von-diensten-zur-verwaltung-von-einwilligungen-durch--26-ttdsg)
+- [I. Anforderungen aus der DSGVO](#i-anforderungen-aus-der-dsgvo)
+  - [I.1. Anwendungsbereich der DSGVO](#1-anwendungsbereich-der-dsgvo)
+  - [I.2. Rechtmäßigkeit der identifizierten Datenverarbeitungsschritte](#2-rechtmäßigkeit-der-identifizierten-datenverarbeitungsschritte)
+  - [I.3. Datenschutzrechtliche Pflichten des Datentreuhänders](#3-datenschutzrechtliche-pflichten-des-datentreuhänders)
+- [II. TTDSG-Vorgaben an die Datentreuhand](#ii-ttdsg-vorgaben-an-die-datentreuhand)
+  - [II.1. Technische und organisatorische Vorkehrungen](#1-technische-und-organisatorische-vorkehrungen)
+  - [II.2. Verarbeitung personenbezogener Daten Minderjähriger](#2-verarbeitung-personenbezogener-daten-minderjähriger)
+  - [II.3. Auskunft über Bestands- und Nutzungsdaten](#3-auskunft-über-bestands--und-nutzungsdaten)
+  - [II.4. Schutz der Privatsphäre bei Endeinrichtungen](#4-schutz-der-privatsphäre-bei-endeinrichtungen)
+  - [II.5. Anerkennungsmöglichkeit von Diensten zur Verwaltung von Einwilligungen durch § 26 TTDSG](#5-anerkennungsmöglichkeit-von-diensten-zur-verwaltung-von-einwilligungen-durch--26-ttdsg)
 
 ## I. Anforderungen aus der DSGVO
 
