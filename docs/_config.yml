@@ -3,3 +3,6 @@ theme: jekyll-theme-cayman
 plugins:
   - jemoji
 
+title: KickStartTrustee
+description: Leitfaden zur Realisierung eines Datentreuhänders
+
