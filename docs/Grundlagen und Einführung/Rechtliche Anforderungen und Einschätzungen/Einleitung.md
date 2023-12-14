@@ -22,7 +22,7 @@ Der Begriff des Datennehmers umfasst diejenigen natürlichen oder juristischen P
 
 Die folgenden Ausführungen dienen dazu, die Datentreuhand in ihren rechtlichen Rahmen einzuordnen, um hierauf aufbauend die für sie geltenden gesetzlichen Anforderungen des Daten- und Datenschutzrechts im Einzelnen zu adressieren und zu prüfen.
 
-Dafür werden zunächst diejenigen datenschutzrechtlichen Anforderungen aufgezeigt, die für die Datentreuhand im Grundlagen- und Funktions-Layer gelten, deren Beachtung zentral für den praktischen Einsatz der Datentreuhand ist (siehe [Datenschutzrechtliche Anforderungen](Datenschutzrechtliche%20Anforderungen.md)). Denn der Erfolg einer Datentreuhand hängt maßgeblich davon ab, ob und unter welchen Bedingungen sie datenschutzrechtskonform angewendet werden kann. Dabei wird auch auf die Vorgaben des TTDSG abgestellt, die für bestimmte Datentreuhandmodelle gelten. Anschließend werden die Anforderungen des Data Governance Acts an Datentreuhänder dargelegt (siehe [DGA-Anforderungen](DGA-Anforderungen.md)).
+Dafür werden zunächst diejenigen datenschutzrechtlichen Anforderungen aufgezeigt, die für die Datentreuhand im Grundlagen- und Funktions-Layer gelten, deren Beachtung zentral für den praktischen Einsatz der Datentreuhand ist (siehe [Datenschutzrechtliche Anforderungen](Datenschutzrechtliche%20Anforderungen)). Denn der Erfolg einer Datentreuhand hängt maßgeblich davon ab, ob und unter welchen Bedingungen sie datenschutzrechtskonform angewendet werden kann. Dabei wird auch auf die Vorgaben des TTDSG abgestellt, die für bestimmte Datentreuhandmodelle gelten. Anschließend werden die Anforderungen des Data Governance Acts an Datentreuhänder dargelegt (siehe [DGA-Anforderungen](DGA-Anforderungen)).
 
 # Fußnoten
 
