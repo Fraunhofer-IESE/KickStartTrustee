@@ -1,4 +1,6 @@
 theme: jekyll-theme-cayman
+title: KickStartTrustee
+description: Ein branchenübergreifender Leitfaden für die zielgerichtete Konzeption, die beschleunigte Umsetzung und den erfolgreichen Betrieb von Datentreuhändern 
 
 plugins:
   - jemoji
