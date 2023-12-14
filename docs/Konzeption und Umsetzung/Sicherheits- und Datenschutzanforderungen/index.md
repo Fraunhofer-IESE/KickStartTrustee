@@ -126,6 +126,7 @@ Abbildung 3: Kategorisierung von Daten
 ### Daten nach Kritikalität
 
 Zunächst einmal unterscheiden wir zwischen personenbezogenen Daten und nicht-personenbezogenen Daten. Währen bei personenbezogenen Daten der Datenschutz greift, ist dies bei nicht-personenbezogenen Daten nicht der Fall. Dennoch sind diese Daten schützenswert, häufig im Sinne des Geschäftsgeheimnisschutzes. Diese sind für das datengebende Unternehmen individuell schützenswert. Im Bereich Datenschutz unterscheidet die DSGVO zwischen personenbezogenen Daten und besonderen Kategorien personenbezogener Daten, die ein erhöhtes Schutzniveau haben. Was der Datenschutz nicht vorsieht, im Kontext eines DTHs aber durchaus relevant ist, ist, dass personenbezogene Daten für eine betroffen Person auch dann besonders schützenswert sein können, wenn sie nicht unter die besonderen Kategorien fallen. Wir befinden uns hier dann im Bereich der Datensouveränität, also der Idee, dass Datengeber selbstbestimmt über ihre Daten bestimmen können.
+
 | **Datenkategorie** | **Beschreibung** | **Beispiele** |
 |--|--|--|
 | **Daten ohne Personenbezug** | Daten, welche sich nicht auf eine Person beziehen bzw. ihr nicht zugeordnet werden können. Der Personenbezug kann auch entfernt worden sein, z. B. durch Anonymisierung. | Anonymisierte Daten, Regelungen, Organisationsanweisungen |
