@@ -1,4 +1,7 @@
 # Generischer Anforderungskatalog
+
+* TOC {:toc}
+
 - [Motivation und Ziel](#motivation-und-ziel)
 - [Relevante Stakeholder](#stakeholder)
 - [Inhalte](#inhalte)
