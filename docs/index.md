@@ -32,7 +32,7 @@ Hauptansprechpartner: [Bernd Rauch und Denis Feth](mailto:bernd.rauch@iese.fraun
   - **Matthias Gerbershagen** ([GitHub Profile](https://github.com/iesemtger))  
 - Abteilung Security Engineering, Fraunhofer IESE
   - **Denis Feth** ([GitHub Profile](https://github.com/denis-feth-iese))  
-  - **Philipp Neuschwander** 
+  - **Philipp Neuschwander** ([GitHub Profile](https://github.com/pneuschwander))
   - **Daniel Krohmer**  
 - Abteilung Digital Innovation Design, Fraunhofer IESE
   - **Patrick Mennig** 
