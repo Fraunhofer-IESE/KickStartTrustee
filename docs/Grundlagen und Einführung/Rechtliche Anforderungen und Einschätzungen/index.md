@@ -19,3 +19,15 @@ Anschließend zeigen wir diejenigen datenschutzrechtlichen Anforderungen auf, di
 Anschließend werden die Anforderungen des Data Governance Acts (DGA) an Datentreuhänder dargelegt.
 
 [Zu den Anforderungen aus dem DGA (Kapitel D)](DGA-Anforderungen)
+
+## Rechtliche Handreichungen
+
+Weitere Handreichen aus rechtlicher Perspektive:
+
+- [Umzusetzende Technische und Organisatorische Maßnahmen](TOM)
+- [Persönlicher Anwendungsbereich der DSGVO und des BDSG](<Anwendungsbereich DSGVO BDSG>)
+- [Relevante Rechtsgrundlagen zur Datenverarbeitung durch Datentreuhänder im Überblick](Rechtsgrundlagen) 
+- [Grundsätze der Verarbeitung personenbezogener Daten](<Verarbeitungsgrundsätze>)
+- [Abgrenzung zum Datenvermittlungsdienst](<Abgrenzung zum Datenvermittlungsdienst>)
+- [Baukastenmodell](Baukastenmodell)
+- [Datenverarbeitung](<Verarbeitung>)
