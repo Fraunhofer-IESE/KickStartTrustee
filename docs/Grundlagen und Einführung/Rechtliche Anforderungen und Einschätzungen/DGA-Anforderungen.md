@@ -310,11 +310,7 @@ Die private Rechtsdurchsetzung durch Dateninhaber, betroffene Personen, natürli
 
 Wettbewerber und Dritte können grundsätzlich bei der Verletzung bestimmter Pflichten aus Art. 12 DGA, z.B. lit. a), c) oder d), die grundsätzlich als Marktverhaltensregeln nach § 3a UWG einzustufen sind, Beseitigungs-, Unterlassungs- und Schadensersatzansprüche geltend machen, § 8 ff. UWG.[^589] Hier ist jedoch die sich mit der Zeit ergebende einschlägige Rechtsprechung abzuwarten. In diesem Zusammenhang kommen auch Unterlassungs- und Beseitigungsklagen von anspruchsberechtigten Stellen nach § 2 Abs. 1 UKlaG in Betracht, sofern verbraucherschützende Regelungen, wie Art. 12 lit. b), lit. m) und lit. n) DGA verletzt werden.
 
-<![if !supportFootnotes]>  
-
-----------
-
-
+# Fußnoten 
 
 [^481]: ErwGr. 3 S. 2 DGA; ErwGr. 5 S. 1 DGA.
 

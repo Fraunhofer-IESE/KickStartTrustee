@@ -1181,11 +1181,7 @@ Zur Steigerung des Vertrauens in solche einwilligungsverwaltenden Datentreuhänd
 
 [^18]:  Vgl. ErwGr. 51 DSGVO und Art. 4 Nr. 14 DSGVO sowie jedenfalls zum Personenbezug von Daten aus Bildaufnahmen: EuGH, Urt. v. 11.12.2014 – C-212/13 Tz. 22 – _Ryneš_; BVerwG, Urt. v. 27.03.2019 – 6 C 2.18, Tz. 43; Dammann, in: Simitis, BDSG, 7. Aufl. 2011, § 3 BDSG Rn. 22.
 
-[^19]:  Vgl.: _Klein_, es sei  auch die Qualität der Aufnahme im Einzelfall zu berücksichtigen, Personenbilder
-
-im Spannungsfeld von Datenschutzgrundverordnung und Kunsturhebergesetz, 2017,
-
-S. 20 f.
+[^19]:  Vgl.: _Klein_, es sei  auch die Qualität der Aufnahme im Einzelfall zu berücksichtigen, Personenbilder im Spannungsfeld von Datenschutzgrundverordnung und Kunsturhebergesetz, 2017, S. 20 f.
 
 [^20]:  vgl.: _Haustein_, in: Hilgendorf/Günther, Robotik und Gesetzgebung, 2013, S. 93, 107_; Weichert_, SVR 2014, 241, 246; zur Umfelderfassung im autonomen Fahrzeug: _Jensen/Gruschka/Lüssem_, in: Mayr/Pinzger, Informatik 2016, S. 441, 451; ähnlich: _Schwenke_, Private Nutzung von Smartglasses im öffentlichen Raum, 2016, S. 105; _Gaff_, Datenschutz bei Virtual und Augmented Reality, 2022, S. 171 ff.
 
@@ -1561,9 +1557,7 @@ Datenschutzgruppe, Stellungnahme 06/2014 zum Begriff des berechtigten Interesses
 
 [^201]:  _Gaff_, Datenschutz bei Virtual und Augmented Reality, 2022, S. 234.
 
-[^202]:  Welches Alter hierfür vorliegen muss, geht aus der DSGVO nicht hervor. Nach Art. 8 Abs. 1 S. 1
-
-DS-GVO ist „_bei einem Angebot von Diensten der Informationsgesellschaft, das einem Kind direkt gemacht wird, dessen Einwilligung nach Art. 6 Abs. 1 S. 1 lit. a) DS-GVO dann rechtmäßig, wenn es das sechszehnte Lebensjahr vollendet hat_“. Allerdings gilt diese Altersgrenze nur für den dort speziell geregelten Fall, sodass hieraus nicht der Schluss gezogen werden kann, dass betroffene Personen zwischen dem 16. und 18. Lebensjahr keine Kinder sind. Insoweit ist darauf abzustellen, dass es sich bei der betroffenen Person um Kind handelt, wenn es das 18. Lebensjahr nicht vollendet hat, vgl.: Roßnagel, ZD 2020, 88, 89.
+[^202]:  Welches Alter hierfür vorliegen muss, geht aus der DSGVO nicht hervor. Nach Art. 8 Abs. 1 S. 1 DS-GVO ist „_bei einem Angebot von Diensten der Informationsgesellschaft, das einem Kind direkt gemacht wird, dessen Einwilligung nach Art. 6 Abs. 1 S. 1 lit. a) DS-GVO dann rechtmäßig, wenn es das sechszehnte Lebensjahr vollendet hat_“. Allerdings gilt diese Altersgrenze nur für den dort speziell geregelten Fall, sodass hieraus nicht der Schluss gezogen werden kann, dass betroffene Personen zwischen dem 16. und 18. Lebensjahr keine Kinder sind. Insoweit ist darauf abzustellen, dass es sich bei der betroffenen Person um Kind handelt, wenn es das 18. Lebensjahr nicht vollendet hat, vgl.: Roßnagel, ZD 2020, 88, 89.
 
 [^203]:  Vgl. ErwGr. 38 S. 1 DSGVO; Art.-29-Datenschutzgruppe, Stellungnahme 06/2014 zum Begriff des berechtigten Interesses des für die Verarbeitung Verantwortlichen gemäß Artikel 7 der Richtlinie 95/46/EG, WP 217, S. 52; _Robrahn/Bremert_, ZD 2018, 291, 292 f.; _Roßnagel_, ZD 2020, 88, 89; Art.-29-Datenschutzgruppe, Arbeitspapier 1/2008 zum Schutz der personenbezogenen Daten von Kindern, WP 147, S. 2.
 
@@ -1694,9 +1688,7 @@ DS-GVO ist „_bei einem Angebot von Diensten der Informationsgesellschaft, das 
 
 [^266]:  Siehe nur ErwGr. 51, Art. 9 Abs. 1 DSGVO (sog. absolutes Verarbeitungsverbot).
 
-[^267]:  Siehe auch: _Albrecht_, CR 2016, 88, 94, 96. Die Erstellung eines Verarbeitungsverzeichnisses trotz
-
-grundsätzlicher Privilegierung von kleinen und mittleren Unternehmen nach Art. 30 Abs. 5 DS-GVO, die Datenschutzfolgen-Abschätzung nach Art. 35 Abs. 3 lit. b) DS-GVO oder die Benennung eines Datenschutzbeauftragten nach Art. 37 Abs. 1 lit. c) DS-GVO sind einige Beispiele für den erhöhten Schutz sensibler Daten.
+[^267]:  Siehe auch: _Albrecht_, CR 2016, 88, 94, 96. Die Erstellung eines Verarbeitungsverzeichnisses trotz grundsätzlicher Privilegierung von kleinen und mittleren Unternehmen nach Art. 30 Abs. 5 DS-GVO, die Datenschutzfolgen-Abschätzung nach Art. 35 Abs. 3 lit. b) DS-GVO oder die Benennung eines Datenschutzbeauftragten nach Art. 37 Abs. 1 lit. c) DS-GVO sind einige Beispiele für den erhöhten Schutz sensibler Daten.
 
 [^268]:  Dahingehend wohl auch: _Weichert_, in: Kühling/Buchner, DSGVO BDSG, 3. Aufl. 2020, Art. 9 Rn. 3.
 
