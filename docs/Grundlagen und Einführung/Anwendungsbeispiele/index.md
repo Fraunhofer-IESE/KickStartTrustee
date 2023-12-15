@@ -1,4 +1,4 @@
-# Anwendungsbeispiele
+# ![](../../assets/images/bulb.svg) Anwendungsbeispiele
 Im folgenden werden verschiedene Anwendungsbeispiele für einen Datentreuhänder oder ein Projekt zur Erstellung dessen aufgeführt, die durch Interviews, Umfragen oder andere Recherchen erhoben wurden.
 Zum Zeitpunkt der Untersuchung befinden sich manche Projekte noch in ein einer relativ frühen Phase, weshalb zu manchen Punkten noch keine Aussagen getroffen werden können. In diesen Fällen wird dies durch  :no_entry:  entsprechend gekennzeichnet.
 
@@ -23,19 +23,15 @@ Jedes Anwendungsbeispiel wird anhand folgender Struktur beschrieben:
 
 ## Anwendungsbeispiele
 
-### Domänenübergreifende Datentreuhänder
-- [DDtrust Dresden Data Trust Center](<Domänenübergreifend/DDtrust Dresden Data Trust Center/>)
-- [Personal Information Management Systeme (PIMS)](<Domänenübergreifend/Personal Information Management Systeme (PIMS)>)
-
-### Energie
+### ![](../../assets/images/bolt.svg) Energie
 - [FAIRWinDS](Energie/FAIRWinDS/)
 
-### Finanzen
+### ![](../../assets/images/euro-sign.svg) Finanzen
 - [EuroDaT - Umsetzung des EU Data Governance Acts](<Finanzen/EuroDaT - Umsetzung des EU Data Governance Acts>)
 - [MANDAT](Finanzen/MANDAT/)
 - [safeFDBC](<Finanzen/safeFDBC - KI-getriebene Datentreuhänder im Finanzsektor>)
 
-### Infrastruktur
+### ![](../../assets/images/road-bridge.svg) Infrastruktur
 - [TreuMoDa](Infrastruktur/TreuMoDa)
 - [MobiDataSol](Infrastruktur/MobiDataSol)
 - [Logistik](Infrastruktur/Logistik)
@@ -43,13 +39,17 @@ Jedes Anwendungsbeispiel wird anhand folgender Struktur beschrieben:
 - [Caruso](Infrastruktur/Caruso)
 - [(Fiktiv) Vernetzte Mobilität](<Infrastruktur/(Fiktiv) Vernetzte Mobilität>)
 
-### Land- und Forstwirtschaft
+### ![](../../assets/images/wheat-awn.svg) Land- und Forstwirtschaft
 
 - [S3I-X: Trusted Data Exchange and Analytics](<Land- und Forstwirtschaft/S3I-X Trusted Data Exchange and Analytics>)
 
-### Medizin
+### ![](../../assets/images/user-doctor.svg) Medizin
 
 - [DaRe](DaRe)
 - [Elektronische Patientenakte (ePA)](<Medizin/Elektronische Patientenakte (ePA)>)
 - [Forschungskompatibilität](Medizin/Forschungskompatibilit%C3%A4t)
 - [Telematikinfrastruktur](Medizin/Telematikinfrastruktur)
+
+### ![](../../assets/images/shuffle.svg) Domänenübergreifende Datentreuhänder
+- [DDtrust Dresden Data Trust Center](<Domänenübergreifend/DDtrust Dresden Data Trust Center/>)
+- [Personal Information Management Systeme (PIMS)](<Domänenübergreifend/Personal Information Management Systeme (PIMS)>)
