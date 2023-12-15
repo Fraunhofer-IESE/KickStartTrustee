@@ -247,9 +247,9 @@ Die folgende Liste ist nicht notwendigerweise vollständig, aber umfasst "Zusatz
 
 Die folgende Abbildung fasst alle Ebenen und Kategorien zusammen.
 
-<img src='Landkarte.png' width=500>[PDF](Landkarte.pdf)
+<img src='Landkarte.png'>[PDF](Landkarte.pdf)
 
 ## Beispiel TreuMoDa:
 TreuMoDa setzt eine Zugangstreuhand als zentralen Router um mit dem Ziel die Daten wirtschaftlich und wissenschaftlich verwertbar zu machen. Dabei werden Daten von Unternehmen und Forschungseinrichtungen an Unternehmen, die öffentliche Verwaltung und andere Forschungseinrichtungen vermittelt. Für diese Vermittlung zahlt der Datennutzer sowie Dritte. Die Daten sind individuell schützenswert und personenbezogen und werden daher bei der Vermittlung anonymisiert.
 
-<img src='Landkarte%20Beispiel.png' width=500>[PDF](Landkarte%20Beispiel.pdf)
+<img src='Landkarte%20Beispiel.png'>[PDF](Landkarte%20Beispiel.pdf)
