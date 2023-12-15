@@ -1,5 +1,4 @@
-
-# Einleitung
+# Datentreuhänder-Landkarte
 
 Aus unserer bewusst recht abstrakten Definition geht bereits hervor, das Datentreuhandmodelle sich stark von einander unterscheiden - je nach der konkreten Domäne und dem konkreten Anwendungsfall. Die verschiedenen Ausprägungen oder Archetypen von Datentreuhändern, die sich in einzelnen Funktionen und Fähigkeiten unterscheiden, wollen wir in dieser "Landkarte" einordnen. Dazu stellen wir die verschiedenen Unterscheidungsmerkmale vor und ordnen reale Datentreuhandmodelle in die jeweiligen Kategorien ein. Die Landkarte soll also einen Überblick ermöglichen, Beispiele aufzeigen und als Grundlage zur Einordnung des eigenen, anvisierten Datentreuhandmodells dienen.
 

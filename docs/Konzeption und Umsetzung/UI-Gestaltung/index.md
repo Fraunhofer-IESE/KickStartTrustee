@@ -1,5 +1,4 @@
-
-# UI-Mockups
+# UI-Gestaltung
 
 Beim entwickeln von DTH-Plattformen ist das eigentliche Produkt, dass der Nutzer/Mensch sieht das User Interface, also die grafische Benutzeroberfläche. Die Konzepte und Prinzipien des UX- und UI-Design, die für andere Anwendungen gelten, gelten genauso auch für DTH.
 
