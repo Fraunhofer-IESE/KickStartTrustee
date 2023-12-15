@@ -45,7 +45,7 @@ Jedes Anwendungsbeispiel wird anhand folgender Struktur beschrieben:
 
 ### ![](../../assets/images/user-doctor.svg) Medizin
 
-- [DaRe](DaRe)
+- [DaRe](Medizin/DaRe)
 - [Elektronische Patientenakte (ePA)](<Medizin/Elektronische Patientenakte (ePA)>)
 - [Forschungskompatibilität](Medizin/Forschungskompatibilit%C3%A4t)
 - [Telematikinfrastruktur](Medizin/Telematikinfrastruktur)
