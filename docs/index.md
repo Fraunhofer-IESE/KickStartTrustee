@@ -5,6 +5,7 @@ Datentreuhänder (engl. Data Trustees) sollen einen vertrauensvollen Austausch z
 Dieser klärt diverse Begrifflichkeiten und enthält eine Reihe von Methoden und Werkzeugen, die in allen Phasen der Umsetzung von Datentreuhändern unterstützen – von der Vision bis zum Betrieb. Dabei gehen wir insbesondere auf die Herausforderungen von unterschiedlichen Domänen ein. Der Leitfaden ist aufgebaut nach den Phasen und Prozessschritten, die für die Realisierung eines Datentreuhänders durchlaufen werden. Die folgende Grafik gibt eine Übersicht über den Leitfaden:
 
 ![](<./assets/images/Übersichtsgrafik.png>)
+[PDF](<./assets/images/Übersichtsgrafik.pdf>)
 
 ## ![](./assets/images/play.svg) Grundlagen und Einführung
 Dieses Kapitel soll ein grundlegendes Verständnis des Bereichs "Datentreuhänder" schaffen. Dazu gehören allgemeine Begriffsklärungen, die Unterscheidung verschiedener Datentreuhänderarten, Anwendungsbeispiele sowie die rechtliche Einordnung. Außerdem soll in dieser Phase der Leitfaden und dessen Vorteile und Anwendung motiviert und vermittelt werden.
