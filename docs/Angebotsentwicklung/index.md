@@ -1,4 +1,4 @@
-# Angebotsentwicklung
+# ![](../assets/images/star.svg) Angebotsentwicklung
 
 Dieses Kapitel unterstützt Personen oder Unternehmen, die daran interessiert sind selbst ein Datentreuhand-Modell anzubieten, dabei eine Vision und Mission zu erarbeiten, sich selbst in die Landkarte einzuordnen und DTHs frühzeitig ihre Tragfähigkeit zu bewerten. Dazu bietet das Framework entsprechende Methoden und Tools.
 

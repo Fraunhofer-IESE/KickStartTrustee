@@ -1,4 +1,4 @@
-# Grundlagen und Einführung
+# ![](./assets/images/play.svg) Grundlagen und Einführung
 
 Dieses Kapitel soll ein grundlegendes Verständnis für Datentreuhandmodelle. Dazu gehören allgemeine Begriffsklärungen, die Unterscheidung verschiedener Datentreuhänderarten, Anwendungsbeispiele sowie die rechtliche Einordnung. Außerdem soll in dieser Phase das Framework und dessen Vorteile und Anwendung motiviert und vermittelt werden. Dazu bietet das Framework zu allen genannten Punkte entsprechende Wissensdokumente.
 

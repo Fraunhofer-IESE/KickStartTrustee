@@ -1,4 +1,4 @@
-# Konzeption und Umsetzung
+# ![](../assets/images/gears.svg) Konzeption und Umsetzung
 Dieses Kapitel widmet sich der (technischen) Umsetzung der Datentreuhandlösung. Dazu bietet der Leitfaden grundlegende Bausteine und methodische Unterstützung zur Erhebung, Konzeption und Erstellung von Anforderungen, Softwarearchitektur, Sicherheitsmaßnahmen. Der Leitfaden unterstützt außerdem bei der Auswahl der geeigneten Grundlagentechnologieen und stellt generische Software- und UI-Komponenten bereit.
 
 ## ![](../assets/images/list-check.svg) Generischer Anforderungskatalog
