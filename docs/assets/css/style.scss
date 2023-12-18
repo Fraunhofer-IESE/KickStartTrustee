@@ -12,12 +12,16 @@ $section-headings-color: #005b7f;
 	max-width: 96rem;
 }
 
-.sidebar {
-	position: fixed;
-	z-index: 1;
-	width: 16rem;
+.breadcrumbs ul {
+	list-style: none;
 }
 
-.current {
-	color: #0bb2ac;
+.breadcrumbs li {
+	display: inline;
+}
+
+.breadcrumbs li+li:before {
+	padding: 1rem;
+	color: black;
+	content: "/\00a0";
 }
