@@ -4,7 +4,8 @@
 
 Das Schaubild stellt die Verarbeitungsschritte im rechtlichen Sinne dar und enthält keine Vorgaben an die technische Ge-staltung des Systems.
 
-![](<Verarbeitung im Grundlagen-Layer.png>)
+<img src="Verarbeitung%20im%20Grundlagen-Layer.png" width="61%"/>
+
 [PDF](<Verarbeitung im Grundlagen-Layer.pdf>)
 
 ## Datenverarbeitung ergänzt um mögliche Funktions-Layer
