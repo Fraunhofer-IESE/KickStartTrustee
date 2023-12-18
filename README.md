@@ -13,4 +13,4 @@ We are using markdown pages to document the framework. Those pages will be rende
 
 ### Breadcrumbs
 
-The cayman does not support additional navigation bars or breadcrumbs in the layout template. In order to support and include breadcrumbs, the default template of the theme has copied to /docs/_layouts/default.html. The breadcrumb template is located /docs/_includes/breadcrumbs.html.
+The cayman theme does not support additional navigation bars or breadcrumbs in its layout template. In order to support and include breadcrumbs, the default template of the theme has copied to /docs/_layouts/default.html. The breadcrumb template is located /docs/_includes/breadcrumbs.html. In case of a theme layout change, one needs to adapt our copied default template accordingly.
