@@ -14,7 +14,7 @@
 
 <a name="ueberschrift"></a>
 
-Die hier dargestellten Inhalte stellen einen Überblick über verschiedene generische Anforderungen an ein Datentreuhändermodell dar, die im Rahmen des Projektes erhoben wurden. Sie basieren auf den durchgeführten Experteninterviews, aus denen verschiedene Inhalte extrahiert und anschließend verfeinert wurden. Die Anforderungen werden als generisch bezeichnet, da sie für die meisten Arten von Datentreuhändern relevant sind und somit eine Basis für weitere Erhebungen und Workshops darstellen. Vorschläge, wie weitere Inhalte erarbeitet werden können, finden sich unter [Methoden zur Erhebung domänenspezifischer Anforderungen](<../Methoden zur Erhebung domänenspezifischer Anforderungen/index.md>). Bei der Erhebung der Daten kam es vereinzelt zu Widersprüchen zwischen den Experten und den daraus abgeleiteten Anforderungen. Die Daten sind daher mit Vorsicht zu betrachten und für den Anwendungsfall zu validieren.
+Die hier dargestellten Inhalte stellen einen Überblick über verschiedene generische Anforderungen an ein Datentreuhändermodell dar, die im Rahmen des Projektes erhoben wurden. Sie basieren auf den durchgeführten Experteninterviews, aus denen verschiedene Inhalte extrahiert und anschließend verfeinert wurden. Die Anforderungen werden als generisch bezeichnet, da sie für die meisten Arten von Datentreuhändern relevant sind und somit eine Basis für weitere Erhebungen und Workshops darstellen. Vorschläge, wie weitere Inhalte erarbeitet werden können, finden sich unter [Methoden zur Erhebung domänenspezifischer Anforderungen](<../Methoden zur Erhebung domänenspezifischer Anforderungen/>). Bei der Erhebung der Daten kam es vereinzelt zu Widersprüchen zwischen den Experten und den daraus abgeleiteten Anforderungen. Die Daten sind daher mit Vorsicht zu betrachten und für den Anwendungsfall zu validieren.
 
 Folgende Inhalte finden sich auf dieser Seite:
 
@@ -58,7 +58,7 @@ Bei den bei den durchgeführten Erhebung war es zu meist möglich bestimmte Inha
 
 Durch diese Zuordnung wird es den Lesern des Dokumentes erleichtert, relevante Inhalte für ihren Datentreuhänder zu identifizieren, die sich einer gewissen Domäne zugehörig fühlen.
 
-Weitere Details finden Sie [hier](Dom%C3%A4nen.md).
+Weitere Details finden Sie [hier](Dom%C3%A4nen).
 
 <a name="interviews"></a>
 ### Interviews
@@ -66,49 +66,49 @@ Weitere Details finden Sie [hier](Dom%C3%A4nen.md).
 Zur Erhebung der Daten wurden Interviews mit verschiedensten Experten unterschiedlicher Domänen durchgeführt. Basierend auf diesen Daten wurden die verschiedenen Kategorien abgeleitet und Zugehörigkeiten bestimmt. Insgesamt wurden 13 Interviews mit ein oder mehreren Experten durchgeführt. Die Struktur der durchgeführten Interviews findet sich hier: 
 [Interviewleitfragen_Template](Dateien/Interviewleitfragen_Template.docx)
 
-Weitere Details finden Sie [hier](Interviews.md).
+Weitere Details finden Sie [hier](Interviews).
 
 <a name="potentiale"></a>
 ### Potentiale
 
 Potentiale beschreiben positive Chancen, die die Verwendung eines Datentreuhänders für verschiedenste Parteien bringen kann. Es kann sich dabei um positive Effekte für einzelne Personen handeln oder auch um positive Effekte für ganze Systeme. Potentiale wurden direkt von den Interviews abgeleitet.
 
-Weitere Details finden Sie [hier](Potentiale.md).
+Weitere Details finden Sie [hier](Potentiale).
 
 <a name="herausforderungen"></a>
 ### Herausforderungen
 
 Doch genauso wie es Potentiale für Datentreuhänder gibt, entstehen auch viele Herausforderungen, die in verschiedensten Phasen auftreten und das Team vor Probleme stellen. Herausforderungen können bereits bei der Erhebung und Erstellung des Datentreuhänders bestehen, während andere die Einführung und Akzeptanz verkomplizieren. Die dargestellten Inhalte stellen nicht alle möglichen Herausforderungen dar, doch bilden sie einen Überblick über mögliche Problempunkte und können Entwickler und Projektmanager darin unterstützen diese möglichst früh zu erkennen und zu beheben.
 
-Weitere Details finden Sie [hier](Herausforderungen.md).
+Weitere Details finden Sie [hier](Herausforderungen).
 
 <a name="eigenschaften"></a>
 ### Eigenschaften
 
 Die Eigenschaften eines Datentreuhänders bilden sich hauptsächlich aus den durchgeführten Interviews, wo die Experten gebeten wurden Datentreuhänder und ihre Eigenschaften zu beschreiben. Die Uneinigkeiten in gewissen Themenbereichen treten in diesem Kapitel besonders hervor und sollten für jeden konkreten Fall eruiert werden.
 
-Weitere Details finden Sie [hier](Eigenschaften.md).
+Weitere Details finden Sie [hier](Eigenschaften).
 
 <a name="qualitaetsanforderungen"></a>
 ### Qualitätsanforderungen
 
 Wie bei jeder Software, gibt es auch bei einem Datentreuhänder Qualitätsanforderungen, die eingehalten oder zumindest bedacht werden sollten bei der Entwicklung. Datenintegrität ist beispielsweise ein Attribut, dass in jedem Fall gegeben sein sollte, um unrechtmäße Veränderungen zu verhindern.
 
-Weitere Details finden Sie [hier](Qualit%C3%A4tsanforderungen.md).
+Weitere Details finden Sie [hier](Qualit%C3%A4tsanforderungen).
 
 <a name="anforderungen"></a>
 ### Anforderungen
 
 Die Anforderungen an einen Datentreuhänder beschäftigen sich in vielen Aspekten mit dem Verwalten von Daten, die sich zum Teil an die Qualitätsanforderungen anschließen, aber auch eigene Themenfelder eröffnen. Weitere Details und Verknüpfungen finden sich im Kapitel Anforderungen dieser Seite in Form eines Bildes und zwei Excel-Dateien.
 
-Weitere Details finden Sie [hier](DTH-Anforderungen.md).
+Weitere Details finden Sie [hier](DTH-Anforderungen).
 
 <a name="systemanforderungen"></a>
 ### Systemanforderungen
 
 Anforderungen haben teilweise nicht genug technische Informationen, um das System ausreichend zu beschreiben. Systemanforderungen begeben sich etwas tiefer in die Materie und machen Anforderungen konkreter. Sie basieren somit in der Regel auf (DTH-)Anforderungen, welche durch diese Systemanforderungen umgesetzt werden.
 
-Weitere Details finden Sie [hier](Systemanforderungen.md).
+Weitere Details finden Sie [hier](Systemanforderungen).
 
 Die Informationen können Sie sich auch als Word, Excel oder PDF herunterladen:
 - [KickStartTrusteeExport.docx](Dateien/KickStartTrustee_AnforderungenExport.docx)
