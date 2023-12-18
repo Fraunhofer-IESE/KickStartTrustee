@@ -12,3 +12,12 @@ $section-headings-color: #005b7f;
 	max-width: 96rem;
 }
 
+.sidebar {
+	position: fixed;
+	z-index: 1;
+	width: 16rem;
+}
+
+.current {
+	color: #0bb2ac;
+}
