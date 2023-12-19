@@ -1,4 +1,4 @@
-# 1. Struktur eines DTH User Interface
+# 1. Struktur der DTH-Benutzeroberfläche
 
 ## Das Grundkonzept
 

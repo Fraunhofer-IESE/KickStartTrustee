@@ -1,4 +1,4 @@
-# 3. Design-Prinzipien für das Erstellen von DTH-Plattformen
+# 3. Beispielhafte Benutzeroberfläche
 
 Diese Tabelle bietet eine Gesamtübersicht über den UI Prototypen, die in UI-Mockups vorgestellt wird.  
   

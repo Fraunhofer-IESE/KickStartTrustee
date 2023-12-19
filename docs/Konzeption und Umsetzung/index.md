@@ -4,7 +4,7 @@ Dieses Kapitel widmet sich der (technischen) Umsetzung der Datentreuhandlösung.
 ## ![](../assets/images/list-check.svg) Generischer Anforderungskatalog
 Datentreuhänder unterscheiden sich natürlich je nach Domäne und konkreter Mission. Dennoch gibt es diverse Gemeinsamkeiten, bzw. wiederkehrende Muster, die sogenannten Varianten. Dieser Katalog generischer Anforderungen ermöglicht es, einen gewissen Teil der Anforderungen direkt zu verwenden und so die Arbeit ihrer Erhebung zu sparen. Die Anforderungen wurden aus der Literaturrecherche, den Anwendungsbeispielen und Interviews abgeleitet.
 
-[Zum Anforderungskatalog](<Generischer Anforderungskatalog>)
+[Zum generischen Anforderungskatalog](<Generischer Anforderungskatalog>)
 
 ## ![](../assets/images/person-chalkboard.svg) Methoden zur Erhebung domänenspezifischer Anforderungen
 Auch wenn der generische Anforderungskatalog bereits viele Anforderungen beinhaltet, muss immer ergänzend eine individuelle Anforderungserhebung durchgeführt werden.  Diese individuelle Anforderungserhebung ermöglicht nicht nur die Berücksichtigung der spezifischen Anforderungen an die DTH-Lösung, sondern ist auch notwendig, um Entscheidung über optionale und alternative Anforderungen zu treffen.
@@ -32,4 +32,4 @@ Beim entwickeln von DTH-Plattformen ist das eigentliche Produkt, dass der Nutzer
 
 Beim entwickeln des UX-Konzepts und den daraus resultierenden User Interfaces ist es wichtig den Anwender und den Kontext ganzheitlich zu betrachten. Ein genaues Verständnis darüber, was für den Anwender entscheidend ist, führt zu einem guten Bedienkonzept. Im Falle einer DTH-Plattform stehen zwei Aspekte dabei stark im Vordergrund: Vertrauen und Sicherheit. Wenn ein Anwender die Plattform verwenden soll, muss er der Plattform vertrauen. Es gilt herauszufinden, wie dieses Vertrauen in der Domäne bzw. dem Nutzungskontext des DTH erzeugt werden kann. Erreicht wird dies über eine ausführliche Nutzer- bzw. Kontextanalyse und den daraus resultierenden, relevanten Funktionen und dem richtigen Einsatz der Usability Heuristiken und Design Prinzipien für den Kontext DTH-Plattform.
 
-[Zur den UI-Konzepten](<UI-Gestaltung>)
+[Zur UI-Gestaltung](<UI-Gestaltung>)

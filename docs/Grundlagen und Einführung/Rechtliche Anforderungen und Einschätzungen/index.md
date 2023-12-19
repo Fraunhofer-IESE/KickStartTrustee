@@ -9,13 +9,13 @@ Dazu leiten wir zunächst in die Thematik ein und beschreiben unsere Methodik.
 
 [Zur Einleitung (Kapitel A) und Methodik (Kapitel B)](Einleitung) 
 
-## Datenschutzrechtliche Anforderungen
+## Datenschutzrechtliche Anforderungen an die Datentreuhand: Grundlagen-und Funktions-Layer
 
 Anschließend zeigen wir diejenigen datenschutzrechtlichen Anforderungen auf, die für die Datentreuhand im Grundlagen- und Funktions-Layer gelten und deren Beachtung zentral für den praktischen Einsatz der Datentreuhand ist. Denn der Erfolg einer Datentreuhand hängt maßgeblich davon ab, ob und unter welchen Bedingungen sie datenschutzrechtskonform angewendet werden kann. Dabei wird auch auf die Vorgaben des TTDSG abgestellt, die für bestimmte Datentreuhandmodelle gelten. 
 
-[Zu den datenschutzrechtlichen Anforderungen (Kapitel C)](Datenschutzrechtliche%20Anforderungen)
+[Zu den datenschutzrechtlichen Anforderungen an die Datentreuhand (Kapitel C)](Datenschutzrechtliche%20Anforderungen)
 
-## Anforderungen des Data Governance Acts
+## DGA-Anforderungen an die Datentreuhand
 Anschließend werden die Anforderungen des Data Governance Acts (DGA) an Datentreuhänder dargelegt.
 
 [Zu den Anforderungen aus dem DGA (Kapitel D)](DGA-Anforderungen)
