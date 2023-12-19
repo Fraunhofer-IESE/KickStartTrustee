@@ -4,7 +4,25 @@ Datentreuhänder (engl. Data Trustees) sollen einen vertrauensvollen Austausch z
 
 Dieser klärt diverse Begrifflichkeiten und enthält eine Reihe von Methoden und Werkzeugen, die in allen Phasen der Umsetzung von Datentreuhändern unterstützen – von der Vision bis zum Betrieb. Dabei gehen wir insbesondere auf die Herausforderungen von unterschiedlichen Domänen ein. Der Leitfaden ist aufgebaut nach den Phasen und Prozessschritten, die für die Realisierung eines Datentreuhänders durchlaufen werden. Die folgende Grafik gibt eine Übersicht über den Leitfaden:
 
-![](<./assets/images/Übersichtsgrafik.png>)
+<style>
+	.image{
+	  position: relative;
+	  width: 100%; 
+	}
+	.image a{
+	  display: block;      
+	  position: absolute;
+	}
+</style>
+<div class="image">
+	<img src="./assets/images/Übersichtsgrafik.png" style="width: 100%; height:auto;"/>
+	<a href="https://www.kickstarttrustee.de/" style="top: 37%; left: 5%; width: 17%; height: 57%;"></a>
+	<a href="Grundlagen%20und%20Einf%C3%BChrung" style="top: 6.5%; left: 23%; width: 17%; height: 57%;"></a>
+	<a href="Angebotsentwicklung" style="top: 37%; left: 41%; width: 17%; height: 57%;"></a>
+	<a href="Konzeption%20und%20Umsetzung" style="top: 6.5%; left: 60%; width: 17%; height: 57%;"></a>
+	<a href="Markteinf%C3%BChrung" style="top: 37%; left: 78%; width: 17%; height: 57%;"></a>
+</div>
+
 [PDF](<./assets/images/Übersichtsgrafik.pdf>)
 
 ## ![](./assets/images/play.svg) Grundlagen und Einführung
