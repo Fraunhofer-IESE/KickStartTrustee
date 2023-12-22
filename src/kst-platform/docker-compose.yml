@@ -1,0 +1,68 @@
+version: '3'
+services:
+  postgres-keycloak:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: 'keycloak'
+      POSTGRES_PASSWORD: 'secret'
+      POSTGRES_DB: 'keycloak'
+    expose:
+      - 5432
+    volumes:
+      - keycloak-data-volume:/var/lib/postgresql/data
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    command: start-dev
+    depends_on:
+      - postgres-keycloak
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: secret
+      KC_HEALTH_ENABLED: 'true'
+      KC_HTTP_ENABLED: 'true'
+      KC_HOSTNAME_STRICT: 'false'
+      KC_DB: postgres
+      KC_DB_URL_HOST: 'postgres-keycloak'
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_SCHEMA: public
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: secret
+    ports:
+      - "8080:8080"
+
+  mongo-kickstarttrustee-server:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - server-data-volume:/data/db
+
+  mailhog-kickstarttrustee-server:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  # kickstarttrustee-server:
+  #   image: kickstarttrustee/kickstarttrustee/server:main
+  #   depends_on:
+  #     - keycloak
+  #     - mongo-kickstarttrustee-server
+  #   environment:
+  #     KEYCLOAK_URL: http://keycloak:8080
+  #     KEYCLOAK_ADMIN-CREDENTIALS_CLIENT-SECRET: replace-with-your-client-secret
+  #     SPRING_DATA_MONGODB_HOST: mongo-kickstarttrustee-server
+  #   ports:
+  #     - 8090:8090
+
+  # kickstarttrustee-ui:
+  #   image: kickstarttrustee/kickstarttrustee/ui:main
+  #   depends_on:
+  #     - keycloak
+  #   ports:
+  #     - 3000:80
+
+volumes:
+  keycloak-data-volume:
+  server-data-volume:

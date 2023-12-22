@@ -1,0 +1,15 @@
+{
+  "name": "owner-api",
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16 <19"
+  },
+  "scripts": {
+    "generate-owner-api": "del-cli generated/owner-api/ && openapi-generator-cli generate -i api-docs.json -g typescript-fetch -c openapi-options.json -o generated/owner-api/ && cd generated/owner-api/ && npm install && npm run build"
+  },
+  "devDependencies": {
+    "del-cli": "^5.0.0",
+    "@openapitools/openapi-generator-cli": "^2.5.2"
+  }
+}

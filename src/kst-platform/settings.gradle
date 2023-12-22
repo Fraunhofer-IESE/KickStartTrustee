@@ -1,0 +1,22 @@
+rootProject.name = 'kickstarttrustee'
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            version('springDoc', '1.7.0')
+            library('springdoc-openapi-webflux-core', 'org.springdoc', 'springdoc-openapi-webflux-core').versionRef('springDoc')
+            library('springdoc-openapi-webflux-ui', 'org.springdoc', 'springdoc-openapi-webflux-ui').versionRef('springDoc')
+            library('springdoc-openapi-security', 'org.springdoc', 'springdoc-openapi-security').versionRef('springDoc')
+        }
+    }
+}
+
+include 'common'
+include 'data-catalog'
+include 'data-control:audit'
+include 'data-control:consent'
+include 'data-storage'
+include 'event'
+include 'notification'
+include 'owner'
+include 'server'

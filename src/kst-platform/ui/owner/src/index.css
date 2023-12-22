@@ -1,0 +1,16 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    height: 100vh;
+
+    --mui-palette-primary-main: #245a7c;
+    --mui-palette-primary-light: #4f7b96;
+    --mui-palette-primary-dark: #193e56;
+    --mui-palette-secondary-main: #48b7ef;
+    --mui-palette-secondary-light: #6cc5f2;
+    --mui-palette-secondary-dark: #3280a7;
+}
+
+#root {
+    height: 100%;
+}

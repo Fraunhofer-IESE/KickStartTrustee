@@ -1,0 +1,13 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.18' apply false
+    id 'io.spring.dependency-management' version '1.1.4' apply false
+    id "com.github.spotbugs" version "5.2.5" apply false
+}
+
+ext['spring-security.version']='5.8.9'
+ext['spring-framework.version'] = '5.3.31'
+ext['reactor-bom.version'] = '2020.0.39'
+
+subprojects {
+    tasks.register("allDeps", DependencyReportTask) {}
+}
