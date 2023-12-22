@@ -32,7 +32,7 @@ Our own developed set of modules that make up the system can be used by develope
 
 ### References to detailed requirements documents
 
-The requirements document can be found here: [Generischer Anforderungskatalog](????????)
+The requirements document can be found here: [Generischer Anforderungskatalog](</docs/Konzeption und Umsetzung/Generischer Anforderungskatalog/>)
 
 ### Key Terms and Entities
 

@@ -17,7 +17,7 @@
 
 ## Key Functional Requirements
 
-[!IMPORTANT] This is not a requirements document. Therefore the list is not complete; it contains the key functional requirements only. Requirements which have low or no impact on the architecture are not listed here.  
+[NOTE] This is not a requirements document. Therefore the list is not complete; it contains the key functional requirements only. Requirements which have low or no impact on the architecture are not listed here.  
 
 _KST Platform_ should:
 

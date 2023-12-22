@@ -27,8 +27,8 @@ We made this design decision for multiple reasons:
 - Ensure that the provided data conforms to a certain structure.
 - Provide reliability for the Data Consumers with regard to the structure and semantics of the consumed data.
 
-For technical details about how to configure the supported data item types in our  _KST Platform_, please have a look at  [TODO]()
+For technical details about how to configure the supported data item types in our _KST Platform_, please have a look at  [TODO]()
 
 ## Consent Management
 
-Please have a look at the [Consent Management]() for details.
+Please have a look at the [Consent Management](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Architecture Document/Quality Concepts/Security Concepts/Consent Management/>) for details.
