@@ -32,6 +32,10 @@ import Home from "./views/root/home/Home";
 import Profile from "./views/root/profile/Profile";
 import RootView, { rootAction, rootLoader } from "./views/root/RootView";
 import { useMemo } from "react";
+import DiseaseWarningView, {
+  diseaseWarningAction,
+  diseaseWarningLoader,
+} from "./views/root/service/DiseaseWarningView";
 import { APP_BASE_PATH } from "./config/AppConfig";
 import DataListView, { dataListLoader } from "./views/root/data/DataListView";
 import DataErrorView from "./views/root/data/DataErrorView";
@@ -150,7 +154,14 @@ function App() {
               },
               {
                 path: "service",
-                children: [],
+                children: [
+                  {
+                    path: "disease-warning",
+                    loader: diseaseWarningLoader,
+                    action: diseaseWarningAction,
+                    element: <DiseaseWarningView />,
+                  },
+                ],
               },
               {
                 path: "profile",

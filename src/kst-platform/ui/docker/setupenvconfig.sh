@@ -26,6 +26,10 @@ cat <<EOF > /var/www/html/owner/config.json
     "keycloakRealm": "${KEYCLOAK_REALM}",
     "keycloakClientId": "${KEYCLOAK_CLIENT_ID}",
     "kstApiBasePath": "${KST_API_BASE_PATH}",
-    "kstServices": []
+    "kstServices": [{
+        "id": "disease_warning_service",
+        "nameMessageId": "service_disease_warning_name",
+        "route": "/disease-warning"
+    }]
 }
 EOF

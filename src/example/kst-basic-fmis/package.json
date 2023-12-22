@@ -1,0 +1,70 @@
+{
+  "name": "kst-basic-fmis",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@fontsource/open-sans": "^4.5.14",
+    "@geoman-io/leaflet-geoman-free": "^2.14.2",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.15",
+    "@mui/x-data-grid": "^6.3.1",
+    "@mui/x-date-pickers": "^6.3.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^18.19.2",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "dayjs": "^1.11.7",
+    "keycloak-js": "^20.0.5",
+    "kst-api": "file:./kst-api/generated/kst-api/dist",
+    "leaflet": "^1.9.3",
+    "leaflet-control-geocoder": "^2.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intl": "~6.4.7",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.9.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "uuid": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=16 <19"
+  },
+  "scripts": {
+    "preinstall": "cd kst-api && npm install && npm run generate-kst-api",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --passWithNoTests",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/leaflet": "^1.9.3",
+    "@types/uuid": "^9.0.1"
+  }
+}

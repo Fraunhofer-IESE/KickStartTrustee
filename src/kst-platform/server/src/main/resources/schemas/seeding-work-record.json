@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://demo.kickstarttrustee.de/seeding-work-record.schema.json",
+  "title": "Seeding Work Record",
+  "description": "A work for a seeding job for a field",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The unique identifier of the record",
+      "type": "string"
+    },
+    "fieldId": {
+      "description": "The id of the field that the work has been done on",
+      "type": "string"
+    },
+    "date": {
+      "description": "The date when the work has been done",
+      "type": "string"
+    },
+    "cropSeason": {
+      "description": "The season of the crop",
+      "type": "string"
+    },
+    "crop": {
+      "description": "The seeded crop",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The human readable name of the crop",
+          "type": "string"
+        },
+        "code": {
+          "description": "The standardized code of the crop",
+          "type": "string"
+        }
+      },
+      "required": [ "name", "code" ]
+    },
+    "rate": {
+      "description": "The seeding rate",
+      "type": "object",
+      "properties": {
+        "value": {
+          "description": "The value of the seeding rate",
+          "type": "number",
+          "minimum": 0
+        },
+        "unit": {
+          "description": "The unit of the value",
+          "type": "string"
+        }
+      },
+      "required": [ "value", "unit" ]
+    }
+  },
+  "required": [
+    "id",
+    "fieldId",
+    "date",
+    "cropSeason",
+    "crop",
+    "rate"
+  ]
+}

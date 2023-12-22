@@ -1,0 +1,36 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://demo.kickstarttrustee.de/disease-report.schema.json",
+    "title": "Disease Report",
+    "description": "A disease report for a field",
+    "type": "object",
+    "properties": {
+        "disease": {
+            "description": "The name of the disease",
+            "type": "string"
+        },
+        "fieldId": {
+            "description": "The id of the field the disease has been detected on",
+            "type": "string"
+        },
+        "severity": {
+            "description": "The severity of the disease",
+            "type": "string"
+        },
+        "date": {
+            "description": "The date when the disease has been detected",
+            "type": "string"
+        },
+        "confidential": {
+            "description": "A flag to indicate whether this report should be treated as confidential or not",
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "disease",
+        "fieldId",
+        "severity",
+        "date",
+        "confidential"
+    ]
+}

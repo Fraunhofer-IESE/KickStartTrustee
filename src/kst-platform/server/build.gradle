@@ -29,6 +29,7 @@ dependencies {
   implementation project(':data-control:audit')
   implementation project(':data-control:consent')
   implementation project(':data-storage')
+  implementation project(':disease-warning')
   implementation project(':notification')
   implementation project(':owner')
 

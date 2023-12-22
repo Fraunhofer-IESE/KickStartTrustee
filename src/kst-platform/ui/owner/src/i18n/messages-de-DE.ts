@@ -93,6 +93,22 @@ const messages = {
   imprint: "Impressum",
   privacy_policy: "Datenschutzerklärung",
   services: "Dienste",
+  service_disease_warning_name: "Warnung vor Krankheiten",
+  service_disease_warning_description:
+    "Warnung vor Krankheiten ist ein Dienst, der von der KickStartTrustee Plattform angeboten wird. " +
+    "Wir können Landwirte mit anonymen Warnungen vor Krankheiten versorgen, sobald eine Krankheit gemeldet wurde, die die Felder des Landwirts beeiträchtigen könnte. " +
+    "Wenn Sie ihre Krankheitsberichte beitragen möchten, um die Erzeugung von anonymisierten Warnungen vor Krankheiten für benachbarte Landwirte zu unterstützen, werden wir Ihre Krankheitsberichte und Felddaten verarbeiten, um die betroffenen Bereiche zu bestimmen. " +
+    "Krankheitsberichte, die explizit als vertraulich gekennzeichnet sind, werden für die Erzeugung von Warnungen vor Krankheiten nicht verwendet. " +
+    "Wenn Sie Warnungen vor Krankheiten erhalten möchten, werden wir Ihre Felddaten verarbeiten, um zu ermitteln, ob gemeldete Krankheiten für Sie relevant sind und Ihnen Warnungen vor Krankheiten bereitstellen. " +
+    "Wenn Sie eine E-Mail Benachrichtigung erhalten möchten, sobald neue Warnungen vor Krankheiten für Sie verfügbar sind, werden wir Ihre E-Mail-Adresse verarbeiten, um Ihnen die Benachrichtig zu senden. " +
+    "Bitte beachten Sie, dass wir lediglich Warnungen vor Krankheiten bereitstellen können, die von Landwirten gemeldet und zum Dienst Warnung vor Krankheiten beigetragen werden. " +
+    "Nachstehend können Sie auswählen, ob und in welchem Umfang Sie den Dienst Warnung vor Krankheiten nutzen möchten.",
+  service_disease_warning_consentToContributeDiseaseReports_label:
+    "Ich möchte meine Krankheitsberichte beitragen, um die Erzeugung von anonymisierten Warnungen vor Krankheiten für benachbarte Landwirte zu unterstützen.",
+  service_disease_warning_consentToReceiveDiseaseWarnings_label:
+    "Ich möchte Warnungen vor Krankheiten erhalten, sobald benachbarte Landwirte Krankheiten melden, die meine Felder beeinträchtigen könnten.",
+  service_disease_warning_emailNotificationOnNewDiseaseWarnings_label:
+    "Ich möchte eine E-Mail-Benachrichtigung erhalten, sobald neue Warnungen vor Krankheiten für mich vorliegen.",
   data: "Daten",
   my_data_items: "Meine Daten",
   data_item_id: "Datenelement-Id",

@@ -1,0 +1,15 @@
+{
+  "name": "kst-api",
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16 <19"
+  },
+  "scripts": {
+    "generate-kst-api": "del-cli generated/kst-api/ && openapi-generator-cli generate -i api-docs.json -g typescript-fetch -c openapi-options.json -o generated/kst-api/ && cd generated/kst-api/ && npm install && npm run build"
+  },
+  "devDependencies": {
+    "del-cli": "^5.0.0",
+    "@openapitools/openapi-generator-cli": "^2.5.2"
+  }
+}

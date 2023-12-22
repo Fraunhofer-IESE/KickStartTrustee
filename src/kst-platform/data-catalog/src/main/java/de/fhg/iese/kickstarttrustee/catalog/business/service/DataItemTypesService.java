@@ -22,6 +22,13 @@ import reactor.core.publisher.Mono;
 @Service
 public class DataItemTypesService {
     private static final Logger log = LoggerFactory.getLogger(DataItemTypesService.class);
+    // private static final List<IDataItemType> DATA_ITEM_TYPES = List.of(
+    //         new DataItemType("disease_report", "Disease Report", "classpath:schemas/disease-report.json"),
+    //         new DataItemType("disease_warning", "Disease Warning", "classpath:schemas/disease-warning.json"),
+    //         new DataItemType("field_data", "Field Data", "classpath:schemas/field-data.json"),
+    //         new DataItemType("seeding_work_record", "Seeding Work Record", "classpath:schemas/seeding-work-record.json"),
+    //         new DataItemType("weed_control_work_record", "Weed Control Work Record", "classpath:schemas/weed-control-work-record.json")
+    // );
 
     private final IEventbus eventbus;
 	private final ResourceLoader resourceLoader;

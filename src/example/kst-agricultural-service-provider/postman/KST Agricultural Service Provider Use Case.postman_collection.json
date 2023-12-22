@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "d32082ad-fca6-4ee7-a908-905022208500",
+		"name": "KST Agricultural Service Provider Use Case",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13293849"
+	},
+	"item": [
+		{
+			"name": "Seeding Service Provider (Seeder Simon Company)",
+			"item": [
+				{
+					"name": "Arrange Consents",
+					"item": [
+						{
+							"name": "get All Consents",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/consent",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"consent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get All Requested Consent Requests",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/consent-request",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"consent-request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create Consent Request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ownerId\": \"{{farmerOwnerId}}\",\n    \"consumedDataItemTypes\": [\n        \"field_data\"\n    ],\n    \"providedDataItemTypes\": [\n        \"seeding_work_record\"\n    ],\n    \"dataUsageStatement\": \"Seeder Simon Company will use your data.\",\n    \"purpose\": \"SERVICE\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/consent-request",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"consent-request"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consume Data",
+					"item": [
+						{
+							"name": "get Data Items (field_data)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/data?dataItemType=field_data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"data"
+									],
+									"query": [
+										{
+											"key": "dataItemType",
+											"value": "field_data",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Data Items (field_data) of specific farmer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/data?dataItemType=field_data&ownerId={{farmerOwnerId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"data"
+									],
+									"query": [
+										{
+											"key": "dataItemType",
+											"value": "field_data",
+											"description": "(Required) "
+										},
+										{
+											"key": "ownerId",
+											"value": "{{farmerOwnerId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Provide Data",
+					"item": [
+						{
+							"name": "create Data Item (seeding_work_record)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"metaData\": {\n        \"dataItemType\": \"seeding_work_record\",\n        \"ownerId\": \"{{farmerOwnerId}}\"\n    },\n    \"data\": {\n        \"id\": \"{{$randomUUID}}\",\n        \"fieldId\": \"{{fieldId}}\",\n        \"date\": \"{{$isoTimestamp}}\",\n        \"cropSeason\": \"2023\",\n        \"crop\": {\n            \"name\": \"Weizen\",\n            \"code\": \"1.1.1\"\n        },\n        \"rate\": {\n            \"value\": 20,\n            \"unit\": \"kg/ha\"\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"data"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Weed Control Service Provider (Willy Weeder Company)",
+			"item": [
+				{
+					"name": "Arrange Consents",
+					"item": [
+						{
+							"name": "get All Consents",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/consent",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"consent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get All Requested Consent Requests",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/consent-request",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"consent-request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create Consent Request",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ownerId\": \"{{farmerOwnerId}}\",\n    \"consumedDataItemTypes\": [\n        \"field_data\",\n        \"seeding_work_record\"\n    ],\n    \"providedDataItemTypes\": [\n        \"weed_control_work_record\"\n    ],\n    \"dataUsageStatement\": \"Willy Weeder Company will use your data.\",\n    \"purpose\": \"SERVICE\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/consent-request",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"consent-request"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consume Data",
+					"item": [
+						{
+							"name": "get Data Items (field_data)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/data?dataItemType=field_data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"data"
+									],
+									"query": [
+										{
+											"key": "dataItemType",
+											"value": "field_data",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Data Items (field_data) of specific farmer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/data?dataItemType=field_data&ownerId={{farmerOwnerId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"data"
+									],
+									"query": [
+										{
+											"key": "dataItemType",
+											"value": "field_data",
+											"description": "(Required) "
+										},
+										{
+											"key": "ownerId",
+											"value": "{{farmerOwnerId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Data Items (seeding_work_record)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/data?dataItemType=seeding_work_record",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"data"
+									],
+									"query": [
+										{
+											"key": "dataItemType",
+											"value": "seeding_work_record",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Data Items (seeding_work_record) of specific farmer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/data?dataItemType=seeding_work_record&ownerId={{farmerOwnerId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"data"
+									],
+									"query": [
+										{
+											"key": "dataItemType",
+											"value": "seeding_work_record",
+											"description": "(Required) "
+										},
+										{
+											"key": "ownerId",
+											"value": "{{farmerOwnerId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Provide Data",
+					"item": [
+						{
+							"name": "create Data Item (weed_control_work_record)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"metaData\": {\n        \"dataItemType\": \"weed_control_work_record\",\n        \"ownerId\": \"{{farmerOwnerId}}\"\n    },\n    \"data\": {\n        \"id\": \"{{$randomUUID}}\",\n        \"fieldId\": \"{{fieldId}}\",\n        \"date\": \"{{$isoTimestamp}}\",\n        \"cropSeason\": \"2023\",\n        \"coverage\": 0.998,\n        \"numberOfWeedsDetected\": 200,\n        \"numberOfWeedsRemoved\": 199,\n        \"distance\": 38324.3\n    }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/prosumer/data",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"prosumer",
+										"data"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{clientSecret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{clientId}}",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://auth.kickstarttrustee.de/realms/master/protocol/openid-connect/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://auth.kickstarttrustee.de/realms/master/protocol/openid-connect/auth",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://demo.kickstarttrustee.de/api",
+			"type": "string"
+		},
+		{
+			"key": "farmerOwnerId",
+			"value": "efb46c03-43af-4158-9c04-184814720898",
+			"type": "string"
+		},
+		{
+			"key": "fieldId",
+			"value": "Bx574",
+			"type": "string"
+		}
+	]
+}

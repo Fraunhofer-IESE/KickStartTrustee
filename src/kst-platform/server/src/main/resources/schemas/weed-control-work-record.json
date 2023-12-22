@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://demo.kickstarttrustee.de/weed-control-work-record.schema.json",
+  "title": "Weed Control Work Record",
+  "description": "A work for a weed control job for a field",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The unique identifier of the record",
+      "type": "string"
+    },
+    "fieldId": {
+      "description": "The id of the field that the work has been done on",
+      "type": "string"
+    },
+    "date": {
+      "description": "The date when the work has been done",
+      "type": "string"
+    },
+    "cropSeason": {
+      "description": "The season of the crop",
+      "type": "string"
+    },
+    "coverage": {
+      "description": "The percentage of field area covered by the weed control job",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "numberOfWeedsDetected": {
+      "description": "The number of weeds detected during the weed control job",
+      "type": "integer",
+      "minimum": 0
+    },
+    "numberOfWeedsRemoved": {
+      "description": "The number of weeds removed during the weed control job",
+      "type": "integer",
+      "minimum": 0
+    },
+    "distance": {
+      "description": "The distance driven by the machine of the weed control job",
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "id",
+    "fieldId",
+    "date",
+    "cropSeason",
+    "coverage",
+    "numberOfWeedsDetected",
+    "numberOfWeedsRemoved",
+    "distance"
+  ]
+}

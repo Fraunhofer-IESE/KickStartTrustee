@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://demo.kickstarttrustee.de/disease-warning.schema.json",
+  "title": "Disease Warning",
+  "description": "A disease warning for a field",
+  "type": "object",
+  "properties": {
+    "disease": {
+      "description": "The name of the disease",
+      "type": "string"
+    },
+    "severity": {
+      "description": "The severity of the disease",
+      "type": "string"
+    },
+    "date": {
+      "description": "The date when the disease has been detected",
+      "type": "string"
+    },
+    "endangeredFields": {
+      "description": "The fields that may be in danger by the disease",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "disease",
+    "severity",
+    "date",
+    "endangeredFields"
+  ]
+}

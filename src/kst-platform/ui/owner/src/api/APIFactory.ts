@@ -10,6 +10,8 @@ import {
   OwnerConsentApiInterface,
   OwnerDataApi,
   OwnerDataApiInterface,
+  ServiceDiseaseWarningApi,
+  ServiceDiseaseWarningApiInterface,
 } from "owner-api";
 import AppConfig from "../config/AppConfig";
 import BearerTokenMiddleware from "./BearerTokenMiddleware";
@@ -19,6 +21,7 @@ class APIFactory {
   private static OWNER_AUDIT_API = "OwnerAuditApi";
   private static OWNER_CONSENT_API = "OwnerConsentApi";
   private static OWNER_DATA_API = "OwnerDataApi";
+  private static SERVICE_DISEASE_WARNING_API = "ServiceDiseaseWarningApi";
   private static DATA_CATALOG_API = "DataCatalogApi";
   private static _apiCache = new Map();
 
@@ -50,6 +53,19 @@ class APIFactory {
       const configuration = await APIFactory.createApiConfiguration();
       const api = new OwnerConsentApi(configuration);
       APIFactory._apiCache.set(APIFactory.OWNER_CONSENT_API, api);
+      return api;
+    }
+    return cachedApi;
+  }
+
+  static async createServiceDiseaseWarningApi(): Promise<ServiceDiseaseWarningApiInterface> {
+    const cachedApi = APIFactory._apiCache.get(
+      APIFactory.SERVICE_DISEASE_WARNING_API
+    );
+    if (!cachedApi) {
+      const configuration = await APIFactory.createApiConfiguration();
+      const api = new ServiceDiseaseWarningApi(configuration);
+      APIFactory._apiCache.set(APIFactory.SERVICE_DISEASE_WARNING_API, api);
       return api;
     }
     return cachedApi;

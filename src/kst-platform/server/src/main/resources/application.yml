@@ -7,9 +7,21 @@ server:
       max: 128
 data-items:
   types:
-    - id: example_item
-      name: Example Item
-      schema: classpath:schemas/example-item.json
+    - id: disease_report
+      name: Disease Report
+      schema: "classpath:schemas/disease-report.json"
+    - id: disease_warning
+      name: Disease Warning
+      schema: "classpath:schemas/disease-warning.json"
+    - id: field_data
+      name: Field Data
+      schema: classpath:schemas/field-data.json
+    - id: seeding_work_record
+      name: Seeding Work Record
+      schema: classpath:schemas/seeding-work-record.json
+    - id: weed_control_work_record
+      name: Weed Control Work Record
+      schema: classpath:schemas/weed-control-work-record.json
 keycloak:
   url: ${OAUTH2_SERVER:http://localhost:8080}
   realm: ${OAUTH2_SERVER_REALM:master}

@@ -95,6 +95,22 @@ const messages = {
   imprint: "Imprint",
   privacy_policy: "Privacy policy",
   services: "Services",
+  service_disease_warning_name: "Disease Warning",
+  service_disease_warning_description:
+    "Disease Warning is a service provided by KickStartTrustee Platform. " +
+    "We can provide farmers with anonymous disease warnings once there is a disease reported that might affect their fields. " +
+    "If you want to contribute your disease reports to support the generation of anonymous disease warnings for nearby farmers, we will process your disease reports as well as your field data to determine the affected area. " +
+    "Disease reports explicitly marked as confidential will not be used to generate disease warnings. " +
+    "If you want to receive disease warnings, we will process your field data to determine whether you are affected by reported diseases and provide you with disease warnings. " +
+    "If you want to receive e-mail notifications once there is a new disease warning for you, we will process your e-mail address to send you the notification. " +
+    "Please keep in mind that we can only provide disease warnings for disease reports that are contributed to the Disease Warning service. " +
+    "In the following, you can choose whether and to what degree you want to use Disease Warning service.",
+  service_disease_warning_consentToContributeDiseaseReports_label:
+    "I want to contribute my disease reports to support the generation of anonymous disease warnings for nearby farmers.",
+  service_disease_warning_consentToReceiveDiseaseWarnings_label:
+    "I want to receive disease warnings once a nearby farmer reports a disease that might affect my fields.",
+  service_disease_warning_emailNotificationOnNewDiseaseWarnings_label:
+    "I want to receive an e-mail notification once there is a new disease warning for me.",
   data: "Data",
   my_data_items: "My Data",
   data_item_id: "Data Item Identifier",

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://demo.kickstarttrustee.de/field-data.schema.json",
+    "title": "Field Data",
+    "description": "A field",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for a field",
+            "type": "string"
+        },
+        "name": {
+            "description": "The human readable name for a field",
+            "type": "string"
+        },
+        "boundaries": {
+            "description": "The field boundaries",
+            "type": "object"
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "boundaries"
+    ]
+}

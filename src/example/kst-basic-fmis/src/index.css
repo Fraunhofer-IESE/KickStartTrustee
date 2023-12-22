@@ -1,0 +1,23 @@
+body {
+  font-family: "Open Sans";
+  margin: 0;
+  height: 100vh;
+
+  --mui-palette-primary-main: #407c4a;
+  --mui-palette-primary-light: #51a060;
+  --mui-palette-primary-dark: #325d39;
+  --mui-palette-primary-mainChannel: #51a060;
+}
+
+#root {
+  height: 100%;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 75vh;
+}
+
+.leaflet-popup-content p {
+  margin: inherit;
+}

@@ -1,0 +1,8 @@
+{
+  "npmName": "kst-api",
+  "npmVersion": "0.1.0",
+  "supportsES6": true,
+  "typescriptThreePlus": true,
+  "useSingleRequestParameter": false,
+  "withInterfaces": true
+}

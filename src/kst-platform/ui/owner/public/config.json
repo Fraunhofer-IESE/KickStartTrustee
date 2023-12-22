@@ -3,5 +3,9 @@
     "keycloakRealm": "master",
     "keycloakClientId": "owner-ui",
     "kstApiBasePath": "http://localhost:8090",
-    "kstServices": []
+    "kstServices": [{
+        "id": "disease_warning_service",
+        "nameMessageId": "service_disease_warning_name",
+        "route": "/disease-warning"
+    }]
 }
