@@ -1,4 +1,4 @@
-# Einleitung
+# Definition "Datentreuhänder"
 
 Forschung und Wirtschaft versprechen sich großen Nutzen von der Auswertung von Daten. Dabei geht es in der Regel immer um die Optimierung von Prozessen, Diensten oder Produkten und eine damit verbundene Gewinnsteigerung. Dabei birgt gerade die Nutzung von Daten über Grenzen einzelner Anwendungsdomänen oder Unternehmen hinweg (d. h. die Verknüpfung bisher getrennter Daten) ein großes Chancenpotential.
 

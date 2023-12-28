@@ -1,5 +1,4 @@
-
-# Einleitung
+# Datentreuhänder-Landkarte
 
 Aus unserer bewusst recht abstrakten Definition geht bereits hervor, das Datentreuhandmodelle sich stark von einander unterscheiden - je nach der konkreten Domäne und dem konkreten Anwendungsfall. Die verschiedenen Ausprägungen oder Archetypen von Datentreuhändern, die sich in einzelnen Funktionen und Fähigkeiten unterscheiden, wollen wir in dieser "Landkarte" einordnen. Dazu stellen wir die verschiedenen Unterscheidungsmerkmale vor und ordnen reale Datentreuhandmodelle in die jeweiligen Kategorien ein. Die Landkarte soll also einen Überblick ermöglichen, Beispiele aufzeigen und als Grundlage zur Einordnung des eigenen, anvisierten Datentreuhandmodells dienen.
 
@@ -44,6 +43,7 @@ Daten sind das zentrale Element eines jeden Datentreuhandmodells. Dabei gibt es 
     4.  Nachteile für den Datentreuhänder: Der Datentreuhänder ist am Datenaustausch selbst nicht beteiligt und kann daher keinerlei Dienste hierfür bereitstellen (z. B. Qualitätssicherung, Konvertierung oder Auswertungen)
 
 ### Beispiele
+
 | Zentraler Router | Zentrale Datenhaltung | P2P         |
 |------------------|-----------------------|-------------|
 | BreedFides       | Ddtrust               | BreedFides  |
@@ -81,6 +81,7 @@ In unserem Framework unterscheiden wir drei grundlegende Modelle. Diese ergeben 
     6.  Nachteile für die Datennutzer: Ggf. nicht alle Auswertungen möglich; Kein Zugriff auf die Rohdaten
 
 ### Beispiele
+
 | Zugangstreuhand | Verwaltungstreuhand | Mehrwerttreuhand  |
 |-----------------|---------------------|-------------------|
 | BreedFides      | MobiDataSol 		|                   |
@@ -111,6 +112,7 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 7.  Erfüllung von  **Auflagen**
 
 ### Beispiele
+
 | Förderung digitaler Souveränität | Förderung von Datensouveränität | Förderung der wirtschaftlichen Verwertung von Daten | Förderung von Innovation | Förderung von Wissenschaft und Forschung | Förderung von fairem Wettbewerb | Erfüllung von Auflagen  |
 |----------------------------------|---------------------------------|-----------------------------------------------------|--------------------------|------------------------------------------|---------------------------------|-------------------------|
 | BreedFides                       | BreedFides                      | BreedFides                                          |                          | BreedFides                               | BreedFides                      | MobiDataSol             |
@@ -134,6 +136,7 @@ Datengeber und Datennutzer können in folgende Kategorien fallen:
 4.  **Forschung (Research)**
 
 ### Beispiele
+
 |                                     | Geschäftliche Nutzer | Private Nutzer und Verbraucher | Öffentliche Verwaltung und Behörden | Forschung    |
 |-------------------------------------|----------------------|--------------------------------|-------------------------------------|--------------|
 | **Geschäftliche Nutzer**                | **B2B:**                 | **C2B:**                           | **A2B:**                                | **R2B:**         |
@@ -178,6 +181,7 @@ Wir unterscheiden die folgenden möglichen Arten der Finanzierung:
 7.  **Querfinanzierung** durch andere Dienste des Datentreuhänders
 
 ### Beispiele
+
 | Datengeber zahlt pro Transaktion | Datengeber zahlt einen Pauschalbetrag | Datennutzer zahlt pro Transaktion | Datennutzer zahlt einen Pauschalbetrag | Shareholder | Dritte    | Querfinanzierung  |
 |----------------------------------|---------------------------------------|-----------------------------------|----------------------------------------|-------------|-----------|-------------------|
 | MANDAT                           | MANDAT                                | TreuMoDa                 		   | TRANSIT                                | MobiDataSol | FAIRWinDS | FAIRWinDS         |
@@ -202,6 +206,7 @@ Wir unterscheiden folgende Kategorien, da sie diese sich aufgrund unterschiedlic
 4.  Individuell schützenswerte Daten bei denen die Anforderungen direkt vom Datengeber kommen.
 
 ### Beispiele
+
 | Personenbezogene Daten | Besondere Kategorien personenbezogener Daten | Geschäftsgeheimnisse | Individueller Schutzbedarf  |
 |------------------------|----------------------------------------------|----------------------|-----------------------------|
 | Ddtrust                | Ddtrust                                      | Ddtrust              | S3I-X                       |
@@ -227,6 +232,7 @@ Die folgende Liste ist nicht notwendigerweise vollständig, aber umfasst "Zusatz
 6.  **Anreicherung:**  Der Datentreuhänder ergänzt Daten um deren Nutzen für die Datennutzer zu erhöhen.
 
 ### Beispiele
+
 | Digitalisierung | Konvertierung | Anonymisierung | Prüfung     | Aggregation | Anreicherung  |   
 |-----------------|---------------|----------------|-------------|-------------|---------------|
 | MobiDataSol     | FAIRWinDS     | Ddtrust        | BreedFides  | FAIRWinDS   | BreedFides    |
@@ -241,9 +247,9 @@ Die folgende Liste ist nicht notwendigerweise vollständig, aber umfasst "Zusatz
 
 Die folgende Abbildung fasst alle Ebenen und Kategorien zusammen.
 
-<img src='Landkarte.png' width=500>[PDF](Landkarte.pdf)
+<img src='Landkarte.png'>[PDF](Landkarte.pdf)
 
 ## Beispiel TreuMoDa:
 TreuMoDa setzt eine Zugangstreuhand als zentralen Router um mit dem Ziel die Daten wirtschaftlich und wissenschaftlich verwertbar zu machen. Dabei werden Daten von Unternehmen und Forschungseinrichtungen an Unternehmen, die öffentliche Verwaltung und andere Forschungseinrichtungen vermittelt. Für diese Vermittlung zahlt der Datennutzer sowie Dritte. Die Daten sind individuell schützenswert und personenbezogen und werden daher bei der Vermittlung anonymisiert.
 
-<img src='Landkarte%20Beispiel.png' width=500>[PDF](Landkarte%20Beispiel.pdf)
+<img src='Landkarte%20Beispiel.png'>[PDF](Landkarte%20Beispiel.pdf)

@@ -1,0 +1,7 @@
+{
+    "keycloakBaseUrl": "http://localhost:8080/",
+    "keycloakRealm": "master",
+    "keycloakClientId": "owner-ui",
+    "kstApiBasePath": "http://localhost:8090",
+    "kstServices": []
+}

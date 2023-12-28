@@ -1,0 +1,27 @@
+plugins {
+  id "com.github.spotbugs"
+  id 'java'
+}
+
+group = 'de.fhg.iese.kickstarttrustee'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  implementation platform('io.projectreactor:reactor-bom:2020.0.39')
+
+  implementation 'io.projectreactor:reactor-core'
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}

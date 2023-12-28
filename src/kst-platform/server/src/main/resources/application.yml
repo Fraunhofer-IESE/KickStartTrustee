@@ -1,0 +1,44 @@
+server:
+  address: 0.0.0.0
+  port: 8090
+  jetty:
+    threads:
+      min: 16
+      max: 128
+data-items:
+  types:
+    - id: example_item
+      name: Example Item
+      schema: classpath:schemas/example-item.json
+keycloak:
+  url: ${OAUTH2_SERVER:http://localhost:8080}
+  realm: ${OAUTH2_SERVER_REALM:master}
+  admin-credentials:
+    client-id: kickstarttrustee-server
+    client-secret: replace-with-your-client-secret
+spring:
+  data:
+    mongodb:
+      auto-index-creation: true
+  mail:
+    host: localhost
+    port: 1025
+springdoc:
+  swagger-ui:
+    oauth:
+      clientId: swagger-ui
+      use-pkce-with-authorization-code-grant: true
+  oAuthFlow:
+    authorizationUrl: ${OAUTH2_SERVER:http://localhost:8080}/realms/${OAUTH2_SERVER_REALM:master}/protocol/openid-connect/auth
+    tokenUrl: ${OAUTH2_SERVER:http://localhost:8080}/realms/${OAUTH2_SERVER_REALM:master}/protocol/openid-connect/token
+logging:
+  level:
+    root: INFO
+    org:
+      mongodb:
+        driver: WARN
+      # springframework:
+      #   data:
+      #     mongodb:
+      #       core:
+      #         ReactiveMongoTemplate: DEBUG

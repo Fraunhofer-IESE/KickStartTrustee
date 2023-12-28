@@ -1,6 +1,6 @@
+# Security Testing Guide
 
-
-# Motivation und Ziele
+## Motivation und Ziele
 
 Ein Datentreuhänder (DTH) verwaltet Daten von Datengebenden und stellt diese Datennutzenden zur Verfügung. Um dabei das Vertrauen zwischen beiden Stakeholdern zu stärken, ist die Einhaltung gängiger Sicherheitsstandards womöglich eine der wichtigsten Anforderungen, die ein DTH umzusetzen hat.
 
@@ -12,7 +12,7 @@ In diesem Prüfkatalog werden verschiedene Aspekte der Datensicherheit wie siche
 
 Eine gründliche Überprüfung der oben genannten Bereiche kann dazu beitragen, dass die Betreiber von DTH ihre Sicherheitsmaßnahmen verbessern und somit das Vertrauen der Kunden und Nutzer in die Sicherheit ihrer Daten stärken.
 
-# Der OWASP Web Security Testing Guide
+## Der OWASP Web Security Testing Guide
 
 Aus technischer Sicht sind DTH in den meisten Fällen als Webanwendung realisiert. Daher gelten für DTH auch viele Sicherheitsanforderungen, wie sie auch für Webanwendungen gelten.
 
@@ -24,7 +24,7 @@ Der Leitfaden ist in verschiedene Abschnitte unterteilt, die sich auf verschiede
 
 Insgesamt ist der OWASP Web Security Testing Guide ein unverzichtbares Werkzeug für alle, die mit der Entwicklung und dem Testen von Webanwendungen betraut sind, da er dazu beitragen kann, die Sicherheit von Webanwendungen zu erhöhen und das Risiko von Angriffen und Datenschutzverletzungen zu minimieren.
 
-# Prüfkatalog für Datentreuhänder
+## Prüfkatalog für Datentreuhänder
 
 Dieses Kapitel bildet den Hauptteil des Prüfkatalogs. Gemäß den einzelnen Themenbereichen des OWASP WSTG werden hier die Prüfpunkte aufgeführt. Das Schema eines Prüfpunktes ist dabei stets gleich: Das  _Threat scenario_  beschreibt einen oder mehrere Techniken von Angreifern zum Ausnutzen bestimmter Schwachstellen. Das  _Objective_  beschreibt das Ziel, das Betreiber von DTH verfolgen sollten, um das Risiko für das Threat scenario zu minimieren. Die  _Definition of done_  beschreibt die eigentlichen Prüfpunkte, die seitens der Betreiber, Entwickler und Administratoren umgesetzt werden müssen, um dem Threat scenario entgegenzuwirken.
 
@@ -36,7 +36,7 @@ Das Kapitel „Testing for Business Logic“, das ursprünglich im OWASP WSTG vo
 
 Abschließend sei erwähnt, dass dieser Katalog die Sicht von Entwickler und Betreiber annimmt, der OWASP WSTG jedoch häufig die Perspektive von Testern, die in Black- oder Graybox-Szenarien keine oder nur beschränkte Kenntnis über den Code haben. Da hier jedoch eine vollständige Kenntnis über den Code angenommen wird, können viele Schwachstellen zusammengefasst werden, da ihre Ursache häufig die gleiche ist, (z.B. fehlende oder fehlerhafte Inputvalidierung bei vielen Injection-Schwachstellen) und die Präventionsmaßnahmen entsprechend auch übereinstimmen (z.B. ordnungsgemäße Eingabevalidierung).
 
-## Informationsbeschaffung
+### Informationsbeschaffung
 
 Die Sammlung von Informationen über das System oder die Anwendung, um mögliche Angriffsvektoren oder Schwachstellen zu identifizieren, ist typischerweise der erste Schritt bei einem Angriffsversuch auf ein System.
 
@@ -51,7 +51,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 -   _Fingerprint Web Application (WSTG-INFO-09)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/09-Fingerprint_Web_Application): Zusammengefasst mit Abschnitt 1.2 (Informationsbeschaffung → Webserver-Fingerprinting)
 -   _Map Application Architecture (WSTG-INFO-10)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/10-Map_Application_Architecture): Außerhalb des Scopes für dieses Dokument
 
-### Leaks durch gezielte Suchmaschinenanfragen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/01-Conduct_Search_Engine_Discovery_Reconnaissance_for_Information_Leakage)
+#### Leaks durch gezielte Suchmaschinenanfragen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/01-Conduct_Search_Engine_Discovery_Reconnaissance_for_Information_Leakage)
 
 _Threat scenario:_
 
@@ -67,7 +67,7 @@ _Definition of Done:_
 
 * Die gezielte Suchmaschinenanfrage an den DTH mit filetype durch mindestens zwei Suchmaschinen liefert nur Textdokumente ohne sensiblen Inhalt zurück (z.B. .txt, .pdf, .doc, .docx sowie sämtliche weiteren Office-Dateitypen). Die Wahl der zu testenden Dateiendungen sollte sich an die typischen Dokumenttypen des DTH betreibenden Unternehmens orientieren.
 
-### Webserver-Fingerprinting  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server)
+#### Webserver-Fingerprinting  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server)
 
 _Threat scenario:_
 
@@ -83,7 +83,7 @@ _Definition of Done:_
 
 * Error-Responses von Anfragen an den DTH liefern ebenfalls keine Informationen über die verwendeten Dienste und deren Versionen.
 
-### Webserver-Metadaten  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/03-Review_Webserver_Metafiles_for_Information_Leakage)
+#### Webserver-Metadaten  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/03-Review_Webserver_Metafiles_for_Information_Leakage)
 
 _Threat scenario:_
 
@@ -105,7 +105,7 @@ _Definition of Done:_
 
 * Die meta-Tags der Webseite lassen keine Rückschlüsse auf sensitive Daten oder Dienste zu, die der DTH anbietet.
 
-### Identifikation von Anwendungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/04-Enumerate_Applications_on_Webserver)
+#### Identifikation von Anwendungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/04-Enumerate_Applications_on_Webserver)
 
 _Threat scenario:_
 
@@ -125,7 +125,7 @@ _Definition of Done:_
 
 * Es existieren keine Fernzugriffsmöglichkeiten (z.B. SSH oder RDP) ohne Zugangsbeschränkung via Access Control Lists.
 
-### Leaks aus Webseiteninhalten  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Webpage_Content_for_Information_Leakage)
+#### Leaks aus Webseiteninhalten  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Webpage_Content_for_Information_Leakage)
 
 _Threat scenario:_
 
@@ -145,7 +145,7 @@ _Definition of Done:_
 
 * Sofern ein öffentliches Git-Repository existiert, enthält dies keine Dateien, die nicht für die Öffentlichkeit bestimmt sind. Für die Entwicklung notwendige, hartkodierte Access-Tokens, Passwörter oder Hashes sind in eine separate Config auszulagern, die in der .gitignore-Datei indexiert sind.
 
-### Initial Footholds in Applikationen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/06-Identify_Application_Entry_Points)
+#### Initial Footholds in Applikationen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/06-Identify_Application_Entry_Points)
 
 _Threat scenario:_
 
@@ -159,7 +159,7 @@ _Definition of Done:_
 
 * Die automatisierte Gray-Box-Analyse mit mindestens einem Endpoint-Analyzer (z.B. OWASP Attack Surface Detector) identifiziert keine kritischen Endpunkte.
 
-### Identifikation kritischer Pfade  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/07-Map_Execution_Paths_Through_Application)
+#### Identifikation kritischer Pfade  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/07-Map_Execution_Paths_Through_Application)
 
 _Threat scenario:_
 
@@ -177,7 +177,7 @@ _Definition of Done:_
 
 * Die automatisierte Black-Box-Analyse mit mindestens einem Tool zum Testen von Race-Conditions (z.B. BurpSuite Professional à Intruder) identifiziert keine Race-Condition.
 
-### Web-Framework-Fingerprinting  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework)
+#### Web-Framework-Fingerprinting  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/01-Information_Gathering/08-Fingerprint_Web_Application_Framework)
 
 _Threat scenario:_
 
@@ -197,7 +197,7 @@ _Definition of Done:_
 
 * Es existieren keine Standard-Pfade oder Dateien, die Rückschlüsse auf eine verwendete Technologie zulassen (z.B. wp-content für WordPress-Applikationen).
 
-## Konfiguration und Deployment
+### Konfiguration und Deployment
 
 Das Ziel von Konfigurations- und Deployment-Tests im Security Testing ist es, sicherzustellen, dass das System oder die Anwendung sicher und geschützt ist, bevor oder spätestens während das System in einer produktionsnahen Umgebung eingesetzt wird. Durch diesen Prozess können potenzielle Schwachstellen und Angriffspunkte identifiziert werden, bevor sie von böswilligen Angreifern ausgenutzt werden können.
 
@@ -210,7 +210,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 -   _Test File Permission (WSTG-CONF-09)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/09-Test_File_Permission): Zusammengefasst mit Abschnitt 3.1 (Identity Management → Rollendefinitionen)
 -   _Test Cloud Storage (WSTG-CONF-11)_ [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/11-Test_Cloud_Storage): Außerhalb des Scopes für DTH
 
-### Netzwerkinfrastruktur  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/01-Test_Network_Infrastructure_Configuration)
+#### Netzwerkinfrastruktur  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/01-Test_Network_Infrastructure_Configuration)
 
 _Threat scenario:_
 
@@ -230,7 +230,7 @@ _Definition of Done:_
 
 * Es werden keine Standardpasswörter für Administratoren bei Netzwerkkomponenten und -diensten verwendet. Hierzu sollte gegen eine Blacklist / Wordlist gegengeprüft werden.
 
-### Konfiguration der Applikationsplattform  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/02-Test_Application_Platform_Configuration)
+#### Konfiguration der Applikationsplattform  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/02-Test_Application_Platform_Configuration)
 
 _Threat scenario:_
 
@@ -254,7 +254,7 @@ _Definition of Done:_
 
 * Die Logdateien enthalten keine sensiblen Daten.
 
-### Dateiendungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/03-Test_File_Extensions_Handling_for_Sensitive_Information)
+#### Dateiendungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/03-Test_File_Extensions_Handling_for_Sensitive_Information)
 
 _Threat scenario:_
 
@@ -274,7 +274,7 @@ _Definition of Done:_
 
 * Das Hochladen von ausführbarem Code ist in keinem Upload-Feld möglich. Hierzu ist eine ausführliche Blacklist erstellt worden, die auch Sonderfälle wie .phtml oder .pht abdeckt.
 
-### HTTP-Methoden  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods)
+#### HTTP-Methoden  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/06-Test_HTTP_Methods)
 
 _Threat scenario:_
 
@@ -294,7 +294,7 @@ _Definition of Done:_
 
 * Die HTTP-Header X-HTTP-Method, X-HTTP-Method-Override und X-Method-Override sind für keinen Endpunkt erlaubt.
 
-### HTTP Strict Transport Security  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/07-Test_HTTP_Strict_Transport_Security)
+#### HTTP Strict Transport Security  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/07-Test_HTTP_Strict_Transport_Security)
 
 _Threat scenario:_
 
@@ -310,7 +310,7 @@ _Definition of Done:_
 
 * Sämtliche HTTP-Anfragen werden auf HTTPS umgeleitet
 
-### RIA Cross-Domain-Policy  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/08-Test_RIA_Cross_Domain_Policy)
+#### RIA Cross-Domain-Policy  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/08-Test_RIA_Cross_Domain_Policy)
 
 _Threat scenario:_
 
@@ -324,7 +324,7 @@ _Definition of Done:_
 
 * Es existiert kein Eintrag in der Cross-Domain-Policy-Datei, die Zugriff von einer beliebigen Domain erlaubt (via Wildcard *).
 
-### Subdomain Takeover  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/10-Test_for_Subdomain_Takeover)
+#### Subdomain Takeover  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/10-Test_for_Subdomain_Takeover)
 
 _Threat scenario:_
 
@@ -338,13 +338,13 @@ _Definition of Done:_
 
 * Es existiert keine Subdomain, die nicht in aktiver Verwendung ist und auf eine Applikation oder Unterapplikation des DTH zeigt („Altlasten“). Dies ist für sämtliche DNS-Record-Typen zu prüfen, beispielsweise: A, CNAME, MX, NS oder TXT:
 
-## Identity Management
+### Identity Management
 
 Im Rahmen von Identity Management-Tests soll sichergestellt werden, dass Benutzerkonten- und Berechtigungen ordnungsgemäß konfiguriert sind. Insbesondere soll in diesem Abschnitt überprüft werden, ob Rollendefinitionen sowie Registrierungs- und Accountbereitstellungsprozesse widerspruchsfrei definiert sind und keinen Spielraum für Authentication Bypass-Angriffe lassen.
 
 Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing Guide, Kapitel 4.3 („Identity Management Testing“) abgeleitet.
 
-### Rollendefinitionen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/01-Test_Role_Definitions)
+#### Rollendefinitionen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/01-Test_Role_Definitions)
 
 _Threat scenario:_
 
@@ -362,7 +362,7 @@ _Definition of Done:_
 
 * Es ist keinem Nutzer ohne administrative Rechte möglich, auf privilegierte Pfade wie /admin, /mod oder /backups zuzugreifen. Dies ist für sämtliche nichtadministrative Nutzerrollen zu prüfen.
 
-### Nutzerregistrierung  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/02-Test_User_Registration_Process)
+#### Nutzerregistrierung  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/02-Test_User_Registration_Process)
 
 _Threat scenario:_
 
@@ -382,7 +382,7 @@ _Definition of Done:_
 
 * Die Bestätigungsmail enthält keine Nutzernamen oder Passwörter im Klartext.
 
-### Accountbereitstellung  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/03-Test_Account_Provisioning_Process)
+#### Accountbereitstellung  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/03-Test_Account_Provisioning_Process)
 
 _Threat scenario:_
 
@@ -402,7 +402,7 @@ _Definition of Done:_
 
 * Es gibt keine Möglichkeit, den Validierungsprozess bei der Erstellung von Nutzern zu umgehen, beispielsweise durch Crafting von Bestätigungsmails.
 
-### Enumerieren von Accounts  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/04-Testing_for_Account_Enumeration_and_Guessable_User_Account)
+#### Enumerieren von Accounts  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/04-Testing_for_Account_Enumeration_and_Guessable_User_Account)
 
 _Threat scenario:_
 
@@ -416,7 +416,7 @@ _Definition of Done:_
 
 * Das Feedback aller Login-Masken lässt keine Rückschlüsse auf die falsche Eingabe eines Benutzernamens zu (z.B. „Falscher Benutzername“). Entsprechend gilt auch für die HTTP-Fehlercodes.
 
-### Schwache Policies  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/05-Testing_for_Weak_or_Unenforced_Username_Policy)
+#### Schwache Policies  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/03-Identity_Management_Testing/05-Testing_for_Weak_or_Unenforced_Username_Policy)
 
 _Threat scenario:_
 
@@ -432,7 +432,7 @@ _Definition of Done:_
 
 * Es gibt keine Möglichkeit, die Policy für Passwörter bei der Registrierung oder der Änderung des Profils zu umgehen
 
-## Authentisierung
+### Authentisierung
 
 Authentisierung bezieht sich auf den Prozess der Überprüfung der Identität einer Person oder eines Systems, um sicherzustellen, dass sie tatsächlich die Person oder das System sind, die sie vorgeben zu sein. Die Authentisierung ist ein wichtiger Bestandteil der Informationssicherheit, da sie sicherstellt, dass nur autorisierte Benutzer auf bestimmte Ressourcen zugreifen können.
 
@@ -442,7 +442,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 
 -   _Testing for Weak Password Change or Reset Functionalities (WSTG-ATHN-08)_ [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/08-Testing_for_Weak_Security_Question_Answer): Zusammengefasst mit Abschnitt 4.7 (Authentisierung → Schwache Passwort-Policies)
 
-### Verschlüsselte Übertragung von Credentials  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/01-Testing_for_Credentials_Transported_over_an_Encrypted_Channel)
+#### Verschlüsselte Übertragung von Credentials  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/01-Testing_for_Credentials_Transported_over_an_Encrypted_Channel)
 
 _Threat scenario:_
 
@@ -456,7 +456,7 @@ _Definition of Done:_
 
 * Die Übertragung von Credentials erfolgt in jedem Fall verschlüsselt. Basic Authentication wird generell nicht verwendet.
 
-### Standard-Credentials  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/02-Testing_for_Default_Credentials)
+#### Standard-Credentials  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/02-Testing_for_Default_Credentials)
 
 _Threat scenario:_
 
@@ -478,7 +478,7 @@ _Definition of Done:_
 
 * In der Benutzerdatenbank des DTH stimmt kein Passworthash mit den Passworthashes gängiger Wordlists (z.B. rockyou.txt) überein.
 
-### Schwache Lock-Out-Mechanismen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism)
+#### Schwache Lock-Out-Mechanismen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism)
 
 _Threat scenario:_
 
@@ -492,7 +492,7 @@ _Definition of Done:_
 
 * Jede Loginmaske ist mit einem Bruteforce-Schutz versehen (z.B. Zeitbasierter Lockout oder CAPTCHAs). Bei einem zeitbasierten Lockout sollte die maximale Anzahl an fehlgeschlagenen Login-Versuchen 10 nicht überschreiten und die minimale Zeit des Lockouts 5 Minuten betragen.
 
-### Bypass von Authentisierung  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/04-Testing_for_Bypassing_Authentication_Schema)
+#### Bypass von Authentisierung  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/04-Testing_for_Bypassing_Authentication_Schema)
 
 _Threat scenario:_
 
@@ -508,7 +508,7 @@ _Definition of Done:_
 
 * Sämtliche password-Felder werden eingabevalidiert. Die Eingabe des password-Felds muss gemäß der Passwort-Policy gefiltert werden.
 
-### „Passwort merken“-Funktionalität  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/05-Testing_for_Vulnerable_Remember_Password)
+#### „Passwort merken“-Funktionalität  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/05-Testing_for_Vulnerable_Remember_Password)
 
 _Threat scenario:_
 
@@ -522,7 +522,7 @@ _Definition of Done:_
 
 * Sofern ein „Passwort merken“-Feature vorgesehen ist, sollte eine Cookie-Expiration-Time von einem Monat nicht überschritten werden.
 
-### Browser-Cache-Schwachstellen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/06-Testing_for_Browser_Cache_Weaknesses)
+#### Browser-Cache-Schwachstellen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/06-Testing_for_Browser_Cache_Weaknesses)
 
 _Threat scenario:_
 
@@ -540,7 +540,7 @@ _Definition of Done:_
 
 Es befinden sich zu keinem Testzeitpunkt sensible Daten im Browsercache.
 
-### Schwache Passwort-Policies  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/07-Testing_for_Weak_Password_Policy)
+#### Schwache Passwort-Policies  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/07-Testing_for_Weak_Password_Policy)
 
 _Threat scenario:_
 
@@ -570,7 +570,7 @@ _Definition of Done:_
 
 * Es muss Nutzern die Möglichkeit gegeben werden, eine zwei-Faktor-Authentisierung einrichten zu können.
 
-### Schwache Passwort-Resets oder -Änderungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/09-Testing_for_Weak_Password_Change_or_Reset_Functionalities)
+#### Schwache Passwort-Resets oder -Änderungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/09-Testing_for_Weak_Password_Change_or_Reset_Functionalities)
 
 _Threat scenario:_
 
@@ -592,7 +592,7 @@ _Definition of Done:_
 
 * Zu keinem Zeitpunkt wird das alte Passwort im Klartext übertragen (was auch per se nicht möglich sein darf, da Passwörter als Hash gespeichert sein sollten).
 
-### Schwächere Authentisierung in alternativen Anwendungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/10-Testing_for_Weaker_Authentication_in_Alternative_Channel)
+#### Schwächere Authentisierung in alternativen Anwendungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/04-Authentication_Testing/10-Testing_for_Weaker_Authentication_in_Alternative_Channel)
 
 _Threat scenario:_
 
@@ -606,7 +606,7 @@ _Definition of Done:_
 
 * Für alternative Unteranwendungen des DTH sind sämtliche Anforderungen an die Authentisierung exakt so umgesetzt, wie sie auch in der Hauptanwendung umgesetzt sind.
 
-## Autorisierung
+### Autorisierung
 
 Autorisierung bezieht sich auf den Prozess der Überprüfung, ob ein authentisierter Benutzer berechtigt ist, auf eine bestimmte Ressource oder eine bestimmte Funktion zuzugreifen oder eine bestimmte Aktion auszuführen. Die Autorisierung ist ein wichtiger Bestandteil der Informationssicherheit, da sie sicherstellt, dass nur autorisierte Benutzer auf bestimmte Ressourcen zugreifen und bestimmte Aktionen ausführen können.
 
@@ -619,7 +619,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 -   _Testing for Bypassing Authorization Schema (WSTG-ATHZ-02)_ [**🔗**](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/05-Authorization_Testing/02-Testing_for_Bypassing_Authorization_Schema): Zusammengefasst mit Abschnitt 3.1 (Identity Management → Rollendefinitionen)
 -   _Testing for Privilege Escalation“ (WSTG-ATHZ-03)_ [**🔗**](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/05-Authorization_Testing/03-Testing_for_Privilege_Escalation): Zusammengefasst mit Abschnitt 3.1 (Identity Management → Rollendefinitionen)
 
-### Directory Traversal File Inclusion  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/05-Authorization_Testing/01-Testing_Directory_Traversal_File_Include)
+#### Directory Traversal File Inclusion  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/05-Authorization_Testing/01-Testing_Directory_Traversal_File_Include)
 
 _Threat scenario:_
 
@@ -639,7 +639,7 @@ _Definition of Done:_
 
 · Local File Inclusion (param=../<path>) sowie Remote File Inclusion (param=[http://malicious/url](http://malicious/url))
 
-### Unsichere Objektreferenzierungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References)
+#### Unsichere Objektreferenzierungen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References)
 
 _Threat scenario:_
 
@@ -655,7 +655,7 @@ _Definition of Done:_
 
 * Es existiert kein Query- oder Bodyparameter, bei dem ein Nutzer Einstellungen und Attribute anderer Nutzer ändern kann, insbesondere Zahlungsinformationen, Benutzernamen oder Passwörter.
 
-## Sitzungsmanagement
+### Sitzungsmanagement
 
 Sicherheitsprobleme im Zusammenhang mit Session-Management können schwerwiegende Auswirkungen auf die Sicherheit einer Anwendung haben. Ein erfolgreicher Angriff auf die Session-Management-Mechanismen einer Anwendung kann es einem Angreifer ermöglichen, die Identität eines Benutzers zu stehlen oder eine Sitzung zu übernehmen, was zu unbefugtem Zugriff auf vertrauliche Daten oder sogar zur Übernahme der gesamten Anwendung führen kann. Daher ist es wichtig, dass Anwendungen umfassendem Testing unterzogen werden, um sicherzustellen, dass die Session-Management-Mechanismen ordnungsgemäß implementiert und robust genug sind, um vor Angriffen zu schützen. Dies umfasst die Überprüfung von Sitzungstoken, das Ablaufen von Sitzungen, sowie Sitzungsinformationen in Cookies oder URL-Parametern.
 
@@ -665,7 +665,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 -   _Testing for Session Puzzling (WSTG-SESS-08)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/08-Testing_for_Session_Puzzling)_:_  Zusammengefasst mit Abschnitt 6.5 (Session-Management → Cross-Site Request Forgery)
 -   _Testing for Session Hijacking (WSTG-SESS-09)_ [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/10-Test_for_Subdomain_Takeover): Zusammengefasst mit Abschnitt 6.5 (Session-Management → Cross-Site Request Forgery)
 
-### Cookie-Attribute  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes)
+#### Cookie-Attribute  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/02-Testing_for_Cookies_Attributes)
 
 _Threat scenario:_
 
@@ -687,7 +687,7 @@ _Definition of Done:_
 
 * Sämtliche Session-Cookies sollten nach Schließen des Browsers ablaufen, es sei denn, es handelt sich um Session-Cookies, die aufgrund des „Passwort merken“-Features erzeugt wurden.
 
-### Session Fixation  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/03-Testing_for_Session_Fixation)
+#### Session Fixation  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/03-Testing_for_Session_Fixation)
 
 _Threat scenario:_
 
@@ -701,7 +701,7 @@ _Definition of Done:_
 
 * Sämtliche Authentisierungsprozesse lösen automatisch einen Cookie-Refresh aus.
 
-### Offenlegung von Session-Variablen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables)
+#### Offenlegung von Session-Variablen  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/04-Testing_for_Exposed_Session_Variables)
 
 _Threat scenario:_
 
@@ -719,7 +719,7 @@ _Definition of Done:_
 
 * Session IDs dürfen in keinem Fall über GET-Requests übertragen werden, um zu verhindern, dass die Session IDs in den Logdaten auftauchen.
 
-### Cross-Site Request Forgery (CSRF)  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery)
+#### Cross-Site Request Forgery (CSRF)  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery)
 
 _Threat scenario:_
 
@@ -735,7 +735,7 @@ _Definition of Done:_
 
 * In keinen Fällen werden CSRF-Tokens als Teil des Session-Cookies verwendet.
 
-### Logout  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/06-Testing_for_Logout_Functionality)
+#### Logout  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/06-Testing_for_Logout_Functionality)
 
 _Threat scenario:_
 
@@ -751,7 +751,7 @@ _Definition of Done:_
 
 * Das Beenden einer Session löscht in jedem Fall auch das CSRF-Token.
 
-### Session Timeout  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/07-Testing_Session_Timeout)
+#### Session Timeout  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/06-Session_Management_Testing/07-Testing_Session_Timeout)
 
 _Threat scenario:_
 
@@ -765,7 +765,7 @@ _Definition of Done:_
 
 * Es muss bei jedem Beginn einer Session gleichzeitig auch ein Session Timeout gesetzt werden.
 
-## Eingabevalidierung
+### Eingabevalidierung
 
 Eingabevalidierung ist ein wichtiger Schritt bei der Entwicklung von Software, der sicherstellen soll, dass alle Eingaben, die von Benutzern oder anderen Systemen in eine Anwendung eingegeben werden, gültig sind und keinen Schaden anrichten können.
 
@@ -794,7 +794,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 -   _Testing for Host Header Injection (WSTG-INPV-17)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/17-Testing_for_Host_Header_Injection)_:_  Zusammengefasst zu Abschnitt 7.5 (Eingabevalidierung → Injection-Schwachstellen)
 -   _Testing for Server-side Template Injection (WSTG-INPV-18)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/18-Testing_for_Server-side_Template_Injection)_:_  Zusammengefasst zu Abschnitt 7.5 (Eingabevalidierung → Injection-Schwachstellen)
 
-### Cross-Site Scripting (XSS)
+#### Cross-Site Scripting (XSS)
 
 _Threat scenario:_
 
@@ -822,7 +822,7 @@ _Definition of Done:_
 
 * Jeder serverseitig abgefangene Benutzereingabe muss HTML-codiert werden.
 
-### Injection-Schwachstellen
+#### Injection-Schwachstellen
 
 _Threat scenario:_
 
@@ -850,7 +850,7 @@ _Definition of Done:_
 
 * Um Host Header-Injection-Schwachstellen vorzubeugen, ist im serverseitigen Code auf Host-Header-Zugriffe zu verzichten.
 
-### Server-Side Request Forgery  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/19-Testing_for_Server-Side_Request_Forgery)
+#### Server-Side Request Forgery  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/19-Testing_for_Server-Side_Request_Forgery)
 
 _Threat scenario:_
 
@@ -864,7 +864,7 @@ _Definition of Done:_
 
 * Es ist der „Validation flow“ im OWASP Server-Side Request Forgery Prevention Cheat Sheet umzusetzen.
 
-## Fehlerbehandlung
+### Fehlerbehandlung
 
 Die Sicherheitsimplikationen bei der Fehlerbehandlung von Software werden oftmals vernachlässigt, dabei kann unzureichende Fehlerbehandlung dazu führen, dass Fehlermeldungen oder Protokolle vertrauliche Informationen wie z.B. Benutzernamen, Passwörter oder Systemdetails preisgeben. Diese Informationen können von Angreifern ausgenutzt werden, um Angriffe wie beispielsweise Phishing- oder SQL-Injection-Angriffe durchzuführen.
 
@@ -872,7 +872,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 
 -   _Testing for Stack Traces (WSTG-ERRH-02)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/02-Testing_for_Stack_Traces)_:_  Zusammengefasst mit Abschnitt 8.1 (Fehlerbehandlung → Unsachgemäße Fehlerbehandlung)
 
-### Unsachgemäße Fehlerbehandlung  🔗
+#### Unsachgemäße Fehlerbehandlung  🔗
 
 _Threat scenario:_
 
@@ -886,7 +886,7 @@ _Definition of Done:_
 
 * Es wurde ein globaler Error-Handler definiert, der nach außen hin generische Fehlermeldungen zurückgibt und detaillierte Fehlerbeschreibungen ausschließlich intern loggt.
 
-## Kryptographie
+### Kryptographie
 
 Kryptographie und die Überprüfung kryptographischer Konfiguration in Systemen sind ein Thema für sich. In diesem Abschnitt soll ausschließlich die kryptographische Konfiguration von Webservern betrachtet werden. Dies bezieht sich hauptsächlich auf die sichere Konfiguration von Transport Layer Security sowie der sicheren Verwendung von Schlüsselaustausch- und Verschlüsselungsverfahren gemäß gängiger Best Practices.
 
@@ -895,7 +895,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 -   _Testing for Padding Oracle (WSTG-CRYP-02)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/02-Testing_for_Padding_Oracle)_:_  Außerhalb des Scopes für dieses Dokument
 -   _Testing for Testing for Sensitive Information Sent via Unencrypted Channels (WSTG-CRYP-03)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/03-Testing_for_Sensitive_Information_Sent_via_Unencrypted_Channels)_:_  Zusammengefasst mit Abschnitt 9.1 (Kryptographie → Schwache Transport Layer Security (TLS))
 
-### Schwache Transport Layer Security (TLS)  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security)
+#### Schwache Transport Layer Security (TLS)  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security)
 
 _Threat scenario:_
 
@@ -941,7 +941,7 @@ _(Die nachfolgende Konfiguration entspricht den modernen Kompatibilitätsempfehl
 
 * Die Seite wird einer Preload-List hinzugefügt, um einem möglichen SSL-Strip-Angriff entgegenzuwirken. Dies ist insbesondere relevant, wenn die Seite das erste Mal über HTTP besucht wird und der Besucher anschließend aufgrund von HSTS zum HTTPS-Kanal umgeleitet wird.
 
-### Schwache Verschlüsselungsverfahren  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/04-Testing_for_Weak_Encryption)
+#### Schwache Verschlüsselungsverfahren  [🔗](https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/04-Testing_for_Weak_Encryption)
 
 _Threat scenario:_
 
@@ -967,7 +967,7 @@ _(Die nachfolgende Konfiguration entspricht Empfehlungen von OWASP gemäß dem S
 
 * Für den Schlüsselaustausch wird Diffie-Hellman mit mindestens 2048 bit Schlüssellänge verwendet.
 
-## Clients
+### Clients
 
 Obgleich serverseitiger Schwachstellen in den meisten Fällen die größere Bedrohung für die Vertraulichkeit, Integrität und Verfügbarkeit von Webanwendungen sind, so sind auch clientseitige Sicherheitsüberprüfungen notwendig, um ein ganzheitlich hohes Sicherheitsniveau zu erreichen.
 
@@ -983,7 +983,7 @@ Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing 
 -   _Testing for Cross Site Flashing (WSTG-CLNT-08)_  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/08-Testing_for_Cross_Site_Flashing): Zusammengefasst als Abschnitt 7.1 (Eingabevalidierung → Cross-Site Scripting (XSS))
 -   _Testing for Cross Site Script Inclusion (WSTG-CLNT-13)_ [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/13-Testing_for_Cross_Site_Script_Inclusion): Zusammengefasst als Abschnitt 7.1 (Eingabevalidierung → Cross-Site Scripting (XSS))
 
-### Clientseitige Manipulation von Ressourcen  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/06-Testing_for_Client-side_Resource_Manipulation)
+#### Clientseitige Manipulation von Ressourcen  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/06-Testing_for_Client-side_Resource_Manipulation)
 
 _Threat scenario:_
 
@@ -995,9 +995,9 @@ Die Betreiber von DTH müssen sicherstellen, dass Nutzer keinen Ressourcenzugrif
 
 _Definition of Done:_
 
-* Jeder Ressourcenzugriff via # wird so validiert, dass keine Remote-URL eingebettet werden kann.
+* Jeder Ressourcenzugriff via ## wird so validiert, dass keine Remote-URL eingebettet werden kann.
 
-### Cross-Origin Resource Sharing (CORS)  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/07-Testing_Cross_Origin_Resource_Sharing)
+#### Cross-Origin Resource Sharing (CORS)  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/07-Testing_Cross_Origin_Resource_Sharing)
 
 _Threat scenario:_
 
@@ -1011,7 +1011,7 @@ _Definition of Done:_
 
 * Cross-Origin Resource Sharing wird in keinem Fall per Wildcard (*) erlaubt.
 
-### Clickjacking  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking)
+#### Clickjacking  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/09-Testing_for_Clickjacking)
 
 _Threat scenario:_
 
@@ -1025,7 +1025,7 @@ _Definition of Done:_
 
 * Content-Security-Policy ist definiert und aktiv. frame-ancestors ist auf none, self oder höchstens ein streng limitiertes Set an URLs festgelegt.
 
-### WebSockets  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/10-Testing_WebSockets)
+#### WebSockets  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/10-Testing_WebSockets)
 
 _Threat scenario:_
 
@@ -1041,7 +1041,7 @@ _Definition of Done:_
 
 * Es muss eine verschlüsselte Verbindung über TLS verwendet werden. Unverschlüsselte TCP-Kommunikation ist nicht zulässig.
 
-### Web Messaging  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/11-Testing_Web_Messaging)
+#### Web Messaging  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/11-Testing_Web_Messaging)
 
 _Threat scenario:_
 
@@ -1057,7 +1057,7 @@ _Definition of Done:_
 
 * Bei der Verwendung von Web Messaging dürfen unsichere Elemente wie innerHTML nicht verwendet werden.
 
-### Browserspeicher  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/12-Testing_Browser_Storage)
+#### Browserspeicher  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/11-Client-side_Testing/12-Testing_Browser_Storage)
 
 _Threat scenario:_
 
@@ -1071,7 +1071,7 @@ _Definition of Done:_
 
 * Sämtliche sensiblen Daten in Anwendungen sind serverseitig gespeichert und nicht clientseitig.
 
-## Schnittstellen
+### Schnittstellen
 
 Da APIs einen offenen Zugangspunkt zu Anwendungsdaten und -funktionen bereitstellen, sind sie häufig ein Ziel für Angriffe von Angreifern. Einige häufige Bedrohungen für APIs zielen auf Authentifizierung und Autorisierung, Injections oder Denial of Service ab.
 
@@ -1079,7 +1079,7 @@ Um API-Sicherheitsprobleme zu vermeiden, müssen Entwickler sicherstellen, dass 
 
 Die Prüfpunkte aus diesem Prüfabschnitt wurden vom OWASP Web Security Testing Guide, Kapitel 4.11 („API Testing“) abgeleitet. In dem vorliegenden Dokument wurde von den Autoren der Abschnitt „OpenAPI“ ergänzt.
 
-### GraphQL  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/12-API_Testing/01-Testing_GraphQL)
+#### GraphQL  [🔗](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/12-API_Testing/01-Testing_GraphQL)
 
 _Threat scenario:_
 
@@ -1101,7 +1101,7 @@ _Definition of Done:_
 
 * Die Anzahl an Queries, die zur gleichen Zeit gesendet werden können, ist serverseitig limitiert.
 
-### OpenAPI
+#### OpenAPI
 
 _Threat scenario:_
 
@@ -1115,7 +1115,7 @@ _Definition of Done:_
 
 * Für die Authentisierung in der OpenAPI-Schnittstelle wird oauth2 verwendet.
 
-# Zusammenfassung und nächste Schritte
+## Zusammenfassung und nächste Schritte
 
 In diesem Dokument wurde die erste Fassung eines Prüfkatalogs für Datentreuhänder vorgelegt. Es beschreibt Datentreuhänder als eine Spezialform von Webanwendungen. Aus technischer Sicht ist dieser Katalog daher abgeleitet von den Best Practices des OWASP Web Security Testing Guides zur Absicherung von Webanwendungen.
 

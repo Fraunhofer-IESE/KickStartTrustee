@@ -1,0 +1,41 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+  id 'org.springframework.boot' apply false
+  id 'io.spring.dependency-management'
+  id "com.github.spotbugs"
+  id 'java'
+}
+
+group = 'de.fhg.iese.kickstarttrustee'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencyManagement {
+	imports {
+		mavenBom SpringBootPlugin.BOM_COORDINATES
+	}
+}
+
+dependencies {
+  implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'io.projectreactor:reactor-test'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+  spotbugsSlf4j "org.slf4j:slf4j-simple"
+}
+
+tasks.named('test') {
+  useJUnitPlatform()
+}
