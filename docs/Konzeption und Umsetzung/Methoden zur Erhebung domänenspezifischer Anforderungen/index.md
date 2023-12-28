@@ -84,10 +84,10 @@ Jede der folgenden Thematiken kann in einem oder mehreren Workshops adressiert w
         -  das Unternehmen?
         -  die Datengeber und betroffenen Personen/Unternehmen?
         -  der Datentreuhänder?
-    -  Welches Geschäftsmodell soll verfolgt werden? :warning: (siehe auch [Geschäftsmodellalternativen](<>../..Angebotsentwicklung/Geschäftsmodellalternativen>)) :warning:
+    -  Welches Geschäftsmodell soll verfolgt werden?
         -  Ertragsmodell
             -   Bsp.: Konsumenten zahlen einen festen wiederkehrenden Beitrag an die Plattform (50€/Monat)
-            -   Eine Hilfestellung bietet dabei die Taxonomie für Ertragsmodelle  [https://www.researchgate.net/publication/374869140_A_Taxonomy_for_Platform_Revenue_Models_An_Empirical-to-Conceptual_Development_Approach](https://www.researchgate.net/publication/374869140_A_Taxonomy_for_Platform_Revenue_Models_An_Empirical-to-Conceptual_Development_Approach)  bzw.  [https://link.springer.com/chapter/10.1007/978-3-031-46587-1_11                                                                                                                                                                                                   ](https://link.springer.com/chapter/10.1007/978-3-031-46587-1_11)                                                                                                                                                                                                    
+            -   Eine Hilfestellung bietet dabei die Taxonomie für Ertragsmodelle  [https://www.researchgate.net/publication/374869140_A_Taxonomy_for_Platform_Revenue_Models_An_Empirical-to-Conceptual_Development_Approach](https://www.researchgate.net/publication/374869140_A_Taxonomy_for_Platform_Revenue_Models_An_Empirical-to-Conceptual_Development_Approach)  bzw.  [https://link.springer.com/chapter/10.1007/978-3-031-46587-1_11](https://link.springer.com/chapter/10.1007/978-3-031-46587-1_11)                                                                                                                                                                                                    
         -  Wertversprechen
             -   Bsp.: Aggregierte Statistiken zur Nutzung von (smarten) Fitnessgeräten und deren Nutzer, zentral, schnell und von überall
         -  Wertschöpfung
