@@ -54,6 +54,7 @@ Jede der folgenden Thematiken kann in einem oder mehreren Workshops adressiert w
     -  Anpassung der Daten- und Maschinenerfassung (FA58, FA55, SA28, SA1)
     -  Anpassung der Datendarstellung (FA17, SA13, SA4)
     -  Anpassung der Aggregation der Daten (FA28, SA39, SA40)
+
 <a name="rahmen"></a>
 ### Den Rahmen des Datentreuhänders (-Modell) bestimmen
 
