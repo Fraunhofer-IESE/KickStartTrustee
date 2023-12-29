@@ -38,6 +38,6 @@ Depending on the use case and the context, one or the another variant may be mor
 
 ## Detailed Information
 
-In the  [Consent API Usage Guide](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Architecture Document/Quality Concepts/Security/Consent Management/Consent API Usage Guide/>)  page, you can find the details of our API and how to use them.
+In the  [Consent API Usage Guide](<Consent API Usage Guide/>)  page, you can find the details of our API and how to use them.
 
-In the  [Consent Flows](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Architecture Document/Quality Concepts/Security/Consent Management/Consent Flows/>)  page, we describe how an application can obtain the data of a user from the  _KST Platform_  by establishing a consent.
+In the  [Consent Flows](<Consent Flows/>)  page, we describe how an application can obtain the data of a user from the  _KST Platform_  by establishing a consent.

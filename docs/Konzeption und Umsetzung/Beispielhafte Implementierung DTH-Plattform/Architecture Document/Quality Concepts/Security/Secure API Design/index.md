@@ -97,7 +97,7 @@ How to protect?
 
 ## Separated APIs for different types of clients
 
-We provide each role/stakeholder with their own part of the API and make sure that only these roles/stakeholders can access that part (User Role Check and Token Scope Check in the _KST Platform_ backend, see [Authentication and Authorization](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Architecture Document/Quality Concepts/Security/Authentication and Authorization/>)).
+We provide each role/stakeholder with their own part of the API and make sure that only these roles/stakeholders can access that part (User Role Check and Token Scope Check in the _KST Platform_ backend, see [Authentication and Authorization](<../Authentication and Authorization/>)).
 
 Separated APIs for:
 

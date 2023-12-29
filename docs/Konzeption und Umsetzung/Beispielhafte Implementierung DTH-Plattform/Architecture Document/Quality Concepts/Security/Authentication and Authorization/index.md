@@ -31,4 +31,4 @@ Furthermore,  _KST Platform_  offers a dedicated client type (Owner client type)
 
 For a complete list of all scopes, check the SETUP.md file in the git repository of the KST Platform: [TODO](<>).
 
-Attention: Even though the access token has the required scope, the KST Platform backend may still reject some calls to its REST-Endpoints because these calls require a valid consent from the affected data owner to work (see [Consent Management](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Architecture Document/Quality Concepts/Security/Consent Management/>)).
+Attention: Even though the access token has the required scope, the KST Platform backend may still reject some calls to its REST-Endpoints because these calls require a valid consent from the affected data owner to work (see [Consent Management](<../Consent Management/>)).

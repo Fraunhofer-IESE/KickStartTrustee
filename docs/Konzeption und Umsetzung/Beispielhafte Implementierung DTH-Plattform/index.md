@@ -6,4 +6,4 @@
 
 ## Demonstrator Guide
 
-[To KickStartTrustee demonstrator guide](<Architecture Document>)
+[To KickStartTrustee demonstrator guide](<Demonstrator Guide/>)

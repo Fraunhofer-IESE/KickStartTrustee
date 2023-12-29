@@ -2,11 +2,11 @@
 
 ## KickStartTrustee Basic FMIS
 
-_KickStartTrustee Basic FMIS_ is a basic FMIS (Farm Management Information system) that serves as a demo to illustrate the envisioned interaction between an Agricultural Data Trustee and an agricultural third-party application. _KST Basic FMIS_ is realized as a Single Page Application (SPA) for farmers and has no backend. Farmers can use _KST Basic FMIS_ to manage their field-related data stored at the _KST Platform_. _KST Basic FMIS_ can provide and consume the field-related data of the farmer. Thus, _KST Basic FMIS_ plays the role of a Data Prosumer that interacts with _KST Platform_ (see [System Context and Domain](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Architecture Document/System Context and Domain/>)).
+_KickStartTrustee Basic FMIS_ is a basic FMIS (Farm Management Information system) that serves as a demo to illustrate the envisioned interaction between an Agricultural Data Trustee and an agricultural third-party application. _KST Basic FMIS_ is realized as a Single Page Application (SPA) for farmers and has no backend. Farmers can use _KST Basic FMIS_ to manage their field-related data stored at the _KST Platform_. _KST Basic FMIS_ can provide and consume the field-related data of the farmer. Thus, _KST Basic FMIS_ plays the role of a Data Prosumer that interacts with _KST Platform_ (see [System Context and Domain](<../>)).
 
 ### Helpful Links
 
-- The source code of  _KST Basic FMIS_  can be found in this GIT repository: [TODO]()  
+- The source code of  _KST Basic FMIS_  can be found in this GIT repository: [TODO](<>)  
 
 ### Features
 
@@ -73,7 +73,7 @@ Providing and Consuming data via  _KST Platform_  requires explicit consent of t
 
 ### Deployment/ Operations
 
-_KST Basic FMIS_ is containerized and can be operated using Docker. For details about the Deployment of our demo system as a whole (including _KST Basic FMIS_), please have a look at this page: [Deployment and Operation](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Architecture Document/System Decomposition/Deployment and Operation/>).
+_KST Basic FMIS_ is containerized and can be operated using Docker. For details about the Deployment of our demo system as a whole (including _KST Basic FMIS_), please have a look at this page: [Deployment and Operation](<../../System Decomposition/Deployment/>).
 
 The  _KST Basic FMIS_  Docker Image requires certain environment variables to be configured:
 

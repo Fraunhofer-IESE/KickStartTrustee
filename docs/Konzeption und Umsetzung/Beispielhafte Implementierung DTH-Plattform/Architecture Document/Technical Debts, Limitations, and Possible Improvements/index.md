@@ -5,7 +5,7 @@
 - We use Spring Boot 2.7. Support for Spring Boot 2.7 ends in November 2023, so there is a need to upgrade to Spring Boot 3.X.
   - We decided not to do that because the project ends in December 2023.
 
-- KST Platform differentiates the roles "OWNER", "CONSUMER", "PROVIDER", "PROSUMER" (see  [Authentication and Authorization](TODO)). Roles other than "OWNER" MUST NOT be assigned to user accounts as this would cause serious security issues (unauthorized data access). Role "CONSUMER", "PROVIDER" or "PROSUMER" may only be assigned to the service account of a client (system with client credentials).
+- KST Platform differentiates the roles "OWNER", "CONSUMER", "PROVIDER", "PROSUMER" (see  [Authentication and Authorization](<../Quality Concepts/Security/Authentication and Authorization/>)). Roles other than "OWNER" MUST NOT be assigned to user accounts as this would cause serious security issues (unauthorized data access). Role "CONSUMER", "PROVIDER" or "PROSUMER" may only be assigned to the service account of a client (system with client credentials).
 
 ## Limitations and Possible Improvements
 
