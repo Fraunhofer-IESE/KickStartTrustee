@@ -4,7 +4,7 @@
 
 The following diagram illustrates the use case flow:
 
-![Scenario Flow](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Demonstrator Guide/SVG/Use Case (1) Flow.svg/>)
+![Scenario Flow](<../SVG/Use Case 1 - Flow.svg>)
 
 ## Prerequisite
 

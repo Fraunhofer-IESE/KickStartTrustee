@@ -4,11 +4,11 @@
 
 The following diagrams illustrates the use case flow:
 
-![Scenario Flow](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Demonstrator Guide/SVG/Use Case (2) Onboard Farmer on KST Platform.svg>)
+![Scenario Flow](<../SVG/Use Case 3 - Onboard Farmer on KST Platform.svg>)
 
-![Scenario Flow](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Demonstrator Guide/SVG/Use Case (2) Onboard Farmer on KST Basic FMIS.svg>)
+![Scenario Flow](<../SVG/Use Case 3 - Onboard Farmer on KST Basic FMIS.svg>)
 
-![Scenario Flow](</docs/Konzeption und Umsetzung/Beispielhafte Implementierung DTH-Plattform/Demonstrator Guide/SVG/Use Case (2) Disease Warning Service Flow.svg>)
+![Scenario Flow](<../SVG/Use Case 3 - Disease Warning Service Flow.svg>)
 
 Following is a details description about the use case scenario flow:
 
