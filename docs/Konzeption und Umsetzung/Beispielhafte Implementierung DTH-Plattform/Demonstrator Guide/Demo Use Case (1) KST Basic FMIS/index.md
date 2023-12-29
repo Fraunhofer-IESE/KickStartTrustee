@@ -38,6 +38,6 @@ _KST Basic FMIS_ provides a feature that displays the current consent establishe
 
 ## Subsequent Usage
 
-1. Sign in to  _KST-FIMS_ using your credentials on  _KST Platform (__KST Basic FMIS_  redirects the user to the  _KST Platform,_ OAuth 2.0 Authorization Code Flow, where he/ she can enter their credentials, and then  _KST Platform_ would redirect the user back to  _KST Basic FMIS)._
+1. Sign in to  _KST Basic FIMS_ using your credentials on  _KST Platform_ (_KST Basic FMIS_  redirects the user to the  _KST Platform_, OAuth 2.0 Authorization Code Flow, where he/ she can enter their credentials, and then  _KST Platform_ would redirect the user back to  _KST Basic FMIS)._
 2. The  _KST Basic FMIS_ consumes the required data from the farmer's  _KST Platform_  account (based on the previously granted consent level).
 3. The farmer can  continue using the features offered by  _KST Basic FMIS_.
