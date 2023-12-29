@@ -1,4 +1,4 @@
-# Demo Use Cae (1) KST Basic FMIS
+# Demo Use Case (1) KST Basic FMIS
 
 ## Scenario Flow
 
