@@ -33,3 +33,8 @@ Beim entwickeln von DTH-Plattformen ist das eigentliche Produkt, dass der Nutzer
 Beim entwickeln des UX-Konzepts und den daraus resultierenden User Interfaces ist es wichtig den Anwender und den Kontext ganzheitlich zu betrachten. Ein genaues Verständnis darüber, was für den Anwender entscheidend ist, führt zu einem guten Bedienkonzept. Im Falle einer DTH-Plattform stehen zwei Aspekte dabei stark im Vordergrund: Vertrauen und Sicherheit. Wenn ein Anwender die Plattform verwenden soll, muss er der Plattform vertrauen. Es gilt herauszufinden, wie dieses Vertrauen in der Domäne bzw. dem Nutzungskontext des DTH erzeugt werden kann. Erreicht wird dies über eine ausführliche Nutzer- bzw. Kontextanalyse und den daraus resultierenden, relevanten Funktionen und dem richtigen Einsatz der Usability Heuristiken und Design Prinzipien für den Kontext DTH-Plattform.
 
 [Zur UI-Gestaltung](<UI-Gestaltung>)
+
+## Beispielhafte Implementierung DTH-Plattform
+TODO
+
+[Zur Beispielhaften Implementierung DTH-Plattform](<Beispielhafte Implementierung DTH-Plattform/>)
