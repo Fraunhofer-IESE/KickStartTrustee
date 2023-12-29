@@ -37,7 +37,7 @@ Following is a details description about the use case scenario flow:
 10. _“Disease Warning Service”_  module sends an email that contains the warning for each of the farmers (in 9) that are subscribed to receiving warnings emails.
 11. The warning consists of the following:
 
-- - Date.
-  - Disease Name.
-  - Disease Severity: {low, medium, high}.
-  - Endangered Field: a list of endangered fields {field1, field 2,…}.
+- Date.
+- Disease Name.
+- Disease Severity: {low, medium, high}.
+- Endangered Field: a list of endangered fields {field1, field 2,…}.
