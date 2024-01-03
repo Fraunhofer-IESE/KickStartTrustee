@@ -1,0 +1,26 @@
+# Architecture Document
+
+## Table of Content
+
+- [Introduction](<Introduction>)
+- [System Context and Domain](<System Context and Domain>)
+  - [KickStartTrustee Platform](<System Context and Domain/KickStartTrustee Platform>)
+  - [External Systems](<System Context and Domain/External Systems>)
+- [Architecture Drivers](<Architecture Drivers>)
+- [System Decomposition](<System Decomposition/>)
+  - [Key Architectural Decisions](<System Decomposition/Key Architectural Decisions/>)
+  - [Core Concepts](<System Decomposition/Core Concepts/>)
+  - [System Structure](<System Decomposition/System Structure/>)
+  - [Code Organization](<System Decomposition/Code Organization/>)
+  - [Deployment](<System Decomposition/Deployment/>)
+  - [Technologies](<System Decomposition/Technologies/>)
+- [Quality Concepts](<Quality Concepts/>)
+  - [Scalability, Availability, Adaptability and others](<Quality Concepts/Scalability, Availability, Adaptability and Others/>)
+  - [Security](<Quality Concepts/Security/>)
+    - [Authentication and Authorization](<Quality Concepts/Security/Authentication and Authorization/>)
+    - [Data Access Scenarios](<Quality Concepts/Security/Data Access Scenarios/>)
+    - [Consent Management](<Quality Concepts/Security/Consent Management/>)
+      - [Consent API Usage Guide](<Quality Concepts/Security/Consent Management/Consent API Usage Guide/>)
+      - [Consent Flows](<Quality Concepts/Security/Consent Management/Consent Flows/>)
+    - [Secure API Design](<Quality Concepts/Security/Secure API Design/>)
+- [Technical Debts, Limitations, and Possible Improvements](<Technical Debts, Limitations, and Possible Improvements/>)
