@@ -8,7 +8,7 @@ The following diagram illustrates the use case flow:
 
 ## Prerequisite
 
-Onboarding  _KST Basic FMIS_ (once): _KST Basic FMIS operator_  should register  _KST Basic FMIS_ as a client at the  _KST Platform_. Thus, the  _KST Platform_  operator should configure a public client  for  _KST Basic FMIS_. See [TODO]().
+Onboarding  _KST Basic FMIS_ (once): _KST Basic FMIS operator_  should register  _KST Basic FMIS_ as a client at the  _KST Platform_. Thus, the  _KST Platform_  operator should configure a public client  for  _KST Basic FMIS_. See [CLIENT_MANAGEMENT.md](<https://github.com/Fraunhofer-IESE/KickStartTrustee/blob/main/src/kst-platform/docs/CLIENT_MANAGEMENT.md>).
 
 ## First-Time Usage
 

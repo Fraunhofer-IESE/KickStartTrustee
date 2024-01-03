@@ -6,7 +6,7 @@ _KickStartTrustee Basic FMIS_ is a basic FMIS (Farm Management Information syste
 
 ### Helpful Links
 
-- The source code of  _KST Basic FMIS_  can be found in this GIT repository: [TODO](<>)  
+- The source code of  _KST Basic FMIS_  can be found in this GIT repository (in the example-farming-trustee branch): [Git Repository](<https://github.com/Fraunhofer-IESE/KickStartTrustee/tree/example-farming-trustee>)
 
 ### Features
 

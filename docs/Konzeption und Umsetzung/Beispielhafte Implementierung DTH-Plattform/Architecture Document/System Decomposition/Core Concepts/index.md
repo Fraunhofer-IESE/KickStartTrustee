@@ -27,7 +27,7 @@ We made this design decision for multiple reasons:
 - Ensure that the provided data conforms to a certain structure.
 - Provide reliability for the Data Consumers with regard to the structure and semantics of the consumed data.
 
-For technical details about how to configure the supported data item types in our _KST Platform_, please have a look at  [TODO](<>)
+For technical details about how to configure the supported data item types in our _KST Platform_, please have a look at  [DATA_ITEMS.md](<https://github.com/Fraunhofer-IESE/KickStartTrustee/blob/main/src/kst-platform/docs/DATA_ITEMS.md>)
 
 ## Consent Management
 

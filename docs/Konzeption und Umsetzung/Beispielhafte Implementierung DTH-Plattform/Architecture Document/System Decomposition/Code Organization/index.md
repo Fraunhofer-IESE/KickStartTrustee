@@ -2,7 +2,7 @@
 
 ## Git Repository
 
-The _KST Platform_ git repository can be found here: [TODO](<>). It is a monorepo and it contains the frontend (located in the ui folder) and the backend (all other folders).
+The _KST Platform_ git repository can be found here: [Github Repository](<https://github.com/Fraunhofer-IESE/KickStartTrustee/tree/main/src/kst-platform>). It is a monorepo and it contains the frontend (located in the ui folder) and the backend (all other folders).
 
 ## Source Files
 

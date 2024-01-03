@@ -7,16 +7,16 @@
 
 ## Realization
 
-The behaviour of both Seeder Simon and Weeder Willy systems is implemented via Postman. The Postman Collection can be accessed and downloaded at:  [TODO]().
+The behaviour of both Seeder Simon and Weeder Willy systems is implemented via Postman. The Postman Collection can be accessed and downloaded at:  [Github](<https://github.com/Fraunhofer-IESE/KickStartTrustee/blob/example-farming-trustee/src/example/kst-agricultural-service-provider/postman/KST%20Agricultural%20Service%20Provider%20Use%20Case.postman_collection.json>).
 
 ## Required Setup
 
 The demo scenarios assume that both subcontractors ( "Seeder Simon" and "Weeder Willy") use some server based system to manage their contracting jobs and also store the data they collect during those jobs in the same system. Therefore before the first use of the postman collection you need to create two OAuth2 clients with client credentials enabled and assign the PROSUMER role to both service accounts . The demo postman collection includes an example environment named ExampleEnv. In order to use this example environment you need give the OAuth2 Clients the following client ids:
 
-- Seeder Simon" clientId: seeder-simon-service.
+- "Seeder Simon" clientId: seeder-simon-service.
 - "Willy Weeder" clientId: willy-weeder-service.
 
-You also need to obtain the client secrets for both clients and set them in the example environment. For more guidance and details on how to setup backend service clients see  [TODO]().
+You also need to obtain the client secrets for both clients and set them in the example environment. For more guidance and details on how to setup backend service clients see  [CLIENT_MANAGEMENT.md](<https://github.com/Fraunhofer-IESE/KickStartTrustee/blob/main/src/kst-platform/docs/CLIENT_MANAGEMENT.md>).
 
 ## Use Case Flow (How to run the script?)
 

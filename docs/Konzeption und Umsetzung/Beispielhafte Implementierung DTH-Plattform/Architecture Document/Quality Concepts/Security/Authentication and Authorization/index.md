@@ -29,6 +29,6 @@ We offer a dedicated set of APIs (that support certain operations) for each type
 
 Furthermore,  _KST Platform_  offers a dedicated client type (Owner client type) and a set of scopes for the KST Platform frontend (The Owner-UI). The KST Platform frontend allows the data owner to manage his/her consents, view logs of the consumed and provided data, ...etc. Those scopes, and the correspoding endpoints, should not be used by other types of client applications like for example a data consumer, and therefore should not be configured/assigned to such applications.
 
-For a complete list of all scopes, check the SETUP.md file in the git repository of the KST Platform: [TODO](<>).
+For a complete list of all scopes, check the SETUP.md file in the git repository of the KST Platform: [SETUP.md](<https://github.com/Fraunhofer-IESE/KickStartTrustee/blob/main/src/kst-platform/docs/SETUP.md>).
 
 Attention: Even though the access token has the required scope, the KST Platform backend may still reject some calls to its REST-Endpoints because these calls require a valid consent from the affected data owner to work (see [Consent Management](<../Consent Management/>)).
