@@ -39,7 +39,7 @@ Post Condition: There are weed control work records for the farmer's fields avai
 The use case is realized as a [Postman](https://www.postman.com/) collection.
 
 Client Credentials are used to authenticate the systems of the involved agricultural service providers.
-Information about how to configure the credentials for the two Data Prosumer Backend Services ("seeder-simon-service" and "willy-weeder-service") can be found here: https://gitlab.cc-asp.fraunhofer.de/kickstarttrustee/kickstarttrustee/-/blob/main/docs/CLIENT_MANAGEMENT.md
+Information about how to configure the credentials for the two Data Prosumer Backend Services ("seeder-simon-service" and "willy-weeder-service") can be found here: https://github.com/Fraunhofer-IESE/KickStartTrustee/blob/main/src/kst-platform/docs/CLIENT_MANAGEMENT.md
 
 The Postman collection can be found in the [postman directory](postman/) and can be imported to a local Postman installation.
 

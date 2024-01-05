@@ -5,7 +5,7 @@
 KickStartTrustee Basic FMIS is a basic FMIS (Farm Management Information System) that serves as a demo to illustrate the envisioned interaction between an agricultural data trustee and a third-party application.
 
 KST Basic FMIS is realized as a Single Page Application (SPA) for farmers and has no backend.
-Farmers can use KST Basic FMIS to manage their field related data stored at the [KST Platform](https://gitlab.cc-asp.fraunhofer.de/kickstarttrustee/kickstarttrustee/-/tree/example-farming-trustee).
+Farmers can use KST Basic FMIS to manage their field related data stored at the [KST Platform](https://github.com/Fraunhofer-IESE/KickStartTrustee/tree/example-farming-trustee/src/kst-platform).
 KST Basic FMIS can provide and consume field related data of the farmer that is currently logged in to KST Basic FMIS.
 
 ## General Information
@@ -51,7 +51,7 @@ KST Basic FMIS will be opened automatically in the web browser.
 
 The configuration of the SPA used while development can be adjusted using the [public/config.json](public/config.json) file.
 
-For configuration of the KST Basic FMIS OAuth client see https://gitlab.cc-asp.fraunhofer.de/kickstarttrustee/kickstarttrustee/-/blob/main/docs/CLIENT_MANAGEMENT.md
+For configuration of the KST Basic FMIS OAuth client see https://github.com/Fraunhofer-IESE/KickStartTrustee/blob/main/src/kst-platform/docs/CLIENT_MANAGEMENT.md
 
 For deployment and operation of KST Basic FMIS we use Docker. 
 The KST Basic FMIS Docker Image requires certain environment variables to be configured:
