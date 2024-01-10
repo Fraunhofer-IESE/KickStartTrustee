@@ -11,7 +11,7 @@ Anhand der Definition wird die Thematik Datentreuhänder eingeführt und ein gru
 ## ![](../assets/images/map.svg) Landkarte
 Datentreuhänder sind stark von den jeweiligen Anwendungsfällen und eingesetzten Domänen abhängig. In der Folge gibt es verschiedene Ausprägungen oder Archetypen von Datentreuhändern, die sich in einzelnen Funktionen und Fähigkeiten unterscheiden. Die Landkarte der verschiedenen Archetypen verschafft einen Überblick und dient zur Orientierung der eigenen, avisierten Lösung.
 
-[Zur Datentreuhänder-Landkarte](Datentreuhänder-Landkarte)
+[Zur Datentreuhänder-Landkarte](Landkarte)
 
 ## ![](../assets/images/gavel.svg) Rechtliche Anforderungen und Einschätzung
 Wenn man ein Datentreuhandmodell betreiben will, ist eine Vielzahl von Gesetzen zu beachten. Dabei ist die Rechtslage häufig nicht eindeutig, sodass es für Datentreuhänder nicht einfach ist, diese zu durchschauen. 
