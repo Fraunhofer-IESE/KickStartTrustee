@@ -20,4 +20,4 @@ Zu guter Letzt zeigen wir ein vollständiges Beispiel für eine Benutzeroberflä
 
 [Zur beispielhaften Benutzeroberfläche](3.%20Beispiel-UI)
  
-Das Beispiel ist auch als Klick-Protoyp bei Adobe XD verfügbar: [https://xd.adobe.com/view/e4e9b719-f5cb-4f11-93be-b8be73077d25-b1ba/](https://xd.adobe.com/view/e4e9b719-f5cb-4f11-93be-b8be73077d25-b1ba/)
+Das Beispiel ist auch als Klick-Protoyp bei Adobe XD verfügbar: [https://xd.adobe.com/view/4f180efa-7e2a-4121-abd4-2bf07a9cc416-1a4b/](https://xd.adobe.com/view/4f180efa-7e2a-4121-abd4-2bf07a9cc416-1a4b/)
