@@ -1,6 +1,6 @@
 # ![](../assets/images/play.svg) Grundlagen und Einführung
 
-Dieses Kapitel gibt ein grundlegendes Verständnis für Datentreuhandmodelle. Dazu gehören allgemeine Begriffsklärungen, die Unterscheidung verschiedener Datentreuhänderarten, Anwendungsbeispiele sowie die rechtliche Einordnung. Außerdem soll in dieser Phase das Framework und dessen Vorteile und Anwendung motiviert und vermittelt werden. Dazu bietet das Framework zu allen genannten Punkte entsprechende Wissensdokumente.
+Dieses Kapitel gibt ein grundlegendes Verständnis für Datentreuhandmodelle. Dazu gehören allgemeine Begriffsklärungen, die Unterscheidung verschiedener Datentreuhänderarten, Anwendungsbeispiele sowie die rechtliche Einordnung. Außerdem soll in dieser Phase das Framework und dessen Vorteile und Anwendung motiviert und vermittelt werden. Dazu bietet das Framework zu allen genannten Punkten entsprechende Wissensdokumente.
 
 ## ![](../assets/images/document.svg) Definition "Datentreuhänder"
 Anhand der Definition wird die Thematik Datentreuhänder eingeführt und ein grundlegendes Verständnis geschaffen, welche Funktionen ein Datentreuhänder anbieten muss. Das Verständnis der Definition und der einzelnen Begriffe darin ist Voraussetzung für die späteren Schritte im Leitfaden.
