@@ -13,4 +13,4 @@ Wir haben bereits gesehen, dass Datentreuhänder in verschiedensten Domänen exi
 Der Schritt »Tangible Trustee Design« (TTD) bildet die Brücke zwischen der generellen Vision (dem Lösungsszenario) und der konkreten Betrachtung von Anforderungen im Rahmen des Software Engineerings. Wir befinden uns also noch in der Definition des Scopes und der Konkretisierung der DTH-Lösung.
 
 
-[Zur Tangible Trustee Design Methode](<Tangible Trustee Design>)
+[Zur Tangible Trustee Design Methode](Tangible%20Trustee%20Design)
