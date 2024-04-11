@@ -1,3 +1,9 @@
+<style>
+@page large-table {
+  size: landscape;
+}
+</style>
+
 # Datentreuhänder-Landkarte
 
 Aus unserer bewusst recht abstrakten Definition geht bereits hervor, das Datentreuhandmodelle sich stark von einander unterscheiden - je nach der konkreten Domäne und dem konkreten Anwendungsfall. Die verschiedenen Ausprägungen oder Archetypen von Datentreuhändern, die sich in einzelnen Funktionen und Fähigkeiten unterscheiden, wollen wir in dieser "Landkarte" einordnen. Dazu stellen wir die verschiedenen Unterscheidungsmerkmale vor und ordnen reale Datentreuhandmodelle in die jeweiligen Kategorien ein. Die Landkarte soll also einen Überblick ermöglichen, Beispiele aufzeigen und als Grundlage zur Einordnung des eigenen, anvisierten Datentreuhandmodells dienen.
@@ -113,11 +119,7 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 
 ### Beispiele
 
-<style>
-@page {
-  size: landscape;
-}
-</style>
+<section id="large-table">
 
 | Förderung digitaler Souveränität | Förderung von Datensouveränität | Förderung der wirtschaftlichen Verwertung von Daten | Förderung von Innovation | Förderung von Wissenschaft und Forschung | Förderung von fairem Wettbewerb | Erfüllung von Auflagen  |
 |----------------------------------|---------------------------------|-----------------------------------------------------|--------------------------|------------------------------------------|---------------------------------|-------------------------|
@@ -127,6 +129,7 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 | TRANSIT                          | MobiDataSol                     | TreuMoDa                                            |                          | FAIRWinDS                                |                                 |                         |
 |                                  | TRANSIT                         |                                                     |                          | MobiDataSol                              |                                 |                         |
 |                                  |                                 |                                                     |                          | TreuMoDa                                 |                                 |                         
+</section>
 
 ## Geschäftsbeziehungen
 
