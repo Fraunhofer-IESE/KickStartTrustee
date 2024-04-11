@@ -1,3 +1,9 @@
+<style>
+@page {
+size: landscape;
+}
+</style>
+
 # Glossar
 
 | Begriff                                         | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Synonyme                                                                                                | Abkürzungen                | Labels                         |                      |   |
