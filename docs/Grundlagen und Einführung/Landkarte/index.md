@@ -1,6 +1,10 @@
-<style>
-@page large-table {
-  size: landscape;
+<style type="text/css">
+@page landscape {
+    size: landscape;
+}
+
+div.landscape-content {
+    page: landscape;
 }
 </style>
 
@@ -118,10 +122,11 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 7.  Erfüllung von  **Auflagen**
 
 
-<section id="large-table">
-</section>
 
 ### Beispiele
+
+<div class="landscape-content">
+</div>
 
 | Förderung digitaler Souveränität | Förderung von Datensouveränität | Förderung der wirtschaftlichen Verwertung von Daten | Förderung von Innovation | Förderung von Wissenschaft und Forschung | Förderung von fairem Wettbewerb | Erfüllung von Auflagen  |
 |----------------------------------|---------------------------------|-----------------------------------------------------|--------------------------|------------------------------------------|---------------------------------|-------------------------|
