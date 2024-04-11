@@ -1,13 +1,3 @@
-<style type="text/css">
-@page landscape {
-    size: landscape;
-}
-
-div.landscape-content {
-    page: landscape;
-}
-</style>
-
 # Datentreuhänder-Landkarte
 
 Aus unserer bewusst recht abstrakten Definition geht bereits hervor, das Datentreuhandmodelle sich stark von einander unterscheiden - je nach der konkreten Domäne und dem konkreten Anwendungsfall. Die verschiedenen Ausprägungen oder Archetypen von Datentreuhändern, die sich in einzelnen Funktionen und Fähigkeiten unterscheiden, wollen wir in dieser "Landkarte" einordnen. Dazu stellen wir die verschiedenen Unterscheidungsmerkmale vor und ordnen reale Datentreuhandmodelle in die jeweiligen Kategorien ein. Die Landkarte soll also einen Überblick ermöglichen, Beispiele aufzeigen und als Grundlage zur Einordnung des eigenen, anvisierten Datentreuhandmodells dienen.
@@ -121,12 +111,7 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 6.  Förderung von fairem  **Wettbewerb**
 7.  Erfüllung von  **Auflagen**
 
-
-
 ### Beispiele
-
-<div class="landscape-content">
-</div>
 
 | Förderung digitaler Souveränität | Förderung von Datensouveränität | Förderung der wirtschaftlichen Verwertung von Daten | Förderung von Innovation | Förderung von Wissenschaft und Forschung | Förderung von fairem Wettbewerb | Erfüllung von Auflagen  |
 |----------------------------------|---------------------------------|-----------------------------------------------------|--------------------------|------------------------------------------|---------------------------------|-------------------------|

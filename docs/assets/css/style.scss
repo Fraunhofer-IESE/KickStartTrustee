@@ -8,6 +8,10 @@ $section-headings-color: #005b7f;
 
 @import "{{ site.theme }}";
 
+@page {
+	margin: 4px;
+}
+
 #content {
 	max-width: 96rem;
 }
