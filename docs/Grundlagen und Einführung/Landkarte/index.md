@@ -117,9 +117,11 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 6.  Förderung von fairem  **Wettbewerb**
 7.  Erfüllung von  **Auflagen**
 
-### Beispiele
 
 <section id="large-table">
+</section>
+
+### Beispiele
 
 | Förderung digitaler Souveränität | Förderung von Datensouveränität | Förderung der wirtschaftlichen Verwertung von Daten | Förderung von Innovation | Förderung von Wissenschaft und Forschung | Förderung von fairem Wettbewerb | Erfüllung von Auflagen  |
 |----------------------------------|---------------------------------|-----------------------------------------------------|--------------------------|------------------------------------------|---------------------------------|-------------------------|
@@ -129,7 +131,6 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 | TRANSIT                          | MobiDataSol                     | TreuMoDa                                            |                          | FAIRWinDS                                |                                 |                         |
 |                                  | TRANSIT                         |                                                     |                          | MobiDataSol                              |                                 |                         |
 |                                  |                                 |                                                     |                          | TreuMoDa                                 |                                 |                         
-</section>
 
 ## Geschäftsbeziehungen
 
