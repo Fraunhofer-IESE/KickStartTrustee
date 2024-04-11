@@ -113,6 +113,12 @@ Datentreuhänder können mit ihrem Angebot, bzw. dem Ermöglichen eines vertraue
 
 ### Beispiele
 
+<style>
+@page {
+  size: landscape;
+}
+</style>
+
 | Förderung digitaler Souveränität | Förderung von Datensouveränität | Förderung der wirtschaftlichen Verwertung von Daten | Förderung von Innovation | Förderung von Wissenschaft und Forschung | Förderung von fairem Wettbewerb | Erfüllung von Auflagen  |
 |----------------------------------|---------------------------------|-----------------------------------------------------|--------------------------|------------------------------------------|---------------------------------|-------------------------|
 | BreedFides                       | BreedFides                      | BreedFides                                          |                          | BreedFides                               | BreedFides                      | MobiDataSol             |
