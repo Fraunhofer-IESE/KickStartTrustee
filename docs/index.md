@@ -15,7 +15,7 @@ Dieser klärt diverse Begrifflichkeiten und enthält eine Reihe von Methoden und
 	}
 </style>
 <div class="image">
-	<img src="./assets/images/Übersichtsgrafik.png" style="width: 100%; height:auto;"/>
+	<img alt="KickStartTrustee Übersicht" src="./assets/images/Übersichtsgrafik.png" style="width: 100%; height:auto;"/>
 	<a href="https://www.kickstarttrustee.de/" style="top: 37%; left: 5%; width: 17%; height: 57%;"></a>
 	<a href="Grundlagen%20und%20Einf%C3%BChrung" style="top: 6.5%; left: 23%; width: 17%; height: 57%;"></a>
 	<a href="Angebotsentwicklung" style="top: 37%; left: 41%; width: 17%; height: 57%;"></a>
