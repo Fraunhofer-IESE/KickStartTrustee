@@ -16,11 +16,11 @@ Dieser klärt diverse Begrifflichkeiten und enthält eine Reihe von Methoden und
 </style>
 <div class="image">
 	<img alt="KickStartTrustee Übersicht" src="./assets/images/Übersichtsgrafik.png" style="width: 100%; height:auto;"/>
-	<a href="https://www.kickstarttrustee.de/" style="top: 37%; left: 5%; width: 17%; height: 57%;"></a>
-	<a href="Grundlagen%20und%20Einf%C3%BChrung" style="top: 6.5%; left: 23%; width: 17%; height: 57%;"></a>
-	<a href="Angebotsentwicklung" style="top: 37%; left: 41%; width: 17%; height: 57%;"></a>
-	<a href="Konzeption%20und%20Umsetzung" style="top: 6.5%; left: 60%; width: 17%; height: 57%;"></a>
-	<a href="Markteinf%C3%BChrung" style="top: 37%; left: 78%; width: 17%; height: 57%;"></a>
+	<a href="https://www.kickstarttrustee.de/" aria-label="KickStartTrusteee" style="top: 37%; left: 5%; width: 17%; height: 57%;"></a>
+	<a href="Grundlagen%20und%20Einf%C3%BChrung" aria-label="Grundlagen und Einführung" style="top: 6.5%; left: 23%; width: 17%; height: 57%;"></a>
+	<a href="Angebotsentwicklung" aria-label="Angebotsentwicklung" style="top: 37%; left: 41%; width: 17%; height: 57%;"></a>
+	<a href="Konzeption%20und%20Umsetzung" aria-label="Konzeption und Umsetzung" style="top: 6.5%; left: 60%; width: 17%; height: 57%;"></a>
+	<a href="Markteinf%C3%BChrung" aria-label="Markteinführung" style="top: 37%; left: 78%; width: 17%; height: 57%;"></a>
 </div>
 
 [PDF](<./assets/images/Übersichtsgrafik.pdf>)
