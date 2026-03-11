@@ -39,6 +39,7 @@ Beim entwickeln des UX-Konzepts und den daraus resultierenden User Interfaces is
 
 ## Onboarding
 Onboarding bezeichnet im Rahmen dieses Frameworks den strukturierten Einstieg von Organisationen in eine Datentreuhand‑Plattform – von der ersten Informationsvermittlung bis zur bewussten Entscheidung für oder gegen eine Teilnahme. Im Vordergrund steht dabei eine klare, adressatengerechte Kommunikation zu Zweck und Funktionsweise der Plattform, zu Rollen und Verantwortlichkeiten sowie zu den bestehenden Sicherheits‑, Datenschutz- und Governance‑Mechanismen. Ein professionelles Onboarding stellt sicher, dass Unternehmen ihre wesentlichen Fragen zur Nutzung und Kontrolle ihrer Daten, zu Zugriffsrechten und zu rechtlichen Rahmenbedingungen nachvollziehbar beantwortet bekommen und die zugrunde liegenden Maßnahmen in geeigneter Form belegt werden. Ziel ist es, Entscheidungsprozesse zu unterstützen, Vertrauen in das Datentreuhändermodell aufzubauen und den Übergang in den regulären Betrieb möglichst reibungsarm und transparent zu gestalten.
+
 [Zum Onboarding](<Onboarding>)
 
 ## Beispielhafte Implementierung DTH-Plattform

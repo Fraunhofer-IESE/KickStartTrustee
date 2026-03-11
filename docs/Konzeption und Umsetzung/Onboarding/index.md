@@ -2,7 +2,7 @@
 
 > Hinweis: Die in diesem Baustein beschriebenen Konzepte, Strukturen und Module wurden im Rahmen des Projekts TRANSIT‑ON entwickelt. Sie sind bewusst so abstrahiert, dass sie für Datentreuhänder und datentreuhänderbasierte Plattformen in unterschiedlichen Domänen (z. B. Logistik, Mobilität, Energie, Forschung) angewendet werden können.
 
-## 1 Einordnung und Zielsetzung
+## Einordnung und Zielsetzung
 
 Datentreuhand-Plattformen adressieren die wachsende Notwendigkeit, Daten organisationsübergreifend zu teilen, ohne die Kontrolle über deren Nutzung zu verlieren. Sie übernehmen eine neutrale Vermittlerrolle, sollen kommerzielle Eigeninteressen von Entscheidungen über Datenzugriffe trennen und Transparenz in Bezug auf Zwecke, Zugriffsszenarien und Governance schaffen.
 
@@ -15,7 +15,7 @@ In vielen Fällen bestehen auf Seiten der Plattform bereits substanzielle Sicher
 
 Dieser Baustein beschreibt ein Kommunikations- und Onboardingkonzept, das Sicherheits- und Datenschutzaspekte in modulare, wiederverwendbare und zielgruppenorientierte Botschaften übersetzt. Er ergänzt ein bestehendes Sicherheits- und Datenschutzkonzept um die Dimension der vertrauensbildenden Sicherheitskommunikation.
 
-## 2 Sicherheitskommunikation als Assurance-Funktion
+## Sicherheitskommunikation als Assurance-Funktion
 
 Klassische Sicherheits- und Datenschutzdokumentation – etwa Richtlinien, technische Beschreibungen oder lange Datenschutzerklärungen – ist für interne Zwecke wichtig, aber für Entscheidungsprozesse im Onboarding nur bedingt geeignet. Entscheidungsträger benötigen an diesem Punkt keine vollständige Dokumentation, sondern prägnante Antworten auf wenige, aber zentrale Fragen:
 
@@ -26,9 +26,9 @@ Klassische Sicherheits- und Datenschutzdokumentation – etwa Richtlinien, techn
 
 Die Grundannahme dieses Bausteins lautet daher: Onboarding scheitert häufig weniger an fehlenden Kontrollen als daran, dass vorhandene Kontrollen nicht als **Assurances mit klaren Bezügen zu Pflichten und Evidenzen** kommuniziert werden. Sicherheitskommunikation wird somit als eigenständige Funktion verstanden, die technische, juristische und organisatorische Sachverhalte zielgerichtet aufbereitet.
 
-## 3 Kommunikations- und Evaluationsansatz in zwei Stufen
+## Kommunikations- und Evaluationsansatz in zwei Stufen
 
-### 3.1 Erhebung von Bedenken und Informationsbedarfen
+### Erhebung von Bedenken und Informationsbedarfen
 
 Ein erster Schritt besteht darin, mittels einer initialen Befragung zu erfassen, welche Aspekte für potenzielle Nutzerunternehmen entscheidungsrelevant sind. Die TRANSIT‑ON-Vorerhebung zeigte beispielsweise:
 
@@ -44,7 +44,7 @@ Ein erster Schritt besteht darin, mittels einer initialen Befragung zu erfassen,
 
 Die Ergebnisse dienen dazu, das Kommunikationskonzept an realen Informationsbedarfen auszurichten, statt theoretische Annahmen zu treffen.
 
-### 3.2 Verfeinerung und Validierung
+### Verfeinerung und Validierung
 
 Nachdem ein Kommunikationskonzept und eine modulare Struktur implementiert wurden, empfiehlt sich eine zweite Evaluationsrunde zur Mitte des Einführungsprozesses oder nach ersten Onboardings. Ziel ist:
 
@@ -54,9 +54,9 @@ Nachdem ein Kommunikationskonzept und eine modulare Struktur implementiert wurde
 
 Die Fragen dieser zweiten Befragung werden systematisch aus der Modulstruktur abgeleitet. So lässt sich nachvollziehen, welche Module Informationsbedarfe gut adressieren und wo weitere Verbesserungen notwendig sind.
 
-## 4 Modulares Sicherheits- und Datenschutzmodell
+## Modulares Sicherheits- und Datenschutzmodell
 
-### 4.1 Ziel und Struktur der Module
+### Ziel und Struktur der Module
 
 Um die vielen Einzelaspekte von Informationssicherheit, Datenschutz und Governance handhabbar zu machen, wird ein **Modell aus Modulen** definiert. Jedes Modul beschreibt einen abgrenzbaren Themenbereich, etwa „Zweckbindung“, „Zugriffskontrolle“ oder „Verschlüsselung“, und umfasst:
 
@@ -66,7 +66,7 @@ Um die vielen Einzelaspekte von Informationssicherheit, Datenschutz und Governan
 
 Die Module können intern für Reifegradanalysen und Maßnahmenplanung verwendet werden und extern als strukturierter Rahmen für die Kommunikations- und Onboardingunterlagen dienen.
 
-### 4.2 Verankerung in Regulierungen und Standards
+### Verankerung in Regulierungen und Standards
 
 Die Module sind aus einer systematischen Analyse der einschlägigen Regelungen abgeleitet. Dabei wurden insbesondere berücksichtigt:
 
@@ -79,7 +79,7 @@ Die Module sind aus einer systematischen Analyse der einschlägigen Regelungen a
 
 So wird sichergestellt, dass die Module nicht nur technische, sondern auch regulatorische Anforderungen abbilden und eine Entscheidungsbasis bieten, die sich auf klare normative Bezüge stützt.
 
-### 4.3 Überblick über zentrale Module
+### Überblick über zentrale Module
 
 Die nachfolgende Tabelle gibt einen exemplarischen Überblick über ausgewählte Kernmodule. Sie kann als Basis für eine plattformspezifische Ausgestaltung dienen:
 
@@ -100,7 +100,7 @@ Die nachfolgende Tabelle gibt einen exemplarischen Überblick über ausgewählte
 
 Diese und weitere Module (z. B. zu Betroffenenrechten, sicherem Datenaustausch mit Dritten, Lieferkettensicherheit, KRITIS-Bezug, Angriffserkennung) können je nach Plattformreife schrittweise ergänzt und konkretisiert werden.
 
-## 5 Fragebogenbasierte, nutzenorientierte Kommunikation
+## Fragebogenbasierte, nutzenorientierte Kommunikation
 
 Die modulare Struktur bildet die Grundlage für einen **fragebogenbasierten Kommunikationsansatz** im Onboarding. Ziel ist es, die abstrakten Module an die konkreten Anliegen eines Unternehmens anzubinden.
 
@@ -116,7 +116,7 @@ Unternehmen beantworten den Fragebogen und signalisieren damit ihre Schwerpunkte
 
 Dieser Ansatz senkt den Kommunikationsaufwand und erhöht gleichzeitig die Relevanz der bereitgestellten Informationen.
 
-## 6 Bewertung und Reifegradentwicklung
+## Bewertung und Reifegradentwicklung
 
 Die Modulstruktur kann nicht nur für die externe Kommunikation, sondern auch für eine **interne Reifegradanalyse des Sicherheitskonzepts** verwendet werden. Für jedes Modul kann der aktuelle Umsetzungsstand erfasst werden, beispielsweise:
 
@@ -141,7 +141,7 @@ Aus dieser Bewertung lässt sich ein **Maßnahmenplan** ableiten, der für jedes
 
 So entsteht ein strukturiertes Vorgehen zur schrittweisen Erhöhung des Sicherheitsreifegrads, das zugleich mit der Kommunikationsstrategie abgestimmt ist: Fortschritte in einzelnen Modulen können nachvollziehbar nach außen kommuniziert werden.
 
-## 7 Prinzipien professioneller Sicherheitskommunikation im Onboarding
+## Prinzipien professioneller Sicherheitskommunikation im Onboarding
 
 Aus den beschriebenen Ansätzen lassen sich generische Prinzipien ableiten, die Datentreuhänder bei der Gestaltung ihrer Onboarding-Kommunikation berücksichtigen sollten:
 
@@ -165,7 +165,7 @@ Aus den beschriebenen Ansätzen lassen sich generische Prinzipien ableiten, die 
 
    Sicherheits- und Compliance-Aussagen sind nur dann vertrauensbildend, wenn sie aktuell sind. Versionierung, Änderungsprotokolle und regelmäßige Überprüfung sind daher essenziell.
 
-## 8 Fazit: Einsatz des Bausteins in Datentreuhand-Kontexten
+## Fazit: Einsatz des Bausteins in Datentreuhand-Kontexten
 
 Der hier beschriebene Baustein liefert Datentreuhändern einen strukturierten Rahmen, um Sicherheits- und Datenschutzaspekte im Onboarding:
 
