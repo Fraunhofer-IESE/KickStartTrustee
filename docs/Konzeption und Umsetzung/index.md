@@ -18,6 +18,9 @@ Ziel ist es, ein durchgängiges Sicherheitskonzept für DTH und DTH betreibende 
 
 [Zu den Sicherheits- und Datenschutzanforderungen](<Sicherheits- und Datenschutzanforderungen>)
 
+### Umsetzung Datengeberrechte und Datentreuhandpflichten
+[Zu der Umsetzung von Datengeberrechten und Datentreuhandpflichten](<UmsetzungDatengeberrechteDatentreuhandpflichten>)
+
 ## ![](../assets/images/bug-slash.svg) Security Testing Guide
 Angesichts der zunehmenden Bedrohungen durch Cyberkriminalität und Datenschutzverletzungen ist es unerlässlich, dass Betreiber von DTH ihre Sicherheitsvorkehrungen ständig überprüfen und verbessern, um zu gewährleisten, dass die von ihnen verwalteten Daten sicher und geschützt bleiben.
 
@@ -33,6 +36,10 @@ Beim entwickeln von DTH-Plattformen ist das eigentliche Produkt, dass der Nutzer
 Beim entwickeln des UX-Konzepts und den daraus resultierenden User Interfaces ist es wichtig den Anwender und den Kontext ganzheitlich zu betrachten. Ein genaues Verständnis darüber, was für den Anwender entscheidend ist, führt zu einem guten Bedienkonzept. Im Falle einer DTH-Plattform stehen zwei Aspekte dabei stark im Vordergrund: Vertrauen und Sicherheit. Wenn ein Anwender die Plattform verwenden soll, muss er der Plattform vertrauen. Es gilt herauszufinden, wie dieses Vertrauen in der Domäne bzw. dem Nutzungskontext des DTH erzeugt werden kann. Erreicht wird dies über eine ausführliche Nutzer- bzw. Kontextanalyse und den daraus resultierenden, relevanten Funktionen und dem richtigen Einsatz der Usability Heuristiken und Design Prinzipien für den Kontext DTH-Plattform.
 
 [Zur UI-Gestaltung](<UI-Gestaltung>)
+
+## Onboarding
+Onboarding bezeichnet im Rahmen dieses Frameworks den strukturierten Einstieg von Organisationen in eine Datentreuhand‑Plattform – von der ersten Informationsvermittlung bis zur bewussten Entscheidung für oder gegen eine Teilnahme. Im Vordergrund steht dabei eine klare, adressatengerechte Kommunikation zu Zweck und Funktionsweise der Plattform, zu Rollen und Verantwortlichkeiten sowie zu den bestehenden Sicherheits‑, Datenschutz- und Governance‑Mechanismen. Ein professionelles Onboarding stellt sicher, dass Unternehmen ihre wesentlichen Fragen zur Nutzung und Kontrolle ihrer Daten, zu Zugriffsrechten und zu rechtlichen Rahmenbedingungen nachvollziehbar beantwortet bekommen und die zugrunde liegenden Maßnahmen in geeigneter Form belegt werden. Ziel ist es, Entscheidungsprozesse zu unterstützen, Vertrauen in das Datentreuhändermodell aufzubauen und den Übergang in den regulären Betrieb möglichst reibungsarm und transparent zu gestalten.
+[Zum Onboarding](<Onboarding>)
 
 ## Beispielhafte Implementierung DTH-Plattform
 TODO
