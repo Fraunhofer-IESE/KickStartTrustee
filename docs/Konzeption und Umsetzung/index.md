@@ -18,7 +18,7 @@ Ziel ist es, ein durchgängiges Sicherheitskonzept für DTH und DTH betreibende 
 
 [Zu den Sicherheits- und Datenschutzanforderungen](<Sicherheits- und Datenschutzanforderungen>)
 
-### Umsetzung Datengeberrechte und Datentreuhandpflichten
+## ![](../assets/images/circle-exlamation.svg) Umsetzung Datengeberrechte und Datentreuhandpflichten
 [Zu der Umsetzung von Datengeberrechten und Datentreuhandpflichten](<UmsetzungDatengeberrechteDatentreuhandpflichten>)
 
 ## ![](../assets/images/bug-slash.svg) Security Testing Guide
@@ -37,7 +37,7 @@ Beim entwickeln des UX-Konzepts und den daraus resultierenden User Interfaces is
 
 [Zur UI-Gestaltung](<UI-Gestaltung>)
 
-## Onboarding
+## ![](../assets/images/handshake-angle.svg) Onboarding
 Onboarding bezeichnet im Rahmen dieses Frameworks den strukturierten Einstieg von Organisationen in eine Datentreuhand‑Plattform – von der ersten Informationsvermittlung bis zur bewussten Entscheidung für oder gegen eine Teilnahme. Im Vordergrund steht dabei eine klare, adressatengerechte Kommunikation zu Zweck und Funktionsweise der Plattform, zu Rollen und Verantwortlichkeiten sowie zu den bestehenden Sicherheits‑, Datenschutz- und Governance‑Mechanismen. Ein professionelles Onboarding stellt sicher, dass Unternehmen ihre wesentlichen Fragen zur Nutzung und Kontrolle ihrer Daten, zu Zugriffsrechten und zu rechtlichen Rahmenbedingungen nachvollziehbar beantwortet bekommen und die zugrunde liegenden Maßnahmen in geeigneter Form belegt werden. Ziel ist es, Entscheidungsprozesse zu unterstützen, Vertrauen in das Datentreuhändermodell aufzubauen und den Übergang in den regulären Betrieb möglichst reibungsarm und transparent zu gestalten.
 
 [Zum Onboarding](<Onboarding>)
