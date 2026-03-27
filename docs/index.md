@@ -67,8 +67,6 @@ Die hier veröffentlichten Inhalte des Projekts [KickStartTrustee](https://fraun
 
 Das Projekt KickStartTrustee wurde gefördert vom Bundesministerium für Bildung und Forschung (FKZ 16DTM117). 
 
-![](./assets/images/bmbf_foerderlogo.jpg)
-
 ## ![](./assets/images/legal.svg) Rechtliche Hinweise
 - [Datenschutzerklärung KickStartTrustee](https://www.kickstarttrustee.de/datenschutzerklaerung/)
 - [Datenschutzerklärung GitHub](https://docs.github.com/de/site-policy/privacy-policies/github-privacy-statement)
