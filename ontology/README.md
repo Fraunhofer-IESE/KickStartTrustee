@@ -28,7 +28,7 @@ Für die Entwicklung der Ontologie werden folgende Standards eingesetzt:
 ## Weiterführende Informationen
 
 - Projektseite ForgeTrustee: https://forgetrustee.kickstarttrustee.de/
-- Ontologie-Dokumentation: https://forgetrustee.kickstarttrustee.de/ontology
+- Ontologie-Dokumentation: https://forgetrustee.kickstarttrustee.de/ontology/
 
 ## Lizenz
 
