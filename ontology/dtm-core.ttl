@@ -1,0 +1,297 @@
+@prefix dtm-core: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> dcterms:created "2025-11-02"^^xsd:date ;
+	dcterms:creator "Bernd Rauch", "Denis Feth", "Jessica Chwalek" ;
+	dcterms:description "Basiskonzepte für das Datentreuhand-Modell."@de, "Core concepts for the data trustee model."@en ;
+	dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+	dcterms:modified "2025-11-10"^^xsd:date ;
+	dcterms:publisher "Kickstart Trustee" ;
+	dcterms:rights "© 2025 Kickstart Trustee — CC BY 4.0" ;
+	dcterms:title "DTM Kernontologie"@de, "DTM Core Ontology"@en ;
+	vann:preferredNamespacePrefix "dtm-core" ;
+	vann:preferredNamespaceUri "https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#" ;
+	rdf:type owl:Ontology ;
+	rdfs:comment "Zentrales Vokabular zur Modellierung von Datentreuhand-Assets, Akteuren und Prozessen."@de, "The central vocabulary for modelling data trustee assets, actors, and processes."@en ;
+	rdfs:label "DTM Kernontologie"@de, "DTM Core Ontology"@en ;
+	rdfs:seeAlso <https://forgetrustee.kickstarttrustee.de/ontology/docs/dtm-core> ;
+	owl:versionIRI <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> ;
+	owl:versionInfo "0.1.0" .
+
+  #########################################
+  ## Classes ##############################
+  #########################################
+
+dtm-core:AccessDataTrustee rdf:type owl:Class ;
+	rdfs:comment "Treuhandmodell mit Fokus auf Zugangskontrolle: Nur berechtigte Parteien erhalten Nutzung; Datengeber steuern den Zugang."@de, "Trustee model focusing on access control: ensures only authorized parties can use data; data providers govern access."@en ;
+	rdfs:label "Zugangstreuhand"@de, "Access Data Trustee"@en ;
+	rdfs:subClassOf dtm-core:DataTrusteeModel .
+
+dtm-core:Actor rdf:type owl:Class ;
+	rdfs:comment "Jede beteiligte Entität in einer Datentreuhand-Konstellation (z. B. Geber, Inhaber, Nutzer, Treuhand)."@de, "Any participating entity in a data trustee setting (e.g., provider, owner, consumer, trustee)."@en ;
+	rdfs:label "Akteur"@de, "Actor"@en .
+
+dtm-core:AdministrativeDataTrustee rdf:type owl:Class ;
+	rdfs:comment "Treuhandmodell mit Schwerpunkt auf administrativen Diensten: Kuratierung, Validierung, Katalogisierung, Aufbewahrung und Policy-Durchsetzung."@de, "Trustee model emphasizing administrative services: curation, validation, cataloging, retention and policy enforcement."@en ;
+	rdfs:label "Verwaltungstreuhand"@de, "Adminstrative Data Trustee"@en ;
+	rdfs:subClassOf dtm-core:DataTrusteeModel .
+
+dtm-core:AffectedParty rdf:type owl:Class ;
+	rdfs:comment "Partei, auf die sich Daten beziehen und deren Rechte/Interessen betroffen sein können."@de, "Party to whom the data relates and whose rights/interests may be affected."@en ;
+	rdfs:label "Betroffener"@de, "Affected Party"@en ;
+	rdfs:subClassOf dtm-core:DataProvider .
+
+dtm-core:Data rdf:type owl:Class ;
+	rdfs:comment "Beliebige Informationen, die gespeichert, verarbeitet, geteilt oder verwaltet werden."@de, "Any information that is stored, processed, shared or administered."@en ;
+	rdfs:label "Daten"@de, "Data"@en .
+
+dtm-core:DataConsumer rdf:type owl:Class ;
+	rdfs:comment "Akteur, der Daten zu einem Zweck nutzt (Analyse, Dienst, Produkt)."@de, "Actor that consumes or uses data for a purpose (analysis, service, product)."@en ;
+	rdfs:label "Datennutzer"@de, "Data Consumer"@en ;
+	rdfs:subClassOf dtm-core:Actor .
+
+dtm-core:DataOwner rdf:type owl:Class ;
+	rdfs:comment "Datengeber mit Eigentum/Verantwortung für bestimmte Daten; verwaltet häufig Daten Betroffener."@de, "Data provider with ownership or stewardship over specific data, often administering data from affected parties."@en ;
+	rdfs:label "Dateninhaber"@de, "Data Owner"@en ;
+	rdfs:subClassOf dtm-core:DataProvider .
+
+dtm-core:DataProvider rdf:type owl:Class ;
+	rdfs:comment "Akteur, der Daten in eine Treuhand-Konstellation einbringt/bereitstellt."@de, "Actor that provides or supplies data into a trustee setting."@en ;
+	rdfs:label "Datengeber"@de, "Data Provider"@en ;
+	rdfs:subClassOf dtm-core:Actor .
+
+dtm-core:DataTrustee rdf:type owl:Class ;
+	rdfs:comment "Akteur, der Daten unter vereinbarter Governance/Policy verwaltet und vermittelt."@de, "Actor responsible for administering and brokering data under agreed governance and policies."@en ;
+	rdfs:label "Datentreuhand"@de, "Data Trustee"@en ;
+	rdfs:subClassOf dtm-core:Actor .
+
+dtm-core:DataTrusteeModel rdf:type owl:Class ;
+	rdfs:comment "Modell, das Struktur, Rollen und Verantwortlichkeiten einer Datentreuhand-Umsetzung beschreibt."@de, "Model describing structure, roles and responsibilities of a data trustee implementation."@en ;
+	rdfs:label "Datentreuhandmodell"@de, "Data Trustee Model"@en .
+
+dtm-core:ExternallyControlledValueAddedDataTrustee rdf:type owl:Class ;
+	rdfs:comment "Mehrwert-Treuhandmodell, dessen Wertschöpfungsentscheidungen extern gesteuert werden."@de, "Value-adding trustee model whose value-creation decisions are governed by an external controller."@en ;
+	rdfs:label "Fremdbestimmte Mehrwerttreuhand"@de, "Externally Controlled Value Added Data Trustee"@en ;
+	rdfs:subClassOf dtm-core:ValueAddedDataTrustee ;
+	owl:disjointWith dtm-core:SelfManagedValueAddedDataTrustee .
+
+dtm-core:Metadata rdf:type owl:Class ;
+	rdfs:comment "Daten über Daten: Herkunft, Struktur, Restriktionen, Nutzungsbedingungen, Qualität, Herkunftskette."@de, "Data about data: provenance, structure, constraints, usage terms, quality, lineage."@en ;
+	rdfs:label "Metadata"@de, "Meta Data"@en .
+
+dtm-core:NonPersonalData rdf:type owl:Class ;
+	rdfs:comment "Daten ohne Bezug zu einer identifizierten oder identifizierbaren natürlichen Person."@de, "Data that does not relate to an identified or identifiable natural person."@en ;
+	rdfs:label "Nicht personenbezogene Daten"@de, "Non-personal Data"@en ;
+	rdfs:subClassOf dtm-core:Data .
+
+dtm-core:PersonalData rdf:type owl:Class ;
+	rdfs:comment "Daten, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."@de, "Data relating to an identified or identifiable natural person."@en ;
+	rdfs:label "Personenbezogene Daten"@de, "Personal Data"@en ;
+	rdfs:subClassOf dtm-core:Data .
+
+dtm-core:SelfManagedValueAddedDataTrustee rdf:type owl:Class ;
+	rdfs:comment "Mehrwert-Treuhandmodell, das autonom unter interner Governance agiert."@de, "Value-adding trustee model that operates autonomously under internal governance."@en ;
+	rdfs:label "Selbstbestimmte Mehrwerttreuhand"@de, "Self Managed Value Added Data Trustee"@en ;
+	rdfs:subClassOf dtm-core:ValueAddedDataTrustee .
+
+dtm-core:SpecialPersonalData rdf:type owl:Class ;
+	rdfs:comment "Besonders schützenswerte personenbezogene Daten (z. B. Gesundheit, Biometrie) mit erhöhtem Schutzbedarf."@de, "Personal data revealing sensitive attributes (e.g., health, biometrics), subject to stricter protection."@en ;
+	rdfs:label "Besondere Kategorien personenbezogener Daten"@de, "Special categories of personal data"@en ;
+	rdfs:subClassOf dtm-core:PersonalData .
+
+dtm-core:TradeSecret rdf:type owl:Class ;
+	rdfs:comment "Vertrauliche Informationen mit wirtschaftlichem Wert, die durch Geheimhaltung/Kontrollen geschützt sind."@de, "Confidential information with economic value protected by secrecy and controls."@en ;
+	rdfs:label "Geschäftsgeheimnis"@de, "Trade Secret"@en ;
+	rdfs:subClassOf dtm-core:Data .
+
+dtm-core:ValueAddedDataTrustee rdf:type owl:Class ;
+	rdfs:comment "Treuhandmodell, das zusätzlichen Wert aus Daten generiert (Aggregation, Analytik, Dienste)."@de, "Trustee model that derives additional value from data (aggregation, analytics, services)."@en ;
+	rdfs:label "Mehrwerttreuhand"@de, "Value-added Data Trustee"@en ;
+	rdfs:subClassOf dtm-core:DataTrusteeModel .
+
+  #########################################
+  ## Object Properties ####################
+  #########################################
+
+dtm-core:administeredBy rdf:type owl:ObjectProperty ;
+	rdfs:comment "Verknüpft Daten mit dem Dateninhaber, der sie verwaltet (Governance, Speicherung, Lebenszyklus)."@de, "Links Data to the DataOwner that administers it (governance, storage, lifecycle)."@en ;
+	rdfs:domain dtm-core:Data ;
+	rdfs:label "werden verwaltet von"@de, "administered by"@en ;
+	rdfs:range dtm-core:DataOwner ;
+	rdfs:subPropertyOf dtm-core:dataHeldBy ;
+	owl:inverseOf dtm-core:administers .
+
+dtm-core:administers rdf:type owl:ObjectProperty ;
+	rdfs:comment "Bezieht einen Dateninhaber auf Daten, die er verwaltet (operative und Governance-Verantwortung)."@de, "Relates a DataOwner to Data they administer (operational and governance responsibility)."@en ;
+	rdfs:domain dtm-core:DataOwner ;
+	rdfs:label "verwaltet"@de, "administers"@en ;
+	rdfs:range dtm-core:Data ;
+	rdfs:subPropertyOf dtm-core:holdsData .
+
+dtm-core:administratesDataOf rdf:type owl:ObjectProperty ;
+	rdfs:comment "Verknüpft einen Dateninhaber mit der betroffenen Partei, deren Daten von ihm verwaltet werden."@de, "Connects a DataOwner to the AffectedParty whose data is administered by that owner."@en ;
+	rdfs:domain dtm-core:DataOwner ;
+	rdfs:label "hat Daten von"@de, "has data stored of"@en ;
+	rdfs:range dtm-core:AffectedParty ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	owl:inverseOf dtm-core:hasDataAdministratedBy .
+
+dtm-core:dataHeldBy rdf:type owl:ObjectProperty ;
+	rdfs:comment "Gibt an, welcher Akteur die Daten (physisch oder logisch) aktuell hält/besitzt."@de, "Indicates which Actor currently holds or possesses the Data (physically or logically)."@en ;
+	rdfs:domain dtm-core:Data ;
+	rdfs:label "Daten gehalten von"@de, "data held by"@en ;
+	rdfs:range dtm-core:Actor ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	owl:inverseOf dtm-core:holdsData .
+
+dtm-core:hasActor rdf:type owl:ObjectProperty ;
+	rdfs:comment "Verknüpft eine Datentreuhand-Konstellation mit beteiligten Akteuren (Rollen im Treuhandkontext)."@de, "Associates a DataTrustee arrangement with participating Actors (roles within the trustee context)."@en, "has actor"@en ;
+	rdfs:domain dtm-core:DataTrustee ;
+	rdfs:label "hat Akteur"@de ;
+	rdfs:range dtm-core:Actor ;
+	owl:inverseOf dtm-core:isActorOf .
+
+dtm-core:hasAffectedParty rdf:type owl:ObjectProperty ;
+	rdfs:comment "Gibt an, dass eine betroffene Partei an einer bestimmten Datentreuhand-Konstellation beteiligt ist."@de, "Specifies that an AffectedParty participates in a given DataTrustee arrangement."@en ;
+	rdfs:domain dtm-core:DataTrustee ;
+	rdfs:label "hat betroffene Partei"@de, "has affected Party"@en ;
+	rdfs:range dtm-core:AffectedParty ;
+	rdfs:subPropertyOf dtm-core:hasActor ;
+	owl:inverseOf dtm-core:isAffectedPartyIn .
+
+dtm-core:hasDataAdministratedBy rdf:type owl:ObjectProperty ;
+	rdfs:comment "Verknüpft eine betroffene Partei mit dem Dateninhaber, der deren Daten verwaltet."@de, "Relates an AffectedParty to the DataOwner administering that party’s data."@en ;
+	rdfs:domain dtm-core:AffectedParty ;
+	rdfs:label "hat Daten bei"@de, "has data stored in"@en ;
+	rdfs:range dtm-core:DataOwner ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+
+dtm-core:hasDataConsumer rdf:type owl:ObjectProperty ;
+	rdfs:comment "Deklariert die Beteiligung eines Datennutzers innerhalb einer Datentreuhand-Konstellation."@de, "Declares participation of a DataConsumer within a DataTrustee arrangement."@en ;
+	rdfs:domain dtm-core:DataTrustee ;
+	rdfs:label "hat Datennutzer"@de, "has Data Consumer"@en ;
+	rdfs:range dtm-core:DataConsumer ;
+	rdfs:subPropertyOf dtm-core:hasActor ;
+	owl:inverseOf dtm-core:isDataConsumerOf .
+
+dtm-core:hasDataOwner rdf:type owl:ObjectProperty ;
+	rdfs:comment "Deklariert die Beteiligung eines Dateninhabers innerhalb einer Datentruehand-Konstellation."@de, "Declares participation of a DataOwner within a DataTrustee arrangement."@en ;
+	rdfs:domain dtm-core:DataTrustee ;
+	rdfs:label "hat Dateninhaber"@de, "has Data Owner"@en ;
+	rdfs:range dtm-core:DataOwner ;
+	rdfs:subPropertyOf dtm-core:hasActor ;
+	owl:inverseOf dtm-core:isDataOwnerOf .
+
+dtm-core:hasDataTrusteeModel rdf:type owl:ObjectProperty ;
+	rdfs:comment "Verknüpft eine Datentreuhand mit dem angewandten Governance-/Betriebsmodell."@de, "Associates a DataTrustee with the governance/operating model applied."@en ;
+	rdfs:domain dtm-core:DataTrustee ;
+	rdfs:label "hat Datentreuhandmodell"@de, "has data trustee model"@en ;
+	rdfs:range dtm-core:DataTrusteeModel ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	owl:inverseOf dtm-core:isDataTrusteeModelOf .
+
+dtm-core:hasMetadata rdf:type owl:ObjectProperty ;
+	rdfs:comment "Hängt Metadaten an eine Entität an (Herkunft, Format, Rechte, Qualität usw.)."@de, "Attaches Metadata describing an entity (provenance, format, rights, quality, etc.)."@en ;
+	rdfs:domain owl:Thing ;
+	rdfs:label "hat Metadaten"@de, "has metadata"@en ;
+	rdfs:range dtm-core:Metadata ;
+	rdfs:subPropertyOf owl:topObjectProperty ;
+	owl:inverseOf dtm-core:isMetadataOf .
+
+dtm-core:hasRightsOf rdf:type owl:ObjectProperty ;
+	rdfs:comment "Kennzeichnet, dass eine betroffene Partei Rechte an Daten hält (z. B. rechtlicher Anspruch oder Kontrolle)."@de, "Indicates that an AffectedParty holds rights over Data (e.g., legal entitlement or control)."@en ;
+	rdfs:domain dtm-core:AffectedParty ;
+	rdfs:label "hat Rechte an"@de, "has rights over"@en ;
+	rdfs:range dtm-core:Data ;
+	rdfs:subPropertyOf dtm-core:holdsData ;
+	owl:inverseOf dtm-core:isRightlyOwnedBy .
+
+dtm-core:holdsData rdf:type owl:ObjectProperty ;
+	rdfs:comment "Generische Relation: Ein Akteur hält Daten (Besitz/Hosting), ohne Zugriffsrechte zu implizieren."@de, "Generic relation: an Actor holds Data (possession/hosting), without implying access rights."@en ;
+	rdfs:domain dtm-core:Actor ;
+	rdfs:label "hält Daten"@de, "holds data"@en ;
+	rdfs:range dtm-core:Data ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+
+dtm-core:isAccessGrantedTo rdf:type owl:ObjectProperty ;
+	rdfs:comment "Verknüpft Daten mit dem Datennutzer, an den sie übergeben/bereitgestellt werden."@de, "Relates Data to the DataConsumer to whom it is granted or delivered."@en ;
+	rdfs:domain dtm-core:Data ;
+	rdfs:label "werden übergeben an"@de, "access granted to"@en ;
+	rdfs:range dtm-core:DataConsumer ;
+	rdfs:subPropertyOf dtm-core:dataHeldBy .
+
+dtm-core:isActorOf rdf:type owl:ObjectProperty ;
+	rdfs:comment "Inverse zu hasActor; ordnet einen Akteur einer Datentreuhand-Konstellation zu."@de, "Inverse of hasActor; places an Actor within a given DataTrustee arrangement."@en ;
+	rdfs:domain dtm-core:Actor ;
+	rdfs:label "ist Akteur in"@de, "is Actor of"@en ;
+	rdfs:range dtm-core:DataTrustee .
+
+dtm-core:isAffectedPartyIn rdf:type owl:ObjectProperty ;
+	rdfs:comment "Inverse zu hasAffectedParty; kennzeichnet einen Akteur als betroffene Partei in einer Treuhand-Konstellation."@de, "Inverse of hasAffectedParty; marks an Actor as AffectedParty in a trustee arrangement."@en ;
+	rdfs:domain dtm-core:AffectedParty ;
+	rdfs:label "ist betroffene Partei in"@de, "is affected party in"@en ;
+	rdfs:range dtm-core:DataTrustee ;
+	rdfs:subPropertyOf dtm-core:isActorOf .
+
+dtm-core:isDataConsumerOf rdf:type owl:ObjectProperty ;
+	rdfs:comment "Inverse zu hasDataConsumer; kennzeichnet die Beteiligung eines Datennutzers."@de, "Inverse of hasDataConsumer; indicates DataConsumer participation."@en ;
+	rdfs:domain dtm-core:DataConsumer ;
+	rdfs:label "ist Datennutzer in"@de, "is Data Consumer in"@en ;
+	rdfs:range dtm-core:DataTrustee ;
+	rdfs:subPropertyOf dtm-core:isActorOf .
+
+dtm-core:isDataOwnerOf rdf:type owl:ObjectProperty ;
+	rdfs:comment "Inverse zu hasDataOwner; kennzeichnet die Beteiligung eines Dateninhabers."@de, "Inverse of hasDataOwner; indicates DataOwner participation."@en ;
+	rdfs:domain dtm-core:DataOwner ;
+	rdfs:label "ist Dateninhaber in"@de, "is Data Owner in"@en ;
+	rdfs:range dtm-core:DataTrustee ;
+	rdfs:subPropertyOf dtm-core:isActorOf .
+
+dtm-core:isDataTrusteeModelOf rdf:type owl:ObjectProperty ;
+	rdfs:comment "Inverse zu hasDataTrusteeModel; bezeichnet die Datentreuhand, die dieses Modell anwendet."@de, "Inverse of hasDataTrusteeModel; denotes the trustee that applies this model."@en ;
+	rdfs:domain dtm-core:DataTrusteeModel ;
+	rdfs:label "ist Datentreuhandmodell von"@de, "is data trustee model of"@en ;
+	rdfs:range dtm-core:DataTrustee ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+
+dtm-core:isGrantedAccess rdf:type owl:ObjectProperty ;
+	rdfs:comment "Kennzeichnet, dass ein Datennutzer Daten erhält (Übertragung oder Bereitstellung)."@de, "Indicates that a DataConsumer is granted receipt/possession of Data (transfer event or delivery)."@en ;
+	rdfs:domain dtm-core:DataConsumer ;
+	rdfs:label "erhält"@de, "is granted"@en ;
+	rdfs:range dtm-core:Data ;
+	rdfs:subPropertyOf dtm-core:holdsData ;
+	owl:inverseOf dtm-core:isAccessGrantedTo .
+
+dtm-core:isMetadataOf rdf:type owl:ObjectProperty ;
+	rdfs:comment "Inverse zu hasMetadata; die beschriebene Entität, auf die sich die Metadaten beziehen."@de, "Inverse of hasMetadata; the described thing that Metadata pertains to."@en ;
+	rdfs:domain dtm-core:Metadata ;
+	rdfs:label "ist Metadaten von"@de, "is metadata of"@en ;
+	rdfs:range owl:Thing ;
+	rdfs:subPropertyOf owl:topObjectProperty .
+
+dtm-core:isRightlyOwnedBy rdf:type owl:ObjectProperty ;
+	rdfs:comment "Gibt an, dass Daten rechtlich an eine betroffene Partei gebunden sind (z. B. Betroffenenrechte)."@de, "States that Data is bound by rights to an AffectedParty (e.g., data subject rights)."@en ;
+	rdfs:domain dtm-core:Data ;
+	rdfs:label "rechtlich gebunden an"@de, "binded by rights to"@en ;
+	rdfs:range dtm-core:AffectedParty ;
+	rdfs:subPropertyOf dtm-core:dataHeldBy .
+
+  #########################################
+  ## Data Property ########################
+  #########################################
+
+dtm-core:modelname rdf:type owl:DatatypeProperty ;
+	rdfs:comment "Menschenlesbarer Name für eine Variante des Datentreuhandmodells."@de, "Human-readable name for a DataTrusteeModel variant."@en ;
+	rdfs:domain dtm-core:DataTrusteeModel ;
+	rdfs:label "hat Namen"@de, "model name"@en ;
+	rdfs:range xsd:string ;
+	rdfs:subPropertyOf owl:topDataProperty .
+

@@ -1,0 +1,335 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix dpv:   <https://w3id.org/dpv#> .  # Data Privacy Vocabulary
+@prefix dtm-core:  <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> .
+@prefix dtm-legal: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#> .
+
+@base <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#> .
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal> a owl:Ontology ;
+    dcterms:title "DTM Legal Ontology"@en ,
+                  "DTM Rechtsontologie"@de ;
+    dcterms:description "Legal layer describing processing bases and consent workflows in data trustee models."@en ,
+                        "Rechtliche Schicht zur Beschreibung von Verarbeitungsgrundlagen und Einwilligungsvorgängen in Datentreuhandmodellen."@de ;
+    dcterms:creator "Bernd Rauch" , "Denis Feth" , "Jessica Chwalek" ;
+    dcterms:publisher "Kickstart Trustee" ;
+    dcterms:rights "© 2025 Kickstart Trustee — CC BY 4.0" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2025-11-10"^^xsd:date ;
+    owl:versionIRI <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal/0.1.0> ;
+    owl:imports <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core>.
+
+#################################################################
+#    Object Properties
+#################################################################
+
+### General consent workflow initiated by (DPV: Data Controller / Provider-View)
+dtm-legal:generalConsentWorkflowInitiatedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-legal:initiatesGeneralConsentWorkflow ;
+    rdfs:domain dtm-legal:GeneralConsentWorkflow ;
+    rdfs:range  dtm-core:DataProvider ;
+    rdfs:label "Allgemeiner Einwilligungsvorgang initiiert durch"@de ,
+               "general consent workflow initiated by"@en ;
+    rdfs:comment "Relates a general consent workflow to the data provider (data controller) that initiates this workflow from a provider-centric view."@en ,
+                 "Verknüpft einen allgemeinen Einwilligungsvorgang mit dem Datenerheber bzw. Verantwortlichen, der diesen Vorgang aus Anbietersicht initiiert."@de .
+
+
+### Individual consent workflow initiated by (DPV: Recipient/Consumer-View)
+dtm-legal:individualConsentWorkflowInitiatedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-legal:initiatesIndividualConsentWorkflow ;
+    rdfs:domain dtm-legal:IndividualConsentWorkflow ;
+    rdfs:range  dtm-core:DataConsumer ;
+    rdfs:label "Individueller Einwilligungsvorgang initiiert durch"@de ,
+               "individual consent workflow initiated by"@en ;
+    rdfs:comment "Relates an individual consent workflow to the data consumer (recipient) that initiates this workflow from a consumer-centric view."@en ,
+                 "Verknüpft einen individuellen Einwilligungsvorgang mit dem Datennutzer bzw. Empfänger, der diesen Vorgang aus Sicht des Nutzers initiiert."@de .
+
+
+### Initiates general consent workflow
+dtm-legal:initiatesGeneralConsentWorkflow a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:DataProvider ;
+    rdfs:range  dtm-legal:GeneralConsentWorkflow ;
+    rdfs:label "initiates general consent workflow"@en ,
+               "initiiert allgemeinen Einwilligungsvorgang"@de ;
+    rdfs:comment "Relates a data provider to a general consent workflow that it initiates, e.g. a standard consent process offered to multiple data subjects."@en ,
+                 "Verknüpft einen Datenbereitsteller mit einem allgemeinen Einwilligungsvorgang, den er initiiert, z. B. einem standardisierten Einwilligungsprozess für mehrere betroffene Personen."@de .
+
+
+### Initiates individual consent workflow
+dtm-legal:initiatesIndividualConsentWorkflow a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:DataConsumer ;
+    rdfs:range  dtm-legal:IndividualConsentWorkflow ;
+    rdfs:label "initiates individual consent workflow"@en ,
+               "initiiert individuellen Einwilligungsvorgang"@de ;
+    rdfs:comment "Relates a data consumer to an individual consent workflow that it initiates, typically for a specific data subject or transaction."@en ,
+                 "Verknüpft einen Datennutzer mit einem individuellen Einwilligungsvorgang, den er initiiert, typischerweise für eine bestimmte betroffene Person oder Transaktion."@de .
+
+
+### Gets consent directly (specialisation of DPV consent relationship)
+dtm-legal:getsConsentDirectly a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-legal:givesConsentDirectly ;
+    rdfs:domain dtm-legal:ConsentWorkflow ;
+    rdfs:range  dtm-core:AffectedParty ;
+    rdfs:label "erhält Einwilligung direkt"@de ,
+               "gets consent directly"@en ;
+    rdfs:comment "Relates a consent workflow to the affected party from whom consent is obtained directly, without delegation or an intermediate data owner."@en ,
+                 "Verknüpft einen Einwilligungsvorgang mit der betroffenen Partei, von der die Einwilligung unmittelbar und ohne Delegation oder zwischengeschalteten Dateninhaber eingeholt wird."@de .
+
+
+### Gets consent through data owner
+dtm-legal:getsConsentThroughDataOwner a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-legal:givesConsentByDataOwner ;
+    rdfs:domain dtm-legal:ConsentWorkflow ;
+    rdfs:range  dtm-core:AffectedParty ;
+    rdfs:label "erhält Einwilligung durch den Dateninhaber"@de ,
+               "gets consent through data owner"@en ;
+    rdfs:comment "Relates a consent workflow to the affected party in cases where consent is obtained indirectly through a data owner acting on behalf of that party."@en ,
+                 "Verknüpft einen Einwilligungsvorgang mit der betroffenen Partei in Fällen, in denen die Einwilligung mittelbar über einen Dateninhaber eingeholt wird, der im Namen dieser Partei handelt."@de .
+
+
+### Gives consent directly
+dtm-legal:givesConsentDirectly a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:AffectedParty ;
+    rdfs:range  dtm-legal:ConsentWorkflow ;
+    rdfs:label "gibt Einwilligung direkt"@de ,
+               "gives consent directly"@en ;
+    rdfs:comment "Relates an affected party to a consent workflow in which this party directly gives consent without delegation."@en ,
+                 "Verknüpft eine betroffene Partei mit einem Einwilligungsvorgang, in dem diese Partei ihre Einwilligung unmittelbar und ohne Delegation erteilt."@de .
+
+
+### Gives consent by data owner (delegated consent)
+dtm-legal:givesConsentByDataOwner a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:AffectedParty ;
+    rdfs:range  dtm-legal:ConsentWorkflow ;
+    rdfs:label "gibt Einwilligung durch Dateninhaber"@de ,
+               "gives consent by data owner"@en ;
+    rdfs:comment "Relates an affected party to a consent workflow in which consent is provided by a data owner or representative acting on behalf of the affected party (delegated consent)."@en ,
+                 "Verknüpft eine betroffene Partei mit einem Einwilligungsvorgang, in dem die Einwilligung durch einen Dateninhaber oder Vertreter im Namen der betroffenen Partei erteilt wird (delegierte Einwilligung)."@de .
+
+
+### Processing basis → beneficiary (consumer)
+dtm-legal:hasBeneficiary a owl:ObjectProperty ;
+    rdfs:subPropertyOf dpv:hasRecipient ;
+    owl:inverseOf dtm-legal:isBeneficiaryOf ;
+    rdfs:domain skos:Concept ;
+    rdfs:range  dtm-core:DataConsumer ;
+    rdfs:label "has beneficiary"@en ,
+               "hat Begünstigten"@de ;
+    rdfs:comment "Relates a processing basis concept to the data consumer that benefits from the processing."@en ,
+                 "Verknüpft eine Verarbeitungsgrundlage (Konzept) mit dem Datennutzer, der von der Verarbeitung profitiert."@de .
+
+dtm-legal:isBeneficiaryOf a owl:ObjectProperty ;
+    rdfs:domain dtm-core:DataConsumer ;
+    rdfs:range  skos:Concept ;
+    rdfs:label "is beneficiary of"@en ,
+               "ist Begünstigter von"@de ;
+    rdfs:comment "Relates a data consumer to a processing basis concept from which it benefits."@en ,
+                 "Verknüpft einen Datennutzer mit der Verarbeitungsgrundlage, von der er profitiert."@de .
+
+
+### Has consent source (who gives consent – usually data subject)
+dtm-legal:hasConsentSource a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-legal:isConsentSourceOf ;
+    rdfs:domain dtm-legal:ConsentWorkflow ;
+    rdfs:range  dtm-core:Actor ;
+    rdfs:label "has consent source"@en ,
+               "hat Einwilligungsquelle"@de ;
+    rdfs:comment "Relates a consent workflow to the actor who serves as the source of consent, typically the data subject or another authorised party."@en ,
+                 "Verknüpft einen Einwilligungsvorgang mit dem Akteur, der als Quelle der Einwilligung fungiert, typischerweise die betroffene Person oder eine andere berechtigte Partei."@de .
+
+
+dtm-legal:isConsentSourceOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:DataProvider ;
+    rdfs:range  dtm-legal:ConsentWorkflow ;
+    rdfs:label "is consent source of"@en ,
+               "ist Einwilligungsquelle von"@de ;
+    rdfs:comment "Relates a data provider to a consent workflow for which it acts as the source of consent in the context of the data trustee model."@en ,
+                 "Verknüpft einen Datenbereitsteller mit einem Einwilligungsvorgang, für den er im Kontext des Datentreuhandmodells als Einwilligungsquelle fungiert."@de .
+
+dtm-legal:operatesOnProcessingBasis a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-legal:isProcessingBasisFor ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range skos:Concept ;
+    rdfs:label "operates on processing basis"@en ,
+               "arbeitet auf Grundlage der Verarbeitungsgrundlage"@de ;
+    rdfs:comment "Relates a data trustee to a legal processing basis on which it operates."@en ,
+                 "Verknüpft eine Datentreuhand mit einer rechtlichen Verarbeitungsgrundlage, auf deren Grundlage sie arbeitet."@de .
+
+dtm-legal:isProcessingBasisFor a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-legal:operatesOnProcessingBasis ;
+    rdfs:domain skos:Concept ;
+    rdfs:range dtm-core:DataTrustee ;
+    rdfs:label "is processing basis for"@en ,
+               "ist Verarbeitungsgrundlage für"@de ;
+    rdfs:comment "Indicates that a processing basis is used by a data trustee."@en ,
+                 "Gibt an, dass eine Verarbeitungsgrundlage von einer Datentreuhand genutzt wird."@de .
+
+dtm-legal:implementsConsentWorkflowFor a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-legal:ConsentWorkflow ;
+    rdfs:range dtm-legal:Consent ;
+    rdfs:label "is consent workflow for"@en ,
+               "ist Einwilligungsvorgang für"@de ;
+    rdfs:comment "Relates a consent workflow to the consent processing basis it implements or operationalises."@en ,
+                 "Verknüpft einen Einwilligungsvorgang mit der Verarbeitungsgrundlage Einwilligung, die er umsetzt oder operationalisiert."@de .
+
+#################################################################
+#    Classes
+#################################################################
+
+### Consent workflow as specialisation of DPV:Consent
+dtm-legal:ConsentWorkflow a owl:Class ;
+    rdfs:label "Consent Workflow"@en ,
+               "Einwilligungsvorgang"@de ;
+    rdfs:comment "Represents a structured consent process, modelled as a specialisation of DPV:Consent, capturing how consent is requested, given and managed in a data trustee model."@en ,
+                 "Repräsentiert einen strukturierten Einwilligungsprozess als Spezialisierung von DPV:Consent und beschreibt, wie Einwilligungen in einem Datentreuhandmodell angefragt, erteilt und verwaltet werden."@de .
+
+
+### General consent workflow
+dtm-legal:GeneralConsentWorkflow a owl:Class ;
+    rdfs:subClassOf dtm-legal:ConsentWorkflow ;
+    owl:disjointWith dtm-legal:IndividualConsentWorkflow ;
+    rdfs:label "General Consent Workflow"@en ,
+               "Allgemeiner Einwilligungsvorgang"@de ;
+    rdfs:comment "Represents a general or reusable consent workflow that applies to a broader processing context, rather than to a single individual case."@en ,
+                 "Repräsentiert einen allgemeinen bzw. wiederverwendbaren Einwilligungsvorgang, der für einen übergreifenden Verarbeitungskontext gilt und nicht nur für einen einzelnen Einzelfall."@de .
+
+
+### Individual consent workflow
+dtm-legal:IndividualConsentWorkflow a owl:Class ;
+    rdfs:subClassOf dtm-legal:ConsentWorkflow ;
+    rdfs:label "Individual Consent Workflow"@en ,
+               "Individueller Einwilligungsvorgang"@de ;
+    rdfs:comment "Represents a consent workflow tailored to an individual case, such as a specific data subject, transaction or data use."@en ,
+                 "Repräsentiert einen Einwilligungsvorgang, der auf einen individuellen Fall zugeschnitten ist, etwa eine bestimmte betroffene Person, Transaktion oder Datennutzung."@de .
+
+
+#################################################################
+#    SKOS: Processing Basis (ONLY Concepts)
+#################################################################
+
+dtm-legal:ProcessingBasisScheme a skos:ConceptScheme ;
+    dcterms:title "Processing Basis Scheme"@en ,
+                  "Schema der Verarbeitungsgrundlagen"@de ;
+    dcterms:description "Controlled vocabulary of legal bases for data processing aligned with GDPR and DPV."@en ,
+                        "Kontrolliertes Vokabular der Rechtsgrundlagen der Datenverarbeitung (DSGVO / DPV)."@de .
+
+
+dtm-legal:ProcessingBasis a skos:Concept ;
+    skos:topConceptOf dtm-legal:ProcessingBasisScheme ;
+    skos:inScheme dtm-legal:ProcessingBasisScheme ;
+    skos:prefLabel "Processing Basis"@en ;
+    skos:prefLabel "Verarbeitungsgrundlage"@de ;
+    skos:definition "Represents the legal basis for processing personal data."@en ;
+    skos:definition "Repräsentiert die Rechtsgrundlage für die Verarbeitung personenbezogener Daten."@de .
+
+
+dtm-legal:ContractualNecessity a skos:Concept ;
+    skos:broader dtm-legal:ProcessingBasis ;
+    skos:inScheme dtm-legal:ProcessingBasisScheme ;
+    skos:prefLabel "Contractual Necessity"@en ;
+    skos:prefLabel "Erfüllung des Vertrags"@de ;
+    skos:definition
+        "Represents a processing basis where processing is necessary for the performance of a contract with the data subject or to take steps at their request prior to entering into a contract."@en ;
+    skos:definition
+        "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zur Erfüllung eines Vertrags mit der betroffenen Person oder zur Durchführung vorvertraglicher Maßnahmen auf deren Anfrage erforderlich ist."@de ;
+    skos:exactMatch dpv:Contract .
+
+
+dtm-legal:LegalObligation a skos:Concept ;
+    skos:broader dtm-legal:ProcessingBasis ;
+    skos:inScheme dtm-legal:ProcessingBasisScheme ;
+    skos:prefLabel "Legal Obligation"@en ;
+    skos:prefLabel "Gesetzliche Verpflichtung"@de ;
+    skos:definition
+        "Represents a processing basis where processing is required to comply with a legal obligation imposed on the controller or trustee."@en ;
+    skos:definition
+        "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung erforderlich ist, um einer dem Verantwortlichen oder Treuhänder auferlegten gesetzlichen Verpflichtung nachzukommen."@de ;
+    skos:exactMatch dpv:LegalObligation .
+
+
+dtm-legal:LegitimateInterest a skos:Concept ;
+    skos:broader dtm-legal:ProcessingBasis ;
+    skos:inScheme dtm-legal:ProcessingBasisScheme ;
+    skos:prefLabel "Legitimate Interest"@en ;
+    skos:prefLabel "Berechtigtes Interesse"@de ;
+    skos:definition
+        "Represents a processing basis where processing is carried out on the grounds of a legitimate interest, subject to a balancing test against the rights and freedoms of data subjects."@en ;
+    skos:definition
+        "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung auf einem berechtigten Interesse beruht und einer Interessenabwägung mit den Rechten und Freiheiten der betroffenen Personen unterliegt."@de ;
+    skos:exactMatch dpv:LegitimateInterest .
+
+
+dtm-legal:PublicInterest a skos:Concept ;
+    skos:broader dtm-legal:ProcessingBasis ;
+    skos:inScheme dtm-legal:ProcessingBasisScheme ;
+    skos:prefLabel "Public Interest"@en ;
+    skos:prefLabel "Öffentliches Interesse"@de ;
+    skos:definition
+        "Represents a processing basis where processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority."@en ;
+    skos:definition
+        "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zur Wahrnehmung einer Aufgabe erforderlich ist, die im öffentlichen Interesse liegt oder in Ausübung öffentlicher Gewalt erfolgt."@de ;
+    skos:exactMatch dpv:PublicInterest .
+
+
+dtm-legal:VitalInterest a skos:Concept ;
+    skos:broader dtm-legal:ProcessingBasis ;
+    skos:inScheme dtm-legal:ProcessingBasisScheme ;
+    skos:prefLabel "Vital Interest"@en ;
+    skos:prefLabel "Lebenswichtiges Interesse"@de ;
+    skos:definition
+        "Represents a processing basis where processing is necessary to protect the vital interests of a natural person, such as life or physical integrity."@en ;
+    skos:definition
+        "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zum Schutz lebenswichtiger Interessen einer natürlichen Person erforderlich ist, etwa Leben oder körperliche Unversehrtheit."@de ;
+    skos:exactMatch dpv:VitalInterest .
+
+dtm-legal:Consent a skos:Concept ;
+    skos:broader dtm-legal:ProcessingBasis ;
+    skos:inScheme dtm-legal:ProcessingBasisScheme ;
+    skos:prefLabel "Consent"@en ;
+    skos:prefLabel "Einwilligung"@de ;
+    skos:definition "Represents a processing basis where processing is based on the consent of the data subject."@en ;
+    skos:definition "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung auf der Einwilligung der betroffenen Person beruht."@de ;
+    skos:exactMatch dpv:Consent .
+
+#################################################################
+#    General axioms
+#################################################################
+
+# Core disjointness from dtm-core
+[ a owl:AllDisjointClasses ;
+  owl:members ( dtm-core:Actor
+                dtm-core:Data
+                dtm-core:DataTrusteeModel
+                dtm-core:Metadata
+                dtm-legal:ConsentWorkflow
+              )
+] .
+
+# Disjointness of specific legal bases and consent workflows
+[ a owl:AllDisjointClasses ;
+  owl:members ( dtm-legal:ConsentWorkflow
+                dtm-legal:ContractualNecessity
+                dtm-legal:LegalObligation
+                dtm-legal:LegitimateInterest
+                dtm-legal:PublicInterest
+                dtm-legal:VitalInterest
+              )
+] .

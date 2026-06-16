@@ -1,0 +1,1249 @@
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix org:    <http://www.w3.org/ns/org#> .
+@prefix rov:    <http://www.w3.org/ns/regorg#> .         # Registered Organization Vocabulary
+@prefix schema: <https://schema.org/> .
+
+@prefix lcc-cr:     <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .   # ISO 3166 (countries)
+@prefix lcc-3166-1: <https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/> .
+@prefix lcc-lr:     <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/> .  # ISO 639/3166 language repr.
+@prefix lcc-639-1:  <https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/> .
+
+@prefix wd: <http://www.wikidata.org/entity/> .  # für externe Identifikatoren (BMBF, BMWK, EU, GWK usw.)
+
+@prefix dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> .
+@prefix dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#> .
+
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-business> a owl:Ontology ;
+    dcterms:creator  "Bernd Rauch", "Denis Feth", "Jessica Chwalek" ;
+    dcterms:license  <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2025-11-10"^^xsd:date ;
+    dcterms:publisher "Kickstart Trustee" ;
+    dcterms:rights   "© 2025 Kickstart Trustee — CC BY 4.0" ;
+    owl:versionIRI   <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business/0.1.0> ;
+    owl:imports      <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core> ;
+    dcterms:title       "DTM Business Ontology"@en ;
+    dcterms:description "Business layer extending the DTM core ontology."@en ;
+    dcterms:description "Business-Schicht, die die DTM-Core-Ontologie um domänen- und geschäftsbezogene Konzepte erweitert."@de ;
+    vann:preferredNamespacePrefix "dtm-business" ;
+    vann:preferredNamespaceUri    "https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#" .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+### Jurisdiction eines Datentreuhänders
+dtm-business:hasJurisdiction rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dcterms:spatial ,
+                       schema:jurisdiction ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range  lcc-cr:Country ;
+    rdfs:label  "has jurisdiction"@en ,
+                "hat Zuständigkeit / Geltungsbereich"@de ;
+    rdfs:comment "Links a data trustee to the country or jurisdiction in which it primarily operates or is legally established."@en ,
+                 "Verknüpft einen Datentreuhänder mit dem Land bzw. der Jurisdiktion, in der er hauptsächlich tätig ist oder rechtlich verankert ist."@de .
+
+
+### Betriebssprache / Operating language
+dtm-business:operatingLanguage rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dcterms:language ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range  lcc-lr:Language ;
+    rdfs:label  "operating language"@en ,
+                "Betriebssprache"@de ;
+    rdfs:comment "Relates a data trustee to the primary language(s) used in its operations, documentation or interfaces."@en ,
+                 "Verknüpft einen Datentreuhänder mit der primären(n) Sprache(n), die in Betrieb, Dokumentation oder Schnittstellen verwendet werden."@de .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#hasDataTrusteeGoal
+dtm-business:hasDataTrusteeGoal rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-business:isDataTrusteeGoalOf ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range  dtm-business:DataTrusteeGoal ;
+    rdfs:comment "Relates a data trustee to one of its goals, such as data sovereignty, innovation or compliance."@en ,
+                 "Verknüpft einen Datentreuhänder mit einem seiner Ziele, z. B. Datensouveränität, Innovation oder Erfüllung von Auflagen."@de ;
+    rdfs:label   "has data trustee goal"@en ,
+                 "hat Datentreuhand-Ziel"@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#hasFunder
+dtm-business:hasFunder rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-business:isFunderOf ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range  dtm-business:Funder ;
+    rdfs:comment "Links a data trustee to an entity that provides funding."@en ,
+                 "Verknüpft einen Datentreuhänder mit einer Entität, die seine Aktivitäten finanziert."@de ;
+    rdfs:label   "has funder"@en ,
+                 "hat Finanzierer"@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#hasUsageGoal
+dtm-business:hasUsageGoal rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-business:isUsageGoalOf ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range  dtm-business:UsageGoalOfUser ;
+    rdfs:comment "Associates an actor with one or more intended usage goals, such as data access or analysis."@en ,
+                 "Verknüpft einen Akteur mit einem oder mehreren Nutzungszielen, z. B. Datenzugang oder Datenanalyse."@de ;
+    rdfs:label   "has Usage Goal of User"@en ,
+                 "hat Nutzungsziel des Nutzers"@de .
+
+dtm-business:affiliationType a owl:ObjectProperty ;
+  rdfs:domain dtm-core:Actor ;
+  rdfs:range  skos:Concept ;
+  rdfs:comment "Links the status of being an organization or an individual to an entity (for example an actor or data trustee model)."@en ,
+               "Verknüpft den Zustand eine Organisation oder Individualperson zu sein mit einer Entität (z. B. Akteur oder Datentreuhandmodell)."@de ;
+  rdfs:label   "is seen as"@en ,
+               "ist angesehen als"@de .
+
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#isDataTrusteeGoalOf
+dtm-business:isDataTrusteeGoalOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-business:DataTrusteeGoal ;
+    rdfs:range  dtm-core:DataTrustee ;
+    rdfs:comment "Indicates the data trustee for which this goal is defined."@en ,
+                 "Gibt den Datentreuhänder an, für den dieses Ziel definiert ist."@de ;
+    rdfs:label   "is data trustee goal of"@en ,
+                 "ist Datentreuhand-Ziel von"@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#isFunderOf
+dtm-business:isFunderOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-business:Funder ;
+    rdfs:range  dtm-core:DataTrustee ;
+    rdfs:comment "Indicates the data trustee or data trustee model funded by this funder."@en ,
+                 "Gibt den Datentreuhänder oder das Datentreuhandmodell an, das von diesem Finanzierer unterstützt wird."@de ;
+    rdfs:label   "is funder of"@en ,
+                 "ist Finanzierer von"@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#isOfferedAsPayModel
+dtm-business:isOfferedAsPayModel rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-business:offersPayModel ;
+    rdfs:domain dtm-business:PayModel ;
+    rdfs:range  dtm-core:DataTrustee ;
+    rdfs:comment "Indicates that a specific pay model is offered by a data trustee."@en ,
+                 "Kennzeichnet, dass ein bestimmtes Bezahlmodell von einem Datentreuhänder angeboten wird."@de ;
+    rdfs:label   "is offered as pay model"@en ,
+                 "ist angeboten als Bezahlmodell von"@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#isUsageGoalOf
+dtm-business:isUsageGoalOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-business:UsageGoalOfUser ;
+    rdfs:range  dtm-core:Actor ;
+    rdfs:comment "Indicates the actor for whom this usage goal is relevant."@en ,
+                 "Gibt den Akteur an, für den dieses Nutzungsziel gilt."@de ;
+    rdfs:label   "is usage goal of"@en ,
+                 "ist Nutzungsziel von"@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#isUsedAsPayModel
+dtm-business:isUsedAsPayModel rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-business:usesPayModel ;
+    rdfs:domain dtm-business:PayModel ;
+    rdfs:range  dtm-core:Actor ;
+    rdfs:comment "Indicates that this pay model is used by an actor as its pricing scheme."@en ,
+                 "Kennzeichnet, dass dieses Bezahlmodell von einem Akteur als Preis- bzw. Entgeltmodell genutzt wird."@de ;
+    rdfs:label   "is used as pay model"@en ,
+                 "wird benutzt als Bezahlmodell von"@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#offersPayModel
+dtm-business:offersPayModel rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range  dtm-business:PayModel ;
+    rdfs:comment "Links a data trustee to a pay model it offers to its users or partners."@en ,
+                 "Verknüpft einen Datentreuhänder mit einem Bezahlmodell, das er seinen Nutzenden oder Partnern anbietet."@de ;
+    rdfs:label   "bietet Bezahlmodell an"@de ,
+                 "offers pay model"@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#usesPayModel
+dtm-business:usesPayModel rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range  dtm-business:PayModel ;
+    rdfs:comment "Relates an actor to the pay model it uses when interacting with a data trustee or data services."@en ,
+                 "Verknüpft einen Akteur mit dem Bezahlmodell, das er bei der Nutzung eines Datentreuhänders oder von Datendiensten verwendet."@de ;
+    rdfs:label   "nutzt Bezahlmodell"@de ,
+                 "uses Pay Model"@en .
+
+
+### Property: hasBusinessForm (mit Inverse) – Domain: DataTrustee ODER Organisation
+dtm-business:hasBusinessForm rdf:type owl:ObjectProperty ;
+    owl:inverseOf dtm-business:isBusinessFormOf ;
+    rdfs:domain [ rdf:type owl:Class ;
+                  owl:unionOf ( dtm-core:DataTrustee
+                                dtm-business:Organisation
+                              )
+                ] ;
+    rdfs:range  dtm-business:BusinessForm ;
+    rdfs:label  "has business form"@en ,
+                "hat Geschäftsform"@de ;
+    rdfs:comment "Links a data trustee or organization to its legal or organizational business form."@en ,
+                 "Verknüpft einen Datentreuhänder oder eine Organisation mit ihrer rechtlichen bzw. organisatorischen Geschäftsform."@de .
+
+
+dtm-business:isBusinessFormOf rdf:type owl:ObjectProperty ;
+    rdfs:domain dtm-business:BusinessForm ;
+    rdfs:range  [ rdf:type owl:Class ;
+                  owl:unionOf ( dtm-core:DataTrustee
+                                dtm-business:Organisation
+                              )
+                ] ;
+    rdfs:label  "is business form of"@en ,
+                "ist Geschäftsform von"@de ;
+    rdfs:comment "Indicates the data trustee or organization that has this business form."@en ,
+                 "Gibt den Datentreuhänder oder die Organisation an, für die diese Geschäftsform gilt."@de .
+
+
+dtm-business:hasDomain rdf:type owl:ObjectProperty ;
+    owl:inverseOf dtm-business:isDomainOf ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range  dtm-business:Domain ;
+    rdfs:label  "has domain"@en ,
+                "hat Domäne"@de ;
+    rdfs:comment "Associates a data trustee with the thematic or sectoral domain in which it operates."@en ,
+                 "Verknüpft einen Datentreuhänder mit der thematischen oder sektoralen Domäne, in der er tätig ist."@de .
+
+
+dtm-business:isDomainOf rdf:type owl:ObjectProperty ;
+    rdfs:domain dtm-business:Domain ;
+    rdfs:range  dtm-core:DataTrustee ;
+    rdfs:label  "is domain of"@en ,
+                "ist Domäne von"@de ;
+    rdfs:comment "Indicates the data trustee whose activities belong to this domain."@en ,
+                 "Gibt den Datentreuhänder an, dessen Aktivitäten dieser Domäne zugeordnet sind."@de .
+
+
+dtm-business:hasFundingSource rdf:type owl:ObjectProperty ;
+    owl:inverseOf dtm-business:isFundingSourceOf ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range  dtm-business:FundingSource ;
+    rdfs:label  "has funding source"@en ,
+                "hat Förderinstitution"@de ;
+    rdfs:comment "Relates a data trustee to a funding source such as a ministry, EU program or other funding organization."@en ,
+                 "Verknüpft einen Datentreuhänder mit einer Förderinstitution, z. B. Ministerien, EU-Programmen oder anderen Fördergebern."@de .
+
+
+dtm-business:isFundingSourceOf rdf:type owl:ObjectProperty ;
+    rdfs:domain dtm-business:FundingSource ;
+    rdfs:range  dtm-core:DataTrustee ;
+    rdfs:label  "is funding source of"@en ,
+                "ist Förderinstitution von"@de ;
+    rdfs:comment "Indicates the data trustee that is financed or supported by this funding source."@en ,
+                 "Gibt den Datentreuhänder an, der von dieser Förderinstitution finanziert oder unterstützt wird."@de .
+
+dtm-business:hasParticipationMotivation rdf:type owl:ObjectProperty ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range  dtm-business:ParticipationMotivation ;
+    rdfs:label  "has participation motivation"@en ,
+                "hat Teilnahmemotivation"@de ;
+    rdfs:comment "Relates an actor to a motivation for participating in a data trustee arrangement or providing data through it."@en ,
+                 "Verknüpft einen Akteur mit einer Motivation, an einer Datentreuhand teilzunehmen oder Daten über sie bereitzustellen."@de .
+
+
+dtm-business:hasRightsHolderMotivation rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-business:hasParticipationMotivation ;
+    rdfs:domain dtm-core:AffectedParty ;
+    rdfs:range  dtm-business:RightsHolderMotivation ;
+    rdfs:label  "has rights holder motivation"@en ,
+                "hat Rechtehalter-Motivation"@de ;
+    rdfs:comment "Relates a rights holder or affected party to its motivation for making data available through a data trustee."@en ,
+                 "Verknüpft einen Rechtehalter bzw. eine betroffene Partei mit ihrer Motivation, Daten über eine Datentreuhand bereitzustellen."@de .
+
+
+dtm-business:hasDataHolderMotivation rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-business:hasParticipationMotivation ;
+    rdfs:domain dtm-core:DataOwner ;
+    rdfs:range  dtm-business:DataHolderMotivation ;
+    rdfs:label  "has data holder motivation"@en ,
+                "hat Datenhalter-Motivation"@de ;
+    rdfs:comment "Relates a data holder to its motivation for participating in a data trustee arrangement."@en ,
+                 "Verknüpft einen Datenhalter mit seiner Motivation zur Teilnahme an einer Datentreuhand."@de .
+
+
+dtm-business:hasDataConsumerMotivation rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-business:hasParticipationMotivation ;
+    rdfs:domain dtm-core:DataConsumer ;
+    rdfs:range  dtm-business:DataConsumerMotivation ;
+    rdfs:label  "has data consumer motivation"@en ,
+                "hat Datennutzer-Motivation"@de ;
+    rdfs:comment "Relates a data consumer to its motivation for participating in or using a data trustee arrangement."@en ,
+                 "Verknüpft einen Datennutzer mit seiner Motivation zur Teilnahme an oder Nutzung einer Datentreuhand."@de .
+
+dtm-business:hasFinancingType rdf:type owl:ObjectProperty ;
+    rdfs:domain dtm-core:DataTrustee ;
+    rdfs:range  dtm-business:FinancingType ;
+    rdfs:label  "has financing type"@en ,
+                "hat Finanzierungsart"@de ;
+    rdfs:comment "Relates a data trustee to the type of financing used to fund its operation or activities."@en ,
+                 "Verknüpft einen Datentreuhänder mit der Finanzierungsart, durch die Betrieb oder Aktivitäten finanziert werden."@de .
+
+dtm-business:isRealizedByPayModel rdf:type owl:ObjectProperty ;
+    rdfs:domain dtm-business:UsageFees ;
+    rdfs:range  dtm-business:PayModel ;
+    rdfs:label  "is realized by pay model"@en ,
+                "wird umgesetzt durch Bezahlmodell"@de ;
+    rdfs:comment "Links a financing type to one or more concrete pay models that realize this financing mechanism."@en ,
+                 "Verknüpft eine Finanzierungsart mit konkreten Bezahlmodellen, die diese umsetzen."@de .
+
+dtm-business:realizesFinancingType rdf:type owl:ObjectProperty ;
+    rdfs:domain dtm-business:PayModel ;
+    rdfs:range  dtm-business:UsageFees ;
+    owl:inverseOf dtm-business:isRealizedByPayModel ;
+    rdfs:label  "realizes financing type"@en ,
+                "realisiert Finanzierungsart"@de ;
+    rdfs:comment "Indicates that a pay model implements or realizes a specific financing type."@en ,
+                 "Gibt an, dass ein Bezahlmodell eine bestimmte Finanzierungsart umsetzt."@de .
+
+#################################################################
+#    Classes
+#################################################################
+
+dtm-business:FinancingType rdf:type owl:Class ;
+    rdfs:label "Financing Type"@en ,
+               "Finanzierungsart"@de ;
+    rdfs:comment "Category describing the type of financing used for a data trustee, such as public funding, usage fees or community funding."@en ,
+                 "Kategorie zur Beschreibung der Finanzierungsart einer Datentreuhand, z. B. öffentliche Finanzierung, Nutzungsgebühren oder gemeinschaftliche Finanzierung."@de .
+
+dtm-business:FinancingTypeScheme rdf:type skos:ConceptScheme ;
+    dcterms:title "Financing Type Scheme"@en ,
+                  "Finanzierungsarten-Schema"@de ;
+    dcterms:description "Controlled vocabulary of financing types for data trustee arrangements."@en ,
+                        "Kontrolliertes Vokabular von Finanzierungsarten für Datentreuhand-Modelle."@de .
+
+dtm-business:PublicFunding rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:FinancingType ;
+    skos:inScheme dtm-business:FinancingTypeScheme ;
+    skos:broader dtm-business:FinancingType ;
+    rdfs:label "Public Funding"@en ,
+               "Öffentliche Finanzierung"@de ;
+    rdfs:comment "Financing type where a data trustee is funded by public institutions, grants or public programs."@en ,
+                 "Finanzierungsart, bei der eine Datentreuhand durch öffentliche Institutionen, Fördermittel oder öffentliche Programme finanziert wird."@de .
+
+dtm-business:UsageFees rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:FinancingType ;
+    skos:inScheme dtm-business:FinancingTypeScheme ;
+    skos:broader dtm-business:FinancingType ;
+    rdfs:label "Usage Fees"@en ,
+               "Nutzungsgebühren"@de ;
+    rdfs:comment "Financing type where the operation of a data trustee is funded through fees paid for using data, services or infrastructure."@en ,
+                 "Finanzierungsart, bei der der Betrieb einer Datentreuhand durch Gebühren für die Nutzung von Daten, Diensten oder Infrastruktur finanziert wird."@de .
+
+dtm-business:CommunityFunding rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:FinancingType ;
+    skos:inScheme dtm-business:FinancingTypeScheme ;
+    skos:broader dtm-business:FinancingType ;
+    rdfs:label "Community Funding"@en ,
+               "Gemeinschaftliche Finanzierung"@de ;
+    rdfs:comment "Financing type where a data trustee is jointly funded by its participating community or members."@en ,
+                 "Finanzierungsart, bei der eine Datentreuhand gemeinschaftlich durch teilnehmende Akteure oder Mitglieder finanziert wird."@de .
+
+dtm-business:BusinessRelatedFunding rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:FinancingType ;
+    skos:inScheme dtm-business:FinancingTypeScheme ;
+    skos:broader dtm-business:FinancingType ;
+    rdfs:label "Business-Related Funding"@en ,
+               "Betriebsbezogene Finanzierung"@de ;
+    rdfs:comment "Financing type where a data trustee is funded as part of business operations, organizational budgets or commercial activities."@en ,
+                 "Finanzierungsart, bei der eine Datentreuhand aus betrieblichen Mitteln, Organisationsbudgets oder kommerziellen Aktivitäten finanziert wird."@de .
+
+dtm-business:OtherFunding rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:FinancingType ;
+    skos:inScheme dtm-business:FinancingTypeScheme ;
+    skos:broader dtm-business:FinancingType ;
+    rdfs:label "Other Funding"@en ,
+               "Weitere Finanzierung"@de ;
+    rdfs:comment "Generic financing type for funding mechanisms not covered by the predefined financing categories."@en ,
+                 "Generische Finanzierungsart für Finanzierungsmechanismen, die nicht durch die vordefinierten Kategorien abgedeckt sind."@de .
+
+dtm-business:ParticipationMotivationScheme rdf:type skos:ConceptScheme ;
+    dcterms:title "Participation Motivation Scheme"@en ,
+                  "Teilnahmemotivations-Schema"@de ;
+    dcterms:description "Controlled vocabulary of motivations for actors participating in a data trustee arrangement."@en ,
+                        "Kontrolliertes Vokabular für Motivationen von Akteuren zur Teilnahme an einer Datentreuhand."@de .
+
+
+dtm-business:ParticipationMotivation rdf:type owl:Class ;
+    rdfs:label "Participation Motivation"@en ,
+               "Teilnahmemotivation"@de ;
+    rdfs:comment "General category for motivations of actors to participate in a data trustee arrangement or provide data through it."@en ,
+                 "Übergeordnete Kategorie für Motivationen von Akteuren, an einer Datentreuhand teilzunehmen oder Daten über sie bereitzustellen."@de .
+
+
+dtm-business:RightsHolderMotivation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-business:ParticipationMotivation ;
+    rdfs:label "Rights Holder Motivation"@en ,
+               "Rechtehalter-Motivation"@de ;
+    rdfs:comment "Motivation of a rights holder or affected party to make data available through a data trustee."@en ,
+                 "Motivation eines Rechtehalters bzw. einer betroffenen Partei, Daten über eine Datentreuhand bereitzustellen."@de .
+
+
+dtm-business:DataHolderMotivation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-business:ParticipationMotivation ;
+    rdfs:label "Data Holder Motivation"@en ,
+               "Datenhalter-Motivation"@de ;
+    rdfs:comment "Motivation of a data holder to participate in a data trustee arrangement."@en ,
+                 "Motivation eines Datenhalters zur Teilnahme an einer Datentreuhand."@de .
+
+
+dtm-business:DataConsumerMotivation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-business:ParticipationMotivation ;
+    rdfs:label "Data Consumer Motivation"@en ,
+               "Datennutzer-Motivation"@de ;
+    rdfs:comment "Motivation of a data consumer to participate in or use a data trustee arrangement."@en ,
+                 "Motivation eines Datennutzers zur Teilnahme an oder Nutzung einer Datentreuhand."@de .
+
+dtm-business:Domain rdf:type owl:Class , skos:Concept ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:topConceptOf dtm-business:DomainScheme ;
+  skos:prefLabel "Domain"@en ;
+  skos:prefLabel "Domäne"@de ;
+  rdfs:label   "Domain"@en ,
+                 "Domäne"@de ;
+  rdfs:comment "Thematic or sectoral area in which a data trustee operates, such as mobility, energy or healthcare."@en ,
+                 "Thematischer oder sektoraler Bereich, in dem ein Datentreuhänder tätig ist, z. B. Mobilität, Energie oder Gesundheitswesen."@de .
+
+
+dtm-business:EducationSector rdf:type owl:Class , skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Bildung"@de ,
+                 "Education"@en ;
+    rdfs:comment "Domain representing the education sector, including schools, universities and lifelong learning."@en ,
+                 "Domäne für den Bildungssektor, einschließlich Schulen, Hochschulen und lebenslangem Lernen."@de .
+
+
+dtm-business:EnergySector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Energie"@de ,
+                 "Energy"@en ;
+    rdfs:comment "Domain for the energy sector, including production, distribution and consumption of energy."@en ,
+                 "Domäne für den Energiesektor, einschließlich Erzeugung, Verteilung und Nutzung von Energie."@de .
+
+
+dtm-business:FinancialSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Finanzwirtschaft"@de ,
+                 "Finance"@en ;
+    rdfs:comment "Domain for the financial sector, such as banking, insurance and capital markets."@en ,
+                 "Domäne für die Finanzwirtschaft, z. B. Banken, Versicherungen und Kapitalmärkte."@de .
+
+
+dtm-business:GeoinformationSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Geoinformation"@de ,
+                 "Geoinformation"@en ;
+    rdfs:comment "Domain focusing on geospatial data and geoinformation services."@en ,
+                 "Domäne mit Fokus auf Geodaten und Geoinformationsdienste."@de .
+
+
+dtm-business:HealthcareSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Gesundheitswesen"@de ,
+                 "Healthcare"@en ;
+    rdfs:comment "Domain for healthcare, including medical care, public health and health data."@en ,
+                 "Domäne für das Gesundheitswesen, einschließlich medizinischer Versorgung, Public Health und Gesundheitsdaten."@de .
+
+
+dtm-business:Industrie40 rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Industrie 4.0"@de ,
+                 "Industry 4.0"@en ;
+    rdfs:comment "Domain related to Industry 4.0, including networked production, IoT and smart manufacturing."@en ,
+                 "Domäne im Kontext Industrie 4.0, einschließlich vernetzter Produktion, IoT und Smart Manufacturing."@de .
+
+
+dtm-business:CulturalCreativeSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Kultur- / Kreativwirtschaft"@de ,
+                 "Culture / Creative Industry"@en ;
+    rdfs:comment "Domain for the cultural and creative industries, such as media, arts and design."@en ,
+                 "Domäne für die Kultur- und Kreativwirtschaft, z. B. Medien, Kunst und Design."@de .
+
+
+dtm-business:AgricultureSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Landwirtschaft"@de ,
+                 "Agriculture"@en ;
+    rdfs:comment "Domain for agriculture and related rural activities."@en ,
+                 "Domäne für Landwirtschaft und verwandte ländliche Tätigkeiten."@de .
+
+
+dtm-business:LogisticSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Logistik"@de ,
+                 "Logistics"@en ;
+    rdfs:comment "Domain for logistics, including transport, warehousing and supply chain management."@en ,
+                 "Domäne für Logistik, einschließlich Transport, Lagerung und Lieferkettenmanagement."@de .
+
+
+dtm-business:AerospaceSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Luft- / Raumfahrt"@de ,
+                 "Aerospace"@en ;
+    rdfs:comment "Domain for aerospace, including aviation and space-related activities."@en ,
+                 "Domäne für Luft- und Raumfahrt, einschließlich Luftverkehr und raumbezogener Aktivitäten."@de .
+
+
+dtm-business:MobilitySector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Mobilität"@de ,
+                 "Mobility"@en ;
+    rdfs:comment "Domain for mobility services and transport systems."@en ,
+                 "Domäne für Mobilitätsdienste und Verkehrssysteme."@de .
+
+
+dtm-business:PublicSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Öffentlicher Sektor"@de ,
+                 "Public Sector"@en ;
+    rdfs:comment "Domain for the public sector, including public administration and public services."@en ,
+                 "Domäne für den öffentlichen Sektor, einschließlich Verwaltung und öffentlicher Dienstleistungen."@de .
+
+
+dtm-business:ConstructionSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Planen / Bauen / Betreiben"@de ,
+                 "Construction / Operation / Maintenance"@en ;
+    rdfs:comment "Domain for planning, construction and operation of buildings and infrastructure."@en ,
+                 "Domäne für das Planen, Bauen und Betreiben von Gebäuden und Infrastrukturen."@de .
+
+
+dtm-business:SmartCityRegionSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Smart City / Smart Region"@de ,
+                 "Smart City / Region"@en ;
+    rdfs:comment "Domain for smart cities and smart regions, focusing on data-driven urban and regional development."@en ,
+                 "Domäne für Smart City und Smart Region mit Fokus auf datengetriebene Stadt- und Regionalentwicklung."@de .
+
+
+dtm-business:SmartLivingSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Smart Living"@de ,
+                 "Smart Living"@en ;
+    rdfs:comment "Domain for smart living, including smart homes and digitally supported everyday life."@en ,
+                 "Domäne für Smart Living, einschließlich Smart Homes und digital unterstütztem Alltagsleben."@de .
+
+
+dtm-business:CrossDomainSector rdf:type owl:Class, skos:Concept ;
+  rdfs:subClassOf dtm-business:Domain ;
+  skos:inScheme dtm-business:DomainScheme ;
+  skos:broader  dtm-business:Domain ;
+    rdfs:label   "Domänenübergreifend"@de ,
+                 "Cross-Domain"@en ;
+    rdfs:comment "Cross-domain scope that spans multiple thematic domains."@en ,
+                 "Domänenübergreifender Bereich, der mehrere thematische Domänen umfasst."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#AccessFee
+dtm-business:AccessFee rdf:type owl:Class ,
+                                skos:Concept ;
+    rdfs:subClassOf dtm-business:PayModel ;
+    skos:inScheme dtm-business:PayModelScheme ;
+    skos:broader  dtm-business:PayModel ;
+    rdfs:label    "Access Fee"@en ,
+                  "Zugangsgebühr"@de ;
+    rdfs:comment  "Pay model based on fees for accessing data or services."@en ,
+                  "Bezahlmodell, bei dem Entgelte für den Zugang zu Daten oder Diensten erhoben werden."@de .
+
+
+### ConceptScheme
+dtm-business:AffiliationScheme a skos:ConceptScheme ;
+  skos:prefLabel "Affiliation Scheme"@en ;
+  skos:prefLabel "Zugehörigkeitsschema"@de .
+
+dtm-business:DomainScheme a skos:ConceptScheme ;
+  dcterms:title "Domain Scheme"@en , "Domänen-Schema"@de ;
+  dcterms:description "Controlled vocabulary of domains in which a data trustee operates."@en ,
+                      "Kontrolliertes Vokabular der Domänen, in denen ein Datentreuhänder tätig ist."@de .
+
+### Concepts
+dtm-business:Individual a skos:Concept ;
+  skos:inScheme dtm-business:AffiliationScheme ;
+  skos:prefLabel "Individual"@en ;
+  skos:prefLabel "Individuum"@de .
+
+dtm-business:Organisation a skos:Concept ;
+  skos:inScheme dtm-business:AffiliationScheme ;
+  skos:prefLabel "Organization"@en ;
+  skos:prefLabel "Organisation"@de .
+
+
+  ### Usage Goal Scheme
+dtm-business:UsageGoalScheme a skos:ConceptScheme ;
+  dcterms:title "Usage Goal Scheme"@en ,
+                "Nutzungsziel-Schema"@de ;
+  dcterms:description "Controlled vocabulary of user usage goals."@en .
+
+### Data Trustee Goal Scheme
+dtm-business:DataTrusteeGoalScheme a skos:ConceptScheme ;
+  dcterms:title "Data Trustee Goal Scheme"@en ,
+                "Datentreuhand-Ziel-Schema"@de ;
+  dcterms:description "Controlled vocabulary of data trustee goals."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#Compliance
+dtm-business:Compliance rdf:type owl:Class, skos:Concept ;
+    rdfs:subClassOf dtm-business:DataTrusteeGoal ,
+                    dtm-business:DataHolderMotivation ,
+                    dtm-business:DataConsumerMotivation ;
+    skos:inScheme dtm-business:DataTrusteeGoalScheme ,
+                  dtm-business:ParticipationMotivationScheme ;
+    rdfs:label   "Compliance"@en ,
+                 "Erfüllung von Auflagen"@de ;
+    rdfs:comment "Goal of complying with legal, regulatory or contractual requirements regarding data use."@en ,
+                 "Ziel, rechtliche, regulatorische oder vertragliche Anforderungen an die Datennutzung zu erfüllen."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#DataAccess
+dtm-business:DataAccess rdf:type owl:Class, skos:Concept ;
+    rdfs:subClassOf dtm-business:UsageGoalOfUser ;
+    rdfs:label   "Data Access"@en ,
+                 "Datenzugang"@de ;
+    rdfs:comment "Usage goal focused on obtaining access to data sets or data services."@en ,
+                 "Nutzungsziel, das auf den Zugang zu Datensätzen oder Datendiensten gerichtet ist."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#DataAnalysis
+dtm-business:DataAnalysis rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:UsageGoalScheme ;
+    rdfs:subClassOf dtm-business:UsageGoalOfUser ;
+    rdfs:label   "Data Analysis"@en ,
+                 "Datenanalyse"@de ;
+    rdfs:comment "Usage goal aimed at analyzing data to gain insights or make decisions."@en ,
+                 "Nutzungsziel, das auf die Analyse von Daten zur Gewinnung von Erkenntnissen oder Entscheidungsunterstützung abzielt."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#DataQualityManagement
+dtm-business:DataQualityManagement rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:UsageGoalScheme ;
+    rdfs:subClassOf dtm-business:UsageGoalOfUser ;
+    rdfs:label   "Data Quality Management"@en ,
+                 "Datenqualitätsmanagement"@de ;
+    rdfs:comment "Usage goal of monitoring, improving or assuring the quality of data."@en ,
+                 "Nutzungsziel, die Qualität von Daten zu überwachen, zu verbessern oder sicherzustellen."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#DataSharing
+dtm-business:DataSharing rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:UsageGoalScheme ;
+    rdfs:subClassOf dtm-business:UsageGoalOfUser ;
+    rdfs:label   "Data Sharing"@en ,
+                 "Datenteilen"@de ;
+    rdfs:comment "Usage goal of sharing data with other actors within or across data ecosystems."@en ,
+                 "Nutzungsziel, Daten mit anderen Akteuren innerhalb oder über Datenökosysteme hinweg zu teilen."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#DataSovereignty
+dtm-business:DataSovereignty rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:DataTrusteeGoalScheme ;
+    rdfs:subClassOf dtm-business:DataTrusteeGoal ;
+    rdfs:label   "Data Sovereignty"@en ,
+                 "Datensouveränität"@de ;
+    rdfs:comment "Goal of ensuring that data holders retain control and decision power over their data."@en ,
+                 "Ziel, sicherzustellen, dass Datenhaltende die Kontrolle und Entscheidungsgewalt über ihre Daten behalten."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#DataTrusteeGoal
+dtm-business:DataTrusteeGoal rdf:type owl:Class ;
+    rdfs:label   "Data Trustee Goal"@en ,
+                 "Ziel der Datentreuhand"@de ;
+    rdfs:comment "General category for goals that a data trustee aims to achieve, such as sovereignty, innovation or economic utilization."@en ,
+                 "Übergeordnete Kategorie für Ziele, die ein Datentreuhänder verfolgt, z. B. Souveränität, Innovation oder wirtschaftliche Verwertung."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#DigitalSovereignty
+dtm-business:DigitalSovereignty rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:DataTrusteeGoalScheme ;
+    rdfs:subClassOf dtm-business:DataTrusteeGoal ;
+    rdfs:label   "Digital Sovereignty"@en ,
+                 "Digitale Souveränität"@de ;
+    rdfs:comment "Goal of maintaining independent and self-determined use of digital infrastructures, platforms and services."@en ,
+                 "Ziel, die eigenständige und selbstbestimmte Nutzung digitaler Infrastrukturen, Plattformen und Dienste zu gewährleisten."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#EconomicUtilization
+dtm-business:EconomicUtilization rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:DataTrusteeGoalScheme ,
+                  dtm-business:ParticipationMotivationSchem ;
+    rdfs:subClassOf dtm-business:DataTrusteeGoal ,
+                    dtm-business:DataHolderMotivation ,
+                    dtm-business:DataConsumerMotivation;
+    rdfs:label   "Economic Utilization"@en ,
+                 "Wirtschaftliche Verwertung"@de ;
+    rdfs:comment "Goal of creating economic value from data through new services, business models or efficiency gains."@en ,
+                 "Ziel, durch Daten wirtschaftlichen Mehrwert zu schaffen, z. B. durch neue Dienstleistungen, Geschäftsmodelle oder Effizienzgewinne."@de .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#ValueCreation
+dtm-business:ValueCreation rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:ParticipationMotivationSchem ;
+    rdfs:subClassOf dtm-business:DataHolderMotivation ,
+                    dtm-business:DataConsumerMotivation;
+    rdfs:label   "Value Creation"@en ,
+                 "Wertschöpfung"@de ;
+    rdfs:comment "Motivation eines Akteurs, durch Teilnahme an einer Datentreuhand oder durch Datennutzung einen Mehrwert zu schaffen, z. B. wirtschaftlich, organisatorisch oder strategisch."@de ,
+                 "Motivation of an actor to create value by participating in a data trustee arrangement or using data, e.g. economic, organizational or strategic value."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#FairMarketCompetition
+dtm-business:FairMarketCompetition rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:DataTrusteeGoalScheme ;
+    rdfs:subClassOf dtm-business:DataTrusteeGoal ;
+    rdfs:label   "Fair Market Competition"@en ,
+                 "Fairer Wettbewerb"@de ;
+    rdfs:comment "Goal of supporting fair competition and avoiding data-based market distortions."@en ,
+                 "Ziel, fairen Wettbewerb zu unterstützen und datenbasierte Wettbewerbsverzerrungen zu vermeiden."@de .
+
+dtm-business:QualityImprovement rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:RightsHolderMotivation ;
+    skos:inScheme dtm-business:ParticipationMotivationScheme ;
+    rdfs:label "Quality Improvement"@en ,
+               "Qualitätsverbesserung"@de ;
+    rdfs:comment "Motivation to improve the quality of data, processes, products or services through data provision."@en ,
+                 "Motivation, durch die Bereitstellung von Daten die Qualität von Daten, Prozessen, Produkten oder Dienstleistungen zu verbessern."@de .
+
+
+dtm-business:CostReduction rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:RightsHolderMotivation ;
+    skos:inScheme dtm-business:ParticipationMotivationScheme ;
+    rdfs:label "Cost Reduction"@en ,
+               "Kostenreduktion"@de ;
+    rdfs:comment "Motivation to reduce costs, lower effort or achieve efficiency gains through data sharing."@en ,
+                 "Motivation, durch Datenteilung Kosten zu senken, Aufwände zu reduzieren oder Effizienzgewinne zu erzielen."@de .
+
+
+dtm-business:ContractFulfillment rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:RightsHolderMotivation ;
+    skos:inScheme dtm-business:ParticipationMotivationScheme ;
+    rdfs:label "Contract Fulfillment"@en ,
+               "Vertragserfüllung"@de ;
+    rdfs:comment "Motivation to provide data in order to fulfil contractual obligations, agreements or service commitments."@en ,
+                 "Motivation, Daten bereitzustellen, um vertragliche Pflichten, Vereinbarungen oder Leistungszusagen zu erfüllen."@de .
+
+
+dtm-business:SocietalValue rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:RightsHolderMotivation ,
+                    dtm-business:DataHolderMotivation ,
+                    dtm-business:DataConsumerMotivation ;
+    skos:inScheme dtm-business:ParticipationMotivationScheme ;
+    rdfs:label "Societal Value"@en ,
+               "Gesellschaftlicher Mehrwert"@de ;
+    rdfs:comment "Motivation to create societal value through data provision, data use or participation in a data trustee arrangement."@en ,
+                 "Motivation, durch Datenbereitstellung, Datennutzung oder Teilnahme an einer Datentreuhand gesellschaftlichen Mehrwert zu schaffen."@de .
+
+
+dtm-business:TrustIntermediary rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:DataHolderMotivation ;
+    skos:inScheme dtm-business:ParticipationMotivationScheme ;
+    rdfs:label "Trust Intermediary"@en ,
+               "Vertrauensinstanz"@de ;
+    rdfs:comment "Motivation to participate because the data trustee acts as a neutral and trustworthy intermediary."@en ,
+                 "Motivation zur Teilnahme, weil die Datentreuhand als neutrale und vertrauenswürdige Vermittlungsinstanz wirkt."@de .
+
+
+dtm-business:Interoperability rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:DataHolderMotivation ,
+                    dtm-business:DataConsumerMotivation ;
+    skos:inScheme dtm-business:ParticipationMotivationScheme ;
+    rdfs:label "Interoperability"@en ,
+               "Interoperabilität"@de ;
+    rdfs:comment "Motivation to improve technical, semantic or organizational interoperability through shared standards, interfaces or governance rules."@en ,
+                 "Motivation, technische, semantische oder organisatorische Interoperabilität durch gemeinsame Standards, Schnittstellen oder Governance-Regeln zu verbessern."@de .
+
+
+dtm-business:Optimization rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-business:DataConsumerMotivation ;
+    skos:inScheme dtm-business:ParticipationMotivationScheme ;
+    rdfs:label "Optimization"@en ,
+               "Optimierung"@de ;
+    rdfs:comment "Motivation to optimize processes, resources, decisions or systems through data use."@en ,
+                 "Motivation, Prozesse, Ressourcen, Entscheidungen oder Systeme durch Datennutzung zu optimieren."@de .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#Flatrate
+dtm-business:Flatrate rdf:type owl:Class ,
+                               skos:Concept ;
+    rdfs:subClassOf dtm-business:PayModel ;
+    skos:inScheme dtm-business:PayModelScheme ;
+    skos:broader  dtm-business:PayModel ;
+    rdfs:label    "Flatrate"@de ,
+                  "Flatrate"@en ;
+    rdfs:comment  "Pay model with a flat recurring fee independent of actual usage."@en ,
+                  "Bezahlmodell mit einer pauschalen, wiederkehrenden Gebühr, unabhängig von der tatsächlichen Nutzung."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#Free
+dtm-business:Free rdf:type owl:Class ,
+                           skos:Concept ;
+    rdfs:subClassOf dtm-business:PayModel ;
+    skos:inScheme dtm-business:PayModelScheme ;
+    skos:broader  dtm-business:PayModel ;
+    rdfs:label    "Free"@en ,
+                  "Kostenlos"@de ;
+    rdfs:comment  "Pay model where access or services are provided free of charge."@en ,
+                  "Bezahlmodell, bei dem Zugang oder Dienstleistungen kostenlos bereitgestellt werden."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#Freemium
+dtm-business:Freemium rdf:type owl:Class ,
+                               skos:Concept ;
+    rdfs:subClassOf dtm-business:PayModel ;
+    skos:inScheme dtm-business:PayModelScheme ;
+    skos:broader  dtm-business:PayModel ;
+    rdfs:label    "Freemium"@de ,
+                  "Freemium"@en ;
+    rdfs:comment  "Pay model combining a free basic offering with paid premium features or services."@en ,
+                  "Bezahlmodell, das ein kostenloses Basisangebot mit kostenpflichtigen Premiumfunktionen oder -diensten kombiniert."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#Funder
+dtm-business:Funder rdf:type owl:Class ;
+    rdfs:label   "Finanzierer"@de ,
+                 "Funder"@en ;
+    rdfs:comment "Entity that provides financial resources to support a data trustee or related projects."@en ,
+                 "Entität, die finanzielle Mittel zur Unterstützung eines Datentreuhänders oder verwandter Projekte bereitstellt."@de .
+
+
+dtm-business:FundingSource rdf:type owl:Class ;
+    rdfs:label   "Funding Source"@en ,
+                 "Förderinstitution"@de ;
+    rdfs:comment "Type of institution or program that funds or supports data trustee projects, such as ministries or EU programs."@en ,
+                 "Typ einer Institution oder eines Programms, das Datentreuhandprojekte finanziert oder unterstützt, z. B. Ministerien oder EU-Programme."@de .
+
+
+dtm-business:FundingSourceScheme rdf:type skos:ConceptScheme ;
+    dcterms:title "Funding Source Scheme"@en ,
+                  "Förderinstitutionen-Schema"@de .
+
+
+dtm-business:BMBF rdf:type owl:Class ,
+                           skos:Concept ;
+    rdfs:subClassOf dtm-business:FundingSource ;
+    skos:inScheme dtm-business:FundingSourceScheme ;
+    skos:broader  dtm-business:FundingSource ;
+    owl:sameAs    wd:Q492234 ;  # Bundesministerium für Bildung und Forschung
+    rdfs:label    "BMBF - Bundesministerium für Bildung und Forschung"@de ,
+                  "BMBF - Federal Ministry of Education and Research"@en ;
+    rdfs:comment  "Funding source representing the German Federal Ministry of Education and Research (BMBF)."@en ,
+                  "Förderinstitution, die das Bundesministerium für Bildung und Forschung (BMBF) repräsentiert."@de .
+
+
+dtm-business:BMDV rdf:type owl:Class ,
+                           skos:Concept ;
+    rdfs:subClassOf dtm-business:FundingSource ;
+    skos:inScheme dtm-business:FundingSourceScheme ;
+    skos:broader  dtm-business:FundingSource ;
+    rdfs:label    "BMDV - Bundesministerium für Digitales und Verkehr"@de ,
+                  "BMDV - Federal Ministry for Digital and Transport"@en ;
+    rdfs:comment  "Funding source representing the German Federal Ministry for Digital and Transport (BMDV)."@en ,
+                  "Förderinstitution, die das Bundesministerium für Digitales und Verkehr (BMDV) repräsentiert."@de .
+
+
+dtm-business:BMFTR rdf:type owl:Class ,
+                            skos:Concept ;
+    rdfs:subClassOf dtm-business:FundingSource ;
+    skos:inScheme dtm-business:FundingSourceScheme ;
+    skos:broader  dtm-business:FundingSource ;
+    owl:sameAs    wd:Q492234 ;
+    rdfs:label    "BMFTR - Bundesministerium für Forschung, Technologie und Raumfahrt"@de ,
+                  "BMFTR - Federal Ministry of Research, Technology and Space"@en ;
+    rdfs:comment  "Funding source representing the Federal Ministry of Research, Technology and Space (BMFTR)."@en ,
+                  "Förderinstitution, die das Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) repräsentiert."@de .
+
+
+dtm-business:BMWK rdf:type owl:Class ,
+                           skos:Concept ;
+    rdfs:subClassOf dtm-business:FundingSource ;
+    skos:inScheme dtm-business:FundingSourceScheme ;
+    skos:broader  dtm-business:FundingSource ;
+    owl:sameAs    wd:Q488589 ;  # BMWK - Bundesministerium für Wirtschaft und Klimaschutz
+    rdfs:label    "BMWK - Bundesministerium für Wirtschaft und Klimaschutz"@de ,
+                  "BMWK - Federal Ministry for Economic Affairs and Climate Action"@en ;
+    rdfs:comment  "Funding source representing the German Federal Ministry for Economic Affairs and Climate Action (BMWK)."@en ,
+                  "Förderinstitution, die das Bundesministerium für Wirtschaft und Klimaschutz (BMWK) repräsentiert."@de .
+
+
+dtm-business:EU rdf:type owl:Class ,
+                         skos:Concept ;
+    rdfs:subClassOf dtm-business:FundingSource ;
+    skos:inScheme dtm-business:FundingSourceScheme ;
+    skos:broader  dtm-business:FundingSource ;
+    rdfs:label    "EU - Europäische Union"@de ,
+                  "EU - European Union"@en ;
+    rdfs:comment  "Funding source representing programs or instruments of the European Union."@en ,
+                  "Förderinstitution, die Programme oder Instrumente der Europäischen Union repräsentiert."@de .
+
+
+dtm-business:GWK rdf:type owl:Class ,
+                          skos:Concept ;
+    rdfs:subClassOf dtm-business:FundingSource ;
+    skos:inScheme dtm-business:FundingSourceScheme ;
+    skos:broader  dtm-business:FundingSource ;
+    rdfs:label    "GWK - Gemeinsame Wissenschaftskonferenz"@de ,
+                  "GWK - Joint Science Conference"@en ;
+    rdfs:comment  "Funding source representing the German Joint Science Conference (GWK)."@en ,
+                  "Förderinstitution, die die Gemeinsame Wissenschaftskonferenz (GWK) repräsentiert."@de .
+
+
+dtm-business:AndereFoerderung rdf:type owl:Class ,
+                                       skos:Concept ;
+    rdfs:subClassOf dtm-business:FundingSource ;
+    skos:inScheme dtm-business:FundingSourceScheme ;
+    skos:broader  dtm-business:FundingSource ;
+    rdfs:label    "Andere Förderung"@de ,
+                  "Other Funding Source"@en ;
+    rdfs:comment  "Generic funding source for other types of funders not covered by the specific categories."@en ,
+                  "Generische Förderinstitution für weitere Fördergeber, die nicht durch spezifische Kategorien abgedeckt sind."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#Individual
+dtm-business:Individual rdf:type owl:Class ;
+    rdfs:subClassOf dtm-business:Affiliation ;
+    owl:disjointWith dtm-business:Organisation ;
+    rdfs:label   "Individual"@en ,
+                 "Individuum"@de ;
+    rdfs:comment "Affiliation type indicating that the actor is an individual person."@en ,
+                 "Zugehörigkeitstyp, der angibt, dass der Akteur eine einzelne natürliche Person ist."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#Innovation
+dtm-business:Innovation rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:DataTrusteeGoalScheme ,
+                  dtm-business:ParticipationMotivationScheme ;
+    rdfs:subClassOf dtm-business:DataTrusteeGoal ,
+                    dtm-business:DataHolderMotivation ,
+                    dtm-business:DataConsumerMotivation ;
+    rdfs:label   "Innovation"@de ,
+                 "Innovation"@en ;
+    rdfs:comment "Goal of fostering innovation through data-driven products, services or processes."@en ,
+                 "Ziel, Innovation durch datengetriebene Produkte, Dienstleistungen oder Prozesse zu ermöglichen."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#Organisation
+dtm-business:Organisation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-business:Affiliation ;
+    rdfs:label   "Organisation"@de ,
+                 "Organization"@en ;
+    rdfs:comment "Affiliation type indicating that the actor is an organization, such as a company, authority or association."@en ,
+                 "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#PayModel
+dtm-business:PayModel rdf:type owl:Class ;
+    rdfs:label   "Bezahlmodell"@de ,
+                 "Pay Model"@en ;
+    rdfs:comment "Category describing the pricing or payment model applied to data services or participation in a data trustee."@en ,
+                 "Kategorie, die das Preis- bzw. Bezahlmodell für Datendienste oder die Teilnahme an einem Datentreuhänder beschreibt."@de .
+
+
+dtm-business:PayModelScheme rdf:type skos:ConceptScheme ;
+    dcterms:title       "Pay Model Scheme"@en ,
+                        "Bezahlmodell-Schema"@de ;
+    dcterms:description "Controlled vocabulary of pay models used by data trustees and actors."@en ,
+                        "Kontrolliertes Vokabular von Bezahlmodellen, das von Datentreuhändern und Akteuren verwendet wird."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#PayPerUse
+dtm-business:PayPerUse rdf:type owl:Class ,
+                                skos:Concept ;
+    rdfs:subClassOf dtm-business:PayModel ;
+    skos:inScheme dtm-business:PayModelScheme ;
+    skos:broader  dtm-business:PayModel ;
+    rdfs:label    "Pay-Per-Use"@en ,
+                  "Bezahlen pro Nutzung"@de ;
+    rdfs:comment  "Pay model where fees depend on the actual usage, for example per request or per volume."@en ,
+                  "Bezahlmodell, bei dem Entgelte von der tatsächlichen Nutzung abhängen, z. B. pro Anfrage oder pro Datenvolumen."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#ScienceAndResearch
+dtm-business:ScienceAndResearch rdf:type owl:Class, skos:Concept ;
+    skos:inScheme dtm-business:DataTrusteeGoalScheme ,
+                  dtm-business:ParticipationMotivationSchem ;
+    rdfs:subClassOf dtm-business:DataTrusteeGoal ,
+                    dtm-business:DataHolderMotivation ,
+                    dtm-business:DataConsumerMotivation ;
+    rdfs:label   "Science and Research"@en ,
+                 "Wissenschaft und Forschung"@de ;
+    rdfs:comment "Goal of supporting scientific research and development based on data."@en ,
+                 "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#ServiceFee
+dtm-business:ServiceFee rdf:type owl:Class ,
+                                 skos:Concept ;
+    rdfs:subClassOf dtm-business:PayModel ;
+    skos:inScheme dtm-business:PayModelScheme ;
+    skos:broader  dtm-business:PayModel ;
+    rdfs:label    "Service Fee"@en ,
+                  "Servicegebühr"@de ;
+    rdfs:comment  "Pay model where fees are charged for specific services provided on top of data access."@en ,
+                  "Bezahlmodell, bei dem Gebühren für bestimmte Dienstleistungen zusätzlich zum Datenzugang erhoben werden."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#SupportFee
+dtm-business:SupportFee rdf:type owl:Class ,
+                                 skos:Concept ;
+    rdfs:subClassOf dtm-business:PayModel ;
+    skos:inScheme dtm-business:PayModelScheme ;
+    skos:broader  dtm-business:PayModel ;
+    rdfs:label    "Support Fee"@en ,
+                  "Supportgebühr"@de ;
+    rdfs:comment  "Pay model that charges fees for support, maintenance or operational assistance."@en ,
+                  "Bezahlmodell, bei dem Entgelte für Support, Wartung oder Betriebsunterstützung anfallen."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-business#UsageGoalOfUser
+dtm-business:UsageGoalOfUser rdf:type owl:Class ;
+    rdfs:label   "Nutzungsziel des Nutzers"@de ,
+                 "Usage Goal of User"@en ;
+    rdfs:comment "Category for the intended usage goals of users when interacting with a data trustee or data ecosystem."@en ,
+                 "Kategorie für die Nutzungsziele von Nutzenden bei der Interaktion mit einem Datentreuhänder oder Datenökosystem."@de .
+
+
+### SKOS ConceptScheme für Geschäftsformen
+dtm-business:BusinessFormScheme rdf:type skos:ConceptScheme ;
+    dcterms:title       "Business Form Concept Schema"@en ,
+                        "Geschäftsform Schema"@de ;
+    dcterms:description "Concept scheme representing the thematic or sectoral business forms in which data trustees operate."@en ,
+                        "Konzeptschema für die thematischen bzw. sektoralen Geschäftsformen, in denen Datentreuhänder tätig ist."@de .
+
+
+### Klasse: BusinessForm
+dtm-business:BusinessForm rdf:type owl:Class ,
+                                   skos:Concept ;
+    rdfs:label   "Business Form"@en ,
+                 "Geschäftsform"@de ;
+    rdfs:comment "Category for the legal or organizational business form of a data trustee or organization, such as GmbH, e.V. or foundation."@en ,
+                 "Kategorie für die rechtliche bzw. organisatorische Geschäftsform eines Datentreuhänders oder einer Organisation, z. B. GmbH, e.V. oder Stiftung."@de .
+
+
+dtm-business:LimitedLiabilityCompany rdf:type owl:Class ,
+                                              skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q460178 ;
+    rdfs:label    "Gesellschaft mit beschränkter Haftung (GmbH)"@de ,
+                  "Limited Liability Company"@en ;
+    rdfs:comment  "Business form for a German limited liability company."@en ,
+                  "Geschäftsform für eine Gesellschaft mit beschränkter Haftung (GmbH)."@de .
+
+
+dtm-business:NonprofitLimitedLiabilityCompany rdf:type owl:Class ,
+                                                       skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q1500859 ;
+    rdfs:label    "Gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH)"@de ,
+                  "Nonprofit LLC"@en ;
+    rdfs:comment  "Business form for a nonprofit limited liability company."@en ,
+                  "Geschäftsform für eine gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH)."@de .
+
+
+dtm-business:EntrepreneurialCompany rdf:type owl:Class ,
+                                             skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q2498526 ;
+    rdfs:label    "Unternehmergesellschaft (UG) (haftungsbeschränkt)"@de ,
+                  "Entrepreneurial Company"@en ;
+    rdfs:comment  "Business form for an entrepreneurial company with limited liability."@en ,
+                  "Geschäftsform für eine Unternehmergesellschaft (haftungsbeschränkt) (UG)."@de .
+
+
+dtm-business:StockCorporation rdf:type owl:Class ,
+                                       skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q422062 ;
+    rdfs:label    "Aktiengesellschaft (AG)"@de ,
+                  "Stock Corporation"@en ;
+    rdfs:comment  "Business form for a stock corporation."@en ,
+                  "Geschäftsform für eine Aktiengesellschaft (AG)."@de .
+
+
+dtm-business:EuropeanCompany rdf:type owl:Class ,
+                                      skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q111085796 ;
+    rdfs:label    "Societas Europaea (SE)"@de ,
+                  "Societas Europaea (SE)"@en ;
+    rdfs:comment  "Business form for a European Company (Societas Europaea, SE)."@en ,
+                  "Geschäftsform für eine Europäische Gesellschaft (SE)."@de .
+
+
+dtm-business:RegisteredAssociation rdf:type owl:Class ,
+                                            skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q9299236 ;
+    rdfs:label    "Eingetragener Verein (e.V.)"@de ,
+                  "Registered Association"@en ;
+    rdfs:comment  "Business form for a registered association."@en ,
+                  "Geschäftsform für einen eingetragenen Verein (e.V.)."@de .
+
+
+dtm-business:Foundation rdf:type owl:Class ,
+                                  skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q18631225 ;
+    rdfs:label    "Stiftung"@de ,
+                  "Foundation"@en ;
+    rdfs:comment  "Business form for a foundation."@en ,
+                  "Geschäftsform für eine Stiftung."@de .
+
+
+dtm-business:CooperativeSociety rdf:type owl:Class ,
+                                         skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q5349747 ;
+    rdfs:label    "Eingetragene Genossenschaft (eG)"@de ,
+                  "Cooperative"@en ;
+    rdfs:comment  "Business form for a registered cooperative."@en ,
+                  "Geschäftsform für eine eingetragene Genossenschaft (eG)."@de .
+
+
+dtm-business:CivilLawPartnership rdf:type owl:Class ,
+                                          skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q33134157 ;
+    rdfs:label    "Gesellschaft bürgerlichen Rechts (GbR)"@de ,
+                  "Civil-Law Partnership"@en ;
+    rdfs:comment  "Business form for a civil-law partnership."@en ,
+                  "Geschäftsform für eine Gesellschaft bürgerlichen Rechts (GbR)."@de .
+
+
+dtm-business:GeneralPartnership rdf:type owl:Class ,
+                                         skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q19340991 ;
+    rdfs:label    "OHG"@de ,
+                  "General Partnership"@en ;
+    rdfs:comment  "Business form for a general partnership."@en ,
+                  "Geschäftsform für eine Offene Handelsgesellschaft (OHG)."@de .
+
+
+dtm-business:LimitedPartnership rdf:type owl:Class ,
+                                         skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q1780029 ;
+    rdfs:label    "Kommanditgesellschaft (KG)"@de ,
+                  "Limited Partnership"@en ;
+    rdfs:comment  "Business form for a limited partnership."@en ,
+                  "Geschäftsform für eine Kommanditgesellschaft (KG)."@de .
+
+
+dtm-business:ShareLimitedPartnership rdf:type owl:Class ,
+                                              skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q19823288 ;
+    rdfs:label    "Kommanditgesellschaft auf Aktien (KGaA)"@de ,
+                  "Partnership Limited by Shares"@en ;
+    rdfs:comment  "Business form for a partnership limited by shares (KGaA)."@en ,
+                  "Geschäftsform für eine Kommanditgesellschaft auf Aktien."@de .
+
+
+dtm-business:PublicLawInstitution rdf:type owl:Class ,
+                                           skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q67207116 ;
+    rdfs:label    "Anstalt des öffentlichen Rechts (AöR)"@de ,
+                  "Public Law Institution"@en ;
+    rdfs:comment  "Business form for a public law institution."@en ,
+                  "Geschäftsform für eine Anstalt des öffentlichen Rechts (AöR)."@de .
+
+
+dtm-business:PublicLawCorporation rdf:type owl:Class ,
+                                           skos:Concept ;
+    rdfs:subClassOf dtm-business:BusinessForm ;
+    skos:inScheme dtm-business:BusinessFormScheme ;
+    skos:broader  dtm-business:BusinessForm ;
+    owl:sameAs    wd:Q15734684 ;
+    rdfs:label    "Körperschaft des öffentlichen Rechts (KdöR)"@de ,
+                  "Public Law Corporation"@en ;
+    rdfs:comment  "Business form for a public law corporation."@en ,
+                  "Geschäftsform für eine Körperschaft des öffentlichen Rechts (KdöR)."@de .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+# Disjointness der UsageGoalOfUser-Unterklassen
+[ rdf:type   owl:AllDisjointClasses ;
+  owl:members ( dtm-business:DataAccess
+                dtm-business:DataAnalysis
+                dtm-business:DataQualityManagement
+                dtm-business:DataSharing
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

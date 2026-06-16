@@ -1,0 +1,997 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dtm-core: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> .
+@prefix dtm-data: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#> .
+@prefix dpv:   <https://w3id.org/dpv#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix schema: <https://schema.org/> .
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-data> a owl:Ontology ;
+    dcterms:creator  "Bernd Rauch", "Denis Feth", "Jessica Chwalek" ;
+    dcterms:license  <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2025-11-10"^^xsd:date ;
+    dcterms:publisher "Kickstart Trustee" ;
+    dcterms:rights   "© 2025 Kickstart Trustee — CC BY 4.0" ;
+    owl:versionIRI   <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data/0.1.0> ;
+    owl:imports      <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core> ;
+    dcterms:title       "DTM Data Ontology"@en ;
+    dcterms:description "Data layer extending the DTM core ontology."@en ;
+    dcterms:description "Daten-Schicht, die die DTM-Core-Ontologie um datenspezifische Konzepte erweitert."@de ;
+    vann:preferredNamespacePrefix "dtm-data" ;
+    vann:preferredNamespaceUri    "https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#" .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#hasForwardingFrequency
+dtm-data:hasForwardingFrequency rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:DataForwarding ;
+    rdfs:range dtm-data:Frequency ;
+    rdfs:label "has forwarding frequency"@en ,
+               "hat Weitergabefrequenz"@de ;
+    rdfs:comment "Verknüpft eine Datenweitergabestufe mit der Häufigkeit, mit der Daten weitergegeben werden."@de ,
+               "Links a data forwarding stage to the frequency with which data is forwarded."@en .
+
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#hasForwardingTechnique
+dtm-data:hasForwardingTechnique rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:isForwardingTechniqueOf ;
+    rdfs:domain dtm-data:DataForwarding ;
+    rdfs:range dtm-data:ForwardingTechnique ;
+    rdfs:label "has forwarding technique"@en ,
+               "hat Weitergabetechnik"@de ;
+    rdfs:comment "Gibt die technische Methode an, mit der Daten weitergegeben werden."@de ,
+                 "Specifies the technical method used to forward data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#hasPreparationTechnique
+dtm-data:hasPreparationTechnique rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:isPreparationTechniqueOf ;
+    rdfs:domain dtm-data:DataPreparation ;
+    rdfs:range dtm-data:PreparationTechnique ;
+    rdfs:label "has preparation technique"@en ,
+               "hat Aufbereitungstechnik"@de ;
+    rdfs:comment "Gibt an, welche Verarbeitungstechnik in der Datenaufbereitung angewendet wird."@de ,
+                 "Indicates which preparation technique is applied during data preparation."@en .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#hasDataAnalysisTechnique
+dtm-data:hasDataAnalysisTechnique rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:isDataAnalysisTechniqueOf ;
+    rdfs:domain dtm-data:DataAnalysis ;
+    rdfs:range dtm-data:AnalysisTechnique ;
+    rdfs:label "has data analysis technique"@en ,
+               "hat Datenanalysetechnik"@de ;
+    rdfs:comment "Gibt an, welche Datenanalysetechnik in der Datenanalyse angewendet wird."@de ,
+                 "Indicates which data analysis technique is applied during data analysis."@en .
+
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#hasReceptionFrequency
+dtm-data:hasReceptionFrequency rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:DataReception ;
+    rdfs:range dtm-data:Frequency ;
+    rdfs:label "has reception frequency"@en ,
+               "hat Empfangsfrequenz"@de ;
+    rdfs:comment "Verknüpft eine Datenempfangsphase mit der Häufigkeit, mit der Daten empfangen werden."@de ,
+                 "Links a data reception stage to the frequency with which data is received."@en .
+
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#hasReceptionTechnique
+dtm-data:hasReceptionTechnique rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:isReceptionTechniqueOf ;
+    rdfs:domain dtm-data:DataReception ;
+    rdfs:range dtm-data:ReceptionTechnique ;
+    rdfs:label "has reception technique"@en ,
+               "hat Empfangstechnik"@de ;
+    rdfs:comment "Gibt die Technik an, über die Daten empfangen werden."@de ,
+                 "Specifies the technique or channel by which data is received."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#hasRetentionPeriod
+dtm-data:hasRetentionPeriod rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:DataStorage ;
+    rdfs:range dtm-data:RetentionPeriod ;
+    rdfs:label "has retention period"@en ,
+               "hat Speicherdauer"@de ;
+    rdfs:comment "Verknüpft eine Speicherphase mit der Aufbewahrungsdauer."@de ,
+                 "Relates a storage stage to the period for which data is retained."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#hasStorageTechnique
+dtm-data:hasStorageTechnique rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:isStorageTechniqueOf ;
+    rdfs:domain dtm-data:DataStorage ;
+    rdfs:range dtm-data:StorageTechnique ;
+    rdfs:label "has storage technique"@en ,
+               "hat Speichertechnik"@de ;
+    rdfs:comment "Gibt die Speichertechnik an, die zum Speichern der Daten genutzt wird."@de ,
+                 "Indicates the technical approach used to store data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#implementedOn
+dtm-data:implementedOn rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:isImplementedBy ;
+    rdfs:domain dtm-core:DataTrusteeModel ;
+    rdfs:range dtm-data:Architecture ;
+    rdfs:label "implemented on"@en ,
+               "implementiert auf"@de ;
+    rdfs:comment "Verknüpft ein Datentreuhandmodell mit der technischen Architektur, auf der es implementiert ist."@de ,
+                 "Relates a trustee model to the technical architecture it is implemented on."@en .
+
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isForwardingFrequencyOf
+dtm-data:isForwardingFrequencyOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:Frequency ;
+    rdfs:range dtm-data:DataForwarding ;
+    rdfs:label "is forwarding frequency of"@en ,
+               "ist Weitergabefrequenz von"@de ;
+    rdfs:comment "Gibt die Weitergabestufe an, für die diese Frequenz gilt."@de ,
+                 "Indicates the data forwarding stage this frequency applies to."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isForwardingTechniqueOf
+dtm-data:isForwardingTechniqueOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:ForwardingTechnique ;
+    rdfs:range dtm-data:DataForwarding ;
+    rdfs:label "is forwarding technique of"@en ,
+               "ist Weitergabetechnik von"@de ;
+    rdfs:comment "Gibt an, in welcher Weitergabestufe diese Technik genutzt wird."@de ,
+                 "Indicates the forwarding stage in which this technique is used."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isImplementedBy
+dtm-data:isImplementedBy rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:Architecture ;
+    rdfs:range dtm-core:DataTrusteeModel ;
+    rdfs:label "is implemented by"@en ,
+               "wird implementiert durch"@de ;
+    rdfs:comment "Verknüpft eine Architektur mit dem darauf implementierten Datentreuhandmodell."@de ,
+                 "Relates an architecture to the trustee model implemented on it."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isPreparationTechniqueOf
+dtm-data:isPreparationTechniqueOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:PreparationTechnique ;
+    rdfs:range dtm-data:DataPreparation ;
+    rdfs:label "is preparation technique of"@en ,
+               "ist Aufbereitungstechnik von"@de ;
+    rdfs:comment "Gibt die Aufbereitungsphase an, in der diese Technik genutzt wird."@de ,
+                 "Indicates the data preparation stage in which this technique is applied."@en .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isDataAnalysisTechniqueOf
+dtm-data:isDataAnalysisTechniqueOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:AnalysisTechnique ;
+    rdfs:range dtm-data:DataAnalysis ;
+    rdfs:label "is data analysis technique of"@en ,
+               "ist Datenanalysetechnik von"@de ;
+    rdfs:comment "Gibt die Analysephae an, in der diese Technik genutzt wird."@de ,
+                 "Indicates the data analysis stage in which this technique is applied."@en .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isReceptionFrequencyOf
+dtm-data:isReceptionFrequencyOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:Frequency ;
+    rdfs:range dtm-data:DataReception ;
+    rdfs:label "is reception frequency of"@en ,
+               "ist Empfangsfrequenz von"@de ;
+    rdfs:comment "Gibt die Empfangsphase an, für die diese Frequenz gilt."@de ,
+                 "Indicates the data reception stage this frequency applies to."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isReceptionTechniqueOf
+dtm-data:isReceptionTechniqueOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:ReceptionTechnique ;
+    rdfs:range dtm-data:DataReception ;
+    rdfs:label "is reception technique of"@en ,
+               "ist Empfangstechnik von"@de ;
+    rdfs:comment "Gibt an, in welcher Empfangsphase diese Technik genutzt wird."@de ,
+                 "Indicates the data reception stage in which this technique is used."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isRetentionPeriodOf
+dtm-data:isRetentionPeriodOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:RetentionPeriod ;
+    rdfs:range dtm-data:DataStorage ;
+    rdfs:label "is retention period of"@en ,
+               "ist Speicherdauer von"@de ;
+    rdfs:comment "Gibt die Speicherphase an, für die diese Aufbewahrungsdauer gilt."@de ,
+                 "Indicates the storage stage to which this retention period applies."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isStorageTechniqueOf
+dtm-data:isStorageTechniqueOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:StorageTechnique ;
+    rdfs:range dtm-data:DataStorage ;
+    rdfs:label "is storage technique of"@en ,
+               "ist Speichertechnik von"@de ;
+    rdfs:comment "Gibt die Speicherphase an, in der diese Technik genutzt wird."@de ,
+                 "Indicates the data storage stage in which this technique is used."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#isUsedAsSystem
+dtm-data:isUsedAsSystem rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:usesSystem ;
+    rdfs:domain dtm-data:DataSystem ;
+    rdfs:range dtm-data:DataFlowComponent ;
+    rdfs:label "is used as system"@en ,
+               "wird genutzt als System in"@de ;
+    rdfs:comment "Kennzeichnet, dass dieses System als technische Grundlage einer Datenflusskomponente dient."@de ,
+                 "Indicates that this system is used to support a data flow component."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#performsForwarding
+dtm-data:performsForwarding rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:stagePerformedBy ;
+    owl:inverseOf dtm-data:triggersForwarding ;
+    rdfs:domain dtm-data:DataForwarding ;
+    rdfs:range dtm-core:Actor ;
+    rdfs:label "führt Weitergabe durch"@de ,
+               "performs forwarding"@en ;
+    rdfs:comment "Verknüpft eine Weitergabestufe mit dem Akteur, der sie durchführt."@de ,
+                 "Links a data forwarding stage to the actor performing it."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#performsPreparation
+dtm-data:performsPreparation rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:stagePerformedBy ;
+    owl:inverseOf dtm-data:triggersPreparation ;
+    rdfs:domain dtm-data:DataPreparation ;
+    rdfs:range dtm-core:Actor ;
+    rdfs:label "führt Aufbereitung durch"@de ,
+               "performs preparation"@en ;
+    rdfs:comment "Verknüpft eine Aufbereitungsphase mit dem Akteur, der sie durchführt."@de ,
+                 "Links a data preparation stage to the actor performing it."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#performsReception
+dtm-data:performsReception rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:stagePerformedBy ;
+    owl:inverseOf dtm-data:triggersReception ;
+    rdfs:domain dtm-data:DataReception ;
+    rdfs:range dtm-core:Actor ;
+    rdfs:label "führt Empfang durch"@de ,
+               "performs reception"@en ;
+    rdfs:comment "Verknüpft eine Empfangsphase mit dem Akteur, der sie durchführt."@de ,
+                 "Links a data reception stage to the actor performing it."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#performsStorage
+dtm-data:performsStorage rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:stagePerformedBy ;
+    owl:inverseOf dtm-data:triggersStorage ;
+    rdfs:domain dtm-data:DataStorage ;
+    rdfs:range dtm-core:Actor ;
+    rdfs:label "führt Speicherung durch"@de ,
+               "performs storage"@en ;
+    rdfs:comment "Verknüpft eine Speicherphase mit dem Akteur, der sie durchführt."@de ,
+                 "Links a data storage stage to the actor performing it."@en .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#performsStorage
+dtm-data:performsDataAnalysis rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:stagePerformedBy ;
+    owl:inverseOf dtm-data:triggersDataAnalysis ;
+    rdfs:domain dtm-data:DataAnalysis ;
+    rdfs:range dtm-core:Actor ;
+    rdfs:label "führt Datenanalyse durch"@de ,
+               "performs data analysis"@en ;
+    rdfs:comment "Verknüpft eine Datenanalysephase mit dem Akteur, der sie durchführt."@de ,
+                 "Links a data analysis stage to the actor performing it."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#securedByTechnique
+dtm-data:securedByTechnique rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:securesAsTechnique ;
+    rdfs:domain dtm-data:DataFlowComponent ;
+    rdfs:range dtm-data:SecurityReceptionTechnique ;
+    rdfs:label "gesichert durch Maßnahme"@de ,
+               "secured by technique"@en ;
+    rdfs:comment "Gibt an, welche Sicherheitsmaßnahme auf diese Komponente angewendet wird."@de ,
+                 "Indicates which security technique protects this flow component."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#securesAsTechnique
+dtm-data:securesAsTechnique rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:SecurityReceptionTechnique ;
+    rdfs:range dtm-data:DataFlowComponent ;
+    rdfs:label "secures as technique"@en ,
+               "sichert als Maßnahme"@de ;
+    rdfs:comment "Verknüpft eine Sicherheitsmaßnahme mit der Komponente, die sie absichert."@de ,
+                 "Relates a security technique to the component it protects."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#stagePerformedBy
+dtm-data:stagePerformedBy rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:triggersStage ;
+    rdfs:domain dtm-data:DataFlowComponent ;
+    rdfs:range dtm-core:Actor ;
+    rdfs:label "stage performed by"@en ,
+               "Komponente durchgeführt durch"@de ;
+    rdfs:comment "Verknüpft eine Datenflusskomponente mit dem Akteur, der sie ausführt."@de ,
+                 "Relates a data flow component to the actor performing it."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#triggersForwarding
+dtm-data:triggersForwarding rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:triggersStage ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range dtm-data:DataForwarding ;
+    rdfs:label "triggers forwarding"@en ,
+               "veranlasst Weitergabe"@de ;
+    rdfs:comment "Kennzeichnet einen Akteur als Auslöser einer Weitergabe."@de ,
+                 "Indicates an actor triggering a forwarding stage."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#triggersPreparation
+dtm-data:triggersPreparation rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:triggersStage ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range dtm-data:DataPreparation ;
+    rdfs:label "triggers preparation"@en ,
+               "veranlasst Aufbereitung"@de ;
+    rdfs:comment "Kennzeichnet einen Akteur als Auslöser einer Aufbereitung."@de ,
+                 "Indicates an actor triggering a preparation stage."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#triggersReception
+dtm-data:triggersReception rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:triggersStage ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range dtm-data:DataReception ;
+    rdfs:label "triggers reception"@en ,
+               "veranlasst Empfang"@de ;
+    rdfs:comment "Kennzeichnet einen Akteur als Auslöser eines Empfangs."@de ,
+                 "Indicates an actor triggering a reception stage."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#triggersStage
+dtm-data:triggersStage rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range dtm-data:DataFlowComponent ;
+    rdfs:label "triggers stage"@en ,
+               "startet Phase"@de ;
+    rdfs:comment "Verknüpft einen Akteur mit einer ausgelösten Phase im Datenfluss."@de ,
+                 "Links an actor to a triggered data flow stage."@en .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#triggersStorage
+dtm-data:triggersStorage rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:triggersStage ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range dtm-data:DataStorage ;
+    rdfs:label "triggers storage"@en ,
+               "veranlasst Speicherung"@de ;
+    rdfs:comment "Kennzeichnet einen Akteur als Auslöser einer Speicherung."@de ,
+                 "Indicates an actor triggering a storage stage."@en .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#triggersStorage
+dtm-data:triggersDataAnalysis rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dtm-data:triggersStage ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range dtm-data:DataAnalysis ;
+    rdfs:label "triggers data analysis"@en ,
+               "veranlasst Datenanalyse"@de ;
+    rdfs:comment "Kennzeichnet einen Akteur als Auslöser einer Datenanalyse."@de ,
+                 "Indicates an actor triggering a data analysis stage."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#usesSystem
+dtm-data:usesSystem rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-data:DataFlowComponent ;
+    rdfs:range dtm-data:DataSystem ;
+    rdfs:label "uses system"@en ,
+               "benutzt System"@de ;
+    rdfs:comment "Gibt an, welches System zur Durchführung dieser Datenflusskomponente genutzt wird."@de ,
+                 "Indicates which system is used to execute this data flow component."@en .
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#ownedByActor
+dtm-data:ownedByActor a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-data:ownsSystem ;
+    rdfs:domain dtm-data:DataSystem ;
+    rdfs:range  dtm-core:Actor ;
+    rdfs:label  "owned by actor"@en ,
+                "gehört Akteur"@de ;
+    rdfs:comment "Links a technical system to the actor who owns it (organizational or legal ownership)."@en ,
+                 "Verknüpft ein technisches System mit dem Akteur, dem es gehört (organisatorisch oder rechtlich)."@de .
+
+dtm-data:ownsSystem a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:Actor ;
+    rdfs:range  dtm-data:DataSystem ;
+    rdfs:label  "owns system"@en ,
+                "besitzt System"@de ;
+    rdfs:comment "Relates an actor to a technical system they own."@en ,
+                 "Verknüpft einen Akteur mit einem technischen System, das er besitzt."@de .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#AIPoweredAnalysis
+dtm-data:AIPoweredAnalysis rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:AnalysisTechnique ;
+    rdfs:label "AI powered analysis"@en ,
+               "KI-gestützte Auswertung"@de ;
+    rdfs:comment "Analyse von Daten mittels KI, LLMs oder Machine Learning."@de ,
+                 "Analysis of data using AI techniques such as ML or LLMs."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#API
+dtm-data:ReceptionAPI rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:ReceptionTechnique ;
+    rdfs:label "API"@de ,
+               "API"@en ;
+    rdfs:comment "Empfang von Daten über eine Programmierschnittstelle."@de ,
+                 "Reception of data through an application programming interface."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Aggregation
+dtm-data:Aggregation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:PreparationTechnique ;
+    rdfs:label "Aggregation"@de ,
+               "Aggregation"@en ;
+    rdfs:comment "Zusammenführung einzelner Werte zu aggregierten Ergebnissen."@de ,
+                 "Combining individual values into aggregated results."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Analog
+dtm-data:Analog rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:ReceptionTechnique ;
+    rdfs:label "Analog"@de ,
+               "Analog"@en ;
+    rdfs:comment "Empfang über analoge Kanäle oder nicht-digitale Medien."@de ,
+                 "Reception through analogue channels or non-digital media."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#AnalysisTechnique
+dtm-data:AnalysisTechnique rdf:type owl:Class ;
+    rdfs:label "Data Analysis Technique"@en ,
+               "Auswertungstechnik"@de ;
+    rdfs:comment "Kategorie von Techniken zur Analyse von Daten."@de ,
+                 "Category of techniques for analysing data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Anonymisation
+dtm-data:Anonymisation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:SecurityReceptionTechnique ;
+    rdfs:label "Anonymisation"@en ,
+               "Anonymisieren"@de ;
+    rdfs:comment "Irreversible Entfernung personenbezogener Beziehbarkeit."@de ,
+                 "Irreversible removal of personal identifiability."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Architecture
+dtm-data:Architecture rdf:type owl:Class ;
+    rdfs:label "Architecture"@en ,
+               "Architektur"@de ;
+    rdfs:comment "Technische Struktur, auf der ein System basiert."@de ,
+                 "Technical structure on which a system is built."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#AtRestEncryption
+dtm-data:AtRestEncryption rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:SecurityReceptionTechnique ;
+    rdfs:label "Encryption at Rest"@en ,
+               "Verschlüsselung im Ruhezustand"@de ;
+    rdfs:comment "Verschlüsselung von Daten im Ruhezustand."@de ,
+                 "Encryption of data stored at rest."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#CentralStorage
+dtm-data:CentralStorage rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:StorageTechnique ;
+    owl:disjointWith dtm-data:DecentralStorage ;
+    rdfs:label "Centralized Storage"@en ,
+               "Zentrales Speichern"@de ;
+    rdfs:comment "Zentrale Speicherung aller Daten in einem System."@de ,
+                 "Centralised storage of all data in a single system."@en .
+
+
+###  https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#PeerToPeerArchitecture
+dtm-data:PeerToPeerArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:Architecture ;
+    rdfs:label "Peer-to-Peer Architecture"@en ,
+               "Peer-to-Peer Architektur"@de ;
+    rdfs:comment "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert und vermittelt, während die eigentliche Übertragung der Daten direkt und dezentral zwischen den beteiligten Akteuren (peer-to-peer) erfolgt."@de ,
+             "Architecture in data trustee models where the data trustee organizes and mediates data exchange, while the actual data transfer takes place directly and decentrally between the participating actors (peer-to-peer)."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Cleaning
+dtm-data:Cleaning rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:PreparationTechnique ;
+    rdfs:label "Cleaning"@en ,
+               "Bereinigung"@de ;
+    rdfs:comment "Bereinigung und Harmonisierung von Daten."@de ,
+                 "Correction or harmonisation of inconsistent data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Continuous
+dtm-data:Continuous rdf:type owl:Class , skos:Concept;
+    rdfs:subClassOf dtm-data:Frequency ;
+    skos:broader  dtm-data:Frequency ;
+    skos:inScheme dtm-data:FrequencyScheme ;
+    rdfs:label "Continuous"@en ,
+               "Kontinuierlich"@de ;
+    rdfs:comment "Datenverarbeitung in kontinuierlichem oder ereignisgetriebenem Fluss."@de ,
+                 "Continuous or event-driven data processing."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#DataAnalysis
+dtm-data:DataAnalysis rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:DataFlowComponent ;
+    rdfs:label "Data Analysis"@en ,
+               "Datenauswertung"@de ;
+    rdfs:comment "Datenflussphase zur Analyse von Daten."@de ,
+                 "Data flow stage focused on analysing data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#DataForwarding
+dtm-data:DataForwarding rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:DataFlowComponent ;
+    rdfs:label "Data Forwarding"@en ,
+               "Datenweitergabe"@de ;
+    rdfs:comment "Datenflussphase zur Weitergabe von Daten."@de ,
+                 "Data flow stage for forwarding data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#DataFlowComponent
+dtm-data:DataFlowComponent rdf:type owl:Class ;
+    rdfs:label "Data Flow Component"@en ,
+               "Datenflusskomponente"@de ;
+    rdfs:comment "Abstrakte Phase im technischen Datenfluss."@de ,
+                 "Abstract component within a technical data flow."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#DataPreparation
+dtm-data:DataPreparation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:DataFlowComponent ;
+    rdfs:label "Data Preparation"@en ,
+               "Datenaufbereitung"@de ;
+    rdfs:comment "Datenflussphase zur Aufbereitung oder Transformation."@de ,
+                 "Data flow stage for preparing or transforming data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#DataReception
+dtm-data:DataReception rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:DataFlowComponent ;
+    rdfs:label "Data Reception"@en ,
+               "Datenempfang"@de ;
+    rdfs:comment "Datenflussphase zum Empfang oder Import von Daten."@de ,
+                 "Data flow stage for receiving or importing data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#DataStorage
+dtm-data:DataStorage rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:DataFlowComponent ;
+    rdfs:label "Data Storage"@en ,
+               "Datenspeicherung"@de ;
+    rdfs:comment "Datenflussphase zur Speicherung von Daten."@de ,
+                 "Data flow stage for storing data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#DataSystem
+dtm-data:DataSystem rdf:type owl:Class ;
+    rdfs:label "Data System"@en ,
+               "Datensystem"@de ;
+    rdfs:comment "Technisches System zum Verarbeiten oder Speichern von Daten."@de ,
+                 "Technical system used to process or store data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#DecentralStorage
+dtm-data:DecentralStorage rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:StorageTechnique ;
+    rdfs:label "Decentralized Storage"@en ,
+               "Dezentrales Speichern"@de ;
+    rdfs:comment "Dezentrale Speicherung über mehrere Systeme verteilt."@de ,
+                 "Distributed storage across multiple systems."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Digitization
+dtm-data:Digitization rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:PreparationTechnique ;
+    rdfs:label "Digitization"@en ,
+               "Digitalisierung"@de ;
+    rdfs:comment "Umwandlung analoger Informationen in digitale Daten."@de ,
+                 "Conversion of analogue information into digital data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Download
+dtm-data:Download rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:ReceptionTechnique ;
+    rdfs:label "Download"@en ,
+               "Download"@de ;
+    rdfs:comment "Empfang von Daten durch Herunterladen aus einem System."@de ,
+                 "Reception of data by downloading from a system."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#E2EEncryption
+dtm-data:E2EEncryption rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:SecurityReceptionTechnique ;
+    rdfs:label "End-to-End Encryption"@en ,
+               "Ende-zu-Ende-Verschlüsselung"@de ;
+    rdfs:comment "Ende-zu-Ende-Verschlüsselung während der Übertragung."@de ,
+                 "End-to-end encryption during transmission."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#CentralRouterArchitecture
+dtm-data:CentralRouterArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:Architecture ;
+    rdfs:label "Central Routing"@en ,
+               "Zentrales Routing"@de ;
+    rdfs:comment "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert, vermittelt und technisch als zentrale Routing-Instanz fungiert, über die die Daten zwischen den beteiligten Akteuren übertragen werden."@de ,
+             "Architecture in data trustee models where the data trustee organizes and mediates data exchange and acts as a central routing entity through which data is transferred between participating actors."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#ForTransmissionOnly
+dtm-data:ForTransmissionOnly rdf:type owl:Class , skos:Concept;
+    rdfs:subClassOf dtm-data:RetentionPeriod ;
+    skos:broader  dtm-data:RetentionPeriod ;
+    skos:inScheme dtm-data:RetentionPeriodScheme ;
+    rdfs:label "For transmission only"@en ,
+               "Nur zur Übermittlung"@de ;
+    rdfs:comment "Speicherung nur solange erforderlich für die Übermittlung."@de ,
+                 "Retention only as long as needed for data transmission."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#ForwardingAPI
+dtm-data:ForwardingAPI rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:ForwardingTechnique ;
+    rdfs:label "API for forwarding"@en ,
+               "API zur Weitergabe"@de ;
+    rdfs:comment "Weitergabe von Daten über eine API."@de ,
+                 "Forwarding of data via an API."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#ForwardingTechnique
+dtm-data:ForwardingTechnique rdf:type owl:Class ;
+    rdfs:label "Forwarding Technique"@en ,
+               "Weitergabetechnik"@de ;
+    rdfs:comment "Kategorie technischer Verfahren zur Weitergabe von Daten."@de ,
+                 "Category of techniques for forwarding data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Frequency
+dtm-data:Frequency rdf:type owl:Class , skos:Concept;
+    skos:topConceptOf dtm-data:FrequencyScheme ;
+    rdfs:label "Frequency"@en ,
+               "Frequenz"@de ;
+    rdfs:comment "Beschreibt die Häufigkeit von Datenaktivitäten."@de ,
+                 "Describes how often a data activity occurs."@en .
+
+dtm-data:FrequencyScheme a skos:ConceptScheme ;
+    dcterms:title "Frequency Scheme"@en ,
+                  "Frequenz-Schema"@de ;
+    dcterms:description "Controlled vocabulary for describing how often data activities occur."@en ,
+                        "Kontrolliertes Vokabular zur Beschreibung der Häufigkeit von Datenaktivitäten."@de .
+
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Manual
+dtm-data:Manual rdf:type owl:Class , skos:Concept;
+    rdfs:subClassOf dtm-data:Frequency ;
+    skos:broader  dtm-data:Frequency ;
+    skos:inScheme dtm-data:FrequencyScheme ;
+    rdfs:label "Manual"@en ,
+               "Manuell"@de ;
+    rdfs:comment "Manuelle, nicht automatisierte Durchführung einer Aktivität."@de ,
+                 "Manual, non-automated execution of an activity."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#CentralDataStorageArchitecture
+dtm-data:CentralDataStorageArchitecture rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:Architecture ;
+    rdfs:label "Central Data Access"@en ,
+               "Zentraler Datenabruf"@de ;
+    rdfs:comment "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert und die Daten zentral speichert, sodass der Zugriff und die Bereitstellung von Daten über eine zentrale Instanz erfolgen."@de ,
+             "Architecture in data trustee models where the data trustee organizes data exchange and stores data centrally, so that data access and provision are performed via a central entity."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Periodic
+dtm-data:Periodic rdf:type owl:Class , skos:Concept;
+    rdfs:subClassOf dtm-data:Frequency ;
+    skos:broader  dtm-data:Frequency ;
+    skos:inScheme dtm-data:FrequencyScheme ;
+    rdfs:label "Periodic"@en ,
+               "Periodisch"@de ;
+    rdfs:comment "Regelmäßig wiederkehrende Datenaktivitäten."@de ,
+                 "Recurring or cyclic data activities."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Permanent
+dtm-data:Permanent rdf:type owl:Class , skos:Concept;
+    rdfs:subClassOf dtm-data:RetentionPeriod ;
+    skos:broader  dtm-data:RetentionPeriod ;
+    skos:inScheme dtm-data:RetentionPeriodScheme ;
+    rdfs:label "Permanent"@en ,
+               "Dauerhaft"@de ;
+    rdfs:comment "Dauerhafte oder unbefristete Speicherung von Daten."@de ,
+                 "Long-term or indefinite data retention."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#PrivacyEnhancingTechnology
+dtm-data:PrivacyEnhancingTechnology rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:AnalysisTechnique ;
+    rdfs:label "Privacy Enhancing Technologies"@en ,
+               "Privacy Enhancing Technologies"@de ;
+    rdfs:comment "Techniken zur Verbesserung des Datenschutzes."@de ,
+                 "Techniques that enhance privacy protection."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#PreparationTechnique
+dtm-data:PreparationTechnique rdf:type owl:Class ;
+    rdfs:label "Preparation Technique"@en ,
+               "Verarbeitungstechnik"@de ;
+    rdfs:comment "Kategorie technischer Verfahren zur Verarbeitung von Daten."@de ,
+                 "Category of techniques for preparation of data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Pseudonymisation
+dtm-data:Pseudonymisation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:SecurityReceptionTechnique ;
+    rdfs:label "Pseudonymisation"@en ,
+               "Pseudonymisieren"@de ;
+    rdfs:comment "Ersetzung identifizierender Merkmale durch Pseudonyme."@de ,
+                 "Replacement of identifiers with pseudonyms."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#ReceptionTechnique
+dtm-data:ReceptionTechnique rdf:type owl:Class ;
+    rdfs:label "Reception Technique"@en ,
+               "Empfangstechnik"@de ;
+    rdfs:comment "Kategorie technischer Verfahren zum Empfang von Daten."@de ,
+                 "Category of techniques for receiving data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#RetentionPeriod
+dtm-data:RetentionPeriod rdf:type owl:Class, skos:Concept ;
+    skos:topConceptOf dtm-data:RetentionPeriodScheme ;
+    rdfs:label "Retention Period"@en ,
+               "Speicherdauer"@de ;
+    rdfs:comment "Beschreibt die Dauer, für die Daten aufbewahrt werden."@de ,
+                 "Describes the period for which data is retained."@en .
+
+dtm-data:RetentionPeriodScheme a skos:ConceptScheme ;
+    dcterms:title "Retention Period Scheme"@en ,
+                  "Speicherdauer-Schema"@de ;
+    dcterms:description "Controlled vocabulary for describing how long data is retained."@en ,
+                        "Kontrolliertes Vokabular zur Beschreibung der Dauer der Aufbewahrung von Daten."@de .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#SecurityReceptionTechnique
+dtm-data:SecurityReceptionTechnique rdf:type owl:Class ;
+    rdfs:label "Security Technique in Reception"@en ,
+               "Sicherheitsmaßnahme im Empfang"@de ;
+    rdfs:comment "Kategorie von Sicherheitsmaßnahmen im Datenempfang."@de ,
+                 "Category of security measures applied during data reception."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#SourceSystem
+dtm-data:SourceSystem rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:DataSystem ;
+    rdfs:label "Source System"@en ,
+               "Quellsystem"@de ;
+    rdfs:comment "System, das Daten bereitstellt oder liefert."@de ,
+                 "System that provides or supplies data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#StatisticalAnalysis
+dtm-data:StatisticalAnalysis rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:AnalysisTechnique ;
+    rdfs:label "Statistical Analysis"@en ,
+               "Statistische Analyse"@de ;
+    rdfs:comment "Analyse unter Einsatz statistischer Verfahren."@de ,
+                 "Analysis using statistical methods."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#StorageTechnique
+dtm-data:StorageTechnique rdf:type owl:Class ;
+    rdfs:label "Storage Technique"@en ,
+               "Speichertechnik"@de ;
+    rdfs:comment "Kategorie technischer Verfahren zur Speicherung von Daten."@de ,
+                 "Category of techniques for storing data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#TargetSystem
+dtm-data:TargetSystem rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:DataSystem ;
+    rdfs:label "Target System"@en ,
+               "Zielsystem"@de ;
+    rdfs:comment "System, das Daten empfängt oder verarbeitet."@de ,
+                 "System that receives or processes data."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Transformation
+dtm-data:Transformation rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:PreparationTechnique ;
+    rdfs:label "Transformation"@en ,
+               "Transformation"@de ;
+    rdfs:comment "Überführung von Daten in neue Formate oder Strukturen."@de ,
+                 "Conversion of data into new formats or structures."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#TransportEncryption
+dtm-data:TransportEncryption rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:SecurityReceptionTechnique ;
+    rdfs:label "Transport Encryption"@en ,
+               "Transportverschlüsselung"@de ;
+    rdfs:comment "Verschlüsselung während der Übertragung von Daten."@de ,
+                 "Encryption applied while data is transmitted."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#Upload
+dtm-data:Upload rdf:type owl:Class ;
+    rdfs:subClassOf dtm-data:ForwardingTechnique ;
+    rdfs:label "Upload"@en ,
+               "Upload"@de ;
+    rdfs:comment "Weitergabe durch Hochladen von Daten in ein Zielsystem."@de ,
+                 "Forwarding of data by uploading to a target system."@en .
+
+
+###  https://tool.kickstarttrustee.de/ontology/dtm-data#WithRetention
+dtm-data:WithRetention rdf:type owl:Class , skos:Concept;
+    rdfs:subClassOf dtm-data:RetentionPeriod ;
+    skos:broader  dtm-data:RetentionPeriod ;
+    skos:inScheme dtm-data:RetentionPeriodScheme ;
+    rdfs:label "With retention"@en ,
+               "Mit Retention"@de ;
+    rdfs:comment "Aufbewahrung von Daten nach definierten Regeln."@de ,
+                 "Retention of data based on defined rules."@en .
+
+#################################################################
+#    External Alignments
+#################################################################
+
+# Align core processing stages with DPV processing concepts and PROV activities
+dtm-data:DataFlowComponent rdfs:subClassOf prov:Activity .
+
+dtm-data:DataReception   rdfs:subClassOf prov:Activity , dpv:Obtain .
+dtm-data:DataForwarding  rdfs:subClassOf prov:Activity , dpv:Transfer .
+dtm-data:DataStorage     rdfs:subClassOf prov:Activity , dpv:Storage .
+dtm-data:DataAnalysis    rdfs:subClassOf prov:Activity , dpv:Use .
+
+# Align technical systems with PROV and Schema.org
+dtm-data:DataSystem      rdfs:subClassOf prov:SoftwareAgent ,
+                                      schema:SoftwareApplication .
+
+# Align security and PETs with DPV technical measures
+dtm-data:SecurityReceptionTechnique rdfs:subClassOf dpv:TechnicalMeasure .
+dtm-data:PrivacyEnhancingTechnology rdfs:subClassOf dpv:TechnicalMeasure .
+
+# Align retention modelling with DPV storage duration
+dtm-data:RetentionPeriod rdfs:subClassOf dpv:StorageDuration .
+
+# Align retention property with DPV property
+dtm-data:hasRetentionPeriod rdfs:subPropertyOf dpv:hasStorageDuration .
+
+# Align system usage and implementation with PROV usage
+dtm-data:usesSystem      rdfs:subPropertyOf prov:used .
+dtm-data:implementedOn   rdfs:subPropertyOf prov:used .
+
+# Align actor ↔ stage relations with PROV association
+dtm-data:stagePerformedBy     rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:performsReception    rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:performsForwarding   rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:performsPreparation  rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:performsStorage      rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:triggersStage        rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:triggersReception    rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:triggersForwarding   rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:triggersPreparation  rdfs:subPropertyOf prov:wasAssociatedWith .
+dtm-data:triggersStorage      rdfs:subPropertyOf prov:wasAssociatedWith .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-core:Actor
+                dtm-core:DataTrusteeModel
+                dtm-data:Architecture
+                dtm-data:DataFlowComponent
+                dtm-data:DataSystem
+                dtm-data:ForwardingTechnique
+                dtm-data:PreparationTechnique
+                dtm-data:ReceptionTechnique
+                dtm-data:SecurityReceptionTechnique
+                dtm-data:StorageTechnique
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-data:AIPoweredAnalysis
+                dtm-data:PrivacyEnhancingTechnology
+                dtm-data:StatisticalAnalysis
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-data:API
+                dtm-data:Analog
+                dtm-data:Download
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-data:Aggregation
+                dtm-data:Cleaning
+                dtm-data:Transformation
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-data:Anonymisation
+                dtm-data:AtRestEncryption
+                dtm-data:E2EEncryption
+                dtm-data:Pseudonymisation
+                dtm-data:TransportEncryption
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-data:Continuous
+                dtm-data:Manual
+                dtm-data:Periodic
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-data:ForTransmissionOnly
+                dtm-data:Permanent
+                dtm-data:WithRetention
+              )
+] .
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-data:DataReception
+                dtm-data:DataPreparation
+                dtm-data:DataForwarding
+                dtm-data:DataStorage
+                dtm-data:DataAnalysis
+              )
+] .
+
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

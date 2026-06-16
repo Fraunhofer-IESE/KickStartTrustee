@@ -1,0 +1,158 @@
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix dtm-core: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> .
+@prefix dtm-misc: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#> .
+
+#################################################################
+#    Ontology header
+#################################################################
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc> a owl:Ontology ;
+    dcterms:creator  "Bernd Rauch", "Denis Feth", "Jessica Chwalek" ;
+    dcterms:license  <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2025-11-10"^^xsd:date ;
+    dcterms:publisher "Kickstart Trustee" ;
+    dcterms:rights   "© 2025 Kickstart Trustee — CC BY 4.0" ;
+    owl:versionIRI   <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc/0.1.0> ;
+    owl:imports      <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core> ;
+    dcterms:title       "DTM Miscellaneous Ontology"@en ;
+    dcterms:description "Cross-cutting metadata properties extending the DTM core ontology (e.g. analysis, transparency, visualisation)."@en ;
+    dcterms:description "Querschnittliche Metadateneigenschaften zur Erweiterung der DTM-Core-Ontologie (z. B. Analyse, Transparenz, Visualisierung)."@de ;
+    vann:preferredNamespacePrefix "dtm-misc" ;
+    vann:preferredNamespaceUri    "https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  dtm-misc:isSpecifiedIn
+dtm-misc:isSpecifiedIn rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    owl:inverseOf dtm-misc:specifies ;
+    rdfs:domain dtm-misc:Property ;
+    rdfs:range  dtm-core:Metadata ;
+    rdfs:label  "is specified in"@en ,
+                "ist spezifiziert in"@de ;
+    rdfs:comment "Relates a conceptual property (e.g. analysis, transparency, visualisation) to the metadata in which it is specified or documented."@en ,
+                 "Verknüpft eine konzeptionelle Eigenschaft (z. B. Analyse, Transparenz, Visualisierung) mit den Metadaten, in denen sie spezifiziert oder dokumentiert ist."@de .
+
+
+###  dtm-misc:specifies
+dtm-misc:specifies rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty ;
+    rdfs:domain dtm-core:Metadata ;
+    rdfs:range  dtm-misc:Property ;
+    rdfs:label  "specifies"@en ,
+                "spezifiziert"@de ;
+    rdfs:comment "Relates metadata to a conceptual property that it specifies, such as whether a data trustee offers analysis, transparency or visualisation features."@en ,
+                 "Verknüpft Metadaten mit einer konzeptionellen Eigenschaft, die sie spezifizieren, z. B. ob ein Datentreuhänder Analyse-, Transparenz- oder Visualisierungsfunktionen bereitstellt."@de .
+
+#################################################################
+#    Classes
+#################################################################
+
+dtm-misc:SelectionStatusScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Special UI or data capture states."@en;
+        dcterms:title        "Selection Status Scheme"@en , "Auswahlstatus-Schema"@de .
+
+dtm-misc:SelectionStatus
+        rdf:type         owl:Class;
+        rdfs:label       "Selection Status"@en;
+        rdfs:subClassOf  skos:Concept .
+
+dtm-misc:Unknown  rdf:type  dtm-misc:SelectionStatus;
+        skos:definition  "The value exists but is currently not known."@en;
+        skos:inScheme    dtm-core:SelectionStatusScheme;
+        skos:prefLabel   "Unknown"@en , "Unbekannt"@de .
+
+dtm-misc:Ambiguous  rdf:type  dtm-misc:SelectionStatus;
+        skos:definition  "The value cannot be clearly determined."@en;
+        skos:inScheme    dtm-misc:SelectionStatusScheme;
+        skos:prefLabel   "Ambiguous"@en , "Mehrdeutig"@de .
+
+dtm-misc:None  rdf:type  dtm-misc:SelectionStatus;
+        skos:definition  "No value applies."@en;
+        skos:inScheme    dtm-misc:SelectionStatusScheme;
+        skos:prefLabel   "None"@en , "Keine Angabe"@de .
+
+dtm-misc:NotProvided  rdf:type  dtm-misc:SelectionStatus;
+        skos:definition  "Value used when a required or expected statement is intentionally not provided."@en , "Wert, der verwendet wird, wenn eine erwartete Angabe bewusst nicht gemacht wird."@de;
+        skos:inScheme    dtm-misc:SelectionStatusScheme;
+        skos:prefLabel   "Keine Angabe"@de , "Not provided"@en .
+
+dtm-misc:Custom  rdf:type  dtm-misc:SelectionStatus;
+        skos:definition  "Value used when user uses custom specified asset."@en , "Wert, der verwendet wird, wenn der Nutzer eigene Angaben spezifiziert."@de;
+        skos:inScheme    dtm-misc:SelectionStatusScheme;
+        skos:prefLabel   "Nutzerspezifisch"@de , "Custom"@en .
+
+###  Concept scheme for miscellaneous properties
+dtm-misc:PropertyScheme a skos:ConceptScheme ;
+    dcterms:title       "Miscellaneous Property Scheme"@en ,
+                        "Schema für sonstige Eigenschaften"@de ;
+    dcterms:description "Concept scheme for cross-cutting properties related to DTM metadata, such as analysis support, data access transparency and visualisation."@en ,
+                        "Konzeptschema für querschnittliche Eigenschaften in DTM-Metadaten, z. B. Analysen, Datenzugangstransparenz und Visualisierung."@de .
+
+
+###  dtm-misc:Property
+dtm-misc:Property rdf:type owl:Class , skos:Concept ;
+    skos:topConceptOf dtm-misc:PropertyScheme ;
+    rdfs:label   "Property"@en ,
+                 "Eigenschaft"@de ;
+    rdfs:comment "Abstract category for cross-cutting properties that can be specified in DTM metadata, e.g. analysis, data access transparency or visualisation."@en ,
+                 "Abstrakte Kategorie für querschnittliche Eigenschaften, die in DTM-Metadaten spezifiziert werden können, z. B. Analyse, Datenzugangstransparenz oder Visualisierung."@de .
+
+
+###  dtm-misc:Analyse
+dtm-misc:Analyse rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-misc:Property ;
+    skos:inScheme dtm-misc:PropertyScheme ;
+    skos:broader  dtm-misc:Property ;
+    rdfs:label    "Analysis"@en ,
+                  "Analyse"@de ;
+    rdfs:comment  "Property indicating that the data trustee or service provides data analysis capabilities (e.g. statistics, dashboards, AI-based analytics)."@en ,
+                  "Eigenschaft, die angibt, dass der Datentreuhänder oder Dienst Datenanalysefunktionen bereitstellt (z. B. Statistiken, Dashboards, KI-gestützte Analysen)."@de .
+
+
+###  dtm-misc:Datenzugangstransparenz
+dtm-misc:Datenzugangstransparenz rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-misc:Property ;
+    skos:inScheme dtm-misc:PropertyScheme ;
+    skos:broader  dtm-misc:Property ;
+    rdfs:label    "Data Access Transparency"@en ,
+                  "Datenzugangstransparenz"@de ;
+    rdfs:comment  "Property describing how transparent the data access processes are, e.g. clarity of access rules, logging, and user-facing information about who can access which data when."@en ,
+                  "Eigenschaft, die beschreibt, wie transparent die Prozesse des Datenzugangs sind, z. B. Nachvollziehbarkeit von Zugriffsregeln, Protokollierung und nutzerorientierte Informationen darüber, wer wann auf welche Daten zugreifen kann."@de .
+
+
+###  dtm-misc:Visualisierung
+dtm-misc:Visualisierung rdf:type owl:Class , skos:Concept ;
+    rdfs:subClassOf dtm-misc:Property ;
+    skos:inScheme dtm-misc:PropertyScheme ;
+    skos:broader  dtm-misc:Property ;
+    rdfs:label    "Visualisation"@en ,
+                  "Visualisierung"@de ;
+    rdfs:comment  "Property indicating that the data trustee or service provides visual representations of data or processes, such as charts, dashboards or interactive views."@en ,
+                  "Eigenschaft, die angibt, dass der Datentreuhänder oder Dienst visuelle Darstellungen von Daten oder Prozessen bereitstellt, z. B. Diagramme, Dashboards oder interaktive Ansichten."@de .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+# Disjointness of property subclasses
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( dtm-misc:Analyse
+                dtm-misc:Datenzugangstransparenz
+                dtm-misc:Visualisierung
+              )
+] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
