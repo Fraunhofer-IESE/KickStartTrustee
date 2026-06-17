@@ -1,0 +1,26 @@
+# Prettier
+
+.prettierrc
+prettier.config.js
+
+# Ignore build output
+
+build
+coverage
+dist
+
+# Ignore node_modules
+
+node_modules
+
+# Ignore lock files
+
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore misc
+
+\*.log
+*.md
+Dockerfile

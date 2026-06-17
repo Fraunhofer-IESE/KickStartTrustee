@@ -1,0 +1,4 @@
+window.ENV = {
+  VITE_BASE_URL: "${VITE_BASE_URL}",
+  VITE_REST_URL: "${VITE_REST_URL}",
+};
