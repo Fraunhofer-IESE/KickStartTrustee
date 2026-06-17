@@ -1,0 +1,145 @@
+PREFIX :             <http://forgetrustee.kickstarttrustee.de/ontology/ePA#>
+PREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>
+PREFIX dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+PREFIX dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+PREFIX dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+:ePA    rdf:type                       dtm-core:DataTrustee , owl:NamedIndividual;
+        rdfs:label                     "ePA"@de;
+        dtm-business:hasBusinessForm   <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#Ambiguous>;
+        dtm-business:hasDataTrusteeGoal
+                dtm-business:ScienceAndResearch , dtm-business:DigitalSovereignty , dtm-business:Compliance , dtm-business:DataSovereignty;
+        dtm-business:hasDataTrusteeOperator
+                :Krankenkassen;
+        dtm-business:hasDomain         dtm-business:HealthcareSector;
+        dtm-business:hasFundingSource  <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#Ambiguous>;
+        dtm-core:dataTrusteeDescription
+                "Die elektronische Patientenakte dient als digitale Infrastruktur zur sicheren und kontrollierten Verwaltung medizinischer Informationen und Zugriffsrechte."@de;
+        dtm-core:hasAffectedParty      :Versicherte;
+        dtm-core:hasDataConsumer       :Leistungserbringer;
+        dtm-core:hasDataOwner          :Leistungserbringer;
+        dtm-core:hasDataTrusteeModel   :DTM_ePA;
+        dtm-data:triggersStorage       :StorageePA;
+        dtm-legal:operatesOnProcessingBasis
+                dtm-legal:Consent .
+
+:CustomReceptionSecurityVertrauensdienstenacheIDAS
+        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;
+        rdfs:comment                 "Elektronische Signaturen, Zertifikate und Vertrauensdienste sichern Authentizität und Integrität der Kommunikation."@de;
+        rdfs:label                   "CustomReceptionSecurityVertrauensdienste nach eIDAS"@de;
+        dtm-data:securesAsTechnique  :ReceptionePA .
+
+:TargetSystemSystemederLeistungserbringer
+        rdf:type                  owl:NamedIndividual , dtm-data:TargetSystem;
+        rdfs:label                "TargetSystemSysteme der Leistungserbringer"@de;
+        dtm-data:isUsedAsSystemm  :ForwardingePA .
+
+:       rdf:type  owl:Ontology .
+
+:Versicherte  rdf:type                  owl:NamedIndividual , dtm-core:Actor , dtm-core:AffectedParty;
+        rdfs:label                      "Versicherte"@de;
+        dtm-business:affiliationType    dtm-business:Individual;
+        dtm-business:hasRightsHolderMotivation
+                dtm-business:SocietalValue , dtm-business:QualityImprovement;
+        dtm-core:hasRightsOf            :Gesundheitsdaten;
+        dtm-core:isAffectedPartyIn      :ePA;
+        dtm-legal:givesConsentDirectly  :ePA_IndividualConsentWorkflow .
+
+:Leistungserbringer  rdf:type         dtm-core:DataConsumer , dtm-core:Actor , dtm-core:DataOwner , owl:NamedIndividual;
+        rdfs:label                    "Leistungserbringer"@de;
+        dtm-business:affiliationType  dtm-business:Organisation;
+        dtm-business:hasDataConsumerMotivation
+                dtm-business:ScienceAndResearch , dtm-business:Interoperability;
+        dtm-business:hasDataHolderMotivation
+                dtm-business:Compliance , dtm-business:Interoperability;
+        dtm-business:usesPayModelAsDataConsumer
+                dtm-business:Free;
+        dtm-business:usesPayModelAsDataOwner
+                dtm-business:Free;
+        dtm-core:administers          :Gesundheitsdaten;
+        dtm-core:isDataConsumerOf     :ePA;
+        dtm-core:isDataOwnerOf        :ePA;
+        dtm-core:isGrantedAccess      :Gesundheitsdaten;
+        dtm-legal:initiatesIndividualConsentWorkflow
+                :ePA_IndividualConsentWorkflow;
+        dtm-legal:isBeneficiaryOf     dtm-legal:LegalObligation , dtm-legal:Consent .
+
+:DTM_ePA  rdf:type                     owl:NamedIndividual , dtm-core:AccessDataTrustee;
+        rdfs:label                     "DTM_ePA"@de;
+        dtm-core:isDataTrusteeModelOf  :ePA;
+        dtm-data:implementedOn         dtm-data:PeerToPeerArchitecture .
+
+:ForwardingePA  rdf:type             dtm-data:DataForwarding , owl:NamedIndividual;
+        rdfs:label                   "ForwardingePA"@de;
+        dtm-data:hasForwardingFrequency
+                dtm-data:Continuous;
+        dtm-data:hasForwardingTechnique
+                dtm-data:ReceptionAPI;
+        dtm-data:securedByTechnique  dtm-data:Pseudonymisation , dtm-data:E2EEncryption , dtm-data:TransportEncryption , :CustomForwardingSecurityZugriffs-undBerechtigungsmanagement;
+        dtm-data:usesSystem          :TargetSystemSystemederLeistungserbringer .
+
+:AnalysisePA  rdf:type  owl:NamedIndividual , dtm-data:DataAnalysis;
+        rdfs:label  "AnalysisePA"@de .
+
+:StorageePA  rdf:type                 owl:NamedIndividual , dtm-data:DataStorage;
+        rdfs:label                    "StorageePA"@de;
+        dtm-data:hasRetentionPeriod   dtm-data:WithRetention;
+        dtm-data:hasStorageTechnique  dtm-data:DecentralStorage;
+        dtm-data:performsStorage      :ePA .
+
+:Krankenkassen  rdf:type              owl:NamedIndividual , dtm-business:Organisation;
+        rdfs:label                    "Krankenkassen"@de;
+        dtm-business:affiliationType  dtm-business:Organisation;
+        dtm-business:isOperatorOfDataTrustee
+                :ePA .
+
+:PreparationePA  rdf:type  owl:NamedIndividual , dtm-data:DataPreparation;
+        rdfs:label  "PreparationePA"@de;
+        dtm-data:hasPreparationTechnique
+                dtm-data:Transformation , :CustomPreparationInteroperableStandardisierung .
+
+:Gesundheitsdaten  rdf:type         owl:NamedIndividual , dtm-core:Data;
+        rdfs:comment                "Medizinische Behandlungs-, Medikations- und Befunddaten aus der Gesundheitsversorgung."@de;
+        rdfs:label                  "Gesundheitsdaten"@de;
+        dtm-core:administeredBy     :Leistungserbringer;
+        dtm-core:isAccessGrantedTo  :Leistungserbringer;
+        dtm-core:isRightlyOwnedBy   :Versicherte .
+
+:SourceSystemSystemederLeistungserbringer
+        rdf:type                 owl:NamedIndividual , dtm-data:SourceSystem;
+        rdfs:label               "SourceSystemSysteme der Leistungserbringer"@de;
+        dtm-data:isUsedAsSystem  :ReceptionePA .
+
+:CustomForwardingSecurityZugriffs-undBerechtigungsmanagement
+        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;
+        rdfs:comment                 "Versicherte steuern individuell, welche Leistungserbringer Zugriff auf welche Informationen erhalten."@de;
+        rdfs:label                   "CustomForwardingSecurityZugriffs- und Berechtigungsmanagement"@de;
+        dtm-data:securesAsTechnique  :ForwardingePA .
+
+:CustomPreparationInteroperableStandardisierung
+        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;
+        rdfs:comment  "Gesundheitsdaten werden standardisiert und interoperabel innerhalb der Telematikinfrastruktur bereitgestellt."@de;
+        rdfs:label    "CustomPreparationInteroperable Standardisierung"@de;
+        dtm-data:isPreparationTechniqueOf
+                :PreparationePA .
+
+:ePA_IndividualConsentWorkflow
+        rdf:type                       owl:NamedIndividual , dtm-legal:IndividualConsentWorkflow;
+        dtm-legal:getsConsentDirectly  :Versicherte;
+        dtm-legal:implementsConsentWorkflowFor
+                dtm-legal:Consent;
+        dtm-legal:individualConsentWorkflowInitiatedBy
+                :Leistungserbringer;
+        dtm-legal:processingBasisDescription
+                "Versicherte steuern selbst den Zugriff auf ihre Gesundheitsdaten und entscheiden über Freigaben."@de .
+
+:ReceptionePA  rdf:type                 dtm-data:DataReception , owl:NamedIndividual;
+        rdfs:label                      "ReceptionePA"@de;
+        dtm-data:hasReceptionFrequency  dtm-data:Continuous;
+        dtm-data:hasReceptionTechnique  dtm-data:ReceptionAPI;
+        dtm-data:securedByTechnique     dtm-data:TransportEncryption , :CustomReceptionSecurityVertrauensdienstenacheIDAS , dtm-data:E2EEncryption , dtm-data:Pseudonymisation;
+        dtm-data:usesSystem             :SourceSystemSystemederLeistungserbringer .

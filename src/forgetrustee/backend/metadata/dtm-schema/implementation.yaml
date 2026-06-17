@@ -1,0 +1,214 @@
+moduleId: implementation
+requestDtoClassName: DataTrusteeWizardImplementationRequestDto
+order: 40
+hints:
+  -
+    name: implementationGeneralHint
+sections:
+  dataTrusteeType:
+    fields:
+      dataTrusteeCategory:
+        name: dataTrusteeCategory
+        type: TAGS
+        options:
+          - value: ACCESS_DATA_TRUSTEE
+          - value: ADMINISTRATIVE_DATA_TRUSTEE
+#          - value: VALUE_ADDED_DATA_TRUSTEE
+          - value: SELF_MANAGED_VALUE_ADDED_DATA_TRUSTEE
+          - value: EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE
+        multiple: false
+        allowUnknown: true
+#      addedValueTrusteeType:
+#        name: addedValueTrusteeType
+#        type: TAGS
+#        multiple: false
+#        allowUnknown: true
+#        visibleBy:
+#          - name: dataTrusteeCategory
+#            operator: EQUALS
+#            value: VALUE_ADDED_DATA_TRUSTEE
+#        options:
+#          - value: SELF_MANAGED_VALUE_ADDED_DATA_TRUSTEE
+#          - value: EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE
+#        requiredBy:
+#          - name: dataTrusteeCategory
+#            operator: EQUALS
+#            value: VALUE_ADDED_DATA_TRUSTEE
+  dataFlow:
+    subsections:
+      technicalImplementationAndArchitecture:
+        fields:
+          architectureType:
+            name: architectureType
+            type: TAGS
+            options:
+              -
+                value: CENTRAL_DATA_STORAGE
+              -
+                value: CENTRAL_ROUTER
+              -
+                value: P2P
+            multiple: false
+            allowUnknown: true
+      reception:
+        fields:
+          receptionTechnologies:
+            name: receptionTechnologies
+            type: TAGS
+            options:
+              - value: API
+              - value: DOWNLOAD
+              - value: ANALOG
+            multiple: true
+            allowUnknown: true
+          receptionFrequency:
+            name: receptionFrequency
+            type: TAGS
+            options:
+              - value: MANUAL
+              - value: CONTINUOUS
+              - value: PERIODIC
+            multiple: false
+            allowUnknown: true
+          securityMeasures:
+            name: receptionSecurityMeasures
+            type: TAGS
+            options:
+              - value: ANONYMISATION
+              - value: END_TO_END_ENCRYPTION
+              - value: ENCRYPTION_AT_REST
+              - value: TRANSPORT_ENCRYPTION
+              - value: PSEUDONYMISATION
+              - value: CUSTOM
+                extraArea: true
+            multiple: true
+            allowUnknown: true
+          customReceptionSecurityMeasures:
+            name: customReceptionSecurityTechniques
+            type: TEXT_WITH_DESCRIPTION_LIST
+            fields:
+              customReceptionSecurityMeasureName:
+                name: title
+                type: TEXT
+              customReceptionSecurityMeasureDescription:
+                name: description
+                type: TEXT
+            visibleBy:
+              - name: receptionSecurityMeasures
+                operator: IN
+                value: CUSTOM
+          sourceSystem:
+            name: sourceSystem
+            type: TEXT
+      processing:
+        fields:
+          preparationTechniques:
+            name: preparationTechniques
+            type: TAGS
+            options:
+              - value: DIGITIZATION
+              - value: CLEANING
+              - value: AGGREGATION
+              - value: TRANSFORMATION
+              - value: CUSTOM
+                extraArea: true
+            multiple: true
+            allowUnknown: true
+            allowNoAnswer: true
+          customPreparationTechniques:
+            name: customPreparationTechniques
+            type: TEXT_WITH_DESCRIPTION_LIST
+            fields:
+              customPreparationTechniqueName:
+                name: title
+                type: TEXT
+              customPreparationTechniqueDescription:
+                name: description
+                type: LONGTEXT
+            visibleBy:
+              - name: preparationTechniques
+                operator: IN
+                value: CUSTOM
+          storageRetention:
+            name: storageRetention
+            type: TAGS
+            options:
+              - value: PERMANENT
+              - value: WITH_RETENTION
+              - value: TRANSMISSION_ONLY
+            multiple: false
+            allowUnknown: true
+          analysisTechniques:
+            name: analysisTechniques
+            type: TAGS
+            options:
+              - value: PET
+              - value: STATISTICAL_ANALYSIS
+              - value: AI_ANALYSIS
+              - value: CUSTOM
+                extraArea: true
+            multiple: true
+            allowUnknown: true
+            allowNoAnswer: true
+          customAnalysisTechniques:
+            name: customAnalysisTechniques
+            type: TEXT_WITH_DESCRIPTION_LIST
+            fields:
+              customAnalysisTechniqueName:
+                name: title
+                type: TEXT
+              customAnalysisTechniqueDescription:
+                name: description
+                type: LONGTEXT
+            visibleBy:
+              - name: analysisTechniques
+                operator: IN
+                value: CUSTOM
+      transfer:
+        fields:
+          forwardingTechniques:
+            name: forwardingTechniques
+            type: TAGS
+            options:
+              - value: API
+              - value: UPLOAD
+            multiple: true
+            allowUnknown: true
+          forwardingFrequency:
+            name: forwardingFrequency
+            type: TAGS
+            options:
+              - value: MANUAL
+              - value: CONTINUOUS
+              - value: PERIODIC
+            multiple: false
+            allowUnknown: true
+          forwardingSecurityMeasures:
+            name: forwardingSecurityMeasures
+            type: TAGS
+            options:
+              - value: ANONYMISATION
+              - value: END_TO_END_ENCRYPTION
+              - value: TRANSPORT_ENCRYPTION
+              - value: PSEUDONYMISATION
+              - value: CUSTOM
+                extraArea: true
+            multiple: true
+            allowUnknown: true
+          customForwardingSecurityMeasures:
+            name: customForwardingSecurityTechniques
+            type: TEXT_WITH_DESCRIPTION_LIST
+            fields:
+              customForwardingSecurityMeasureName:
+                name: title
+                type: TEXT
+              customForwardingSecurityMeasureDescription:
+                name: description
+                type: TEXT
+            visibleBy:
+              - name: forwardingSecurityMeasures
+                operator: IN
+                value: CUSTOM
+          targetSystem:
+            name: targetSystem
+            type: TEXT

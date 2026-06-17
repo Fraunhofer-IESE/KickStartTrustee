@@ -1,0 +1,167 @@
+{
+  "core": {
+    "dataTrusteeName": "TRANSIT",
+    "dataTrusteeDescription": "TRANSIT ermöglicht den sicheren Austausch logistischer Geschäftsdaten zwischen Logistikunternehmen über eine neutrale Plattform.",
+    "dataTrusteeOperator": "TRANSIT",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Logistikunternehmen",
+    "rightsHolderAffiliation": "ORGANIZATION",
+    "rightsHolderIsRepresented": "false",
+    "dataOwnerName": "Logistikunternehmen",
+    "dataConsumerName": "Logistikunternehmen",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Logistikdaten",
+      "dataCategoryDescription": "Geschäfts- und Transportdaten aus der Logistik."
+    },
+
+    "containPersonalInformation": "false",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "true",
+
+    "processingBases": {
+      "LEGITIMATE_INTEREST": [
+        {
+          "title": "Kooperativer Datenaustausch",
+          "description": "Die Verarbeitung unterstützt den sicheren Austausch logistischer Daten."
+        }
+      ]
+    },
+
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+
+  "implementation": {
+    "dataTrusteeCategory": "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_DATA_STORAGE",
+
+    "receptionTechnologies": [
+      "API"
+    ],
+
+    "receptionFrequency": "PERIODIC",
+
+    "receptionSecurityMeasures": [
+      "PSEUDONYMISATION",
+      "ANONYMISATION",
+      "TRANSPORT_ENCRYPTION"
+    ],
+
+    "customReceptionSecurityTechniques": [
+      {
+        "title": "Treuhandplattform",
+        "description": "Daten werden zentral und abgesichert entgegengenommen."
+      }
+    ],
+
+    "sourceSystem": "Logistiksysteme",
+
+    "preparationTechniques": [
+      "TRANSFORMATION",
+      "DIGITIZATION",
+      "AGGREGATION",
+      "CUSTOM"
+    ],
+
+    "customPreparationTechniques": [
+      {
+        "title": "Datenstandardisierung",
+        "description": "Logistikdaten werden in ein einheitliches Format überführt."
+      },
+      {
+        "title": "Kapazitätsaggregation",
+        "description": "Kapazitäts- und Standortdaten werden zusammengeführt."
+      }
+    ],
+
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+
+    "analysisTechniques": [
+      "STATISTICAL_ANALYSIS",
+      "CUSTOM"
+    ],
+
+    "customAnalysisTechniques": [
+      {
+        "title": "Kooperative Datenauswertung",
+        "description": "Daten werden zur Verbesserung logistischer Kooperationen ausgewertet."
+      }
+    ],
+
+    "forwardingTechniques": [
+      "API"
+    ],
+
+    "forwardingFrequency": "MANUAL",
+
+    "forwardingSecurityMeasures": [
+      "PSEUDONYMISATION",
+      "ANONYMISATION",
+      "TRANSPORT_ENCRYPTION"
+    ],
+
+    "customForwardingSecurityTechniques": [
+      {
+        "title": "Freigabebasierte Weitergabe",
+        "description": "Daten werden nur nach Freigabe an berechtigte Empfänger übertragen."
+      }
+    ],
+
+    "targetSystem": "Logistiksysteme der Datennutzer"
+  },
+
+  "business": {
+    "businessDomains": [
+      "LOGISTICS"
+    ],
+
+    "businessModel": "COOPERATIVE",
+
+    "fundingSources": [
+      "OTHER"
+    ],
+
+    "financingTypes": {
+      "USAGE_FEES": [
+        {
+          "title": "Pauschalbasierte Nutzung",
+          "description": "Die Plattform wird über Pauschalzahlungen finanziert."
+        }
+      ]
+    },
+
+    "paymentMethodDataOwner": "FLATRATE",
+    "paymentMethodDataConsumer": "FLATRATE"
+  },
+
+  "objectives": {
+    "dataTrusteeGoals": [
+      "ECONOMIC_UTILIZATION",
+      "INNOVATION",
+      "SCIENCE_RESEARCH",
+      "DATA_SOVEREIGNTY"
+    ],
+
+    "motivationRightsHolder": [
+      "SOCIAL_VALUE"
+    ],
+
+    "motivationDataHolder": [
+      "INTEROPERABILITY",
+      "VALUE_CREATION",
+      "COMPLIANCE_REQUIREMENTS"
+    ],
+
+    "motivationDataConsumer": [
+      "VALUE_CREATION",
+      "INNOVATION",
+      "INTEROPERABILITY"
+    ]
+  }
+}

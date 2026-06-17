@@ -1,0 +1,250 @@
+moduleId: business
+label: Finanzen
+heading: Geschäftsmodell
+menuPoint: Geschäftsmodell
+hints:
+  - name: businssGeneralHint
+    text: Alle Angaben zum Geschäftsmodell sind optional, sollten für ein vollständiges Modell aber ausgefüllt werden.
+sections:
+  classification:
+    heading: Geschäftliche Einordnung
+    helpText: ""
+    fields:
+      businessDomains:
+        label: In welcher Domäne bewegt sich die Datentreuhand?
+        helpText: |
+          <ul>
+            <li><strong>Bildung</strong>: Datentreuhand in Bildung; Verwaltung von Bildungs- und Forschungsdaten sowie Lernplattformdaten, z. B. Nutzungsstatistiken, Zugriffskontrollen.</li>
+            <li><strong>Energie</strong>: Netzdaten, Erzeugungs- und Verbrauchsdaten, u. a. Smart-Grid-Informationen.</li>
+            <li><strong>Finanzwirtschaft</strong>: sicherer Zugriff auf Transaktions- und Auditdaten, z. B. Compliance-Reports, Risikodaten.</li>
+            <li><strong>Geoinformation</strong>: Verwaltung von Standort- und Geodaten, z. B. Karten- und Rauminformationsdaten.</li>
+            <li><strong>Gesundheitswesen</strong>: Schutz sensibler Gesundheitsdaten, Interoperabilität, u. a. Behandlungs- und Abrechnungsdaten.</li>
+            <li><strong>Industrie 4.0</strong>: Zentrale Verwaltung von Produktions- und IIoT-Daten, z. B. Maschinendaten, Qualitätsdaten.</li>
+            <li><strong>Kultur- und Kreativwirtschaft</strong>: Verwaltung von Werks- und Metadaten, u. a. Rights-Informationen, Lizenzen.</li>
+            <li><strong>Landwirtschaft</strong>: Verwaltung von Sensordaten, Ernte- und Lebensmitteldaten, u. a. Kennzahlen zur Produktivität.</li>
+            <li><strong>Logistik</strong>: Austausch von Lieferketten- und Transportdaten, inkl. Tracking-Informationen.</li>
+            <li><strong>Luft- und Raumfahrt</strong>: sichere Datennutzung entlang der Wertschöpfungskette, z. B. beim Zuliefernetzwerk, Missionsdaten etc.</li>
+            <li><strong>Mobilität</strong>: Verwaltung von Fahrzeug- und Verkehrsdaten, z. B. Telemetrie, Routeninformationen.</li>
+            <li><strong>Öffentlicher Sektor</strong>: Verwaltung, Austausch und Schutz öffentlicher Daten, u. a. Verwaltungsdaten, Transparenz-Richtlinien.</li>
+            <li><strong>Bau/Betrieb/Wartung</strong>: Verwaltung von Gebäudedaten, Betriebsdaten, Wartungslogs, u. a. Sensor- und Zustandsdaten.</li>
+            <li><strong>Smart City/Region</strong>: Koordination städtischer/regionaler Datensätze, Interoperabilität, Bürgerbeteiligung.</li>
+            <li><strong>Smart Living</strong>: Verwaltung von Alltags- und Haushaltsdaten, z. B. Energiespar- oder Sicherheitsdaten.</li>
+          </ul>
+        options:
+          - label: Finanzwirtschaft
+            value: FINANCE
+          - label: Smart Living
+            value: SMART_LIVING
+          - label: Gesundheitswesen
+            value: HEALTHCARE
+          - label: Industrie 4.0
+            value: INDUSTRY_40
+          - label: Öffentlicher Sektor
+            value: PUBLIC_SECTOR
+          - label: Kultur- und Kreativwirtschaft
+            value: CULTURE_CREATIVE_INDUSTRY
+          - label: Smart City/Smart Region
+            value: SMART_CITY_REGION
+          - label: Luft- und Raumfahrt
+            value: AEROSPACE
+          - label: Landwirtschaft
+            value: AGRICULTURE
+          - label: Logistik
+            value: LOGISTICS
+          - label: Energie
+            value: ENERGY
+          - label: Domänenübergreifend
+            value: CROSS_DOMAIN
+          - label: Geoinformation
+            value: GEOINFORMATION
+          - label: Mobilität
+            value: MOBILITY
+          - label: Bildung
+            value: EDUCATION
+          - label: Planen/Bauen/Betreiben
+            value: CONSTRUCTION_OPERATION_MAINTENANCE
+          - label: Unklar
+            value: AMBIGUOUS
+      businessModel:
+        label: Durch welche Geschäftsform wird die Datentreuhand betrieben?
+        helpText: |
+          <ul>
+            <li><strong>AG</strong>: Aktienbasierte Kapitalgesellschaft; hohe Kapitalausbringung, Haftung begrenzt auf das Aktienkapital.</li>
+            <li><strong>AöR</strong>: Anstalt des öffentlichen Rechts. Staatlich organisierte, oft Hoheitsaufgaben wahrnehmende Einrichtung.</li>
+            <li><strong>eG</strong>: Genossenschaftsform zum gemeinschaftlichen wirtschaftlichen Zweck; Mitgliedschaft und Mitbestimmung oft zentral.</li>
+            <li><strong>e.V.</strong>: Geschäftsform für einen eingetragenen Verein. Kennzeichnet eine formale Vereinsstruktur mit eigener Rechtsfähigkeit.</li>
+            <li><strong>gGmbH</strong>: Gemeinnützige Form mit Haftungsbeschränkung; Gewinne in Gemeinwohl investieren.</li>
+            <li><strong>GbR</strong>: Einfache Partnerschaft ohne separate Rechtspersönlichkeit in vielen privaten oder wirtschaftlichen Kontexten.</li>
+            <li><strong>GmbH</strong>: Unternehmerisch ausgerichtete Gesellschaft mit beschränkter Haftung. Typische Rechtsform für kleine bis mittlere Unternehmen; Haftung auf Gesellschaftsvermögen beschränkt.</li>
+            <li><strong>KG</strong>: Mindestens zwei Gesellschafter; Komplementär haftet unbeschränkt, Kommanditist haftet beschränkt bis zur Einlage.</li>
+            <li><strong>KGaA</strong>: Komplementär haftet persönlich; Kommanditisten haften bis zur Einlage; Kapitalbeschaffung erfolgt über Aktien.</li>
+            <li><strong>KdöR</strong>: Körperschaft des öffentlichen Rechts. Öffentliche Körperschaft mit Hoheitsrechten und eigener Rechtsfähigkeit.</li>
+            <li><strong>OHG</strong>: Offene Handelsgesellschaft. Gemeinschaftsform von mehreren Gesellschaftern mit unbeschränkter Haftung der Gesellschafter.</li>
+            <li><strong>SE</strong>: Europäische Gesellschaft. Rechtsform auf europäischer Ebene, grenzüberschreitend innerhalb der EU.</li>
+            <li><strong>Stiftung</strong>: Rechtsform mit zweckgebundener Vermögensbindung, oft gemeinnützig oder fördernd.</li>
+            <li><strong>UG</strong>: Gründerfreundliche Form mit Haftungsbeschränkung, Mindestkapital geringer als bei der GmbH.</li>
+          </ul>
+        options:
+          - label: Eingetragener Verein (e.V.)
+            value: REGISTERED_ASSOCIATION
+          - label: Gesellschaft mit beschränkter Haftung (GmbH)
+            value: LIMITED_LIABILITY_COMPANY
+          - label: Offene Handelsgesellschaft (OGH)
+            value: GENERAL_PARTNERSHIP
+          - label: Gesellschaft bürgerlichen Rechts (GbR)
+            value: CIVIL_LAW_PARTNERSHIP
+          - label: Unternehmergesellschaft (UG) haftungsbeschränkt)
+            value: ENTREPRENEURIAL_COMPANY
+          - label: Societas Europaea (SE)
+            value: SOCIETAS_EUROPAEA
+          - label: Eingetragene Genossenschaft (eG)
+            value: COOPERATIVE
+          - label: Gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH)
+            value: NONPROFIT_LLC
+          - label: Körperschaft des öffentlichen Rechts (KdöR)
+            value: PUBLIC_LAW_CORPORATION
+          - label: Anstalt des öffentlichen Rechts (AdöR)
+            value: PUBLIC_LAW_INSTITUTION
+          - label: Aktiengesellschaft (AG)
+            value: STOCK_CORPORATION
+          - label: Stiftung
+            value: FOUNDATION
+          - label: Kommanditgesellschaft auf Aktien (KGaA)
+            value: PARTNERSHIP_LIMITED_BY_SHARES
+          - label: Kommanditgesellschaft (KG)
+            value: LIMITED_PARTNERSHIP
+          - label: Keine
+            value: NONE
+      fundingSources:
+        label: Falls die Datentreuhand aus einem Förderprojekt entstanden ist, durch wen wurde sie gefördert?
+        helpText: |
+          <ul>
+            <li><strong>BMBF</strong>: Bundesministerium für Bildung und Forschung. Förderung in Bildung, Wissenschaft und Forschung.</li>
+            <li><strong>BMDV</strong>: Bundesministerium für Digitales und Verkehr. Förderung rund um Digitalisierung, Infrastruktur und Verkehr.</li>
+            <li><strong>BMFTR</strong>: Bundesministerium für Forschung, Technologie und Raumfahrt. Fokus auf Forschung, Technologieentwicklung und Raumfahrt.</li>
+            <li><strong>BMWK</strong>: Bundesministerium für Wirtschaft und Klimaschutz. Förderung zu Wirtschaft, Innovation und Klimaschutz.</li>
+            <li><strong>EU</strong>: Europäische Union. Programme und Instrumente auf EU-Ebene.</li>
+            <li><strong>GWK</strong>: Gemeinsame Wissenschaftskonferenz. Koordination gemeinsamer Förderentscheidungen der Länder.</li>
+          </ul>
+        options:
+          - label: GWK - Gemeinsame Wissenschaftskonferenz
+            value: GWK
+          - label: BMDV - Bundesministerium für Digitales und Verkehr
+            value: BMDV
+          - label: EU - Europäische Union
+            value: EU
+          - label: BMFTR - Bundesministerium für Forschung, Technologie und Raumfahrt
+            value: BMFTR
+          - label: BMWK - Bundesministerium für Wirtschaft und Klimaschutz
+            value: BMWK
+          - label: BMBF - Bundesministerium für Bildung und Forschung
+            value: BMBF
+          - label: Andere Förderung
+            value: OTHER
+          - label: Keine
+            value: NONE
+  financing:
+    heading: Finanzierung der Datentreuhand
+    fields:
+      financingTypes:
+        label: Welche Form der Finanzierung tifft auf die Datentreuhand zu?
+        helpText: ""
+        options:
+          - value: PUBLIC_FUNDING
+            label: Öffentliche Finanzierung
+            additionalDetails:
+              fields:
+              - key: financingTypeDetail
+                label: Nennen sie die Art der öffentlichen Finanzierung
+                placeholder: z.B. Grundfinanzierung
+              - key: financingTypeDescription
+                label: Beschreibung
+                placeholder: (Optional) Beschreibung
+          - value: USAGE_FEES
+            label: Nutzungsgebühren
+          - value: COMMUNITY_FUNDING
+            label: Gemeinschaftliche Finanzierung
+            additionalDetails:
+              fields:
+              - key: financingTypeDetail
+                label: Nennen sie die Art der gemeinschaftlichen Finanzierung
+                placeholder: z.B. Crowdfunding
+              - key: financingTypeDescription
+                label: Beschreibung
+                placeholder: (Optional) Beschreibung
+          - value: BUSINESS_RELATED_FUNDING
+            label: Betriebsbezogene Finanzierung
+            additionalDetails:
+              fields:
+              - key: financingTypeDetail
+                label: Nennen sie die Art der betriebsbezogenen Finanzierung
+                placeholder: z.B. Querfinanzierung
+              - key: financingTypeDescription
+                label: Beschreibung
+                placeholder: (Optional) Beschreibung
+          - value: OTHER_FUNDING
+            label: Weitere Finanzierungen
+            additionalDetails:
+              fields:
+              - key: financingTypeDetail
+                label: Nennen sie die Art der weiteren Finanzierung
+                placeholder: z.B. Spenden
+              - key: financingTypeDescription
+                label: Beschreibung
+                placeholder: (Optional) Beschreibung
+    subsections:
+      usageFees:
+        heading: Nutzungsgebühren
+        fields:
+          paymentMethodDataOwner:
+            label: Welche Bezahlmodelle nutzt der Datenhalter?
+            helpText: |
+              <ul>
+                <li><strong>Bezahlen pro Nutzung</strong>: Gebühren richten sich nach tatsächlicher Nutzung (z. B. pro Anfrage oder pro Datenvolumen).</li>
+                <li><strong>Flatrate</strong>: Festgelegter, wiederkehrender Betrag. Unabhängig von tatsächlicher Nutzung bleibt der Preis konstant pro Abrechnungszeitraum.</li>
+                <li><strong>Freemium</strong>: Basispaket kostenlos nutzbar; optionale kostenpflichtige Premiumfunktionen oder -dienste stehen zur Verfügung.</li>
+                <li><strong>Kostenlos</strong>: Zugriff oder Dienste sind kostenlos nutzbar; eventuell eingeschränkte Funktionen oder Nutzungsgrenzen.</li>
+                <li><strong>Servicegebühr</strong>: Zusätzlich zu Basisentgelten fallen Gebühren für spezifische Services oder Dienstleistungen an.</li>
+                <li><strong>Supportgebühr</strong>: Separate Gebühren für zusätzlichen Support, Wartung oder Betriebsunterstützung.</li>
+                <li><strong>Zugangsgebühr</strong>: Entgelte für den Zugang zu Daten oder Diensten; Preis bemisst sich nach Zugang oder Nutzungsdauer.</li>
+              </ul>
+            options:
+              - label: Flatrate
+                value: FLATRATE
+              - label: Servicegebühr
+                value: SERVICE_FEE
+              - label: Freemium
+                value: FREEMIUM
+              - label: Bezahlen pro Nutzung
+                value: PAY_PER_USE
+              - label: Kostenlos
+                value: FREE
+              - label: Supportgebühr
+                value: SUPPORT_FEE
+              - label: Zugangsgebühr
+                value: ACCESS_FEE
+              - label: Keine
+                value: NONE
+              - label: Unklar
+                value: AMBIGUOUS
+          paymentMethodDataConsumer:
+            label: Welche Bezahlmodelle nutzt der Datennehmer?
+            options:
+              - label: Flatrate
+                value: FLATRATE
+              - label: Servicegebühr
+                value: SERVICE_FEE
+              - label: Freemium
+                value: FREEMIUM
+              - label: Bezahlen pro Nutzung
+                value: PAY_PER_USE
+              - label: Kostenlos
+                value: FREE
+              - label: Supportgebühr
+                value: SUPPORT_FEE
+              - label: Zugangsgebühr
+                value: ACCESS_FEE
+              - label: Keine
+                value: NONE
+              - label: Unklar
+                value: AMBIGUOUS

@@ -1,0 +1,1702 @@
+{
+  "LimitedPartnership" : {
+    "labels" : {
+      "de" : "Kommanditgesellschaft (KG)",
+      "en" : "Limited Partnership"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Kommanditgesellschaft (KG).",
+      "en" : "Business form for a limited partnership."
+    }
+  },
+  "CooperativeSociety" : {
+    "labels" : {
+      "de" : "Eingetragene Genossenschaft (eG)",
+      "en" : "Cooperative"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine eingetragene Genossenschaft (eG).",
+      "en" : "Business form for a registered cooperative."
+    }
+  },
+  "Data" : {
+    "labels" : {
+      "de" : "Daten",
+      "en" : "Data"
+    },
+    "comments" : {
+      "de" : "Beliebige Informationen, die gespeichert, verarbeitet, geteilt oder verwaltet werden.",
+      "en" : "Any information that is stored, processed, shared or administered."
+    }
+  },
+  "LogisticSector" : {
+    "labels" : {
+      "de" : "Logistik",
+      "en" : "Logistics"
+    },
+    "comments" : {
+      "de" : "Domäne für Logistik, einschließlich Transport, Lagerung und Lieferkettenmanagement.",
+      "en" : "Domain for logistics, including transport, warehousing and supply chain management."
+    }
+  },
+  "QualityImprovement" : {
+    "labels" : {
+      "de" : "Qualitätsverbesserung",
+      "en" : "Quality Improvement"
+    },
+    "comments" : {
+      "de" : "Motivation, durch die Bereitstellung von Daten die Qualität von Daten, Prozessen, Produkten oder Dienstleistungen zu verbessern.",
+      "en" : "Motivation to improve the quality of data, processes, products or services through data provision."
+    }
+  },
+  "AffectedParty" : {
+    "labels" : {
+      "de" : "Betroffener",
+      "en" : "Affected Party"
+    },
+    "comments" : {
+      "de" : "Partei, auf die sich Daten beziehen und deren Rechte/Interessen betroffen sein können.",
+      "en" : "Party to whom the data relates and whose rights/interests may be affected."
+    }
+  },
+  "Continuous" : {
+    "labels" : {
+      "de" : "Kontinuierlich",
+      "en" : "Continuous"
+    },
+    "comments" : {
+      "de" : "Datenverarbeitung in kontinuierlichem oder ereignisgetriebenem Fluss.",
+      "en" : "Continuous or event-driven data processing."
+    }
+  },
+  "ScienceAndResearch" : {
+    "labels" : {
+      "de" : "Wissenschaft und Forschung",
+      "en" : "Science and Research"
+    },
+    "comments" : {
+      "de" : "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen.",
+      "en" : "Goal of supporting scientific research and development based on data."
+    }
+  },
+  "ConstructionSector" : {
+    "labels" : {
+      "de" : "Planen / Bauen / Betreiben",
+      "en" : "Construction / Operation / Maintenance"
+    },
+    "comments" : {
+      "de" : "Domäne für das Planen, Bauen und Betreiben von Gebäuden und Infrastrukturen.",
+      "en" : "Domain for planning, construction and operation of buildings and infrastructure."
+    }
+  },
+  "Organisation" : {
+    "labels" : {
+      "de" : "Organisation",
+      "en" : "Organization"
+    },
+    "comments" : {
+      "de" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein.",
+      "en" : "Affiliation type indicating that the actor is an organization, such as a company, authority or association."
+    }
+  },
+  "PeerToPeerArchitecture" : {
+    "labels" : {
+      "de" : "Peer-to-Peer Architektur",
+      "en" : "Peer-to-Peer Architecture"
+    },
+    "comments" : {
+      "de" : "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert und vermittelt, während die eigentliche Übertragung der Daten direkt und dezentral zwischen den beteiligten Akteuren (peer-to-peer) erfolgt.",
+      "en" : "Architecture in data trustee models where the data trustee organizes and mediates data exchange, while the actual data transfer takes place directly and decentrally between the participating actors (peer-to-peer)."
+    }
+  },
+  "PublicLawCorporation" : {
+    "labels" : {
+      "de" : "Körperschaft des öffentlichen Rechts (KdöR)",
+      "en" : "Public Law Corporation"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Körperschaft des öffentlichen Rechts (KdöR).",
+      "en" : "Business form for a public law corporation."
+    }
+  },
+  "EU" : {
+    "labels" : {
+      "de" : "EU - Europäische Union",
+      "en" : "EU - European Union"
+    },
+    "comments" : {
+      "de" : "Förderinstitution, die Programme oder Instrumente der Europäischen Union repräsentiert.",
+      "en" : "Funding source representing programs or instruments of the European Union."
+    }
+  },
+  "SelfManagedValueAddedDataTrustee" : {
+    "labels" : {
+      "de" : "Selbstbestimmte Mehrwerttreuhand",
+      "en" : "Self Managed Value Added Data Trustee"
+    },
+    "comments" : {
+      "de" : "Mehrwert-Treuhandmodell, das autonom unter interner Governance agiert.",
+      "en" : "Value-adding trustee model that operates autonomously under internal governance."
+    }
+  },
+  "TransportEncryption" : {
+    "labels" : {
+      "de" : "Transportverschlüsselung",
+      "en" : "Transport Encryption"
+    },
+    "comments" : {
+      "de" : "Verschlüsselung während der Übertragung von Daten.",
+      "en" : "Encryption applied while data is transmitted."
+    }
+  },
+  "AdministrativeDataTrustee" : {
+    "labels" : {
+      "de" : "Verwaltungstreuhand",
+      "en" : "Adminstrative Data Trustee"
+    },
+    "comments" : {
+      "de" : "Treuhandmodell mit Schwerpunkt auf administrativen Diensten: Kuratierung, Validierung, Katalogisierung, Aufbewahrung und Policy-Durchsetzung.",
+      "en" : "Trustee model emphasizing administrative services: curation, validation, cataloging, retention and policy enforcement."
+    }
+  },
+  "FundingSource" : {
+    "labels" : {
+      "de" : "Förderinstitution",
+      "en" : "Funding Source"
+    },
+    "comments" : {
+      "de" : "Typ einer Institution oder eines Programms, das Datentreuhandprojekte finanziert oder unterstützt, z. B. Ministerien oder EU-Programme.",
+      "en" : "Type of institution or program that funds or supports data trustee projects, such as ministries or EU programs."
+    }
+  },
+  "Anonymisation" : {
+    "labels" : {
+      "de" : "Anonymisieren",
+      "en" : "Anonymisation"
+    },
+    "comments" : {
+      "de" : "Irreversible Entfernung personenbezogener Beziehbarkeit.",
+      "en" : "Irreversible removal of personal identifiability."
+    }
+  },
+  "IndividualConsentWorkflow" : {
+    "labels" : {
+      "de" : "Individueller Einwilligungsvorgang",
+      "en" : "Individual Consent Workflow"
+    },
+    "comments" : {
+      "de" : "Repräsentiert einen Einwilligungsvorgang, der auf einen individuellen Fall zugeschnitten ist, etwa eine bestimmte betroffene Person, Transaktion oder Datennutzung.",
+      "en" : "Represents a consent workflow tailored to an individual case, such as a specific data subject, transaction or data use."
+    }
+  },
+  "UsageGoalOfUser" : {
+    "labels" : {
+      "de" : "Nutzungsziel des Nutzers",
+      "en" : "Usage Goal of User"
+    },
+    "comments" : {
+      "de" : "Kategorie für die Nutzungsziele von Nutzenden bei der Interaktion mit einem Datentreuhänder oder Datenökosystem.",
+      "en" : "Category for the intended usage goals of users when interacting with a data trustee or data ecosystem."
+    }
+  },
+  "TrustIntermediary" : {
+    "labels" : {
+      "de" : "Vertrauensinstanz",
+      "en" : "Trust Intermediary"
+    },
+    "comments" : {
+      "de" : "Motivation zur Teilnahme, weil die Datentreuhand als neutrale und vertrauenswürdige Vermittlungsinstanz wirkt.",
+      "en" : "Motivation to participate because the data trustee acts as a neutral and trustworthy intermediary."
+    }
+  },
+  "AtRestEncryption" : {
+    "labels" : {
+      "de" : "Verschlüsselung im Ruhezustand",
+      "en" : "Encryption at Rest"
+    },
+    "comments" : {
+      "de" : "Verschlüsselung von Daten im Ruhezustand.",
+      "en" : "Encryption of data stored at rest."
+    }
+  },
+  "ValueAddedDataTrustee" : {
+    "labels" : {
+      "de" : "Mehrwerttreuhand",
+      "en" : "Value-added Data Trustee"
+    },
+    "comments" : {
+      "de" : "Treuhandmodell, das zusätzlichen Wert aus Daten generiert (Aggregation, Analytik, Dienste).",
+      "en" : "Trustee model that derives additional value from data (aggregation, analytics, services)."
+    }
+  },
+  "DataTrusteeModel" : {
+    "labels" : {
+      "de" : "Datentreuhandmodell",
+      "en" : "Data Trustee Model"
+    },
+    "comments" : {
+      "de" : "Modell, das Struktur, Rollen und Verantwortlichkeiten einer Datentreuhand-Umsetzung beschreibt.",
+      "en" : "Model describing structure, roles and responsibilities of a data trustee implementation."
+    }
+  },
+  "Frequency" : {
+    "labels" : {
+      "de" : "Frequenz",
+      "en" : "Frequency"
+    },
+    "comments" : {
+      "de" : "Beschreibt die Häufigkeit von Datenaktivitäten.",
+      "en" : "Describes how often a data activity occurs."
+    }
+  },
+  "EuropeanCompany" : {
+    "labels" : {
+      "de" : "Societas Europaea (SE)",
+      "en" : "Societas Europaea (SE)"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Europäische Gesellschaft (SE).",
+      "en" : "Business form for a European Company (Societas Europaea, SE)."
+    }
+  },
+  "SpecialPersonalData" : {
+    "labels" : {
+      "de" : "Besondere Kategorien personenbezogener Daten",
+      "en" : "Special categories of personal data"
+    },
+    "comments" : {
+      "de" : "Besonders schützenswerte personenbezogene Daten (z. B. Gesundheit, Biometrie) mit erhöhtem Schutzbedarf.",
+      "en" : "Personal data revealing sensitive attributes (e.g., health, biometrics), subject to stricter protection."
+    }
+  },
+  "BMDV" : {
+    "labels" : {
+      "de" : "BMDV - Bundesministerium für Digitales und Verkehr",
+      "en" : "BMDV - Federal Ministry for Digital and Transport"
+    },
+    "comments" : {
+      "de" : "Förderinstitution, die das Bundesministerium für Digitales und Verkehr (BMDV) repräsentiert.",
+      "en" : "Funding source representing the German Federal Ministry for Digital and Transport (BMDV)."
+    }
+  },
+  "Property" : {
+    "labels" : {
+      "de" : "Eigenschaft",
+      "en" : "Property"
+    },
+    "comments" : {
+      "de" : "Abstrakte Kategorie für querschnittliche Eigenschaften, die in DTM-Metadaten spezifiziert werden können, z. B. Analyse, Datenzugangstransparenz oder Visualisierung.",
+      "en" : "Abstract category for cross-cutting properties that can be specified in DTM metadata, e.g. analysis, data access transparency or visualisation."
+    }
+  },
+  "StatisticalAnalysis" : {
+    "labels" : {
+      "de" : "Statistische Analyse",
+      "en" : "Statistical Analysis"
+    },
+    "comments" : {
+      "de" : "Analyse unter Einsatz statistischer Verfahren.",
+      "en" : "Analysis using statistical methods."
+    }
+  },
+  "TargetSystem" : {
+    "labels" : {
+      "de" : "Zielsystem",
+      "en" : "Target System"
+    },
+    "comments" : {
+      "de" : "System, das Daten empfängt oder verarbeitet.",
+      "en" : "System that receives or processes data."
+    }
+  },
+  "DataQualityManagement" : {
+    "labels" : {
+      "de" : "Datenqualitätsmanagement",
+      "en" : "Data Quality Management"
+    },
+    "comments" : {
+      "de" : "Nutzungsziel, die Qualität von Daten zu überwachen, zu verbessern oder sicherzustellen.",
+      "en" : "Usage goal of monitoring, improving or assuring the quality of data."
+    }
+  },
+  "EducationSector" : {
+    "labels" : {
+      "de" : "Bildung",
+      "en" : "Education"
+    },
+    "comments" : {
+      "de" : "Domäne für den Bildungssektor, einschließlich Schulen, Hochschulen und lebenslangem Lernen.",
+      "en" : "Domain representing the education sector, including schools, universities and lifelong learning."
+    }
+  },
+  "CentralDataStorageArchitecture" : {
+    "labels" : {
+      "de" : "Zentraler Datenabruf",
+      "en" : "Central Data Access"
+    },
+    "comments" : {
+      "de" : "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert und die Daten zentral speichert, sodass der Zugriff und die Bereitstellung von Daten über eine zentrale Instanz erfolgen.",
+      "en" : "Architecture in data trustee models where the data trustee organizes data exchange and stores data centrally, so that data access and provision are performed via a central entity."
+    }
+  },
+  "Flatrate" : {
+    "labels" : {
+      "de" : "Flatrate",
+      "en" : "Flatrate"
+    },
+    "comments" : {
+      "de" : "Bezahlmodell mit einer pauschalen, wiederkehrenden Gebühr, unabhängig von der tatsächlichen Nutzung.",
+      "en" : "Pay model with a flat recurring fee independent of actual usage."
+    }
+  },
+  "Download" : {
+    "labels" : {
+      "de" : "Download",
+      "en" : "Download"
+    },
+    "comments" : {
+      "de" : "Empfang von Daten durch Herunterladen aus einem System.",
+      "en" : "Reception of data by downloading from a system."
+    }
+  },
+  "AIPoweredAnalysis" : {
+    "labels" : {
+      "de" : "KI-gestützte Auswertung",
+      "en" : "AI powered analysis"
+    },
+    "comments" : {
+      "de" : "Analyse von Daten mittels KI, LLMs oder Machine Learning.",
+      "en" : "Analysis of data using AI techniques such as ML or LLMs."
+    }
+  },
+  "Metadata" : {
+    "labels" : {
+      "de" : "Metadata",
+      "en" : "Meta Data"
+    },
+    "comments" : {
+      "de" : "Daten über Daten: Herkunft, Struktur, Restriktionen, Nutzungsbedingungen, Qualität, Herkunftskette.",
+      "en" : "Data about data: provenance, structure, constraints, usage terms, quality, lineage."
+    }
+  },
+  "Foundation" : {
+    "labels" : {
+      "de" : "Stiftung",
+      "en" : "Foundation"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Stiftung.",
+      "en" : "Business form for a foundation."
+    }
+  },
+  "WithRetention" : {
+    "labels" : {
+      "de" : "Mit Retention",
+      "en" : "With retention"
+    },
+    "comments" : {
+      "de" : "Aufbewahrung von Daten nach definierten Regeln.",
+      "en" : "Retention of data based on defined rules."
+    }
+  },
+  "DataStorage" : {
+    "labels" : {
+      "de" : "Datenspeicherung",
+      "en" : "Data Storage"
+    },
+    "comments" : {
+      "de" : "Datenflussphase zur Speicherung von Daten.",
+      "en" : "Data flow stage for storing data."
+    }
+  },
+  "BusinessForm" : {
+    "labels" : {
+      "de" : "Geschäftsform",
+      "en" : "Business Form"
+    },
+    "comments" : {
+      "de" : "Kategorie für die rechtliche bzw. organisatorische Geschäftsform eines Datentreuhänders oder einer Organisation, z. B. GmbH, e.V. oder Stiftung.",
+      "en" : "Category for the legal or organizational business form of a data trustee or organization, such as GmbH, e.V. or foundation."
+    }
+  },
+  "SecurityMeasure" : {
+    "labels" : {
+      "de" : "Sicherheitsmaßnahme",
+      "en" : "Security Measure"
+    },
+    "comments" : {
+      "de" : "Abstrakte Oberklasse für alle Sicherheitsmaßnahmen im DTM-Sicherheitsmodell.",
+      "en" : "Abstract superclass for all high-level security measures in the DTM security model."
+    }
+  },
+  "AccessDataTrustee" : {
+    "labels" : {
+      "de" : "Zugangstreuhand",
+      "en" : "Access Data Trustee"
+    },
+    "comments" : {
+      "de" : "Treuhandmodell mit Fokus auf Zugangskontrolle: Nur berechtigte Parteien erhalten Nutzung; Datengeber steuern den Zugang.",
+      "en" : "Trustee model focusing on access control: ensures only authorized parties can use data; data providers govern access."
+    }
+  },
+  "BusinessRelatedFunding" : {
+    "labels" : {
+      "de" : "Betriebsbezogene Finanzierung",
+      "en" : "Business-Related Funding"
+    },
+    "comments" : {
+      "de" : "Finanzierungsart, bei der eine Datentreuhand aus betrieblichen Mitteln, Organisationsbudgets oder kommerziellen Aktivitäten finanziert wird.",
+      "en" : "Financing type where a data trustee is funded as part of business operations, organizational budgets or commercial activities."
+    }
+  },
+  "DataSovereignty" : {
+    "labels" : {
+      "de" : "Datensouveränität",
+      "en" : "Data Sovereignty"
+    },
+    "comments" : {
+      "de" : "Ziel, sicherzustellen, dass Datenhaltende die Kontrolle und Entscheidungsgewalt über ihre Daten behalten.",
+      "en" : "Goal of ensuring that data holders retain control and decision power over their data."
+    }
+  },
+  "SupportFee" : {
+    "labels" : {
+      "de" : "Supportgebühr",
+      "en" : "Support Fee"
+    },
+    "comments" : {
+      "de" : "Bezahlmodell, bei dem Entgelte für Support, Wartung oder Betriebsunterstützung anfallen.",
+      "en" : "Pay model that charges fees for support, maintenance or operational assistance."
+    }
+  },
+  "NonprofitLimitedLiabilityCompany" : {
+    "labels" : {
+      "de" : "Gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH)",
+      "en" : "Nonprofit LLC"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH).",
+      "en" : "Business form for a nonprofit limited liability company."
+    }
+  },
+  "Compliance" : {
+    "labels" : {
+      "de" : "Erfüllung von Auflagen",
+      "en" : "Compliance"
+    },
+    "comments" : {
+      "de" : "Ziel, rechtliche, regulatorische oder vertragliche Anforderungen an die Datennutzung zu erfüllen.",
+      "en" : "Goal of complying with legal, regulatory or contractual requirements regarding data use."
+    }
+  },
+  "PublicLawInstitution" : {
+    "labels" : {
+      "de" : "Anstalt des öffentlichen Rechts (AöR)",
+      "en" : "Public Law Institution"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Anstalt des öffentlichen Rechts (AöR).",
+      "en" : "Business form for a public law institution."
+    }
+  },
+  "HealthcareSector" : {
+    "labels" : {
+      "de" : "Gesundheitswesen",
+      "en" : "Healthcare"
+    },
+    "comments" : {
+      "de" : "Domäne für das Gesundheitswesen, einschließlich medizinischer Versorgung, Public Health und Gesundheitsdaten.",
+      "en" : "Domain for healthcare, including medical care, public health and health data."
+    }
+  },
+  "FairMarketCompetition" : {
+    "labels" : {
+      "de" : "Fairer Wettbewerb",
+      "en" : "Fair Market Competition"
+    },
+    "comments" : {
+      "de" : "Ziel, fairen Wettbewerb zu unterstützen und datenbasierte Wettbewerbsverzerrungen zu vermeiden.",
+      "en" : "Goal of supporting fair competition and avoiding data-based market distortions."
+    }
+  },
+  "AccessFee" : {
+    "labels" : {
+      "de" : "Zugangsgebühr",
+      "en" : "Access Fee"
+    },
+    "comments" : {
+      "de" : "Bezahlmodell, bei dem Entgelte für den Zugang zu Daten oder Diensten erhoben werden.",
+      "en" : "Pay model based on fees for accessing data or services."
+    }
+  },
+  "GeoinformationSector" : {
+    "labels" : {
+      "de" : "Geoinformation",
+      "en" : "Geoinformation"
+    },
+    "comments" : {
+      "de" : "Domäne mit Fokus auf Geodaten und Geoinformationsdienste.",
+      "en" : "Domain focusing on geospatial data and geoinformation services."
+    }
+  },
+  "ReputationSource" : {
+    "labels" : {
+      "de" : "Reputationsquelle",
+      "en" : "Reputation Source"
+    },
+    "comments" : {
+      "de" : "Quelle für Informationen über die Reputation, das Vertrauensniveau oder den Compliance-Status eines Akteurs, z. B. Zertifizierungsstellen, Bewertungsportale oder Register.",
+      "en" : "Source of information about the reputation, trust level or compliance status of an actor, e.g. certification bodies, rating portals or registries."
+    }
+  },
+  "ShareLimitedPartnership" : {
+    "labels" : {
+      "de" : "Kommanditgesellschaft auf Aktien (KGaA)",
+      "en" : "Partnership Limited by Shares"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Kommanditgesellschaft auf Aktien.",
+      "en" : "Business form for a partnership limited by shares (KGaA)."
+    }
+  },
+  "DataPreparation" : {
+    "labels" : {
+      "de" : "Datenaufbereitung",
+      "en" : "Data Preparation"
+    },
+    "comments" : {
+      "de" : "Datenflussphase zur Aufbereitung oder Transformation.",
+      "en" : "Data flow stage for preparing or transforming data."
+    }
+  },
+  "RightsHolderMotivation" : {
+    "labels" : {
+      "de" : "Rechtehalter-Motivation",
+      "en" : "Rights Holder Motivation"
+    },
+    "comments" : {
+      "de" : "Motivation eines Rechtehalters bzw. einer betroffenen Partei, Daten über eine Datentreuhand bereitzustellen.",
+      "en" : "Motivation of a rights holder or affected party to make data available through a data trustee."
+    }
+  },
+  "AndereFoerderung" : {
+    "labels" : {
+      "de" : "Andere Förderung",
+      "en" : "Other Funding Source"
+    },
+    "comments" : {
+      "de" : "Generische Förderinstitution für weitere Fördergeber, die nicht durch spezifische Kategorien abgedeckt sind.",
+      "en" : "Generic funding source for other types of funders not covered by the specific categories."
+    }
+  },
+  "DataTrusteeGoal" : {
+    "labels" : {
+      "de" : "Ziel der Datentreuhand",
+      "en" : "Data Trustee Goal"
+    },
+    "comments" : {
+      "de" : "Übergeordnete Kategorie für Ziele, die ein Datentreuhänder verfolgt, z. B. Souveränität, Innovation oder wirtschaftliche Verwertung.",
+      "en" : "General category for goals that a data trustee aims to achieve, such as sovereignty, innovation or economic utilization."
+    }
+  },
+  "EconomicUtilization" : {
+    "labels" : {
+      "de" : "Wirtschaftliche Verwertung",
+      "en" : "Economic Utilization"
+    },
+    "comments" : {
+      "de" : "Ziel, durch Daten wirtschaftlichen Mehrwert zu schaffen, z. B. durch neue Dienstleistungen, Geschäftsmodelle oder Effizienzgewinne.",
+      "en" : "Goal of creating economic value from data through new services, business models or efficiency gains."
+    }
+  },
+  "BMWK" : {
+    "labels" : {
+      "de" : "BMWK - Bundesministerium für Wirtschaft und Klimaschutz",
+      "en" : "BMWK - Federal Ministry for Economic Affairs and Climate Action"
+    },
+    "comments" : {
+      "de" : "Förderinstitution, die das Bundesministerium für Wirtschaft und Klimaschutz (BMWK) repräsentiert.",
+      "en" : "Funding source representing the German Federal Ministry for Economic Affairs and Climate Action (BMWK)."
+    }
+  },
+  "EnergySector" : {
+    "labels" : {
+      "de" : "Energie",
+      "en" : "Energy"
+    },
+    "comments" : {
+      "de" : "Domäne für den Energiesektor, einschließlich Erzeugung, Verteilung und Nutzung von Energie.",
+      "en" : "Domain for the energy sector, including production, distribution and consumption of energy."
+    }
+  },
+  "DigitalSovereignty" : {
+    "labels" : {
+      "de" : "Digitale Souveränität",
+      "en" : "Digital Sovereignty"
+    },
+    "comments" : {
+      "de" : "Ziel, die eigenständige und selbstbestimmte Nutzung digitaler Infrastrukturen, Plattformen und Dienste zu gewährleisten.",
+      "en" : "Goal of maintaining independent and self-determined use of digital infrastructures, platforms and services."
+    }
+  },
+  "AnalysisTechnique" : {
+    "labels" : {
+      "de" : "Auswertungstechnik",
+      "en" : "Data Analysis Technique"
+    },
+    "comments" : {
+      "de" : "Kategorie von Techniken zur Analyse von Daten.",
+      "en" : "Category of techniques for analysing data."
+    }
+  },
+  "AerospaceSector" : {
+    "labels" : {
+      "de" : "Luft- / Raumfahrt",
+      "en" : "Aerospace"
+    },
+    "comments" : {
+      "de" : "Domäne für Luft- und Raumfahrt, einschließlich Luftverkehr und raumbezogener Aktivitäten.",
+      "en" : "Domain for aerospace, including aviation and space-related activities."
+    }
+  },
+  "TransmissionSecurity" : {
+    "labels" : {
+      "de" : "Sicherheit übertragener Daten",
+      "en" : "Security in Transmission"
+    },
+    "comments" : {
+      "de" : "Sicherheitsmaßnahmen, die auf übertragene Daten zwischen Akteuren angewendet werden, z. B. Transportverschlüsselung, VPN oder gesicherte Kommunikationskanäle.",
+      "en" : "Security measures applied to data in transit between actors, such as transport encryption, VPNs or secure channels."
+    }
+  },
+  "DataAnalysis" : {
+    "labels" : {
+      "de" : "Datenauswertung",
+      "en" : "Data Analysis"
+    },
+    "comments" : {
+      "de" : "Datenflussphase zur Analyse von Daten.",
+      "en" : "Data flow stage focused on analysing data."
+    }
+  },
+  "ReceptionTechnique" : {
+    "labels" : {
+      "de" : "Empfangstechnik",
+      "en" : "Reception Technique"
+    },
+    "comments" : {
+      "de" : "Kategorie technischer Verfahren zum Empfang von Daten.",
+      "en" : "Category of techniques for receiving data."
+    }
+  },
+  "Architecture" : {
+    "labels" : {
+      "de" : "Architektur",
+      "en" : "Architecture"
+    },
+    "comments" : {
+      "de" : "Technische Struktur, auf der ein System basiert.",
+      "en" : "Technical structure on which a system is built."
+    }
+  },
+  "Individual" : {
+    "labels" : {
+      "de" : "Individuum",
+      "en" : "Individual"
+    },
+    "comments" : {
+      "de" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine einzelne natürliche Person ist.",
+      "en" : "Affiliation type indicating that the actor is an individual person."
+    }
+  },
+  "ForwardingTechnique" : {
+    "labels" : {
+      "de" : "Weitergabetechnik",
+      "en" : "Forwarding Technique"
+    },
+    "comments" : {
+      "de" : "Kategorie technischer Verfahren zur Weitergabe von Daten.",
+      "en" : "Category of techniques for forwarding data."
+    }
+  },
+  "Permanent" : {
+    "labels" : {
+      "de" : "Dauerhaft",
+      "en" : "Permanent"
+    },
+    "comments" : {
+      "de" : "Dauerhafte oder unbefristete Speicherung von Daten.",
+      "en" : "Long-term or indefinite data retention."
+    }
+  },
+  "PublicFunding" : {
+    "labels" : {
+      "de" : "Öffentliche Finanzierung",
+      "en" : "Public Funding"
+    },
+    "comments" : {
+      "de" : "Finanzierungsart, bei der eine Datentreuhand durch öffentliche Institutionen, Fördermittel oder öffentliche Programme finanziert wird.",
+      "en" : "Financing type where a data trustee is funded by public institutions, grants or public programs."
+    }
+  },
+  "DataForwarding" : {
+    "labels" : {
+      "de" : "Datenweitergabe",
+      "en" : "Data Forwarding"
+    },
+    "comments" : {
+      "de" : "Datenflussphase zur Weitergabe von Daten.",
+      "en" : "Data flow stage for forwarding data."
+    }
+  },
+  "CulturalCreativeSector" : {
+    "labels" : {
+      "de" : "Kultur- / Kreativwirtschaft",
+      "en" : "Culture / Creative Industry"
+    },
+    "comments" : {
+      "de" : "Domäne für die Kultur- und Kreativwirtschaft, z. B. Medien, Kunst und Design.",
+      "en" : "Domain for the cultural and creative industries, such as media, arts and design."
+    }
+  },
+  "MobilitySector" : {
+    "labels" : {
+      "de" : "Mobilität",
+      "en" : "Mobility"
+    },
+    "comments" : {
+      "de" : "Domäne für Mobilitätsdienste und Verkehrssysteme.",
+      "en" : "Domain for mobility services and transport systems."
+    }
+  },
+  "DataFlowComponent" : {
+    "labels" : {
+      "de" : "Datenflusskomponente",
+      "en" : "Data Flow Component"
+    },
+    "comments" : {
+      "de" : "Abstrakte Phase im technischen Datenfluss.",
+      "en" : "Abstract component within a technical data flow."
+    }
+  },
+  "StockCorporation" : {
+    "labels" : {
+      "de" : "Aktiengesellschaft (AG)",
+      "en" : "Stock Corporation"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Aktiengesellschaft (AG).",
+      "en" : "Business form for a stock corporation."
+    }
+  },
+  "GWK" : {
+    "labels" : {
+      "de" : "GWK - Gemeinsame Wissenschaftskonferenz",
+      "en" : "GWK - Joint Science Conference"
+    },
+    "comments" : {
+      "de" : "Förderinstitution, die die Gemeinsame Wissenschaftskonferenz (GWK) repräsentiert.",
+      "en" : "Funding source representing the German Joint Science Conference (GWK)."
+    }
+  },
+  "ReceptionAPI" : {
+    "labels" : {
+      "de" : "API",
+      "en" : "API"
+    },
+    "comments" : {
+      "de" : "Empfang von Daten über eine Programmierschnittstelle.",
+      "en" : "Reception of data through an application programming interface."
+    }
+  },
+  "SourceSystem" : {
+    "labels" : {
+      "de" : "Quellsystem",
+      "en" : "Source System"
+    },
+    "comments" : {
+      "de" : "System, das Daten bereitstellt oder liefert.",
+      "en" : "System that provides or supplies data."
+    }
+  },
+  "Innovation" : {
+    "labels" : {
+      "de" : "Innovation",
+      "en" : "Innovation"
+    },
+    "comments" : {
+      "de" : "Ziel, Innovation durch datengetriebene Produkte, Dienstleistungen oder Prozesse zu ermöglichen.",
+      "en" : "Goal of fostering innovation through data-driven products, services or processes."
+    }
+  },
+  "FinancialSector" : {
+    "labels" : {
+      "de" : "Finanzwirtschaft",
+      "en" : "Finance"
+    },
+    "comments" : {
+      "de" : "Domäne für die Finanzwirtschaft, z. B. Banken, Versicherungen und Kapitalmärkte.",
+      "en" : "Domain for the financial sector, such as banking, insurance and capital markets."
+    }
+  },
+  "UsageFees" : {
+    "labels" : {
+      "de" : "Nutzungsgebühren",
+      "en" : "Usage Fees"
+    },
+    "comments" : {
+      "de" : "Finanzierungsart, bei der der Betrieb einer Datentreuhand durch Gebühren für die Nutzung von Daten, Diensten oder Infrastruktur finanziert wird.",
+      "en" : "Financing type where the operation of a data trustee is funded through fees paid for using data, services or infrastructure."
+    }
+  },
+  "E2EEncryption" : {
+    "labels" : {
+      "de" : "Ende-zu-Ende-Verschlüsselung",
+      "en" : "End-to-End Encryption"
+    },
+    "comments" : {
+      "de" : "Ende-zu-Ende-Verschlüsselung während der Übertragung.",
+      "en" : "End-to-end encryption during transmission."
+    }
+  },
+  "Periodic" : {
+    "labels" : {
+      "de" : "Periodisch",
+      "en" : "Periodic"
+    },
+    "comments" : {
+      "de" : "Regelmäßig wiederkehrende Datenaktivitäten.",
+      "en" : "Recurring or cyclic data activities."
+    }
+  },
+  "PrivacyEnhancingTechnology" : {
+    "labels" : {
+      "de" : "Privacy Enhancing Technologies",
+      "en" : "Privacy Enhancing Technologies"
+    },
+    "comments" : {
+      "de" : "Techniken zur Verbesserung des Datenschutzes.",
+      "en" : "Techniques that enhance privacy protection."
+    }
+  },
+  "GeneralPartnership" : {
+    "labels" : {
+      "de" : "OHG",
+      "en" : "General Partnership"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Offene Handelsgesellschaft (OHG).",
+      "en" : "Business form for a general partnership."
+    }
+  },
+  "BMFTR" : {
+    "labels" : {
+      "de" : "BMFTR - Bundesministerium für Forschung, Technologie und Raumfahrt",
+      "en" : "BMFTR - Federal Ministry of Research, Technology and Space"
+    },
+    "comments" : {
+      "de" : "Förderinstitution, die das Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) repräsentiert.",
+      "en" : "Funding source representing the Federal Ministry of Research, Technology and Space (BMFTR)."
+    }
+  },
+  "ServiceFee" : {
+    "labels" : {
+      "de" : "Servicegebühr",
+      "en" : "Service Fee"
+    },
+    "comments" : {
+      "de" : "Bezahlmodell, bei dem Gebühren für bestimmte Dienstleistungen zusätzlich zum Datenzugang erhoben werden.",
+      "en" : "Pay model where fees are charged for specific services provided on top of data access."
+    }
+  },
+  "Digitization" : {
+    "labels" : {
+      "de" : "Digitalisierung",
+      "en" : "Digitization"
+    },
+    "comments" : {
+      "de" : "Umwandlung analoger Informationen in digitale Daten.",
+      "en" : "Conversion of analogue information into digital data."
+    }
+  },
+  "DataProvider" : {
+    "labels" : {
+      "de" : "Datengeber",
+      "en" : "Data Provider"
+    },
+    "comments" : {
+      "de" : "Akteur, der Daten in eine Treuhand-Konstellation einbringt/bereitstellt.",
+      "en" : "Actor that provides or supplies data into a trustee setting."
+    }
+  },
+  "CrossDomainSector" : {
+    "labels" : {
+      "de" : "Domänenübergreifend",
+      "en" : "Cross-Domain"
+    },
+    "comments" : {
+      "de" : "Domänenübergreifender Bereich, der mehrere thematische Domänen umfasst.",
+      "en" : "Cross-domain scope that spans multiple thematic domains."
+    }
+  },
+  "CentralRouterArchitecture" : {
+    "labels" : {
+      "de" : "Zentrales Routing",
+      "en" : "Central Routing"
+    },
+    "comments" : {
+      "de" : "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert, vermittelt und technisch als zentrale Routing-Instanz fungiert, über die die Daten zwischen den beteiligten Akteuren übertragen werden.",
+      "en" : "Architecture in data trustee models where the data trustee organizes and mediates data exchange and acts as a central routing entity through which data is transferred between participating actors."
+    }
+  },
+  "Domain" : {
+    "labels" : {
+      "de" : "Domäne",
+      "en" : "Domain"
+    },
+    "comments" : {
+      "de" : "Thematischer oder sektoraler Bereich, in dem ein Datentreuhänder tätig ist, z. B. Mobilität, Energie oder Gesundheitswesen.",
+      "en" : "Thematic or sectoral area in which a data trustee operates, such as mobility, energy or healthcare."
+    }
+  },
+  "DecentralStorage" : {
+    "labels" : {
+      "de" : "Dezentrales Speichern",
+      "en" : "Decentralized Storage"
+    },
+    "comments" : {
+      "de" : "Dezentrale Speicherung über mehrere Systeme verteilt.",
+      "en" : "Distributed storage across multiple systems."
+    }
+  },
+  "DataConsumer" : {
+    "labels" : {
+      "de" : "Datennutzer",
+      "en" : "Data Consumer"
+    },
+    "comments" : {
+      "de" : "Akteur, der Daten zu einem Zweck nutzt (Analyse, Dienst, Produkt).",
+      "en" : "Actor that consumes or uses data for a purpose (analysis, service, product)."
+    }
+  },
+  "NonPersonalData" : {
+    "labels" : {
+      "de" : "Nicht personenbezogene Daten",
+      "en" : "Non-personal Data"
+    },
+    "comments" : {
+      "de" : "Daten ohne Bezug zu einer identifizierten oder identifizierbaren natürlichen Person.",
+      "en" : "Data that does not relate to an identified or identifiable natural person."
+    }
+  },
+  "Analyse" : {
+    "labels" : {
+      "de" : "Analyse",
+      "en" : "Analysis"
+    },
+    "comments" : {
+      "de" : "Eigenschaft, die angibt, dass der Datentreuhänder oder Dienst Datenanalysefunktionen bereitstellt (z. B. Statistiken, Dashboards, KI-gestützte Analysen).",
+      "en" : "Property indicating that the data trustee or service provides data analysis capabilities (e.g. statistics, dashboards, AI-based analytics)."
+    }
+  },
+  "Optimization" : {
+    "labels" : {
+      "de" : "Optimierung",
+      "en" : "Optimization"
+    },
+    "comments" : {
+      "de" : "Motivation, Prozesse, Ressourcen, Entscheidungen oder Systeme durch Datennutzung zu optimieren.",
+      "en" : "Motivation to optimize processes, resources, decisions or systems through data use."
+    }
+  },
+  "Datenzugangstransparenz" : {
+    "labels" : {
+      "de" : "Datenzugangstransparenz",
+      "en" : "Data Access Transparency"
+    },
+    "comments" : {
+      "de" : "Eigenschaft, die beschreibt, wie transparent die Prozesse des Datenzugangs sind, z. B. Nachvollziehbarkeit von Zugriffsregeln, Protokollierung und nutzerorientierte Informationen darüber, wer wann auf welche Daten zugreifen kann.",
+      "en" : "Property describing how transparent the data access processes are, e.g. clarity of access rules, logging, and user-facing information about who can access which data when."
+    }
+  },
+  "StorageTechnique" : {
+    "labels" : {
+      "de" : "Speichertechnik",
+      "en" : "Storage Technique"
+    },
+    "comments" : {
+      "de" : "Kategorie technischer Verfahren zur Speicherung von Daten.",
+      "en" : "Category of techniques for storing data."
+    }
+  },
+  "Industrie40" : {
+    "labels" : {
+      "de" : "Industrie 4.0",
+      "en" : "Industry 4.0"
+    },
+    "comments" : {
+      "de" : "Domäne im Kontext Industrie 4.0, einschließlich vernetzter Produktion, IoT und Smart Manufacturing.",
+      "en" : "Domain related to Industry 4.0, including networked production, IoT and smart manufacturing."
+    }
+  },
+  "Manual" : {
+    "labels" : {
+      "de" : "Manuell",
+      "en" : "Manual"
+    },
+    "comments" : {
+      "de" : "Manuelle, nicht automatisierte Durchführung einer Aktivität.",
+      "en" : "Manual, non-automated execution of an activity."
+    }
+  },
+  "OtherFunding" : {
+    "labels" : {
+      "de" : "Weitere Finanzierung",
+      "en" : "Other Funding"
+    },
+    "comments" : {
+      "de" : "Generische Finanzierungsart für Finanzierungsmechanismen, die nicht durch die vordefinierten Kategorien abgedeckt sind.",
+      "en" : "Generic financing type for funding mechanisms not covered by the predefined financing categories."
+    }
+  },
+  "ExternallyControlledValueAddedDataTrustee" : {
+    "labels" : {
+      "de" : "Fremdbestimmte Mehrwerttreuhand",
+      "en" : "Externally Controlled Value Added Data Trustee"
+    },
+    "comments" : {
+      "de" : "Mehrwert-Treuhandmodell, dessen Wertschöpfungsentscheidungen extern gesteuert werden.",
+      "en" : "Value-adding trustee model whose value-creation decisions are governed by an external controller."
+    }
+  },
+  "SmartLivingSector" : {
+    "labels" : {
+      "de" : "Smart Living",
+      "en" : "Smart Living"
+    },
+    "comments" : {
+      "de" : "Domäne für Smart Living, einschließlich Smart Homes und digital unterstütztem Alltagsleben.",
+      "en" : "Domain for smart living, including smart homes and digitally supported everyday life."
+    }
+  },
+  "FinancingType" : {
+    "labels" : {
+      "de" : "Finanzierungsart",
+      "en" : "Financing Type"
+    },
+    "comments" : {
+      "de" : "Kategorie zur Beschreibung der Finanzierungsart einer Datentreuhand, z. B. öffentliche Finanzierung, Nutzungsgebühren oder gemeinschaftliche Finanzierung.",
+      "en" : "Category describing the type of financing used for a data trustee, such as public funding, usage fees or community funding."
+    }
+  },
+  "ConsentWorkflow" : {
+    "labels" : {
+      "de" : "Einwilligungsvorgang",
+      "en" : "Consent Workflow"
+    },
+    "comments" : {
+      "de" : "Repräsentiert einen strukturierten Einwilligungsprozess als Spezialisierung von DPV:Consent und beschreibt, wie Einwilligungen in einem Datentreuhandmodell angefragt, erteilt und verwaltet werden.",
+      "en" : "Represents a structured consent process, modelled as a specialisation of DPV:Consent, capturing how consent is requested, given and managed in a data trustee model."
+    }
+  },
+  "DataOwner" : {
+    "labels" : {
+      "de" : "Dateninhaber",
+      "en" : "Data Owner"
+    },
+    "comments" : {
+      "de" : "Datengeber mit Eigentum/Verantwortung für bestimmte Daten; verwaltet häufig Daten Betroffener.",
+      "en" : "Data provider with ownership or stewardship over specific data, often administering data from affected parties."
+    }
+  },
+  "Analog" : {
+    "labels" : {
+      "de" : "Analog",
+      "en" : "Analog"
+    },
+    "comments" : {
+      "de" : "Empfang über analoge Kanäle oder nicht-digitale Medien.",
+      "en" : "Reception through analogue channels or non-digital media."
+    }
+  },
+  "ValueCreation" : {
+    "labels" : {
+      "de" : "Wertschöpfung",
+      "en" : "Value Creation"
+    },
+    "comments" : {
+      "de" : "Motivation eines Akteurs, durch Teilnahme an einer Datentreuhand oder durch Datennutzung einen Mehrwert zu schaffen, z. B. wirtschaftlich, organisatorisch oder strategisch.",
+      "en" : "Motivation of an actor to create value by participating in a data trustee arrangement or using data, e.g. economic, organizational or strategic value."
+    }
+  },
+  "RegisteredAssociation" : {
+    "labels" : {
+      "de" : "Eingetragener Verein (e.V.)",
+      "en" : "Registered Association"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für einen eingetragenen Verein (e.V.).",
+      "en" : "Business form for a registered association."
+    }
+  },
+  "DataTrustee" : {
+    "labels" : {
+      "de" : "Datentreuhand",
+      "en" : "Data Trustee"
+    },
+    "comments" : {
+      "de" : "Akteur, der Daten unter vereinbarter Governance/Policy verwaltet und vermittelt.",
+      "en" : "Actor responsible for administering and brokering data under agreed governance and policies."
+    }
+  },
+  "Free" : {
+    "labels" : {
+      "de" : "Kostenlos",
+      "en" : "Free"
+    },
+    "comments" : {
+      "de" : "Bezahlmodell, bei dem Zugang oder Dienstleistungen kostenlos bereitgestellt werden.",
+      "en" : "Pay model where access or services are provided free of charge."
+    }
+  },
+  "TradeSecret" : {
+    "labels" : {
+      "de" : "Geschäftsgeheimnis",
+      "en" : "Trade Secret"
+    },
+    "comments" : {
+      "de" : "Vertrauliche Informationen mit wirtschaftlichem Wert, die durch Geheimhaltung/Kontrollen geschützt sind.",
+      "en" : "Confidential information with economic value protected by secrecy and controls."
+    }
+  },
+  "DataAccess" : {
+    "labels" : {
+      "de" : "Datenzugang",
+      "en" : "Data Access"
+    },
+    "comments" : {
+      "de" : "Nutzungsziel, das auf den Zugang zu Datensätzen oder Datendiensten gerichtet ist.",
+      "en" : "Usage goal focused on obtaining access to data sets or data services."
+    }
+  },
+  "CommunityFunding" : {
+    "labels" : {
+      "de" : "Gemeinschaftliche Finanzierung",
+      "en" : "Community Funding"
+    },
+    "comments" : {
+      "de" : "Finanzierungsart, bei der eine Datentreuhand gemeinschaftlich durch teilnehmende Akteure oder Mitglieder finanziert wird.",
+      "en" : "Financing type where a data trustee is jointly funded by its participating community or members."
+    }
+  },
+  "Visualisierung" : {
+    "labels" : {
+      "de" : "Visualisierung",
+      "en" : "Visualisation"
+    },
+    "comments" : {
+      "de" : "Eigenschaft, die angibt, dass der Datentreuhänder oder Dienst visuelle Darstellungen von Daten oder Prozessen bereitstellt, z. B. Diagramme, Dashboards oder interaktive Ansichten.",
+      "en" : "Property indicating that the data trustee or service provides visual representations of data or processes, such as charts, dashboards or interactive views."
+    }
+  },
+  "SelectionStatus" : {
+    "labels" : {
+      "de" : "Kein deutsches Label vorhanden.",
+      "en" : "Selection Status"
+    },
+    "comments" : {
+      "de" : "Keine deutsche Dokumentation vorhanden.",
+      "en" : "No English documentation available."
+    }
+  },
+  "RetentionPeriod" : {
+    "labels" : {
+      "de" : "Speicherdauer",
+      "en" : "Retention Period"
+    },
+    "comments" : {
+      "de" : "Beschreibt die Dauer, für die Daten aufbewahrt werden.",
+      "en" : "Describes the period for which data is retained."
+    }
+  },
+  "Cleaning" : {
+    "labels" : {
+      "de" : "Bereinigung",
+      "en" : "Cleaning"
+    },
+    "comments" : {
+      "de" : "Bereinigung und Harmonisierung von Daten.",
+      "en" : "Correction or harmonisation of inconsistent data."
+    }
+  },
+  "DataSystem" : {
+    "labels" : {
+      "de" : "Datensystem",
+      "en" : "Data System"
+    },
+    "comments" : {
+      "de" : "Technisches System zum Verarbeiten oder Speichern von Daten.",
+      "en" : "Technical system used to process or store data."
+    }
+  },
+  "ContractFulfillment" : {
+    "labels" : {
+      "de" : "Vertragserfüllung",
+      "en" : "Contract Fulfillment"
+    },
+    "comments" : {
+      "de" : "Motivation, Daten bereitzustellen, um vertragliche Pflichten, Vereinbarungen oder Leistungszusagen zu erfüllen.",
+      "en" : "Motivation to provide data in order to fulfil contractual obligations, agreements or service commitments."
+    }
+  },
+  "Interoperability" : {
+    "labels" : {
+      "de" : "Interoperabilität",
+      "en" : "Interoperability"
+    },
+    "comments" : {
+      "de" : "Motivation, technische, semantische oder organisatorische Interoperabilität durch gemeinsame Standards, Schnittstellen oder Governance-Regeln zu verbessern.",
+      "en" : "Motivation to improve technical, semantic or organizational interoperability through shared standards, interfaces or governance rules."
+    }
+  },
+  "DataSharing" : {
+    "labels" : {
+      "de" : "Datenteilen",
+      "en" : "Data Sharing"
+    },
+    "comments" : {
+      "de" : "Nutzungsziel, Daten mit anderen Akteuren innerhalb oder über Datenökosysteme hinweg zu teilen.",
+      "en" : "Usage goal of sharing data with other actors within or across data ecosystems."
+    }
+  },
+  "LimitedLiabilityCompany" : {
+    "labels" : {
+      "de" : "Gesellschaft mit beschränkter Haftung (GmbH)",
+      "en" : "Limited Liability Company"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Gesellschaft mit beschränkter Haftung (GmbH).",
+      "en" : "Business form for a German limited liability company."
+    }
+  },
+  "PayPerUse" : {
+    "labels" : {
+      "de" : "Bezahlen pro Nutzung",
+      "en" : "Pay-Per-Use"
+    },
+    "comments" : {
+      "de" : "Bezahlmodell, bei dem Entgelte von der tatsächlichen Nutzung abhängen, z. B. pro Anfrage oder pro Datenvolumen.",
+      "en" : "Pay model where fees depend on the actual usage, for example per request or per volume."
+    }
+  },
+  "Transformation" : {
+    "labels" : {
+      "de" : "Transformation",
+      "en" : "Transformation"
+    },
+    "comments" : {
+      "de" : "Überführung von Daten in neue Formate oder Strukturen.",
+      "en" : "Conversion of data into new formats or structures."
+    }
+  },
+  "RestSecurity" : {
+    "labels" : {
+      "de" : "Sicherheit ruhender Daten",
+      "en" : "Security in Rest"
+    },
+    "comments" : {
+      "de" : "Sicherheitsmaßnahmen, die Daten im Ruhezustand schützen, z. B. Verschlüsselung ruhender Daten, Zugriffskontrollen oder sichere Backups.",
+      "en" : "Security measures that protect data while stored (at rest), such as encryption at rest, access control or secure backups."
+    }
+  },
+  "AgricultureSector" : {
+    "labels" : {
+      "de" : "Landwirtschaft",
+      "en" : "Agriculture"
+    },
+    "comments" : {
+      "de" : "Domäne für Landwirtschaft und verwandte ländliche Tätigkeiten.",
+      "en" : "Domain for agriculture and related rural activities."
+    }
+  },
+  "DataHolderMotivation" : {
+    "labels" : {
+      "de" : "Datenhalter-Motivation",
+      "en" : "Data Holder Motivation"
+    },
+    "comments" : {
+      "de" : "Motivation eines Datenhalters zur Teilnahme an einer Datentreuhand.",
+      "en" : "Motivation of a data holder to participate in a data trustee arrangement."
+    }
+  },
+  "ForTransmissionOnly" : {
+    "labels" : {
+      "de" : "Nur zur Übermittlung",
+      "en" : "For transmission only"
+    },
+    "comments" : {
+      "de" : "Speicherung nur solange erforderlich für die Übermittlung.",
+      "en" : "Retention only as long as needed for data transmission."
+    }
+  },
+  "ParticipationMotivation" : {
+    "labels" : {
+      "de" : "Teilnahmemotivation",
+      "en" : "Participation Motivation"
+    },
+    "comments" : {
+      "de" : "Übergeordnete Kategorie für Motivationen von Akteuren, an einer Datentreuhand teilzunehmen oder Daten über sie bereitzustellen.",
+      "en" : "General category for motivations of actors to participate in a data trustee arrangement or provide data through it."
+    }
+  },
+  "Pseudonymisation" : {
+    "labels" : {
+      "de" : "Pseudonymisieren",
+      "en" : "Pseudonymisation"
+    },
+    "comments" : {
+      "de" : "Ersetzung identifizierender Merkmale durch Pseudonyme.",
+      "en" : "Replacement of identifiers with pseudonyms."
+    }
+  },
+  "GeneralConsentWorkflow" : {
+    "labels" : {
+      "de" : "Allgemeiner Einwilligungsvorgang",
+      "en" : "General Consent Workflow"
+    },
+    "comments" : {
+      "de" : "Repräsentiert einen allgemeinen bzw. wiederverwendbaren Einwilligungsvorgang, der für einen übergreifenden Verarbeitungskontext gilt und nicht nur für einen einzelnen Einzelfall.",
+      "en" : "Represents a general or reusable consent workflow that applies to a broader processing context, rather than to a single individual case."
+    }
+  },
+  "DataConsumerMotivation" : {
+    "labels" : {
+      "de" : "Datennutzer-Motivation",
+      "en" : "Data Consumer Motivation"
+    },
+    "comments" : {
+      "de" : "Motivation eines Datennutzers zur Teilnahme an oder Nutzung einer Datentreuhand.",
+      "en" : "Motivation of a data consumer to participate in or use a data trustee arrangement."
+    }
+  },
+  "PersonalData" : {
+    "labels" : {
+      "de" : "Personenbezogene Daten",
+      "en" : "Personal Data"
+    },
+    "comments" : {
+      "de" : "Daten, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.",
+      "en" : "Data relating to an identified or identifiable natural person."
+    }
+  },
+  "Aggregation" : {
+    "labels" : {
+      "de" : "Aggregation",
+      "en" : "Aggregation"
+    },
+    "comments" : {
+      "de" : "Zusammenführung einzelner Werte zu aggregierten Ergebnissen.",
+      "en" : "Combining individual values into aggregated results."
+    }
+  },
+  "SocietalValue" : {
+    "labels" : {
+      "de" : "Gesellschaftlicher Mehrwert",
+      "en" : "Societal Value"
+    },
+    "comments" : {
+      "de" : "Motivation, durch Datenbereitstellung, Datennutzung oder Teilnahme an einer Datentreuhand gesellschaftlichen Mehrwert zu schaffen.",
+      "en" : "Motivation to create societal value through data provision, data use or participation in a data trustee arrangement."
+    }
+  },
+  "EntrepreneurialCompany" : {
+    "labels" : {
+      "de" : "Unternehmergesellschaft (UG) (haftungsbeschränkt)",
+      "en" : "Entrepreneurial Company"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Unternehmergesellschaft (haftungsbeschränkt) (UG).",
+      "en" : "Business form for an entrepreneurial company with limited liability."
+    }
+  },
+  "Upload" : {
+    "labels" : {
+      "de" : "Upload",
+      "en" : "Upload"
+    },
+    "comments" : {
+      "de" : "Weitergabe durch Hochladen von Daten in ein Zielsystem.",
+      "en" : "Forwarding of data by uploading to a target system."
+    }
+  },
+  "DataReception" : {
+    "labels" : {
+      "de" : "Datenempfang",
+      "en" : "Data Reception"
+    },
+    "comments" : {
+      "de" : "Datenflussphase zum Empfang oder Import von Daten.",
+      "en" : "Data flow stage for receiving or importing data."
+    }
+  },
+  "ForwardingAPI" : {
+    "labels" : {
+      "de" : "API zur Weitergabe",
+      "en" : "API for forwarding"
+    },
+    "comments" : {
+      "de" : "Weitergabe von Daten über eine API.",
+      "en" : "Forwarding of data via an API."
+    }
+  },
+  "PublicSector" : {
+    "labels" : {
+      "de" : "Öffentlicher Sektor",
+      "en" : "Public Sector"
+    },
+    "comments" : {
+      "de" : "Domäne für den öffentlichen Sektor, einschließlich Verwaltung und öffentlicher Dienstleistungen.",
+      "en" : "Domain for the public sector, including public administration and public services."
+    }
+  },
+  "PayModel" : {
+    "labels" : {
+      "de" : "Bezahlmodell",
+      "en" : "Pay Model"
+    },
+    "comments" : {
+      "de" : "Kategorie, die das Preis- bzw. Bezahlmodell für Datendienste oder die Teilnahme an einem Datentreuhänder beschreibt.",
+      "en" : "Category describing the pricing or payment model applied to data services or participation in a data trustee."
+    }
+  },
+  "CentralStorage" : {
+    "labels" : {
+      "de" : "Zentrales Speichern",
+      "en" : "Centralized Storage"
+    },
+    "comments" : {
+      "de" : "Zentrale Speicherung aller Daten in einem System.",
+      "en" : "Centralised storage of all data in a single system."
+    }
+  },
+  "SmartCityRegionSector" : {
+    "labels" : {
+      "de" : "Smart City / Smart Region",
+      "en" : "Smart City / Region"
+    },
+    "comments" : {
+      "de" : "Domäne für Smart City und Smart Region mit Fokus auf datengetriebene Stadt- und Regionalentwicklung.",
+      "en" : "Domain for smart cities and smart regions, focusing on data-driven urban and regional development."
+    }
+  },
+  "BMBF" : {
+    "labels" : {
+      "de" : "BMBF - Bundesministerium für Bildung und Forschung",
+      "en" : "BMBF - Federal Ministry of Education and Research"
+    },
+    "comments" : {
+      "de" : "Förderinstitution, die das Bundesministerium für Bildung und Forschung (BMBF) repräsentiert.",
+      "en" : "Funding source representing the German Federal Ministry of Education and Research (BMBF)."
+    }
+  },
+  "SecurityInfrastructure" : {
+    "labels" : {
+      "de" : "Sicherheitsinfrastruktur",
+      "en" : "Security Infrastructure"
+    },
+    "comments" : {
+      "de" : "Infrastruktur, Systeme oder Dienste, die Sicherheitsfunktionen bereitstellen, z. B. Firewalls, IDS/IPS, SIEM, Schlüsselmanagement oder HSMs.",
+      "en" : "Infrastructure, systems or services that provide security capabilities, e.g. firewalls, IDS/IPS, SIEM, key management or HSMs."
+    }
+  },
+  "SecurityReceptionTechnique" : {
+    "labels" : {
+      "de" : "Sicherheitsmaßnahme im Empfang",
+      "en" : "Security Technique in Reception"
+    },
+    "comments" : {
+      "de" : "Kategorie von Sicherheitsmaßnahmen im Datenempfang.",
+      "en" : "Category of security measures applied during data reception."
+    }
+  },
+  "Freemium" : {
+    "labels" : {
+      "de" : "Freemium",
+      "en" : "Freemium"
+    },
+    "comments" : {
+      "de" : "Bezahlmodell, das ein kostenloses Basisangebot mit kostenpflichtigen Premiumfunktionen oder -diensten kombiniert.",
+      "en" : "Pay model combining a free basic offering with paid premium features or services."
+    }
+  },
+  "Funder" : {
+    "labels" : {
+      "de" : "Finanzierer",
+      "en" : "Funder"
+    },
+    "comments" : {
+      "de" : "Entität, die finanzielle Mittel zur Unterstützung eines Datentreuhänders oder verwandter Projekte bereitstellt.",
+      "en" : "Entity that provides financial resources to support a data trustee or related projects."
+    }
+  },
+  "CivilLawPartnership" : {
+    "labels" : {
+      "de" : "Gesellschaft bürgerlichen Rechts (GbR)",
+      "en" : "Civil-Law Partnership"
+    },
+    "comments" : {
+      "de" : "Geschäftsform für eine Gesellschaft bürgerlichen Rechts (GbR).",
+      "en" : "Business form for a civil-law partnership."
+    }
+  },
+  "CostReduction" : {
+    "labels" : {
+      "de" : "Kostenreduktion",
+      "en" : "Cost Reduction"
+    },
+    "comments" : {
+      "de" : "Motivation, durch Datenteilung Kosten zu senken, Aufwände zu reduzieren oder Effizienzgewinne zu erzielen.",
+      "en" : "Motivation to reduce costs, lower effort or achieve efficiency gains through data sharing."
+    }
+  },
+  "PreparationTechnique" : {
+    "labels" : {
+      "de" : "Verarbeitungstechnik",
+      "en" : "Preparation Technique"
+    },
+    "comments" : {
+      "de" : "Kategorie technischer Verfahren zur Verarbeitung von Daten.",
+      "en" : "Category of techniques for preparation of data."
+    }
+  },
+  "Actor" : {
+    "labels" : {
+      "de" : "Akteur",
+      "en" : "Actor"
+    },
+    "comments" : {
+      "de" : "Jede beteiligte Entität in einer Datentreuhand-Konstellation (z. B. Geber, Inhaber, Nutzer, Treuhand).",
+      "en" : "Any participating entity in a data trustee setting (e.g., provider, owner, consumer, trustee)."
+    }
+  },
+  "ISO27001Certification" : {
+    "labels" : {
+      "de" : "ISO-27001-Zertifizierungsstelle",
+      "en" : "ISO 27001 Certification Body"
+    },
+    "comments" : {
+      "de" : "Keine deutsche Dokumentation vorhanden.",
+      "en" : "No English documentation available."
+    }
+  },
+  "Consent" : {
+    "labels" : {
+      "de" : "Einwilligung",
+      "en" : "Consent"
+    },
+    "comments" : {
+      "de" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung auf der Einwilligung der betroffenen Person beruht.",
+      "en" : "Represents a processing basis where processing is based on the consent of the data subject."
+    }
+  },
+  "LegalObligation" : {
+    "labels" : {
+      "de" : "Gesetzliche Verpflichtung",
+      "en" : "Legal Obligation"
+    },
+    "comments" : {
+      "de" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung erforderlich ist, um einer dem Verantwortlichen oder Treuhänder auferlegten gesetzlichen Verpflichtung nachzukommen.",
+      "en" : "Represents a processing basis where processing is required to comply with a legal obligation imposed on the controller or trustee."
+    }
+  },
+  "VitalInterest" : {
+    "labels" : {
+      "de" : "Lebenswichtiges Interesse",
+      "en" : "Vital Interest"
+    },
+    "comments" : {
+      "de" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zum Schutz lebenswichtiger Interessen einer natürlichen Person erforderlich ist, etwa Leben oder körperliche Unversehrtheit.",
+      "en" : "Represents a processing basis where processing is necessary to protect the vital interests of a natural person, such as life or physical integrity."
+    }
+  },
+  "ProcessingBasis" : {
+    "labels" : {
+      "de" : "Verarbeitungsgrundlage",
+      "en" : "Processing Basis"
+    },
+    "comments" : {
+      "de" : "Repräsentiert die Rechtsgrundlage für die Verarbeitung personenbezogener Daten.",
+      "en" : "Represents the legal basis for processing personal data."
+    }
+  },
+  "PublicInterest" : {
+    "labels" : {
+      "de" : "Öffentliches Interesse",
+      "en" : "Public Interest"
+    },
+    "comments" : {
+      "de" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zur Wahrnehmung einer Aufgabe erforderlich ist, die im öffentlichen Interesse liegt oder in Ausübung öffentlicher Gewalt erfolgt.",
+      "en" : "Represents a processing basis where processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority."
+    }
+  },
+  "LegitimateInterest" : {
+    "labels" : {
+      "de" : "Berechtigtes Interesse",
+      "en" : "Legitimate Interest"
+    },
+    "comments" : {
+      "de" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung auf einem berechtigten Interesse beruht und einer Interessenabwägung mit den Rechten und Freiheiten der betroffenen Personen unterliegt.",
+      "en" : "Represents a processing basis where processing is carried out on the grounds of a legitimate interest, subject to a balancing test against the rights and freedoms of data subjects."
+    }
+  },
+  "ContractualNecessity" : {
+    "labels" : {
+      "de" : "Erfüllung des Vertrags",
+      "en" : "Contractual Necessity"
+    },
+    "comments" : {
+      "de" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zur Erfüllung eines Vertrags mit der betroffenen Person oder zur Durchführung vorvertraglicher Maßnahmen auf deren Anfrage erforderlich ist.",
+      "en" : "Represents a processing basis where processing is necessary for the performance of a contract with the data subject or to take steps at their request prior to entering into a contract."
+    }
+  },
+  "hasDataAdministratedBy" : {
+    "labels" : {
+      "de" : "hat Daten bei",
+      "en" : "has data stored in"
+    },
+    "comments" : {
+      "de" : "Verknüpft eine betroffene Partei mit dem Dateninhaber, der deren Daten verwaltet.",
+      "en" : "Relates an AffectedParty to the DataOwner administering that party’s data."
+    }
+  },
+  "hasFunder" : {
+    "labels" : {
+      "de" : "hat Finanzierer",
+      "en" : "has funder"
+    },
+    "comments" : {
+      "de" : "Verknüpft einen Datentreuhänder mit einer Entität, die seine Aktivitäten finanziert.",
+      "en" : "Links a data trustee to an entity that provides funding."
+    }
+  },
+  "hasDomain" : {
+    "labels" : {
+      "de" : "hat Domäne",
+      "en" : "has domain"
+    },
+    "comments" : {
+      "de" : "Verknüpft einen Datentreuhänder mit der thematischen oder sektoralen Domäne, in der er tätig ist.",
+      "en" : "Associates a data trustee with the thematic or sectoral domain in which it operates."
+    }
+  },
+  "hasRetentionPeriod" : {
+    "labels" : {
+      "de" : "hat Speicherdauer",
+      "en" : "has retention period"
+    },
+    "comments" : {
+      "de" : "Verknüpft eine Speicherphase mit der Aufbewahrungsdauer.",
+      "en" : "Relates a storage stage to the period for which data is retained."
+    }
+  }
+}

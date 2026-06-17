@@ -1,0 +1,127 @@
+moduleId: core
+label: Datentreuhandmodell Core
+heading: Definition von Akteuren
+menuPoint: Akteure
+fields:
+sections:
+  datatrustee:
+    heading: Datentreuhand
+    tooltip: ""
+    helpText: Ein Datentreuhänder ist eine Vertrauensinstanz, die schützenswerte Daten zwischen Datengebern und Datennutzern unter Wahrung der Interessen beider Seiten digital vermittelt.<br /><br /> Weitere Informationen finden Sie unter diesem <a target="_blank" href="https://fraunhofer-iese.github.io/KickStartTrustee/Grundlagen%20und%20Einf%C3%BChrung/Definition/">Link</a>.
+    examples: []
+    fields:
+      ontologyURI:
+        label: Basis-URI der Ontologie
+        placeholder: https://example.org/ontology
+        tooltip: Geben Sie eine stabile Basis-URI an. Alle spaeteren Elemente (Akteure, Daten, Prozesse) erhalten automatisch diese URI als Praefix.
+        helpText: Sollte eine stabile URI der Ontologie sein.
+        callToAction: "Bitte eine eindeutige HTTPS URI Ihrer Organisation wählen und eintragen, z. B. https://data.beispiel.org/dtm/health/trustee kliniken oder https://repo.beispiel.org/dtm/administrative/trustee forschung/v1. Erlaubte Zeichen: a–z, 0–9, Bindestrich; keine Leerzeichen. Die URI sollte noch nicht vergeben sein und langfristig stabil bleiben; bei Versionen optional einen Pfad wie /v1 oder /2026 01 ergänzen."
+        examples:
+          - https://forgetrustee.kickstarttrustee.de/ontology
+      dataTrusteeName:
+        label: Wie lautet der Name des Datentreuhandmodels?
+        placeholder: z. B . DTM-Health
+        tooltip: "Geben Sie einen kurzen, eindeutigen Namen des Datentreuhandmodells an."
+        callToAction: Geben Sie den Namen des Modells, eine optionale Beschreibung und den Betreiber Ihrer Datentreuhand an.
+        examples:
+          - DTM-Health
+          - DaRe
+          - Elektronische Patientenakte (ePA)
+      dataTrusteeDescription:
+        label: Beschreiben Sie das Datentreuhandmodel.
+        placeholder: Optional
+        tooltip: "Beschreiben Sie optional Zweck, Kontext und Besonderheiten des Modells in 1-3 Saetzen."
+        helpText: Kurzbeschreibung des Modells
+        examples:
+          - Empfängt elektronische Patientenakten via API, pseudonymisiert sie, speichert dezentral mit definierter Aufbewahrung und gewähren Zugriff an akkreditierte Forschungsteams.
+      dataTrusteeOperator:
+        label: Wer betreibt das Datentreuhandmodell?
+        placeholder: Name der betreibenden Organisation hinzufügen
+        tooltip: "Geben Sie den Namen der betreibenden Organisation oder Einheit an."
+        helpText: Organisation, die das Modell betreibt.
+        examples:
+          - DTM-Health GmbH
+          - GesundData gGmbH
+          - HealthyTrust Services SE
+      dataTrusteeOperatorAffiliation:
+        label: Beim Betreiber handelt es sich um ...
+        options:
+          -
+            value: INDIVIDUAL
+            label: Natürliche Person
+          -
+            value: ORGANIZATION
+            label: Juristische Person
+          -
+            value: AMBIGUOUS
+            label: Unklar
+  dataProvider:
+    heading: Datengeber (Rechte- und Datenhalter)
+    helpText: "Ein <strong>Datengeber</strong> ist eine natürliche oder juristische Person, die Daten bereitstellt oder zur Verfügung stellt. Ein Datengeber umfasst dabei zwei Rollen: einen <strong>Rechtehalter</strong> (betroffene Person oder Unternehmen) und einen <strong>Datenhalter</strong>, der die Daten für den Rechteinhaber verwaltet und diesen vertritt. Beide Rollen können in einer Person vereint sein. Beispiel hierfür ist eine Privatperson (natürliche Person), die ihre Daten direkt in die Datentreuhand eingibt und verwaltet. Anderseits kann die Privatperson von einer Organisation (juristische Person) in der Datentreuhand vertreten werden.<br /><br />Weitere Informationen finden Sie unter diesem <a target=\"blank\" href=\"https://fraunhofer-iese.github.io/KickStartTrustee/Grundlagen%20und%20Einf%C3%BChrung/Definition/\">Link</a>."
+    examples: []
+    fields:
+      rightsHolderName:
+        label: Benennen Sie die Gruppe der Rechtehalter.
+        tooltip: "Geben Sie einen Namen für die Gruppe der Rechteinhaber ein. Beispiel: Patienten. "
+        placeholder: z. B. Patienten
+        callToAction: Geben Sie den Namen des Rechteinhabers an, wählen Sie den Typ (Natürliche/Juristische Person) und legen Sie fest, ob der Rechteinhaber vertreten wird; nennen Sie in diesem Fall den vertretende Dateninhaber. Diese Angaben stellen die Beziehung zwischen Rechteinhaber und Dateninhaber her und bilden die Grundlage für nachgelagerte Schritte wie delegierte Einwilligungen und die Verwaltung der zugehörigen Daten.
+        examples:
+          - Patienten
+      rightsHolderAffiliation:
+        label: Um welche Art von Rechtehaltern handelt es sich?
+        options:
+          -
+            value: INDIVIDUAL
+            label: Natürliche Person
+          -
+            value: ORGANIZATION
+            label: Juristische Person
+          -
+            value: AMBIGUOUS
+            label: Unklar
+      rightsHolderIsRepresented:
+        label: Werden die Rechtehalter durch separate Datenhalter vertreten?
+        options:
+          -
+            value: "true"
+            label: Ja
+          -
+            value: "false"
+            label: Nein
+          -
+            value: AMBIGUOUS
+            label: Unklar
+      dataOwnerName:
+        label: Benennen Sie die Gruppe der Datenhalter, der die Daten für die Rechtehalter verwaltet.
+        tooltip: "Geben Sie einen Namen für die Gruppe der Datenhalter ein, die die Rechtehalter vertreten. Beispiel: Kliniken."
+        placeholder: z. B. Kliniken
+        examples:
+          - Kliniken
+  dataConsumer:
+    heading: Datennutzer
+    tooltip: ""
+    helpText: Ein Datennutzer ist eine natürliche oder juristische Person, die unter den Regeln des Datentreuhänders Zugang zu Daten erhält, um daraus Erkenntnisse zu gewinnen, Dienstleistungen zu erbringen oder Prozesse zu optimieren. Der Datennutzer greift auf Daten zu, die ihm durch den Dateninhaber im Auftrag des Rechteinhabers bereitgestellt wurden, und ist dabei an die vereinbarten Nutzungsbedingungen sowie erteilten Einwilligungen gebunden. Datennutzer können beispielsweise Unternehmen sein, die Daten zur Analyse nutzen, oder Forschungseinrichtungen, die Daten für wissenschaftliche Zwecke auswerten.<br /><br />Weitere Informationen finden Sie unter diesem <a target="blank" href="https://fraunhofer-iese.github.io/KickStartTrustee/Grundlagen%20und%20Einf%C3%BChrung/Definition/">Link</a>.
+    callToAction: "Geben Sie bitte eine Oberkategorie der Datennutzer im Datentreuhandmodell an, z.B. Automobilhersteller, Versicherungsdienstleister. "
+    examples: []
+    fields:
+      dataConsumerName:
+        label: Benennen Sie die Gruppe der Datennutzer.
+        tooltip: "Benennen Sie die Gruppe der Datennutzer. Beispiele: Forschungsdatenzentren, Ärzte."
+        placeholder: z. B. Versicherungen
+        examples:
+          - Versicherungen
+          - Ärzte
+          - Forschungsdatenzentren
+      dataConsumerAffiliation:
+        label: Um welche Art von Datennutzern handelt es sich?
+        helpText: ""
+        options:
+          -
+            value: INDIVIDUAL
+            label: Natürliche Person
+          -
+            value: ORGANIZATION
+            label: Juristische Person
+          -
+            value: AMBIGUOUS
+            label: Unklar

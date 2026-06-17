@@ -1,0 +1,136 @@
+{
+  "core": {
+    "dataTrusteeName": "SmartCityTrust",
+    "dataTrusteeDescription": "Datentreuhand für urbane Mobilitäts-, Energie- und Umweltdaten.",
+    "dataTrusteeOperator": "CityData AoeR",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Stadtbewohner",
+    "rightsHolderAffiliation": "INDIVIDUAL",
+    "rightsHolderIsRepresented": "true",
+    "dataOwnerName": "Smart City Office",
+    "dataConsumerName": "UrbanApps GmbH",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "SmartCitySensordaten",
+      "dataCategoryDescription": "Sensor-, Verkehrs- und Umweltdaten aus dem urbanen Raum."
+    },
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "false",
+    "processingBases": {
+      "PUBLIC_INTEREST": [
+        {
+          "title": "Öffentliches Interesse",
+          "description": "Datenverarbeitung zur Verbesserung öffentlicher Infrastruktur und Verkehrssteuerung."
+        }
+      ]
+    },
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "ADMINISTRATIVE_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_ROUTER",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "CONTINUOUS",
+    "receptionSecurityMeasures": [
+      "CUSTOM"
+    ],
+    "customReceptionSecurityTechniques": [
+      {
+        "title": "Kommunale Gateway-Prüfung",
+        "description": "Eingehende Datenströme werden durch kommunale Gateway-Regeln geprüft und protokolliert."
+      }
+    ],
+    "sourceSystem": "CitySensorHub",
+    "preparationTechniques": [
+      "CUSTOM"
+    ],
+    "customPreparationTechniques": [
+      {
+        "title": "Georaster-Aggregation",
+        "description": "Messwerte werden auf Georasterzellen aggregiert, um Rückschlüsse auf Einzelpersonen zu vermeiden."
+      }
+    ],
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+    "analysisTechniques": [
+      "CUSTOM"
+    ],
+    "customAnalysisTechniques": [
+      {
+        "title": "Hotspot-Erkennung",
+        "description": "Nutzerspezifische Erkennung urbaner Belastungs- und Mobilitätshotspots."
+      }
+    ],
+    "forwardingTechniques": [
+      "API",
+      "DOWNLOAD"
+    ],
+    "forwardingFrequency": "PERIODIC",
+    "forwardingSecurityMeasures": [
+      "CUSTOM"
+    ],
+    "customForwardingSecurityTechniques": [
+      {
+        "title": "Empfänger-Whitelist",
+        "description": "Daten werden nur an freigegebene Empfängersysteme anhand einer Whitelist weitergegeben."
+      }
+    ],
+    "targetSystem": "UrbanDataPortal"
+  },
+  "business": {
+    "businessDomains": [
+      "SMART_CITY_REGION",
+      "MOBILITY",
+      "ENERGY"
+    ],
+    "businessModel": "PUBLIC_LAW_INSTITUTION",
+    "fundingSources": [
+      "BMDV",
+      "EU"
+    ],
+    "financingTypes": {
+      "PUBLIC_FUNDING": [
+        {
+          "title": "Smart-City-Förderung",
+          "description": "Öffentliche Förderung für Aufbau und Betrieb der urbanen Dateninfrastruktur."
+        }
+      ],
+      "COMMUNITY_FUNDING": [
+        {
+          "title": "Kommunaler Beitrag",
+          "description": "Die Kommune beteiligt sich an Betrieb und Wartung der Plattform."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "FREEMIUM"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "DIGITAL_SOVEREIGNTY",
+      "INNOVATION",
+      "DATA_SOVEREIGNTY"
+    ],
+    "motivationRightsHolder": [
+      "SOCIAL_VALUE",
+      "QUALITY_IMPROVEMENT"
+    ],
+    "motivationDataHolder": [
+      "TRUST_INTERMEDIARY",
+      "INTEROPERABILITY",
+      "SOCIAL_VALUE"
+    ],
+    "motivationDataConsumer": [
+      "OPTIMIZATION",
+      "INTEROPERABILITY",
+      "SOCIAL_VALUE"
+    ]
+  }
+}

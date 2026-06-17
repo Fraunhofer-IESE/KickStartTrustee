@@ -1,0 +1,115 @@
+{
+  "core": {
+    "dataTrusteeName": "IndustryP2PTrust",
+    "dataTrusteeDescription": "Datentreuhand für Produktions- und Maschinendaten mit direkter Peer-to-Peer-Datenübertragung.",
+    "dataTrusteeOperator": "FactoryData AG",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Maschinenbetreiber",
+    "rightsHolderAffiliation": "ORGANIZATION",
+    "rightsHolderIsRepresented": "false",
+    "dataOwnerName": "",
+    "dataConsumerName": "PredictiveOps GmbH",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Maschinendaten",
+      "dataCategoryDescription": "Sensordaten, Zustandsdaten und Produktionsmetriken aus vernetzten Anlagen."
+    },
+    "containPersonalInformation": "false",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "true",
+    "processingBases": {
+      "LEGAL_OBLIGATION": [
+        {
+          "title": "Datenbereitstellungsvertrag",
+          "description": "Die Bereitstellung erfolgt auf Grundlage eines Vertrags zwischen Betreiber und Datennutzer."
+        }
+      ]
+    },
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "SELF_MANAGED_VALUE_ADDED_DATA_TRUSTEE",
+    "architectureType": "P2P",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "CONTINUOUS",
+    "receptionSecurityMeasures": [
+      "END_TO_END_ENCRYPTION",
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customReceptionSecurityTechniques": [],
+    "sourceSystem": "ShopfloorGateway",
+    "preparationTechniques": [
+      "AGGREGATION",
+      "TRANSFORMATION"
+    ],
+    "customPreparationTechniques": [],
+    "storageTechnique": "DECENTRAL_STORAGE",
+    "storageRetention": "TRANSMISSION_ONLY",
+    "analysisTechniques": [
+      "AI_ANALYSIS",
+      "STATISTICAL_ANALYSIS"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "CONTINUOUS",
+    "forwardingSecurityMeasures": [
+      "END_TO_END_ENCRYPTION"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "PredictiveMaintenanceSystem"
+  },
+  "business": {
+    "businessDomains": [
+      "INDUSTRY_40"
+    ],
+    "businessModel": "STOCK_CORPORATION",
+    "fundingSources": [
+      "BMWK"
+    ],
+    "financingTypes": {
+      "BUSINESS_RELATED_FUNDING": [
+        {
+          "title": "Industriekonsortium",
+          "description": "Betriebskosten werden durch teilnehmende Industriepartner getragen."
+        }
+      ],
+      "USAGE_FEES": [
+        {
+          "title": "API-Nutzungsentgelt",
+          "description": "Datennutzer zahlen abhängig von der tatsächlichen API-Nutzung."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "SERVICE_FEE",
+    "paymentMethodDataConsumer": "PAY_PER_USE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "INNOVATION",
+      "ECONOMIC_UTILIZATION",
+      "FAIR_MARKET_COMPETITION"
+    ],
+    "motivationRightsHolder": [
+      "COST_REDUCTION",
+      "CONTRACT_FULFILLMENT"
+    ],
+    "motivationDataHolder": [
+      "VALUE_CREATION",
+      "TRUST_INTERMEDIARY",
+      "INTEROPERABILITY"
+    ],
+    "motivationDataConsumer": [
+      "OPTIMIZATION",
+      "VALUE_CREATION",
+      "INNOVATION"
+    ]
+  }
+}

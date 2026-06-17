@@ -1,0 +1,122 @@
+moduleId: data
+label: Datentreuhandmodell Legal
+heading: Festlegen der Daten und Verarbeitungsgrundlagen
+menuPoint: Daten
+hints:
+  - name: dataGeneralHint
+    text: Alle Angaben zu Daten und Verarbeitungsgrundlagen sind optional, sollten für ein vollständiges Modell aber ausgefüllt werden.
+sections:
+  data:
+    heading: Datenkategorie
+    helpText: Daten sind die Informationsbestände, die über den Datentreuhänder kontrolliert bereitgestellt und weitergegeben werden. Sie können personenbezogene Daten (inklusive besonderer Kategorien wie Gesundheits- oder biometrische Daten) (vgl. DSGVO), nicht personenbezogene Daten oder schützenswerte Unternehmensdaten (z. B. Geschäftsgeheimnisse) umfassen. <br /><br/>Weitere Informationen erhalten Sie unter dem folgenden <a target=\"_blank\" href="https://fraunhofer-iese.github.io/KickStartTrustee/Grundlagen%20und%20Einf%C3%BChrung/Landkarte/">Link</a>.
+    callToAction: Geben Sie einen prägnanten Kategorienamen der zu vermittelten Daten an (z. B. Laborbefunde, Nutzungslogs) und beschreiben Sieoptional kurz  (Inhalt/Quelle/Format/Zeitraum). Geben Sie anschließend an, ob es sich  umpersonenbezogene Daten handelt und ob diese einerbesonderen Kategorien personenbezogener Daten (z. B. Gesundheit, Biometrie) zuzuordnen sind. Ergänzen Sie zusätzlich, ob es sich um schützenswerte Unternehmensdaten handelt. ; Beachten Sie das bei der Auswahl „besondere Kategorien“ impliziert wird, dass es sich um personenbezogen Daten handelt.
+    examples: []
+    fields:
+      dataCategory:
+        tooltip: "Geben Sie die Oberkategorie der im DTM vermittelten Daten (Beispiel: Gesundheitsdaten) sowie eine optionale Beschreibung (Beispiel: im FHIR-Format) an."
+        fields:
+          dataCategoryName:
+            label: Benennen Sie die Kategorie der zu vermittelnden Daten.
+            placeholder: z. B. Gesundheitsdaten
+          dataCategoryDescription:
+            label: Beschreibung
+            placeholder: (Optional) Beschreibung
+      containPersonalInformation:
+        label: Beinhalten die Daten personenbezogene Informationen?
+        options:
+          - value: "true"
+            label: Ja
+          - value: "false"
+            label: Nein
+          - value: AMBIGUOUS
+            label: Unklar
+      specialPersonalInformation:
+        label: Beinhalten die Daten besondere Kategorien personenbezogener Informationen?
+        tooltip: ""
+        helpText: ""
+        options:
+          - value: "true"
+            label: Ja
+          - value: "false"
+            label: Nein
+          - value: AMBIGUOUS
+            label: Unklar
+      containTradeSecrets:
+        label: Beinhalten die Daten schützenswerte Unternehmensdaten?
+        tooltip: ""
+        helpText: ""
+        options:
+          - value: "true"
+            label: Ja
+          - value: "false"
+            label: Nein
+          - value: AMBIGUOUS
+            label: Unklar
+  legalBasis:
+    heading: Verarbeitungsgrundlage
+    tooltip: ""
+    helpText: DSGVO Art. 6 beschreibt die rechtliche Grundlage der Verarbeitung. Anwendbare Verarbeitungsgrundlagen im DTM-Kontext sind die Einwilligung, die gesetzliche Verpflichtung (Pflichten aus Gesetzen oder Verordnungen), legitimes Interesse (Interessenabwägung zugunsten des Verantwortlichen bei Wahrung der Betroffenenrechte), und öffentliches Interesse (Wahrnehmung einer Aufgabe im öffentlichen Interesse oder Ausübung öffentlicher Gewalt).
+    hints:
+      - name: legalBasisContainsPersonalInformationHint
+        text: Wenn es sich bei den Daten um personenbezogene Daten handelt, sollte ein individueller Einwilligungsvorgang, als Verarbeitungsgrundlage, erstellt werden.
+    fields:
+      processingBases:
+        label: Auf welche Verarbeitungsgrundlagen beruft sich die Datentreuhand?
+        tooltip: Wählen Sie die rechtliche Grundlage nach DSGVO Art. 6 für die Datenweitergabe via Datentreuhand.
+        options:
+          - value: CONSENT
+            label: Einwilligung
+          - value: LEGAL_OBLIGATION
+            label: Gesetzliche Vorgabe
+            additionalDetails:
+              defaultTooltip: Nennen Sie die zugrunde liegende gesetzliche Vorgabe (z. B. Paragraph, Gesetz, Verordnung) und beschreiben ggf. näher.
+              fields:
+                - key: processingBasisDetail
+                  label: Nennen Sie eine gesetzliche Vorgabe
+                  placeholder: z.B. § 6 Abs. 1 Infektionsschutzgesetz
+          - value: PUBLIC_INTEREST
+            label: Öffentliches Interesse
+            additionalDetails:
+              defaultTooltip: Nennen Sie die Aufgabe des öffentlichen Interesses, die durch die Verarbeitung wahrgenommen wird, oder die öffentliche Gewalt, die ausgeübt wird, und beschreiben Sie ggf. näher.
+              fields:
+                - key: processingBasisDetail
+                  placeholder: z.B. Pandemiemanagement
+          - value: LEGITIMATE_INTEREST
+            label: Legitimes Interesse
+            additionalDetails:
+              defaultTooltip: Nennen Sie das legitime Interesse, auf das sich die Verarbeitung stützt, und beschreiben Sie ggf. näher.
+              fields:
+                - key: processingBasisDetail
+                  placeholder: z.B. Betrugsbekämpfung
+          - value: NONE
+            label: Keine Angabe
+          - value: AMBIGUOUS
+            label: Unklar
+        fields:
+          processingBasisDetail:
+            label: Grundlage
+          processingBasisDescription:
+            label: Beschreibung
+            placeholder: (Optional) Beschreibung
+  consentTypeSubSection:
+    heading: Einwilligungen
+    helpText: "Einwilligung ist eine freiwillige, informierte, spezifische und widerrufliche Zustimmung des Rechteinhabers und bildet eine eigene Grundlage: Bei individueller Einwilligung wird die Zustimmung fallbezogen eingeholt, direkt beim Rechteinhaber oder indirekt über den Dateninhaber. Eine allgemeine Einwilligung ist eine übergreifende Zustimmung, die zentral durch den Dateninhaber in der Datentreuhand hinterlegt wird und für definierte Nutzungen gilt.<br /><br /> Die Rollen stehen dabei in folgendem Verhältnis: Der Rechteinhaber erteilt die Zustimmung, der Dateninhaber verwaltet sie und speist sie in die Datentreuhand ein, der Datennutzer ist der Begünstigte der Verarbeitung."
+    fields:
+      consentType:
+        label: Welche Art von Einwilligung liegt vor?
+        options:
+          - value: INDIVIDUAL_CONSENT
+            label: Individuelle Einwilligung
+          - value: GENERAL_CONSENT
+            label: Allgemeine Einwilligung
+          - value: AMBIGUOUS
+            label: Unklar
+      consentEnteredBy:
+        label: Wird die Einwilligung direkt vom Rechtehalter eingeholt, oder indirekt vom Datenhalter?
+        options:
+          - value: RIGHTS_OWNER
+            label: Direkt vom Rechtehalter
+          - value: DATA_OWNER
+            label: Indirekt vom Datenhalter
+          - value: AMBIGUOUS
+            label: Unklar

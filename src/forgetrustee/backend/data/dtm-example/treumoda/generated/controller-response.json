@@ -1,0 +1,421 @@
+{
+  "request" : {
+    "core" : {
+      "dataTrusteeName" : "TreuMoDa",
+      "dataTrusteeDescription" : "TreuMoDa ist eine gemeinnützige Treuhandstelle für Mobilitätsdaten zur sicheren Nutzung durch Wissenschaft, Wirtschaft und öffentliche Akteure.",
+      "dataTrusteeOperator" : "TreuMoDa",
+      "dataTrusteeOperatorAffiliation" : "ORGANIZATION",
+      "rightsHolderName" : "Mobilitätsunternehmen",
+      "rightsHolderAffiliation" : "ORGANIZATION",
+      "rightsHolderIsRepresented" : "false",
+      "dataOwnerName" : "Unternehmen und Forschung",
+      "dataConsumerName" : "Forschung und öffentliche Stellen",
+      "dataConsumerAffiliation" : "ORGANIZATION"
+    },
+    "data" : {
+      "dataCategory" : {
+        "dataCategoryName" : "Mobilitätsdaten",
+        "dataCategoryDescription" : "Mobilitätsdaten aus Fahrzeugen, Verkehrsinfrastrukturen und Sensorsystemen."
+      },
+      "containPersonalInformation" : "true",
+      "specialPersonalInformation" : "false",
+      "containTradeSecrets" : "true",
+      "processingBases" : {
+        "LEGITIMATE_INTEREST" : [ {
+          "title" : "Datenschutzkonforme Datennutzung",
+          "description" : "Die Verarbeitung dient der rechtssicheren Nutzung von Mobilitätsdaten für Forschung und Innovation."
+        } ]
+      },
+      "consentType" : "NOT_PROVIDED",
+      "obtainingConsentBy" : "",
+      "consentEnteredBy" : "NOT_PROVIDED"
+    },
+    "implementation" : {
+      "dataTrusteeCategory" : "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+      "architectureType" : "CENTRAL_ROUTER",
+      "receptionTechnologies" : [ "API", "DOWNLOAD" ],
+      "receptionFrequency" : "MANUAL",
+      "receptionSecurityMeasures" : [ "ANONYMISATION", "TRANSPORT_ENCRYPTION", "PSEUDONYMISATION" ],
+      "customReceptionSecurityTechniques" : [ {
+        "title" : "Vorprüfung eingehender Datensätze",
+        "description" : "Eingehende Datensätze werden vor der Weitergabe geprüft."
+      } ],
+      "sourceSystem" : "Quellsysteme der Datengeber",
+      "preparationTechniques" : [ "TRANSFORMATION", "CUSTOM" ],
+      "customPreparationTechniques" : [ {
+        "title" : "Datenschutzkonforme Datenaufbereitung",
+        "description" : "Daten werden vor der Bereitstellung formatiert, pseudonymisiert oder anonymisiert."
+      } ],
+      "storageTechnique" : "CENTRAL_STORAGE",
+      "storageRetention" : "TRANSMISSION_ONLY",
+      "analysisTechniques" : [ "NONE" ],
+      "customAnalysisTechniques" : [ ],
+      "forwardingTechniques" : [ "API" ],
+      "forwardingFrequency" : "MANUAL",
+      "forwardingSecurityMeasures" : [ "ANONYMISATION", "TRANSPORT_ENCRYPTION", "PSEUDONYMISATION" ],
+      "customForwardingSecurityTechniques" : [ ],
+      "targetSystem" : "Zielsysteme der Datennutzer"
+    },
+    "business" : {
+      "businessDomains" : [ "MOBILITY" ],
+      "businessModel" : "NONPROFIT_LLC",
+      "fundingSources" : [ "OTHER" ],
+      "paymentMethodDataOwner" : "FREE",
+      "paymentMethodDataConsumer" : "PAY_PER_USE"
+    },
+    "objectives" : {
+      "dataTrusteeGoals" : [ "SCIENCE_RESEARCH", "COMPLIANCE_REQUIREMENTS", "ECONOMIC_UTILIZATION", "INNOVATION" ],
+      "motivationRightsHolder" : [ "SOCIAL_VALUE" ],
+      "motivationDataHolder" : [ "COMPLIANCE_REQUIREMENTS", "INTEROPERABILITY", "SCIENCE_AND_RESEARCH" ],
+      "motivationDataConsumer" : [ "INNOVATION", "VALUE_CREATION", "SCIENCE_AND_RESEARCH" ]
+    }
+  },
+  "dataTrusteeModel" : {
+    "core" : {
+      "ontologyURI" : "http://forgetrustee.kickstarttrustee.de/ontology/TreuMoDa#",
+      "dataTrusteeName" : {
+        "value" : "TreuMoDa",
+        "label" : "Datentreuhand",
+        "comment" : "Akteur, der Daten unter vereinbarter Governance/Policy verwaltet und vermittelt."
+      },
+      "dataTrusteeDescription" : {
+        "value" : "TreuMoDa ist eine gemeinnützige Treuhandstelle für Mobilitätsdaten zur sicheren Nutzung durch Wissenschaft, Wirtschaft und öffentliche Akteure."
+      },
+      "dataTrusteeOperator" : {
+        "value" : "TreuMoDa"
+      },
+      "dataTrusteeOperatorAffiliation" : {
+        "value" : "ORGANIZATION",
+        "label" : "Organisation",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."
+      },
+      "rightsHolderName" : {
+        "value" : "Mobilitätsunternehmen",
+        "label" : "Betroffener",
+        "comment" : "Partei, auf die sich Daten beziehen und deren Rechte/Interessen betroffen sein können."
+      },
+      "rightsHolderAffiliation" : {
+        "value" : "ORGANIZATION",
+        "label" : "Organisation",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."
+      },
+      "rightsHolderIsRepresented" : {
+        "value" : "false",
+        "label" : "hat Daten bei",
+        "comment" : "Verknüpft eine betroffene Partei mit dem Dateninhaber, der deren Daten verwaltet."
+      },
+      "dataOwnerName" : {
+        "value" : "Unternehmen und Forschung",
+        "label" : "Dateninhaber",
+        "comment" : "Datengeber mit Eigentum/Verantwortung für bestimmte Daten; verwaltet häufig Daten Betroffener."
+      },
+      "dataConsumerName" : {
+        "value" : "Forschung und öffentliche Stellen",
+        "label" : "Datennutzer",
+        "comment" : "Akteur, der Daten zu einem Zweck nutzt (Analyse, Dienst, Produkt)."
+      },
+      "dataConsumerAffiliation" : {
+        "value" : "ORGANIZATION",
+        "label" : "Organisation",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."
+      },
+      "dataCategoryName" : {
+        "value" : "Mobilitätsdaten"
+      },
+      "dataCategoryDescription" : {
+        "value" : "Mobilitätsdaten aus Fahrzeugen, Verkehrsinfrastrukturen und Sensorsystemen."
+      },
+      "containPersonalInformation" : {
+        "value" : "true",
+        "label" : "Personenbezogene Daten",
+        "comment" : "Daten, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."
+      },
+      "specialPersonalInformation" : {
+        "value" : "false",
+        "label" : "Besondere Kategorien personenbezogener Daten",
+        "comment" : "Besonders schützenswerte personenbezogene Daten (z. B. Gesundheit, Biometrie) mit erhöhtem Schutzbedarf."
+      },
+      "containTradeSecrets" : {
+        "value" : "true",
+        "label" : "Geschäftsgeheimnis",
+        "comment" : "Vertrauliche Informationen mit wirtschaftlichem Wert, die durch Geheimhaltung/Kontrollen geschützt sind."
+      }
+    },
+    "data" : {
+      "dataTrusteeCategory" : {
+        "value" : "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+        "label" : "Fremdbestimmte Mehrwerttreuhand",
+        "comment" : "Mehrwert-Treuhandmodell, dessen Wertschöpfungsentscheidungen extern gesteuert werden."
+      },
+      "architectureType" : {
+        "value" : "CENTRAL_ROUTER",
+        "label" : "Zentrales Routing",
+        "comment" : "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert, vermittelt und technisch als zentrale Routing-Instanz fungiert, über die die Daten zwischen den beteiligten Akteuren übertragen werden."
+      },
+      "receptionTechnologies" : [ {
+        "value" : "API",
+        "label" : "API",
+        "comment" : "Empfang von Daten über eine Programmierschnittstelle."
+      }, {
+        "value" : "DOWNLOAD",
+        "label" : "Download",
+        "comment" : "Empfang von Daten durch Herunterladen aus einem System."
+      } ],
+      "receptionFrequency" : {
+        "value" : "MANUAL",
+        "label" : "Manuell",
+        "comment" : "Manuelle, nicht automatisierte Durchführung einer Aktivität."
+      },
+      "receptionSecurityMeasures" : [ {
+        "value" : "ANONYMISATION",
+        "label" : "Anonymisieren",
+        "comment" : "Irreversible Entfernung personenbezogener Beziehbarkeit."
+      }, {
+        "value" : "TRANSPORT_ENCRYPTION",
+        "label" : "Transportverschlüsselung",
+        "comment" : "Verschlüsselung während der Übertragung von Daten."
+      }, {
+        "value" : "PSEUDONYMISATION",
+        "label" : "Pseudonymisieren",
+        "comment" : "Ersetzung identifizierender Merkmale durch Pseudonyme."
+      } ],
+      "customReceptionSecurityTechniques" : [ {
+        "title" : "Vorprüfung eingehender Datensätze",
+        "description" : "Eingehende Datensätze werden vor der Weitergabe geprüft."
+      } ],
+      "sourceSystem" : {
+        "value" : "Quellsysteme der Datengeber",
+        "label" : "Quellsystem",
+        "comment" : "System, das Daten bereitstellt oder liefert."
+      },
+      "preparationTechniques" : [ {
+        "value" : "TRANSFORMATION",
+        "label" : "Transformation",
+        "comment" : "Überführung von Daten in neue Formate oder Strukturen."
+      }, {
+        "value" : "CUSTOM"
+      } ],
+      "customPreparationTechniques" : [ {
+        "title" : "Datenschutzkonforme Datenaufbereitung",
+        "description" : "Daten werden vor der Bereitstellung formatiert, pseudonymisiert oder anonymisiert."
+      } ],
+      "storageTechnique" : {
+        "value" : "CENTRAL_STORAGE",
+        "label" : "Zentrales Speichern",
+        "comment" : "Zentrale Speicherung aller Daten in einem System."
+      },
+      "storageRetention" : {
+        "value" : "TRANSMISSION_ONLY",
+        "label" : "Nur zur Übermittlung",
+        "comment" : "Speicherung nur solange erforderlich für die Übermittlung."
+      },
+      "analysisTechniques" : [ {
+        "value" : "NONE"
+      } ],
+      "customAnalysisTechniques" : [ ],
+      "forwardingTechniques" : [ {
+        "value" : "API",
+        "label" : "API",
+        "comment" : "Empfang von Daten über eine Programmierschnittstelle."
+      } ],
+      "forwardingFrequency" : {
+        "value" : "MANUAL",
+        "label" : "Manuell",
+        "comment" : "Manuelle, nicht automatisierte Durchführung einer Aktivität."
+      },
+      "forwardingSecurityMeasures" : [ {
+        "value" : "ANONYMISATION",
+        "label" : "Anonymisieren",
+        "comment" : "Irreversible Entfernung personenbezogener Beziehbarkeit."
+      }, {
+        "value" : "TRANSPORT_ENCRYPTION",
+        "label" : "Transportverschlüsselung",
+        "comment" : "Verschlüsselung während der Übertragung von Daten."
+      }, {
+        "value" : "PSEUDONYMISATION",
+        "label" : "Pseudonymisieren",
+        "comment" : "Ersetzung identifizierender Merkmale durch Pseudonyme."
+      } ],
+      "customForwardingSecurityTechniques" : [ ],
+      "targetSystem" : {
+        "value" : "Zielsysteme der Datennutzer",
+        "label" : "Zielsystem",
+        "comment" : "System, das Daten empfängt oder verarbeitet."
+      }
+    },
+    "legal" : {
+      "processingBases" : [ {
+        "value" : "LEGITIMATE_INTEREST",
+        "label" : "Berechtigtes Interesse",
+        "comment" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung auf einem berechtigten Interesse beruht und einer Interessenabwägung mit den Rechten und Freiheiten der betroffenen Personen unterliegt.",
+        "details" : [ {
+          "title" : "Datenschutzkonforme Datennutzung",
+          "description" : "Die Verarbeitung dient der rechtssicheren Nutzung von Mobilitätsdaten für Forschung und Innovation."
+        } ]
+      } ],
+      "obtainingConsentBy" : "",
+      "consentEnteredBy" : {
+        "value" : "NOT_PROVIDED"
+      }
+    },
+    "objectives" : {
+      "dataTrusteeGoals" : [ {
+        "value" : "SCIENCE_RESEARCH",
+        "label" : "Wissenschaft und Forschung",
+        "comment" : "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen."
+      }, {
+        "value" : "COMPLIANCE_REQUIREMENTS",
+        "label" : "Erfüllung von Auflagen",
+        "comment" : "Ziel, rechtliche, regulatorische oder vertragliche Anforderungen an die Datennutzung zu erfüllen."
+      }, {
+        "value" : "ECONOMIC_UTILIZATION",
+        "label" : "Wirtschaftliche Verwertung",
+        "comment" : "Ziel, durch Daten wirtschaftlichen Mehrwert zu schaffen, z. B. durch neue Dienstleistungen, Geschäftsmodelle oder Effizienzgewinne."
+      }, {
+        "value" : "INNOVATION",
+        "label" : "Innovation",
+        "comment" : "Ziel, Innovation durch datengetriebene Produkte, Dienstleistungen oder Prozesse zu ermöglichen."
+      } ],
+      "motivationRightsHolder" : [ {
+        "value" : "SOCIAL_VALUE",
+        "label" : "Gesellschaftlicher Mehrwert",
+        "comment" : "Motivation, durch Datenbereitstellung, Datennutzung oder Teilnahme an einer Datentreuhand gesellschaftlichen Mehrwert zu schaffen."
+      } ],
+      "motivationDataHolder" : [ {
+        "value" : "COMPLIANCE_REQUIREMENTS",
+        "label" : "Erfüllung von Auflagen",
+        "comment" : "Ziel, rechtliche, regulatorische oder vertragliche Anforderungen an die Datennutzung zu erfüllen."
+      }, {
+        "value" : "INTEROPERABILITY",
+        "label" : "Interoperabilität",
+        "comment" : "Motivation, technische, semantische oder organisatorische Interoperabilität durch gemeinsame Standards, Schnittstellen oder Governance-Regeln zu verbessern."
+      }, {
+        "value" : "SCIENCE_AND_RESEARCH",
+        "label" : "Wissenschaft und Forschung",
+        "comment" : "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen."
+      } ],
+      "motivationDataConsumer" : [ {
+        "value" : "INNOVATION",
+        "label" : "Innovation",
+        "comment" : "Ziel, Innovation durch datengetriebene Produkte, Dienstleistungen oder Prozesse zu ermöglichen."
+      }, {
+        "value" : "VALUE_CREATION",
+        "label" : "Wertschöpfung",
+        "comment" : "Motivation eines Akteurs, durch Teilnahme an einer Datentreuhand oder durch Datennutzung einen Mehrwert zu schaffen, z. B. wirtschaftlich, organisatorisch oder strategisch."
+      }, {
+        "value" : "SCIENCE_AND_RESEARCH",
+        "label" : "Wissenschaft und Forschung",
+        "comment" : "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen."
+      } ]
+    },
+    "business" : {
+      "businessDomains" : [ {
+        "value" : "MOBILITY",
+        "label" : "Mobilität",
+        "comment" : "Domäne für Mobilitätsdienste und Verkehrssysteme."
+      } ],
+      "businessModel" : {
+        "value" : "NONPROFIT_LLC",
+        "label" : "Gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH)",
+        "comment" : "Geschäftsform für eine gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH)."
+      },
+      "fundingSources" : [ {
+        "value" : "OTHER",
+        "label" : "Andere Förderung",
+        "comment" : "Generische Förderinstitution für weitere Fördergeber, die nicht durch spezifische Kategorien abgedeckt sind."
+      } ],
+      "paymentMethodDataOwner" : {
+        "value" : "FREE",
+        "label" : "Kostenlos",
+        "comment" : "Bezahlmodell, bei dem Zugang oder Dienstleistungen kostenlos bereitgestellt werden."
+      },
+      "paymentMethodDataConsumer" : {
+        "value" : "PAY_PER_USE",
+        "label" : "Bezahlen pro Nutzung",
+        "comment" : "Bezahlmodell, bei dem Entgelte von der tatsächlichen Nutzung abhängen, z. B. pro Anfrage oder pro Datenvolumen."
+      }
+    },
+    "presentation" : {
+      "sections" : [ {
+        "key" : "core",
+        "label" : "Akteure und Stammdaten",
+        "fields" : {
+          "ontologyURI" : "Basis-URI",
+          "dataTrusteeName" : "Datentreuhandmodell",
+          "dataTrusteeDescription" : "Beschreibung",
+          "dataTrusteeOperator" : "Betreiber",
+          "dataTrusteeOperatorAffiliation" : "Art des Betreibers",
+          "rightsHolderName" : "Rechtehalter",
+          "rightsHolderAffiliation" : "Art der Rechtehalter",
+          "rightsHolderIsRepresented" : "Rechtehalter vertreten",
+          "dataOwnerName" : "Datenhalter",
+          "dataConsumerName" : "Datennutzer",
+          "dataConsumerAffiliation" : "Art der Datennutzer",
+          "dataCategoryName" : "Datenkategorie",
+          "dataCategoryDescription" : "Datenkategorie Beschreibung",
+          "containPersonalInformation" : "Personenbezogene Daten",
+          "specialPersonalInformation" : "Besondere Kategorien personenbezogener Daten",
+          "containTradeSecrets" : "Schützenswerte Unternehmensdaten"
+        }
+      }, {
+        "key" : "legal",
+        "label" : "Rechtliche Grundlagen",
+        "fields" : {
+          "processingBases" : "Verarbeitungsgrundlagen",
+          "consentType" : "Einwilligungsart",
+          "obtainingConsentBy" : "Einholung durch",
+          "consentEnteredBy" : "Einwilligung erfasst durch"
+        }
+      }, {
+        "key" : "data",
+        "label" : "Implementierung und Datenfluss",
+        "fields" : {
+          "dataTrusteeCategory" : "Datentreuhand-Kategorie",
+          "architectureType" : "Architekturtyp",
+          "receptionTechnologies" : "Empfangstechniken",
+          "receptionFrequency" : "Empfangsfrequenz",
+          "receptionSecurityMeasures" : "Sicherheitsmaßnahmen Empfang",
+          "customReceptionSecurityTechniques" : "Eigene Sicherheitsmaßnahmen Empfang",
+          "sourceSystem" : "Quellsystem",
+          "preparationTechniques" : "Aufbereitungstechniken",
+          "customPreparationTechniques" : "Eigene Aufbereitungstechniken",
+          "storageTechnique" : "Speichertechnik",
+          "storageRetention" : "Speicherdauer",
+          "analysisTechniques" : "Auswertungstechniken",
+          "customAnalysisTechniques" : "Eigene Auswertungstechniken",
+          "forwardingTechniques" : "Weitergabetechniken",
+          "forwardingFrequency" : "Weitergabefrequenz",
+          "forwardingSecurityMeasures" : "Sicherheitsmaßnahmen Weitergabe",
+          "customForwardingSecurityTechniques" : "Eigene Sicherheitsmaßnahmen Weitergabe",
+          "targetSystem" : "Zielsystem"
+        }
+      }, {
+        "key" : "objectives",
+        "label" : "Ziele und Motivation",
+        "fields" : {
+          "dataTrusteeGoals" : "Ziele der Datentreuhand",
+          "motivationRightsHolder" : "Motivation Rechtehalter",
+          "motivationDataHolder" : "Motivation Datenhalter",
+          "motivationDataConsumer" : "Motivation Datennutzer"
+        }
+      }, {
+        "key" : "business",
+        "label" : "Geschaeftsmodell",
+        "fields" : {
+          "businessDomains" : "Domänen",
+          "businessModel" : "Geschäftsform",
+          "fundingSources" : "Förderquellen",
+          "paymentMethodDataOwner" : "Bezahlmodell Datenhalter",
+          "paymentMethodDataConsumer" : "Bezahlmodell Datennutzer"
+        }
+      } ]
+    }
+  },
+  "ttl" : "PREFIX :             <http://forgetrustee.kickstarttrustee.de/ontology/TreuMoDa#>\nPREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>\nPREFIX dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>\nPREFIX dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>\nPREFIX dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>\nPREFIX owl:          <http://www.w3.org/2002/07/owl#>\nPREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>\n\n:Mobilitaetsunternehmen\n        rdf:type                      dtm-core:AffectedParty , owl:NamedIndividual , dtm-core:DataOwner , dtm-core:Actor;\n        rdfs:label                    \"Mobilitätsunternehmen\"@de;\n        dtm-business:affiliationType  dtm-business:Organisation;\n        dtm-business:hasDataHolderMotivation\n                dtm-business:Interoperability , dtm-business:ScienceAndResearch , dtm-business:Compliance;\n        dtm-business:hasRightsHolderMotivation\n                dtm-business:SocietalValue;\n        dtm-business:usesPayModelAsDataOwner\n                dtm-business:Free;\n        dtm-core:administers          :Mobilitaetsdaten;\n        dtm-core:hasRightsOf          :Mobilitaetsdaten;\n        dtm-core:isAffectedPartyIn    :TreuMoDa;\n        dtm-core:isDataOwnerOf        :TreuMoDa .\n\n:Mobilitaetsdaten  rdf:type         owl:NamedIndividual , dtm-core:Data;\n        rdfs:comment                \"Mobilitätsdaten aus Fahrzeugen, Verkehrsinfrastrukturen und Sensorsystemen.\"@de;\n        rdfs:label                  \"Mobilitätsdaten\"@de;\n        dtm-core:administeredBy     :Mobilitaetsunternehmen;\n        dtm-core:isAccessGrantedTo  :ForschungundoeffentlicheStellen;\n        dtm-core:isRightlyOwnedBy   :Mobilitaetsunternehmen .\n\n:CustomPreparationDatenschutzkonformeDatenaufbereitung\n        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;\n        rdfs:comment  \"Daten werden vor der Bereitstellung formatiert, pseudonymisiert oder anonymisiert.\"@de;\n        rdfs:label    \"CustomPreparationDatenschutzkonforme Datenaufbereitung\"@de;\n        dtm-data:isPreparationTechniqueOf\n                :PreparationTreuMoDa .\n\n:CustomReceptionSecurityVorpruefungeingehenderDatensaetze\n        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;\n        rdfs:comment                 \"Eingehende Datensätze werden vor der Weitergabe geprüft.\"@de;\n        rdfs:label                   \"CustomReceptionSecurityVorprüfung eingehender Datensätze\"@de;\n        dtm-data:securesAsTechnique  :ReceptionTreuMoDa .\n\n:ReceptionTreuMoDa  rdf:type            dtm-data:DataReception , owl:NamedIndividual;\n        rdfs:label                      \"ReceptionTreuMoDa\"@de;\n        dtm-data:hasReceptionFrequency  dtm-data:Manual;\n        dtm-data:hasReceptionTechnique  dtm-data:Download , dtm-data:ReceptionAPI;\n        dtm-data:securedByTechnique     dtm-data:Pseudonymisation , dtm-data:Anonymisation , :CustomReceptionSecurityVorpruefungeingehenderDatensaetze , dtm-data:TransportEncryption;\n        dtm-data:usesSystem             :SourceSystemQuellsystemederDatengeber .\n\n:ForschungundoeffentlicheStellen\n        rdf:type                      owl:NamedIndividual , dtm-core:DataConsumer , dtm-core:Actor;\n        rdfs:label                    \"Forschung und öffentliche Stellen\"@de;\n        dtm-business:affiliationType  dtm-business:Organisation;\n        dtm-business:hasDataConsumerMotivation\n                dtm-business:Innovation , dtm-business:ValueCreation , dtm-business:ScienceAndResearch;\n        dtm-business:usesPayModelAsDataConsumer\n                dtm-business:PayPerUse;\n        dtm-core:isDataConsumerOf     :TreuMoDa;\n        dtm-core:isGrantedAccess      :Mobilitaetsdaten;\n        dtm-legal:isBeneficiaryOf     dtm-legal:LegitimateInterest .\n\n:TreuMoDa  rdf:type                    dtm-core:DataTrustee , owl:NamedIndividual , dtm-business:Organisation;\n        rdfs:label                     \"TreuMoDa\"@de;\n        dtm-business:affiliationType   dtm-business:Organisation;\n        dtm-business:hasBusinessForm   dtm-business:NonprofitLimitedLiabilityCompany;\n        dtm-business:hasDataTrusteeGoal\n                dtm-business:ScienceAndResearch , dtm-business:Compliance , dtm-business:EconomicUtilization , dtm-business:Innovation;\n        dtm-business:hasDataTrusteeOperator\n                :TreuMoDa;\n        dtm-business:hasDomain         dtm-business:MobilitySector;\n        dtm-business:hasFundingSource  dtm-business:AndereFoerderung;\n        dtm-business:isOperatorOfDataTrustee\n                :TreuMoDa;\n        dtm-core:dataTrusteeDescription\n                \"TreuMoDa ist eine gemeinnützige Treuhandstelle für Mobilitätsdaten zur sicheren Nutzung durch Wissenschaft, Wirtschaft und öffentliche Akteure.\"@de;\n        dtm-core:hasAffectedParty      :Mobilitaetsunternehmen;\n        dtm-core:hasDataConsumer       :ForschungundoeffentlicheStellen;\n        dtm-core:hasDataOwner          :Mobilitaetsunternehmen;\n        dtm-core:hasDataTrusteeModel   :DTM_TreuMoDa;\n        dtm-data:triggersStorage       :StorageTreuMoDa .\n\n:AnalysisTreuMoDa  rdf:type  owl:NamedIndividual , dtm-data:DataAnalysis;\n        rdfs:label  \"AnalysisTreuMoDa\"@de .\n\n:StorageTreuMoDa  rdf:type            owl:NamedIndividual , dtm-data:DataStorage;\n        rdfs:label                    \"StorageTreuMoDa\"@de;\n        dtm-data:hasRetentionPeriod   dtm-data:ForTransmissionOnly;\n        dtm-data:hasStorageTechnique  dtm-data:CentralStorage;\n        dtm-data:performsStorage      :TreuMoDa .\n\n:ForwardingTreuMoDa  rdf:type        owl:NamedIndividual , dtm-data:DataForwarding;\n        rdfs:label                   \"ForwardingTreuMoDa\"@de;\n        dtm-data:hasForwardingFrequency\n                dtm-data:Manual;\n        dtm-data:hasForwardingTechnique\n                dtm-data:ReceptionAPI;\n        dtm-data:securedByTechnique  dtm-data:Anonymisation , dtm-data:TransportEncryption , dtm-data:Pseudonymisation;\n        dtm-data:usesSystem          :TargetSystemZielsystemederDatennutzer .\n\n:TargetSystemZielsystemederDatennutzer\n        rdf:type                  owl:NamedIndividual , dtm-data:TargetSystem;\n        rdfs:label                \"TargetSystemZielsysteme der Datennutzer\"@de;\n        dtm-data:isUsedAsSystemm  :ForwardingTreuMoDa .\n\n:PreparationTreuMoDa  rdf:type  owl:NamedIndividual , dtm-data:DataPreparation;\n        rdfs:label  \"PreparationTreuMoDa\"@de;\n        dtm-data:hasPreparationTechnique\n                dtm-data:Transformation , :CustomPreparationDatenschutzkonformeDatenaufbereitung .\n\n:SourceSystemQuellsystemederDatengeber\n        rdf:type                 owl:NamedIndividual , dtm-data:SourceSystem;\n        rdfs:label               \"SourceSystemQuellsysteme der Datengeber\"@de;\n        dtm-data:isUsedAsSystem  :ReceptionTreuMoDa .\n\n:DTM_TreuMoDa  rdf:type                owl:NamedIndividual , dtm-core:ExternallyControlledValueAddedDataTrustee;\n        rdfs:label                     \"DTM_TreuMoDa\"@de;\n        dtm-core:isDataTrusteeModelOf  :TreuMoDa;\n        dtm-data:implementedOn         dtm-data:CentralRouterArchitecture .\n\n:       rdf:type  owl:Ontology .\n",
+  "shaclReport" : {
+    "conforms" : true,
+    "results" : [ ],
+    "resultsCount" : 0
+  },
+  "executiveSummary" : "<h2>Executive Summary – Datentreuhandmodell „TreuMoDa“</h2>\n<h3>Akteure und Datenbasis</h3>\n<p>Das Datentreuhandmodell „TreuMoDa“ wird von TreuMoDa betrieben. Der Betreiber ist als Juristische Person eingeordnet. TreuMoDa ist eine gemeinnützige Treuhandstelle für Mobilitätsdaten zur sicheren Nutzung durch Wissenschaft, Wirtschaft und öffentliche Akteure. </p>\n<p>Mobilitätsunternehmen treten im Modell als Rechteinhaber auf. Die Rechteinhaber werden innerhalb des Modells nicht durch Dritte vertreten. Unternehmen und Forschung fungiert innerhalb des Modells als Datenhalter. Forschung und öffentliche Stellen ist als Datennutzer eingebunden. Der Datennutzer ist als Juristische Person eingeordnet. </p>\n<p>Die Datenkategorie „Mobilitätsdaten“ umfasst Mobilitätsdaten aus Fahrzeugen, Verkehrsinfrastrukturen und Sensorsystemen. Die Verarbeitung umfasst personenbezogene Daten sowie Geschäfts- bzw. Betriebsgeheimnisse. </p><br/>\n<h3>Rechtliche Grundlage der Datenverarbeitung</h3>\n<p>Die Verarbeitung der Daten stützt sich auf Öffentliches Interesse. Die hinterlegten Konkretisierungen beschreiben Öffentliches Interesse: „Datenschutzkonforme Datennutzung“ (Die Verarbeitung dient der rechtssicheren Nutzung von Mobilitätsdaten für Forschung und Innovation.). </p>\n<br/>\n<h3>Technische Ausgestaltung und Datenlebenszyklus</h3>\n<p>Technisch ist das Modell als Fremdbestimmte Mehrwerttreuhand mit der Architektur Zentrales Routing umgesetzt. Der Datenempfang erfolgt aus Quellsysteme der Datengeber manuell über API und Download. Zur Absicherung des Empfangs werden Anonymisieren, Transportverschlüsselung und Pseudonymisieren eingesetzt. Ergänzend ist für den Datenempfang „Vorprüfung eingehender Datensätze“ (Eingehende Datensätze werden vor der Weitergabe geprüft.) hinterlegt. Für die Datenaufbereitung werden Transformation eingesetzt. Zusätzlich ist für die Aufbereitung „Datenschutzkonforme Datenaufbereitung“ (Daten werden vor der Bereitstellung formatiert, pseudonymisiert oder anonymisiert.) beschrieben. Die Speicherung erfolgt über Zentrales Speichern mit der Aufbewahrungsstrategie Nur zur Übermittlung. Die Datenweitergabe erfolgt an Zielsysteme der Datennutzer manuell über API. Zur Absicherung der Weitergabe werden Anonymisieren, Transportverschlüsselung und Pseudonymisieren eingesetzt. </p>\n<br/>\n<h3><b>Geschäftsmodell und Finanzierung</b></h3>\n<p>Das Modell ist in den Anwendungsdomänen Mobilität verortet und organisatorisch als Gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH) ausgestaltet. Die Finanzierung des Modells wird durch Andere Förderung unterstützt. Für Datengeber ist Kostenlos vorgesehen, während für Datennutzer Bezahlen pro Nutzung gilt. </p>\n<br/>\n<h3>Ziele und Mehrwert</h3>\n<p>Das Datentreuhandmodell verfolgt die Ziele <i>Wissenschaft und Forschung, Erfüllung von Auflagen, Wirtschaftliche Verwertung und Innovation</i>. Aus Sicht der Rechteinhaber stehen <i>Gesellschaftlicher Mehrwert im Vordergrund</i>. Für die Datengeber sind <i>Erfüllen von Auflagen, Interoperabilität und Wissenschaft und Forschung relevant</i>. Die Datennutzer verfolgen Ziele wie <i>Innovation, Wertschöpfung und Wissenschaft und Forschung</i>. Insgesamt unterstützt das Modell „TreuMoDa“ eine strukturierte und vertrauenswürdige Nutzung von Daten. </p>\n<br/>\n"
+}

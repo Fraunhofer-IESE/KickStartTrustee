@@ -1,0 +1,104 @@
+{
+  "core": {
+    "dataTrusteeName": "MobilityDataTrust",
+    "dataTrusteeDescription": "Datentreuhand für Mobilitätsdaten aus Fahrzeugen, Ladepunkten und Verkehrsinfrastruktur.",
+    "dataTrusteeOperator": "MobilityTrust GmbH",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Fahrzeughalter",
+    "rightsHolderAffiliation": "INDIVIDUAL",
+    "rightsHolderIsRepresented": "true",
+    "dataOwnerName": "Flottenbetreiber",
+    "dataConsumerName": "Verkehrsplanung GmbH",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Mobilitätsdaten",
+      "dataCategoryDescription": "Positions-, Nutzungs- und Verfügbarkeitsdaten aus Fahrzeugflotten."
+    },
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "false",
+    "processingBases": {
+      "CONSENT": [
+        {
+          "title": "Nutzungseinwilligung",
+          "description": "Rechtehalter stimmen der zweckgebundenen Verarbeitung ihrer Mobilitätsdaten zu."
+        }
+      ]
+    },
+    "consentType": "GENERAL_CONSENT",
+    "obtainingConsentBy": "App",
+    "consentEnteredBy": "RIGHTS_OWNER"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "ACCESS_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_ROUTER",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "CONTINUOUS",
+    "receptionSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION",
+      "PSEUDONYMISATION"
+    ],
+    "customReceptionSecurityTechniques": [],
+    "sourceSystem": "FleetBackend",
+    "preparationTechniques": [
+      "AGGREGATION",
+      "TRANSFORMATION"
+    ],
+    "customPreparationTechniques": [],
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+    "analysisTechniques": [
+      "STATISTICAL_ANALYSIS"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "CONTINUOUS",
+    "forwardingSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "TrafficPlanningSuite"
+  },
+  "business": {
+    "businessDomains": [
+      "MOBILITY"
+    ],
+    "businessModel": "LIMITED_LIABILITY_COMPANY",
+    "fundingSources": [
+      "BMDV"
+    ],
+    "financingTypes": {
+      "USAGE_FEES": [
+        {
+          "title": "Abrechnung pro Datensatz",
+          "description": "Datennutzer zahlen nutzungsabhängig für bereitgestellte Mobilitätsdaten."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "PAY_PER_USE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "DATA_SOVEREIGNTY",
+      "INNOVATION"
+    ],
+    "motivationRightsHolder": [
+      "SOCIAL_VALUE"
+    ],
+    "motivationDataHolder": [
+      "VALUE_CREATION",
+      "TRUST_INTERMEDIARY"
+    ],
+    "motivationDataConsumer": [
+      "OPTIMIZATION",
+      "INTEROPERABILITY"
+    ]
+  }
+}

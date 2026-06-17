@@ -1,0 +1,104 @@
+{
+  "core": {
+    "dataTrusteeName": "GovDataTrust",
+    "dataTrusteeDescription": "Datentreuhand für den sicheren Austausch von Verwaltungsdaten zwischen öffentlichen Stellen.",
+    "dataTrusteeOperator": "Kommunale Datenanstalt",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Bürgerinnen",
+    "rightsHolderAffiliation": "INDIVIDUAL",
+    "rightsHolderIsRepresented": "true",
+    "dataOwnerName": "Kommunalverwaltung",
+    "dataConsumerName": "Landesbehörde",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Verwaltungsdaten",
+      "dataCategoryDescription": "Personenbezogene Verwaltungsdaten für behördenübergreifende Leistungen."
+    },
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "false",
+    "processingBases": {
+      "LEGAL_OBLIGATION": [
+        {
+          "title": "Gesetzliche Meldepflicht",
+          "description": "Die Verarbeitung erfolgt zur Erfüllung gesetzlich vorgeschriebener Verwaltungsaufgaben."
+        }
+      ]
+    },
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "ADMINISTRATIVE_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_ROUTER",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "PERIODIC",
+    "receptionSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION",
+      "ENCRYPTION_AT_REST"
+    ],
+    "customReceptionSecurityTechniques": [],
+    "sourceSystem": "FachverfahrenA",
+    "preparationTechniques": [
+      "CLEANING",
+      "TRANSFORMATION"
+    ],
+    "customPreparationTechniques": [],
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+    "analysisTechniques": [
+      "STATISTICAL_ANALYSIS"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "PERIODIC",
+    "forwardingSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "FachverfahrenB"
+  },
+  "business": {
+    "businessDomains": [
+      "PUBLIC_SECTOR"
+    ],
+    "businessModel": "PUBLIC_LAW_INSTITUTION",
+    "fundingSources": [
+      "GWK"
+    ],
+    "financingTypes": {
+      "PUBLIC_FUNDING": [
+        {
+          "title": "Öffentliche Grundfinanzierung",
+          "description": "Der Betrieb wird aus öffentlichen Haushaltsmitteln finanziert."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "FREE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "COMPLIANCE_REQUIREMENTS",
+      "DIGITAL_SOVEREIGNTY"
+    ],
+    "motivationRightsHolder": [
+      "SOCIAL_VALUE"
+    ],
+    "motivationDataHolder": [
+      "COMPLIANCE_REQUIREMENTS",
+      "INTEROPERABILITY"
+    ],
+    "motivationDataConsumer": [
+      "COMPLIANCE_REQUIREMENTS",
+      "INTEROPERABILITY"
+    ]
+  }
+}

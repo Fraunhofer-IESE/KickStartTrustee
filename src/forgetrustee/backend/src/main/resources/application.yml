@@ -1,0 +1,58 @@
+# Beispielhafte Spring Boot Konfiguration
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: forgetrustee-backend
+  jackson:
+    default-property-inclusion: NON_NULL
+  mail:
+    host: ${SPRING_MAIL_HOST:localhost}
+    port: ${SPRING_MAIL_PORT:25}
+    username: ${SPRING_MAIL_USERNAME:}
+    password: ${SPRING_MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: ${SPRING_MAIL_SMTP_AUTH:false}
+          starttls:
+            enable: ${SPRING_MAIL_SMTP_STARTTLS_ENABLE:false}
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+backend:
+  ontology:
+    base-path: data/
+    base-uri: "http://forgetrustee.kickstarttrustee.de/ontology/"
+  data-trustee-model:
+    base-path: "data/dtm-example"
+    upload-base-path: "uploads"
+    max-upload-size-bytes: 358400
+  cors:
+    allowed-origins:
+      - "http://localhost:5173"
+  metadata:
+    base-path: "metadata/"
+    consistency-check-enabled: true
+  mail:
+    enabled: false
+    from: "forgetrustee@kickstarttrustee.de"
+    include-upload-attachments: true
+    recipients: [forgetrustee@kickstarttrustee.de]
+  rate-limit: 200
+  rate-duration: 60000
+
+logging:
+  level:
+    root: WARN
+    '[de.fraunhofer]': DEBUG
+    '[org.springframework]': INFO
+    '[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]': DEBUG
+    '[org.springframework.http.converter.json]': DEBUG

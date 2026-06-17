@@ -1,0 +1,263 @@
+@prefix sh:           <http://www.w3.org/ns/shacl#> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> .
+@prefix dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#> .
+@prefix dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#> .
+@prefix dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#> .
+@prefix dtm-sec:      <https://forgetrustee.kickstarttrustee.de/ontology/dtm-sec#> .
+@prefix dtm-misc:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#> .
+
+#############################################################################
+
+# 1. Core-Modul
+
+#############################################################################
+
+# DataTrusteeShape:
+
+# Jeder DataTrustee muss mindestens einen DataOwner haben.
+
+dtm-core:DataTrusteeShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+    sh:property [
+        sh:path     dtm-core:hasDataOwner ;
+        sh:minCount 1 ;
+        sh:class    dtm-core:DataOwner ;
+        sh:message  "Ein DataTrustee muss mindestens einen DataOwner haben."@de ;
+    ] .
+
+# AffectedPartyShape:
+
+# Jede betroffene Partei muss Rechte an mindestens einem Data haben.
+
+dtm-core:AffectedPartyShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:AffectedParty ;
+    sh:property [
+        sh:path     dtm-core:hasRightsOf ;
+        sh:minCount 1 ;
+        sh:class    dtm-core:Data ;
+        sh:message  "Eine AffectedParty muss mindestens Rechte an einem Data haben."@de ;
+    ] .
+
+#############################################################################
+
+# 2. Business-Modul
+
+#############################################################################
+
+# ActorShape:
+
+# Jeder Actor muss mindestens ein UsageGoalOfUser ODER einen SelectionStatus haben.
+
+dtm-business:ActorShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:Actor ;
+    sh:property [
+        sh:path     dtm-business:hasUsageGoal ;
+        sh:minCount 1 ;
+        sh:or (
+            [ sh:class dtm-business:UsageGoalOfUser ]
+            [ sh:class dtm-misc:SelectionStatus ]
+        ) ;
+        sh:message "Ein Actor muss mindestens ein Nutzungsziel oder einen Auswahlstatus (SelectionStatus) haben."@de ;
+    ] .
+
+# DataTrusteeShape (Business-Sicht):
+
+# DataTrustee muss mindestens ein Ziel UND ein PayModel (oder SelectionStatus) haben.
+
+dtm-business:DataTrusteeShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+    sh:property [
+        sh:path     dtm-business:hasDataTrusteeGoal ;
+        sh:minCount 1 ;
+        sh:or (
+            [ sh:class dtm-business:DataTrusteeGoal ]
+            [ sh:class dtm-misc:SelectionStatus ]
+        ) ;
+        sh:message "Ein DataTrustee muss mindestens ein Datentreuhand-Ziel (oder SelectionStatus) haben."@de ;
+    ] ;
+    sh:property [
+        sh:path     dtm-business:offersPayModel ;
+        sh:minCount 1 ;
+        sh:or (
+            [ sh:class dtm-business:PayModel ]
+            [ sh:class dtm-misc:SelectionStatus ]
+        ) ;
+        sh:message "Ein DataTrustee muss mindestens ein Bezahlmodell (oder SelectionStatus) anbieten."@de ;
+    ] .
+
+#############################################################################
+
+# 3. Legal / Consent-Modul
+
+#############################################################################
+
+# ConsentWorkflowShape:
+
+# Jeder ConsentWorkflow muss mindestens eine Einwilligungsquelle (Actor) haben.
+
+dtm-legal:ConsentWorkflowShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-legal:ConsentWorkflow ;
+    sh:property [
+        sh:path     dtm-legal:hasConsentSource ;
+        sh:minCount 1 ;
+        sh:class    dtm-core:Actor ;
+        sh:message  "Ein ConsentWorkflow muss mindestens eine Einwilligungsquelle (Actor) haben."@de ;
+    ] .
+
+# IndividualConsentWorkflowShape:
+
+# Ein IndividualConsentWorkflow wird von mindestens einem DataConsumer initiiert.
+
+dtm-legal:IndividualConsentWorkflowShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-legal:IndividualConsentWorkflow ;
+    sh:property [
+        sh:path     dtm-legal:individualConsentWorkflowInitiatedBy ;
+        sh:minCount 1 ;
+        sh:class    dtm-core:DataConsumer ;
+        sh:message  "Ein IndividualConsentWorkflow muss von mindestens einem DataConsumer initiiert werden."@de ;
+    ] .
+
+#############################################################################
+
+# 4. Data-Modul
+
+#############################################################################
+
+# DataFlowComponentShape:
+
+# Jede Datenflusskomponente muss von mindestens einem Actor durchgeführt werden.
+
+dtm-data:DataFlowComponentShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataFlowComponent ;
+    sh:property [
+        sh:path     dtm-data:stagePerformedBy ;
+        sh:minCount 1 ;
+        sh:class    dtm-core:Actor ;
+        sh:message  "Jede DataFlowComponent muss von mindestens einem Actor durchgeführt werden (stagePerformedBy)."@de ;
+    ] .
+
+# DataTrusteeModelShape:
+
+# Ein DataTrusteeModel muss genau eine Architecture besitzen.
+
+dtm-core:DataTrusteeModelShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrusteeModel ;
+    sh:property [
+        sh:path     dtm-data:implementedOn ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class    dtm-data:Architecture ;
+        sh:message  "Ein DataTrusteeModel muss genau eine Architektur (dtm-data:Architecture) über dtm-data:implementedOn referenzieren."@de ;
+    ] .
+
+# DataPreparationShape:
+
+# Jede DataPreparation muss mindestens eine PreparationTechnique haben.
+
+dtm-data:DataPreparationShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataPreparation ;
+    sh:property [
+        sh:path     dtm-data:hasPreparationTechnique ;
+        sh:minCount 1 ;
+        sh:class    dtm-data:PreparationTechnique ;
+        sh:message  "Eine DataPreparation muss mindestens eine PreparationTechnique haben."@de ;
+    ] .
+
+# DataStorageShape:
+
+# Jede DataStorage muss mindestens eine StorageTechnique definieren.
+
+dtm-data:DataStorageShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataStorage ;
+    sh:property [
+        sh:path     dtm-data:hasStorageTechnique ;
+        sh:minCount 1 ;
+        sh:class    dtm-data:StorageTechnique ;
+        sh:message  "Eine DataStorage-Phase muss mindestens eine StorageTechnique haben."@de ;
+    ] .
+
+# DataReceptionShape:
+
+# Jede DataReception muss mindestens eine ReceptionTechnique nutzen.
+
+dtm-data:DataReceptionShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataReception ;
+    sh:property [
+        sh:path     dtm-data:hasReceptionTechnique ;
+        sh:minCount 1 ;
+        sh:class    dtm-data:ReceptionTechnique ;
+        sh:message  "Eine DataReception-Phase muss mindestens eine ReceptionTechnique haben."@de ;
+    ] .
+
+# DataForwardingShape:
+
+# Jede DataForwarding muss mindestens eine ForwardingTechnique nutzen.
+
+dtm-data:DataForwardingShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataForwarding ;
+    sh:property [
+        sh:path     dtm-data:hasForwardingTechnique ;
+        sh:minCount 1 ;
+        sh:class    dtm-data:ForwardingTechnique ;
+        sh:message  "Eine DataForwarding-Phase muss mindestens eine ForwardingTechnique haben."@de ;
+    ] .
+
+#############################################################################
+
+# 5. Security-Modul
+
+#############################################################################
+
+# ActorSecurityShape:
+
+# Jeder Actor muss mindestens eine RestSecurity und eine ReputationSource haben.
+
+#dtm-sec:ActorSecurityShape
+#    a sh:NodeShape ;
+#    sh:targetClass dtm-core:Actor ;
+#    sh:property [
+#        sh:path     dtm-sec:hasRestSecurity ;
+#        sh:minCount 1 ;
+#        sh:class    dtm-sec:RestSecurity ;
+#        sh:message  "Ein Actor muss mindestens eine RestSecurity (Sicherheit ruhender Daten) haben."@de ;
+#    ] ;
+#    sh:property [
+#        sh:path     dtm-sec:hasReputationSource ;
+#        sh:minCount 1 ;
+#        sh:class    dtm-sec:ReputationSource ;
+#        sh:message  "Ein Actor muss mindestens eine ReputationSource haben."@de ;
+#    ] .
+
+# TransmissionSecurityShape:
+
+# TransmissionSecurity braucht Start- und End-Actors.
+
+#dtm-sec:TransmissionSecurityShape
+#    a sh:NodeShape ;
+#    sh:targetClass dtm-sec:TransmissionSecurity ;
+#    sh:property [
+#        sh:path     dtm-sec:hasTransmissionStart ;
+#        sh:minCount 1 ;
+#        sh:class    dtm-core:Actor ;
+#        sh:message  "TransmissionSecurity muss mindestens einen Start-Actor (hasTransmissionStart) haben."@de ;
+#    ] ;
+#    sh:property [
+#        sh:path     dtm-sec:hasTransmissionEnd ;
+#        sh:minCount 1 ;
+#        sh:class    dtm-core:Actor ;
+#        sh:message  "TransmissionSecurity muss mindestens einen End-Actor (hasTransmissionEnd) haben."@de ;
+#    ] .

@@ -1,0 +1,112 @@
+{
+  "core": {
+    "dataTrusteeName": "EnergyGridTrust",
+    "dataTrusteeDescription": "Datentreuhand für Energieverbrauchs- und Netzdaten in regionalen Energiegemeinschaften.",
+    "dataTrusteeOperator": "EnergieNetz eG",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Haushalte",
+    "rightsHolderAffiliation": "INDIVIDUAL",
+    "rightsHolderIsRepresented": "true",
+    "dataOwnerName": "Energieversorger",
+    "dataConsumerName": "Netzoptimierer",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Energiedaten",
+      "dataCategoryDescription": "Aggregierte Verbrauchs-, Einspeise- und Netzzustandsdaten."
+    },
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "false",
+    "processingBases": {
+      "LEGITIMATE_INTEREST": [
+        {
+          "title": "Netzstabilität",
+          "description": "Die Verarbeitung dient der besseren Planung und Stabilisierung regionaler Energienetze."
+        }
+      ]
+    },
+    "consentType": "",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": ""
+  },
+  "implementation": {
+    "dataTrusteeCategory": "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_ROUTER",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "CONTINUOUS",
+    "receptionSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION",
+      "PSEUDONYMISATION"
+    ],
+    "customReceptionSecurityTechniques": [],
+    "sourceSystem": "SmartMeterGateway",
+    "preparationTechniques": [
+      "AGGREGATION"
+    ],
+    "customPreparationTechniques": [],
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+    "analysisTechniques": [
+      "STATISTICAL_ANALYSIS",
+      "AI_ANALYSIS"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "PERIODIC",
+    "forwardingSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "GridOptimization"
+  },
+  "business": {
+    "businessDomains": [
+      "ENERGY"
+    ],
+    "businessModel": "COOPERATIVE",
+    "fundingSources": [
+      "BMWK",
+      "EU"
+    ],
+    "financingTypes": {
+      "COMMUNITY_FUNDING": [
+        {
+          "title": "Genossenschaftsbeitrag",
+          "description": "Mitglieder finanzieren den Betrieb anteilig über Genossenschaftsbeiträge."
+        }
+      ],
+      "PUBLIC_FUNDING": [
+        {
+          "title": "Energiewende-Förderung",
+          "description": "Zusätzliche öffentliche Förderung unterstützt die technische Infrastruktur."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "SERVICE_FEE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "INNOVATION",
+      "DIGITAL_SOVEREIGNTY"
+    ],
+    "motivationRightsHolder": [
+      "SOCIAL_VALUE",
+      "QUALITY_IMPROVEMENT"
+    ],
+    "motivationDataHolder": [
+      "INTEROPERABILITY",
+      "VALUE_CREATION"
+    ],
+    "motivationDataConsumer": [
+      "OPTIMIZATION",
+      "VALUE_CREATION"
+    ]
+  }
+}

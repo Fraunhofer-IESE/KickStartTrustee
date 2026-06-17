@@ -1,0 +1,133 @@
+{
+  "core": {
+    "dataTrusteeName": "ePA",
+    "dataTrusteeDescription": "Die elektronische Patientenakte dient als digitale Infrastruktur zur sicheren und kontrollierten Verwaltung medizinischer Informationen und Zugriffsrechte.",
+    "dataTrusteeOperator": "Krankenkassen",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+
+    "rightsHolderName": "Versicherte",
+    "rightsHolderAffiliation": "INDIVIDUAL",
+    "rightsHolderIsRepresented": "true",
+
+    "dataOwnerName": "Leistungserbringer",
+
+    "dataConsumerName": "Leistungserbringer",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Gesundheitsdaten",
+      "dataCategoryDescription": "Medizinische Behandlungs-, Medikations- und Befunddaten aus der Gesundheitsversorgung."
+    },
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "true",
+    "containTradeSecrets": "false",
+    "processingBases": {
+      "CONSENT": [
+        {
+          "title": "Zugriffs- und Einwilligungsmanagement",
+          "description": "Versicherte steuern selbst den Zugriff auf ihre Gesundheitsdaten und entscheiden über Freigaben."
+        }
+      ],
+      "LEGAL_OBLIGATION": [
+        {
+          "title": "Verpflichtende Nutzung durch Leistungserbringer",
+          "description": "Leistungserbringer sind verpflichtet, gesetzlich definierte Inhalte in die ePA einzustellen."
+        }
+      ]
+    },
+    "consentType": "INDIVIDUAL_CONSENT",
+    "obtainingConsentBy": "ePA-App und Krankenkassen",
+    "consentEnteredBy": "RIGHTS_OWNER"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "ACCESS_DATA_TRUSTEE",
+    "architectureType": "P2P",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "CONTINUOUS",
+    "receptionSecurityMeasures": [
+      "END_TO_END_ENCRYPTION",
+      "TRANSPORT_ENCRYPTION",
+      "PSEUDONYMISATION"
+    ],
+    "customReceptionSecurityTechniques": [
+      {
+        "title": "Vertrauensdienste nach eIDAS",
+        "description": "Elektronische Signaturen, Zertifikate und Vertrauensdienste sichern Authentizität und Integrität der Kommunikation."
+      }
+    ],
+    "sourceSystem": "Systeme der Leistungserbringer",
+    "preparationTechniques": [
+      "TRANSFORMATION"
+    ],
+    "customPreparationTechniques": [
+      {
+        "title": "Interoperable Standardisierung",
+        "description": "Gesundheitsdaten werden standardisiert und interoperabel innerhalb der Telematikinfrastruktur bereitgestellt."
+      }
+    ],
+    "storageTechnique": "DECENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+    "analysisTechniques": [
+      "NONE"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "CONTINUOUS",
+    "forwardingSecurityMeasures": [
+      "END_TO_END_ENCRYPTION",
+      "TRANSPORT_ENCRYPTION",
+      "PSEUDONYMISATION"
+    ],
+    "customForwardingSecurityTechniques": [
+      {
+        "title": "Zugriffs- und Berechtigungsmanagement",
+        "description": "Versicherte steuern individuell, welche Leistungserbringer Zugriff auf welche Informationen erhalten."
+      }
+    ],
+    "targetSystem": "Systeme der Leistungserbringer"
+  },
+  "business": {
+    "businessDomains": [
+      "HEALTHCARE"
+    ],
+    "businessModel": "AMBIGUOUS",
+    "fundingSources": [
+      "AMBIGUOUS"
+    ],
+    "financingTypes": {
+      "PUBLIC_FUNDING": [
+        {
+          "title": "Gesundheitsinfrastruktur",
+          "description": "Die ePA wird als öffentliche digitale Infrastruktur des Gesundheitswesens bereitgestellt."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "FREE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "DATA_SOVEREIGNTY",
+      "COMPLIANCE_REQUIREMENTS",
+      "SCIENCE_RESEARCH",
+      "DIGITAL_SOVEREIGNTY"
+    ],
+    "motivationRightsHolder": [
+      "QUALITY_IMPROVEMENT",
+      "SOCIAL_VALUE"
+    ],
+    "motivationDataHolder": [
+      "COMPLIANCE_REQUIREMENTS",
+      "INTEROPERABILITY"
+    ],
+    "motivationDataConsumer": [
+      "INTEROPERABILITY",
+      "SCIENCE_AND_RESEARCH"
+    ]
+  }
+}

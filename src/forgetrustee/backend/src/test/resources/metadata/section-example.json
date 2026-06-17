@@ -1,0 +1,21 @@
+{
+  "moduleId": "dtm-data",
+  "label": "Datentrustee Model Data",
+  "sections": {
+    "collection": {
+      "id": "collection",
+      "label": "Datenerhebung",
+      "tooltip": "Wie werden Daten erhoben?",
+      "helpText": "Details zur Erhebung.",
+      "examples": [],
+      "fields": {
+        "dataSource": {
+          "label": "Datenquelle",
+          "tooltip": "Quelle der Daten",
+          "helpText": "z. B. Sensoren.",
+          "examples": ["Partner-DB"]
+        }
+      }
+    }
+  }
+}

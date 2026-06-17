@@ -1,0 +1,123 @@
+moduleId: business
+requestDtoClassName: DataTrusteeWizardBusinessRequestDto
+order: 50
+fields: {}
+hints:
+  - name: businessGeneralHint
+sections:
+  classification:
+    fields:
+      businessDomains:
+        name: businessDomains
+        type: TAGS
+        options:
+          - value: FINANCE
+          - value: SMART_LIVING
+          - value: HEALTHCARE
+          - value: INDUSTRY_40
+          - value: PUBLIC_SECTOR
+          - value: CULTURE_CREATIVE_INDUSTRY
+          - value: SMART_CITY_REGION
+          - value: AEROSPACE
+          - value: AGRICULTURE
+          - value: LOGISTICS
+          - value: ENERGY
+          - value: CROSS_DOMAIN
+          - value: GEOINFORMATION
+          - value: MOBILITY
+          - value: EDUCATION
+          - value: CONSTRUCTION_OPERATION_MAINTENANCE
+        multiple: true
+        allowUnknown: true
+        allowNoAnswer: true
+      businessModel:
+        name: businessModel
+        type: TAGS
+        options:
+          - value: REGISTERED_ASSOCIATION
+          - value: LIMITED_LIABILITY_COMPANY
+          - value: GENERAL_PARTNERSHIP
+          - value: CIVIL_LAW_PARTNERSHIP
+          - value: ENTREPRENEURIAL_COMPANY
+          - value: SOCIETAS_EUROPAEA
+          - value: COOPERATIVE
+          - value: NONPROFIT_LLC
+          - value: PUBLIC_LAW_CORPORATION
+          - value: PUBLIC_LAW_INSTITUTION
+          - value: STOCK_CORPORATION
+          - value: FOUNDATION
+          - value: PARTNERSHIP_LIMITED_BY_SHARES
+          - value: LIMITED_PARTNERSHIP
+        multiple: false
+        allowUnknown: true
+      fundingSources:
+        name: fundingSources
+        type: TAGS
+        options:
+          - value: GWK
+          - value: BMDV
+          - value: EU
+          - value: BMFTR
+          - value: BMWK
+          - value: BMBF
+          - value: OTHER
+        multiple: true
+        allowUnknown: true
+        allowNoAnswer: true
+  financing:
+    fields:
+      financingTypes:
+        name: financingTypes
+        type: TAGS_WITH_TEXT_AND_DESCRIPTION_LIST
+        multiple: true
+        allowUnknown: true
+        allowNoAnswer: true
+        options:
+          - value: PUBLIC_FUNDING
+          - value: USAGE_FEES
+            disableAdditionalDetails: true
+          - value: COMMUNITY_FUNDING
+          - value: BUSINESS_RELATED_FUNDING
+          - value: OTHER_FUNDING
+        fields:
+          financingTypeDetail:
+            name: financingTypeDetail
+            type: TEXT
+          financingTypeDescription:
+            name: financingTypeDescription
+            type: LONGTEXT
+    subsections:
+      usageFees:
+        visibleBy:
+          - name: financingTypes
+            operator: IN
+            value: USAGE_FEES
+        fields:
+          paymentMethodDataOwner:
+            name: paymentMethodDataOwner
+            type: TAGS
+            options:
+              - value: FLATRATE
+              - value: SERVICE_FEE
+              - value: FREEMIUM
+              - value: PAY_PER_USE
+              - value: FREE
+              - value: SUPPORT_FEE
+              - value: ACCESS_FEE
+            multiple: false
+            allowUnknown: true
+            allowNoAnswer: true
+          paymentMethodDataConsumer:
+            name: paymentMethodDataConsumer
+            type: TAGS
+            options:
+              - value: FLATRATE
+              - value: SERVICE_FEE
+              - value: FREEMIUM
+              - value: PAY_PER_USE
+              - value: FREE
+              - value: SUPPORT_FEE
+              - value: ACCESS_FEE
+            multiple: false
+            allowUnknown: true
+            allowNoAnswer: true

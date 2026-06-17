@@ -1,0 +1,119 @@
+{
+  "core": {
+    "dataTrusteeName": "HealthDataTrust",
+    "dataTrusteeDescription": "Datentreuhand für pseudonymisierte Gesundheitsdaten zur kontrollierten Forschungsnutzung.",
+    "dataTrusteeOperator": "HealthTrust GmbH",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Patientinnen",
+    "rightsHolderAffiliation": "INDIVIDUAL",
+    "rightsHolderIsRepresented": "true",
+    "dataOwnerName": "Klinikverbund Süd",
+    "dataConsumerName": "MedResearch Institut",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Versorgungsdaten",
+      "dataCategoryDescription": "Pseudonymisierte Behandlungs-, Diagnose- und Verlaufsdaten aus der medizinischen Versorgung."
+    },
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "true",
+    "containTradeSecrets": "false",
+    "processingBases": {
+      "CONSENT": [
+        {
+          "title": "Forschungseinwilligung",
+          "description": "Die Rechtehalter willigen in die Nutzung ihrer pseudonymisierten Gesundheitsdaten für Forschungszwecke ein."
+        }
+      ]
+    },
+    "consentType": "INDIVIDUAL_CONSENT",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "RIGHTS_OWNER"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "ACCESS_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_DATA_STORAGE",
+    "receptionTechnologies": [
+      "API",
+      "DOWNLOAD"
+    ],
+    "receptionFrequency": "PERIODIC",
+    "receptionSecurityMeasures": [
+      "CUSTOM"
+    ],
+    "customReceptionSecurityTechniques": [
+      {
+        "title": "Klinik-VPN-Zugang",
+        "description": "Eingehende Daten werden ausschließlich über einen gesicherten VPN-Zugang der Klinik übertragen."
+      }
+    ],
+    "sourceSystem": "Kliniksystem",
+    "preparationTechniques": [
+      "CUSTOM"
+    ],
+    "customPreparationTechniques": [
+      {
+        "title": "FHIR-Mapping",
+        "description": "Klinische Daten werden vor der Weiterverarbeitung auf ein FHIR-kompatibles Austauschformat abgebildet."
+      }
+    ],
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+    "analysisTechniques": [
+      "STATISTICAL_ANALYSIS"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "MANUAL",
+    "forwardingSecurityMeasures": [
+      "PSEUDONYMISATION",
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "Forschungsplattform"
+  },
+  "business": {
+    "businessDomains": [
+      "HEALTHCARE"
+    ],
+    "businessModel": "NONPROFIT_LLC",
+    "fundingSources": [
+      "BMBF",
+      "EU"
+    ],
+    "financingTypes": {
+      "PUBLIC_FUNDING": [
+        {
+          "title": "Forschungsförderung",
+          "description": "Aufbau und Betrieb werden durch öffentliche Fördermittel unterstützt."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "ACCESS_FEE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "SCIENCE_RESEARCH",
+      "COMPLIANCE_REQUIREMENTS",
+      "DATA_SOVEREIGNTY"
+    ],
+    "motivationRightsHolder": [
+      "QUALITY_IMPROVEMENT",
+      "SOCIAL_VALUE"
+    ],
+    "motivationDataHolder": [
+      "COMPLIANCE_REQUIREMENTS",
+      "INTEROPERABILITY",
+      "SCIENCE_AND_RESEARCH"
+    ],
+    "motivationDataConsumer": [
+      "SCIENCE_AND_RESEARCH",
+      "INNOVATION",
+      "VALUE_CREATION"
+    ]
+  }
+}

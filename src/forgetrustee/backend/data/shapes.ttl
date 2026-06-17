@@ -1,0 +1,653 @@
+@prefix sh:           <http://www.w3.org/ns/shacl#> .
+@prefix xsd:          <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#> .
+@prefix dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#> .
+@prefix dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#> .
+@prefix dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#> .
+@prefix dtm-misc:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#> .
+
+#############################################################################
+# 1. Core-Modul
+#############################################################################
+
+dtm-core:DataTrusteeCoreShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+
+    ##sh:property [
+    ##    sh:path dtm-core:hasDataTrusteeModel ;
+    ##    sh:minCount 1 ;
+    ##    sh:severity sh:Info ;
+    ##    sh:message "Ein DataTrustee muss ein DataTrusteeModel referenzieren."@de ;
+    ##] ;
+
+    sh:property [
+        sh:path dtm-core:hasDataOwner ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Eine Datentreuhand muss mindestens einen Datenhalter haben."@de ;
+    ] ;
+
+    sh:property [
+        sh:path dtm-core:hasDataConsumer ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Eine Datentreuhand muss mindestens einen Datennnutzer haben."@de ;
+    ] ;
+
+    sh:property [
+        sh:path dtm-core:hasAffectedParty ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Für eine Datentreuhand sollte mindestens ein Rechtehalter angegeben werden."@de ;
+    ] .
+
+dtm-core:AffectedPartyCoreShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:AffectedParty ;
+
+    sh:property [
+        sh:path dtm-core:hasRightsOf ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Ein Rechtehalte sollte Rechte an mindestens einer Datenkategorie haben."@de ;
+    ] .
+
+#############################################################################
+# 2. DataTrusteeModel / Architektur
+#############################################################################
+
+dtm-core:DataTrusteeModelShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrusteeModel ;
+
+    sh:property [
+        sh:path dtm-data:implementedOn ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "Eine Datentreuhand muss genau eine Architektur referenzieren."@de ;
+    ] .
+
+dtm-core:CentralRouterStorageHintShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrusteeModel ;
+    sh:severity sh:Info ;
+
+    sh:sparql [
+        sh:message "Bei CENTRAL_ROUTER ist dauerhafte zentrale Speicherung fachlich zu prüfen. Storage-Felder gelten jedoch als Altlast und blockieren den Wizard nicht."@de ;
+        sh:select """
+            PREFIX dtm-data: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+
+            SELECT $this
+            WHERE {
+                $this dtm-data:implementedOn dtm-data:CentralRouterArchitecture .
+
+                ?storage a dtm-data:DataStorage ;
+                         dtm-data:hasRetentionPeriod ?retention .
+
+                FILTER (?retention != dtm-data:ForTransmissionOnly)
+            }
+        """ ;
+    ] .
+
+dtm-core:PeerToPeerStorageHintShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrusteeModel ;
+    sh:severity sh:Info ;
+
+    sh:sparql [
+        sh:message "Bei P2P-Architektur sollte geprüft werden, ob dezentrale Speicherung oder reine Übermittlung besser passt. Storage-Felder gelten als Altlast."@de ;
+        sh:select """
+            PREFIX dtm-data: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+
+            SELECT $this
+            WHERE {
+                $this dtm-data:implementedOn dtm-data:PeerToPeerArchitecture .
+
+                ?storage a dtm-data:DataStorage ;
+                         dtm-data:hasStorageTechnique dtm-data:CentralStorage .
+            }
+        """ ;
+    ] .
+
+#############################################################################
+# 3. Data-Modul / Datenlebenszyklus
+#############################################################################
+
+##dtm-data:DataFlowComponentShape
+##    a sh:NodeShape ;
+##    sh:targetClass dtm-data:DataFlowComponent ;
+
+    ##sh:property [
+    ##    sh:path dtm-data:stagePerformedBy ;
+    ##    sh:minCount 1 ;
+    ##    sh:severity sh:Info ;
+    ##    sh:message "Eine Datenflusskomponente sollte einem ausführenden Akteur zugeordnet sein."@de ;
+    ##] .
+
+dtm-data:DataReceptionShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataReception ;
+
+    sh:property [
+        sh:path dtm-data:hasReceptionTechnique ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Für den Datenempfang muss mindestens eine Empfangsart angegeben werden."@de ;
+    ] ;
+
+    sh:property [
+        sh:path dtm-data:hasReceptionFrequency ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Für den Datenempfang sollte eine Empfangsfrequenz angegeben werden."@de ;
+    ] .
+
+dtm-data:DataPreparationShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataPreparation ;
+
+    sh:property [
+        sh:path dtm-data:hasPreparationTechnique ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "Für die Datenverarbeitungs-Phase sollte mindestens eine Technik haben."@de ;
+    ] .
+
+dtm-data:DataStorageShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataStorage ;
+
+    sh:property [
+        sh:path dtm-data:hasRetentionPeriod ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "Für die Datenverarbeitungs-Phase sollte eine Speicherdauer angegeben werden."@de ;
+    ] .
+
+dtm-data:DataAnalysisNoneConflictShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataAnalysis ;
+    sh:severity sh:Violation ;
+
+    sh:sparql [
+        sh:message "NONE darf bei Analyseverfahren nicht gemeinsam mit konkreten Analyseverfahren verwendet werden."@de ;
+        sh:select """
+            PREFIX dtm-data: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+            PREFIX dtm-misc: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#>
+
+            SELECT $this
+            WHERE {
+                $this dtm-data:hasDataAnalysisTechnique dtm-misc:None ;
+                      dtm-data:hasDataAnalysisTechnique ?other .
+
+                FILTER (?other != dtm-misc:None)
+            }
+        """ ;
+    ] .
+
+dtm-data:DataForwardingShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-data:DataForwarding ;
+
+    sh:property [
+        sh:path dtm-data:hasForwardingTechnique ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Eine Datenweitergabe-Phase muss mindestens eine Weitergabetechnik haben."@de ;
+    ] ;
+
+    sh:property [
+        sh:path dtm-data:hasForwardingFrequency ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Für die Datenweitergabe sollte eine Weitergabefrequenz angegeben werden."@de ;
+    ] .
+
+#############################################################################
+# 4. Legal-Modul / Processing Basis und Consent
+#############################################################################
+
+dtm-legal:PersonalDataRequiresProcessingBasisShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+    sh:severity sh:Violation ;
+
+    sh:sparql [
+        sh:message "Wenn personenbezogene Daten verarbeitet werden, muss mindestens eine Verarbeitungsgrundlage angegeben werden."@de ;
+        sh:select """
+            PREFIX dtm-core:  <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+            PREFIX dtm-legal: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+
+            SELECT $this
+            WHERE {
+                ?data a dtm-core:PersonalData .
+
+                FILTER NOT EXISTS {
+                    $this dtm-legal:operatesOnProcessingBasis ?basis .
+                }
+
+                FILTER NOT EXISTS {
+                    ?consumer dtm-core:isDataConsumerOf $this ;
+                              dtm-legal:isBeneficiaryOf ?basis .
+                }
+            }
+        """ ;
+    ] .
+
+dtm-legal:SpecialPersonalDataConsentWarningShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+    sh:severity sh:Warning ;
+
+    sh:sparql [
+        sh:message "Bei besonderen personenbezogenen Daten sollte geprüft werden, ob CONSENT als Verarbeitungsgrundlage erforderlich ist."@de ;
+        sh:select """
+            PREFIX dtm-core:  <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+            PREFIX dtm-legal: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+
+            SELECT $this
+            WHERE {
+                ?data a dtm-core:SpecialPersonalData .
+
+                FILTER NOT EXISTS {
+                    $this dtm-legal:operatesOnProcessingBasis dtm-legal:Consent .
+                }
+
+                FILTER NOT EXISTS {
+                    ?consumer dtm-core:isDataConsumerOf $this ;
+                              dtm-legal:isBeneficiaryOf dtm-legal:Consent .
+                }
+            }
+        """ ;
+    ] .
+
+dtm-legal:ConsentWorkflowRequiresConsentBasisShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-legal:ConsentWorkflow ;
+    sh:severity sh:Violation ;
+
+    sh:sparql [
+        sh:message "Ein ConsentWorkflow darf nur verwendet werden, wenn er die Verarbeitungsgrundlage CONSENT implementiert."@de ;
+        sh:select """
+            PREFIX dtm-legal: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+
+            SELECT $this
+            WHERE {
+                FILTER NOT EXISTS {
+                    $this dtm-legal:implementsConsentWorkflowFor dtm-legal:Consent .
+                }
+            }
+        """ ;
+    ] .
+
+dtm-legal:ConsentBasisShouldHaveWorkflowShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+    sh:severity sh:Warning ;
+
+    sh:sparql [
+        sh:message "Wenn CONSENT als Verarbeitungsgrundlage verwendet wird, sollte ein ConsentWorkflow modelliert sein."@de ;
+        sh:select """
+            PREFIX dtm-core:  <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+            PREFIX dtm-legal: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+
+            SELECT $this
+            WHERE {
+                {
+                    $this dtm-legal:operatesOnProcessingBasis dtm-legal:Consent .
+                }
+                UNION
+                {
+                    ?consumer dtm-core:isDataConsumerOf $this ;
+                              dtm-legal:isBeneficiaryOf dtm-legal:Consent .
+                }
+
+                FILTER NOT EXISTS {
+                    ?workflow dtm-legal:implementsConsentWorkflowFor dtm-legal:Consent .
+                }
+            }
+        """ ;
+    ] .
+
+dtm-legal:ConsentWorkflowHasConsentSourceShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-legal:ConsentWorkflow ;
+    sh:severity sh:Warning ;
+
+    sh:sparql [
+        sh:message "Ein ConsentWorkflow sollte eine Einwilligungsquelle haben, etwa Rechteinhaber oder Dateninhaber."@de ;
+        sh:select """
+            PREFIX dtm-legal: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+
+            SELECT $this
+            WHERE {
+                FILTER NOT EXISTS {
+                    ?actor dtm-legal:givesConsentDirectly $this .
+                }
+
+                FILTER NOT EXISTS {
+                    ?actor dtm-legal:givesConsentByDataOwner $this .
+                }
+
+                FILTER NOT EXISTS {
+                    $this dtm-legal:hasConsentSource ?actor .
+                }
+            }
+        """ ;
+    ] .
+
+dtm-legal:ProcessingBasisSelectionStatusConflictShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataConsumer ;
+    sh:severity sh:Violation ;
+
+    sh:sparql [
+        sh:message "NOT_PROVIDED, AMBIGUOUS oder UNKNOWN dürfen bei Verarbeitungsgrundlagen nicht gemeinsam mit konkreten Rechtsgrundlagen verwendet werden."@de ;
+        sh:select """
+            PREFIX dtm-legal: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+            PREFIX dtm-misc:  <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#>
+
+            SELECT $this
+            WHERE {
+                $this dtm-legal:isBeneficiaryOf ?status ;
+                      dtm-legal:isBeneficiaryOf ?other .
+
+                VALUES ?status {
+                    dtm-misc:NotProvided
+                    dtm-misc:Ambiguous
+                    dtm-misc:Unknown
+                    dtm-legal:NotProvided
+                    dtm-legal:Ambiguous
+                }
+
+                FILTER (?other != ?status)
+            }
+        """ ;
+    ] .
+
+#############################################################################
+# 5. Security- und Datenschutz-Hinweise
+#############################################################################
+
+dtm-data:PersonalDataSecurityWarningShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+    sh:severity sh:Warning ;
+
+    sh:sparql [
+        sh:message "Bei personenbezogenen Daten sollte mindestens eine Schutzmaßnahme wie Pseudonymisierung, Anonymisierung oder Verschlüsselung gesetzt sein."@de ;
+        sh:select """
+            PREFIX dtm-core: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+            PREFIX dtm-data: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+
+            SELECT $this
+            WHERE {
+                ?data a dtm-core:PersonalData .
+
+                FILTER NOT EXISTS {
+                    ?stage dtm-data:securedByTechnique ?security .
+
+                    VALUES ?security {
+                        dtm-data:Pseudonymisation
+                        dtm-data:Anonymisation
+                        dtm-data:TransportEncryption
+                        dtm-data:E2EEncryption
+                    }
+                }
+            }
+        """ ;
+    ] .
+
+dtm-data:SpecialPersonalDataEncryptionWarningShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+    sh:severity sh:Warning ;
+
+    sh:sparql [
+        sh:message "Bei besonderen personenbezogenen Daten sollte starke Verschlüsselung geprüft werden."@de ;
+        sh:select """
+            PREFIX dtm-core: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+            PREFIX dtm-data: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+
+            SELECT $this
+            WHERE {
+                ?data a dtm-core:SpecialPersonalData .
+
+                FILTER NOT EXISTS {
+                    ?stage dtm-data:securedByTechnique ?security .
+
+                    VALUES ?security {
+                        dtm-data:TransportEncryption
+                        dtm-data:E2EEncryption
+                    }
+                }
+            }
+        """ ;
+    ] .
+
+dtm-data:TradeSecretSecurityWarningShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+    sh:severity sh:Warning ;
+
+    sh:sparql [
+        sh:message "Bei Geschäftsgeheimnissen sollte mindestens Transport- oder Ende-zu-Ende-Verschlüsselung vorgesehen sein."@de ;
+        sh:select """
+            PREFIX dtm-core: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+            PREFIX dtm-data: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+
+            SELECT $this
+            WHERE {
+                ?data a dtm-core:TradeSecret .
+
+                FILTER NOT EXISTS {
+                    ?stage dtm-data:securedByTechnique ?security .
+
+                    VALUES ?security {
+                        dtm-data:TransportEncryption
+                        dtm-data:E2EEncryption
+                    }
+                }
+            }
+        """ ;
+    ] .
+
+#############################################################################
+# 6. Business-Modul
+#############################################################################
+
+dtm-business:DataTrusteeBusinessShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataTrustee ;
+
+    sh:property [
+        sh:path dtm-business:hasDomain ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Für den Datentreuhänder sollte mindestens eine Domäne angegeben werden."@de ;
+    ] ;
+
+    sh:property [
+        sh:path dtm-business:hasDataTrusteeGoal ;
+        sh:minCount 1 ;
+        sh:severity sh:Warning ;
+        sh:message "Für den Datentreuhänder sollte mindestens ein Ziel angegeben werden."@de ;
+    ] .
+
+dtm-business:DataOwnerPaymentShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataOwner ;
+
+    sh:property [
+        sh:path dtm-business:usesPayModelAsDataOwner ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "Für den Datengeber kann ein eigenes Zahlungs- oder Vergütungsmodell angegeben werden."@de ;
+    ] .
+
+dtm-business:DataConsumerPaymentShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataConsumer ;
+
+    sh:property [
+        sh:path dtm-business:usesPayModelAsDataConsumer ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "Für den Datennutzer kann ein eigenes Zahlungsmodell angegeben werden."@de ;
+    ] .
+
+dtm-business:PaymentSelectionStatusConflictAsDataOwnerShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataOwner ;
+    sh:severity sh:Violation ;
+
+    sh:sparql [
+        sh:message "NONE, NOT_PROVIDED, AMBIGUOUS oder UNKNOWN dürfen beim Zahlungsmodell des Datengebers nicht mit konkreten Zahlungsmodellen kombiniert werden."@de ;
+        sh:select """
+            PREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>
+            PREFIX dtm-misc:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#>
+
+            SELECT $this
+            WHERE {
+                $this dtm-business:usesPayModelAsDataOwner ?status ;
+                      dtm-business:usesPayModelAsDataOwner ?other .
+
+                VALUES ?status {
+                    dtm-misc:None
+                    dtm-misc:NotProvided
+                    dtm-misc:Ambiguous
+                    dtm-misc:Unknown
+                }
+
+                FILTER (?other != ?status)
+            }
+        """ ;
+    ] .
+
+dtm-business:PaymentSelectionStatusConflictAsDataConsumerShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataConsumer ;
+    sh:severity sh:Violation ;
+
+    sh:sparql [
+        sh:message "NONE, NOT_PROVIDED, AMBIGUOUS oder UNKNOWN dürfen beim Zahlungsmodell des Datennutzers nicht mit konkreten Zahlungsmodellen kombiniert werden."@de ;
+        sh:select """
+            PREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>
+            PREFIX dtm-misc:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#>
+
+            SELECT $this
+            WHERE {
+                $this dtm-business:usesPayModelAsDataConsumer ?status ;
+                      dtm-business:usesPayModelAsDataConsumer ?other .
+
+                VALUES ?status {
+                    dtm-misc:None
+                    dtm-misc:NotProvided
+                    dtm-misc:Ambiguous
+                    dtm-misc:Unknown
+                }
+
+                FILTER (?other != ?status)
+            }
+        """ ;
+    ] .
+
+##dtm-business:AccessFeeFinancingHintShape
+##    a sh:NodeShape ;
+##    sh:targetClass dtm-core:DataConsumer ;
+##    sh:severity sh:Info ;
+
+##    sh:sparql [
+##        sh:message "Wenn Datennutzer eine Zugangsgebühr zahlen, sollte geprüft werden, ob die Finanzierung als Nutzungsgebühr modelliert werden soll."@de ;
+##        sh:select """
+##            PREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>
+
+##            SELECT $this
+##            WHERE {
+##                $this dtm-business:usesPayModelAsDataConsumer dtm-business:AccessFee .
+
+##                FILTER NOT EXISTS {
+##                    ?trustee dtm-business:hasFinancingType dtm-business:UsageFees .
+##                }
+##            }
+##        """ ;
+##    ] .
+
+#############################################################################
+# 7. Objectives / Motivation
+#############################################################################
+
+dtm-business:RightsHolderMotivationShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:AffectedParty ;
+
+    sh:property [
+        sh:path dtm-business:hasRightsHolderMotivation ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "Für Rechtehalte kann eine Motivation angegeben werden."@de ;
+    ] .
+
+dtm-business:DataHolderMotivationShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataOwner ;
+
+    sh:property [
+        sh:path dtm-business:hasDataHolderMotivation ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "Für Datenhalter kann eine Motivation angegeben werden."@de ;
+    ] .
+
+dtm-business:DataConsumerMotivationShape
+    a sh:NodeShape ;
+    sh:targetClass dtm-core:DataConsumer ;
+
+    sh:property [
+        sh:path dtm-business:hasDataConsumerMotivation ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "Für Datennutzer kann eine Motivation angegeben werden."@de ;
+    ] .
+
+#############################################################################
+# 8. Backend- und Mapping-Hinweise
+#############################################################################
+
+##dtm-business:PaymentMappingInfoShape
+##    a sh:NodeShape ;
+##    sh:targetClass dtm-core:DataTrustee ;
+##    sh:severity sh:Info ;
+
+##    sh:sparql [
+##        sh:message "Die Zahlungsmodelle werden getrennt für Datengeber und Datennutzer validiert. Ein globales offersPayModel ist für den Wizard nicht erforderlich."@de ;
+##        sh:select """
+##            PREFIX dtm-core: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+
+##            SELECT $this
+##            WHERE {
+##                $this a dtm-core:DataTrustee .
+##            }
+##        """ ;
+##    ] .
+
+##dtm-data:CustomValidationHandledInDtoShape
+##    a sh:NodeShape ;
+##    sh:targetClass dtm-core:DataTrustee ;
+##    sh:severity sh:Info ;
+
+##    sh:sparql [
+##        sh:message "CUSTOM-Auswahlen werden auf DTO-Ebene geprüft, da CUSTOM im RDF-Graphen aktuell nicht zuverlässig als Auswahlwert erhalten bleibt."@de ;
+##        sh:select """
+##            PREFIX dtm-core: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+
+##            SELECT $this
+##            WHERE {
+##                $this a dtm-core:DataTrustee .
+##            }
+##        """ ;
+##    ] .

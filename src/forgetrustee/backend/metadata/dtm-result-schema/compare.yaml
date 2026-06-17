@@ -1,0 +1,64 @@
+viewId: compare
+sections:
+  core:
+    label: Core
+    fields:
+      ontologyURI: {}
+      dataTrusteeName: {}
+      dataTrusteeDescription: {}
+      dataTrusteeOperator: {}
+      dataTrusteeOperatorAffiliation: {}
+      rightsHolderName: {}
+      rightsHolderAffiliation: {}
+      rightsHolderIsRepresented: {}
+      dataOwnerName: {}
+      dataConsumerName: {}
+      dataConsumerAffiliation: {}
+      dataCategoryName: {}
+      dataCategoryDescription: {}
+      containPersonalInformation: {}
+      specialPersonalInformation: {}
+      containTradeSecrets: {}
+  legal:
+    label: Legal
+    fields:
+      processingBases: {}
+      consentType: {}
+      obtainingConsentBy: {}
+      consentEnteredBy: {}
+  data:
+    label: Data
+    fields:
+      dataTrusteeCategory: {}
+      architectureType: {}
+      receptionTechnologies: {}
+      receptionFrequency: {}
+      receptionSecurityMeasures: {}
+      customReceptionSecurityTechniques: {}
+      sourceSystem: {}
+      preparationTechniques: {}
+      customPreparationTechniques: {}
+      storageTechnique: {}
+      storageRetention: {}
+      analysisTechniques: {}
+      customAnalysisTechniques: {}
+      forwardingTechniques: {}
+      forwardingFrequency: {}
+      forwardingSecurityMeasures: {}
+      customForwardingSecurityTechniques: {}
+      targetSystem: {}
+  objectives:
+    label: Objectives
+    fields:
+      dataTrusteeGoals: {}
+      motivationRightsHolder: {}
+      motivationDataHolder: {}
+      motivationDataConsumer: {}
+  business:
+    label: Business
+    fields:
+      businessDomains: {}
+      businessModel: {}
+      fundingSources: {}
+      paymentMethodDataOwner: {}
+      paymentMethodDataConsumer: {}

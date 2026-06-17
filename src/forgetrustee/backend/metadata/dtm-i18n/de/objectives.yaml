@@ -1,0 +1,84 @@
+moduleId: objectives
+label: Datentreuhandmodell Objectives
+heading: Ziele und Motivation der Akteure in der Datentreuhand
+menuPoint: Ziele
+examples: []
+hints:
+  - name: objectivesGeneralHint
+    text: Alle Angaben zu Ziele und Motivation sind optional, sollten für ein vollständiges Modell aber ausgefüllt werden.
+fields: {}
+sections:
+  goalsAndMotivation:
+    heading: Ziele und Motivation der Akteure in der Datentreuhand
+    helpText: "Die Ziele und Motivationen der Akteure liegen im Kern der Datentreuhand-Beziehung: Die Datentreuhand strebt verschiedene Ziele durch die Bereitstellung von Daten an. Rechtehalter und Datenhalter verfolgen unterschiedliche Motivationen je nach Kontext, manchmal altruistischer Natur aber auch zu eigenem Gunsten. Der Datennutzer kann auf auf die eigene Nutzung der Daten abzielen, jedoch auch auf den gesellschaftlichen Mehrwert. Das Zusammenspiel dieser Ziele und Motivationen treibt das Datentreuhand-Geschehen voran."
+    fields:
+      dataTrusteeGoals:
+        name: dataTrusteeGoals
+        label: Welche Ziele verfolgt der Betreiber mit der Datentreuhand?
+        tooltip: ""
+        helpText: ""
+        options:
+          - value: ECONOMIC_UTILIZATION
+            label: Wirtschaftliche Verwertung
+          - value: FAIR_MARKET_COMPETITION
+            label: Fairer Wettbewerb
+          - value: INNOVATION
+            label: Innovation
+          - value: SCIENCE_RESEARCH
+            label: Wissenschaft und Forschung
+          - value: DATA_SOVEREIGNTY
+            label: Datenhoheit
+          - value: DIGITAL_SOVEREIGNTY
+            label: Digitale Souveränität
+          - value: COMPLIANCE_REQUIREMENTS
+            label: Einhaltung von Vorschriften
+      motivationRightsHolder:
+        name: motivationRightsHolder
+        label: Was ist die Motivation des Rechtehalters seine Daten über die Datentreuhand zur Verfügung zu stellen?
+        helpText: ""
+        options:
+          - value: COST_REDUCTION
+            label: Kostenreduktion
+          - value: QUALITY_IMPROVEMENT
+            label: Qualitätsverbesserung
+          - value: CONTRACT_FULFILLMENT
+            label: Vertragserfüllung
+          - value: SOCIAL_VALUE
+            label: Gesellschaftlicher Mehrwert
+      motivationDataHolder:
+        name: motivationDataHolder
+        label: Was ist die Motivation des Datenhalters zur Partizipation in der Datentreuhand?
+        helpText: ""
+        options:
+          - value: TRUST_INTERMEDIARY
+            label: Vertrauensinstanz
+          - value: VALUE_CREATION
+            label: Wertschöpfung
+          - value: INNOVATION
+            label: Innovation
+          - value: COMPLIANCE_REQUIREMENTS
+            label: Regelkonformität
+          - value: INTEROPERABILITY
+            label: Interoperabilität
+          - value: SCIENCE_AND_RESEARCH
+            label: Wissenschaft und Forschung
+          - value: SOCIAL_VALUE
+            label: Gesellschaftlicher Mehrwert
+      motivationDataConsumer:
+        name: motivationDataConsumer
+        label: Was ist die Motivation des Datennutzers zur Partizipation in der Datentreuhand?
+        options:
+          - value: INNOVATION
+            label: Innovation
+          - value: COMPLIANCE_REQUIREMENTS
+            label: Regelkonformität
+          - value: INTEROPERABILITY
+            label: Interoperabilität
+          - value: VALUE_CREATION
+            label: Wertschöpfung
+          - value: OPTIMIZATION
+            label: Optimierung
+          - value: SCIENCE_AND_RESEARCH
+            label: Wissenschaft und Forschung
+          - value: SOCIAL_VALUE
+            label: Gesellschaftlicher Mehrwert

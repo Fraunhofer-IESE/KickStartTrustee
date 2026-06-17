@@ -1,0 +1,99 @@
+{
+  "core": {
+    "dataTrusteeName": "LogisticsPilotTrust",
+    "dataTrusteeDescription": "Pilotdatensatz für eine Logistik-Datentreuhand mit bewusst unklaren Angaben.",
+    "dataTrusteeOperator": "Logistics Pilot UG",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Transportpartner",
+    "rightsHolderAffiliation": "AMBIGUOUS",
+    "rightsHolderIsRepresented": "true",
+    "dataOwnerName": "Speditionsnetzwerk",
+    "dataConsumerName": "Routenoptimierer",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Transportdaten",
+      "dataCategoryDescription": "Sendungs-, Routen- und Auslastungsdaten aus einem frühen Pilotbetrieb."
+    },
+    "containPersonalInformation": "false",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "true",
+    "processingBases": {
+      "AMBIGUOUS": [
+        {
+          "title": "Unklare Rechtsgrundlage",
+          "description": "Die Rechtsgrundlage ist im Pilotbetrieb noch nicht abschließend geklärt."
+        }
+      ]
+    },
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "AMBIGUOUS",
+    "architectureType": "AMBIGUOUS",
+    "receptionTechnologies": [
+      "AMBIGUOUS"
+    ],
+    "receptionFrequency": "AMBIGUOUS",
+    "receptionSecurityMeasures": [
+      "AMBIGUOUS"
+    ],
+    "customReceptionSecurityTechniques": [],
+    "sourceSystem": "Pilotquelle",
+    "preparationTechniques": [
+      "AMBIGUOUS"
+    ],
+    "customPreparationTechniques": [],
+    "storageTechnique": "AMBIGUOUS",
+    "storageRetention": "AMBIGUOUS",
+    "analysisTechniques": [
+      "AMBIGUOUS"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "AMBIGUOUS"
+    ],
+    "forwardingFrequency": "AMBIGUOUS",
+    "forwardingSecurityMeasures": [
+      "AMBIGUOUS"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "Pilotsenke"
+  },
+  "business": {
+    "businessDomains": [
+      "LOGISTICS"
+    ],
+    "businessModel": "AMBIGUOUS",
+    "fundingSources": [
+      "AMBIGUOUS"
+    ],
+    "financingTypes": {
+      "AMBIGUOUS": [
+        {
+          "title": "Unklare Finanzierung",
+          "description": "Die Finanzierungsart ist im Pilotbetrieb noch offen."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "AMBIGUOUS",
+    "paymentMethodDataConsumer": "AMBIGUOUS"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "AMBIGUOUS"
+    ],
+    "motivationRightsHolder": [
+      "AMBIGUOUS"
+    ],
+    "motivationDataHolder": [
+      "AMBIGUOUS"
+    ],
+    "motivationDataConsumer": [
+      "AMBIGUOUS"
+    ]
+  }
+}

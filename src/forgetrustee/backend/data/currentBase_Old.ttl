@@ -1,0 +1,2087 @@
+PREFIX dcterms:      <http://purl.org/dc/terms/>
+PREFIX dpv:          <https://w3id.org/dpv#>
+PREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>
+PREFIX dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+PREFIX dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+PREFIX dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+PREFIX dtm-misc:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#>
+PREFIX dtm-sec:      <https://forgetrustee.kickstarttrustee.de/ontology/dtm-sec#>
+PREFIX foaf:         <http://xmlns.com/foaf/0.1/>
+PREFIX lcc-3166-1:   <https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/>
+PREFIX lcc-639-1:    <https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/>
+PREFIX lcc-cr:       <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/>
+PREFIX lcc-lr:       <https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/>
+PREFIX org:          <http://www.w3.org/ns/org#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX prov:         <http://www.w3.org/ns/prov#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rov:          <http://www.w3.org/ns/regorg#>
+PREFIX schema:       <https://schema.org/>
+PREFIX skos:         <http://www.w3.org/2004/02/skos/core#>
+PREFIX vann:         <http://purl.org/vocab/vann/>
+PREFIX voaf:         <http://purl.org/vocommons/voaf#>
+PREFIX wd:           <http://www.wikidata.org/entity/>
+PREFIX xml:          <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+dtm-business:hasUsageGoal
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Akteur mit einem oder mehreren Nutzungszielen, z. B. Datenzugang oder Datenanalyse."@de , "Associates an actor with one or more intended usage goals, such as data access or analysis."@en;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "hat Nutzungsziel des Nutzers"@de , "has Usage Goal of User"@en;
+        rdfs:range          dtm-business:UsageGoalOfUser;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-business:isUsageGoalOf .
+
+dtm-data:MicroserviceArchitecture
+        rdf:type         owl:Class;
+        rdfs:comment     "Architecture composed of independent microservices."@en , "Architektur bestehend aus unabhängigen Microservices."@de;
+        rdfs:label       "Microservice Architektur"@de , "Microservice Architecture"@en;
+        rdfs:subClassOf  dtm-data:Architecture .
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc>
+        rdf:type                       owl:Ontology;
+        dcterms:creator                "Denis Feth" , "Jessica Chwalek" , "Bernd Rauch";
+        dcterms:description            "Querschnittliche Metadateneigenschaften zur Erweiterung der DTM-Core-Ontologie (z. B. Analyse, Transparenz, Visualisierung)."@de , "Cross-cutting metadata properties extending the DTM core ontology (e.g. analysis, transparency, visualisation)."@en;
+        dcterms:license                <https://creativecommons.org/licenses/by/4.0/>;
+        dcterms:modified               "2025-11-10"^^xsd:date;
+        dcterms:publisher              "Kickstart Trustee";
+        dcterms:rights                 "© 2025 Kickstart Trustee — CC BY 4.0";
+        dcterms:title                  "DTM Miscellaneous Ontology"@en;
+        vann:preferredNamespacePrefix  "dtm-misc";
+        vann:preferredNamespaceUri     "https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#";
+        owl:imports                    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core>;
+        owl:versionIRI                 <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc/0.1.0> .
+
+dtm-legal:generalConsentWorkflowInitiatedBy
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen allgemeinen Einwilligungsvorgang mit dem Datenerheber bzw. Verantwortlichen, der diesen Vorgang aus Anbietersicht initiiert."@de , "Relates a general consent workflow to the data provider (data controller) that initiates this workflow from a provider-centric view."@en;
+        rdfs:domain         dtm-legal:GeneralConsentWorkflow;
+        rdfs:label          "general consent workflow initiated by"@en , "Allgemeiner Einwilligungsvorgang initiiert durch"@de;
+        rdfs:range          dtm-core:DataProvider;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-legal:initiatesGeneralConsentWorkflow .
+
+dtm-business:hasAffiliation
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine Entität (z. B. Akteur oder Datentreuhandmodell) mit ihrer Zugehörigkeit, etwa zu einer Organisation oder als Individualperson."@de , "Links an entity (for example an actor or data trustee model) to its affiliation, such as an organization or individual status."@en;
+        rdfs:domain         [ owl:unionOf  ( dtm-core:Actor dtm-core:DataTrustee )
+                            ];
+        rdfs:label          "hat Zugehörigkeit"@de , "has affiliation"@en;
+        rdfs:range          dtm-business:Affiliation;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-business:isAffiliationOf .
+
+dtm-business:AccessFee
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Bezahlmodell, bei dem Entgelte für den Zugang zu Daten oder Diensten erhoben werden."@de , "Pay model based on fees for accessing data or services."@en;
+        rdfs:label       "Zugangsgebühr"@de , "Access Fee"@en;
+        rdfs:subClassOf  dtm-business:PayModel;
+        skos:broader     dtm-business:PayModel;
+        skos:inScheme    dtm-business:PayModelScheme .
+
+dtm-business:GWK  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Förderinstitution, die die Gemeinsame Wissenschaftskonferenz (GWK) repräsentiert."@de , "Funding source representing the German Joint Science Conference (GWK)."@en;
+        rdfs:label       "GWK - Joint Science Conference"@en , "GWK - Gemeinsame Wissenschaftskonferenz"@de;
+        rdfs:subClassOf  dtm-business:FundingSource;
+        skos:broader     dtm-business:FundingSource;
+        skos:inScheme    dtm-business:FundingSourceScheme .
+
+dtm-sec:ReputationSource
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Quelle für Informationen über die Reputation, das Vertrauensniveau oder den Compliance-Status eines Akteurs, z. B. Zertifizierungsstellen, Bewertungsportale oder Register."@de , "Source of information about the reputation, trust level or compliance status of an actor, e.g. certification bodies, rating portals or registries."@en;
+        rdfs:label       "Reputationsquelle"@de , "Reputation Source"@en;
+        rdfs:subClassOf  prov:Agent;
+        skos:inScheme    dtm-sec:ReputationSourceScheme .
+
+dtm-business:isDataTrusteeGoalOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Gibt den Datentreuhänder an, für den dieses Ziel definiert ist."@de , "Indicates the data trustee for which this goal is defined."@en;
+        rdfs:domain         dtm-business:DataTrusteeGoal;
+        rdfs:label          "ist Datentreuhand-Ziel von"@de , "is data trustee goal of"@en;
+        rdfs:range          dtm-core:DataTrustee;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-core:hasDataTrusteeModel
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Associates a DataTrustee with the governance/operating model applied."@en , "Verknüpft eine Datentreuhand mit dem angewandten Governance-/Betriebsmodell."@de;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "has data trustee model"@en , "hat Datentreuhandmodell"@de;
+        rdfs:range          dtm-core:DataTrusteeModel;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-core:isDataTrusteeModelOf .
+
+dtm-business:FinancialSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für die Finanzwirtschaft, z. B. Banken, Versicherungen und Kapitalmärkte."@de , "Domain for the financial sector, such as banking, insurance and capital markets."@en;
+        rdfs:label       "Finance"@en , "Finanzwirtschaft"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-business:CrossDomainSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domänenübergreifender Bereich, der mehrere thematische Domänen umfasst."@de , "Cross-domain scope that spans multiple thematic domains."@en;
+        rdfs:label       "Cross-Domain"@en , "Domänenübergreifend"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-business:ConstructionSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für das Planen, Bauen und Betreiben von Gebäuden und Infrastrukturen."@de , "Domain for planning, construction and operation of buildings and infrastructure."@en;
+        rdfs:label       "Construction / Operation / Maintenance"@en , "Planen / Bauen / Betreiben"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-data:triggersPreparation
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates an actor triggering a preparation stage."@en , "Kennzeichnet einen Akteur als Auslöser einer Aufbereitung."@de;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "veranlasst Aufbereitung"@de , "triggers preparation"@en;
+        rdfs:range          dtm-data:DataPreparation;
+        rdfs:subPropertyOf  prov:wasAssociatedWith , dtm-data:triggersStage .
+
+dtm-data:DataForwarding
+        rdf:type         owl:Class;
+        rdfs:comment     "Data flow stage for forwarding data."@en , "Datenflussphase zur Weitergabe von Daten."@de;
+        rdfs:label       "Datenweitergabe"@de , "Data Forwarding"@en;
+        rdfs:subClassOf  dpv:Transfer , prov:Activity , dtm-data:DataFlowComponent .
+
+dtm-core:administeredBy
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Links Data to the DataOwner that administers it (governance, storage, lifecycle)."@en , "Verknüpft Daten mit dem Dateninhaber, der sie verwaltet (Governance, Speicherung, Lebenszyklus)."@de;
+        rdfs:domain         dtm-core:Data;
+        rdfs:label          "administered by"@en , "werden verwaltet von"@de;
+        rdfs:range          dtm-core:DataOwner;
+        rdfs:subPropertyOf  dtm-core:dataHeldBy;
+        owl:inverseOf       dtm-core:administers .
+
+dtm-business:offersPayModel
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Datentreuhänder mit einem Bezahlmodell, das er seinen Nutzenden oder Partnern anbietet."@de , "Links a data trustee to a pay model it offers to its users or partners."@en;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "offers pay model"@en , "bietet Bezahlmodell an"@de;
+        rdfs:range          dtm-business:PayModel;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:DataFlowComponent
+        rdf:type         owl:Class;
+        rdfs:comment     "Abstract component within a technical data flow."@en , "Abstrakte Phase im technischen Datenfluss."@de;
+        rdfs:label       "Datenflusskomponente"@de , "Data Flow Component"@en;
+        rdfs:subClassOf  prov:Activity .
+
+dtm-business:Compliance
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Ziel, rechtliche, regulatorische oder vertragliche Anforderungen an die Datennutzung zu erfüllen."@de , "Goal of complying with legal, regulatory or contractual requirements regarding data use."@en;
+        rdfs:label       "Erfüllung von Auflagen"@de , "Compliance with Requirements"@en;
+        rdfs:subClassOf  dtm-business:DataTrusteeGoal .
+
+dtm-legal:hasConsentSource
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Einwilligungsvorgang mit dem Akteur, der als Quelle der Einwilligung fungiert, typischerweise die betroffene Person oder eine andere berechtigte Partei."@de , "Relates a consent workflow to the actor who serves as the source of consent, typically the data subject or another authorised party."@en;
+        rdfs:domain         dtm-legal:ConsentWorkflow;
+        rdfs:label          "hat Einwilligungsquelle"@de , "has consent source"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-legal:isConsentSourceOf .
+
+dtm-business:hasFunder
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Datentreuhänder mit einer Entität, die seine Aktivitäten finanziert."@de , "Links a data trustee to an entity that provides funding."@en;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "hat Finanzierer"@de , "has funder"@en;
+        rdfs:range          dtm-business:Funder;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-business:isFunderOf .
+
+dtm-sec:ISO27001Certification
+        rdf:type       skos:Concept;
+        rdfs:label     "ISO-27001-Zertifizierungsstelle"@de , "ISO 27001 Certification Body"@en;
+        skos:broader   dtm-sec:ReputationSource;
+        skos:inScheme  dtm-sec:ReputationSourceScheme .
+
+dtm-business:usesPayModel
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Akteur mit dem Bezahlmodell, das er bei der Nutzung eines Datentreuhänders oder von Datendiensten verwendet."@de , "Relates an actor to the pay model it uses when interacting with a data trustee or data services."@en;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "uses Pay Model"@en , "nutzt Bezahlmodell"@de;
+        rdfs:range          dtm-business:PayModel;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:AerospaceSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für Luft- und Raumfahrt, einschließlich Luftverkehr und raumbezogener Aktivitäten."@de , "Domain for aerospace, including aviation and space-related activities."@en;
+        rdfs:label       "Aerospace"@en , "Luft- / Raumfahrt"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal>
+        rdf:type             owl:Ontology;
+        dcterms:creator      "Bernd Rauch" , "Jessica Chwalek" , "Denis Feth";
+        dcterms:description  "Legal layer describing processing bases and consent workflows in data trustee models."@en , "Rechtliche Schicht zur Beschreibung von Verarbeitungsgrundlagen und Einwilligungsvorgängen in Datentreuhandmodellen."@de;
+        dcterms:license      <https://creativecommons.org/licenses/by/4.0/>;
+        dcterms:modified     "2025-11-10"^^xsd:date;
+        dcterms:publisher    "Kickstart Trustee";
+        dcterms:rights       "© 2025 Kickstart Trustee — CC BY 4.0";
+        dcterms:title        "DTM Rechtsontologie"@de , "DTM Legal Ontology"@en;
+        owl:imports          <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core>;
+        owl:versionIRI       <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal/0.1.0> .
+
+dtm-data:ProcessingTechnique
+        rdf:type      owl:Class;
+        rdfs:comment  "Category of techniques for processing data."@en , "Kategorie technischer Verfahren zur Verarbeitung von Daten."@de;
+        rdfs:label    "Verarbeitungstechnik"@de , "Processing Technique"@en .
+
+dtm-business:EuropeanCompany
+        rdf:type         owl:Class , skos:Concept;
+        rdfs:comment     "Geschäftsform für eine Europäische Gesellschaft (SE)."@de , "Business form for a European Company (Societas Europaea, SE)."@en;
+        rdfs:label       "Societas Europaea (SE)"@de , "Societas Europaea (SE)"@en;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q111085796;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-sec:isTransmissionEndOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Gibt eine Konfiguration der Übertragungssicherheit an, bei der dieser Akteur der empfangende Endpunkt ist."@de , "Indicates a transmission security configuration for which this actor is the receiving endpoint."@en;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "ist Transmission-Ende von"@de , "is transmission end of"@en;
+        rdfs:range          dtm-sec:TransmissionSecurity;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:MobilitySector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für Mobilitätsdienste und Verkehrssysteme."@de , "Domain for mobility services and transport systems."@en;
+        rdfs:label       "Mobility"@en , "Mobilität"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-data:TargetSystem
+        rdf:type         owl:Class;
+        rdfs:comment     "System that receives or processes data."@en , "System, das Daten empfängt oder verarbeitet."@de;
+        rdfs:label       "Zielsystem"@de , "Target System"@en;
+        rdfs:subClassOf  dtm-data:DataSystem .
+
+dtm-core:isGrantedAccess
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates that a DataConsumer is granted receipt/possession of Data (transfer event or delivery)."@en , "Kennzeichnet, dass ein Datennutzer Daten erhält (Übertragung oder Bereitstellung)."@de;
+        rdfs:domain         dtm-core:DataConsumer;
+        rdfs:label          "is granted"@en , "erhält"@de;
+        rdfs:range          dtm-core:Data;
+        rdfs:subPropertyOf  dtm-core:holdsData;
+        owl:inverseOf       dtm-core:isAccessGrantedTo .
+
+dtm-data:StatisticalAnalysis
+        rdf:type         owl:Class;
+        rdfs:comment     "Analysis using statistical methods."@en , "Analyse unter Einsatz statistischer Verfahren."@de;
+        rdfs:label       "Statistische Analyse"@de , "Statistical Analysis"@en;
+        rdfs:subClassOf  dtm-data:AnalysisTechnique .
+
+dtm-data:isRetentionPeriodOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the storage stage to which this retention period applies."@en , "Gibt die Speicherphase an, für die diese Aufbewahrungsdauer gilt."@de;
+        rdfs:domain         dtm-data:RetentionPeriod;
+        rdfs:label          "ist Speicherdauer von"@de , "is retention period of"@en;
+        rdfs:range          dtm-data:DataStorage;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:hasPreparationTechnique
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates which processing technique is applied during data preparation."@en , "Gibt an, welche Verarbeitungstechnik in der Datenaufbereitung angewendet wird."@de;
+        rdfs:domain         dtm-data:DataPreparation;
+        rdfs:label          "hat Aufbereitungstechnik"@de , "has preparation technique"@en;
+        rdfs:range          dtm-data:ProcessingTechnique;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-data:isProcessingTechniqueOf .
+
+dtm-legal:GeneralConsentWorkflow
+        rdf:type          owl:Class;
+        rdfs:comment      "Repräsentiert einen allgemeinen bzw. wiederverwendbaren Einwilligungsvorgang, der für einen übergreifenden Verarbeitungskontext gilt und nicht nur für einen einzelnen Einzelfall."@de , "Represents a general or reusable consent workflow that applies to a broader processing context, rather than to a single individual case."@en;
+        rdfs:label        "Allgemeiner Einwilligungsvorgang"@de , "General Consent Workflow"@en;
+        rdfs:subClassOf   dtm-legal:ConsentWorkflow;
+        owl:disjointWith  dtm-legal:IndividualConsentWorkflow .
+
+dtm-data:DataReception
+        rdf:type         owl:Class;
+        rdfs:comment     "Data flow stage for receiving or importing data."@en , "Datenflussphase zum Empfang oder Import von Daten."@de;
+        rdfs:label       "Datenempfang"@de , "Data Reception"@en;
+        rdfs:subClassOf  dpv:Obtain , prov:Activity , dtm-data:DataFlowComponent .
+
+dtm-misc:Visualisierung
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Eigenschaft, die angibt, dass der Datentreuhänder oder Dienst visuelle Darstellungen von Daten oder Prozessen bereitstellt, z. B. Diagramme, Dashboards oder interaktive Ansichten."@de , "Property indicating that the data trustee or service provides visual representations of data or processes, such as charts, dashboards or interactive views."@en;
+        rdfs:label       "Visualisierung"@de , "Visualisation"@en;
+        rdfs:subClassOf  dtm-misc:Property;
+        skos:broader     dtm-misc:Property;
+        skos:inScheme    dtm-misc:PropertyScheme .
+
+dtm-core:administratesDataOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Connects a DataOwner to the AffectedParty whose data is administered by that owner."@en , "Verknüpft einen Dateninhaber mit der betroffenen Partei, deren Daten von ihm verwaltet werden."@de;
+        rdfs:domain         dtm-core:DataOwner;
+        rdfs:label          "has data stored of"@en , "hat Daten von"@de;
+        rdfs:range          dtm-core:AffectedParty;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-core:hasDataAdministratedBy .
+
+dtm-core:hasRightsOf  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Indicates that an AffectedParty holds rights over Data (e.g., legal entitlement or control)."@en , "Kennzeichnet, dass eine betroffene Partei Rechte an Daten hält (z. B. rechtlicher Anspruch oder Kontrolle)."@de;
+        rdfs:domain         dtm-core:AffectedParty;
+        rdfs:label          "has rights over"@en , "hat Rechte an"@de;
+        rdfs:range          dtm-core:Data;
+        rdfs:subPropertyOf  dtm-core:holdsData;
+        owl:inverseOf       dtm-core:isRightlyOwnedBy .
+
+dtm-core:dataHeldBy  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Indicates which Actor currently holds or possesses the Data (physically or logically)."@en , "Gibt an, welcher Akteur die Daten (physisch oder logisch) aktuell hält/besitzt."@de;
+        rdfs:domain         dtm-core:Data;
+        rdfs:label          "data held by"@en , "Daten gehalten von"@de;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-core:holdsData .
+
+dtm-business:Domain  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment       "Thematischer oder sektoraler Bereich, in dem ein Datentreuhänder tätig ist, z. B. Mobilität, Energie oder Gesundheitswesen."@de , "Thematic or sectoral area in which a data trustee operates, such as mobility, energy or healthcare."@en;
+        rdfs:label         "Domain"@en , "Domäne"@de;
+        skos:inScheme      dtm-business:DomainScheme;
+        skos:prefLabel     "Domäne"@de , "Domain"@en;
+        skos:topConceptOf  dtm-business:DomainScheme .
+
+dtm-data:usesSystem  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Indicates which system is used to execute this data flow component."@en , "Gibt an, welches System zur Durchführung dieser Datenflusskomponente genutzt wird."@de;
+        rdfs:domain         dtm-data:DataFlowComponent;
+        rdfs:label          "benutzt System"@de , "uses system"@en;
+        rdfs:range          dtm-data:DataSystem;
+        rdfs:subPropertyOf  prov:used , owl:topObjectProperty .
+
+dtm-data:Transformation
+        rdf:type         owl:Class;
+        rdfs:comment     "Conversion of data into new formats or structures."@en , "Überführung von Daten in neue Formate oder Strukturen."@de;
+        rdfs:label       "Transformation"@de , "Transformation"@en;
+        rdfs:subClassOf  dtm-data:ProcessingTechnique .
+
+dtm-business:Flatrate
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Bezahlmodell mit einer pauschalen, wiederkehrenden Gebühr, unabhängig von der tatsächlichen Nutzung."@de , "Pay model with a flat recurring fee independent of actual usage."@en;
+        rdfs:label       "Flatrate"@en , "Flatrate"@de;
+        rdfs:subClassOf  dtm-business:PayModel;
+        skos:broader     dtm-business:PayModel;
+        skos:inScheme    dtm-business:PayModelScheme .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-data:Anonymisation dtm-data:AtRestEncryption dtm-data:E2EEncryption dtm-data:Pseudonymisation dtm-data:TransportEncryption )
+] .
+
+dtm-sec:TransmissionSecurity
+        rdf:type         owl:Class;
+        rdfs:comment     "Sicherheitsmaßnahmen, die auf übertragene Daten zwischen Akteuren angewendet werden, z. B. Transportverschlüsselung, VPN oder gesicherte Kommunikationskanäle."@de , "Security measures applied to data in transit between actors, such as transport encryption, VPNs or secure channels."@en;
+        rdfs:label       "Sicherheit übertragener Daten"@de , "Security in Transmission"@en;
+        rdfs:subClassOf  dtm-sec:SecurityMeasure .
+
+dtm-business:operatingLanguage
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Datentreuhänder mit der primären(n) Sprache(n), die in Betrieb, Dokumentation oder Schnittstellen verwendet werden."@de , "Relates a data trustee to the primary language(s) used in its operations, documentation or interfaces."@en;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "Betriebssprache"@de , "operating language"@en;
+        rdfs:range          lcc-lr:Language;
+        rdfs:subPropertyOf  dcterms:language .
+
+dtm-data:hasReceptionFrequency
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Links a data reception stage to the frequency with which data is received."@en , "Verknüpft eine Datenempfangsphase mit der Häufigkeit, mit der Daten empfangen werden."@de;
+        rdfs:domain         dtm-data:DataReception;
+        rdfs:label          "hat Empfangsfrequenz"@de , "has reception frequency"@en;
+        rdfs:range          dtm-data:Frequency;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:securedByTechnique
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates which security technique protects this flow component."@en , "Gibt an, welche Sicherheitsmaßnahme auf diese Komponente angewendet wird."@de;
+        rdfs:domain         dtm-data:DataFlowComponent;
+        rdfs:label          "secured by technique"@en , "gesichert durch Maßnahme"@de;
+        rdfs:range          dtm-data:SecurityReceptionTechnique;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-data:securesAsTechnique .
+
+dtm-business:isFunderOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Gibt den Datentreuhänder oder das Datentreuhandmodell an, das von diesem Finanzierer unterstützt wird."@de , "Indicates the data trustee or data trustee model funded by this funder."@en;
+        rdfs:domain         dtm-business:Funder;
+        rdfs:label          "ist Finanzierer von"@de , "is funder of"@en;
+        rdfs:range          dtm-core:DataTrustee;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-core:Actor dtm-core:Data dtm-core:DataTrusteeModel dtm-core:Metadata dtm-legal:ConsentWorkflow )
+] .
+
+dtm-business:CivilLawPartnership
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Geschäftsform für eine Gesellschaft bürgerlichen Rechts (GbR)."@de , "Business form for a civil-law partnership."@en;
+        rdfs:label       "Gesellschaft bürgerlichen Rechts (GbR)"@de , "Civil-Law Partnership"@en;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q33134157;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-business:hasDomain
+        rdf:type       owl:ObjectProperty;
+        rdfs:comment   "Verknüpft einen Datentreuhänder mit der thematischen oder sektoralen Domäne, in der er tätig ist."@de , "Associates a data trustee with the thematic or sectoral domain in which it operates."@en;
+        rdfs:domain    dtm-core:DataTrustee;
+        rdfs:label     "hat Domäne"@de , "has domain"@en;
+        rdfs:range     dtm-business:Domain;
+        owl:inverseOf  dtm-business:isDomainOf .
+
+dtm-business:DataSharing
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Nutzungsziel, Daten mit anderen Akteuren innerhalb oder über Datenökosysteme hinweg zu teilen."@de , "Usage goal of sharing data with other actors within or across data ecosystems."@en;
+        rdfs:label       "Datenteilen"@de , "Data Sharing"@en;
+        rdfs:subClassOf  dtm-business:UsageGoalOfUser;
+        skos:inScheme    dtm-business:UsageGoalScheme .
+
+dtm-business:FundingSource
+        rdf:type      owl:Class;
+        rdfs:comment  "Typ einer Institution oder eines Programms, das Datentreuhandprojekte finanziert oder unterstützt, z. B. Ministerien oder EU-Programme."@de , "Type of institution or program that funds or supports data trustee projects, such as ministries or EU programs."@en;
+        rdfs:label    "Förderinstitution"@de , "Funding Source"@en .
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-business>
+        rdf:type                       owl:Ontology;
+        dcterms:creator                "Denis Feth" , "Bernd Rauch" , "Jessica Chwalek";
+        dcterms:description            "Business layer extending the DTM core ontology."@en , "Business-Schicht, die die DTM-Core-Ontologie um domänen- und geschäftsbezogene Konzepte erweitert."@de;
+        dcterms:license                <https://creativecommons.org/licenses/by/4.0/>;
+        dcterms:modified               "2025-11-10"^^xsd:date;
+        dcterms:publisher              "Kickstart Trustee";
+        dcterms:rights                 "© 2025 Kickstart Trustee — CC BY 4.0";
+        dcterms:title                  "DTM Business Ontology"@en;
+        vann:preferredNamespacePrefix  "dtm-business";
+        vann:preferredNamespaceUri     "https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#";
+        owl:imports                    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core>;
+        owl:versionIRI                 <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business/0.1.0> .
+
+dtm-core:SelfManagedValueAddedDataTrustee
+        rdf:type         owl:Class;
+        rdfs:comment     "Value-adding trustee model that operates autonomously under internal governance."@en , "Mehrwert-Treuhandmodell, das autonom unter interner Governance agiert."@de;
+        rdfs:label       "Self Managed Value Added Data Trustee"@en , "Selbstbestimmte Mehrwerttreuhand"@de;
+        rdfs:subClassOf  dtm-core:ValueAddedDataTrustee .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-data:CentralisedArchitecture dtm-data:FederatedArchitecture dtm-data:MicroserviceArchitecture )
+] .
+
+dtm-legal:IndividualConsentWorkflow
+        rdf:type         owl:Class;
+        rdfs:comment     "Repräsentiert einen Einwilligungsvorgang, der auf einen individuellen Fall zugeschnitten ist, etwa eine bestimmte betroffene Person, Transaktion oder Datennutzung."@de , "Represents a consent workflow tailored to an individual case, such as a specific data subject, transaction or data use."@en;
+        rdfs:label       "Individueller Einwilligungsvorgang"@de , "Individual Consent Workflow"@en;
+        rdfs:subClassOf  dtm-legal:ConsentWorkflow .
+
+dtm-data:isStorageTechniqueOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the data storage stage in which this technique is used."@en , "Gibt die Speicherphase an, in der diese Technik genutzt wird."@de;
+        rdfs:domain         dtm-data:StorageTechnique;
+        rdfs:label          "ist Speichertechnik von"@de , "is storage technique of"@en;
+        rdfs:range          dtm-data:DataStorage;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-core:hasMetadata  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Attaches Metadata describing an entity (provenance, format, rights, quality, etc.)."@en , "Hängt Metadaten an eine Entität an (Herkunft, Format, Rechte, Qualität usw.)."@de;
+        rdfs:domain         owl:Thing;
+        rdfs:label          "has metadata"@en , "hat Metadaten"@de;
+        rdfs:range          dtm-core:Metadata;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-core:isMetadataOf .
+
+dtm-data:WithRetention
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Retention of data based on defined rules."@en , "Aufbewahrung von Daten nach definierten Regeln."@de;
+        rdfs:label       "Mit Retention"@de , "With retention"@en;
+        rdfs:subClassOf  dtm-data:RetentionPeriod;
+        skos:broader     dtm-data:RetentionPeriod;
+        skos:inScheme    dtm-data:RetentionPeriodScheme .
+
+dtm-data:isImplementedBy
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Relates an architecture to the trustee model implemented on it."@en , "Verknüpft eine Architektur mit dem darauf implementierten Datentreuhandmodell."@de;
+        rdfs:domain         dtm-data:Architecture;
+        rdfs:label          "wird implementiert durch"@de , "is implemented by"@en;
+        rdfs:range          dtm-core:DataTrusteeModel;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-legal:isConsentSourceOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Datenbereitsteller mit einem Einwilligungsvorgang, für den er im Kontext des Datentreuhandmodells als Einwilligungsquelle fungiert."@de , "Relates a data provider to a consent workflow for which it acts as the source of consent in the context of the data trustee model."@en;
+        rdfs:domain         dtm-core:DataProvider;
+        rdfs:label          "ist Einwilligungsquelle von"@de , "is consent source of"@en;
+        rdfs:range          dtm-legal:ConsentWorkflow;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:EducationSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für den Bildungssektor, einschließlich Schulen, Hochschulen und lebenslangem Lernen."@de , "Domain representing the education sector, including schools, universities and lifelong learning."@en;
+        rdfs:label       "Education"@en , "Bildung"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-business:PublicLawInstitution
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Business form for a public law institution."@en , "Geschäftsform für eine Anstalt des öffentlichen Rechts (AöR)."@de;
+        rdfs:label       "Public Law Institution"@en , "Anstalt des öffentlichen Rechts (AöR)"@de;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q67207116;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-business:isUsedAsPayModel
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Kennzeichnet, dass dieses Bezahlmodell von einem Akteur als Preis- bzw. Entgeltmodell genutzt wird."@de , "Indicates that this pay model is used by an actor as its pricing scheme."@en;
+        rdfs:domain         dtm-business:PayModel;
+        rdfs:label          "wird benutzt als Bezahlmodell von"@de , "is used as pay model"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-business:usesPayModel .
+
+dtm-core:isDataTrusteeModelOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Inverse of hasDataTrusteeModel; denotes the trustee that applies this model."@en , "Inverse zu hasDataTrusteeModel; bezeichnet die Datentreuhand, die dieses Modell anwendet."@de;
+        rdfs:domain         dtm-core:DataTrusteeModel;
+        rdfs:label          "is data trustee model of"@en , "ist Datentreuhandmodell von"@de;
+        rdfs:range          dtm-core:DataTrustee;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-core:DataConsumer
+        rdf:type         owl:Class;
+        rdfs:comment     "Actor that consumes or uses data for a purpose (analysis, service, product)."@en , "Akteur, der Daten zu einem Zweck nutzt (Analyse, Dienst, Produkt)."@de;
+        rdfs:label       "Data Consumer"@en , "Datennutzer"@de;
+        rdfs:subClassOf  dtm-core:Actor .
+
+dtm-sec:SecurityMeasure
+        rdf:type         owl:Class;
+        rdfs:comment     "Abstrakte Oberklasse für alle Sicherheitsmaßnahmen im DTM-Sicherheitsmodell."@de , "Abstract superclass for all high-level security measures in the DTM security model."@en;
+        rdfs:label       "Sicherheitsmaßnahme"@de , "Security Measure"@en;
+        rdfs:subClassOf  dpv:TechnicalMeasure .
+
+dtm-core:DataProvider
+        rdf:type         owl:Class;
+        rdfs:comment     "Actor that provides or supplies data into a trustee setting."@en , "Akteur, der Daten in eine Treuhand-Konstellation einbringt/bereitstellt."@de;
+        rdfs:label       "Data Provider"@en , "Datengeber"@de;
+        rdfs:subClassOf  dtm-core:Actor .
+
+dtm-core:isMetadataOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Inverse of hasMetadata; the described thing that Metadata pertains to."@en , "Inverse zu hasMetadata; die beschriebene Entität, auf die sich die Metadaten beziehen."@de;
+        rdfs:domain         dtm-core:Metadata;
+        rdfs:label          "is metadata of"@en , "ist Metadaten von"@de;
+        rdfs:range          owl:Thing;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-legal:LegalObligation
+        rdf:type         skos:Concept;
+        skos:broader     dtm-legal:ProcessingBasis;
+        skos:definition  "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung erforderlich ist, um einer dem Verantwortlichen oder Treuhänder auferlegten gesetzlichen Verpflichtung nachzukommen."@de , "Represents a processing basis where processing is required to comply with a legal obligation imposed on the controller or trustee."@en;
+        skos:exactMatch  dpv:LegalObligation;
+        skos:inScheme    dtm-legal:ProcessingBasisScheme;
+        skos:prefLabel   "Gesetzliche Verpflichtung"@de , "Legal Obligation"@en .
+
+dtm-core:TradeSecret  rdf:type  owl:Class;
+        rdfs:comment     "Confidential information with economic value protected by secrecy and controls."@en , "Vertrauliche Informationen mit wirtschaftlichem Wert, die durch Geheimhaltung/Kontrollen geschützt sind."@de;
+        rdfs:label       "Trade Secret"@en , "Geschäftsgeheimnis"@de;
+        rdfs:subClassOf  dtm-core:Data .
+
+dtm-business:PayModel
+        rdf:type      owl:Class;
+        rdfs:comment  "Kategorie, die das Preis- bzw. Bezahlmodell für Datendienste oder die Teilnahme an einem Datentreuhänder beschreibt."@de , "Category describing the pricing or payment model applied to data services or participation in a data trustee."@en;
+        rdfs:label    "Pay Model"@en , "Bezahlmodell"@de .
+
+dtm-business:isOfferedAsPayModel
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Kennzeichnet, dass ein bestimmtes Bezahlmodell von einem Datentreuhänder angeboten wird."@de , "Indicates that a specific pay model is offered by a data trustee."@en;
+        rdfs:domain         dtm-business:PayModel;
+        rdfs:label          "ist angeboten als Bezahlmodell von"@de , "is offered as pay model"@en;
+        rdfs:range          dtm-core:DataTrustee;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-business:offersPayModel .
+
+dtm-business:PayModelScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Kontrolliertes Vokabular von Bezahlmodellen, das von Datentreuhändern und Akteuren verwendet wird."@de , "Controlled vocabulary of pay models used by data trustees and actors."@en;
+        dcterms:title        "Bezahlmodell-Schema"@de , "Pay Model Scheme"@en .
+
+dtm-business:EntrepreneurialCompany
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Business form for an entrepreneurial company with limited liability."@en , "Geschäftsform für eine Unternehmergesellschaft (haftungsbeschränkt) (UG)."@de;
+        rdfs:label       "Entrepreneurial Company"@en , "Unternehmergesellschaft (UG) (haftungsbeschränkt)"@de;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q2498526;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-business:ShareLimitedPartnership
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Geschäftsform für eine Kommanditgesellschaft auf Aktien."@de , "Business form for a partnership limited by shares (KGaA)."@en;
+        rdfs:label       "Partnership Limited by Shares"@en , "Kommanditgesellschaft auf Aktien (KGaA)"@de;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q19823288;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-business:BMWK  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Förderinstitution, die das Bundesministerium für Wirtschaft und Klimaschutz (BMWK) repräsentiert."@de , "Funding source representing the German Federal Ministry for Economic Affairs and Climate Action (BMWK)."@en;
+        rdfs:label       "BMWK - Federal Ministry for Economic Affairs and Climate Action"@en , "BMWK - Bundesministerium für Wirtschaft und Klimaschutz"@de;
+        rdfs:subClassOf  dtm-business:FundingSource;
+        owl:sameAs       wd:Q488589;
+        skos:broader     dtm-business:FundingSource;
+        skos:inScheme    dtm-business:FundingSourceScheme .
+
+dtm-core:AccessDataTrustee
+        rdf:type         owl:Class;
+        rdfs:comment     "Trustee model focusing on access control: ensures only authorized parties can use data; data providers govern access."@en , "Treuhandmodell mit Fokus auf Zugangskontrolle: Nur berechtigte Parteien erhalten Nutzung; Datengeber steuern den Zugang."@de;
+        rdfs:label       "Access Data Trustee"@en , "Zugangstreuhand"@de;
+        rdfs:subClassOf  dtm-core:DataTrusteeModel .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-data:Aggregation dtm-data:Cleaning dtm-data:Transformation )
+] .
+
+dtm-core:Metadata  rdf:type  owl:Class;
+        rdfs:comment  "Data about data: provenance, structure, constraints, usage terms, quality, lineage."@en , "Daten über Daten: Herkunft, Struktur, Restriktionen, Nutzungsbedingungen, Qualität, Herkunftskette."@de;
+        rdfs:label    "Meta Data"@en , "Metadata"@de .
+
+dtm-legal:VitalInterest
+        rdf:type         skos:Concept;
+        skos:broader     dtm-legal:ProcessingBasis;
+        skos:definition  "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zum Schutz lebenswichtiger Interessen einer natürlichen Person erforderlich ist, etwa Leben oder körperliche Unversehrtheit."@de , "Represents a processing basis where processing is necessary to protect the vital interests of a natural person, such as life or physical integrity."@en;
+        skos:exactMatch  dpv:VitalInterest;
+        skos:inScheme    dtm-legal:ProcessingBasisScheme;
+        skos:prefLabel   "Lebenswichtiges Interesse"@de , "Vital Interest"@en .
+
+dtm-data:hasReceptionTechnique
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Specifies the technique or channel by which data is received."@en , "Gibt die Technik an, über die Daten empfangen werden."@de;
+        rdfs:domain         dtm-data:DataReception;
+        rdfs:label          "hat Empfangstechnik"@de , "has reception technique"@en;
+        rdfs:range          dtm-data:ReceptionTechnique;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-data:isReceptionTechniqueOf .
+
+dtm-legal:hasBeneficiary
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine Verarbeitungsgrundlage (Konzept) mit dem Datennutzer, der von der Verarbeitung profitiert."@de , "Relates a processing basis concept to the data consumer that benefits from the processing."@en;
+        rdfs:domain         skos:Concept;
+        rdfs:label          "hat Begünstigten"@de , "has beneficiary"@en;
+        rdfs:range          dtm-core:DataConsumer;
+        rdfs:subPropertyOf  dpv:hasRecipient;
+        owl:inverseOf       dtm-legal:isBeneficiaryOf .
+
+dtm-core:ExternallyControlledValueAddedDataTrustee
+        rdf:type          owl:Class;
+        rdfs:comment      "Value-adding trustee model whose value-creation decisions are governed by an external controller."@en , "Mehrwert-Treuhandmodell, dessen Wertschöpfungsentscheidungen extern gesteuert werden."@de;
+        rdfs:label        "Externally Controlled Value Added Data Trustee"@en , "Fremdbestimmte Mehrwerttreuhand"@de;
+        rdfs:subClassOf   dtm-core:ValueAddedDataTrustee;
+        owl:disjointWith  dtm-core:SelfManagedValueAddedDataTrustee .
+
+dtm-data:ForTransmissionOnly
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Retention only as long as needed for data transmission."@en , "Speicherung nur solange erforderlich für die Übermittlung."@de;
+        rdfs:label       "Nur zur Übermittlung"@de , "For transmission only"@en;
+        rdfs:subClassOf  dtm-data:RetentionPeriod;
+        skos:broader     dtm-data:RetentionPeriod;
+        skos:inScheme    dtm-data:RetentionPeriodScheme .
+
+dtm-data:DataStorage  rdf:type  owl:Class;
+        rdfs:comment     "Data flow stage for storing data."@en , "Datenflussphase zur Speicherung von Daten."@de;
+        rdfs:label       "Datenspeicherung"@de , "Data Storage"@en;
+        rdfs:subClassOf  dpv:Storage , prov:Activity , dtm-data:DataFlowComponent .
+
+dtm-business:FairMarketCompetition
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Ziel, fairen Wettbewerb zu unterstützen und datenbasierte Wettbewerbsverzerrungen zu vermeiden."@de , "Goal of supporting fair competition and avoiding data-based market distortions."@en;
+        rdfs:label       "Fairer Wettbewerb"@de , "Fair Market Competition"@en;
+        rdfs:subClassOf  dtm-business:DataTrusteeGoal;
+        skos:inScheme    dtm-business:DataTrusteeGoalScheme .
+
+dtm-data:Aggregation  rdf:type  owl:Class;
+        rdfs:comment     "Combining individual values into aggregated results."@en , "Zusammenführung einzelner Werte zu aggregierten Ergebnissen."@de;
+        rdfs:label       "Aggregation"@en , "Aggregation"@de;
+        rdfs:subClassOf  dtm-data:ProcessingTechnique .
+
+dtm-core:hasDataOwner
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Declares participation of a DataOwner within a DataTrustee arrangement."@en , "Deklariert die Beteiligung eines Dateninhabers innerhalb einer Datentruehand-Konstellation."@de;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "has Data Owner"@en , "hat Dateninhaber"@de;
+        rdfs:range          dtm-core:DataOwner;
+        rdfs:subPropertyOf  dtm-core:hasActor;
+        owl:inverseOf       dtm-core:isDataOwnerOf .
+
+dtm-business:AffiliationScheme
+        rdf:type        skos:ConceptScheme;
+        skos:prefLabel  "Zugehörigkeitsschema"@de , "Affiliation Scheme"@en .
+
+dtm-data:Permanent  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Long-term or indefinite data retention."@en , "Dauerhafte oder unbefristete Speicherung von Daten."@de;
+        rdfs:label       "Dauerhaft"@de , "Permanent"@en;
+        rdfs:subClassOf  dtm-data:RetentionPeriod;
+        skos:broader     dtm-data:RetentionPeriod;
+        skos:inScheme    dtm-data:RetentionPeriodScheme .
+
+dtm-business:ScienceAndResearch
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen."@de , "Goal of supporting scientific research and development based on data."@en;
+        rdfs:label       "Wissenschaft und Forschung"@de , "Science and Research"@en;
+        rdfs:subClassOf  dtm-business:DataTrusteeGoal;
+        skos:inScheme    dtm-business:DataTrusteeGoalScheme .
+
+dtm-business:BusinessForm
+        rdf:type      skos:Concept , owl:Class;
+        rdfs:comment  "Kategorie für die rechtliche bzw. organisatorische Geschäftsform eines Datentreuhänders oder einer Organisation, z. B. GmbH, e.V. oder Stiftung."@de , "Category for the legal or organizational business form of a data trustee or organization, such as GmbH, e.V. or foundation."@en;
+        rdfs:label    "Geschäftsform"@de , "Business Form"@en .
+
+dtm-business:LogisticSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für Logistik, einschließlich Transport, Lagerung und Lieferkettenmanagement."@de , "Domain for logistics, including transport, warehousing and supply chain management."@en;
+        rdfs:label       "Logistics"@en , "Logistik"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-business:SupportFee
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Bezahlmodell, bei dem Entgelte für Support, Wartung oder Betriebsunterstützung anfallen."@de , "Pay model that charges fees for support, maintenance or operational assistance."@en;
+        rdfs:label       "Supportgebühr"@de , "Support Fee"@en;
+        rdfs:subClassOf  dtm-business:PayModel;
+        skos:broader     dtm-business:PayModel;
+        skos:inScheme    dtm-business:PayModelScheme .
+
+dtm-core:DataTrusteeModel
+        rdf:type      owl:Class;
+        rdfs:comment  "Model describing structure, roles and responsibilities of a data trustee implementation."@en , "Modell, das Struktur, Rollen und Verantwortlichkeiten einer Datentreuhand-Umsetzung beschreibt."@de;
+        rdfs:label    "Data Trustee Model"@en , "Datentreuhandmodell"@de .
+
+dtm-data:hasStorageTechnique
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the technical approach used to store data."@en , "Gibt die Speichertechnik an, die zum Speichern der Daten genutzt wird."@de;
+        rdfs:domain         dtm-data:DataStorage;
+        rdfs:label          "hat Speichertechnik"@de , "has storage technique"@en;
+        rdfs:range          dtm-data:StorageTechnique;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-data:isStorageTechniqueOf .
+
+dtm-data:isUsedAsSystem
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates that this system is used to support a data flow component."@en , "Kennzeichnet, dass dieses System als technische Grundlage einer Datenflusskomponente dient."@de;
+        rdfs:domain         dtm-data:DataSystem;
+        rdfs:label          "wird genutzt als System in"@de , "is used as system"@en;
+        rdfs:range          dtm-data:DataFlowComponent;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-data:usesSystem .
+
+dtm-data:PrivacyEnhancingTechnology
+        rdf:type         owl:Class;
+        rdfs:comment     "Techniques that enhance privacy protection."@en , "Techniken zur Verbesserung des Datenschutzes."@de;
+        rdfs:label       "Privacy Enhancing Technologies"@de , "Privacy Enhancing Technologies"@en;
+        rdfs:subClassOf  dpv:TechnicalMeasure , dtm-data:AnalysisTechnique .
+
+dtm-legal:isBeneficiaryOf
+        rdf:type      owl:ObjectProperty;
+        rdfs:comment  "Verknüpft einen Datennutzer mit der Verarbeitungsgrundlage, von der er profitiert."@de , "Relates a data consumer to a processing basis concept from which it benefits."@en;
+        rdfs:domain   dtm-core:DataConsumer;
+        rdfs:label    "ist Begünstigter von"@de , "is beneficiary of"@en;
+        rdfs:range    skos:Concept .
+
+dtm-misc:Property  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment       "Abstrakte Kategorie für querschnittliche Eigenschaften, die in DTM-Metadaten spezifiziert werden können, z. B. Analyse, Datenzugangstransparenz oder Visualisierung."@de , "Abstract category for cross-cutting properties that can be specified in DTM metadata, e.g. analysis, data access transparency or visualisation."@en;
+        rdfs:label         "Eigenschaft"@de , "Property"@en;
+        skos:topConceptOf  dtm-misc:PropertyScheme .
+
+dtm-business:DataTrusteeGoal
+        rdf:type      owl:Class;
+        rdfs:comment  "Übergeordnete Kategorie für Ziele, die ein Datentreuhänder verfolgt, z. B. Souveränität, Innovation oder wirtschaftliche Verwertung."@de , "General category for goals that a data trustee aims to achieve, such as sovereignty, innovation or economic utilization."@en;
+        rdfs:label    "Ziel der Datentreuhand"@de , "Data Trustee Goal"@en .
+
+dtm-sec:hasTransmissionStart
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine Konfiguration der Übertragungssicherheit mit dem Akteur, der die gesicherte Übertragung initiiert."@de , "Links a transmission security configuration to the actor that initiates the protected transmission."@en;
+        rdfs:domain         dtm-sec:TransmissionSecurity;
+        rdfs:label          "hat Transmission-Start"@de , "has transmission start"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-sec:isTransmissionStartOf .
+
+dtm-sec:implementsSecurityTechnique
+        rdf:type      owl:ObjectProperty;
+        rdfs:comment  "Verknüpft eine Sicherheitsmaßnahme (Policy) mit einer konkreten technischen Technik aus dtm-data."@de , "Links a high-level security measure (policy) with a concrete technical technique defined in dtm-data."@en;
+        rdfs:domain   dtm-sec:SecurityMeasure;
+        rdfs:label    "implementiert Sicherheitstechnik"@de , "implements security technique"@en;
+        rdfs:range    dtm-data:SecurityReceptionTechnique .
+
+dtm-sec:hasReputationSource
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Akteur mit einer Quelle, die Informationen über seine Reputation, Vertrauenswürdigkeit oder Zertifizierungen liefert."@de , "Relates an actor to a source that provides information about its reputation, trustworthiness or certification status."@en;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "hat Reputationsquelle"@de , "has reputation source"@en;
+        rdfs:range          dtm-sec:ReputationSource;
+        rdfs:subPropertyOf  owl:topObjectProperty , prov:wasAttributedTo;
+        owl:inverseOf       dtm-sec:isReputationSourceOf .
+
+dtm-data:AnalysisTechnique
+        rdf:type      owl:Class;
+        rdfs:comment  "Category of techniques for analysing data."@en , "Kategorie von Techniken zur Analyse von Daten."@de;
+        rdfs:label    "Auswertungstechnik"@de , "Data Analysis Technique"@en .
+
+dtm-business:Free  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Bezahlmodell, bei dem Zugang oder Dienstleistungen kostenlos bereitgestellt werden."@de , "Pay model where access or services are provided free of charge."@en;
+        rdfs:label       "Kostenlos"@de , "Free"@en;
+        rdfs:subClassOf  dtm-business:PayModel;
+        skos:broader     dtm-business:PayModel;
+        skos:inScheme    dtm-business:PayModelScheme .
+
+dtm-business:SmartLivingSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für Smart Living, einschließlich Smart Homes und digital unterstütztem Alltagsleben."@de , "Domain for smart living, including smart homes and digitally supported everyday life."@en;
+        rdfs:label       "Smart Living"@en , "Smart Living"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-business:Freemium
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Bezahlmodell, das ein kostenloses Basisangebot mit kostenpflichtigen Premiumfunktionen oder -diensten kombiniert."@de , "Pay model combining a free basic offering with paid premium features or services."@en;
+        rdfs:label       "Freemium"@en , "Freemium"@de;
+        rdfs:subClassOf  dtm-business:PayModel;
+        skos:broader     dtm-business:PayModel;
+        skos:inScheme    dtm-business:PayModelScheme .
+
+dtm-business:UsageGoalScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Controlled vocabulary of user usage goals."@en;
+        dcterms:title        "Nutzungsziel-Schema"@de , "Usage Goal Scheme"@en .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-data:ForTransmissionOnly dtm-data:Permanent dtm-data:WithRetention )
+] .
+
+dtm-misc:specifies  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Verknüpft Metadaten mit einer konzeptionellen Eigenschaft, die sie spezifizieren, z. B. ob ein Datentreuhänder Analyse-, Transparenz- oder Visualisierungsfunktionen bereitstellt."@de , "Relates metadata to a conceptual property that it specifies, such as whether a data trustee offers analysis, transparency or visualisation features."@en;
+        rdfs:domain         dtm-core:Metadata;
+        rdfs:label          "spezifiziert"@de , "specifies"@en;
+        rdfs:range          dtm-misc:Property;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:Pseudonymisation
+        rdf:type         owl:Class;
+        rdfs:comment     "Replacement of identifiers with pseudonyms."@en , "Ersetzung identifizierender Merkmale durch Pseudonyme."@de;
+        rdfs:label       "Pseudonymisieren"@de , "Pseudonymisation"@en;
+        rdfs:subClassOf  dtm-data:SecurityReceptionTechnique .
+
+dtm-legal:getsConsentThroughDataOwner
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Einwilligungsvorgang mit der betroffenen Partei in Fällen, in denen die Einwilligung mittelbar über einen Dateninhaber eingeholt wird, der im Namen dieser Partei handelt."@de , "Relates a consent workflow to the affected party in cases where consent is obtained indirectly through a data owner acting on behalf of that party."@en;
+        rdfs:domain         dtm-legal:ConsentWorkflow;
+        rdfs:label          "gets consent through data owner"@en , "erhält Einwilligung durch den Dateninhaber"@de;
+        rdfs:range          dtm-core:AffectedParty;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-legal:givesConsentByDataOwner .
+
+dtm-business:GeoinformationSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne mit Fokus auf Geodaten und Geoinformationsdienste."@de , "Domain focusing on geospatial data and geoinformation services."@en;
+        rdfs:label       "Geoinformation"@en , "Geoinformation"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-business:AgricultureSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für Landwirtschaft und verwandte ländliche Tätigkeiten."@de , "Domain for agriculture and related rural activities."@en;
+        rdfs:label       "Agriculture"@en , "Landwirtschaft"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-data:AIPoweredAnalysis
+        rdf:type         owl:Class;
+        rdfs:comment     "Analysis of data using AI techniques such as ML or LLMs."@en , "Analyse von Daten mittels KI, LLMs oder Machine Learning."@de;
+        rdfs:label       "KI-gestützte Auswertung"@de , "AI powered analysis"@en;
+        rdfs:subClassOf  dtm-data:AnalysisTechnique .
+
+dtm-data:performsReception
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Links a data reception stage to the actor performing it."@en , "Verknüpft eine Empfangsphase mit dem Akteur, der sie durchführt."@de;
+        rdfs:domain         dtm-data:DataReception;
+        rdfs:label          "führt Empfang durch"@de , "performs reception"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  prov:wasAssociatedWith , dtm-data:stagePerformedBy;
+        owl:inverseOf       dtm-data:triggersReception .
+
+dtm-business:BusinessFormScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Konzeptschema für die thematischen bzw. sektoralen Geschäftsformen, in denen Datentreuhänder tätig ist."@de , "Concept scheme representing the thematic or sectoral business forms in which data trustees operate."@en;
+        dcterms:title        "Geschäftsform Schema"@de , "Business Form Concept Schema"@en .
+
+dtm-data:E2EEncryption
+        rdf:type         owl:Class;
+        rdfs:comment     "End-to-end encryption during transmission."@en , "Ende-zu-Ende-Verschlüsselung während der Übertragung."@de;
+        rdfs:label       "Ende-zu-Ende-Verschlüsselung"@de , "End-to-End Encryption"@en;
+        rdfs:subClassOf  dtm-data:SecurityReceptionTechnique .
+
+dtm-business:EU  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Förderinstitution, die Programme oder Instrumente der Europäischen Union repräsentiert."@de , "Funding source representing programs or instruments of the European Union."@en;
+        rdfs:label       "EU - European Union"@en , "EU - Europäische Union"@de;
+        rdfs:subClassOf  dtm-business:FundingSource;
+        skos:broader     dtm-business:FundingSource;
+        skos:inScheme    dtm-business:FundingSourceScheme .
+
+dtm-business:EnergySector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für den Energiesektor, einschließlich Erzeugung, Verteilung und Nutzung von Energie."@de , "Domain for the energy sector, including production, distribution and consumption of energy."@en;
+        rdfs:label       "Energy"@en , "Energie"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-misc:Datenzugangstransparenz
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Eigenschaft, die beschreibt, wie transparent die Prozesse des Datenzugangs sind, z. B. Nachvollziehbarkeit von Zugriffsregeln, Protokollierung und nutzerorientierte Informationen darüber, wer wann auf welche Daten zugreifen kann."@de , "Property describing how transparent the data access processes are, e.g. clarity of access rules, logging, and user-facing information about who can access which data when."@en;
+        rdfs:label       "Datenzugangstransparenz"@de , "Data Access Transparency"@en;
+        rdfs:subClassOf  dtm-misc:Property;
+        skos:broader     dtm-misc:Property;
+        skos:inScheme    dtm-misc:PropertyScheme .
+
+dtm-data:Digitization
+        rdf:type         owl:Class;
+        rdfs:comment     "Conversion of analogue information into digital data."@en , "Umwandlung analoger Informationen in digitale Daten."@de;
+        rdfs:label       "Digitalisierung"@de , "Digitization"@en;
+        rdfs:subClassOf  dtm-data:ProcessingTechnique .
+
+dtm-data:Upload  rdf:type  owl:Class;
+        rdfs:comment     "Forwarding of data by uploading to a target system."@en , "Weitergabe durch Hochladen von Daten in ein Zielsystem."@de;
+        rdfs:label       "Upload"@de , "Upload"@en;
+        rdfs:subClassOf  dtm-data:ForwardingTechnique .
+
+dtm-data:triggersDataAnalysis
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates an actor triggering a data analysis stage."@en , "Kennzeichnet einen Akteur als Auslöser einer Datenanalyse."@de;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "veranlasst Datenanalyse"@de , "triggers data analysis"@en;
+        rdfs:range          dtm-data:DataAnalysis;
+        rdfs:subPropertyOf  dtm-data:triggersStage .
+
+dtm-business:isBusinessFormOf
+        rdf:type      owl:ObjectProperty;
+        rdfs:comment  "Gibt den Datentreuhänder oder die Organisation an, für die diese Geschäftsform gilt."@de , "Indicates the data trustee or organization that has this business form."@en;
+        rdfs:domain   dtm-business:BusinessForm;
+        rdfs:label    "ist Geschäftsform von"@de , "is business form of"@en;
+        rdfs:range    [ rdf:type     owl:Class;
+                        owl:unionOf  ( dtm-core:DataTrustee dtm-business:Organisation )
+                      ] .
+
+dtm-core:AffectedParty
+        rdf:type         owl:Class;
+        rdfs:comment     "Party to whom the data relates and whose rights/interests may be affected."@en , "Partei, auf die sich Daten beziehen und deren Rechte/Interessen betroffen sein können."@de;
+        rdfs:label       "Affected Party"@en , "Betroffener"@de;
+        rdfs:subClassOf  dtm-core:DataProvider .
+
+dtm-core:Data  rdf:type  owl:Class;
+        rdfs:comment  "Any information that is stored, processed, shared or administered."@en , "Beliebige Informationen, die gespeichert, verarbeitet, geteilt oder verwaltet werden."@de;
+        rdfs:label    "Data"@en , "Daten"@de .
+
+dtm-legal:getsConsentDirectly
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Einwilligungsvorgang mit der betroffenen Partei, von der die Einwilligung unmittelbar und ohne Delegation oder zwischengeschalteten Dateninhaber eingeholt wird."@de , "Relates a consent workflow to the affected party from whom consent is obtained directly, without delegation or an intermediate data owner."@en;
+        rdfs:domain         dtm-legal:ConsentWorkflow;
+        rdfs:label          "gets consent directly"@en , "erhält Einwilligung direkt"@de;
+        rdfs:range          dtm-core:AffectedParty;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-legal:givesConsentDirectly .
+
+dtm-core:hasAffectedParty
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Specifies that an AffectedParty participates in a given DataTrustee arrangement."@en , "Gibt an, dass eine betroffene Partei an einer bestimmten Datentreuhand-Konstellation beteiligt ist."@de;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "has affected Party"@en , "hat betroffene Partei"@de;
+        rdfs:range          dtm-core:AffectedParty;
+        rdfs:subPropertyOf  dtm-core:hasActor;
+        owl:inverseOf       dtm-core:isAffectedPartyIn .
+
+dtm-data:DataSystem  rdf:type  owl:Class;
+        rdfs:comment     "Technical system used to process or store data."@en , "Technisches System zum Verarbeiten oder Speichern von Daten."@de;
+        rdfs:label       "Datensystem"@de , "Data System"@en;
+        rdfs:subClassOf  schema:SoftwareApplication , prov:SoftwareAgent .
+
+dtm-data:Architecture
+        rdf:type      owl:Class;
+        rdfs:comment  "Technical structure on which a system is built."@en , "Technische Struktur, auf der ein System basiert."@de;
+        rdfs:label    "Architektur"@de , "Architecture"@en .
+
+dtm-data:triggersStorage
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates an actor triggering a storage stage."@en , "Kennzeichnet einen Akteur als Auslöser einer Speicherung."@de;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "veranlasst Speicherung"@de , "triggers storage"@en;
+        rdfs:range          dtm-data:DataStorage;
+        rdfs:subPropertyOf  prov:wasAssociatedWith , dtm-data:triggersStage .
+
+dtm-core:hasDataConsumer
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Declares participation of a DataConsumer within a DataTrustee arrangement."@en , "Deklariert die Beteiligung eines Datennutzers innerhalb einer Datentreuhand-Konstellation."@de;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "has Data Consumer"@en , "hat Datennutzer"@de;
+        rdfs:range          dtm-core:DataConsumer;
+        rdfs:subPropertyOf  dtm-core:hasActor;
+        owl:inverseOf       dtm-core:isDataConsumerOf .
+
+dtm-business:isUsageGoalOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Gibt den Akteur an, für den dieses Nutzungsziel gilt."@de , "Indicates the actor for whom this usage goal is relevant."@en;
+        rdfs:domain         dtm-business:UsageGoalOfUser;
+        rdfs:label          "ist Nutzungsziel von"@de , "is usage goal of"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:SecurityReceptionTechnique
+        rdf:type         owl:Class;
+        rdfs:comment     "Category of security measures applied during data reception."@en , "Kategorie von Sicherheitsmaßnahmen im Datenempfang."@de;
+        rdfs:label       "Sicherheitsmaßnahme im Empfang"@de , "Security Technique in Reception"@en;
+        rdfs:subClassOf  dpv:TechnicalMeasure .
+
+dtm-core:NonPersonalData
+        rdf:type         owl:Class;
+        rdfs:comment     "Data that does not relate to an identified or identifiable natural person."@en , "Daten ohne Bezug zu einer identifizierten oder identifizierbaren natürlichen Person."@de;
+        rdfs:label       "Non-personal Data"@en , "Nicht personenbezogene Daten"@de;
+        rdfs:subClassOf  dtm-core:Data .
+
+dtm-data:RetentionPeriodScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Kontrolliertes Vokabular zur Beschreibung der Dauer der Aufbewahrung von Daten."@de , "Controlled vocabulary for describing how long data is retained."@en;
+        dcterms:title        "Speicherdauer-Schema"@de , "Retention Period Scheme"@en .
+
+dtm-business:ServiceFee
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Bezahlmodell, bei dem Gebühren für bestimmte Dienstleistungen zusätzlich zum Datenzugang erhoben werden."@de , "Pay model where fees are charged for specific services provided on top of data access."@en;
+        rdfs:label       "Servicegebühr"@de , "Service Fee"@en;
+        rdfs:subClassOf  dtm-business:PayModel;
+        skos:broader     dtm-business:PayModel;
+        skos:inScheme    dtm-business:PayModelScheme .
+
+dtm-core:isDataConsumerOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Inverse of hasDataConsumer; indicates DataConsumer participation."@en , "Inverse zu hasDataConsumer; kennzeichnet die Beteiligung eines Datennutzers."@de;
+        rdfs:domain         dtm-core:DataConsumer;
+        rdfs:label          "is Data Consumer in"@en , "ist Datennutzer in"@de;
+        rdfs:range          dtm-core:DataTrustee;
+        rdfs:subPropertyOf  dtm-core:isActorOf .
+
+dtm-data:hasDataAnalysisTechnique
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates which data analysis technique is applied during data analysis."@en , "Gibt an, welche Datenanalysetechnik in der Datenanalyse angewendet wird."@de;
+        rdfs:domain         dtm-data:DataAnalysis;
+        rdfs:label          "hat Datenanalysetechnik"@de , "has data analysis technique"@en;
+        rdfs:range          dtm-data:AnalysisTechnique;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-data:isDataAnalysisTechniqueOf .
+
+dtm-data:CentralStorage
+        rdf:type          owl:Class;
+        rdfs:comment      "Centralised storage of all data in a single system."@en , "Zentrale Speicherung aller Daten in einem System."@de;
+        rdfs:label        "Zentrales Speichern"@de , "Centralized Storage"@en;
+        rdfs:subClassOf   dtm-data:StorageTechnique;
+        owl:disjointWith  dtm-data:DecentralStorage .
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-data>
+        rdf:type                       owl:Ontology;
+        dcterms:creator                "Bernd Rauch" , "Denis Feth" , "Jessica Chwalek";
+        dcterms:description            "Daten-Schicht, die die DTM-Core-Ontologie um datenspezifische Konzepte erweitert."@de , "Data layer extending the DTM core ontology."@en;
+        dcterms:license                <https://creativecommons.org/licenses/by/4.0/>;
+        dcterms:modified               "2025-11-10"^^xsd:date;
+        dcterms:publisher              "Kickstart Trustee";
+        dcterms:rights                 "© 2025 Kickstart Trustee — CC BY 4.0";
+        dcterms:title                  "DTM Data Ontology"@en;
+        vann:preferredNamespacePrefix  "dtm-data";
+        vann:preferredNamespaceUri     "https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#";
+        owl:imports                    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core>;
+        owl:versionIRI                 <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data/0.1.0> .
+
+dtm-sec:hasSecurityInfrastructure
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Akteur mit der von ihm betriebenen oder genutzten Sicherheitsinfrastruktur, z. B. IDS/IPS, SIEM oder Schlüsselmanagementsysteme."@de , "Relates an actor to the security infrastructure it operates or uses, such as IDS/IPS, SIEM or key management systems."@en;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "has security infrastructure"@en , "hat Sicherheitsinfrastruktur"@de;
+        rdfs:range          dtm-sec:SecurityInfrastructure;
+        rdfs:subPropertyOf  owl:topObjectProperty , dpv:hasTechnicalMeasure;
+        owl:inverseOf       dtm-sec:isSecurityInfrastructureOf .
+
+dtm-data:performsStorage
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine Speicherphase mit dem Akteur, der sie durchführt."@de , "Links a data storage stage to the actor performing it."@en;
+        rdfs:domain         dtm-data:DataStorage;
+        rdfs:label          "performs storage"@en , "führt Speicherung durch"@de;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  prov:wasAssociatedWith , dtm-data:stagePerformedBy;
+        owl:inverseOf       dtm-data:triggersStorage .
+
+dtm-business:DataAnalysis
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Nutzungsziel, das auf die Analyse von Daten zur Gewinnung von Erkenntnissen oder Entscheidungsunterstützung abzielt."@de , "Usage goal aimed at analyzing data to gain insights or make decisions."@en;
+        rdfs:label       "Datenanalyse"@de , "Data Analysis"@en;
+        rdfs:subClassOf  dtm-business:UsageGoalOfUser;
+        skos:inScheme    dtm-business:UsageGoalScheme .
+
+dtm-legal:PublicInterest
+        rdf:type         skos:Concept;
+        skos:broader     dtm-legal:ProcessingBasis;
+        skos:definition  "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zur Wahrnehmung einer Aufgabe erforderlich ist, die im öffentlichen Interesse liegt oder in Ausübung öffentlicher Gewalt erfolgt."@de , "Represents a processing basis where processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority."@en;
+        skos:exactMatch  dpv:PublicInterest;
+        skos:inScheme    dtm-legal:ProcessingBasisScheme;
+        skos:prefLabel   "Öffentliches Interesse"@de , "Public Interest"@en .
+
+dtm-data:securesAsTechnique
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Relates a security technique to the component it protects."@en , "Verknüpft eine Sicherheitsmaßnahme mit der Komponente, die sie absichert."@de;
+        rdfs:domain         dtm-data:SecurityReceptionTechnique;
+        rdfs:label          "sichert als Maßnahme"@de , "secures as technique"@en;
+        rdfs:range          dtm-data:DataFlowComponent;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:hasJurisdiction
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Datentreuhänder mit dem Land bzw. der Jurisdiktion, in der er hauptsächlich tätig ist oder rechtlich verankert ist."@de , "Links a data trustee to the country or jurisdiction in which it primarily operates or is legally established."@en;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "hat Zuständigkeit / Geltungsbereich"@de , "has jurisdiction"@en;
+        rdfs:range          lcc-cr:Country;
+        rdfs:subPropertyOf  schema:jurisdiction , dcterms:spatial .
+
+dtm-data:triggersReception
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates an actor triggering a reception stage."@en , "Kennzeichnet einen Akteur als Auslöser eines Empfangs."@de;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "veranlasst Empfang"@de , "triggers reception"@en;
+        rdfs:range          dtm-data:DataReception;
+        rdfs:subPropertyOf  prov:wasAssociatedWith , dtm-data:triggersStage .
+
+dtm-business:StockCorporation
+        rdf:type         owl:Class , skos:Concept;
+        rdfs:comment     "Geschäftsform für eine Aktiengesellschaft (AG)."@de , "Business form for a stock corporation."@en;
+        rdfs:label       "Aktiengesellschaft (AG)"@de , "Stock Corporation"@en;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q422062;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-data:TransportEncryption
+        rdf:type         owl:Class;
+        rdfs:comment     "Encryption applied while data is transmitted."@en , "Verschlüsselung während der Übertragung von Daten."@de;
+        rdfs:label       "Transportverschlüsselung"@de , "Transport Encryption"@en;
+        rdfs:subClassOf  dtm-data:SecurityReceptionTechnique .
+
+dtm-data:Manual  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Manual, non-automated execution of an activity."@en , "Manuelle, nicht automatisierte Durchführung einer Aktivität."@de;
+        rdfs:label       "Manuell"@de , "Manual"@en;
+        rdfs:subClassOf  dtm-data:Frequency;
+        skos:broader     dtm-data:Frequency;
+        skos:inScheme    dtm-data:FrequencyScheme .
+
+dtm-data:RetentionPeriod
+        rdf:type           skos:Concept , owl:Class;
+        rdfs:comment       "Describes the period for which data is retained."@en , "Beschreibt die Dauer, für die Daten aufbewahrt werden."@de;
+        rdfs:label         "Speicherdauer"@de , "Retention Period"@en;
+        rdfs:subClassOf    dpv:StorageDuration;
+        skos:topConceptOf  dtm-data:RetentionPeriodScheme .
+
+dtm-business:isFundingSourceOf
+        rdf:type      owl:ObjectProperty;
+        rdfs:comment  "Gibt den Datentreuhänder an, der von dieser Förderinstitution finanziert oder unterstützt wird."@de , "Indicates the data trustee that is financed or supported by this funding source."@en;
+        rdfs:domain   dtm-business:FundingSource;
+        rdfs:label    "ist Förderinstitution von"@de , "is funding source of"@en;
+        rdfs:range    dtm-core:DataTrustee .
+
+dtm-business:Industrie40
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne im Kontext Industrie 4.0, einschließlich vernetzter Produktion, IoT und Smart Manufacturing."@de , "Domain related to Industry 4.0, including networked production, IoT and smart manufacturing."@en;
+        rdfs:label       "Industry 4.0"@en , "Industrie 4.0"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-business:AndereFoerderung
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Generische Förderinstitution für weitere Fördergeber, die nicht durch spezifische Kategorien abgedeckt sind."@de , "Generic funding source for other types of funders not covered by the specific categories."@en;
+        rdfs:label       "Other Funding Source"@en , "Andere Förderung"@de;
+        rdfs:subClassOf  dtm-business:FundingSource;
+        skos:broader     dtm-business:FundingSource;
+        skos:inScheme    dtm-business:FundingSourceScheme .
+
+dtm-data:implementedOn
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft ein Datentreuhandmodell mit der technischen Architektur, auf der es implementiert ist."@de , "Relates a trustee model to the technical architecture it is implemented on."@en;
+        rdfs:domain         dtm-core:DataTrusteeModel;
+        rdfs:label          "implemented on"@en , "implementiert auf"@de;
+        rdfs:range          dtm-data:Architecture;
+        rdfs:subPropertyOf  owl:topObjectProperty , prov:used;
+        owl:inverseOf       dtm-data:isImplementedBy .
+
+dtm-data:stagePerformedBy
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine Datenflusskomponente mit dem Akteur, der sie ausführt."@de , "Relates a data flow component to the actor performing it."@en;
+        rdfs:domain         dtm-data:DataFlowComponent;
+        rdfs:label          "Komponente durchgeführt durch"@de , "stage performed by"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty , prov:wasAssociatedWith;
+        owl:inverseOf       dtm-data:triggersStage .
+
+dtm-data:triggersForwarding
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates an actor triggering a forwarding stage."@en , "Kennzeichnet einen Akteur als Auslöser einer Weitergabe."@de;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "veranlasst Weitergabe"@de , "triggers forwarding"@en;
+        rdfs:range          dtm-data:DataForwarding;
+        rdfs:subPropertyOf  prov:wasAssociatedWith , dtm-data:triggersStage .
+
+dtm-data:isProcessingTechniqueOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the data preparation stage in which this technique is applied."@en , "Gibt die Aufbereitungsphase an, in der diese Technik genutzt wird."@de;
+        rdfs:domain         dtm-data:ProcessingTechnique;
+        rdfs:label          "ist Aufbereitungstechnik von"@de , "is processing technique of"@en;
+        rdfs:range          dtm-data:DataPreparation;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:DataPreparation
+        rdf:type         owl:Class;
+        rdfs:comment     "Data flow stage for preparing or transforming data."@en , "Datenflussphase zur Aufbereitung oder Transformation."@de;
+        rdfs:label       "Datenaufbereitung"@de , "Data Preparation"@en;
+        rdfs:subClassOf  dtm-data:DataFlowComponent .
+
+dtm-core:holdsData  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Generic relation: an Actor holds Data (possession/hosting), without implying access rights."@en , "Generische Relation: Ein Akteur hält Daten (Besitz/Hosting), ohne Zugriffsrechte zu implizieren."@de;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "holds data"@en , "hält Daten"@de;
+        rdfs:range          dtm-core:Data;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+<https://forgetrustee.kickstarttrustee.de/ontology/dtm-sec>
+        rdf:type                       owl:Ontology;
+        dcterms:creator                "Denis Feth" , "Bernd Rauch" , "Jessica Chwalek";
+        dcterms:description            "Security layer extending the DTM core ontology with security-related concepts."@en , "Security-Schicht, die die DTM-Core-Ontologie um sicherheitsbezogene Konzepte erweitert."@de;
+        dcterms:license                <https://creativecommons.org/licenses/by/4.0/>;
+        dcterms:modified               "2025-11-10"^^xsd:date;
+        dcterms:publisher              "Kickstart Trustee";
+        dcterms:rights                 "© 2025 Kickstart Trustee — CC BY 4.0";
+        dcterms:title                  "DTM Security Ontology"@en;
+        vann:preferredNamespacePrefix  "dtm-sec";
+        vann:preferredNamespaceUri     "https://forgetrustee.kickstarttrustee.de/ontology/dtm-sec#";
+        owl:imports                    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core>;
+        owl:versionIRI                 <https://forgetrustee.kickstarttrustee.de/ontology/dtm-sec/0.1.0> .
+
+dtm-business:Organisation
+        rdf:type         owl:Class , skos:Concept;
+        rdfs:comment     "Affiliation type indicating that the actor is an organization, such as a company, authority or association."@en , "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."@de;
+        rdfs:label       "Organization"@en , "Organisation"@de;
+        rdfs:subClassOf  dtm-business:Affiliation;
+        skos:inScheme    dtm-business:AffiliationScheme;
+        skos:prefLabel   "Organisation"@de , "Organization"@en .
+
+dtm-misc:PropertyScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Konzeptschema für querschnittliche Eigenschaften in DTM-Metadaten, z. B. Analysen, Datenzugangstransparenz und Visualisierung."@de , "Concept scheme for cross-cutting properties related to DTM metadata, such as analysis support, data access transparency and visualisation."@en;
+        dcterms:title        "Schema für sonstige Eigenschaften"@de , "Miscellaneous Property Scheme"@en .
+
+dtm-data:FrequencyScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Kontrolliertes Vokabular zur Beschreibung der Häufigkeit von Datenaktivitäten."@de , "Controlled vocabulary for describing how often data activities occur."@en;
+        dcterms:title        "Frequenz-Schema"@de , "Frequency Scheme"@en .
+
+dtm-data:Cleaning  rdf:type  owl:Class;
+        rdfs:comment     "Correction or harmonisation of inconsistent data."@en , "Bereinigung und Harmonisierung von Daten."@de;
+        rdfs:label       "Bereinigung"@de , "Cleaning"@en;
+        rdfs:subClassOf  dtm-data:ProcessingTechnique .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-data:DataReception dtm-data:DataPreparation dtm-data:DataForwarding dtm-data:DataStorage dtm-data:DataAnalysis )
+] .
+
+dtm-legal:ProcessingBasis
+        rdf:type           skos:Concept;
+        skos:definition    "Repräsentiert die Rechtsgrundlage für die Verarbeitung personenbezogener Daten."@de , "Represents the legal basis for processing personal data."@en;
+        skos:inScheme      dtm-legal:ProcessingBasisScheme;
+        skos:prefLabel     "Verarbeitungsgrundlage"@de , "Processing Basis"@en;
+        skos:topConceptOf  dtm-legal:ProcessingBasisScheme .
+
+dtm-business:SmartCityRegionSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für Smart City und Smart Region mit Fokus auf datengetriebene Stadt- und Regionalentwicklung."@de , "Domain for smart cities and smart regions, focusing on data-driven urban and regional development."@en;
+        rdfs:label       "Smart City / Region"@en , "Smart City / Smart Region"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-data:hasRetentionPeriod
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Relates a storage stage to the period for which data is retained."@en , "Verknüpft eine Speicherphase mit der Aufbewahrungsdauer."@de;
+        rdfs:domain         dtm-data:DataStorage;
+        rdfs:label          "hat Speicherdauer"@de , "has retention period"@en;
+        rdfs:range          dtm-data:RetentionPeriod;
+        rdfs:subPropertyOf  dpv:hasStorageDuration , owl:topObjectProperty .
+
+dtm-core:hasActor  rdf:type  owl:ObjectProperty;
+        rdfs:comment   "has actor"@en , "Associates a DataTrustee arrangement with participating Actors (roles within the trustee context)."@en , "Verknüpft eine Datentreuhand-Konstellation mit beteiligten Akteuren (Rollen im Treuhandkontext)."@de;
+        rdfs:domain    dtm-core:DataTrustee;
+        rdfs:label     "hat Akteur"@de;
+        rdfs:range     dtm-core:Actor;
+        owl:inverseOf  dtm-core:isActorOf .
+
+dtm-sec:isRestSecurityOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Gibt den Akteur an, für den diese Sicherheitsmaßnahmen für ruhende Daten gelten."@de , "Indicates the actor for which this set of data-at-rest security measures applies."@en;
+        rdfs:domain         dtm-sec:RestSecurity;
+        rdfs:label          "ist Sicherheit ruhender Daten von"@de , "is security in rest of"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:DataQualityManagement
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Nutzungsziel, die Qualität von Daten zu überwachen, zu verbessern oder sicherzustellen."@de , "Usage goal of monitoring, improving or assuring the quality of data."@en;
+        rdfs:label       "Datenqualitätsmanagement"@de , "Data Quality Management"@en;
+        rdfs:subClassOf  dtm-business:UsageGoalOfUser;
+        skos:inScheme    dtm-business:UsageGoalScheme .
+
+dtm-business:LimitedPartnership
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Geschäftsform für eine Kommanditgesellschaft (KG)."@de , "Business form for a limited partnership."@en;
+        rdfs:label       "Kommanditgesellschaft (KG)"@de , "Limited Partnership"@en;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q1780029;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-sec:ReputationSourceScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Kontrolliertes Vokabular zur Beschreibung von Quellen für Reputation, Vertrauen und Zertifizierung."@de , "Controlled vocabulary for describing sources of reputation, trust and certification."@en;
+        dcterms:title        "Reputationsquellen-Schema"@de , "Reputation Source Scheme"@en .
+
+dtm-core:isAffectedPartyIn
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Inverse of hasAffectedParty; marks an Actor as AffectedParty in a trustee arrangement."@en , "Inverse zu hasAffectedParty; kennzeichnet einen Akteur als betroffene Partei in einer Treuhand-Konstellation."@de;
+        rdfs:domain         dtm-core:AffectedParty;
+        rdfs:label          "is affected party in"@en , "ist betroffene Partei in"@de;
+        rdfs:range          dtm-core:DataTrustee;
+        rdfs:subPropertyOf  dtm-core:isActorOf .
+
+dtm-sec:SecurityInfrastructure
+        rdf:type         owl:Class;
+        rdfs:comment     "Infrastruktur, Systeme oder Dienste, die Sicherheitsfunktionen bereitstellen, z. B. Firewalls, IDS/IPS, SIEM, Schlüsselmanagement oder HSMs."@de , "Infrastructure, systems or services that provide security capabilities, e.g. firewalls, IDS/IPS, SIEM, key management or HSMs."@en;
+        rdfs:label       "Sicherheitsinfrastruktur"@de , "Security Infrastructure"@en;
+        rdfs:subClassOf  dtm-sec:SecurityMeasure .
+
+dtm-sec:isSecurityInfrastructureOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Gibt den Akteur an, der diese Sicherheitsinfrastruktur betreibt oder verantwortet."@de , "Indicates the actor that operates or is responsible for this security infrastructure."@en;
+        rdfs:domain         dtm-sec:SecurityInfrastructure;
+        rdfs:label          "ist Sicherheitsinfrastruktur von"@de , "is security infrastructure of"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:PublicLawCorporation
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Business form for a public law corporation."@en , "Geschäftsform für eine Körperschaft des öffentlichen Rechts (KdöR)."@de;
+        rdfs:label       "Körperschaft des öffentlichen Rechts (KdöR)"@de , "Public Law Corporation"@en;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q15734684;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-core:hasDataAdministratedBy
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Relates an AffectedParty to the DataOwner administering that party’s data."@en , "Verknüpft eine betroffene Partei mit dem Dateninhaber, der deren Daten verwaltet."@de;
+        rdfs:domain         dtm-core:AffectedParty;
+        rdfs:label          "has data stored in"@en , "hat Daten bei"@de;
+        rdfs:range          dtm-core:DataOwner;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:isForwardingFrequencyOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the data forwarding stage this frequency applies to."@en , "Gibt die Weitergabestufe an, für die diese Frequenz gilt."@de;
+        rdfs:domain         dtm-data:Frequency;
+        rdfs:label          "ist Weitergabefrequenz von"@de , "is forwarding frequency of"@en;
+        rdfs:range          dtm-data:DataForwarding;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:hasForwardingFrequency
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Links a data forwarding stage to the frequency with which data is forwarded."@en , "Verknüpft eine Datenweitergabestufe mit der Häufigkeit, mit der Daten weitergegeben werden."@de;
+        rdfs:domain         dtm-data:DataForwarding;
+        rdfs:label          "hat Weitergabefrequenz"@de , "has forwarding frequency"@en;
+        rdfs:range          dtm-data:Frequency;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:GeneralPartnership
+        rdf:type         owl:Class , skos:Concept;
+        rdfs:comment     "Business form for a general partnership."@en , "Geschäftsform für eine Offene Handelsgesellschaft (OHG)."@de;
+        rdfs:label       "General Partnership"@en , "OHG"@de;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q19340991;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-core:ValueAddedDataTrustee
+        rdf:type         owl:Class;
+        rdfs:comment     "Trustee model that derives additional value from data (aggregation, analytics, services)."@en , "Treuhandmodell, das zusätzlichen Wert aus Daten generiert (Aggregation, Analytik, Dienste)."@de;
+        rdfs:label       "Value-added Data Trustee"@en , "Mehrwerttreuhand"@de;
+        rdfs:subClassOf  dtm-core:DataTrusteeModel .
+
+dtm-sec:hasRestSecurity
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Akteur mit Sicherheitsmaßnahmen, die ruhende Daten schützen (z. B. Verschlüsselung oder Zugriffskontrolle auf Speichersystemen)."@de , "Relates an actor to security measures that protect data at rest (e.g. encryption, access control for stored data)."@en;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "has security in rest"@en , "hat Sicherheit ruhender Daten"@de;
+        rdfs:range          dtm-sec:RestSecurity;
+        rdfs:subPropertyOf  owl:topObjectProperty , dpv:hasTechnicalMeasure;
+        owl:inverseOf       dtm-sec:isRestSecurityOf .
+
+dtm-business:PublicSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für den öffentlichen Sektor, einschließlich Verwaltung und öffentlicher Dienstleistungen."@de , "Domain for the public sector, including public administration and public services."@en;
+        rdfs:label       "Public Sector"@en , "Öffentlicher Sektor"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-business:hasBusinessForm
+        rdf:type       owl:ObjectProperty;
+        rdfs:comment   "Verknüpft einen Datentreuhänder oder eine Organisation mit ihrer rechtlichen bzw. organisatorischen Geschäftsform."@de , "Links a data trustee or organization to its legal or organizational business form."@en;
+        rdfs:domain    [ rdf:type     owl:Class;
+                         owl:unionOf  ( dtm-core:DataTrustee dtm-business:Organisation )
+                       ];
+        rdfs:label     "hat Geschäftsform"@de , "has business form"@en;
+        rdfs:range     dtm-business:BusinessForm;
+        owl:inverseOf  dtm-business:isBusinessFormOf .
+
+dtm-data:FederatedArchitecture
+        rdf:type         owl:Class;
+        rdfs:comment     "Architecture of distributed but coordinated systems."@en , "Architektur verteilter Systeme mit Koordination."@de;
+        rdfs:label       "Föderierte Architektur"@de , "Federated Architecture"@en;
+        rdfs:subClassOf  dtm-data:Architecture .
+
+dtm-business:CulturalCreativeSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für die Kultur- und Kreativwirtschaft, z. B. Medien, Kunst und Design."@de , "Domain for the cultural and creative industries, such as media, arts and design."@en;
+        rdfs:label       "Culture / Creative Industry"@en , "Kultur- / Kreativwirtschaft"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-data:DataAnalysis
+        rdf:type         owl:Class;
+        rdfs:comment     "Data flow stage focused on analysing data."@en , "Datenflussphase zur Analyse von Daten."@de;
+        rdfs:label       "Datenauswertung"@de , "Data Analysis"@en;
+        rdfs:subClassOf  dpv:Use , prov:Activity , dtm-data:DataFlowComponent .
+
+dtm-business:PayPerUse
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Bezahlmodell, bei dem Entgelte von der tatsächlichen Nutzung abhängen, z. B. pro Anfrage oder pro Datenvolumen."@de , "Pay model where fees depend on the actual usage, for example per request or per volume."@en;
+        rdfs:label       "Bezahlen pro Nutzung"@de , "Pay-Per-Use"@en;
+        rdfs:subClassOf  dtm-business:PayModel;
+        skos:broader     dtm-business:PayModel;
+        skos:inScheme    dtm-business:PayModelScheme .
+
+dtm-data:StorageTechnique
+        rdf:type      owl:Class;
+        rdfs:comment  "Category of techniques for storing data."@en , "Kategorie technischer Verfahren zur Speicherung von Daten."@de;
+        rdfs:label    "Speichertechnik"@de , "Storage Technique"@en .
+
+dtm-data:triggersStage
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Links an actor to a triggered data flow stage."@en , "Verknüpft einen Akteur mit einer ausgelösten Phase im Datenfluss."@de;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "startet Phase"@de , "triggers stage"@en;
+        rdfs:range          dtm-data:DataFlowComponent;
+        rdfs:subPropertyOf  prov:wasAssociatedWith , owl:topObjectProperty .
+
+dtm-core:ExternallyControlledAccessDataTrustee
+        rdf:type          owl:Class;
+        rdfs:comment      "Access-oriented trustee where access decisions are governed by an external controller."@en , "Zugangsorientierte Treuhand, bei der Zugangsentscheidungen extern gesteuert werden."@de;
+        rdfs:label        "Externally Controlled Access Data Trustee"@en , "Fremdbestimme Zugangstreuhand"@de;
+        rdfs:subClassOf   dtm-core:AccessDataTrustee;
+        owl:disjointWith  dtm-core:SelfManagedAccessDataTrustee .
+
+dtm-business:DataAccess
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Nutzungsziel, das auf den Zugang zu Datensätzen oder Datendiensten gerichtet ist."@de , "Usage goal focused on obtaining access to data sets or data services."@en;
+        rdfs:label       "Datenzugang"@de , "Data Access"@en;
+        rdfs:subClassOf  dtm-business:UsageGoalOfUser .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-data:AIPoweredAnalysis dtm-data:PrivacyEnhancingTechnology dtm-data:StatisticalAnalysis )
+] .
+
+dtm-legal:givesConsentDirectly
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine betroffene Partei mit einem Einwilligungsvorgang, in dem diese Partei ihre Einwilligung unmittelbar und ohne Delegation erteilt."@de , "Relates an affected party to a consent workflow in which this party directly gives consent without delegation."@en;
+        rdfs:domain         dtm-core:AffectedParty;
+        rdfs:label          "gives consent directly"@en , "gibt Einwilligung direkt"@de;
+        rdfs:range          dtm-legal:ConsentWorkflow;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:HealthcareSector
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Domäne für das Gesundheitswesen, einschließlich medizinischer Versorgung, Public Health und Gesundheitsdaten."@de , "Domain for healthcare, including medical care, public health and health data."@en;
+        rdfs:label       "Healthcare"@en , "Gesundheitswesen"@de;
+        rdfs:subClassOf  dtm-business:Domain;
+        skos:broader     dtm-business:Domain;
+        skos:inScheme    dtm-business:DomainScheme .
+
+dtm-core:modelname  rdf:type  owl:DatatypeProperty;
+        rdfs:comment        "Human-readable name for a DataTrusteeModel variant."@en , "Menschenlesbarer Name für eine Variante des Datentreuhandmodells."@de;
+        rdfs:domain         dtm-core:DataTrusteeModel;
+        rdfs:label          "model name"@en , "hat Namen"@de;
+        rdfs:range          xsd:string;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+dtm-business:DigitalSovereignty
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Ziel, die eigenständige und selbstbestimmte Nutzung digitaler Infrastrukturen, Plattformen und Dienste zu gewährleisten."@de , "Goal of maintaining independent and self-determined use of digital infrastructures, platforms and services."@en;
+        rdfs:label       "Digitale Souveränität"@de , "Digital Sovereignty"@en;
+        rdfs:subClassOf  dtm-business:DataTrusteeGoal;
+        skos:inScheme    dtm-business:DataTrusteeGoalScheme .
+
+dtm-business:Innovation
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Ziel, Innovation durch datengetriebene Produkte, Dienstleistungen oder Prozesse zu ermöglichen."@de , "Goal of fostering innovation through data-driven products, services or processes."@en;
+        rdfs:label       "Innovation"@en , "Innovation"@de;
+        rdfs:subClassOf  dtm-business:DataTrusteeGoal;
+        skos:inScheme    dtm-business:DataTrusteeGoalScheme .
+
+dtm-data:Analog  rdf:type  owl:Class;
+        rdfs:comment     "Reception through analogue channels or non-digital media."@en , "Empfang über analoge Kanäle oder nicht-digitale Medien."@de;
+        rdfs:label       "Analog"@en , "Analog"@de;
+        rdfs:subClassOf  dtm-data:ReceptionTechnique .
+
+dtm-legal:ContractualNecessity
+        rdf:type         skos:Concept;
+        skos:broader     dtm-legal:ProcessingBasis;
+        skos:definition  "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung zur Erfüllung eines Vertrags mit der betroffenen Person oder zur Durchführung vorvertraglicher Maßnahmen auf deren Anfrage erforderlich ist."@de , "Represents a processing basis where processing is necessary for the performance of a contract with the data subject or to take steps at their request prior to entering into a contract."@en;
+        skos:exactMatch  dpv:Contract;
+        skos:inScheme    dtm-legal:ProcessingBasisScheme;
+        skos:prefLabel   "Erfüllung des Vertrags"@de , "Contractual Necessity"@en .
+
+dtm-business:Individual
+        rdf:type          owl:Class , skos:Concept;
+        rdfs:comment      "Affiliation type indicating that the actor is an individual person."@en , "Zugehörigkeitstyp, der angibt, dass der Akteur eine einzelne natürliche Person ist."@de;
+        rdfs:label        "Individual"@en , "Individuum"@de;
+        rdfs:subClassOf   dtm-business:Affiliation;
+        owl:disjointWith  dtm-business:Organisation;
+        skos:inScheme     dtm-business:AffiliationScheme;
+        skos:prefLabel    "Individual"@en , "Individuum"@de .
+
+dtm-data:isDataAnalysisTechniqueOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the data analysis stage in which this technique is applied."@en , "Gibt die Analysephae an, in der diese Technik genutzt wird."@de;
+        rdfs:domain         dtm-data:AnalysisTechnique;
+        rdfs:label          "ist Datenanalysetechnik von"@de , "is data analysis technique of"@en;
+        rdfs:range          dtm-data:DataAnalysis;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:performsDataAnalysis
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Links a data analysis stage to the actor performing it."@en , "Verknüpft eine Datenanalysephase mit dem Akteur, der sie durchführt."@de;
+        rdfs:domain         dtm-data:DataAnalysis;
+        rdfs:label          "performs data analysis"@en , "führt Datenanalyse durch"@de;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  dtm-data:stagePerformedBy;
+        owl:inverseOf       dtm-data:triggersDataAnalysis .
+
+dtm-business:FundingSourceScheme
+        rdf:type       skos:ConceptScheme;
+        dcterms:title  "Förderinstitutionen-Schema"@de , "Funding Source Scheme"@en .
+
+dtm-data:isForwardingTechniqueOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the forwarding stage in which this technique is used."@en , "Gibt an, in welcher Weitergabestufe diese Technik genutzt wird."@de;
+        rdfs:domain         dtm-data:ForwardingTechnique;
+        rdfs:label          "ist Weitergabetechnik von"@de , "is forwarding technique of"@en;
+        rdfs:range          dtm-data:DataForwarding;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-data:ReceptionTechnique
+        rdf:type      owl:Class;
+        rdfs:comment  "Category of techniques for receiving data."@en , "Kategorie technischer Verfahren zum Empfang von Daten."@de;
+        rdfs:label    "Empfangstechnik"@de , "Reception Technique"@en .
+
+dtm-core:  rdf:type                    owl:Ontology;
+        rdfs:comment                   "Zentrales Vokabular zur Modellierung von Datentreuhand-Assets, Akteuren und Prozessen."@de , "The central vocabulary for modelling data trustee assets, actors, and processes."@en;
+        rdfs:label                     "DTM Core Ontology"@en , "DTM Kernontologie"@de;
+        rdfs:seeAlso                   <https://forgetrustee.kickstarttrustee.de/ontology/docs/dtm-core>;
+        dcterms:created                "2025-11-02"^^xsd:date;
+        dcterms:creator                "Jessica Chwalek" , "Bernd Rauch" , "Denis Feth";
+        dcterms:description            "Basiskonzepte für das Datentreuhand-Modell."@de , "Core concepts for the data trustee model."@en;
+        dcterms:license                <https://creativecommons.org/licenses/by/4.0/>;
+        dcterms:modified               "2025-11-10"^^xsd:date;
+        dcterms:publisher              "Kickstart Trustee";
+        dcterms:rights                 "© 2025 Kickstart Trustee — CC BY 4.0";
+        dcterms:title                  "DTM Kernontologie"@de , "DTM Core Ontology"@en;
+        vann:preferredNamespacePrefix  "dtm-core";
+        vann:preferredNamespaceUri     "https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#";
+        owl:versionIRI                 dtm-core:;
+        owl:versionInfo                "0.1.0" .
+
+dtm-data:performsPreparation
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine Aufbereitungsphase mit dem Akteur, der sie durchführt."@de , "Links a data preparation stage to the actor performing it."@en;
+        rdfs:domain         dtm-data:DataPreparation;
+        rdfs:label          "performs preparation"@en , "führt Aufbereitung durch"@de;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  dtm-data:stagePerformedBy , prov:wasAssociatedWith;
+        owl:inverseOf       dtm-data:triggersPreparation .
+
+dtm-business:affiliationType
+        rdf:type      owl:ObjectProperty;
+        rdfs:comment  "Verknüpft den Zustand eine Organisation oder Individualperson zu sein mit einer Entität (z. B. Akteur oder Datentreuhandmodell)."@de , "Links the status of being an organization or an individual to an entity (for example an actor or data trustee model)."@en;
+        rdfs:domain   dtm-core:Actor;
+        rdfs:label    "ist angesehen als"@de , "is seen seen"@en;
+        rdfs:range    skos:Concept .
+
+dtm-business:Funder  rdf:type  owl:Class;
+        rdfs:comment  "Entität, die finanzielle Mittel zur Unterstützung eines Datentreuhänders oder verwandter Projekte bereitstellt."@de , "Entity that provides financial resources to support a data trustee or related projects."@en;
+        rdfs:label    "Funder"@en , "Finanzierer"@de .
+
+dtm-business:Foundation
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Business form for a foundation."@en , "Geschäftsform für eine Stiftung."@de;
+        rdfs:label       "Stiftung"@de , "Foundation"@en;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q18631225;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-business:hasFundingSource
+        rdf:type       owl:ObjectProperty;
+        rdfs:comment   "Verknüpft einen Datentreuhänder mit einer Förderinstitution, z. B. Ministerien, EU-Programmen oder anderen Fördergebern."@de , "Relates a data trustee to a funding source such as a ministry, EU program or other funding organization."@en;
+        rdfs:domain    dtm-core:DataTrustee;
+        rdfs:label     "hat Förderinstitution"@de , "has funding source"@en;
+        rdfs:range     dtm-business:FundingSource;
+        owl:inverseOf  dtm-business:isFundingSourceOf .
+
+dtm-sec:RestSecurity  rdf:type  owl:Class;
+        rdfs:comment     "Sicherheitsmaßnahmen, die Daten im Ruhezustand schützen, z. B. Verschlüsselung ruhender Daten, Zugriffskontrollen oder sichere Backups."@de , "Security measures that protect data while stored (at rest), such as encryption at rest, access control or secure backups."@en;
+        rdfs:label       "Sicherheit ruhender Daten"@de , "Security in Rest"@en;
+        rdfs:subClassOf  dtm-sec:SecurityMeasure .
+
+dtm-business:NonprofitLimitedLiabilityCompany
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Business form for a nonprofit limited liability company."@en , "Geschäftsform für eine gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH)."@de;
+        rdfs:label       "Gemeinnützige Gesellschaft mit beschränkter Haftung (gGmbH)"@de , "Nonprofit LLC"@en;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q1500859;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-core:Actor  rdf:type  owl:Class;
+        rdfs:comment  "Any participating entity in a data trustee setting (e.g., provider, owner, consumer, trustee)."@en , "Jede beteiligte Entität in einer Datentreuhand-Konstellation (z. B. Geber, Inhaber, Nutzer, Treuhand)."@de;
+        rdfs:label    "Actor"@en , "Akteur"@de .
+
+dtm-data:hasForwardingTechnique
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Specifies the technical method used to forward data."@en , "Gibt die technische Methode an, mit der Daten weitergegeben werden."@de;
+        rdfs:domain         dtm-data:DataForwarding;
+        rdfs:label          "hat Weitergabetechnik"@de , "has forwarding technique"@en;
+        rdfs:range          dtm-data:ForwardingTechnique;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-data:isForwardingTechniqueOf .
+
+dtm-data:CentralisedArchitecture
+        rdf:type         owl:Class;
+        rdfs:comment     "Architecture with centralised system components."@en , "Architektur mit zentralen Systemkomponenten."@de;
+        rdfs:label       "Zentralisierte Architektur"@de , "Centralised Architecture"@en;
+        rdfs:subClassOf  dtm-data:Architecture .
+
+dtm-data:Continuous  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Continuous or event-driven data processing."@en , "Datenverarbeitung in kontinuierlichem oder ereignisgetriebenem Fluss."@de;
+        rdfs:label       "Kontinuierlich"@de , "Continuous"@en;
+        rdfs:subClassOf  dtm-data:Frequency;
+        skos:broader     dtm-data:Frequency;
+        skos:inScheme    dtm-data:FrequencyScheme .
+
+dtm-business:RegisteredAssociation
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Geschäftsform für einen eingetragenen Verein (e.V.)."@de , "Business form for a registered association."@en;
+        rdfs:label       "Registered Association"@en , "Eingetragener Verein (e.V.)"@de;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q9299236;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-business:LimitedLiabilityCompany
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Business form for a German limited liability company."@en , "Geschäftsform für eine Gesellschaft mit beschränkter Haftung (GmbH)."@de;
+        rdfs:label       "Limited Liability Company"@en , "Gesellschaft mit beschränkter Haftung (GmbH)"@de;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q460178;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+dtm-sec:isTransmissionStartOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Gibt eine Konfiguration der Übertragungssicherheit an, bei der dieser Akteur der sendende Endpunkt ist."@de , "Indicates a transmission security configuration for which this actor is the sending endpoint."@en;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "ist Transmission-Start von"@de , "is transmission start of"@en;
+        rdfs:range          dtm-sec:TransmissionSecurity;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-core:isDataOwnerOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Inverse of hasDataOwner; indicates DataOwner participation."@en , "Inverse zu hasDataOwner; kennzeichnet die Beteiligung eines Dateninhabers."@de;
+        rdfs:domain         dtm-core:DataOwner;
+        rdfs:label          "is Data Owner in"@en , "ist Dateninhaber in"@de;
+        rdfs:range          dtm-core:DataTrustee;
+        rdfs:subPropertyOf  dtm-core:isActorOf .
+
+dtm-core:SpecialPersonalData
+        rdf:type         owl:Class;
+        rdfs:comment     "Personal data revealing sensitive attributes (e.g., health, biometrics), subject to stricter protection."@en , "Besonders schützenswerte personenbezogene Daten (z. B. Gesundheit, Biometrie) mit erhöhtem Schutzbedarf."@de;
+        rdfs:label       "Special categories of personal data"@en , "Besondere Kategorien personenbezogener Daten"@de;
+        rdfs:subClassOf  dtm-core:PersonalData .
+
+dtm-business:DataSovereignty
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Ziel, sicherzustellen, dass Datenhaltende die Kontrolle und Entscheidungsgewalt über ihre Daten behalten."@de , "Goal of ensuring that data holders retain control and decision power over their data."@en;
+        rdfs:label       "Datensouveränität"@de , "Data Sovereignty"@en;
+        rdfs:subClassOf  dtm-business:DataTrusteeGoal;
+        skos:inScheme    dtm-business:DataTrusteeGoalScheme .
+
+dtm-data:performsForwarding
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine Weitergabestufe mit dem Akteur, der sie durchführt."@de , "Links a data forwarding stage to the actor performing it."@en;
+        rdfs:domain         dtm-data:DataForwarding;
+        rdfs:label          "führt Weitergabe durch"@de , "performs forwarding"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  dtm-data:stagePerformedBy , prov:wasAssociatedWith;
+        owl:inverseOf       dtm-data:triggersForwarding .
+
+dtm-legal:givesConsentByDataOwner
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine betroffene Partei mit einem Einwilligungsvorgang, in dem die Einwilligung durch einen Dateninhaber oder Vertreter im Namen der betroffenen Partei erteilt wird (delegierte Einwilligung)."@de , "Relates an affected party to a consent workflow in which consent is provided by a data owner or representative acting on behalf of the affected party (delegated consent)."@en;
+        rdfs:domain         dtm-core:AffectedParty;
+        rdfs:label          "gives consent by data owner"@en , "gibt Einwilligung durch Dateninhaber"@de;
+        rdfs:range          dtm-legal:ConsentWorkflow;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-core:DataTrustee  rdf:type  owl:Class;
+        rdfs:comment     "Actor responsible for administering and brokering data under agreed governance and policies."@en , "Akteur, der Daten unter vereinbarter Governance/Policy verwaltet und vermittelt."@de;
+        rdfs:label       "Data Trustee"@en , "Datentreuhand"@de;
+        rdfs:subClassOf  dtm-core:Actor .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-business:DataAccess dtm-business:DataAnalysis dtm-business:DataQualityManagement dtm-business:DataSharing )
+] .
+
+dtm-business:DomainScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Kontrolliertes Vokabular der Domänen, in denen ein Datentreuhänder tätig ist."@de , "Controlled vocabulary of domains in which a data trustee operates."@en;
+        dcterms:title        "Domänen-Schema"@de , "Domain Scheme"@en .
+
+dtm-data:ForwardingTechnique
+        rdf:type      owl:Class;
+        rdfs:comment  "Category of techniques for forwarding data."@en , "Kategorie technischer Verfahren zur Weitergabe von Daten."@de;
+        rdfs:label    "Weitergabetechnik"@de , "Forwarding Technique"@en .
+
+dtm-legal:ProcessingBasisScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Kontrolliertes Vokabular der Rechtsgrundlagen der Datenverarbeitung (DSGVO / DPV)."@de , "Controlled vocabulary of legal bases for data processing aligned with GDPR and DPV."@en;
+        dcterms:title        "Schema der Verarbeitungsgrundlagen"@de , "Processing Basis Scheme"@en .
+
+dtm-data:DecentralStorage
+        rdf:type         owl:Class;
+        rdfs:comment     "Distributed storage across multiple systems."@en , "Dezentrale Speicherung über mehrere Systeme verteilt."@de;
+        rdfs:label       "Dezentrales Speichern"@de , "Decentralized Storage"@en;
+        rdfs:subClassOf  dtm-data:StorageTechnique .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-data:API dtm-data:Analog dtm-data:Download )
+] .
+
+dtm-data:ReceptionAPI
+        rdf:type         owl:Class;
+        rdfs:comment     "Reception of data through an application programming interface."@en , "Empfang von Daten über eine Programmierschnittstelle."@de;
+        rdfs:label       "API"@en , "API"@de;
+        rdfs:subClassOf  dtm-data:ReceptionTechnique .
+
+dtm-sec:hasTransmissionEnd
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine Konfiguration der Übertragungssicherheit mit dem Akteur, der Endpunkt der gesicherten Übertragung ist."@de , "Links a transmission security configuration to the actor that is the endpoint of the protected transmission."@en;
+        rdfs:domain         dtm-sec:TransmissionSecurity;
+        rdfs:label          "hat Transmission-Ende"@de , "has transmission end"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-sec:isTransmissionEndOf .
+
+dtm-data:ownedByActor
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft ein technisches System mit dem Akteur, dem es gehört (organisatorisch oder rechtlich)."@de , "Links a technical system to the actor who owns it (organizational or legal ownership)."@en;
+        rdfs:domain         dtm-data:DataSystem;
+        rdfs:label          "gehört Akteur"@de , "owned by actor"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-data:ownsSystem .
+
+dtm-core:AdministrativeDataTrustee
+        rdf:type         owl:Class;
+        rdfs:comment     "Trustee model emphasizing administrative services: curation, validation, cataloging, retention and policy enforcement."@en , "Treuhandmodell mit Schwerpunkt auf administrativen Diensten: Kuratierung, Validierung, Katalogisierung, Aufbewahrung und Policy-Durchsetzung."@de;
+        rdfs:label       "Adminstrative Data Trustee"@en , "Verwaltungstreuhand"@de;
+        rdfs:subClassOf  dtm-core:DataTrusteeModel .
+
+dtm-data:SourceSystem
+        rdf:type         owl:Class;
+        rdfs:comment     "System that provides or supplies data."@en , "System, das Daten bereitstellt oder liefert."@de;
+        rdfs:label       "Quellsystem"@de , "Source System"@en;
+        rdfs:subClassOf  dtm-data:DataSystem .
+
+dtm-data:isReceptionFrequencyOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the data reception stage this frequency applies to."@en , "Gibt die Empfangsphase an, für die diese Frequenz gilt."@de;
+        rdfs:domain         dtm-data:Frequency;
+        rdfs:label          "ist Empfangsfrequenz von"@de , "is reception frequency of"@en;
+        rdfs:range          dtm-data:DataReception;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-misc:Analyse  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Eigenschaft, die angibt, dass der Datentreuhänder oder Dienst Datenanalysefunktionen bereitstellt (z. B. Statistiken, Dashboards, KI-gestützte Analysen)."@de , "Property indicating that the data trustee or service provides data analysis capabilities (e.g. statistics, dashboards, AI-based analytics)."@en;
+        rdfs:label       "Analyse"@de , "Analysis"@en;
+        rdfs:subClassOf  dtm-misc:Property;
+        skos:broader     dtm-misc:Property;
+        skos:inScheme    dtm-misc:PropertyScheme .
+
+dtm-data:Periodic  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Recurring or cyclic data activities."@en , "Regelmäßig wiederkehrende Datenaktivitäten."@de;
+        rdfs:label       "Periodisch"@de , "Periodic"@en;
+        rdfs:subClassOf  dtm-data:Frequency;
+        skos:broader     dtm-data:Frequency;
+        skos:inScheme    dtm-data:FrequencyScheme .
+
+dtm-business:isDomainOf
+        rdf:type      owl:ObjectProperty;
+        rdfs:comment  "Gibt den Datentreuhänder an, dessen Aktivitäten dieser Domäne zugeordnet sind."@de , "Indicates the data trustee whose activities belong to this domain."@en;
+        rdfs:domain   dtm-business:Domain;
+        rdfs:label    "ist Domäne von"@de , "is domain of"@en;
+        rdfs:range    dtm-core:DataTrustee .
+
+dtm-business:DataTrusteeGoalScheme
+        rdf:type             skos:ConceptScheme;
+        dcterms:description  "Controlled vocabulary of data trustee goals."@en;
+        dcterms:title        "Datentreuhand-Ziel-Schema"@de , "Data Trustee Goal Scheme"@en .
+
+dtm-data:Anonymisation
+        rdf:type         owl:Class;
+        rdfs:comment     "Irreversible removal of personal identifiability."@en , "Irreversible Entfernung personenbezogener Beziehbarkeit."@de;
+        rdfs:label       "Anonymisieren"@de , "Anonymisation"@en;
+        rdfs:subClassOf  dtm-data:SecurityReceptionTechnique .
+
+dtm-core:SelfManagedAccessDataTrustee
+        rdf:type         owl:Class;
+        rdfs:comment     "Access-oriented trustee operating autonomously under internal governance."@en , "Zugangsorientierte Treuhand, die autonom unter interner Governance agiert."@de;
+        rdfs:label       "Selfmanaged Access Data Trustee"@en , "Selbstbestimmte Zugangstreuhand"@de;
+        rdfs:subClassOf  dtm-core:AccessDataTrustee .
+
+dtm-business:UsageGoalOfUser
+        rdf:type      owl:Class;
+        rdfs:comment  "Kategorie für die Nutzungsziele von Nutzenden bei der Interaktion mit einem Datentreuhänder oder Datenökosystem."@de , "Category for the intended usage goals of users when interacting with a data trustee or data ecosystem."@en;
+        rdfs:label    "Usage Goal of User"@en , "Nutzungsziel des Nutzers"@de .
+
+dtm-core:administers  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Relates a DataOwner to Data they administer (operational and governance responsibility)."@en , "Bezieht einen Dateninhaber auf Daten, die er verwaltet (operative und Governance-Verantwortung)."@de;
+        rdfs:domain         dtm-core:DataOwner;
+        rdfs:label          "administers"@en , "verwaltet"@de;
+        rdfs:range          dtm-core:Data;
+        rdfs:subPropertyOf  dtm-core:holdsData .
+
+dtm-legal:LegitimateInterest
+        rdf:type         skos:Concept;
+        skos:broader     dtm-legal:ProcessingBasis;
+        skos:definition  "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung auf einem berechtigten Interesse beruht und einer Interessenabwägung mit den Rechten und Freiheiten der betroffenen Personen unterliegt."@de , "Represents a processing basis where processing is carried out on the grounds of a legitimate interest, subject to a balancing test against the rights and freedoms of data subjects."@en;
+        skos:exactMatch  dpv:LegitimateInterest;
+        skos:inScheme    dtm-legal:ProcessingBasisScheme;
+        skos:prefLabel   "Berechtigtes Interesse"@de , "Legitimate Interest"@en .
+
+dtm-data:ownsSystem  rdf:type  owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Akteur mit einem technischen System, das er besitzt."@de , "Relates an actor to a technical system they own."@en;
+        rdfs:domain         dtm-core:Actor;
+        rdfs:label          "besitzt System"@de , "owns system"@en;
+        rdfs:range          dtm-data:DataSystem;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-legal:initiatesIndividualConsentWorkflow
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Datennutzer mit einem individuellen Einwilligungsvorgang, den er initiiert, typischerweise für eine bestimmte betroffene Person oder Transaktion."@de , "Relates a data consumer to an individual consent workflow that it initiates, typically for a specific data subject or transaction."@en;
+        rdfs:domain         dtm-core:DataConsumer;
+        rdfs:label          "initiiert individuellen Einwilligungsvorgang"@de , "initiates individual consent workflow"@en;
+        rdfs:range          dtm-legal:IndividualConsentWorkflow;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-core:isRightlyOwnedBy
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "States that Data is bound by rights to an AffectedParty (e.g., data subject rights)."@en , "Gibt an, dass Daten rechtlich an eine betroffene Partei gebunden sind (z. B. Betroffenenrechte)."@de;
+        rdfs:domain         dtm-core:Data;
+        rdfs:label          "binded by rights to"@en , "rechtlich gebunden an"@de;
+        rdfs:range          dtm-core:AffectedParty;
+        rdfs:subPropertyOf  dtm-core:dataHeldBy .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-core:Actor dtm-core:DataTrusteeModel dtm-data:Architecture dtm-data:DataFlowComponent dtm-data:DataSystem dtm-data:ForwardingTechnique dtm-data:ProcessingTechnique dtm-data:ReceptionTechnique dtm-data:SecurityReceptionTechnique dtm-data:StorageTechnique )
+] .
+
+dtm-core:PersonalData
+        rdf:type         owl:Class;
+        rdfs:comment     "Data relating to an identified or identifiable natural person."@en , "Daten, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."@de;
+        rdfs:label       "Personal Data"@en , "Personenbezogene Daten"@de;
+        rdfs:subClassOf  dtm-core:Data .
+
+dtm-data:ForwardingAPI
+        rdf:type         owl:Class;
+        rdfs:comment     "Forwarding of data via an API."@en , "Weitergabe von Daten über eine API."@de;
+        rdfs:label       "API zur Weitergabe"@de , "API for forwarding"@en;
+        rdfs:subClassOf  dtm-data:ForwardingTechnique .
+
+dtm-business:EconomicUtilization
+        rdf:type         skos:Concept , owl:Class;
+        rdfs:comment     "Ziel, durch Daten wirtschaftlichen Mehrwert zu schaffen, z. B. durch neue Dienstleistungen, Geschäftsmodelle oder Effizienzgewinne."@de , "Goal of creating economic value from data through new services, business models or efficiency gains."@en;
+        rdfs:label       "Wirtschaftliche Verwertung"@de , "Economic Utilization"@en;
+        rdfs:subClassOf  dtm-business:DataTrusteeGoal;
+        skos:inScheme    dtm-business:DataTrusteeGoalScheme .
+
+dtm-data:AtRestEncryption
+        rdf:type         owl:Class;
+        rdfs:comment     "Encryption of data stored at rest."@en , "Verschlüsselung von Daten im Ruhezustand."@de;
+        rdfs:label       "Verschlüsselung im Ruhezustand"@de , "Encryption at Rest"@en;
+        rdfs:subClassOf  dtm-data:SecurityReceptionTechnique .
+
+dtm-business:BMBF  rdf:type  owl:Class , skos:Concept;
+        rdfs:comment     "Funding source representing the German Federal Ministry of Education and Research (BMBF)."@en , "Förderinstitution, die das Bundesministerium für Bildung und Forschung (BMBF) repräsentiert."@de;
+        rdfs:label       "BMBF - Bundesministerium für Bildung und Forschung"@de , "BMBF - Federal Ministry of Education and Research"@en;
+        rdfs:subClassOf  dtm-business:FundingSource;
+        owl:sameAs       wd:Q492234;
+        skos:broader     dtm-business:FundingSource;
+        skos:inScheme    dtm-business:FundingSourceScheme .
+
+dtm-core:isActorOf  rdf:type  owl:ObjectProperty;
+        rdfs:comment  "Inverse of hasActor; places an Actor within a given DataTrustee arrangement."@en , "Inverse zu hasActor; ordnet einen Akteur einer Datentreuhand-Konstellation zu."@de;
+        rdfs:domain   dtm-core:Actor;
+        rdfs:label    "is Actor of"@en , "ist Akteur in"@de;
+        rdfs:range    dtm-core:DataTrustee .
+
+dtm-business:CooperativeSociety
+        rdf:type         owl:Class , skos:Concept;
+        rdfs:comment     "Geschäftsform für eine eingetragene Genossenschaft (eG)."@de , "Business form for a registered cooperative."@en;
+        rdfs:label       "Cooperative"@en , "Eingetragene Genossenschaft (eG)"@de;
+        rdfs:subClassOf  dtm-business:BusinessForm;
+        owl:sameAs       wd:Q5349747;
+        skos:broader     dtm-business:BusinessForm;
+        skos:inScheme    dtm-business:BusinessFormScheme .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-legal:ConsentWorkflow dtm-legal:ContractualNecessity dtm-legal:LegalObligation dtm-legal:LegitimateInterest dtm-legal:PublicInterest dtm-legal:VitalInterest )
+] .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-data:Continuous dtm-data:Manual dtm-data:Periodic )
+] .
+
+dtm-sec:isReputationSourceOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Gibt den Akteur an, dessen Reputation durch diese Quelle beschrieben oder bewertet wird."@de , "Indicates the actor whose reputation is described or assessed by this source."@en;
+        rdfs:domain         dtm-sec:ReputationSource;
+        rdfs:label          "ist Reputationsquelle von"@de , "is reputation source of"@en;
+        rdfs:range          dtm-core:Actor;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-legal:ConsentWorkflow
+        rdf:type         owl:Class;
+        rdfs:comment     "Repräsentiert einen strukturierten Einwilligungsprozess als Spezialisierung von DPV:Consent und beschreibt, wie Einwilligungen in einem Datentreuhandmodell angefragt, erteilt und verwaltet werden."@de , "Represents a structured consent process, modelled as a specialisation of DPV:Consent, capturing how consent is requested, given and managed in a data trustee model."@en;
+        rdfs:label       "Einwilligungsvorgang"@de , "Consent Workflow"@en;
+        rdfs:subClassOf  dpv:Consent .
+
+dtm-business:BMDV  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Förderinstitution, die das Bundesministerium für Digitales und Verkehr (BMDV) repräsentiert."@de , "Funding source representing the German Federal Ministry for Digital and Transport (BMDV)."@en;
+        rdfs:label       "BMDV - Federal Ministry for Digital and Transport"@en , "BMDV - Bundesministerium für Digitales und Verkehr"@de;
+        rdfs:subClassOf  dtm-business:FundingSource;
+        skos:broader     dtm-business:FundingSource;
+        skos:inScheme    dtm-business:FundingSourceScheme .
+
+dtm-legal:individualConsentWorkflowInitiatedBy
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen individuellen Einwilligungsvorgang mit dem Datennutzer bzw. Empfänger, der diesen Vorgang aus Sicht des Nutzers initiiert."@de , "Relates an individual consent workflow to the data consumer (recipient) that initiates this workflow from a consumer-centric view."@en;
+        rdfs:domain         dtm-legal:IndividualConsentWorkflow;
+        rdfs:label          "individual consent workflow initiated by"@en , "Individueller Einwilligungsvorgang initiiert durch"@de;
+        rdfs:range          dtm-core:DataConsumer;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-legal:initiatesIndividualConsentWorkflow .
+
+dtm-core:DataOwner  rdf:type  owl:Class;
+        rdfs:comment     "Data provider with ownership or stewardship over specific data, often administering data from affected parties."@en , "Datengeber mit Eigentum/Verantwortung für bestimmte Daten; verwaltet häufig Daten Betroffener."@de;
+        rdfs:label       "Data Owner"@en , "Dateninhaber"@de;
+        rdfs:subClassOf  dtm-core:DataProvider .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  ( dtm-misc:Analyse dtm-misc:Datenzugangstransparenz dtm-misc:Visualisierung )
+] .
+
+dtm-core:isAccessGrantedTo
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Relates Data to the DataConsumer to whom it is granted or delivered."@en , "Verknüpft Daten mit dem Datennutzer, an den sie übergeben/bereitgestellt werden."@de;
+        rdfs:domain         dtm-core:Data;
+        rdfs:label          "access granted to"@en , "werden übergeben an"@de;
+        rdfs:range          dtm-core:DataConsumer;
+        rdfs:subPropertyOf  dtm-core:dataHeldBy .
+
+dtm-data:Frequency  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment       "Describes how often a data activity occurs."@en , "Beschreibt die Häufigkeit von Datenaktivitäten."@de;
+        rdfs:label         "Frequenz"@de , "Frequency"@en;
+        skos:topConceptOf  dtm-data:FrequencyScheme .
+
+dtm-misc:isSpecifiedIn
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft eine konzeptionelle Eigenschaft (z. B. Analyse, Transparenz, Visualisierung) mit den Metadaten, in denen sie spezifiziert oder dokumentiert ist."@de , "Relates a conceptual property (e.g. analysis, transparency, visualisation) to the metadata in which it is specified or documented."@en;
+        rdfs:domain         dtm-misc:Property;
+        rdfs:label          "ist spezifiziert in"@de , "is specified in"@en;
+        rdfs:range          dtm-core:Metadata;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-misc:specifies .
+
+dtm-business:hasDataTrusteeGoal
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Datentreuhänder mit einem seiner Ziele, z. B. Datensouveränität, Innovation oder Erfüllung von Auflagen."@de , "Relates a data trustee to one of its goals, such as data sovereignty, innovation or compliance."@en;
+        rdfs:domain         dtm-core:DataTrustee;
+        rdfs:label          "hat Datentreuhand-Ziel"@de , "has data trustee goal"@en;
+        rdfs:range          dtm-business:DataTrusteeGoal;
+        rdfs:subPropertyOf  owl:topObjectProperty;
+        owl:inverseOf       dtm-business:isDataTrusteeGoalOf .
+
+dtm-data:isReceptionTechniqueOf
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Indicates the data reception stage in which this technique is used."@en , "Gibt an, in welcher Empfangsphase diese Technik genutzt wird."@de;
+        rdfs:domain         dtm-data:ReceptionTechnique;
+        rdfs:label          "ist Empfangstechnik von"@de , "is reception technique of"@en;
+        rdfs:range          dtm-data:DataReception;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-legal:initiatesGeneralConsentWorkflow
+        rdf:type            owl:ObjectProperty;
+        rdfs:comment        "Verknüpft einen Datenbereitsteller mit einem allgemeinen Einwilligungsvorgang, den er initiiert, z. B. einem standardisierten Einwilligungsprozess für mehrere betroffene Personen."@de , "Relates a data provider to a general consent workflow that it initiates, e.g. a standard consent process offered to multiple data subjects."@en;
+        rdfs:domain         dtm-core:DataProvider;
+        rdfs:label          "initiiert allgemeinen Einwilligungsvorgang"@de , "initiates general consent workflow"@en;
+        rdfs:range          dtm-legal:GeneralConsentWorkflow;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+dtm-business:BMFTR  rdf:type  skos:Concept , owl:Class;
+        rdfs:comment     "Funding source representing the Federal Ministry of Research, Technology and Space (BMFTR)."@en , "Förderinstitution, die das Bundesministerium für Forschung, Technologie und Raumfahrt (BMFTR) repräsentiert."@de;
+        rdfs:label       "BMFTR - Bundesministerium für Forschung, Technologie und Raumfahrt"@de , "BMFTR - Federal Ministry of Research, Technology and Space"@en;
+        rdfs:subClassOf  dtm-business:FundingSource;
+        owl:sameAs       wd:Q492234;
+        skos:broader     dtm-business:FundingSource;
+        skos:inScheme    dtm-business:FundingSourceScheme .
+
+dtm-data:Download  rdf:type  owl:Class;
+        rdfs:comment     "Reception of data by downloading from a system."@en , "Empfang von Daten durch Herunterladen aus einem System."@de;
+        rdfs:label       "Download"@de , "Download"@en;
+        rdfs:subClassOf  dtm-data:ReceptionTechnique .

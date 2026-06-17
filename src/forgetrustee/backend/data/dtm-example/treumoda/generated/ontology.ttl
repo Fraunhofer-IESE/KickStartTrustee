@@ -1,0 +1,123 @@
+PREFIX :             <http://forgetrustee.kickstarttrustee.de/ontology/TreuMoDa#>
+PREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>
+PREFIX dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+PREFIX dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+PREFIX dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+:Mobilitaetsunternehmen
+        rdf:type                      dtm-core:AffectedParty , owl:NamedIndividual , dtm-core:DataOwner , dtm-core:Actor;
+        rdfs:label                    "Mobilitätsunternehmen"@de;
+        dtm-business:affiliationType  dtm-business:Organisation;
+        dtm-business:hasDataHolderMotivation
+                dtm-business:Interoperability , dtm-business:ScienceAndResearch , dtm-business:Compliance;
+        dtm-business:hasRightsHolderMotivation
+                dtm-business:SocietalValue;
+        dtm-business:usesPayModelAsDataOwner
+                dtm-business:Free;
+        dtm-core:administers          :Mobilitaetsdaten;
+        dtm-core:hasRightsOf          :Mobilitaetsdaten;
+        dtm-core:isAffectedPartyIn    :TreuMoDa;
+        dtm-core:isDataOwnerOf        :TreuMoDa .
+
+:Mobilitaetsdaten  rdf:type         owl:NamedIndividual , dtm-core:Data;
+        rdfs:comment                "Mobilitätsdaten aus Fahrzeugen, Verkehrsinfrastrukturen und Sensorsystemen."@de;
+        rdfs:label                  "Mobilitätsdaten"@de;
+        dtm-core:administeredBy     :Mobilitaetsunternehmen;
+        dtm-core:isAccessGrantedTo  :ForschungundoeffentlicheStellen;
+        dtm-core:isRightlyOwnedBy   :Mobilitaetsunternehmen .
+
+:CustomPreparationDatenschutzkonformeDatenaufbereitung
+        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;
+        rdfs:comment  "Daten werden vor der Bereitstellung formatiert, pseudonymisiert oder anonymisiert."@de;
+        rdfs:label    "CustomPreparationDatenschutzkonforme Datenaufbereitung"@de;
+        dtm-data:isPreparationTechniqueOf
+                :PreparationTreuMoDa .
+
+:CustomReceptionSecurityVorpruefungeingehenderDatensaetze
+        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;
+        rdfs:comment                 "Eingehende Datensätze werden vor der Weitergabe geprüft."@de;
+        rdfs:label                   "CustomReceptionSecurityVorprüfung eingehender Datensätze"@de;
+        dtm-data:securesAsTechnique  :ReceptionTreuMoDa .
+
+:ReceptionTreuMoDa  rdf:type            dtm-data:DataReception , owl:NamedIndividual;
+        rdfs:label                      "ReceptionTreuMoDa"@de;
+        dtm-data:hasReceptionFrequency  dtm-data:Manual;
+        dtm-data:hasReceptionTechnique  dtm-data:Download , dtm-data:ReceptionAPI;
+        dtm-data:securedByTechnique     dtm-data:Pseudonymisation , dtm-data:Anonymisation , :CustomReceptionSecurityVorpruefungeingehenderDatensaetze , dtm-data:TransportEncryption;
+        dtm-data:usesSystem             :SourceSystemQuellsystemederDatengeber .
+
+:ForschungundoeffentlicheStellen
+        rdf:type                      owl:NamedIndividual , dtm-core:DataConsumer , dtm-core:Actor;
+        rdfs:label                    "Forschung und öffentliche Stellen"@de;
+        dtm-business:affiliationType  dtm-business:Organisation;
+        dtm-business:hasDataConsumerMotivation
+                dtm-business:Innovation , dtm-business:ValueCreation , dtm-business:ScienceAndResearch;
+        dtm-business:usesPayModelAsDataConsumer
+                dtm-business:PayPerUse;
+        dtm-core:isDataConsumerOf     :TreuMoDa;
+        dtm-core:isGrantedAccess      :Mobilitaetsdaten;
+        dtm-legal:isBeneficiaryOf     dtm-legal:LegitimateInterest .
+
+:TreuMoDa  rdf:type                    dtm-core:DataTrustee , owl:NamedIndividual , dtm-business:Organisation;
+        rdfs:label                     "TreuMoDa"@de;
+        dtm-business:affiliationType   dtm-business:Organisation;
+        dtm-business:hasBusinessForm   dtm-business:NonprofitLimitedLiabilityCompany;
+        dtm-business:hasDataTrusteeGoal
+                dtm-business:ScienceAndResearch , dtm-business:Compliance , dtm-business:EconomicUtilization , dtm-business:Innovation;
+        dtm-business:hasDataTrusteeOperator
+                :TreuMoDa;
+        dtm-business:hasDomain         dtm-business:MobilitySector;
+        dtm-business:hasFundingSource  dtm-business:AndereFoerderung;
+        dtm-business:isOperatorOfDataTrustee
+                :TreuMoDa;
+        dtm-core:dataTrusteeDescription
+                "TreuMoDa ist eine gemeinnützige Treuhandstelle für Mobilitätsdaten zur sicheren Nutzung durch Wissenschaft, Wirtschaft und öffentliche Akteure."@de;
+        dtm-core:hasAffectedParty      :Mobilitaetsunternehmen;
+        dtm-core:hasDataConsumer       :ForschungundoeffentlicheStellen;
+        dtm-core:hasDataOwner          :Mobilitaetsunternehmen;
+        dtm-core:hasDataTrusteeModel   :DTM_TreuMoDa;
+        dtm-data:triggersStorage       :StorageTreuMoDa .
+
+:AnalysisTreuMoDa  rdf:type  owl:NamedIndividual , dtm-data:DataAnalysis;
+        rdfs:label  "AnalysisTreuMoDa"@de .
+
+:StorageTreuMoDa  rdf:type            owl:NamedIndividual , dtm-data:DataStorage;
+        rdfs:label                    "StorageTreuMoDa"@de;
+        dtm-data:hasRetentionPeriod   dtm-data:ForTransmissionOnly;
+        dtm-data:hasStorageTechnique  dtm-data:CentralStorage;
+        dtm-data:performsStorage      :TreuMoDa .
+
+:ForwardingTreuMoDa  rdf:type        owl:NamedIndividual , dtm-data:DataForwarding;
+        rdfs:label                   "ForwardingTreuMoDa"@de;
+        dtm-data:hasForwardingFrequency
+                dtm-data:Manual;
+        dtm-data:hasForwardingTechnique
+                dtm-data:ReceptionAPI;
+        dtm-data:securedByTechnique  dtm-data:Anonymisation , dtm-data:TransportEncryption , dtm-data:Pseudonymisation;
+        dtm-data:usesSystem          :TargetSystemZielsystemederDatennutzer .
+
+:TargetSystemZielsystemederDatennutzer
+        rdf:type                  owl:NamedIndividual , dtm-data:TargetSystem;
+        rdfs:label                "TargetSystemZielsysteme der Datennutzer"@de;
+        dtm-data:isUsedAsSystemm  :ForwardingTreuMoDa .
+
+:PreparationTreuMoDa  rdf:type  owl:NamedIndividual , dtm-data:DataPreparation;
+        rdfs:label  "PreparationTreuMoDa"@de;
+        dtm-data:hasPreparationTechnique
+                dtm-data:Transformation , :CustomPreparationDatenschutzkonformeDatenaufbereitung .
+
+:SourceSystemQuellsystemederDatengeber
+        rdf:type                 owl:NamedIndividual , dtm-data:SourceSystem;
+        rdfs:label               "SourceSystemQuellsysteme der Datengeber"@de;
+        dtm-data:isUsedAsSystem  :ReceptionTreuMoDa .
+
+:DTM_TreuMoDa  rdf:type                owl:NamedIndividual , dtm-core:ExternallyControlledValueAddedDataTrustee;
+        rdfs:label                     "DTM_TreuMoDa"@de;
+        dtm-core:isDataTrusteeModelOf  :TreuMoDa;
+        dtm-data:implementedOn         dtm-data:CentralRouterArchitecture .
+
+:       rdf:type  owl:Ontology .

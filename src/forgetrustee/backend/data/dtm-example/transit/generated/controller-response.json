@@ -1,0 +1,447 @@
+{
+  "request" : {
+    "core" : {
+      "dataTrusteeName" : "TRANSIT",
+      "dataTrusteeDescription" : "TRANSIT ermöglicht den sicheren Austausch logistischer Geschäftsdaten zwischen Logistikunternehmen über eine neutrale Plattform.",
+      "dataTrusteeOperator" : "TRANSIT",
+      "dataTrusteeOperatorAffiliation" : "ORGANIZATION",
+      "rightsHolderName" : "Logistikunternehmen",
+      "rightsHolderAffiliation" : "ORGANIZATION",
+      "rightsHolderIsRepresented" : "false",
+      "dataOwnerName" : "Logistikunternehmen",
+      "dataConsumerName" : "Logistikunternehmen",
+      "dataConsumerAffiliation" : "ORGANIZATION"
+    },
+    "data" : {
+      "dataCategory" : {
+        "dataCategoryName" : "Logistikdaten",
+        "dataCategoryDescription" : "Geschäfts- und Transportdaten aus der Logistik."
+      },
+      "containPersonalInformation" : "false",
+      "specialPersonalInformation" : "false",
+      "containTradeSecrets" : "true",
+      "processingBases" : {
+        "LEGITIMATE_INTEREST" : [ {
+          "title" : "Kooperativer Datenaustausch",
+          "description" : "Die Verarbeitung unterstützt den sicheren Austausch logistischer Daten."
+        } ]
+      },
+      "consentType" : "NOT_PROVIDED",
+      "obtainingConsentBy" : "",
+      "consentEnteredBy" : "NOT_PROVIDED"
+    },
+    "implementation" : {
+      "dataTrusteeCategory" : "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+      "architectureType" : "CENTRAL_DATA_STORAGE",
+      "receptionTechnologies" : [ "API" ],
+      "receptionFrequency" : "PERIODIC",
+      "receptionSecurityMeasures" : [ "ANONYMISATION", "TRANSPORT_ENCRYPTION", "PSEUDONYMISATION" ],
+      "customReceptionSecurityTechniques" : [ {
+        "title" : "Treuhandplattform",
+        "description" : "Daten werden zentral und abgesichert entgegengenommen."
+      } ],
+      "sourceSystem" : "Logistiksysteme",
+      "preparationTechniques" : [ "DIGITIZATION", "AGGREGATION", "TRANSFORMATION", "CUSTOM" ],
+      "customPreparationTechniques" : [ {
+        "title" : "Datenstandardisierung",
+        "description" : "Logistikdaten werden in ein einheitliches Format überführt."
+      }, {
+        "title" : "Kapazitätsaggregation",
+        "description" : "Kapazitäts- und Standortdaten werden zusammengeführt."
+      } ],
+      "storageTechnique" : "CENTRAL_STORAGE",
+      "storageRetention" : "WITH_RETENTION",
+      "analysisTechniques" : [ "STATISTICAL_ANALYSIS", "CUSTOM" ],
+      "customAnalysisTechniques" : [ {
+        "title" : "Kooperative Datenauswertung",
+        "description" : "Daten werden zur Verbesserung logistischer Kooperationen ausgewertet."
+      } ],
+      "forwardingTechniques" : [ "API" ],
+      "forwardingFrequency" : "MANUAL",
+      "forwardingSecurityMeasures" : [ "ANONYMISATION", "TRANSPORT_ENCRYPTION", "PSEUDONYMISATION" ],
+      "customForwardingSecurityTechniques" : [ {
+        "title" : "Freigabebasierte Weitergabe",
+        "description" : "Daten werden nur nach Freigabe an berechtigte Empfänger übertragen."
+      } ],
+      "targetSystem" : "Logistiksysteme der Datennutzer"
+    },
+    "business" : {
+      "businessDomains" : [ "LOGISTICS" ],
+      "businessModel" : "COOPERATIVE",
+      "fundingSources" : [ "OTHER" ],
+      "paymentMethodDataOwner" : "FLATRATE",
+      "paymentMethodDataConsumer" : "FLATRATE"
+    },
+    "objectives" : {
+      "dataTrusteeGoals" : [ "SCIENCE_RESEARCH", "DATA_SOVEREIGNTY", "ECONOMIC_UTILIZATION", "INNOVATION" ],
+      "motivationRightsHolder" : [ "SOCIAL_VALUE" ],
+      "motivationDataHolder" : [ "VALUE_CREATION", "COMPLIANCE_REQUIREMENTS", "INTEROPERABILITY" ],
+      "motivationDataConsumer" : [ "INNOVATION", "INTEROPERABILITY", "VALUE_CREATION" ]
+    }
+  },
+  "dataTrusteeModel" : {
+    "core" : {
+      "ontologyURI" : "http://forgetrustee.kickstarttrustee.de/ontology/TRANSIT#",
+      "dataTrusteeName" : {
+        "value" : "TRANSIT",
+        "label" : "Datentreuhand",
+        "comment" : "Akteur, der Daten unter vereinbarter Governance/Policy verwaltet und vermittelt."
+      },
+      "dataTrusteeDescription" : {
+        "value" : "TRANSIT ermöglicht den sicheren Austausch logistischer Geschäftsdaten zwischen Logistikunternehmen über eine neutrale Plattform."
+      },
+      "dataTrusteeOperator" : {
+        "value" : "TRANSIT"
+      },
+      "dataTrusteeOperatorAffiliation" : {
+        "value" : "ORGANIZATION",
+        "label" : "Organisation",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."
+      },
+      "rightsHolderName" : {
+        "value" : "Logistikunternehmen",
+        "label" : "Betroffener",
+        "comment" : "Partei, auf die sich Daten beziehen und deren Rechte/Interessen betroffen sein können."
+      },
+      "rightsHolderAffiliation" : {
+        "value" : "ORGANIZATION",
+        "label" : "Organisation",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."
+      },
+      "rightsHolderIsRepresented" : {
+        "value" : "false",
+        "label" : "hat Daten bei",
+        "comment" : "Verknüpft eine betroffene Partei mit dem Dateninhaber, der deren Daten verwaltet."
+      },
+      "dataOwnerName" : {
+        "value" : "Logistikunternehmen",
+        "label" : "Dateninhaber",
+        "comment" : "Datengeber mit Eigentum/Verantwortung für bestimmte Daten; verwaltet häufig Daten Betroffener."
+      },
+      "dataConsumerName" : {
+        "value" : "Logistikunternehmen",
+        "label" : "Datennutzer",
+        "comment" : "Akteur, der Daten zu einem Zweck nutzt (Analyse, Dienst, Produkt)."
+      },
+      "dataConsumerAffiliation" : {
+        "value" : "ORGANIZATION",
+        "label" : "Organisation",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."
+      },
+      "dataCategoryName" : {
+        "value" : "Logistikdaten"
+      },
+      "dataCategoryDescription" : {
+        "value" : "Geschäfts- und Transportdaten aus der Logistik."
+      },
+      "containPersonalInformation" : {
+        "value" : "false",
+        "label" : "Personenbezogene Daten",
+        "comment" : "Daten, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."
+      },
+      "specialPersonalInformation" : {
+        "value" : "false",
+        "label" : "Besondere Kategorien personenbezogener Daten",
+        "comment" : "Besonders schützenswerte personenbezogene Daten (z. B. Gesundheit, Biometrie) mit erhöhtem Schutzbedarf."
+      },
+      "containTradeSecrets" : {
+        "value" : "true",
+        "label" : "Geschäftsgeheimnis",
+        "comment" : "Vertrauliche Informationen mit wirtschaftlichem Wert, die durch Geheimhaltung/Kontrollen geschützt sind."
+      }
+    },
+    "data" : {
+      "dataTrusteeCategory" : {
+        "value" : "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+        "label" : "Fremdbestimmte Mehrwerttreuhand",
+        "comment" : "Mehrwert-Treuhandmodell, dessen Wertschöpfungsentscheidungen extern gesteuert werden."
+      },
+      "architectureType" : {
+        "value" : "CENTRAL_DATA_STORAGE",
+        "label" : "Zentraler Datenabruf",
+        "comment" : "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert und die Daten zentral speichert, sodass der Zugriff und die Bereitstellung von Daten über eine zentrale Instanz erfolgen."
+      },
+      "receptionTechnologies" : [ {
+        "value" : "API",
+        "label" : "API",
+        "comment" : "Empfang von Daten über eine Programmierschnittstelle."
+      } ],
+      "receptionFrequency" : {
+        "value" : "PERIODIC",
+        "label" : "Periodisch",
+        "comment" : "Regelmäßig wiederkehrende Datenaktivitäten."
+      },
+      "receptionSecurityMeasures" : [ {
+        "value" : "ANONYMISATION",
+        "label" : "Anonymisieren",
+        "comment" : "Irreversible Entfernung personenbezogener Beziehbarkeit."
+      }, {
+        "value" : "TRANSPORT_ENCRYPTION",
+        "label" : "Transportverschlüsselung",
+        "comment" : "Verschlüsselung während der Übertragung von Daten."
+      }, {
+        "value" : "PSEUDONYMISATION",
+        "label" : "Pseudonymisieren",
+        "comment" : "Ersetzung identifizierender Merkmale durch Pseudonyme."
+      } ],
+      "customReceptionSecurityTechniques" : [ {
+        "title" : "Treuhandplattform",
+        "description" : "Daten werden zentral und abgesichert entgegengenommen."
+      } ],
+      "sourceSystem" : {
+        "value" : "Logistiksysteme",
+        "label" : "Quellsystem",
+        "comment" : "System, das Daten bereitstellt oder liefert."
+      },
+      "preparationTechniques" : [ {
+        "value" : "DIGITIZATION",
+        "label" : "Digitalisierung",
+        "comment" : "Umwandlung analoger Informationen in digitale Daten."
+      }, {
+        "value" : "AGGREGATION",
+        "label" : "Aggregation",
+        "comment" : "Zusammenführung einzelner Werte zu aggregierten Ergebnissen."
+      }, {
+        "value" : "TRANSFORMATION",
+        "label" : "Transformation",
+        "comment" : "Überführung von Daten in neue Formate oder Strukturen."
+      }, {
+        "value" : "CUSTOM"
+      } ],
+      "customPreparationTechniques" : [ {
+        "title" : "Datenstandardisierung",
+        "description" : "Logistikdaten werden in ein einheitliches Format überführt."
+      }, {
+        "title" : "Kapazitätsaggregation",
+        "description" : "Kapazitäts- und Standortdaten werden zusammengeführt."
+      } ],
+      "storageTechnique" : {
+        "value" : "CENTRAL_STORAGE",
+        "label" : "Zentrales Speichern",
+        "comment" : "Zentrale Speicherung aller Daten in einem System."
+      },
+      "storageRetention" : {
+        "value" : "WITH_RETENTION",
+        "label" : "Mit Retention",
+        "comment" : "Aufbewahrung von Daten nach definierten Regeln."
+      },
+      "analysisTechniques" : [ {
+        "value" : "STATISTICAL_ANALYSIS",
+        "label" : "Statistische Analyse",
+        "comment" : "Analyse unter Einsatz statistischer Verfahren."
+      }, {
+        "value" : "CUSTOM"
+      } ],
+      "customAnalysisTechniques" : [ {
+        "title" : "Kooperative Datenauswertung",
+        "description" : "Daten werden zur Verbesserung logistischer Kooperationen ausgewertet."
+      } ],
+      "forwardingTechniques" : [ {
+        "value" : "API",
+        "label" : "API",
+        "comment" : "Empfang von Daten über eine Programmierschnittstelle."
+      } ],
+      "forwardingFrequency" : {
+        "value" : "MANUAL",
+        "label" : "Manuell",
+        "comment" : "Manuelle, nicht automatisierte Durchführung einer Aktivität."
+      },
+      "forwardingSecurityMeasures" : [ {
+        "value" : "ANONYMISATION",
+        "label" : "Anonymisieren",
+        "comment" : "Irreversible Entfernung personenbezogener Beziehbarkeit."
+      }, {
+        "value" : "TRANSPORT_ENCRYPTION",
+        "label" : "Transportverschlüsselung",
+        "comment" : "Verschlüsselung während der Übertragung von Daten."
+      }, {
+        "value" : "PSEUDONYMISATION",
+        "label" : "Pseudonymisieren",
+        "comment" : "Ersetzung identifizierender Merkmale durch Pseudonyme."
+      } ],
+      "customForwardingSecurityTechniques" : [ {
+        "title" : "Freigabebasierte Weitergabe",
+        "description" : "Daten werden nur nach Freigabe an berechtigte Empfänger übertragen."
+      } ],
+      "targetSystem" : {
+        "value" : "Logistiksysteme der Datennutzer",
+        "label" : "Zielsystem",
+        "comment" : "System, das Daten empfängt oder verarbeitet."
+      }
+    },
+    "legal" : {
+      "processingBases" : [ {
+        "value" : "LEGITIMATE_INTEREST",
+        "label" : "Berechtigtes Interesse",
+        "comment" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung auf einem berechtigten Interesse beruht und einer Interessenabwägung mit den Rechten und Freiheiten der betroffenen Personen unterliegt.",
+        "details" : [ {
+          "title" : "Kooperativer Datenaustausch",
+          "description" : "Die Verarbeitung unterstützt den sicheren Austausch logistischer Daten."
+        } ]
+      } ],
+      "obtainingConsentBy" : "",
+      "consentEnteredBy" : {
+        "value" : "NOT_PROVIDED"
+      }
+    },
+    "objectives" : {
+      "dataTrusteeGoals" : [ {
+        "value" : "SCIENCE_RESEARCH",
+        "label" : "Wissenschaft und Forschung",
+        "comment" : "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen."
+      }, {
+        "value" : "DATA_SOVEREIGNTY",
+        "label" : "Datensouveränität",
+        "comment" : "Ziel, sicherzustellen, dass Datenhaltende die Kontrolle und Entscheidungsgewalt über ihre Daten behalten."
+      }, {
+        "value" : "ECONOMIC_UTILIZATION",
+        "label" : "Wirtschaftliche Verwertung",
+        "comment" : "Ziel, durch Daten wirtschaftlichen Mehrwert zu schaffen, z. B. durch neue Dienstleistungen, Geschäftsmodelle oder Effizienzgewinne."
+      }, {
+        "value" : "INNOVATION",
+        "label" : "Innovation",
+        "comment" : "Ziel, Innovation durch datengetriebene Produkte, Dienstleistungen oder Prozesse zu ermöglichen."
+      } ],
+      "motivationRightsHolder" : [ {
+        "value" : "SOCIAL_VALUE",
+        "label" : "Gesellschaftlicher Mehrwert",
+        "comment" : "Motivation, durch Datenbereitstellung, Datennutzung oder Teilnahme an einer Datentreuhand gesellschaftlichen Mehrwert zu schaffen."
+      } ],
+      "motivationDataHolder" : [ {
+        "value" : "VALUE_CREATION",
+        "label" : "Wertschöpfung",
+        "comment" : "Motivation eines Akteurs, durch Teilnahme an einer Datentreuhand oder durch Datennutzung einen Mehrwert zu schaffen, z. B. wirtschaftlich, organisatorisch oder strategisch."
+      }, {
+        "value" : "COMPLIANCE_REQUIREMENTS",
+        "label" : "Erfüllung von Auflagen",
+        "comment" : "Ziel, rechtliche, regulatorische oder vertragliche Anforderungen an die Datennutzung zu erfüllen."
+      }, {
+        "value" : "INTEROPERABILITY",
+        "label" : "Interoperabilität",
+        "comment" : "Motivation, technische, semantische oder organisatorische Interoperabilität durch gemeinsame Standards, Schnittstellen oder Governance-Regeln zu verbessern."
+      } ],
+      "motivationDataConsumer" : [ {
+        "value" : "INNOVATION",
+        "label" : "Innovation",
+        "comment" : "Ziel, Innovation durch datengetriebene Produkte, Dienstleistungen oder Prozesse zu ermöglichen."
+      }, {
+        "value" : "INTEROPERABILITY",
+        "label" : "Interoperabilität",
+        "comment" : "Motivation, technische, semantische oder organisatorische Interoperabilität durch gemeinsame Standards, Schnittstellen oder Governance-Regeln zu verbessern."
+      }, {
+        "value" : "VALUE_CREATION",
+        "label" : "Wertschöpfung",
+        "comment" : "Motivation eines Akteurs, durch Teilnahme an einer Datentreuhand oder durch Datennutzung einen Mehrwert zu schaffen, z. B. wirtschaftlich, organisatorisch oder strategisch."
+      } ]
+    },
+    "business" : {
+      "businessDomains" : [ {
+        "value" : "LOGISTICS",
+        "label" : "Logistik",
+        "comment" : "Domäne für Logistik, einschließlich Transport, Lagerung und Lieferkettenmanagement."
+      } ],
+      "businessModel" : {
+        "value" : "COOPERATIVE",
+        "label" : "Eingetragene Genossenschaft (eG)",
+        "comment" : "Geschäftsform für eine eingetragene Genossenschaft (eG)."
+      },
+      "fundingSources" : [ {
+        "value" : "OTHER",
+        "label" : "Andere Förderung",
+        "comment" : "Generische Förderinstitution für weitere Fördergeber, die nicht durch spezifische Kategorien abgedeckt sind."
+      } ],
+      "paymentMethodDataOwner" : {
+        "value" : "FLATRATE",
+        "label" : "Flatrate",
+        "comment" : "Bezahlmodell mit einer pauschalen, wiederkehrenden Gebühr, unabhängig von der tatsächlichen Nutzung."
+      },
+      "paymentMethodDataConsumer" : {
+        "value" : "FLATRATE",
+        "label" : "Flatrate",
+        "comment" : "Bezahlmodell mit einer pauschalen, wiederkehrenden Gebühr, unabhängig von der tatsächlichen Nutzung."
+      }
+    },
+    "presentation" : {
+      "sections" : [ {
+        "key" : "core",
+        "label" : "Akteure und Stammdaten",
+        "fields" : {
+          "ontologyURI" : "Basis-URI",
+          "dataTrusteeName" : "Datentreuhandmodell",
+          "dataTrusteeDescription" : "Beschreibung",
+          "dataTrusteeOperator" : "Betreiber",
+          "dataTrusteeOperatorAffiliation" : "Art des Betreibers",
+          "rightsHolderName" : "Rechtehalter",
+          "rightsHolderAffiliation" : "Art der Rechtehalter",
+          "rightsHolderIsRepresented" : "Rechtehalter vertreten",
+          "dataOwnerName" : "Datenhalter",
+          "dataConsumerName" : "Datennutzer",
+          "dataConsumerAffiliation" : "Art der Datennutzer",
+          "dataCategoryName" : "Datenkategorie",
+          "dataCategoryDescription" : "Datenkategorie Beschreibung",
+          "containPersonalInformation" : "Personenbezogene Daten",
+          "specialPersonalInformation" : "Besondere Kategorien personenbezogener Daten",
+          "containTradeSecrets" : "Schützenswerte Unternehmensdaten"
+        }
+      }, {
+        "key" : "legal",
+        "label" : "Rechtliche Grundlagen",
+        "fields" : {
+          "processingBases" : "Verarbeitungsgrundlagen",
+          "consentType" : "Einwilligungsart",
+          "obtainingConsentBy" : "Einholung durch",
+          "consentEnteredBy" : "Einwilligung erfasst durch"
+        }
+      }, {
+        "key" : "data",
+        "label" : "Implementierung und Datenfluss",
+        "fields" : {
+          "dataTrusteeCategory" : "Datentreuhand-Kategorie",
+          "architectureType" : "Architekturtyp",
+          "receptionTechnologies" : "Empfangstechniken",
+          "receptionFrequency" : "Empfangsfrequenz",
+          "receptionSecurityMeasures" : "Sicherheitsmaßnahmen Empfang",
+          "customReceptionSecurityTechniques" : "Eigene Sicherheitsmaßnahmen Empfang",
+          "sourceSystem" : "Quellsystem",
+          "preparationTechniques" : "Aufbereitungstechniken",
+          "customPreparationTechniques" : "Eigene Aufbereitungstechniken",
+          "storageTechnique" : "Speichertechnik",
+          "storageRetention" : "Speicherdauer",
+          "analysisTechniques" : "Auswertungstechniken",
+          "customAnalysisTechniques" : "Eigene Auswertungstechniken",
+          "forwardingTechniques" : "Weitergabetechniken",
+          "forwardingFrequency" : "Weitergabefrequenz",
+          "forwardingSecurityMeasures" : "Sicherheitsmaßnahmen Weitergabe",
+          "customForwardingSecurityTechniques" : "Eigene Sicherheitsmaßnahmen Weitergabe",
+          "targetSystem" : "Zielsystem"
+        }
+      }, {
+        "key" : "objectives",
+        "label" : "Ziele und Motivation",
+        "fields" : {
+          "dataTrusteeGoals" : "Ziele der Datentreuhand",
+          "motivationRightsHolder" : "Motivation Rechtehalter",
+          "motivationDataHolder" : "Motivation Datenhalter",
+          "motivationDataConsumer" : "Motivation Datennutzer"
+        }
+      }, {
+        "key" : "business",
+        "label" : "Geschaeftsmodell",
+        "fields" : {
+          "businessDomains" : "Domänen",
+          "businessModel" : "Geschäftsform",
+          "fundingSources" : "Förderquellen",
+          "paymentMethodDataOwner" : "Bezahlmodell Datenhalter",
+          "paymentMethodDataConsumer" : "Bezahlmodell Datennutzer"
+        }
+      } ]
+    }
+  },
+  "ttl" : "PREFIX :             <http://forgetrustee.kickstarttrustee.de/ontology/TRANSIT#>\nPREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>\nPREFIX dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>\nPREFIX dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>\nPREFIX dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>\nPREFIX owl:          <http://www.w3.org/2002/07/owl#>\nPREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>\n\n:ForwardingTRANSIT  rdf:type         owl:NamedIndividual , dtm-data:DataForwarding;\n        rdfs:label                   \"ForwardingTRANSIT\"@de;\n        dtm-data:hasForwardingFrequency\n                dtm-data:Manual;\n        dtm-data:hasForwardingTechnique\n                dtm-data:ReceptionAPI;\n        dtm-data:securedByTechnique  :CustomForwardingSecurityFreigabebasierteWeitergabe , dtm-data:TransportEncryption , dtm-data:Pseudonymisation , dtm-data:Anonymisation;\n        dtm-data:usesSystem          :TargetSystemLogistiksystemederDatennutzer .\n\n:PreparationTRANSIT  rdf:type  owl:NamedIndividual , dtm-data:DataPreparation;\n        rdfs:label  \"PreparationTRANSIT\"@de;\n        dtm-data:hasPreparationTechnique\n                dtm-data:Digitization , dtm-data:Aggregation , dtm-data:Transformation , :CustomPreparationDatenstandardisierung , :CustomPreparationKapazitaetsaggregation .\n\n:CustomForwardingSecurityFreigabebasierteWeitergabe\n        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;\n        rdfs:comment                 \"Daten werden nur nach Freigabe an berechtigte Empfänger übertragen.\"@de;\n        rdfs:label                   \"CustomForwardingSecurityFreigabebasierte Weitergabe\"@de;\n        dtm-data:securesAsTechnique  :ForwardingTRANSIT .\n\n:TRANSIT  rdf:type                     dtm-business:Organisation , owl:NamedIndividual , dtm-core:DataTrustee;\n        rdfs:label                     \"TRANSIT\"@de;\n        dtm-business:affiliationType   dtm-business:Organisation;\n        dtm-business:hasBusinessForm   dtm-business:CooperativeSociety;\n        dtm-business:hasDataTrusteeGoal\n                dtm-business:Innovation , dtm-business:ScienceAndResearch , dtm-business:EconomicUtilization , dtm-business:DataSovereignty;\n        dtm-business:hasDataTrusteeOperator\n                :TRANSIT;\n        dtm-business:hasDomain         dtm-business:LogisticSector;\n        dtm-business:hasFundingSource  dtm-business:AndereFoerderung;\n        dtm-business:isOperatorOfDataTrustee\n                :TRANSIT;\n        dtm-core:dataTrusteeDescription\n                \"TRANSIT ermöglicht den sicheren Austausch logistischer Geschäftsdaten zwischen Logistikunternehmen über eine neutrale Plattform.\"@de;\n        dtm-core:hasAffectedParty      :Logistikunternehmen;\n        dtm-core:hasDataConsumer       :Logistikunternehmen;\n        dtm-core:hasDataOwner          :Logistikunternehmen;\n        dtm-core:hasDataTrusteeModel   :DTM_TRANSIT;\n        dtm-data:triggersStorage       :StorageTRANSIT .\n\n:ReceptionTRANSIT  rdf:type             owl:NamedIndividual , dtm-data:DataReception;\n        rdfs:label                      \"ReceptionTRANSIT\"@de;\n        dtm-data:hasReceptionFrequency  dtm-data:Periodic;\n        dtm-data:hasReceptionTechnique  dtm-data:ReceptionAPI;\n        dtm-data:securedByTechnique     dtm-data:Anonymisation , :CustomReceptionSecurityTreuhandplattform , dtm-data:TransportEncryption , dtm-data:Pseudonymisation;\n        dtm-data:usesSystem             :SourceSystemLogistiksysteme .\n\n:       rdf:type  owl:Ontology .\n\n:SourceSystemLogistiksysteme\n        rdf:type                 owl:NamedIndividual , dtm-data:SourceSystem;\n        rdfs:label               \"SourceSystemLogistiksysteme\"@de;\n        dtm-data:isUsedAsSystem  :ReceptionTRANSIT .\n\n:CustomReceptionSecurityTreuhandplattform\n        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;\n        rdfs:comment                 \"Daten werden zentral und abgesichert entgegengenommen.\"@de;\n        rdfs:label                   \"CustomReceptionSecurityTreuhandplattform\"@de;\n        dtm-data:securesAsTechnique  :ReceptionTRANSIT .\n\n:AnalysisTRANSIT  rdf:type  owl:NamedIndividual , dtm-data:DataAnalysis;\n        rdfs:label  \"AnalysisTRANSIT\"@de;\n        dtm-data:hasDataAnalysisTechnique\n                dtm-data:StatisticalAnalysis , :CustomAnalysisKooperativeDatenauswertung .\n\n:CustomPreparationDatenstandardisierung\n        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;\n        rdfs:comment  \"Logistikdaten werden in ein einheitliches Format überführt.\"@de;\n        rdfs:label    \"CustomPreparationDatenstandardisierung\"@de;\n        dtm-data:isPreparationTechniqueOf\n                :PreparationTRANSIT .\n\n:Logistikunternehmen  rdf:type        dtm-core:Actor , dtm-core:DataOwner , dtm-core:DataConsumer , owl:NamedIndividual , dtm-core:AffectedParty;\n        rdfs:label                    \"Logistikunternehmen\"@de;\n        dtm-business:affiliationType  dtm-business:Organisation;\n        dtm-business:hasDataConsumerMotivation\n                dtm-business:Interoperability , dtm-business:ValueCreation , dtm-business:Innovation;\n        dtm-business:hasDataHolderMotivation\n                dtm-business:Interoperability , dtm-business:ValueCreation , dtm-business:Compliance;\n        dtm-business:hasRightsHolderMotivation\n                dtm-business:SocietalValue;\n        dtm-business:usesPayModelAsDataConsumer\n                dtm-business:Flatrate;\n        dtm-business:usesPayModelAsDataOwner\n                dtm-business:Flatrate;\n        dtm-core:administers          :Logistikdaten;\n        dtm-core:hasRightsOf          :Logistikdaten;\n        dtm-core:isAffectedPartyIn    :TRANSIT;\n        dtm-core:isDataConsumerOf     :TRANSIT;\n        dtm-core:isDataOwnerOf        :TRANSIT;\n        dtm-core:isGrantedAccess      :Logistikdaten;\n        dtm-legal:isBeneficiaryOf     dtm-legal:LegitimateInterest .\n\n:CustomPreparationKapazitaetsaggregation\n        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;\n        rdfs:comment  \"Kapazitäts- und Standortdaten werden zusammengeführt.\"@de;\n        rdfs:label    \"CustomPreparationKapazitätsaggregation\"@de;\n        dtm-data:isPreparationTechniqueOf\n                :PreparationTRANSIT .\n\n:StorageTRANSIT  rdf:type             owl:NamedIndividual , dtm-data:DataStorage;\n        rdfs:label                    \"StorageTRANSIT\"@de;\n        dtm-data:hasRetentionPeriod   dtm-data:WithRetention;\n        dtm-data:hasStorageTechnique  dtm-data:CentralStorage;\n        dtm-data:performsStorage      :TRANSIT .\n\n:Logistikdaten  rdf:type            owl:NamedIndividual , dtm-core:Data;\n        rdfs:comment                \"Geschäfts- und Transportdaten aus der Logistik.\"@de;\n        rdfs:label                  \"Logistikdaten\"@de;\n        dtm-core:administeredBy     :Logistikunternehmen;\n        dtm-core:isAccessGrantedTo  :Logistikunternehmen;\n        dtm-core:isRightlyOwnedBy   :Logistikunternehmen .\n\n:TargetSystemLogistiksystemederDatennutzer\n        rdf:type                  owl:NamedIndividual , dtm-data:TargetSystem;\n        rdfs:label                \"TargetSystemLogistiksysteme der Datennutzer\"@de;\n        dtm-data:isUsedAsSystemm  :ForwardingTRANSIT .\n\n:DTM_TRANSIT  rdf:type                 owl:NamedIndividual , dtm-core:ExternallyControlledValueAddedDataTrustee;\n        rdfs:label                     \"DTM_TRANSIT\"@de;\n        dtm-core:isDataTrusteeModelOf  :TRANSIT;\n        dtm-data:implementedOn         dtm-data:CentralDataStorageArchitecture .\n\n:CustomAnalysisKooperativeDatenauswertung\n        rdf:type      owl:NamedIndividual , dtm-data:AnalysisTechnique;\n        rdfs:comment  \"Daten werden zur Verbesserung logistischer Kooperationen ausgewertet.\"@de;\n        rdfs:label    \"CustomAnalysisKooperative Datenauswertung\"@de;\n        dtm-data:isDataAnalysisTechniqueOf\n                :AnalysisTRANSIT .\n",
+  "shaclReport" : {
+    "conforms" : true,
+    "results" : [ ],
+    "resultsCount" : 0
+  },
+  "executiveSummary" : "<h2>Executive Summary – Datentreuhandmodell „TRANSIT“</h2>\n<h3>Akteure und Datenbasis</h3>\n<p>Das Datentreuhandmodell „TRANSIT“ wird von TRANSIT betrieben. Der Betreiber ist als Juristische Person eingeordnet. TRANSIT ermöglicht den sicheren Austausch logistischer Geschäftsdaten zwischen Logistikunternehmen über eine neutrale Plattform. </p>\n<p>Logistikunternehmen treten im Modell als Rechteinhaber auf. Die Rechteinhaber werden innerhalb des Modells nicht durch Dritte vertreten. Logistikunternehmen fungiert innerhalb des Modells als Datenhalter. Logistikunternehmen ist als Datennutzer eingebunden. Der Datennutzer ist als Juristische Person eingeordnet. </p>\n<p>Die Datenkategorie „Logistikdaten“ umfasst Geschäfts- und Transportdaten aus der Logistik. Die Verarbeitung umfasst keine personenbezogenen oder besonderen personenbezogenen Daten, beinhaltet jedoch Geschäfts- bzw. Betriebsgeheimnisse. </p><br/>\n<h3>Rechtliche Grundlage der Datenverarbeitung</h3>\n<p>Die Verarbeitung der Daten stützt sich auf Öffentliches Interesse. Die hinterlegten Konkretisierungen beschreiben Öffentliches Interesse: „Kooperativer Datenaustausch“ (Die Verarbeitung unterstützt den sicheren Austausch logistischer Daten.). </p>\n<br/>\n<h3>Technische Ausgestaltung und Datenlebenszyklus</h3>\n<p>Technisch ist das Modell als Fremdbestimmte Mehrwerttreuhand mit der Architektur Zentraler Datenabruf umgesetzt. Der Datenempfang erfolgt aus Logistiksysteme periodisch über API. Zur Absicherung des Empfangs werden Anonymisieren, Transportverschlüsselung und Pseudonymisieren eingesetzt. Ergänzend ist für den Datenempfang „Treuhandplattform“ (Daten werden zentral und abgesichert entgegengenommen.) hinterlegt. Für die Datenaufbereitung werden Digitalisierung, Aggregation und Transformation eingesetzt. Zusätzlich ist für die Aufbereitung „Datenstandardisierung“ (Logistikdaten werden in ein einheitliches Format überführt.) und „Kapazitätsaggregation“ (Kapazitäts- und Standortdaten werden zusammengeführt.) beschrieben. Die Speicherung erfolgt über Zentrales Speichern mit der Aufbewahrungsstrategie Mit Retention. Für die Datenauswertung werden Statistische Analyse genutzt. Ergänzend ist für die Analyse „Kooperative Datenauswertung“ (Daten werden zur Verbesserung logistischer Kooperationen ausgewertet.) angegeben. Die Datenweitergabe erfolgt an Logistiksysteme der Datennutzer manuell über API. Zur Absicherung der Weitergabe werden Anonymisieren, Transportverschlüsselung und Pseudonymisieren eingesetzt. Ergänzend ist für die Weitergabe „Freigabebasierte Weitergabe“ (Daten werden nur nach Freigabe an berechtigte Empfänger übertragen.) hinterlegt. </p>\n<br/>\n<h3><b>Geschäftsmodell und Finanzierung</b></h3>\n<p>Das Modell ist in den Anwendungsdomänen Logistik verortet und organisatorisch als Eingetragene Genossenschaft (eG) ausgestaltet. Die Finanzierung des Modells wird durch Andere Förderung unterstützt. Für Datengeber ist Flatrate vorgesehen, während für Datennutzer Flatrate gilt. </p>\n<br/>\n<h3>Ziele und Mehrwert</h3>\n<p>Das Datentreuhandmodell verfolgt die Ziele <i>Wissenschaft und Forschung, Datensouveränität, Wirtschaftliche Verwertung und Innovation</i>. Aus Sicht der Rechteinhaber stehen <i>Gesellschaftlicher Mehrwert im Vordergrund</i>. Für die Datengeber sind <i>Wertschöpfung, Erfüllen von Auflagen und Interoperabilität relevant</i>. Die Datennutzer verfolgen Ziele wie <i>Innovation, Interoperabilität und Wertschöpfung</i>. Insgesamt unterstützt das Modell „TRANSIT“ eine strukturierte und vertrauenswürdige Nutzung von Daten. </p>\n<br/>\n"
+}

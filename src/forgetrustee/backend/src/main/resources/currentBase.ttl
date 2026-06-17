@@ -1,0 +1,1797 @@
+PREFIX :             <https://tool.kickstarttrustee.de/ontology/>
+PREFIX dtm-business: <https://tool.kickstarttrustee.de/ontology/dtm-business#>
+PREFIX dtm-consent:  <https://tool.kickstarttrustee.de/ontology/dtm-consent#>
+PREFIX dtm-core:     <https://tool.kickstarttrustee.de/ontology/dtm-core#>
+PREFIX dtm-data:     <https://tool.kickstarttrustee.de/ontology/dtm-data#>
+PREFIX dtm-misc:     <https://tool.kickstarttrustee.de/ontology/dtm-misc#>
+PREFIX dtm-sec:      <https://tool.kickstarttrustee.de/ontology/dtm-sec#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xml:          <http://www.w3.org/XML/1998/namespace>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+owl:Nothing  rdf:type        owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:subClassOf      dtm-core:DataTrustee , dtm-data:ManualForwarding , dtm-core:ValueAddedDataTrustee , dtm-data:FederatedArchitecture , dtm-sec:SecurityInfrastructure , dtm-data:Transformation , dtm-business:PayPerTransaction , dtm-data:AtRestEncryption , dtm-business:ScienceAndResearch , dtm-business:ServiceFee , dtm-data:Transfer , dtm-core:AccessDataTrustee , dtm-data:DataForwarding , dtm-misc:Datenzugangstransparenz , dtm-data:Pseudonymisation , dtm-business:FairMarketCompetition , dtm-business:Innovation , dtm-data:ReceptionTechnique , dtm-business:DigitalSovereignty , dtm-consent:GeneralConsentWorkflow , dtm-data:Aggregation , dtm-business:DataSharing , dtm-business:Funder , dtm-data:Upload , dtm-business:DataAccess , dtm-sec:ReputationSource , dtm-business:DataSovereignty , dtm-core:ExternallyControlledValueAddedDataTrustee , dtm-business:Organisation , dtm-business:DataAnalysis , dtm-consent:IndividualConsentWorkflow , dtm-business:DataQualityManagement , dtm-sec:RestSecurity , dtm-core:AdministrativeDataTrustee , dtm-data:MicroserviceArchitecture , dtm-business:PayPerUse , dtm-business:Free , dtm-core:PersonalData , dtm-core:DataConsumer , dtm-data:DataSystem , dtm-core:DataOwner , dtm-data:DataPreparation , dtm-data:PeriodicForwarding , dtm-core:SelfManagedValueAddedDataTrustee , dtm-data:ContinuousForwarding , dtm-data:Anonymisation , dtm-consent:ConsentWorkflow , dtm-sec:TransmissionSecurity , dtm-data:DataStorage , dtm-misc:Analyse , dtm-data:DecentralStorage , dtm-business:Individual , dtm-data:DataReception , dtm-business:Affiliation , dtm-core:Metadata , dtm-data:CentralStorage , dtm-data:Request , dtm-core:NonPersonalData , dtm-data:Cleaning , dtm-data:Download , dtm-business:Flatrate , dtm-core:TradeSecret , dtm-business:SupportFee , dtm-business:Compliance , dtm-misc:Visualisierung , dtm-business:Freemium , dtm-data:StorageTechnique , dtm-core:DataTrusteeModel , dtm-data:CentralisedArchitecture , dtm-core:AffectedParty , dtm-business:EconomicUtilization , dtm-business:AccessFee , dtm-data:Architecture , owl:Thing , owl:Nothing , dtm-data:DataLifecycleStage , dtm-core:Data , dtm-business:PayModel , dtm-data:ProcessingTechnique , dtm-data:ForwardingTechnique , dtm-core:DataProvider , dtm-core:Actor , dtm-misc:Properties , dtm-business:UsageGoalOfUser , dtm-data:QualityTechnique , rdfs:Resource , dtm-business:DataTrusteeGoal;
+        owl:equivalentClass  owl:Nothing .
+
+rdfs:domain  rdf:type           rdf:Property , rdfs:Resource;
+        rdfs:domain             rdf:Property , rdfs:Resource;
+        rdfs:range              rdfs:Class , rdfs:Resource;
+        rdfs:subPropertyOf      rdfs:domain;
+        owl:equivalentProperty  rdfs:domain .
+
+rdfs:Resource  rdf:type      rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdfs:Resource;
+        owl:equivalentClass  rdfs:Resource .
+
+owl:imports  rdf:type           rdf:Property , owl:OntologyProperty , rdfs:Resource;
+        rdfs:domain             owl:Ontology , rdfs:Resource;
+        rdfs:range              owl:Ontology , rdfs:Resource;
+        rdfs:subPropertyOf      owl:imports;
+        owl:equivalentProperty  owl:imports .
+
+rdfs:Literal  rdf:type   rdfs:Class , rdfs:Resource;
+        rdfs:subClassOf  rdfs:Resource .
+
+dtm-data:QualityTechnique
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Quality Technique"@en , "Qualitätsmaßnahme"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-data:QualityTechnique;
+        owl:equivalentClass  dtm-data:QualityTechnique .
+
+rdf:nil  rdf:type  rdf:List , rdfs:Resource .
+
+xsd:float  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-business:hasAffiliation
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , rdfs:Resource;
+        rdfs:label              "has Affiliation"@en , "ist zugehörig zu"@de;
+        rdfs:range              owl:Thing , dtm-business:Affiliation , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:hasAffiliation;
+        owl:equivalentProperty  dtm-business:hasAffiliation;
+        owl:inverseOf           dtm-business:isAffiliationOf .
+
+dtm-core:isDataTrusteeModelOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrusteeModel , rdfs:Resource;
+        rdfs:label              "is data trustee model of"@en , "ist Datentreuhandmodell von"@de;
+        rdfs:range              owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-core:isDataTrusteeModelOf;
+        owl:equivalentProperty  dtm-core:isDataTrusteeModelOf;
+        owl:inverseOf           dtm-core:hasDataTrusteeModel .
+
+dtm-data:securedByTechnique
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:label              "gesichtert durch Maßnahme"@de , "secured by technique"@en;
+        rdfs:range              owl:Thing , dtm-data:QualityTechnique , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:securedByTechnique;
+        owl:equivalentProperty  dtm-data:securedByTechnique;
+        owl:inverseOf           dtm-data:securesAsTechnique .
+
+dtm-consent:getsConsentDirectly
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-consent:ConsentWorkflow , rdfs:Resource;
+        rdfs:label              "erhält Einwilligung direkt"@de , "gets consent directly"@en;
+        rdfs:range              owl:Thing , dtm-core:AffectedParty , rdfs:Resource , dtm-core:DataProvider , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:getsConsentDirectly;
+        owl:equivalentProperty  dtm-consent:getsConsentDirectly;
+        owl:inverseOf           dtm-consent:givesConsentDirectly .
+
+dtm-core:administratedBy
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Data , rdfs:Resource;
+        rdfs:label              "administrated by"@en , "werden verwaltet von"@de;
+        rdfs:range              owl:Thing , dtm-core:DataOwner , dtm-core:Actor , rdfs:Resource , dtm-core:DataProvider;
+        rdfs:subPropertyOf      dtm-core:dataHoldBy , dtm-core:administratedBy , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-core:administratedBy;
+        owl:inverseOf           dtm-core:administrates .
+
+dtm-sec:isTransmissionStartOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "is Transmission Start of"@en , "ist Transmission-Start von"@de;
+        rdfs:range              owl:Thing , dtm-sec:TransmissionSecurity , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:isTransmissionStartOf;
+        owl:equivalentProperty  dtm-sec:isTransmissionStartOf;
+        owl:inverseOf           dtm-sec:hasTransmissionStart .
+
+rdf:object  rdf:type            rdf:Property , rdfs:Resource;
+        rdfs:domain             rdf:Statement , rdfs:Resource;
+        rdfs:subPropertyOf      rdf:object;
+        owl:equivalentProperty  rdf:object .
+
+dtm-data:isStorageTechniqueOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:StorageTechnique , rdfs:Resource;
+        rdfs:label              "is storage technique of"@en , "ist Speichertechik von"@de;
+        rdfs:range              owl:Thing , dtm-data:DataStorage , rdfs:Resource , dtm-data:DataLifecycleStage;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:isStorageTechniqueOf;
+        owl:equivalentProperty  dtm-data:isStorageTechniqueOf;
+        owl:inverseOf           dtm-data:hasStorageTechnique .
+
+owl:onProperty  rdf:type  rdf:Property , rdfs:Resource;
+        rdfs:domain  owl:Restriction , owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:range   owl:Property , rdfs:Resource .
+
+dtm-data:hasReceptionTechnique
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataReception , rdfs:Resource , dtm-data:DataLifecycleStage;
+        rdfs:label              "has reception technique"@en , "hat Empfangstechnik"@de;
+        rdfs:range              owl:Thing , dtm-data:ReceptionTechnique , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:hasReceptionTechnique;
+        owl:equivalentProperty  dtm-data:hasReceptionTechnique;
+        owl:inverseOf           dtm-data:isReceptionTechniqueOf .
+
+xsd:anyURI  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+owl:inverseOf  rdf:type         rdf:Property , rdfs:Resource;
+        rdfs:subPropertyOf      owl:inverseOf;
+        owl:equivalentProperty  owl:inverseOf .
+
+dtm-sec:RestSecurity  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Security in Rest"@en , "Sicherheit ruhender Daten"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-sec:RestSecurity;
+        owl:equivalentClass  dtm-sec:RestSecurity .
+
+dtm-business:isDataTrusteeGoalOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-business:DataTrusteeGoal , rdfs:Resource;
+        rdfs:label              "is data trustee goal of"@en , "ist Datentreuhand-Ziel von"@de;
+        rdfs:range              owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:isDataTrusteeGoalOf;
+        owl:equivalentProperty  dtm-business:isDataTrusteeGoalOf;
+        owl:inverseOf           dtm-business:hasDataTrusteeGoal .
+
+dtm-business:hasUsageGoal
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "has Usage Goal of User"@en , "hat Nutzungsziel des Nutzers"@de;
+        rdfs:range              owl:Thing , dtm-business:UsageGoalOfUser , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:hasUsageGoal;
+        owl:equivalentProperty  dtm-business:hasUsageGoal;
+        owl:inverseOf           dtm-business:isUsageGoalOf .
+
+dtm-consent:GeneralConsentWorkflow
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Allgemeiner Einwilligungsvorgang"@de , "General Consent Workflow"@en;
+        rdfs:subClassOf      dtm-consent:ConsentWorkflow , dtm-consent:GeneralConsentWorkflow , rdfs:Resource , owl:Thing;
+        owl:disjointWith     dtm-consent:IndividualConsentWorkflow;
+        owl:equivalentClass  dtm-consent:GeneralConsentWorkflow .
+
+dtm-data:Pseudonymisation
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Pseudonymisation"@en , "Pseudonymisieren"@de;
+        rdfs:subClassOf      owl:Thing , dtm-data:QualityTechnique , dtm-data:Pseudonymisation , rdfs:Resource;
+        owl:equivalentClass  dtm-data:Pseudonymisation .
+
+dtm-consent:IndividualConsentWorkflow
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Individual Consent Workflow"@en , "Individueller Einwilligungsvorgang"@de;
+        rdfs:subClassOf      dtm-consent:ConsentWorkflow , dtm-consent:IndividualConsentWorkflow , rdfs:Resource , owl:Thing;
+        owl:disjointWith     dtm-consent:GeneralConsentWorkflow;
+        owl:equivalentClass  dtm-consent:IndividualConsentWorkflow .
+
+dtm-misc:Properties  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Eigenschaften"@de , "Properties"@en;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-misc:Properties;
+        owl:equivalentClass  dtm-misc:Properties .
+
+dtm-core:Data  rdf:type      rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Ein generischer Begriff für jede Art von Information, die gespeichert, verarbeitet oder weitergegeben wird."@de;
+        rdfs:label           "Data"@en , "Daten"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-core:Data;
+        owl:equivalentClass  dtm-core:Data .
+
+dtm-business:hasDataTrusteeGoal
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "has data trustee goal"@en , "hat Datentreuhand-Ziel"@de;
+        rdfs:range              owl:Thing , dtm-business:DataTrusteeGoal , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:hasDataTrusteeGoal;
+        owl:equivalentProperty  dtm-business:hasDataTrusteeGoal;
+        owl:inverseOf           dtm-business:isDataTrusteeGoalOf .
+
+dtm-sec:hasReputationSource
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "has reputation source"@en , "hat Reputationsquelle"@de;
+        rdfs:range              owl:Thing , dtm-sec:ReputationSource , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:hasReputationSource;
+        owl:equivalentProperty  dtm-sec:hasReputationSource;
+        owl:inverseOf           dtm-sec:isReputationSourceOf .
+
+dtm-core:isMetadataOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Metadata , rdfs:Resource;
+        rdfs:label              "is metadata of"@en , "ist Metadaten von"@de;
+        rdfs:range              owl:Thing , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-core:isMetadataOf;
+        owl:equivalentProperty  dtm-core:isMetadataOf;
+        owl:inverseOf           dtm-core:hasMetadata .
+
+owl:equivalentProperty
+        rdf:type                rdf:Property , rdfs:Resource;
+        rdfs:subPropertyOf      owl:equivalentProperty;
+        owl:equivalentProperty  owl:equivalentProperty .
+
+xsd:long  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-core:hasRightsOf  rdf:type  owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:AffectedParty , dtm-core:Actor , rdfs:Resource , dtm-core:DataProvider;
+        rdfs:label              "has rights over"@en , "hat Rechte an"@de;
+        rdfs:range              owl:Thing , dtm-core:Data , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-core:holdsData , dtm-core:hasRightsOf , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-core:hasRightsOf;
+        owl:inverseOf           dtm-core:isRightlyOwnedBy .
+
+dtm-consent:isBeneficiaryOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataConsumer , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "is beneficiary of"@en , "ist Begünstigter von"@de;
+        rdfs:range              owl:Thing , dtm-consent:ConsentWorkflow , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:isBeneficiaryOf;
+        owl:equivalentProperty  dtm-consent:isBeneficiaryOf;
+        owl:inverseOf           dtm-consent:hasBeneficiary .
+
+xsd:unsignedInt  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-sec:hasTransmissionStart
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-sec:TransmissionSecurity , rdfs:Resource;
+        rdfs:label              "has Tranmission start"@en , "hat Transmission-Start"@de;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:hasTransmissionStart;
+        owl:equivalentProperty  dtm-sec:hasTransmissionStart;
+        owl:inverseOf           dtm-sec:isTransmissionStartOf .
+
+dtm-business:offersPayModel
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "bietet Bezahlmodell an"@de , "offers pay model"@en;
+        rdfs:range              owl:Thing , dtm-business:PayModel , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:offersPayModel;
+        owl:equivalentProperty  dtm-business:offersPayModel;
+        owl:inverseOf           dtm-business:isOfferedAsPayModel .
+
+xsd:unsignedByte  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-business:hasFunder
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "has funder"@en , "hat Finanzierer"@de;
+        rdfs:range              owl:Thing , dtm-business:Funder , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:hasFunder;
+        owl:equivalentProperty  dtm-business:hasFunder;
+        owl:inverseOf           dtm-business:isFunderOf .
+
+dtm-core:isGrantedTo  rdf:type  owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Data , rdfs:Resource;
+        rdfs:label              "granted to"@en , "werden übergeben an"@de;
+        rdfs:range              owl:Thing , dtm-core:DataConsumer , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-core:dataHoldBy , dtm-core:isGrantedTo , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-core:isGrantedTo;
+        owl:inverseOf           dtm-core:isGranted .
+
+dtm-data:StorageTechnique
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Speichertechnik"@de , "Storage Technique"@en;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-data:StorageTechnique;
+        owl:equivalentClass  dtm-data:StorageTechnique .
+
+xsd:negativeInteger  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-consent:individualConsentWorkflowInitiatedBy
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-consent:IndividualConsentWorkflow , rdfs:Resource , dtm-consent:ConsentWorkflow;
+        rdfs:label              "Indiviueller Einwilligungsvorgang iniitiert durch"@de , "individual consent workflow initiated by"@en;
+        rdfs:range              owl:Thing , dtm-core:DataConsumer , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:individualConsentWorkflowInitiatedBy;
+        owl:equivalentProperty  dtm-consent:individualConsentWorkflowInitiatedBy;
+        owl:inverseOf           dtm-consent:initiatesIndividualConsentWorkflow .
+
+dtm-data:hasPreparationTechnique
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataPreparation , rdfs:Resource , dtm-data:DataLifecycleStage;
+        rdfs:label              "has processing technique"@en , "hat Aufbereitungstechnik"@de;
+        rdfs:range              owl:Thing , dtm-data:ProcessingTechnique , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:hasPreparationTechnique;
+        owl:equivalentProperty  dtm-data:hasPreparationTechnique;
+        owl:inverseOf           dtm-data:isProcessingTechniqueOf .
+
+dtm-data:performsReception
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataReception , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:label              "führt Empfang durch"@de , "performs reception"@en;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-data:stagePerformedBy , dtm-data:performsReception , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-data:performsReception;
+        owl:inverseOf           dtm-data:triggersReception .
+
+xsd:gDay  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-data:isForwardingTechniqueOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:ForwardingTechnique , rdfs:Resource;
+        rdfs:label              "is forwarding technique of"@en , "ist Weitergabetechnik von"@de;
+        rdfs:range              owl:Thing , dtm-data:DataForwarding , rdfs:Resource , dtm-data:DataLifecycleStage;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:isForwardingTechniqueOf;
+        owl:equivalentProperty  dtm-data:isForwardingTechniqueOf;
+        owl:inverseOf           dtm-data:hasForwardingTechnique .
+
+dtm-core:administrates
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataOwner , dtm-core:Actor , rdfs:Resource , dtm-core:DataProvider;
+        rdfs:label              "administrates"@en , "verwaltet"@de;
+        rdfs:range              owl:Thing , dtm-core:Data , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-core:holdsData , dtm-core:administrates , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-core:administrates;
+        owl:inverseOf           dtm-core:administratedBy .
+
+dtm-consent:initiatesIndividualConsentWorkflow
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataConsumer , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "initiates individual consent workflow"@en , "initiiert individuellen Einwilligungsvorgang"@de;
+        rdfs:range              owl:Thing , dtm-consent:IndividualConsentWorkflow , rdfs:Resource , dtm-consent:ConsentWorkflow;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:initiatesIndividualConsentWorkflow;
+        owl:equivalentProperty  dtm-consent:initiatesIndividualConsentWorkflow;
+        owl:inverseOf           dtm-consent:individualConsentWorkflowInitiatedBy .
+
+dtm-core:isActorOf  rdf:type    owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "is Actor of"@en , "ist Akteur in"@de;
+        rdfs:range              owl:Thing , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-core:isActorOf;
+        owl:equivalentProperty  dtm-core:isActorOf;
+        owl:inverseOf           dtm-core:hasActor .
+
+dtm-business:isOfferedAsPayModel
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-business:PayModel , rdfs:Resource;
+        rdfs:label              "is offered as pay model"@en , "ist angeboten als Bezahlmodel von"@de;
+        rdfs:range              owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:isOfferedAsPayModel;
+        owl:equivalentProperty  dtm-business:isOfferedAsPayModel;
+        owl:inverseOf           dtm-business:offersPayModel .
+
+xsd:unsignedShort  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+rdf:Property  rdf:type       rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdfs:Resource , rdf:Property;
+        owl:equivalentClass  rdf:Property .
+
+dtm-data:performsStorage
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataStorage , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:label              "führt Speicherung durch"@de , "performs storage"@en;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-data:stagePerformedBy , dtm-data:performsStorage , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-data:performsStorage;
+        owl:inverseOf           dtm-data:triggersStorage .
+
+dtm-data:isReceptionTechniqueOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:ReceptionTechnique , rdfs:Resource;
+        rdfs:label              "is reception technique of"@en , "ist Empfangstechnik von"@de;
+        rdfs:range              owl:Thing , dtm-data:DataReception , rdfs:Resource , dtm-data:DataLifecycleStage;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:isReceptionTechniqueOf;
+        owl:equivalentProperty  dtm-data:isReceptionTechniqueOf;
+        owl:inverseOf           dtm-data:hasReceptionTechnique .
+
+dtm-data:usesSystem  rdf:type   owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:label              "benutzt System"@de , "uses system"@en;
+        rdfs:range              owl:Thing , dtm-data:DataSystem , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:usesSystem;
+        owl:equivalentProperty  dtm-data:usesSystem;
+        owl:inverseOf           dtm-data:isUsedAsSystem .
+
+dtm-core:hasDataAdministratedBy
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:AffectedParty , rdfs:Resource , dtm-core:DataProvider , dtm-core:Actor;
+        rdfs:label              "has data stored in"@en , "hat Daten bei"@de;
+        rdfs:range              owl:Thing , dtm-core:DataOwner , rdfs:Resource , dtm-core:DataProvider , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-core:hasDataAdministratedBy;
+        owl:equivalentProperty  dtm-core:hasDataAdministratedBy;
+        owl:inverseOf           dtm-core:administratesDataOf .
+
+xsd:gYear  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+xsd:decimal  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+xsd:gMonth  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+owl:topObjectProperty
+        rdf:type                rdf:Property , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty;
+        owl:equivalentProperty  owl:topObjectProperty .
+
+owl:Class  rdf:type          rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdfs:Resource , owl:Class , rdfs:Class;
+        owl:equivalentClass  owl:Class .
+
+rdfs:Class  rdf:type         rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdfs:Resource , rdfs:Class;
+        owl:equivalentClass  rdfs:Class .
+
+dtm-business:UsageGoalOfUser
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Nutzungsziel des Nutzers"@de , "Usage Goal of User"@en;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-business:UsageGoalOfUser;
+        owl:equivalentClass  dtm-business:UsageGoalOfUser .
+
+dtm-business:isUsedAsPayModel
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-business:PayModel , rdfs:Resource;
+        rdfs:label              "is used as Pay Model"@en , "wird benutzt als Bezahlmodell von"@de;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:isUsedAsPayModel;
+        owl:equivalentProperty  dtm-business:isUsedAsPayModel;
+        owl:inverseOf           dtm-business:usesPayModel .
+
+dtm-core:Actor  rdf:type     rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Repräsentiert jede Entität, die in einem Datentreuhandmodell eine Rolle spielt (z.B. Anbieter oder Nutzer)."@de;
+        rdfs:label           "Actor"@en , "Akteur"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-core:Actor;
+        owl:equivalentClass  dtm-core:Actor .
+
+owl:disjointWith  rdf:type      rdf:Property , owl:SymmetricProperty , rdfs:Resource , owl:ObjectProperty;
+        rdfs:domain             owl:Class , rdfs:Resource , rdfs:Class;
+        rdfs:range              owl:Class , rdfs:Resource , rdfs:Class;
+        rdfs:subPropertyOf      owl:disjointWith;
+        owl:equivalentProperty  owl:disjointWith .
+
+dtm-core:isDataOwnerOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataOwner , dtm-core:Actor , rdfs:Resource , dtm-core:DataProvider;
+        rdfs:label              "is Data Owner in"@en , "ist Dateninhaber in"@de;
+        rdfs:range              owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      dtm-core:isActorOf , dtm-core:isDataOwnerOf;
+        owl:equivalentProperty  dtm-core:isDataOwnerOf;
+        owl:inverseOf           dtm-core:hasDataOwner .
+
+dtm-data:DataForwarding
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Data Forwarding"@en , "Datenweitergabe"@de;
+        rdfs:subClassOf      rdfs:Resource , dtm-data:DataLifecycleStage , dtm-data:DataForwarding , owl:Thing;
+        owl:equivalentClass  dtm-data:DataForwarding .
+
+dtm-data:ForwardingTechnique
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "ForwardingTechnique"@en , "Weitergabetechnik"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-data:ForwardingTechnique;
+        owl:equivalentClass  dtm-data:ForwardingTechnique .
+
+dtm-core:hasDataConsumer
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "has Data Consumer"@en , "hat Datennutzer"@de;
+        rdfs:range              owl:Thing , dtm-core:DataConsumer , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-core:hasActor , dtm-core:hasDataConsumer;
+        owl:equivalentProperty  dtm-core:hasDataConsumer;
+        owl:inverseOf           dtm-core:isDataConsumerOf .
+
+dtm-data:DataLifecycleStage
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Data Lifecycle Stage"@en , "Datenlebenszyklusphase"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-data:DataLifecycleStage;
+        owl:equivalentClass  dtm-data:DataLifecycleStage .
+
+owl:intersectionOf  rdf:type  rdf:Property , rdfs:Resource;
+        rdfs:domain  owl:Class , rdfs:Resource , rdfs:Class .
+
+dtm-data:triggersStage
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "führt Phase aus"@de , "performs stage"@en;
+        rdfs:range              owl:Thing , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:triggersStage;
+        owl:equivalentProperty  dtm-data:triggersStage;
+        owl:inverseOf           dtm-data:stagePerformedBy .
+
+owl:incompatibleWith  rdf:type  rdf:Property , rdfs:Resource;
+        rdfs:domain  owl:Ontology , rdfs:Resource;
+        rdfs:range   owl:Ontology , rdfs:Resource .
+
+dtm-misc:specifies  rdf:type    owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Metadata , rdfs:Resource;
+        rdfs:label              "specifies"@en , "spezifiziert"@de;
+        rdfs:range              owl:Thing , dtm-misc:Properties , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-misc:specifies;
+        owl:equivalentProperty  dtm-misc:specifies;
+        owl:inverseOf           dtm-misc:isSpecifiedIn .
+
+dtm-data:isProcessingTechniqueOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:ProcessingTechnique , rdfs:Resource;
+        rdfs:label              "is processing technique of"@en , "ist Aufbereitungstechnik von"@de;
+        rdfs:range              owl:Thing , dtm-data:DataPreparation , rdfs:Resource , dtm-data:DataLifecycleStage;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:isProcessingTechniqueOf;
+        owl:equivalentProperty  dtm-data:isProcessingTechniqueOf;
+        owl:inverseOf           dtm-data:hasPreparationTechnique .
+
+rdf:first  rdf:type             rdf:Property , owl:FunctionalProperty , rdfs:Resource;
+        rdfs:domain             rdf:List , rdfs:Resource;
+        rdfs:subPropertyOf      rdf:first;
+        owl:equivalentProperty  rdf:first .
+
+xsd:nonNegativeInteger
+        rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-core:NonPersonalData
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:comment         "Daten, die keine Rückschlüsse auf eine bestimmte Person zulassen."@de;
+        rdfs:label           "Nicht personenbezogene Daten"@de , "Non-personal Data"@en;
+        rdfs:subClassOf      owl:Thing , dtm-core:Data , dtm-core:NonPersonalData , rdfs:Resource;
+        owl:equivalentClass  dtm-core:NonPersonalData .
+
+owl:versionInfo  rdf:type  owl:AnnotationProperty .
+
+xsd:boolean  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-core:AffectedParty
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Eine spezielle Art von Datengeber, deren Daten verwaltet oder genutzt werden."@de;
+        rdfs:label           "Affected Party"@en , "Betroffener"@de;
+        rdfs:subClassOf      rdfs:Resource , dtm-core:DataProvider , dtm-core:AffectedParty , dtm-core:Actor , owl:Thing;
+        owl:equivalentClass  dtm-core:AffectedParty .
+
+dtm-business:DataTrusteeGoal
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Data Trustee Goal"@en , "Ziel der Datentreuhand"@de;
+        rdfs:subClassOf      owl:Thing , dtm-business:DataTrusteeGoal , rdfs:Resource;
+        owl:equivalentClass  dtm-business:DataTrusteeGoal .
+
+dtm-core:DataTrustee  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Ein Akteur, der als Treuhänder für die Verwaltung und Verteilung von Daten verantwortlich ist."@de;
+        rdfs:label           "Data Trustee"@en , "Datentreuhand"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-core:Actor , dtm-core:DataTrustee;
+        owl:equivalentClass  dtm-core:DataTrustee .
+
+rdf:rest  rdf:type              rdf:Property , owl:FunctionalProperty , rdfs:Resource;
+        rdfs:domain             rdf:List , rdfs:Resource;
+        rdfs:range              rdf:List , rdfs:Resource;
+        rdfs:subPropertyOf      rdf:rest;
+        owl:equivalentProperty  rdf:rest .
+
+xsd:double  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-sec:hasRestSecurity
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "has security in rest"@en , "hat Sicherheit ruhender Daten"@de;
+        rdfs:range              owl:Thing , dtm-sec:RestSecurity , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:hasRestSecurity;
+        owl:equivalentProperty  dtm-sec:hasRestSecurity;
+        owl:inverseOf           dtm-sec:isRestSecurityOf .
+
+dtm-core:dataHoldBy  rdf:type   owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Data , rdfs:Resource;
+        rdfs:label              "Daten gehalten von"@de , "data hold by"@en;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-core:dataHoldBy;
+        owl:equivalentProperty  dtm-core:dataHoldBy;
+        owl:inverseOf           dtm-core:holdsData .
+
+dtm-sec:isReputationSourceOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-sec:ReputationSource , rdfs:Resource;
+        rdfs:label              "is reputation source of"@en , "ist Reputationsquelle von"@de;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:isReputationSourceOf;
+        owl:equivalentProperty  dtm-sec:isReputationSourceOf;
+        owl:inverseOf           dtm-sec:hasReputationSource .
+
+xsd:byte  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+xsd:integer  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+xsd:positiveInteger  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-data:DataPreparation
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Data Preparation"@en , "Datenaufbereitung"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-data:DataLifecycleStage , dtm-data:DataPreparation;
+        owl:equivalentClass  dtm-data:DataPreparation .
+
+owl:Property  rdf:type   rdfs:Class , rdfs:Resource;
+        rdfs:subClassOf  rdfs:Resource .
+
+rdf:type  rdf:type              rdf:Property , rdfs:Resource;
+        rdfs:range              rdfs:Class , rdfs:Resource;
+        rdfs:subPropertyOf      rdf:type;
+        owl:equivalentProperty  rdf:type .
+
+dtm-data:Upload  rdf:type    owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Upload"@de , "Upload"@en;
+        rdfs:subClassOf      owl:Thing , dtm-data:ForwardingTechnique , dtm-data:Upload , rdfs:Resource;
+        owl:equivalentClass  dtm-data:Upload .
+
+dtm-data:triggersPreparation
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "triggers Preparation"@en , "veranlasst Aufbereitung"@de;
+        rdfs:range              owl:Thing , dtm-data:DataPreparation , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-data:triggersStage , dtm-data:triggersPreparation , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-data:triggersPreparation;
+        owl:inverseOf           dtm-data:performsPreparation .
+
+dtm-data:hasStorageTechnique
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataStorage , rdfs:Resource , dtm-data:DataLifecycleStage;
+        rdfs:label              "has storage technique"@en , "hat Speichertechnik"@de;
+        rdfs:range              owl:Thing , dtm-data:StorageTechnique , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:hasStorageTechnique;
+        owl:equivalentProperty  dtm-data:hasStorageTechnique;
+        owl:inverseOf           dtm-data:isStorageTechniqueOf .
+
+dtm-consent:givesConsentByDataOwner
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:AffectedParty , rdfs:Resource , dtm-core:DataProvider , dtm-core:Actor;
+        rdfs:label              "gibt Einwilligung durch Dateninhaber"@de , "gives consent by data owner"@en;
+        rdfs:range              owl:Thing , dtm-consent:ConsentWorkflow , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:givesConsentByDataOwner;
+        owl:equivalentProperty  dtm-consent:givesConsentByDataOwner;
+        owl:inverseOf           dtm-consent:getsConsentThroughDataOwner .
+
+dtm-business:isFunderOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-business:Funder , rdfs:Resource;
+        rdfs:label              "is funder of"@en , "ist Finanzierer von"@de;
+        rdfs:range              owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:isFunderOf;
+        owl:equivalentProperty  dtm-business:isFunderOf;
+        owl:inverseOf           dtm-business:hasFunder .
+
+dtm-sec:isRestSecurityOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-sec:RestSecurity , rdfs:Resource;
+        rdfs:label              "is security in rest of"@en , "ist Sicherheit ruhender Daten von"@de;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:isRestSecurityOf;
+        owl:equivalentProperty  dtm-sec:isRestSecurityOf;
+        owl:inverseOf           dtm-sec:hasRestSecurity .
+
+dtm-data:performsForwarding
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataForwarding , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:label              "führt Weitergabe durch"@de , "performs forwarding"@en;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-data:stagePerformedBy , dtm-data:performsForwarding , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-data:performsForwarding;
+        owl:inverseOf           dtm-data:triggersForwarding .
+
+dtm-data:isImplementedBy
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:Architecture , rdfs:Resource;
+        rdfs:label              "implementiert in"@de , "is implemented by"@en;
+        rdfs:range              owl:Thing , dtm-core:DataTrusteeModel , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:isImplementedBy;
+        owl:equivalentProperty  dtm-data:isImplementedBy;
+        owl:inverseOf           dtm-data:implementedOn .
+
+xsd:dateTime  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-misc:Analyse  rdf:type   owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Analyse"@de , "Analyzation"@en;
+        rdfs:subClassOf      owl:Thing , dtm-misc:Properties , dtm-misc:Analyse , rdfs:Resource;
+        owl:equivalentClass  dtm-misc:Analyse .
+
+xsd:int  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-core:TradeSecret  rdf:type  owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:comment         "Vertrauliche Informationen, die einen wirtschaftlichen Wert darstellen."@de;
+        rdfs:label           "Geschäftsgeheimnis"@de , "Trade Secret"@en;
+        rdfs:subClassOf      owl:Thing , dtm-core:Data , dtm-core:TradeSecret , rdfs:Resource;
+        owl:equivalentClass  dtm-core:TradeSecret .
+
+dtm-business:DataAnalysis
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Data Analysis"@en , "Datenanalyse"@de;
+        rdfs:subClassOf      owl:Thing , dtm-business:UsageGoalOfUser , dtm-business:DataAnalysis , rdfs:Resource;
+        owl:equivalentClass  dtm-business:DataAnalysis .
+
+rdf:Statement  rdf:type  rdfs:Class , rdfs:Resource;
+        rdfs:subClassOf  rdfs:Resource .
+
+owl:backwardCompatibleWith
+        rdf:type     rdf:Property , rdfs:Resource;
+        rdfs:domain  owl:Ontology , rdfs:Resource;
+        rdfs:range   owl:Ontology , rdfs:Resource .
+
+dtm-core:modellname  rdf:type   owl:DatatypeProperty , rdf:Property , rdfs:Resource;
+        rdfs:label              "hat Namen";
+        rdfs:subPropertyOf      owl:topDataProperty , dtm-core:modellname;
+        owl:equivalentProperty  dtm-core:modellname .
+
+dtm-consent:hasBeneficiary
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-consent:ConsentWorkflow , rdfs:Resource;
+        rdfs:label              "has beneficiary"@en , "hat Begünstigten"@de;
+        rdfs:range              owl:Thing , dtm-core:DataConsumer , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:hasBeneficiary;
+        owl:equivalentProperty  dtm-consent:hasBeneficiary;
+        owl:inverseOf           dtm-consent:isBeneficiaryOf .
+
+dtm-business:DataAccess
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Data Access"@en , "Datenzugang"@de;
+        rdfs:subClassOf      owl:Thing , dtm-business:UsageGoalOfUser , dtm-business:DataAccess , rdfs:Resource;
+        owl:equivalentClass  dtm-business:DataAccess .
+
+dtm-sec:TransmissionSecurity
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Security in Transmission"@en , "Sicherheit übertragener Daten"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-sec:TransmissionSecurity;
+        owl:equivalentClass  dtm-sec:TransmissionSecurity .
+
+dtm-business:DataSovereignty
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Data Sovereignty"@en , "Datensouveränität"@de;
+        rdfs:subClassOf      owl:Thing , dtm-business:DataTrusteeGoal , dtm-business:DataSovereignty , rdfs:Resource;
+        owl:equivalentClass  dtm-business:DataSovereignty .
+
+dtm-core:DataProvider
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Jemand, der Daten zur Verfügung stellt."@de;
+        rdfs:label           "Data Provider"@en , "Datengeber"@de;
+        rdfs:subClassOf      owl:Thing , dtm-core:Actor , dtm-core:DataProvider , rdfs:Resource;
+        owl:equivalentClass  dtm-core:DataProvider .
+
+xsd:gMonthDay  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-data:securesAsTechnique
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:QualityTechnique , rdfs:Resource;
+        rdfs:label              "secures as technique"@en , "sichert als Maßnahme"@de;
+        rdfs:range              owl:Thing , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:securesAsTechnique;
+        owl:equivalentProperty  dtm-data:securesAsTechnique;
+        owl:inverseOf           dtm-data:securedByTechnique .
+
+dtm-business:isAffiliationOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-business:Affiliation , rdfs:Resource;
+        rdfs:label              "is Affiliation of"@en , "ist Zugehörigkeit von"@de;
+        rdfs:range              owl:Thing , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:isAffiliationOf;
+        owl:equivalentProperty  dtm-business:isAffiliationOf;
+        owl:inverseOf           dtm-business:hasAffiliation .
+
+xsd:nonPositiveInteger
+        rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-core:isGranted  rdf:type    owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataConsumer , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "erhält"@de , "is granted"@en;
+        rdfs:range              owl:Thing , dtm-core:Data , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-core:holdsData , dtm-core:isGranted , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-core:isGranted;
+        owl:inverseOf           dtm-core:isGrantedTo .
+
+dtm-data:DataReception
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Data Reception"@en , "Datenempfang"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-data:DataLifecycleStage , dtm-data:DataReception;
+        owl:equivalentClass  dtm-data:DataReception .
+
+dtm-core:hasMetadata  rdf:type  owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , rdfs:Resource;
+        rdfs:label              "has metadata"@en , "hat Metadaten"@de;
+        rdfs:range              owl:Thing , dtm-core:Metadata , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-core:hasMetadata;
+        owl:equivalentProperty  dtm-core:hasMetadata;
+        owl:inverseOf           dtm-core:isMetadataOf .
+
+dtm-data:DataStorage  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Data Storage"@en , "Datenspeicherung"@de;
+        rdfs:subClassOf      owl:Thing , dtm-data:DataLifecycleStage , dtm-data:DataStorage , rdfs:Resource;
+        owl:equivalentClass  dtm-data:DataStorage .
+
+rdf:XMLLiteral  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+rdf:subject  rdf:type           rdf:Property , rdfs:Resource;
+        rdfs:domain             rdf:Statement , rdfs:Resource;
+        rdfs:subPropertyOf      rdf:subject;
+        owl:equivalentProperty  rdf:subject .
+
+dtm-misc:Datenzugangstransparenz
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Data Access Transparency"@en , "Datenzugangstransparenz"@de;
+        rdfs:subClassOf      owl:Thing , dtm-misc:Properties , dtm-misc:Datenzugangstransparenz , rdfs:Resource;
+        owl:equivalentClass  dtm-misc:Datenzugangstransparenz .
+
+xsd:time  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-core:hasActor  rdf:type     owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:comment            "has actor"@en;
+        rdfs:domain             owl:Thing , rdfs:Resource;
+        rdfs:label              "hat Akteur"@de;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-core:hasActor;
+        owl:equivalentProperty  dtm-core:hasActor;
+        owl:inverseOf           dtm-core:isActorOf .
+
+xsd:gYearMonth  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-core:isAffectedPartyIn
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:AffectedParty , dtm-core:Actor , rdfs:Resource , dtm-core:DataProvider;
+        rdfs:label              "is affected party in"@en , "ist betroffene Partei in"@de;
+        rdfs:range              owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      dtm-core:isActorOf , dtm-core:isAffectedPartyIn;
+        owl:equivalentProperty  dtm-core:isAffectedPartyIn;
+        owl:inverseOf           dtm-core:hasAffectedParty .
+
+owl:equivalentClass  rdf:type  rdf:Property , rdfs:Resource;
+        rdfs:domain  owl:Class , rdfs:Resource , rdfs:Class;
+        rdfs:range   owl:Class , rdfs:Resource , rdfs:Class .
+
+dtm-consent:generalConsentWorkflowInitiatedBy
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-consent:GeneralConsentWorkflow , rdfs:Resource , dtm-consent:ConsentWorkflow;
+        rdfs:label              "Allgemeiner Einwilligungsvorgang initiiert durch"@de , "general consent workflow initiated by"@en;
+        rdfs:range              owl:Thing , dtm-core:DataProvider , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:generalConsentWorkflowInitiatedBy;
+        owl:equivalentProperty  dtm-consent:generalConsentWorkflowInitiatedBy;
+        owl:inverseOf           dtm-consent:initiatesGeneralConsentWorkflow .
+
+rdfs:comment  rdf:type          rdf:Property , rdfs:Resource;
+        rdfs:range              rdfs:Literal , rdfs:Resource;
+        rdfs:subPropertyOf      rdfs:comment;
+        owl:equivalentProperty  rdfs:comment .
+
+dtm-data:triggersStorage
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "veranlasst Speicherung"@de , "triggers Storage";
+        rdfs:range              owl:Thing , dtm-data:DataStorage , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-data:triggersStage , dtm-data:triggersStorage , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-data:triggersStorage;
+        owl:inverseOf           dtm-data:performsStorage .
+
+dtm-consent:isConsentSourceOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             dtm-core:Actor , owl:Thing , dtm-core:DataProvider , rdfs:Resource;
+        rdfs:label              "is consent source of"@en , "ist Einwilligungsquelle von"@de;
+        rdfs:range              owl:Thing , dtm-consent:ConsentWorkflow , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:isConsentSourceOf;
+        owl:equivalentProperty  dtm-consent:isConsentSourceOf;
+        owl:inverseOf           dtm-consent:hasConsentSource .
+
+dtm-data:PeriodicForwarding
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Periodic Forwarding"@en , "Periodische Weitergabe"@de;
+        rdfs:subClassOf      owl:Thing , dtm-data:ForwardingTechnique , dtm-data:PeriodicForwarding , rdfs:Resource;
+        owl:equivalentClass  dtm-data:PeriodicForwarding .
+
+dtm-data:isUsedAsSystem
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataSystem , rdfs:Resource;
+        rdfs:label              "is used as system"@en , "wird genutzt als System in"@de;
+        rdfs:range              owl:Thing , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:isUsedAsSystem;
+        owl:equivalentProperty  dtm-data:isUsedAsSystem;
+        owl:inverseOf           dtm-data:usesSystem .
+
+owl:sameAs  rdf:type  owl:SymmetricProperty , rdf:Property , owl:ObjectProperty , rdfs:Resource .
+
+dtm-core:holdsData  rdf:type    owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "holds data"@en , "hält Daten"@de;
+        rdfs:range              owl:Thing , dtm-core:Data , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-core:holdsData;
+        owl:equivalentProperty  dtm-core:holdsData;
+        owl:inverseOf           dtm-core:dataHoldBy .
+
+dtm-consent:ConsentWorkflow
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Consent Workflow"@en , "Einwilligungsvorgang"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-consent:ConsentWorkflow;
+        owl:equivalentClass  dtm-consent:ConsentWorkflow .
+
+xsd:short  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-business:ScienceAndResearch
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Science and Research"@en , "Wissenschaft und Forschung"@de;
+        rdfs:subClassOf      owl:Thing , dtm-business:DataTrusteeGoal , dtm-business:ScienceAndResearch , rdfs:Resource;
+        owl:equivalentClass  dtm-business:ScienceAndResearch .
+
+dtm-data:Architecture
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Architecture"@en , "Architektur"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-data:Architecture;
+        owl:equivalentClass  dtm-data:Architecture .
+
+dtm-business:Affiliation
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Zugehörigkeit von Akteuren oder Datentreuhandmodell zu beispielsweise Unternehmen, Verwaltung, Forschung oder aber auch Individualperson."@de;
+        rdfs:label           "Affiliation"@en , "Zugehörigkeit"@de;
+        rdfs:subClassOf      owl:Thing , dtm-business:Affiliation , rdfs:Resource;
+        owl:equivalentClass  dtm-business:Affiliation .
+
+dtm-data:stagePerformedBy
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:label              "Phase ausgeführt durch"@de , "stage performed by"@en;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:stagePerformedBy;
+        owl:equivalentProperty  dtm-data:stagePerformedBy;
+        owl:inverseOf           dtm-data:triggersStage .
+
+dtm-misc:Visualisierung
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Visualisierung"@de , "Visualization"@en;
+        rdfs:subClassOf      owl:Thing , dtm-misc:Properties , dtm-misc:Visualisierung , rdfs:Resource;
+        owl:equivalentClass  dtm-misc:Visualisierung .
+
+dtm-sec:ReputationSource
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Reputation Source"@en , "Reputationsquelle"@de;
+        rdfs:subClassOf      owl:Thing , dtm-sec:ReputationSource , rdfs:Resource;
+        owl:equivalentClass  dtm-sec:ReputationSource .
+
+owl:Thing  rdf:type          rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdfs:Resource , owl:Thing;
+        owl:equivalentClass  owl:Thing .
+
+rdfs:seeAlso  rdf:type          rdf:Property , rdfs:Resource;
+        rdfs:subPropertyOf      rdfs:seeAlso;
+        owl:equivalentProperty  rdfs:seeAlso .
+
+dtm-data:hasForwardingTechnique
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataForwarding , rdfs:Resource , dtm-data:DataLifecycleStage;
+        rdfs:label              "has forwarding technique"@en , "hat Weitergabetechnik"@de;
+        rdfs:range              owl:Thing , dtm-data:ForwardingTechnique , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:hasForwardingTechnique;
+        owl:equivalentProperty  dtm-data:hasForwardingTechnique;
+        owl:inverseOf           dtm-data:isForwardingTechniqueOf .
+
+xsd:date  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-data:triggersForwarding
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "triggers Forwarding"@en , "veranlasst Weitergabe"@de;
+        rdfs:range              owl:Thing , dtm-data:DataForwarding , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-data:triggersStage , dtm-data:triggersForwarding , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-data:triggersForwarding;
+        owl:inverseOf           dtm-data:performsForwarding .
+
+dtm-core:DataConsumer
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Ein Akteur, der Daten konsumiert oder nutzt."@de;
+        rdfs:label           "Data Consumer"@en , "Datennutzer"@de;
+        rdfs:subClassOf      owl:Thing , dtm-core:Actor , dtm-core:DataConsumer , rdfs:Resource;
+        owl:equivalentClass  dtm-core:DataConsumer .
+
+owl:members  rdf:type           rdf:Property , rdfs:Resource;
+        rdfs:subPropertyOf      owl:members;
+        owl:equivalentProperty  owl:members .
+
+dtm-data:ReceptionTechnique
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Empfangstechnik"@de , "Reception Technique"@en;
+        rdfs:subClassOf      owl:Thing , dtm-data:ReceptionTechnique , rdfs:Resource;
+        owl:equivalentClass  dtm-data:ReceptionTechnique .
+
+owl:oneOf  rdf:type  rdf:Property , rdfs:Resource;
+        rdfs:domain  owl:Class , rdfs:Resource , rdfs:Class .
+
+dtm-sec:hasSecurityInfrastructure
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "has security infrastructure"@en , "hat Sicherheits-Infrastruktur"@de;
+        rdfs:range              owl:Thing , dtm-sec:SecurityInfrastructure , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:hasSecurityInfrastructure;
+        owl:equivalentProperty  dtm-sec:hasSecurityInfrastructure;
+        owl:inverseOf           dtm-sec:isSecurityInfrastructureOf .
+
+dtm-business:isUsageGoalOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-business:UsageGoalOfUser , rdfs:Resource;
+        rdfs:label              "is usage goal of"@en , "ist Nutzungsziel von"@de;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:isUsageGoalOf;
+        owl:equivalentProperty  dtm-business:isUsageGoalOf;
+        owl:inverseOf           dtm-business:hasUsageGoal .
+
+xsd:hexBinary  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+owl:Ontology  rdf:type   rdfs:Class , rdfs:Resource;
+        rdfs:subClassOf  rdfs:Resource .
+
+dtm-core:hasDataTrusteeModel
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "has data trustee model"@en , "hat Datentreuhandmodell"@de;
+        rdfs:range              owl:Thing , dtm-core:DataTrusteeModel , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-core:hasDataTrusteeModel;
+        owl:equivalentProperty  dtm-core:hasDataTrusteeModel;
+        owl:inverseOf           dtm-core:isDataTrusteeModelOf .
+
+dtm-data:DataSystem  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Data System"@en , "Datensystem"@de;
+        rdfs:subClassOf      owl:Thing , dtm-data:DataSystem , rdfs:Resource;
+        owl:equivalentClass  dtm-data:DataSystem .
+
+dtm-business:DataQualityManagement
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Data Quality Management"@en , "Datenqualitätsmanagement"@de;
+        rdfs:subClassOf      owl:Thing , dtm-business:UsageGoalOfUser , dtm-business:DataQualityManagement , rdfs:Resource;
+        owl:equivalentClass  dtm-business:DataQualityManagement .
+
+rdfs:label  rdf:type            rdf:Property , rdfs:Resource;
+        rdfs:range              rdfs:Literal , rdfs:Resource;
+        rdfs:subPropertyOf      rdfs:label;
+        owl:equivalentProperty  rdfs:label .
+
+dtm-consent:getsConsentThroughDataOwner
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             dtm-consent:ConsentWorkflow , owl:Thing , rdfs:Resource;
+        rdfs:label              "erhält Einwilligung durch den Dateninhaber"@de , "gets consent through data owner"@en;
+        rdfs:range              dtm-core:AffectedParty , owl:Thing , rdfs:Resource , dtm-core:DataProvider , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:getsConsentThroughDataOwner;
+        owl:equivalentProperty  dtm-consent:getsConsentThroughDataOwner;
+        owl:inverseOf           dtm-consent:givesConsentByDataOwner .
+
+dtm-data:Anonymisation
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Anonymisation"@en , "Anonymisieren"@de;
+        rdfs:subClassOf      owl:Thing , dtm-data:QualityTechnique , dtm-data:Anonymisation , rdfs:Resource;
+        owl:equivalentClass  dtm-data:Anonymisation .
+
+dtm-sec:hasTransmissionEnd
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-sec:TransmissionSecurity , rdfs:Resource;
+        rdfs:label              "has Transmission End"@en , "hat Transmission-Ende"@de;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:hasTransmissionEnd;
+        owl:equivalentProperty  dtm-sec:hasTransmissionEnd;
+        owl:inverseOf           dtm-sec:isTransmissionEndOf .
+
+dtm-core:isRightlyOwnedBy
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Data , rdfs:Resource;
+        rdfs:label              "binded by rights to"@en , "rechtlich gebunden an"@de;
+        rdfs:range              owl:Thing , dtm-core:AffectedParty , dtm-core:Actor , rdfs:Resource , dtm-core:DataProvider;
+        rdfs:subPropertyOf      dtm-core:dataHoldBy , dtm-core:isRightlyOwnedBy , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-core:isRightlyOwnedBy;
+        owl:inverseOf           dtm-core:hasRightsOf .
+
+dtm-core:Metadata  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Daten über Daten, z.B. Informationen über Herkunft, Format oder Rechte."@de;
+        rdfs:label           "Meta Data"@en , "Metadata"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-core:Metadata;
+        owl:equivalentClass  dtm-core:Metadata .
+
+dtm-data:ProcessingTechnique
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Processing Technique"@en , "Verarbeitungstechnik"@de;
+        rdfs:subClassOf      owl:Thing , dtm-data:ProcessingTechnique , rdfs:Resource;
+        owl:equivalentClass  dtm-data:ProcessingTechnique .
+
+dtm-business:Funder  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Finanzierer"@de , "Funder"@en;
+        rdfs:subClassOf      owl:Thing , dtm-business:Funder , rdfs:Resource;
+        owl:equivalentClass  dtm-business:Funder .
+
+dtm-data:Transformation
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Transformation"@de , "Transformation"@en;
+        rdfs:subClassOf      owl:Thing , dtm-data:ProcessingTechnique , dtm-data:Transformation , rdfs:Resource;
+        owl:equivalentClass  dtm-data:Transformation .
+
+rdf:predicate  rdf:type         rdf:Property , rdfs:Resource;
+        rdfs:domain             rdf:Statement , rdfs:Resource;
+        rdfs:subPropertyOf      rdf:predicate;
+        owl:equivalentProperty  rdf:predicate .
+
+dtm-sec:isTransmissionEndOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "is Transmission End of"@en , "ist Transmission-Ende von"@de;
+        rdfs:range              owl:Thing , dtm-sec:TransmissionSecurity , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:isTransmissionEndOf;
+        owl:equivalentProperty  dtm-sec:isTransmissionEndOf;
+        owl:inverseOf           dtm-sec:hasTransmissionEnd .
+
+dtm-data:Aggregation  rdf:type  owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Aggregation"@de , "Aggregation"@en;
+        rdfs:subClassOf      owl:Thing , dtm-data:ProcessingTechnique , dtm-data:Aggregation , rdfs:Resource;
+        owl:equivalentClass  dtm-data:Aggregation .
+
+dtm-business:usesPayModel
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "nutzt Bezahlmodell"@de , "uses Pay Model"@en;
+        rdfs:range              owl:Thing , dtm-business:PayModel , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-business:usesPayModel;
+        owl:equivalentProperty  dtm-business:usesPayModel;
+        owl:inverseOf           dtm-business:isUsedAsPayModel .
+
+xsd:base64Binary  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-data:triggersReception
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "triggers reception"@en , "veranlasst Empfang"@de;
+        rdfs:range              owl:Thing , dtm-data:DataReception , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-data:triggersStage , dtm-data:triggersReception , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-data:triggersReception;
+        owl:inverseOf           dtm-data:performsReception .
+
+dtm-data:AtRestEncryption
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Encryption at Rest"@en , "Verschlüssung im Ruhezustand"@de;
+        rdfs:subClassOf      owl:Thing , dtm-data:QualityTechnique , dtm-data:AtRestEncryption , rdfs:Resource;
+        owl:equivalentClass  dtm-data:AtRestEncryption .
+
+owl:differentFrom  rdf:type  owl:SymmetricProperty , rdf:Property , owl:ObjectProperty , rdfs:Resource .
+
+owl:priorVersion  rdf:type  rdf:Property , rdfs:Resource;
+        rdfs:domain  owl:Ontology , rdfs:Resource;
+        rdfs:range   owl:Ontology , rdfs:Resource .
+
+rdfs:isDefinedBy  rdf:type      rdf:Property , rdfs:Resource;
+        rdfs:subPropertyOf      rdfs:isDefinedBy , rdfs:seeAlso;
+        owl:equivalentProperty  rdfs:isDefinedBy .
+
+rdfs:range  rdf:type            rdf:Property , rdfs:Resource;
+        rdfs:domain             rdf:Property , rdfs:Resource;
+        rdfs:range              rdfs:Class , rdfs:Resource;
+        rdfs:subPropertyOf      rdfs:range;
+        owl:equivalentProperty  rdfs:range .
+
+rdfs:subClassOf  rdf:type       rdf:Property , rdfs:Resource;
+        rdfs:domain             rdfs:Class , rdfs:Resource;
+        rdfs:range              rdfs:Class , rdfs:Resource;
+        rdfs:subPropertyOf      rdfs:subClassOf;
+        owl:equivalentProperty  rdfs:subClassOf .
+
+dtm-consent:initiatesGeneralConsentWorkflow
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataProvider , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "initiates general consent workflow"@en , "initiiert allgemeinen Einwilligungsvorgang"@de;
+        rdfs:range              owl:Thing , dtm-consent:GeneralConsentWorkflow , rdfs:Resource , dtm-consent:ConsentWorkflow;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:initiatesGeneralConsentWorkflow;
+        owl:equivalentProperty  dtm-consent:initiatesGeneralConsentWorkflow;
+        owl:inverseOf           dtm-consent:generalConsentWorkflowInitiatedBy .
+
+dtm-data:implementedOn
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrusteeModel , rdfs:Resource;
+        rdfs:label              "implemented on"@en , "implementiert durch"@de;
+        rdfs:range              owl:Thing , dtm-data:Architecture , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-data:implementedOn;
+        owl:equivalentProperty  dtm-data:implementedOn;
+        owl:inverseOf           dtm-data:isImplementedBy .
+
+dtm-business:PayModel
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Bezahlmodell"@de , "Pay Model"@en;
+        rdfs:subClassOf      owl:Thing , dtm-business:PayModel , rdfs:Resource;
+        owl:equivalentClass  dtm-business:PayModel .
+
+dtm-business:DigitalSovereignty
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Digital Sovereignty"@en , "Digitale Souveränität"@de;
+        rdfs:subClassOf      owl:Thing , dtm-business:DataTrusteeGoal , dtm-business:DigitalSovereignty , rdfs:Resource;
+        owl:equivalentClass  dtm-business:DigitalSovereignty .
+
+xsd:unsignedLong  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+owl:Restriction  rdf:type    rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      owl:Restriction , owl:Class , rdfs:Class;
+        owl:equivalentClass  owl:Restriction .
+
+dtm-core:isDataConsumerOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataConsumer , dtm-core:Actor , rdfs:Resource;
+        rdfs:label              "is Data Consumer in"@en , "ist Datennutzer in"@de;
+        rdfs:range              owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:subPropertyOf      dtm-core:isActorOf , dtm-core:isDataConsumerOf;
+        owl:equivalentProperty  dtm-core:isDataConsumerOf;
+        owl:inverseOf           dtm-core:hasDataConsumer .
+
+dtm-misc:isSpecifiedIn
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-misc:Properties , rdfs:Resource;
+        rdfs:label              "is specified in"@en , "ist spezifiziert in"@de;
+        rdfs:range              owl:Thing , dtm-core:Metadata , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-misc:isSpecifiedIn;
+        owl:equivalentProperty  dtm-misc:isSpecifiedIn;
+        owl:inverseOf           dtm-misc:specifies .
+
+owl:topDataProperty  rdf:type   rdf:Property , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topDataProperty;
+        owl:equivalentProperty  owl:topDataProperty .
+
+dtm-data:performsPreparation
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-data:DataPreparation , dtm-data:DataLifecycleStage , rdfs:Resource;
+        rdfs:label              "führt Aufbereitung durch"@de , "performs preparation"@en;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      dtm-data:stagePerformedBy , dtm-data:performsPreparation , owl:topObjectProperty;
+        owl:equivalentProperty  dtm-data:performsPreparation;
+        owl:inverseOf           dtm-data:triggersPreparation .
+
+xsd:duration  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-core:DataOwner  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Ein spezieller Datengeber, der Eigentümer bestimmter Daten ist und Daten von Betroffenen verwaltet."@de;
+        rdfs:label           "Data Owner"@en , "Dateninhaber"@de;
+        rdfs:subClassOf      owl:Thing , rdfs:Resource , dtm-core:DataProvider , dtm-core:DataOwner , dtm-core:Actor;
+        owl:equivalentClass  dtm-core:DataOwner .
+
+dtm-core:hasDataOwner
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "has Data Owner"@en , "hat Dateninhaber"@de;
+        rdfs:range              owl:Thing , dtm-core:DataOwner , dtm-core:Actor , rdfs:Resource , dtm-core:DataProvider;
+        rdfs:subPropertyOf      dtm-core:hasActor , dtm-core:hasDataOwner;
+        owl:equivalentProperty  dtm-core:hasDataOwner;
+        owl:inverseOf           dtm-core:isDataOwnerOf .
+
+rdfs:subPropertyOf  rdf:type    rdf:Property , rdfs:Resource;
+        rdfs:domain             rdf:Property , rdfs:Resource;
+        rdfs:range              rdf:Property , rdfs:Resource;
+        rdfs:subPropertyOf      rdfs:subPropertyOf;
+        owl:equivalentProperty  rdfs:subPropertyOf .
+
+dtm-sec:isSecurityInfrastructureOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-sec:SecurityInfrastructure , rdfs:Resource;
+        rdfs:label              "is security infrastructure of"@en , "ist Sicherheits-Infrastruktur von"@de;
+        rdfs:range              owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-sec:isSecurityInfrastructureOf;
+        owl:equivalentProperty  dtm-sec:isSecurityInfrastructureOf;
+        owl:inverseOf           dtm-sec:hasSecurityInfrastructure .
+
+dtm-consent:hasConsentSource
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-consent:ConsentWorkflow , rdfs:Resource;
+        rdfs:label              "has consent source"@en , "hat Einwilligungsquelle"@de;
+        rdfs:range              dtm-core:DataProvider , owl:Thing , dtm-core:Actor , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:hasConsentSource;
+        owl:equivalentProperty  dtm-consent:hasConsentSource;
+        owl:inverseOf           dtm-consent:isConsentSourceOf .
+
+dtm-business:Freemium
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Freemium"@de , "Freemium"@en;
+        rdfs:subClassOf      owl:Thing , dtm-business:PayModel , dtm-business:Freemium , rdfs:Resource;
+        owl:equivalentClass  dtm-business:Freemium .
+
+dtm-core:hasAffectedParty
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataTrustee , rdfs:Resource , dtm-core:Actor;
+        rdfs:label              "has affected Party"@en , "hat betroffene Partei"@de;
+        rdfs:range              owl:Thing , dtm-core:AffectedParty , dtm-core:Actor , rdfs:Resource , dtm-core:DataProvider;
+        rdfs:subPropertyOf      dtm-core:hasActor , dtm-core:hasAffectedParty;
+        owl:equivalentProperty  dtm-core:hasAffectedParty;
+        owl:inverseOf           dtm-core:isAffectedPartyIn .
+
+rdf:List  rdf:type       rdfs:Class , rdfs:Resource;
+        rdfs:subClassOf  rdfs:Resource .
+
+dtm-core:DataTrusteeModel
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:comment         "Ein Modell, das die Struktur und Aufgaben eines Datentreuhänders beschreibt."@de;
+        rdfs:label           "Data Trustee Model"@en , "Datentreuhandmodell"@de;
+        rdfs:subClassOf      owl:Thing , dtm-core:DataTrusteeModel , rdfs:Resource;
+        owl:equivalentClass  dtm-core:DataTrusteeModel .
+
+xsd:string  rdf:type  rdfs:Datatype , rdfs:Class , rdfs:Resource .
+
+dtm-consent:givesConsentDirectly
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:AffectedParty , rdfs:Resource , dtm-core:DataProvider , dtm-core:Actor;
+        rdfs:label              "gibt Einwillligung direkt"@de , "gives consent directly"@en;
+        rdfs:range              owl:Thing , dtm-consent:ConsentWorkflow , rdfs:Resource;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-consent:givesConsentDirectly;
+        owl:equivalentProperty  dtm-consent:givesConsentDirectly;
+        owl:inverseOf           dtm-consent:getsConsentDirectly .
+
+dtm-sec:SecurityInfrastructure
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:label           "Security Infrastructure"@en , "Sicherheitsinfrastruktur"@de;
+        rdfs:subClassOf      owl:Thing , dtm-sec:SecurityInfrastructure , rdfs:Resource;
+        owl:equivalentClass  dtm-sec:SecurityInfrastructure .
+
+dtm-core:administratesDataOf
+        rdf:type                owl:ObjectProperty , rdf:Property , rdfs:Resource;
+        rdfs:domain             owl:Thing , dtm-core:DataOwner , rdfs:Resource , dtm-core:DataProvider , dtm-core:Actor;
+        rdfs:label              "has data stored of"@en , "hat Daten von"@de;
+        rdfs:range              owl:Thing , dtm-core:AffectedParty , rdfs:Resource , dtm-core:DataProvider , dtm-core:Actor;
+        rdfs:subPropertyOf      owl:topObjectProperty , dtm-core:administratesDataOf;
+        owl:equivalentProperty  dtm-core:administratesDataOf;
+        owl:inverseOf           dtm-core:hasDataAdministratedBy .
+
+dtm-business:DataSharing
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Data Sharing"@en , "Datenteilen"@de;
+        rdfs:subClassOf      dtm-business:UsageGoalOfUser , dtm-business:DataSharing , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:DataSharing .
+
+dtm-business:Organisation
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Organisation"@de , "Organization"@en;
+        rdfs:subClassOf      dtm-business:Affiliation , dtm-business:Organisation , rdfs:Resource , owl:Thing;
+        owl:disjointWith     dtm-business:Individual;
+        owl:equivalentClass  dtm-business:Organisation .
+
+dtm-sec:  rdf:type   owl:Ontology , rdfs:Resource;
+        owl:imports  dtm-core: .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-core:Actor;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-core:Data;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-core:Metadata;
+                                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                        rdf:first  dtm-core:DataTrusteeModel;
+                                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                     rdf:first  dtm-misc:Analyse;
+                                                                     rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                  rdf:first  dtm-misc:Datenzugangstransparenz;
+                                                                                  rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                               rdf:first  dtm-misc:Visualisierung;
+                                                                                               rdf:rest   ()
+                                                                                             ]
+                                                                                ]
+                                                                   ]
+                                                      ]
+                                         ]
+                            ]
+               ]
+] .
+
+dtm-business:  rdf:type  owl:Ontology , rdfs:Resource;
+        owl:imports  dtm-core: .
+
+dtm-business:EconomicUtilization
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Economic Utilization"@en , "Wirtschaftliche Verwertung"@de;
+        rdfs:subClassOf      dtm-business:DataTrusteeGoal , dtm-business:EconomicUtilization , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:EconomicUtilization .
+
+dtm-business:SupportFee
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Support Fee"@en , "Support Gebühr"@de;
+        rdfs:subClassOf      dtm-business:PayModel , dtm-business:SupportFee , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:SupportFee .
+
+dtm-core:AccessDataTrustee
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:comment         "Eine Art Treuhänder, der sicherstellt, dass Daten nur von berechtigten Parteien genutzt werden. Der Zugang wird durch Datengeber gesteuert."@de;
+        rdfs:label           "Access Data Trustee"@en , "Zugangstreuhand"@de;
+        rdfs:subClassOf      dtm-core:DataTrusteeModel , dtm-core:AccessDataTrustee , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-core:AccessDataTrustee .
+
+dtm-business:PayPerTransaction
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Pay-Per-Transaction"@en , "Zahlen pro Transaktion"@de;
+        rdfs:subClassOf      dtm-business:PayModel , dtm-business:PayPerTransaction , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:PayPerTransaction .
+
+dtm-core:SelfManagedValueAddedDataTrustee
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:comment         "Eine Mehrwerttreuhand, der autonom arbeitet."@de;
+        rdfs:label           "Selbstbestimmte Mehrwerttreuhand"@de , "Self Managed Value Added Data Trustee"@en;
+        rdfs:subClassOf      dtm-core:ValueAddedDataTrustee , dtm-core:SelfManagedValueAddedDataTrustee , dtm-core:DataTrusteeModel , rdfs:Resource , owl:Thing;
+        owl:disjointWith     dtm-core:ExternallyControlledValueAddedDataTrustee;
+        owl:equivalentClass  dtm-core:SelfManagedValueAddedDataTrustee .
+
+dtm-core:PersonalData
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:comment         "Daten, die auf eine identifizierbare Person bezogen sind."@de;
+        rdfs:label           "Personal Data"@en , "Personenbezogene Daten"@de;
+        rdfs:subClassOf      dtm-core:Data , dtm-core:PersonalData , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-core:PersonalData .
+
+dtm-data:DecentralStorage
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Decentralized Storage"@en , "Dezentrales Speichern"@de;
+        rdfs:subClassOf      dtm-data:StorageTechnique , dtm-data:DecentralStorage , rdfs:Resource , owl:Thing;
+        owl:disjointWith     dtm-data:CentralStorage;
+        owl:equivalentClass  dtm-data:DecentralStorage .
+
+dtm-business:FairMarketCompetition
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Fair Market Competition"@en , "Fairer Wettbewerb"@de;
+        rdfs:subClassOf      dtm-business:DataTrusteeGoal , dtm-business:FairMarketCompetition , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:FairMarketCompetition .
+
+dtm-business:Compliance
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Compliance with Requirements"@en , "Erfüllung von Auflagen"@de;
+        rdfs:subClassOf      dtm-business:DataTrusteeGoal , dtm-business:Compliance , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:Compliance .
+
+dtm-business:Innovation
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Innovation"@de , "Innovation"@en;
+        rdfs:subClassOf      dtm-business:DataTrusteeGoal , dtm-business:Innovation , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:Innovation .
+
+dtm-core:AdministrativeDataTrustee
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:comment         "TODO"@de;
+        rdfs:label           "Adminstrative Data Trustee"@en , "Verwaltungstreuhand"@de;
+        rdfs:subClassOf      dtm-core:DataTrusteeModel , dtm-core:AdministrativeDataTrustee , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-core:AdministrativeDataTrustee .
+
+dtm-data:CentralStorage
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Centralized Storage"@en , "Zentrales Speichern"@de;
+        rdfs:subClassOf      dtm-data:StorageTechnique , dtm-data:CentralStorage , rdfs:Resource , owl:Thing;
+        owl:disjointWith     dtm-data:DecentralStorage;
+        owl:equivalentClass  dtm-data:CentralStorage .
+
+dtm-data:ContinuousForwarding
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Continous Forwarding"@en , "Durchgehende Weitergabe"@de;
+        rdfs:subClassOf      dtm-data:ForwardingTechnique , dtm-data:ContinuousForwarding , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:ContinuousForwarding .
+
+dtm-core:ExternallyControlledValueAddedDataTrustee
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:comment         "Eine Mehrwerttreuhand, dessen Entscheidungen extern gesteuert werden."@de;
+        rdfs:label           "Externally Controlled Value Added Data Trustee"@en , "Fremdbestimmte Mehrwerttreuhand"@de;
+        rdfs:subClassOf      dtm-core:ValueAddedDataTrustee , dtm-core:ExternallyControlledValueAddedDataTrustee , dtm-core:DataTrusteeModel , rdfs:Resource , owl:Thing;
+        owl:disjointWith     dtm-core:SelfManagedValueAddedDataTrustee;
+        owl:equivalentClass  dtm-core:ExternallyControlledValueAddedDataTrustee .
+
+dtm-business:Free  rdf:type  owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Free"@en , "Kostenlos"@de;
+        rdfs:subClassOf      dtm-business:PayModel , dtm-business:Free , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:Free .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-data:Aggregation;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-data:Cleaning;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-data:Transformation;
+                                           rdf:rest   ()
+                                         ]
+                            ]
+               ]
+] .
+
+dtm-data:ManualForwarding
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Manual Forwarding"@en , "Manuelle Weitergabe"@de;
+        rdfs:subClassOf      dtm-data:ForwardingTechnique , dtm-data:ManualForwarding , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:ManualForwarding .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-consent:ConsentWorkflow;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-core:Actor;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-core:Data;
+                                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                        rdf:first  dtm-core:DataTrusteeModel;
+                                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                     rdf:first  dtm-core:Metadata;
+                                                                     rdf:rest   ()
+                                                                   ]
+                                                      ]
+                                         ]
+                            ]
+               ]
+] .
+
+dtm-misc:  rdf:type  owl:Ontology , rdfs:Resource;
+        owl:imports  dtm-core: .
+
+dtm-data:MicroserviceArchitecture
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Microservice Architektur"@de , "Microservice architecture"@en;
+        rdfs:subClassOf      dtm-data:Architecture , dtm-data:MicroserviceArchitecture , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:MicroserviceArchitecture .
+
+dtm-data:Request  rdf:type   owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Anfrage"@de , "Request"@en;
+        rdfs:subClassOf      dtm-data:ReceptionTechnique , dtm-data:Request , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:Request .
+
+dtm-business:ServiceFee
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Service Fee"@en , "Service Gebühr"@de;
+        rdfs:subClassOf      dtm-business:PayModel , dtm-business:ServiceFee , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:ServiceFee .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-core:AccessDataTrustee;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-core:AdministrativeDataTrustee;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-core:ValueAddedDataTrustee;
+                                           rdf:rest   ()
+                                         ]
+                            ]
+               ]
+] .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-business:DataAccess;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-business:DataAnalysis;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-business:DataQualityManagement;
+                                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                        rdf:first  dtm-business:DataSharing;
+                                                        rdf:rest   ()
+                                                      ]
+                                         ]
+                            ]
+               ]
+] .
+
+dtm-consent:  rdf:type  owl:Ontology , rdfs:Resource;
+        owl:imports  :dtm-core .
+
+dtm-business:PayPerUse
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Pay-Per-Usage"@en , "Pay-Per-Use"@de;
+        rdfs:subClassOf      dtm-business:PayModel , dtm-business:PayPerUse , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:PayPerUse .
+
+dtm-data:FederatedArchitecture
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Federated Architecture"@en , "Föderierte Architektur"@de;
+        rdfs:subClassOf      dtm-data:Architecture , dtm-data:FederatedArchitecture , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:FederatedArchitecture .
+
+dtm-data:Cleaning  rdf:type  owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Cleaning"@en , "Datenbereinigung"@de;
+        rdfs:subClassOf      dtm-data:ProcessingTechnique , dtm-data:Cleaning , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:Cleaning .
+
+dtm-core:ValueAddedDataTrustee
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:comment         "Ein Datentreuhandmodell, das zusätzlichen Wert aus den Daten generiert."@de;
+        rdfs:label           "Mehrwerttreuhand"@de , "Value-added Data Trustee"@en;
+        rdfs:subClassOf      dtm-core:DataTrusteeModel , dtm-core:ValueAddedDataTrustee , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-core:ValueAddedDataTrustee .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-business:AccessFee;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-business:Flatrate;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-business:Free;
+                                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                        rdf:first  dtm-business:Freemium;
+                                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                     rdf:first  dtm-business:PayPerTransaction;
+                                                                     rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                  rdf:first  dtm-business:PayPerUse;
+                                                                                  rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                               rdf:first  dtm-business:ServiceFee;
+                                                                                               rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                                            rdf:first  dtm-business:SupportFee;
+                                                                                                            rdf:rest   ()
+                                                                                                          ]
+                                                                                             ]
+                                                                                ]
+                                                                   ]
+                                                      ]
+                                         ]
+                            ]
+               ]
+] .
+
+dtm-data:CentralisedArchitecture
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Centralised Architecture"@en , "Zentralisierte Architektur"@de;
+        rdfs:subClassOf      dtm-data:Architecture , dtm-data:CentralisedArchitecture , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:CentralisedArchitecture .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-core:Actor;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-core:Data;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-core:Metadata;
+                                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                        rdf:first  dtm-core:DataTrusteeModel;
+                                                        rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                     rdf:first  dtm-data:Architecture;
+                                                                     rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                  rdf:first  dtm-data:DataLifecycleStage;
+                                                                                  rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                               rdf:first  dtm-data:DataSystem;
+                                                                                               rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                                            rdf:first  dtm-data:ForwardingTechnique;
+                                                                                                            rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                                                         rdf:first  dtm-data:ProcessingTechnique;
+                                                                                                                         rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                                                                      rdf:first  dtm-data:QualityTechnique;
+                                                                                                                                      rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                                                                                   rdf:first  dtm-data:ReceptionTechnique;
+                                                                                                                                                   rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                                                                                                                                rdf:first  dtm-data:StorageTechnique;
+                                                                                                                                                                rdf:rest   ()
+                                                                                                                                                              ]
+                                                                                                                                                 ]
+                                                                                                                                    ]
+                                                                                                                       ]
+                                                                                                          ]
+                                                                                             ]
+                                                                                ]
+                                                                   ]
+                                                      ]
+                                         ]
+                            ]
+               ]
+] .
+
+dtm-data:Transfer  rdf:type  owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Transfer"@de , "Transfer"@en;
+        rdfs:subClassOf      dtm-data:ReceptionTechnique , dtm-data:Transfer , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:Transfer .
+
+dtm-business:Individual
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Individual"@en , "Individuum"@de;
+        rdfs:subClassOf      dtm-business:Affiliation , dtm-business:Individual , rdfs:Resource , owl:Thing;
+        owl:disjointWith     dtm-business:Organisation;
+        owl:equivalentClass  dtm-business:Individual .
+
+dtm-data:Download  rdf:type  owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Download"@de , "Download"@en;
+        rdfs:subClassOf      dtm-data:ReceptionTechnique , dtm-data:Download , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-data:Download .
+
+dtm-data:  rdf:type  owl:Ontology , rdfs:Resource;
+        owl:imports  dtm-core: .
+
+dtm-business:AccessFee
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Access Fee"@en , "Zugangsgebühr"@de;
+        rdfs:subClassOf      dtm-business:PayModel , dtm-business:AccessFee , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:AccessFee .
+
+dtm-business:Flatrate
+        rdf:type             owl:Class , rdfs:Class , rdfs:Resource;
+        rdfs:label           "Flatrate"@de , "Flatrate"@en;
+        rdfs:subClassOf      dtm-business:PayModel , dtm-business:Flatrate , rdfs:Resource , owl:Thing;
+        owl:equivalentClass  dtm-business:Flatrate .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-data:CentralisedArchitecture;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-data:FederatedArchitecture;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-data:MicroserviceArchitecture;
+                                           rdf:rest   ()
+                                         ]
+                            ]
+               ]
+] .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-data:ContinuousForwarding;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-data:ManualForwarding;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-data:PeriodicForwarding;
+                                           rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                                        rdf:first  dtm-data:Upload;
+                                                        rdf:rest   ()
+                                                      ]
+                                         ]
+                            ]
+               ]
+] .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-data:Download;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-data:Request;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-data:Transfer;
+                                           rdf:rest   ()
+                                         ]
+                            ]
+               ]
+] .
+
+[ rdf:type     owl:AllDisjointClasses;
+  owl:members  [ rdf:type   rdf:List , rdfs:Resource;
+                 rdf:first  dtm-data:Anonymisation;
+                 rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                              rdf:first  dtm-data:AtRestEncryption;
+                              rdf:rest   [ rdf:type   rdf:List , rdfs:Resource;
+                                           rdf:first  dtm-data:Pseudonymisation;
+                                           rdf:rest   ()
+                                         ]
+                            ]
+               ]
+] .
+
+:dtm-core  rdf:type  owl:Ontology , rdfs:Resource .
+
+owl:FunctionalProperty
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      owl:FunctionalProperty , rdf:Property;
+        owl:equivalentClass  owl:FunctionalProperty .
+
+rdf:Bag  rdf:type            rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdf:Bag , rdfs:Container;
+        owl:equivalentClass  rdf:Bag .
+
+owl:OntologyProperty  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      owl:OntologyProperty , rdf:Property;
+        owl:equivalentClass  owl:OntologyProperty .
+
+rdf:Alt  rdf:type            rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdf:Alt , rdfs:Container;
+        owl:equivalentClass  rdf:Alt .
+
+owl:SymmetricProperty
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      owl:SymmetricProperty , rdf:Property , owl:ObjectProperty;
+        owl:equivalentClass  owl:SymmetricProperty .
+
+rdfs:ContainerMembershipProperty
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdfs:ContainerMembershipProperty , rdf:Property;
+        owl:equivalentClass  rdfs:ContainerMembershipProperty .
+
+rdfs:Container  rdf:type     rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdfs:Container;
+        owl:equivalentClass  rdfs:Container .
+
+owl:ObjectProperty  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      owl:ObjectProperty , rdf:Property;
+        owl:equivalentClass  owl:ObjectProperty .
+
+rdfs:Datatype  rdf:type      rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdfs:Datatype , rdfs:Class;
+        owl:equivalentClass  rdfs:Datatype .
+
+owl:InverseFunctionalProperty
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      owl:InverseFunctionalProperty , rdf:Property , owl:ObjectProperty;
+        owl:equivalentClass  owl:InverseFunctionalProperty .
+
+owl:DatatypeProperty  rdf:type  rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      owl:DatatypeProperty , rdf:Property;
+        owl:equivalentClass  owl:DatatypeProperty .
+
+owl:TransitiveProperty
+        rdf:type             rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      owl:TransitiveProperty , rdf:Property , owl:ObjectProperty;
+        owl:equivalentClass  owl:TransitiveProperty .
+
+rdf:Seq  rdf:type            rdfs:Class , owl:Class , rdfs:Resource;
+        rdfs:subClassOf      rdf:Seq , rdfs:Container;
+        owl:equivalentClass  rdf:Seq .
+
+dtm-core:  rdf:type  owl:Ontology , rdfs:Resource .
+
+owl:AnnotationProperty
+        rdf:type  rdfs:Class , rdfs:Resource .
+
+owl:AllDisjointClasses
+        rdf:type  rdfs:Class , rdfs:Resource .

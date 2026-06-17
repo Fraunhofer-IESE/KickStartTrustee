@@ -1,0 +1,431 @@
+{
+  "request" : {
+    "core" : {
+      "dataTrusteeName" : "ePA",
+      "dataTrusteeDescription" : "Die elektronische Patientenakte dient als digitale Infrastruktur zur sicheren und kontrollierten Verwaltung medizinischer Informationen und Zugriffsrechte.",
+      "dataTrusteeOperator" : "Krankenkassen",
+      "dataTrusteeOperatorAffiliation" : "ORGANIZATION",
+      "rightsHolderName" : "Versicherte",
+      "rightsHolderAffiliation" : "INDIVIDUAL",
+      "rightsHolderIsRepresented" : "true",
+      "dataOwnerName" : "Leistungserbringer",
+      "dataConsumerName" : "Leistungserbringer",
+      "dataConsumerAffiliation" : "ORGANIZATION"
+    },
+    "data" : {
+      "dataCategory" : {
+        "dataCategoryName" : "Gesundheitsdaten",
+        "dataCategoryDescription" : "Medizinische Behandlungs-, Medikations- und Befunddaten aus der Gesundheitsversorgung."
+      },
+      "containPersonalInformation" : "true",
+      "specialPersonalInformation" : "true",
+      "containTradeSecrets" : "false",
+      "processingBases" : {
+        "CONSENT" : [ {
+          "title" : "Zugriffs- und Einwilligungsmanagement",
+          "description" : "Versicherte steuern selbst den Zugriff auf ihre Gesundheitsdaten und entscheiden über Freigaben."
+        } ],
+        "LEGAL_OBLIGATION" : [ {
+          "title" : "Verpflichtende Nutzung durch Leistungserbringer",
+          "description" : "Leistungserbringer sind verpflichtet, gesetzlich definierte Inhalte in die ePA einzustellen."
+        } ]
+      },
+      "consentType" : "INDIVIDUAL_CONSENT",
+      "obtainingConsentBy" : "ePA-App und Krankenkassen",
+      "consentEnteredBy" : "RIGHTS_OWNER"
+    },
+    "implementation" : {
+      "dataTrusteeCategory" : "ACCESS_DATA_TRUSTEE",
+      "architectureType" : "P2P",
+      "receptionTechnologies" : [ "API" ],
+      "receptionFrequency" : "CONTINUOUS",
+      "receptionSecurityMeasures" : [ "END_TO_END_ENCRYPTION", "TRANSPORT_ENCRYPTION", "PSEUDONYMISATION" ],
+      "customReceptionSecurityTechniques" : [ {
+        "title" : "Vertrauensdienste nach eIDAS",
+        "description" : "Elektronische Signaturen, Zertifikate und Vertrauensdienste sichern Authentizität und Integrität der Kommunikation."
+      } ],
+      "sourceSystem" : "Systeme der Leistungserbringer",
+      "preparationTechniques" : [ "TRANSFORMATION" ],
+      "customPreparationTechniques" : [ {
+        "title" : "Interoperable Standardisierung",
+        "description" : "Gesundheitsdaten werden standardisiert und interoperabel innerhalb der Telematikinfrastruktur bereitgestellt."
+      } ],
+      "storageTechnique" : "DECENTRAL_STORAGE",
+      "storageRetention" : "WITH_RETENTION",
+      "analysisTechniques" : [ "NONE" ],
+      "customAnalysisTechniques" : [ ],
+      "forwardingTechniques" : [ "API" ],
+      "forwardingFrequency" : "CONTINUOUS",
+      "forwardingSecurityMeasures" : [ "END_TO_END_ENCRYPTION", "TRANSPORT_ENCRYPTION", "PSEUDONYMISATION" ],
+      "customForwardingSecurityTechniques" : [ {
+        "title" : "Zugriffs- und Berechtigungsmanagement",
+        "description" : "Versicherte steuern individuell, welche Leistungserbringer Zugriff auf welche Informationen erhalten."
+      } ],
+      "targetSystem" : "Systeme der Leistungserbringer"
+    },
+    "business" : {
+      "businessDomains" : [ "HEALTHCARE" ],
+      "businessModel" : "AMBIGUOUS",
+      "fundingSources" : [ "AMBIGUOUS" ],
+      "paymentMethodDataOwner" : "FREE",
+      "paymentMethodDataConsumer" : "FREE"
+    },
+    "objectives" : {
+      "dataTrusteeGoals" : [ "SCIENCE_RESEARCH", "COMPLIANCE_REQUIREMENTS", "DIGITAL_SOVEREIGNTY", "DATA_SOVEREIGNTY" ],
+      "motivationRightsHolder" : [ "QUALITY_IMPROVEMENT", "SOCIAL_VALUE" ],
+      "motivationDataHolder" : [ "COMPLIANCE_REQUIREMENTS", "INTEROPERABILITY" ],
+      "motivationDataConsumer" : [ "INTEROPERABILITY", "SCIENCE_AND_RESEARCH" ]
+    }
+  },
+  "dataTrusteeModel" : {
+    "core" : {
+      "ontologyURI" : "http://forgetrustee.kickstarttrustee.de/ontology/ePA#",
+      "dataTrusteeName" : {
+        "value" : "ePA",
+        "label" : "Datentreuhand",
+        "comment" : "Akteur, der Daten unter vereinbarter Governance/Policy verwaltet und vermittelt."
+      },
+      "dataTrusteeDescription" : {
+        "value" : "Die elektronische Patientenakte dient als digitale Infrastruktur zur sicheren und kontrollierten Verwaltung medizinischer Informationen und Zugriffsrechte."
+      },
+      "dataTrusteeOperator" : {
+        "value" : "Krankenkassen"
+      },
+      "dataTrusteeOperatorAffiliation" : {
+        "value" : "ORGANIZATION",
+        "label" : "Organisation",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."
+      },
+      "rightsHolderName" : {
+        "value" : "Versicherte",
+        "label" : "Betroffener",
+        "comment" : "Partei, auf die sich Daten beziehen und deren Rechte/Interessen betroffen sein können."
+      },
+      "rightsHolderAffiliation" : {
+        "value" : "INDIVIDUAL",
+        "label" : "Individuum",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine einzelne natürliche Person ist."
+      },
+      "rightsHolderIsRepresented" : {
+        "value" : "true",
+        "label" : "hat Daten bei",
+        "comment" : "Verknüpft eine betroffene Partei mit dem Dateninhaber, der deren Daten verwaltet."
+      },
+      "dataOwnerName" : {
+        "value" : "Leistungserbringer",
+        "label" : "Dateninhaber",
+        "comment" : "Datengeber mit Eigentum/Verantwortung für bestimmte Daten; verwaltet häufig Daten Betroffener."
+      },
+      "dataConsumerName" : {
+        "value" : "Leistungserbringer",
+        "label" : "Datennutzer",
+        "comment" : "Akteur, der Daten zu einem Zweck nutzt (Analyse, Dienst, Produkt)."
+      },
+      "dataConsumerAffiliation" : {
+        "value" : "ORGANIZATION",
+        "label" : "Organisation",
+        "comment" : "Zugehörigkeitstyp, der angibt, dass der Akteur eine Organisation ist, z. B. Unternehmen, Behörde oder Verein."
+      },
+      "dataCategoryName" : {
+        "value" : "Gesundheitsdaten"
+      },
+      "dataCategoryDescription" : {
+        "value" : "Medizinische Behandlungs-, Medikations- und Befunddaten aus der Gesundheitsversorgung."
+      },
+      "containPersonalInformation" : {
+        "value" : "true",
+        "label" : "Personenbezogene Daten",
+        "comment" : "Daten, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen."
+      },
+      "specialPersonalInformation" : {
+        "value" : "true",
+        "label" : "Besondere Kategorien personenbezogener Daten",
+        "comment" : "Besonders schützenswerte personenbezogene Daten (z. B. Gesundheit, Biometrie) mit erhöhtem Schutzbedarf."
+      },
+      "containTradeSecrets" : {
+        "value" : "false",
+        "label" : "Geschäftsgeheimnis",
+        "comment" : "Vertrauliche Informationen mit wirtschaftlichem Wert, die durch Geheimhaltung/Kontrollen geschützt sind."
+      }
+    },
+    "data" : {
+      "dataTrusteeCategory" : {
+        "value" : "ACCESS_DATA_TRUSTEE",
+        "label" : "Zugangstreuhand",
+        "comment" : "Treuhandmodell mit Fokus auf Zugangskontrolle: Nur berechtigte Parteien erhalten Nutzung; Datengeber steuern den Zugang."
+      },
+      "architectureType" : {
+        "value" : "P2P",
+        "label" : "Peer-to-Peer Architektur",
+        "comment" : "Architektur in Datentreuhandmodellen, bei der die Datentreuhand den Datenaustausch organisiert und vermittelt, während die eigentliche Übertragung der Daten direkt und dezentral zwischen den beteiligten Akteuren (peer-to-peer) erfolgt."
+      },
+      "receptionTechnologies" : [ {
+        "value" : "API",
+        "label" : "API",
+        "comment" : "Empfang von Daten über eine Programmierschnittstelle."
+      } ],
+      "receptionFrequency" : {
+        "value" : "CONTINUOUS",
+        "label" : "Kontinuierlich",
+        "comment" : "Datenverarbeitung in kontinuierlichem oder ereignisgetriebenem Fluss."
+      },
+      "receptionSecurityMeasures" : [ {
+        "value" : "END_TO_END_ENCRYPTION",
+        "label" : "Ende-zu-Ende-Verschlüsselung",
+        "comment" : "Ende-zu-Ende-Verschlüsselung während der Übertragung."
+      }, {
+        "value" : "TRANSPORT_ENCRYPTION",
+        "label" : "Transportverschlüsselung",
+        "comment" : "Verschlüsselung während der Übertragung von Daten."
+      }, {
+        "value" : "PSEUDONYMISATION",
+        "label" : "Pseudonymisieren",
+        "comment" : "Ersetzung identifizierender Merkmale durch Pseudonyme."
+      } ],
+      "customReceptionSecurityTechniques" : [ {
+        "title" : "Vertrauensdienste nach eIDAS",
+        "description" : "Elektronische Signaturen, Zertifikate und Vertrauensdienste sichern Authentizität und Integrität der Kommunikation."
+      } ],
+      "sourceSystem" : {
+        "value" : "Systeme der Leistungserbringer",
+        "label" : "Quellsystem",
+        "comment" : "System, das Daten bereitstellt oder liefert."
+      },
+      "preparationTechniques" : [ {
+        "value" : "TRANSFORMATION",
+        "label" : "Transformation",
+        "comment" : "Überführung von Daten in neue Formate oder Strukturen."
+      } ],
+      "customPreparationTechniques" : [ {
+        "title" : "Interoperable Standardisierung",
+        "description" : "Gesundheitsdaten werden standardisiert und interoperabel innerhalb der Telematikinfrastruktur bereitgestellt."
+      } ],
+      "storageTechnique" : {
+        "value" : "DECENTRAL_STORAGE",
+        "label" : "Dezentrales Speichern",
+        "comment" : "Dezentrale Speicherung über mehrere Systeme verteilt."
+      },
+      "storageRetention" : {
+        "value" : "WITH_RETENTION",
+        "label" : "Mit Retention",
+        "comment" : "Aufbewahrung von Daten nach definierten Regeln."
+      },
+      "analysisTechniques" : [ {
+        "value" : "NONE"
+      } ],
+      "customAnalysisTechniques" : [ ],
+      "forwardingTechniques" : [ {
+        "value" : "API",
+        "label" : "API",
+        "comment" : "Empfang von Daten über eine Programmierschnittstelle."
+      } ],
+      "forwardingFrequency" : {
+        "value" : "CONTINUOUS",
+        "label" : "Kontinuierlich",
+        "comment" : "Datenverarbeitung in kontinuierlichem oder ereignisgetriebenem Fluss."
+      },
+      "forwardingSecurityMeasures" : [ {
+        "value" : "END_TO_END_ENCRYPTION",
+        "label" : "Ende-zu-Ende-Verschlüsselung",
+        "comment" : "Ende-zu-Ende-Verschlüsselung während der Übertragung."
+      }, {
+        "value" : "TRANSPORT_ENCRYPTION",
+        "label" : "Transportverschlüsselung",
+        "comment" : "Verschlüsselung während der Übertragung von Daten."
+      }, {
+        "value" : "PSEUDONYMISATION",
+        "label" : "Pseudonymisieren",
+        "comment" : "Ersetzung identifizierender Merkmale durch Pseudonyme."
+      } ],
+      "customForwardingSecurityTechniques" : [ {
+        "title" : "Zugriffs- und Berechtigungsmanagement",
+        "description" : "Versicherte steuern individuell, welche Leistungserbringer Zugriff auf welche Informationen erhalten."
+      } ],
+      "targetSystem" : {
+        "value" : "Systeme der Leistungserbringer",
+        "label" : "Zielsystem",
+        "comment" : "System, das Daten empfängt oder verarbeitet."
+      }
+    },
+    "legal" : {
+      "processingBases" : [ {
+        "value" : "CONSENT",
+        "label" : "Einwilligung",
+        "comment" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung auf der Einwilligung der betroffenen Person beruht.",
+        "details" : [ {
+          "title" : "Zugriffs- und Einwilligungsmanagement",
+          "description" : "Versicherte steuern selbst den Zugriff auf ihre Gesundheitsdaten und entscheiden über Freigaben."
+        } ]
+      }, {
+        "value" : "LEGAL_OBLIGATION",
+        "label" : "Gesetzliche Verpflichtung",
+        "comment" : "Repräsentiert eine Verarbeitungsgrundlage, bei der die Verarbeitung erforderlich ist, um einer dem Verantwortlichen oder Treuhänder auferlegten gesetzlichen Verpflichtung nachzukommen.",
+        "details" : [ {
+          "title" : "Verpflichtende Nutzung durch Leistungserbringer",
+          "description" : "Leistungserbringer sind verpflichtet, gesetzlich definierte Inhalte in die ePA einzustellen."
+        } ]
+      } ],
+      "consentType" : {
+        "value" : "INDIVIDUAL_CONSENT",
+        "label" : "Individueller Einwilligungsvorgang",
+        "comment" : "Repräsentiert einen Einwilligungsvorgang, der auf einen individuellen Fall zugeschnitten ist, etwa eine bestimmte betroffene Person, Transaktion oder Datennutzung."
+      },
+      "obtainingConsentBy" : "ePA-App und Krankenkassen",
+      "consentEnteredBy" : {
+        "value" : "RIGHTS_OWNER"
+      }
+    },
+    "objectives" : {
+      "dataTrusteeGoals" : [ {
+        "value" : "SCIENCE_RESEARCH",
+        "label" : "Wissenschaft und Forschung",
+        "comment" : "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen."
+      }, {
+        "value" : "COMPLIANCE_REQUIREMENTS",
+        "label" : "Erfüllung von Auflagen",
+        "comment" : "Ziel, rechtliche, regulatorische oder vertragliche Anforderungen an die Datennutzung zu erfüllen."
+      }, {
+        "value" : "DIGITAL_SOVEREIGNTY",
+        "label" : "Digitale Souveränität",
+        "comment" : "Ziel, die eigenständige und selbstbestimmte Nutzung digitaler Infrastrukturen, Plattformen und Dienste zu gewährleisten."
+      }, {
+        "value" : "DATA_SOVEREIGNTY",
+        "label" : "Datensouveränität",
+        "comment" : "Ziel, sicherzustellen, dass Datenhaltende die Kontrolle und Entscheidungsgewalt über ihre Daten behalten."
+      } ],
+      "motivationRightsHolder" : [ {
+        "value" : "QUALITY_IMPROVEMENT",
+        "label" : "Qualitätsverbesserung",
+        "comment" : "Motivation, durch die Bereitstellung von Daten die Qualität von Daten, Prozessen, Produkten oder Dienstleistungen zu verbessern."
+      }, {
+        "value" : "SOCIAL_VALUE",
+        "label" : "Gesellschaftlicher Mehrwert",
+        "comment" : "Motivation, durch Datenbereitstellung, Datennutzung oder Teilnahme an einer Datentreuhand gesellschaftlichen Mehrwert zu schaffen."
+      } ],
+      "motivationDataHolder" : [ {
+        "value" : "COMPLIANCE_REQUIREMENTS",
+        "label" : "Erfüllung von Auflagen",
+        "comment" : "Ziel, rechtliche, regulatorische oder vertragliche Anforderungen an die Datennutzung zu erfüllen."
+      }, {
+        "value" : "INTEROPERABILITY",
+        "label" : "Interoperabilität",
+        "comment" : "Motivation, technische, semantische oder organisatorische Interoperabilität durch gemeinsame Standards, Schnittstellen oder Governance-Regeln zu verbessern."
+      } ],
+      "motivationDataConsumer" : [ {
+        "value" : "INTEROPERABILITY",
+        "label" : "Interoperabilität",
+        "comment" : "Motivation, technische, semantische oder organisatorische Interoperabilität durch gemeinsame Standards, Schnittstellen oder Governance-Regeln zu verbessern."
+      }, {
+        "value" : "SCIENCE_AND_RESEARCH",
+        "label" : "Wissenschaft und Forschung",
+        "comment" : "Ziel, wissenschaftliche Forschung und Entwicklung auf Basis von Daten zu unterstützen."
+      } ]
+    },
+    "business" : {
+      "businessDomains" : [ {
+        "value" : "HEALTHCARE",
+        "label" : "Gesundheitswesen",
+        "comment" : "Domäne für das Gesundheitswesen, einschließlich medizinischer Versorgung, Public Health und Gesundheitsdaten."
+      } ],
+      "businessModel" : {
+        "value" : "AMBIGUOUS",
+        "comment" : "[Missing ontology comment: Ambiguous]"
+      },
+      "fundingSources" : [ {
+        "value" : "AMBIGUOUS"
+      } ],
+      "paymentMethodDataOwner" : {
+        "value" : "FREE",
+        "label" : "Kostenlos",
+        "comment" : "Bezahlmodell, bei dem Zugang oder Dienstleistungen kostenlos bereitgestellt werden."
+      },
+      "paymentMethodDataConsumer" : {
+        "value" : "FREE",
+        "label" : "Kostenlos",
+        "comment" : "Bezahlmodell, bei dem Zugang oder Dienstleistungen kostenlos bereitgestellt werden."
+      }
+    },
+    "presentation" : {
+      "sections" : [ {
+        "key" : "core",
+        "label" : "Akteure und Stammdaten",
+        "fields" : {
+          "ontologyURI" : "Basis-URI",
+          "dataTrusteeName" : "Datentreuhandmodell",
+          "dataTrusteeDescription" : "Beschreibung",
+          "dataTrusteeOperator" : "Betreiber",
+          "dataTrusteeOperatorAffiliation" : "Art des Betreibers",
+          "rightsHolderName" : "Rechtehalter",
+          "rightsHolderAffiliation" : "Art der Rechtehalter",
+          "rightsHolderIsRepresented" : "Rechtehalter vertreten",
+          "dataOwnerName" : "Datenhalter",
+          "dataConsumerName" : "Datennutzer",
+          "dataConsumerAffiliation" : "Art der Datennutzer",
+          "dataCategoryName" : "Datenkategorie",
+          "dataCategoryDescription" : "Datenkategorie Beschreibung",
+          "containPersonalInformation" : "Personenbezogene Daten",
+          "specialPersonalInformation" : "Besondere Kategorien personenbezogener Daten",
+          "containTradeSecrets" : "Schützenswerte Unternehmensdaten"
+        }
+      }, {
+        "key" : "legal",
+        "label" : "Rechtliche Grundlagen",
+        "fields" : {
+          "processingBases" : "Verarbeitungsgrundlagen",
+          "consentType" : "Einwilligungsart",
+          "obtainingConsentBy" : "Einholung durch",
+          "consentEnteredBy" : "Einwilligung erfasst durch"
+        }
+      }, {
+        "key" : "data",
+        "label" : "Implementierung und Datenfluss",
+        "fields" : {
+          "dataTrusteeCategory" : "Datentreuhand-Kategorie",
+          "architectureType" : "Architekturtyp",
+          "receptionTechnologies" : "Empfangstechniken",
+          "receptionFrequency" : "Empfangsfrequenz",
+          "receptionSecurityMeasures" : "Sicherheitsmaßnahmen Empfang",
+          "customReceptionSecurityTechniques" : "Eigene Sicherheitsmaßnahmen Empfang",
+          "sourceSystem" : "Quellsystem",
+          "preparationTechniques" : "Aufbereitungstechniken",
+          "customPreparationTechniques" : "Eigene Aufbereitungstechniken",
+          "storageTechnique" : "Speichertechnik",
+          "storageRetention" : "Speicherdauer",
+          "analysisTechniques" : "Auswertungstechniken",
+          "customAnalysisTechniques" : "Eigene Auswertungstechniken",
+          "forwardingTechniques" : "Weitergabetechniken",
+          "forwardingFrequency" : "Weitergabefrequenz",
+          "forwardingSecurityMeasures" : "Sicherheitsmaßnahmen Weitergabe",
+          "customForwardingSecurityTechniques" : "Eigene Sicherheitsmaßnahmen Weitergabe",
+          "targetSystem" : "Zielsystem"
+        }
+      }, {
+        "key" : "objectives",
+        "label" : "Ziele und Motivation",
+        "fields" : {
+          "dataTrusteeGoals" : "Ziele der Datentreuhand",
+          "motivationRightsHolder" : "Motivation Rechtehalter",
+          "motivationDataHolder" : "Motivation Datenhalter",
+          "motivationDataConsumer" : "Motivation Datennutzer"
+        }
+      }, {
+        "key" : "business",
+        "label" : "Geschaeftsmodell",
+        "fields" : {
+          "businessDomains" : "Domänen",
+          "businessModel" : "Geschäftsform",
+          "fundingSources" : "Förderquellen",
+          "paymentMethodDataOwner" : "Bezahlmodell Datenhalter",
+          "paymentMethodDataConsumer" : "Bezahlmodell Datennutzer"
+        }
+      } ]
+    }
+  },
+  "ttl" : "PREFIX :             <http://forgetrustee.kickstarttrustee.de/ontology/ePA#>\nPREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>\nPREFIX dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>\nPREFIX dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>\nPREFIX dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>\nPREFIX owl:          <http://www.w3.org/2002/07/owl#>\nPREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>\n\n:ePA    rdf:type                       dtm-core:DataTrustee , owl:NamedIndividual;\n        rdfs:label                     \"ePA\"@de;\n        dtm-business:hasBusinessForm   <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#Ambiguous>;\n        dtm-business:hasDataTrusteeGoal\n                dtm-business:ScienceAndResearch , dtm-business:DigitalSovereignty , dtm-business:Compliance , dtm-business:DataSovereignty;\n        dtm-business:hasDataTrusteeOperator\n                :Krankenkassen;\n        dtm-business:hasDomain         dtm-business:HealthcareSector;\n        dtm-business:hasFundingSource  <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#Ambiguous>;\n        dtm-core:dataTrusteeDescription\n                \"Die elektronische Patientenakte dient als digitale Infrastruktur zur sicheren und kontrollierten Verwaltung medizinischer Informationen und Zugriffsrechte.\"@de;\n        dtm-core:hasAffectedParty      :Versicherte;\n        dtm-core:hasDataConsumer       :Leistungserbringer;\n        dtm-core:hasDataOwner          :Leistungserbringer;\n        dtm-core:hasDataTrusteeModel   :DTM_ePA;\n        dtm-data:triggersStorage       :StorageePA;\n        dtm-legal:operatesOnProcessingBasis\n                dtm-legal:Consent .\n\n:CustomReceptionSecurityVertrauensdienstenacheIDAS\n        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;\n        rdfs:comment                 \"Elektronische Signaturen, Zertifikate und Vertrauensdienste sichern Authentizität und Integrität der Kommunikation.\"@de;\n        rdfs:label                   \"CustomReceptionSecurityVertrauensdienste nach eIDAS\"@de;\n        dtm-data:securesAsTechnique  :ReceptionePA .\n\n:TargetSystemSystemederLeistungserbringer\n        rdf:type                  owl:NamedIndividual , dtm-data:TargetSystem;\n        rdfs:label                \"TargetSystemSysteme der Leistungserbringer\"@de;\n        dtm-data:isUsedAsSystemm  :ForwardingePA .\n\n:       rdf:type  owl:Ontology .\n\n:Versicherte  rdf:type                  owl:NamedIndividual , dtm-core:Actor , dtm-core:AffectedParty;\n        rdfs:label                      \"Versicherte\"@de;\n        dtm-business:affiliationType    dtm-business:Individual;\n        dtm-business:hasRightsHolderMotivation\n                dtm-business:SocietalValue , dtm-business:QualityImprovement;\n        dtm-core:hasRightsOf            :Gesundheitsdaten;\n        dtm-core:isAffectedPartyIn      :ePA;\n        dtm-legal:givesConsentDirectly  :ePA_IndividualConsentWorkflow .\n\n:Leistungserbringer  rdf:type         dtm-core:DataConsumer , dtm-core:Actor , dtm-core:DataOwner , owl:NamedIndividual;\n        rdfs:label                    \"Leistungserbringer\"@de;\n        dtm-business:affiliationType  dtm-business:Organisation;\n        dtm-business:hasDataConsumerMotivation\n                dtm-business:ScienceAndResearch , dtm-business:Interoperability;\n        dtm-business:hasDataHolderMotivation\n                dtm-business:Compliance , dtm-business:Interoperability;\n        dtm-business:usesPayModelAsDataConsumer\n                dtm-business:Free;\n        dtm-business:usesPayModelAsDataOwner\n                dtm-business:Free;\n        dtm-core:administers          :Gesundheitsdaten;\n        dtm-core:isDataConsumerOf     :ePA;\n        dtm-core:isDataOwnerOf        :ePA;\n        dtm-core:isGrantedAccess      :Gesundheitsdaten;\n        dtm-legal:initiatesIndividualConsentWorkflow\n                :ePA_IndividualConsentWorkflow;\n        dtm-legal:isBeneficiaryOf     dtm-legal:LegalObligation , dtm-legal:Consent .\n\n:DTM_ePA  rdf:type                     owl:NamedIndividual , dtm-core:AccessDataTrustee;\n        rdfs:label                     \"DTM_ePA\"@de;\n        dtm-core:isDataTrusteeModelOf  :ePA;\n        dtm-data:implementedOn         dtm-data:PeerToPeerArchitecture .\n\n:ForwardingePA  rdf:type             dtm-data:DataForwarding , owl:NamedIndividual;\n        rdfs:label                   \"ForwardingePA\"@de;\n        dtm-data:hasForwardingFrequency\n                dtm-data:Continuous;\n        dtm-data:hasForwardingTechnique\n                dtm-data:ReceptionAPI;\n        dtm-data:securedByTechnique  dtm-data:Pseudonymisation , dtm-data:E2EEncryption , dtm-data:TransportEncryption , :CustomForwardingSecurityZugriffs-undBerechtigungsmanagement;\n        dtm-data:usesSystem          :TargetSystemSystemederLeistungserbringer .\n\n:AnalysisePA  rdf:type  owl:NamedIndividual , dtm-data:DataAnalysis;\n        rdfs:label  \"AnalysisePA\"@de .\n\n:StorageePA  rdf:type                 owl:NamedIndividual , dtm-data:DataStorage;\n        rdfs:label                    \"StorageePA\"@de;\n        dtm-data:hasRetentionPeriod   dtm-data:WithRetention;\n        dtm-data:hasStorageTechnique  dtm-data:DecentralStorage;\n        dtm-data:performsStorage      :ePA .\n\n:Krankenkassen  rdf:type              owl:NamedIndividual , dtm-business:Organisation;\n        rdfs:label                    \"Krankenkassen\"@de;\n        dtm-business:affiliationType  dtm-business:Organisation;\n        dtm-business:isOperatorOfDataTrustee\n                :ePA .\n\n:PreparationePA  rdf:type  owl:NamedIndividual , dtm-data:DataPreparation;\n        rdfs:label  \"PreparationePA\"@de;\n        dtm-data:hasPreparationTechnique\n                dtm-data:Transformation , :CustomPreparationInteroperableStandardisierung .\n\n:Gesundheitsdaten  rdf:type         owl:NamedIndividual , dtm-core:Data;\n        rdfs:comment                \"Medizinische Behandlungs-, Medikations- und Befunddaten aus der Gesundheitsversorgung.\"@de;\n        rdfs:label                  \"Gesundheitsdaten\"@de;\n        dtm-core:administeredBy     :Leistungserbringer;\n        dtm-core:isAccessGrantedTo  :Leistungserbringer;\n        dtm-core:isRightlyOwnedBy   :Versicherte .\n\n:SourceSystemSystemederLeistungserbringer\n        rdf:type                 owl:NamedIndividual , dtm-data:SourceSystem;\n        rdfs:label               \"SourceSystemSysteme der Leistungserbringer\"@de;\n        dtm-data:isUsedAsSystem  :ReceptionePA .\n\n:CustomForwardingSecurityZugriffs-undBerechtigungsmanagement\n        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;\n        rdfs:comment                 \"Versicherte steuern individuell, welche Leistungserbringer Zugriff auf welche Informationen erhalten.\"@de;\n        rdfs:label                   \"CustomForwardingSecurityZugriffs- und Berechtigungsmanagement\"@de;\n        dtm-data:securesAsTechnique  :ForwardingePA .\n\n:CustomPreparationInteroperableStandardisierung\n        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;\n        rdfs:comment  \"Gesundheitsdaten werden standardisiert und interoperabel innerhalb der Telematikinfrastruktur bereitgestellt.\"@de;\n        rdfs:label    \"CustomPreparationInteroperable Standardisierung\"@de;\n        dtm-data:isPreparationTechniqueOf\n                :PreparationePA .\n\n:ePA_IndividualConsentWorkflow\n        rdf:type                       owl:NamedIndividual , dtm-legal:IndividualConsentWorkflow;\n        dtm-legal:getsConsentDirectly  :Versicherte;\n        dtm-legal:implementsConsentWorkflowFor\n                dtm-legal:Consent;\n        dtm-legal:individualConsentWorkflowInitiatedBy\n                :Leistungserbringer;\n        dtm-legal:processingBasisDescription\n                \"Versicherte steuern selbst den Zugriff auf ihre Gesundheitsdaten und entscheiden über Freigaben.\"@de .\n\n:ReceptionePA  rdf:type                 dtm-data:DataReception , owl:NamedIndividual;\n        rdfs:label                      \"ReceptionePA\"@de;\n        dtm-data:hasReceptionFrequency  dtm-data:Continuous;\n        dtm-data:hasReceptionTechnique  dtm-data:ReceptionAPI;\n        dtm-data:securedByTechnique     dtm-data:TransportEncryption , :CustomReceptionSecurityVertrauensdienstenacheIDAS , dtm-data:E2EEncryption , dtm-data:Pseudonymisation;\n        dtm-data:usesSystem             :SourceSystemSystemederLeistungserbringer .\n",
+  "shaclReport" : {
+    "conforms" : true,
+    "results" : [ ],
+    "resultsCount" : 0
+  },
+  "executiveSummary" : "<h2>Executive Summary – Datentreuhandmodell „ePA“</h2>\n<h3>Akteure und Datenbasis</h3>\n<p>Das Datentreuhandmodell „ePA“ wird von Krankenkassen betrieben. Der Betreiber ist als Juristische Person eingeordnet. Die elektronische Patientenakte dient als digitale Infrastruktur zur sicheren und kontrollierten Verwaltung medizinischer Informationen und Zugriffsrechte. </p>\n<p>Versicherte treten im Modell als Rechteinhaber auf. Die Rechteinhaber werden innerhalb des Modells durch Dritte vertreten. Leistungserbringer fungiert innerhalb des Modells als Datenhalter. Leistungserbringer ist als Datennutzer eingebunden. Der Datennutzer ist als Juristische Person eingeordnet. </p>\n<p>Die Datenkategorie „Gesundheitsdaten“ umfasst Medizinische Behandlungs-, Medikations- und Befunddaten aus der Gesundheitsversorgung. Die Verarbeitung umfasst personenbezogene Daten einschließlich besonderer Kategorien personenbezogener Daten. </p><br/>\n<h3>Rechtliche Grundlage der Datenverarbeitung</h3>\n<p>Die Verarbeitung der Daten stützt sich auf Einwilligung und Gesetzliche Verpflichtung. Die hinterlegten Konkretisierungen beschreiben Einwilligung: „Zugriffs- und Einwilligungsmanagement“ (Versicherte steuern selbst den Zugriff auf ihre Gesundheitsdaten und entscheiden über Freigaben.); Gesetzliche Verpflichtung: „Verpflichtende Nutzung durch Leistungserbringer“ (Leistungserbringer sind verpflichtet, gesetzlich definierte Inhalte in die ePA einzustellen.). Die Einwilligung ist als Individuelle Einwilligung organisiert. Die Einholung der Einwilligung erfolgt über ePA-App und Krankenkassen, während die Erfassung durch Versicherte vorgenommen wird. </p>\n<br/>\n<h3>Technische Ausgestaltung und Datenlebenszyklus</h3>\n<p>Technisch ist das Modell als Zugangstreuhand mit der Architektur Peer-to-Peer umgesetzt. Der Datenempfang erfolgt aus Systeme der Leistungserbringer kontinuierlich über API. Zur Absicherung des Empfangs werden Ende-zu-Ende-Verschlüsselung, Transportverschlüsselung und Pseudonymisieren eingesetzt. Ergänzend ist für den Datenempfang „Vertrauensdienste nach eIDAS“ (Elektronische Signaturen, Zertifikate und Vertrauensdienste sichern Authentizität und Integrität der Kommunikation.) hinterlegt. Für die Datenaufbereitung werden Transformation eingesetzt. Zusätzlich ist für die Aufbereitung „Interoperable Standardisierung“ (Gesundheitsdaten werden standardisiert und interoperabel innerhalb der Telematikinfrastruktur bereitgestellt.) beschrieben. Die Speicherung erfolgt über Dezentrales Speichern mit der Aufbewahrungsstrategie Mit Retention. Die Datenweitergabe erfolgt an Systeme der Leistungserbringer kontinuierlich über API. Zur Absicherung der Weitergabe werden Ende-zu-Ende-Verschlüsselung, Transportverschlüsselung und Pseudonymisieren eingesetzt. Ergänzend ist für die Weitergabe „Zugriffs- und Berechtigungsmanagement“ (Versicherte steuern individuell, welche Leistungserbringer Zugriff auf welche Informationen erhalten.) hinterlegt. </p>\n<br/>\n<h3><b>Geschäftsmodell und Finanzierung</b></h3>\n<p>Das Modell ist in den Anwendungsdomänen Gesundheitswesen verortet. Für Datengeber ist Kostenlos vorgesehen, während für Datennutzer Kostenlos gilt. </p>\n<br/>\n<h3>Ziele und Mehrwert</h3>\n<p>Das Datentreuhandmodell verfolgt die Ziele <i>Wissenschaft und Forschung, Erfüllung von Auflagen, Digitale Souveränität und Datensouveränität</i>. Aus Sicht der Rechteinhaber stehen <i>Qualitätsverbesserung und Gesellschaftlicher Mehrwert im Vordergrund</i>. Für die Datengeber sind <i>Erfüllen von Auflagen und Interoperabilität relevant</i>. Die Datennutzer verfolgen Ziele wie <i>Interoperabilität und Wissenschaft und Forschung</i>. Insgesamt unterstützt das Modell „ePA“ eine strukturierte und vertrauenswürdige Nutzung von Daten. </p>\n<br/>\n"
+}

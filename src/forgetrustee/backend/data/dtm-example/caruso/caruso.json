@@ -1,0 +1,155 @@
+{
+  "core": {
+    "dataTrusteeName": "Caruso Dataplace",
+    "dataTrusteeDescription": "Offener und neutraler Daten- und Service-Marktplatz für den sicheren Austausch von Fahrzeug- und Telematikdaten im Automotive Aftermarket.",
+    "dataTrusteeOperator": "Caruso GmbH",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Fahrzeughalter",
+    "rightsHolderAffiliation": "INDIVIDUAL",
+    "rightsHolderIsRepresented": "false",
+    "dataOwnerName": "Automobilhersteller",
+    "dataConsumerName": "Dienstanbieter",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Fahrzeug- und Telematikdaten",
+      "dataCategoryDescription": "Fahrzeugbezogene Betriebs-, Zustands- und Nutzungsdaten aus dem Automotive Aftermarket."
+    },
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "true",
+    "processingBases": {
+      "CONSENT": [
+        {
+          "title": "Einwilligungsmanagement",
+          "description": "Die Nutzung und Weitergabe fahrzeugbezogener Daten erfolgt kontrolliert und auf Basis der Zustimmung des Fahrzeughalters."
+        }
+      ],
+      "LEGITIMATE_INTEREST": [
+        {
+          "title": "Betrieb des Datenmarktplatzes",
+          "description": "Die Verarbeitung dient der sicheren Vermittlung und Nutzung von Fahrzeugdaten innerhalb des digitalen Ökosystems."
+        }
+      ]
+    },
+    "consentType": "INDIVIDUAL_CONSENT",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "RIGHTS_OWNER"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+    "architectureType": "P2P",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "CONTINUOUS",
+    "receptionSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION",
+      "PSEUDONYMISATION"
+    ],
+    "customReceptionSecurityTechniques": [
+      {
+        "title": "Verteiltes Einwilligungsmanagement",
+        "description": "Das Management der Zustimmung zur Datenverarbeitung erfolgt verteilt innerhalb der Datenaustauschplattform."
+      },
+      {
+        "title": "Datenschutzkonforme Zugriffskontrolle",
+        "description": "Der Zugriff auf Fahrzeugdaten erfolgt kontrolliert unter Berücksichtigung der DSGVO-Anforderungen."
+      }
+    ],
+    "sourceSystem": "Fahrzeugsysteme und Herstellersysteme",
+    "preparationTechniques": [
+      "TRANSFORMATION",
+      "AGGREGATION"
+    ],
+    "customPreparationTechniques": [
+      {
+        "title": "Datenkatalog und Standardisierung",
+        "description": "Fahrzeugdaten werden strukturiert, vereinheitlicht und für die Nutzung im Datenmarktplatz aufbereitet."
+      },
+      {
+        "title": "Konvertierung heterogener Fahrzeugdaten",
+        "description": "Unterschiedliche Datenformate und Einheiten verschiedener Hersteller werden in ein gemeinsames Format überführt."
+      }
+    ],
+    "storageTechnique": "DECENTRAL_STORAGE",
+    "storageRetention": "TRANSMISSION_ONLY",
+    "analysisTechniques": [
+      "STATISTICAL_ANALYSIS",
+      "PET"
+    ],
+    "customAnalysisTechniques": [
+      {
+        "title": "Vertrauenswürdige Analyseplattform",
+        "description": "Die Plattform ermöglicht geschützte Analysen von Fahrzeugdaten mit mehreren beteiligten Unternehmen."
+      },
+      {
+        "title": "Qualitätsanalyse von Fahrzeugdaten",
+        "description": "Datenqualität und Anforderungen von Datenkonsumenten werden analysiert und bewertet."
+      }
+    ],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "CONTINUOUS",
+    "forwardingSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION",
+      "PSEUDONYMISATION"
+    ],
+    "customForwardingSecurityTechniques": [
+      {
+        "title": "Sicherer Datenaustausch im Ökosystem",
+        "description": "Die Plattform ermöglicht einen kontrollierten und sicheren Austausch von Fahrzeug- und Telematikdaten zwischen Partnern."
+      }
+    ],
+    "targetSystem": "Systeme der Dienstanbieter und Plattformpartner"
+  },
+  "business": {
+    "businessDomains": [
+      "MOBILITY"
+    ],
+    "businessModel": "LIMITED_LIABILITY_COMPANY",
+    "fundingSources": [
+      "OTHER"
+    ],
+    "financingTypes": {
+      "USAGE_FEES": [
+        {
+          "title": "Marktplatz- und Plattformnutzung",
+          "description": "Dienstanbieter und Partner zahlen abhängig vom gewählten Nutzungs- und Serviceumfang."
+        }
+      ],
+      "BUSINESS_RELATED_FUNDING": [
+        {
+          "title": "Digitale Plattformökonomie",
+          "description": "Die Plattform unterstützt neue datenbasierte Geschäftsmodelle und Mobilitätsservices."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "NONE",
+    "paymentMethodDataConsumer": "ACCESS_FEE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "ECONOMIC_UTILIZATION",
+      "FAIR_MARKET_COMPETITION",
+      "DIGITAL_SOVEREIGNTY",
+      "INNOVATION"
+    ],
+    "motivationRightsHolder": [
+      "QUALITY_IMPROVEMENT",
+      "SOCIAL_VALUE"
+    ],
+    "motivationDataHolder": [
+      "VALUE_CREATION",
+      "INTEROPERABILITY",
+      "INNOVATION"
+    ],
+    "motivationDataConsumer": [
+      "VALUE_CREATION",
+      "INNOVATION",
+      "OPTIMIZATION"
+    ]
+  }
+}

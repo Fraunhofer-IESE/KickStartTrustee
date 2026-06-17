@@ -1,0 +1,8 @@
+server:
+  port: 8080
+  forward-headers-strategy: framework
+  servlet:
+    context-path: /
+  tomcat:
+    max-connections: 4096
+    redirect-context-root: false

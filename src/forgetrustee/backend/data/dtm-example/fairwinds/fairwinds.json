@@ -1,0 +1,133 @@
+{
+  "core": {
+    "dataTrusteeName": "FAIRWinDS",
+    "dataTrusteeDescription": "FAIRWinDS ist ein Datentreuhandmodell für den souveränen und standardisierten Austausch von Betriebsdaten aus Windenergieanlagen. Ziel ist es, den kontrollierten Datenaustausch zwischen Windparkbetreibern und Forschenden zu ermöglichen und dadurch Innovation, Forschung und wirtschaftliche Potenziale im Bereich Windenergie zu fördern.",
+    "dataTrusteeOperator": "Fraunhofer IWES",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Windparkbetreiber",
+    "rightsHolderAffiliation": "ORGANIZATION",
+    "rightsHolderIsRepresented": "false",
+    "dataOwnerName": "Windparkbetreiber",
+    "dataConsumerName": "Forschungseinrichtungen",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Betriebsdaten von Windenergieanlagen",
+      "dataCategoryDescription": "Betriebs-, Zustands- und Felddaten aus Windenergieanlagen und Windparks zur Analyse, Standardisierung und wissenschaftlichen Auswertung."
+    },
+    "containPersonalInformation": "false",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "true",
+    "processingBases": {
+      "LEGITIMATE_INTEREST": [
+        {
+          "title": "Souveräner Datenaustausch",
+          "description": "Die Verarbeitung dient dem kontrollierten und standardisierten Austausch von Betriebsdaten zwischen Unternehmen und Forschungseinrichtungen."
+        }
+      ]
+    },
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+    "architectureType": "P2P",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "PERIODIC",
+    "receptionSecurityMeasures": [
+      "PSEUDONYMISATION",
+      "ANONYMISATION",
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customReceptionSecurityTechniques": [
+      {
+        "title": "IDS-basierte Dateninfrastruktur",
+        "description": "Die Bereitstellung und Übertragung der Daten erfolgt innerhalb einer dezentralen Dateninfrastruktur auf Basis der International Data Spaces."
+      }
+    ],
+    "sourceSystem": "Windenergieanlagen, Windparks und Systeme der Windparkbetreiber",
+    "preparationTechniques": [
+      "TRANSFORMATION",
+      "AGGREGATION",
+      "CUSTOM"
+    ],
+    "customPreparationTechniques": [
+      {
+        "title": "Standardisierung von Betriebsdaten",
+        "description": "Die Daten werden in ein einheitliches Format überführt und unter Nutzung von Branchenstandards beschrieben."
+      },
+      {
+        "title": "Qualitätsprüfung und Datenanreicherung",
+        "description": "Die Daten werden geprüft, bewertet und durch zusätzliche Verarbeitungsschritte ergänzt."
+      }
+    ],
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+    "analysisTechniques": [
+      "STATISTICAL_ANALYSIS",
+      "CUSTOM"
+    ],
+    "customAnalysisTechniques": [
+      {
+        "title": "Unternehmensübergreifende Datenauswertung",
+        "description": "Die Betriebsdaten werden aggregiert ausgewertet, um Potenziale zur Senkung von Stromgestehungskosten zu identifizieren."
+      }
+    ],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "PERIODIC",
+    "forwardingSecurityMeasures": [
+      "PSEUDONYMISATION",
+      "ANONYMISATION",
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "Forschungs- und Analysesysteme der beteiligten Forschungseinrichtungen"
+  },
+  "business": {
+    "businessDomains": [
+      "ENERGY"
+    ],
+    "businessModel": "COOPERATIVE",
+    "fundingSources": [
+      "BMBF",
+      "EU"
+    ],
+    "financingTypes": {
+      "PUBLIC_FUNDING": [
+        {
+          "title": "Projektförderung",
+          "description": "Das Projekt wird durch das BMBF und die Europäische Union im Rahmen von NextGenerationEU gefördert."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "FREE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "SCIENCE_RESEARCH",
+      "INNOVATION",
+      "ECONOMIC_UTILIZATION",
+      "COMPLIANCE_REQUIREMENTS"
+    ],
+    "motivationRightsHolder": [
+      "SOCIAL_VALUE"
+    ],
+    "motivationDataHolder": [
+      "INTEROPERABILITY",
+      "SCIENCE_AND_RESEARCH",
+      "COMPLIANCE_REQUIREMENTS"
+    ],
+    "motivationDataConsumer": [
+      "SCIENCE_AND_RESEARCH",
+      "INNOVATION",
+      "VALUE_CREATION"
+    ]
+  }
+}

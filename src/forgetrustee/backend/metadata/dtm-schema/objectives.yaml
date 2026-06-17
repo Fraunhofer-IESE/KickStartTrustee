@@ -1,0 +1,88 @@
+moduleId: objectives
+requestDtoClassName: DataTrusteeWizardObjectivesRequestDto
+order: 30
+hints:
+  -
+    name: objectivesGeneralHint
+fields: {}
+sections:
+  goalsAndMotivation:
+    fields:
+      dataTrusteeGoals:
+        name: dataTrusteeGoals
+        type: TAGS
+        options:
+          -
+            value: ECONOMIC_UTILIZATION
+          -
+            value: FAIR_MARKET_COMPETITION
+          -
+            value: INNOVATION
+          -
+            value: SCIENCE_RESEARCH
+          -
+            value: DATA_SOVEREIGNTY
+          -
+            value: DIGITAL_SOVEREIGNTY
+          -
+            value: COMPLIANCE_REQUIREMENTS
+        multiple: true
+        allowUnknown: true
+        allowNoAnswer: true
+      motivationRightsHolder:
+        name: motivationRightsHolder
+        type: TAGS
+        options:
+          -
+            value: COST_REDUCTION
+          -
+            value: QUALITY_IMPROVEMENT
+          -
+            value: CONTRACT_FULFILLMENT
+          -
+            value: SOCIAL_VALUE
+        multiple: true
+        allowUnknown: true
+        allowNoAnswer: true
+      motivationDataHolder:
+        name: motivationDataHolder
+        type: TAGS
+        options:
+          -
+            value: TRUST_INTERMEDIARY
+          -
+            value: VALUE_CREATION
+          -
+            value: INNOVATION
+          -
+            value: COMPLIANCE_REQUIREMENTS
+          -
+            value: INTEROPERABILITY
+          -
+            value: SCIENCE_AND_RESEARCH
+          -
+            value: SOCIAL_VALUE
+        multiple: true
+        allowUnknown: true
+        allowNoAnswer: true
+      motivationDataConsumer:
+        name: motivationDataConsumer
+        type: TAGS
+        options:
+          -
+            value: INNOVATION
+          -
+            value: COMPLIANCE_REQUIREMENTS
+          -
+            value: INTEROPERABILITY
+          -
+            value: VALUE_CREATION
+          -
+            value: OPTIMIZATION
+          -
+            value: SCIENCE_AND_RESEARCH
+          -
+            value: SOCIAL_VALUE
+        multiple: true
+        allowUnknown: true
+        allowNoAnswer: true

@@ -1,0 +1,153 @@
+{
+  "core": {
+    "dataTrusteeName": "TreuMoDa",
+    "dataTrusteeDescription": "TreuMoDa ist eine gemeinnützige Treuhandstelle für Mobilitätsdaten zur sicheren Nutzung durch Wissenschaft, Wirtschaft und öffentliche Akteure.",
+    "dataTrusteeOperator": "TreuMoDa",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+
+    "rightsHolderName": "Mobilitätsunternehmen",
+    "rightsHolderAffiliation": "ORGANIZATION",
+    "rightsHolderIsRepresented": "false",
+
+    "dataOwnerName": "Unternehmen und Forschung",
+    "dataConsumerName": "Forschung und öffentliche Stellen",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Mobilitätsdaten",
+      "dataCategoryDescription": "Mobilitätsdaten aus Fahrzeugen, Verkehrsinfrastrukturen und Sensorsystemen."
+    },
+
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "true",
+
+    "processingBases": {
+      "LEGITIMATE_INTEREST": [
+        {
+          "title": "Datenschutzkonforme Datennutzung",
+          "description": "Die Verarbeitung dient der rechtssicheren Nutzung von Mobilitätsdaten für Forschung und Innovation."
+        }
+      ]
+    },
+
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+
+  "implementation": {
+    "dataTrusteeCategory": "EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_ROUTER",
+
+    "receptionTechnologies": [
+      "API",
+      "DOWNLOAD"
+    ],
+
+    "receptionFrequency": "MANUAL",
+
+    "receptionSecurityMeasures": [
+      "PSEUDONYMISATION",
+      "ANONYMISATION",
+      "TRANSPORT_ENCRYPTION"
+    ],
+
+    "customReceptionSecurityTechniques": [
+      {
+        "title": "Vorprüfung eingehender Datensätze",
+        "description": "Eingehende Datensätze werden vor der Weitergabe geprüft."
+      }
+    ],
+
+    "sourceSystem": "Quellsysteme der Datengeber",
+
+    "preparationTechniques": [
+      "TRANSFORMATION",
+      "CUSTOM"
+    ],
+
+    "customPreparationTechniques": [
+      {
+        "title": "Datenschutzkonforme Datenaufbereitung",
+        "description": "Daten werden vor der Bereitstellung formatiert, pseudonymisiert oder anonymisiert."
+      }
+    ],
+
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "TRANSMISSION_ONLY",
+
+    "analysisTechniques": [
+      "NONE"
+    ],
+
+    "customAnalysisTechniques": [],
+
+    "forwardingTechniques": [
+      "API"
+    ],
+
+    "forwardingFrequency": "MANUAL",
+
+    "forwardingSecurityMeasures": [
+      "PSEUDONYMISATION",
+      "ANONYMISATION",
+      "TRANSPORT_ENCRYPTION"
+    ],
+
+    "customForwardingSecurityTechniques": [],
+
+    "targetSystem": "Zielsysteme der Datennutzer"
+  },
+
+  "business": {
+    "businessDomains": [
+      "MOBILITY"
+    ],
+
+    "businessModel": "NONPROFIT_LLC",
+
+    "fundingSources": [
+      "OTHER"
+    ],
+
+    "financingTypes": {
+      "PUBLIC_FUNDING": [
+        {
+          "title": "Projektförderung",
+          "description": "Die Konzeption und Erprobung der Treuhandstelle erfolgt im Rahmen öffentlicher Förderung."
+        }
+      ]
+    },
+
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "PAY_PER_USE"
+  },
+
+  "objectives": {
+    "dataTrusteeGoals": [
+      "SCIENCE_RESEARCH",
+      "INNOVATION",
+      "COMPLIANCE_REQUIREMENTS",
+      "ECONOMIC_UTILIZATION"
+    ],
+
+    "motivationRightsHolder": [
+      "SOCIAL_VALUE"
+    ],
+
+    "motivationDataHolder": [
+      "COMPLIANCE_REQUIREMENTS",
+      "INTEROPERABILITY",
+      "SCIENCE_AND_RESEARCH"
+    ],
+
+    "motivationDataConsumer": [
+      "SCIENCE_AND_RESEARCH",
+      "INNOVATION",
+      "VALUE_CREATION"
+    ]
+  }
+}

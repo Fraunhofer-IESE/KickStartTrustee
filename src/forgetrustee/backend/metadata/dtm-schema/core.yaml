@@ -1,0 +1,72 @@
+moduleId: core
+requestDtoClassName: DataTrusteeWizardCoreRequestDto
+order: 10
+fields: {}
+sections:
+  datatrustee:
+    fields:
+      ontologyURI:
+        name: ontologyURI
+        visible: false
+      dataTrusteeName:
+        name: dataTrusteeName
+        type: TEXT
+      dataTrusteeDescription:
+        name: dataTrusteeDescription
+        type: LONGTEXT
+      dataTrusteeOperator:
+        name: dataTrusteeOperator
+        type: TEXT
+      dataTrusteeOperatorAffiliation:
+        name: dataTrusteeOperatorAffiliation
+        type: TAGS
+        options:
+          - value: INDIVIDUAL
+          - value: ORGANIZATION
+        multiple: false
+        allowUnknown: true
+  dataProvider:
+    fields:
+      rightsHolderName:
+        name: rightsHolderName
+        type: TEXT
+      rightsHolderAffiliation:
+        name: rightsHolderAffiliation
+        type: TAGS
+        options:
+          - value: INDIVIDUAL
+          - value: ORGANIZATION
+        multiple: false
+        allowUnknown: true
+      rightsHolderIsRepresented:
+        name: rightsHolderIsRepresented
+        type: TAGS
+        options:
+          - value: "true"
+          - value: "false"
+        multiple: false
+        allowUnknown: true
+      dataOwnerName:
+        name: dataOwnerName
+        type: TEXT
+        visibleBy:
+          - name: rightsHolderIsRepresented
+            operator: EQUALS
+            value: "true"
+        requiredBy:
+          - name: rightsHolderIsRepresented
+            operator: EQUALS
+            value: "true"
+  dataConsumer:
+    fields:
+      dataConsumerName:
+        name: dataConsumerName
+        type: TEXT
+      dataConsumerAffiliation:
+        name: dataConsumerAffiliation
+        type: TAGS
+        options:
+          - value: INDIVIDUAL
+          - value: ORGANIZATION
+        multiple: false
+        allowUnknown: true

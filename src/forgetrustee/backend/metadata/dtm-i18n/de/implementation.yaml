@@ -1,0 +1,242 @@
+moduleId: implementation
+label: Datentreuhandmodell Data
+tooltip: Technische Implementierung
+heading: Implementierung
+menuPoint: Implementierung
+helpText: Beschreibt technische Aspekte und den Datenlebenszyklus.
+examples: []
+hints:
+  - name: implementationGeneralHint
+    text: Alle Angaben zu den Implementierungstechniken sind optional, sollten für ein vollständiges Modell aber ausgefüllt werden.
+sections:
+  dataTrusteeType:
+    heading: Art des Datentreuhand
+    helpText: >
+      Der Datengeber entscheidet fallbezogen, typischerweise per Einwilligung oder Freigabe, ob und in welchem Umfang eine Weitergabe erfolgt; der Datentreuhänder setzt diese Entscheidungen technisch und organisatorisch durch und vermittelt den Zugriff.
+      <ul>
+        <li>
+          <strong>Zugangstreuhand:</strong> Der Datengeber entscheidet fallbezogen, typischerweise per Einwilligung oder Freigabe, ob und in welchem Umfang eine Weitergabe erfolgt; der Datentreuhänder setzt diese Entscheidungen technisch und organisatorisch durch und vermittelt den Zugriff.
+        </li>
+        <li>
+          <strong>Verwaltungstreuhand:</strong> Der Datentreuhänder entscheidet regel- und policybasiert im Rahmen gesetzlicher und vertraglicher Vorgaben, ob und wie Daten verwaltet oder weitergegeben werden; individuelle Einwilligungen sind dabei nicht der primäre Steuerungsmechanismus.
+        </li>
+        <li>
+          <strong>Mehrwerttreuhand: </strong> Der Datentreuhänder erbringt zusätzlich wertschöpfende Leistungen (z. B. Aufbereitung, Analyse, Schutzmaßnahmen); die Governance folgt je nach Ausgestaltung entweder dem Zugangsprinzip (Entscheidung bei des Datengebers) oder dem Verwaltungsprinzip (regelbasierte Entscheidung durch den Datentreuhänder), in selbstbestimmter oder fremdbestimmter Variante.
+        </li>
+      </ul>
+      <br/><br/>Weitere Informationen erhalten Sie unter dem folgenden <a target=\"_blank\" href="https://fraunhofer-iese.github.io/KickStartTrustee/Grundlagen%20und%20Einf%C3%BChrung/Rechtliche%20Anforderungen%20und%20Einsch%C3%A4tzungen/Baukastenmodell/">Link</a>.
+    examples: []
+    fields:
+      dataTrusteeCategory:
+        label: Welche spezifische Oberklasse hat die Datentreuhand
+        examples: []
+        options:
+          - value: ACCESS_DATA_TRUSTEE
+            label: Zugangstreuhand
+          - value: ADMINISTRATIVE_DATA_TRUSTEE
+            label: Verwaltungstreuhand
+#          - value: VALUE_ADDED_DATA_TRUSTEE
+#            label: Mehrwerttreuhand
+          - value: SELF_MANAGED_VALUE_ADDED_DATA_TRUSTEE
+            label: Selbstbestimmte Mehrwertreuhand
+          - value: EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE
+            label: Fremdbestimmte Mehrwerttreuhand
+          - value: AMBIGUOUS
+            label: Unklar
+#      addedValueTrusteeType:
+#        label: Welche Art der Mehrwerttreuhand liegt vor?
+#        examples: []
+#        options:
+#          - value: SELF_MANAGED_VALUE_ADDED_DATA_TRUSTEE
+#            label: Selbstbestimmt
+#          - value: EXTERNALLY_CONTROLLED_VALUE_ADDED_DATA_TRUSTEE
+#            label: Fremdbestimmt
+#          - value: AMBIGUOUS
+#            label: Unklar
+  dataFlow:
+    heading: Datenfluss
+    helpText: Der Datenfluss beschreibt den Weg der Daten vom Eingang, über die Aufbereitung, bis zur (ggf.) Weitergabe in klar abgegrenzten Phasen.; Ziel ist Transparenz darüber, welche Daten warum verarbeitet werden, wer verantwortlich ist, in welcher Häufigkeit dies geschieht und unter welchen Schutz- und Governance-Regeln dies erfolgt.
+    examples: []
+    fields: {}
+    subsections:
+      technicalImplementationAndArchitecture:
+        heading: Technische Datenvermittlung - vom Datenhalter zum Datennutzer
+        fields:
+          architectureType:
+            label: Wie werden die Daten vermittelt?
+            options:
+              - value: CENTRAL_DATA_STORAGE
+                label: Zentraler Datenabruf
+              - value: CENTRAL_ROUTER
+                label: Zentrales Routing
+              - value: P2P
+                label: Peer-to-Peer
+              - value: AMBIGUOUS
+                label: Unklar
+      reception:
+        heading: Empfang der Daten - vom Datenhalter zur Datentreuhand
+        fields:
+          receptionTechnologies:
+            label: Wie erhält die Datentreuhand die Daten vom Datenhalter?
+            options:
+              - value: API
+                label: API
+              - value: DOWNLOAD
+                label: Download
+              - value: ANALOG
+                label: Analog
+              - value: AMBIGUOUS
+                label: Andere Technik
+          receptionFrequency:
+            label: Wie oft passiert das?
+            options:
+              - value: PERIODIC
+                label: Periodisch
+              - value: CONTINUOUS
+                label: Kontinuierlich
+              - value: MANUAL
+                label: On Demand
+              - value: AMBIGUOUS
+                label: Unklar
+          securityMeasures:
+            label: Welche Sicherheitsmaßnahmen werden beim Empfang genutzt?
+            options:
+              - value: TRANSPORT_ENCRYPTION
+                label: Transportverschlüsselung
+              - value: END_TO_END_ENCRYPTION
+                label: Ende-zu-Ende-Verschlüsselung
+              - value: ENCRYPTION_AT_REST
+                label: Verschlüsselung im Ruhezustand
+              - value: PSEUDONYMISATION
+                label: Pseudonymisierung
+              - value: ANONYMISATION
+                label: Anonymisierung
+              - value: AMBIGUOUS
+                label: Unklar
+              - value: CUSTOM
+                label: Eigene hinzufügen
+          customReceptionSecurityMeasures:
+            label: Weitere Sicherheitsmaßnamen
+            examples: []
+            fields:
+              customReceptionSecurityMeasureName:
+                label: Weitere Sicherheitsmaßnahme
+                placeholder: z.B. Datennutzungskontrolle
+              customReceptionSecurityMeasureDescription:
+                label: Beschreibung
+                placeholder: (optional)
+          sourceSystem:
+            heading: "Aus welchem Quellsystem kommen die Daten? "
+            label: Name des Quellsystems
+            placeholder: z.B. ePA
+            examples: []
+      processing:
+        heading: Verarbeitung - in der Datentreuhand
+        fields:
+          preparationTechniques:
+            label: Welche Techniken zur Datenaufbereitung werden genutzt?
+            options:
+              - value: DIGITIZATION
+                label: Digitalisierung
+              - value: CLEANING
+                label: Bereinigung
+              - value: AGGREGATION
+                label: Aggregation
+              - value: TRANSFORMATION
+                label: Transformation
+              - value: CUSTOM
+                label: Eigene hinzufügen
+              - value: AMBIGUOUS
+                label: Unklar
+          customPreparationTechniques:
+            label: Weitere Techniken zur Datenaufbereitung
+            fields:
+              customPreparationTechniqueName:
+                label: Eigene Technik
+                placeholder: z.B. Hashing
+              customPreparationTechniqueDescription:
+                label: Beschreibung der Technik
+                placeholder: (optional) Beschreibung
+          storageRetention:
+            heading: Wie lange werden die Daten innerhalb der Datentreuhand gespeichert?
+            options:
+              - value: PERMANENT
+                label: Dauerhaft
+              - value: WITH_RETENTION
+                label: Mit Retention
+              - value: TRANSMISSION_ONLY
+                label: Nur zur Vermittlung
+              - value: AMBIGUOUS
+                label: Unklar
+          analysisTechniques:
+            heading: Welche Techniken zur Datenauswertungen werden genutzt?
+            options:
+              - value: STATISTICAL_ANALYSIS
+                label: Statistische Analyse
+              - value: AI_ANALYSIS
+                label: KI-gestützte Analyse
+              - value: PET
+                label: Privacy Enhancing Technologies
+              - value: CUSTOM
+                label: Eigene hinzufügen
+              - value: NO_ANSWER
+                label: Keine
+              - value: AMBIGUOUS
+                label: Unklar
+          customAnalysisTechniques:
+            heading: Weitere Analysetechniken
+            fields:
+              customAnalysisTechniqueName:
+                label: Name der Technik
+                placeholder: z.B. Manuelle Auswertung
+              customAnalysisTechniqueDescription:
+                label: Beschreibung der Technik
+                placeholder: (optional) Beschreibung
+      transfer:
+        heading: Weitergabe - von der Datentreuhand zum Datennutzer
+        fields:
+          forwardingTechniques:
+            heading: Wie erhält der Datennutzer die Daten von der Datentreuhand?
+            options:
+              - value: API
+                label: Digitaler Datentransfer
+              - value: UPLOAD
+                label: Upload
+          forwardingFrequency:
+            heading: Wie oft passiert das?
+            options:
+              - value: PERIODIC
+                label: Periodisch
+              - value: CONTINUOUS
+                label: Kontinuierlich
+              - value: MANUAL
+                label: On Demand
+              - value: AMBIGUOUS
+                label: Unklar
+          forwardingSecurityMeasures:
+            heading: Welche Sicherheitsmaßnahmen werden bei der Weitergabe genutzt?
+            options:
+              - value: TRANSPORT_ENCRYPTION
+                label: Transportverschlüsselung
+              - value: END_TO_END_ENCRYPTION
+                label: Ende-zu-Ende-Verschlüsselung
+              - value: PSEUDONYMISATION
+                label: Pseudonymisierung
+              - value: ANONYMISATION
+                label: Anonymisierung
+              - value: AMBIGUOUS
+                label: Unklar
+              - value: CUSTOM
+                label: Eigene hinzufügen
+          customForwardingSecurityMeasures:
+            fields:
+              customForwardingSecurityMeasureName:
+                label: Eigene Sicherheitsmaßnahme
+                placeholder: z.B. Datennutzungskontrolle
+              customForwardingSecurityMeasureDescription:
+                label: Beschreibung
+                placeholder: (optional) Beschreibung
+          targetSystem:
+            heading: "Bei welchem Zielsystem kommen die Daten an?"
+            label: Name des Zielsystems
+            placeholder: z.B. eHealth Forschungsdaten-Plattform

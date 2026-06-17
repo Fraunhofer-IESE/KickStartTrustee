@@ -1,0 +1,111 @@
+viewId: compare
+sections:
+  core:
+    label: Akteure und Stammdaten
+    fields:
+      ontologyURI:
+        label: Basis-URI
+      dataTrusteeName:
+        label: Datentreuhandmodell
+      dataTrusteeDescription:
+        label: Beschreibung
+      dataTrusteeOperator:
+        label: Betreiber
+      dataTrusteeOperatorAffiliation:
+        label: Art des Betreibers
+      rightsHolderName:
+        label: Rechtehalter
+      rightsHolderAffiliation:
+        label: Art der Rechtehalter
+      rightsHolderIsRepresented:
+        label: Rechtehalter vertreten
+      dataOwnerName:
+        label: Datenhalter
+      dataConsumerName:
+        label: Datennutzer
+      dataConsumerAffiliation:
+        label: Art der Datennutzer
+      dataCategoryName:
+        label: Datenkategorie
+      dataCategoryDescription:
+        label: Datenkategorie Beschreibung
+      containPersonalInformation:
+        label: Personenbezogene Daten
+      specialPersonalInformation:
+        label: Besondere Kategorien personenbezogener Daten
+      containTradeSecrets:
+        label: Schützenswerte Unternehmensdaten
+  legal:
+    label: Rechtliche Grundlagen
+    fields:
+      processingBases:
+        label: Verarbeitungsgrundlagen
+      consentType:
+        label: Einwilligungsart
+      obtainingConsentBy:
+        label: Einholung durch
+      consentEnteredBy:
+        label: Einwilligung erfasst durch
+  data:
+    label: Implementierung und Datenfluss
+    fields:
+      dataTrusteeCategory:
+        label: Datentreuhand-Kategorie
+      architectureType:
+        label: Architekturtyp
+      receptionTechnologies:
+        label: Empfangstechniken
+      receptionFrequency:
+        label: Empfangsfrequenz
+      receptionSecurityMeasures:
+        label: Sicherheitsmaßnahmen Empfang
+      customReceptionSecurityTechniques:
+        label: Eigene Sicherheitsmaßnahmen Empfang
+      sourceSystem:
+        label: Quellsystem
+      preparationTechniques:
+        label: Aufbereitungstechniken
+      customPreparationTechniques:
+        label: Eigene Aufbereitungstechniken
+      storageTechnique:
+        label: Speichertechnik
+      storageRetention:
+        label: Speicherdauer
+      analysisTechniques:
+        label: Auswertungstechniken
+      customAnalysisTechniques:
+        label: Eigene Auswertungstechniken
+      forwardingTechniques:
+        label: Weitergabetechniken
+      forwardingFrequency:
+        label: Weitergabefrequenz
+      forwardingSecurityMeasures:
+        label: Sicherheitsmaßnahmen Weitergabe
+      customForwardingSecurityTechniques:
+        label: Eigene Sicherheitsmaßnahmen Weitergabe
+      targetSystem:
+        label: Zielsystem
+  objectives:
+    label: Ziele und Motivation
+    fields:
+      dataTrusteeGoals:
+        label: Ziele der Datentreuhand
+      motivationRightsHolder:
+        label: Motivation Rechtehalter
+      motivationDataHolder:
+        label: Motivation Datenhalter
+      motivationDataConsumer:
+        label: Motivation Datennutzer
+  business:
+    label: Geschaeftsmodell
+    fields:
+      businessDomains:
+        label: Domänen
+      businessModel:
+        label: Geschäftsform
+      fundingSources:
+        label: Förderquellen
+      paymentMethodDataOwner:
+        label: Bezahlmodell Datenhalter
+      paymentMethodDataConsumer:
+        label: Bezahlmodell Datennutzer

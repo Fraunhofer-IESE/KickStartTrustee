@@ -1,0 +1,105 @@
+{
+  "core": {
+    "dataTrusteeName": "AgriDataTrust",
+    "dataTrusteeDescription": "Datentreuhand für Maschinen-, Betriebs- und Felddaten landwirtschaftlicher Betriebe.",
+    "dataTrusteeOperator": "AgriTrust eV",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Landwirt",
+    "rightsHolderAffiliation": "ORGANIZATION",
+    "rightsHolderIsRepresented": "false",
+    "dataOwnerName": "",
+    "dataConsumerName": "AgriAnalytics",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Betriebsdaten",
+      "dataCategoryDescription": "Betriebs-, Maschinen- und Felddaten landwirtschaftlicher Betriebe."
+    },
+    "containPersonalInformation": "false",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "true",
+    "processingBases": {
+      "CONTRACT": [
+        {
+          "title": "Nutzungsvertrag",
+          "description": "Daten werden auf Grundlage eines Nutzungsvertrags bereitgestellt."
+        }
+      ]
+    },
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "ACCESS_DATA_TRUSTEE",
+    "architectureType": "P2P",
+    "receptionTechnologies": [
+      "API",
+      "ANALOG"
+    ],
+    "receptionFrequency": "MANUAL",
+    "receptionSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customReceptionSecurityTechniques": [],
+    "sourceSystem": "FarmManagementSystem",
+    "preparationTechniques": [
+      "CLEANING"
+    ],
+    "customPreparationTechniques": [],
+    "storageTechnique": "DECENTRAL_STORAGE",
+    "storageRetention": "TRANSMISSION_ONLY",
+    "analysisTechniques": [
+      "NONE"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "DOWNLOAD"
+    ],
+    "forwardingFrequency": "MANUAL",
+    "forwardingSecurityMeasures": [
+      "NONE"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "Beratungsportal"
+  },
+  "business": {
+    "businessDomains": [
+      "AGRICULTURE",
+      "CROSS_DOMAIN"
+    ],
+    "businessModel": "REGISTERED_ASSOCIATION",
+    "fundingSources": [
+      "OTHER"
+    ],
+    "financingTypes": {
+      "USAGE_FEES": [
+        {
+          "title": "Nutzungsbeitrag",
+          "description": "Teilnehmende zahlen einen geringen Beitrag zur Nutzung des Beratungsportals."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "NONE",
+    "paymentMethodDataConsumer": "SUPPORT_FEE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "ECONOMIC_UTILIZATION",
+      "FAIR_MARKET_COMPETITION"
+    ],
+    "motivationRightsHolder": [
+      "COST_REDUCTION",
+      "CONTRACT_FULFILLMENT"
+    ],
+    "motivationDataHolder": [
+      "VALUE_CREATION",
+      "COMPLIANCE"
+    ],
+    "motivationDataConsumer": [
+      "VALUE_CREATION",
+      "OPTIMIZATION"
+    ]
+  }
+}

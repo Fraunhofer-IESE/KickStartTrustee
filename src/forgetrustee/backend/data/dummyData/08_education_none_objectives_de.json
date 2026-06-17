@@ -1,0 +1,101 @@
+{
+  "core": {
+    "dataTrusteeName": "EduResearchTrust",
+    "dataTrusteeDescription": "Datentreuhand für Bildungs- und Lernverlaufsdaten in Forschungsprojekten.",
+    "dataTrusteeOperator": "Bildungsdaten Stiftung",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Lernende",
+    "rightsHolderAffiliation": "INDIVIDUAL",
+    "rightsHolderIsRepresented": "true",
+    "dataOwnerName": "Schulträger",
+    "dataConsumerName": "Bildungsforschung",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Lerndaten",
+      "dataCategoryDescription": "Lernverlaufs-, Leistungs- und Plattformnutzungsdaten."
+    },
+    "containPersonalInformation": "true",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "false",
+    "processingBases": {
+      "CONSENT": [
+        {
+          "title": "Forschungseinwilligung Bildung",
+          "description": "Die Nutzung erfolgt auf Grundlage einer Einwilligung der Rechtehalter beziehungsweise ihrer Vertretung."
+        }
+      ]
+    },
+    "consentType": "INDIVIDUAL_CONSENT",
+    "obtainingConsentBy": "Schulportal",
+    "consentEnteredBy": "DATA_OWNER"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "ADMINISTRATIVE_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_DATA_STORAGE",
+    "receptionTechnologies": [
+      "DOWNLOAD"
+    ],
+    "receptionFrequency": "PERIODIC",
+    "receptionSecurityMeasures": [
+      "ENCRYPTION_AT_REST",
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customReceptionSecurityTechniques": [],
+    "sourceSystem": "Lernplattform",
+    "preparationTechniques": [
+      "CLEANING",
+      "AGGREGATION"
+    ],
+    "customPreparationTechniques": [],
+    "storageTechnique": "CENTRAL_STORAGE",
+    "storageRetention": "WITH_RETENTION",
+    "analysisTechniques": [
+      "STATISTICAL_ANALYSIS"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "DOWNLOAD"
+    ],
+    "forwardingFrequency": "MANUAL",
+    "forwardingSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "Forschungsrepositorium"
+  },
+  "business": {
+    "businessDomains": [
+      "EDUCATION"
+    ],
+    "businessModel": "FOUNDATION",
+    "fundingSources": [
+      "BMBF"
+    ],
+    "financingTypes": {
+      "PUBLIC_FUNDING": [
+        {
+          "title": "Bildungsforschungsförderung",
+          "description": "Das Projekt wird über öffentliche Bildungs- und Forschungsförderung finanziert."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "FREE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "NONE"
+    ],
+    "motivationRightsHolder": [
+      "NONE"
+    ],
+    "motivationDataHolder": [
+      "NONE"
+    ],
+    "motivationDataConsumer": [
+      "NONE"
+    ]
+  }
+}

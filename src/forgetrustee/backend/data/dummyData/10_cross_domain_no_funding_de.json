@@ -1,0 +1,102 @@
+{
+  "core": {
+    "dataTrusteeName": "CrossDomainTrust",
+    "dataTrusteeDescription": "Querschnittliche Datentreuhand für verschiedene Domänen ohne externe Förderung.",
+    "dataTrusteeOperator": "DataCoop eG",
+    "dataTrusteeOperatorAffiliation": "ORGANIZATION",
+    "rightsHolderName": "Mitglieder",
+    "rightsHolderAffiliation": "ORGANIZATION",
+    "rightsHolderIsRepresented": "true",
+    "dataOwnerName": "Mitgliedsorganisationen",
+    "dataConsumerName": "Datenpartner",
+    "dataConsumerAffiliation": "ORGANIZATION"
+  },
+  "data": {
+    "dataCategory": {
+      "dataCategoryName": "Domänenübergreifende Daten",
+      "dataCategoryDescription": "Strukturierte Daten aus mehreren Fachdomänen für kooperative Auswertungen."
+    },
+    "containPersonalInformation": "false",
+    "specialPersonalInformation": "false",
+    "containTradeSecrets": "true",
+    "processingBases": {
+      "LEGAL_OBLIGATION": [
+        {
+          "title": "Kooperationsvertrag",
+          "description": "Die Datennutzung ist durch einen Kooperationsvertrag der beteiligten Organisationen geregelt."
+        }
+      ]
+    },
+    "consentType": "NOT_PROVIDED",
+    "obtainingConsentBy": "",
+    "consentEnteredBy": "NOT_PROVIDED"
+  },
+  "implementation": {
+    "dataTrusteeCategory": "ACCESS_DATA_TRUSTEE",
+    "architectureType": "CENTRAL_ROUTER",
+    "receptionTechnologies": [
+      "API"
+    ],
+    "receptionFrequency": "PERIODIC",
+    "receptionSecurityMeasures": [
+      "TRANSPORT_ENCRYPTION"
+    ],
+    "customReceptionSecurityTechniques": [],
+    "sourceSystem": "PartnerSysteme",
+    "preparationTechniques": [
+      "TRANSFORMATION"
+    ],
+    "customPreparationTechniques": [],
+    "storageTechnique": "DECENTRAL_STORAGE",
+    "storageRetention": "TRANSMISSION_ONLY",
+    "analysisTechniques": [
+      "PET"
+    ],
+    "customAnalysisTechniques": [],
+    "forwardingTechniques": [
+      "API"
+    ],
+    "forwardingFrequency": "MANUAL",
+    "forwardingSecurityMeasures": [
+      "END_TO_END_ENCRYPTION"
+    ],
+    "customForwardingSecurityTechniques": [],
+    "targetSystem": "PartnerAPI"
+  },
+  "business": {
+    "businessDomains": [
+      "CROSS_DOMAIN"
+    ],
+    "businessModel": "COOPERATIVE",
+    "fundingSources": [
+      "NONE"
+    ],
+    "financingTypes": {
+      "COMMUNITY_FUNDING": [
+        {
+          "title": "Mitgliedsbeiträge",
+          "description": "Der Betrieb wird gemeinschaftlich über Beiträge der Mitgliedsorganisationen finanziert."
+        }
+      ]
+    },
+    "paymentMethodDataOwner": "FREE",
+    "paymentMethodDataConsumer": "FLATRATE"
+  },
+  "objectives": {
+    "dataTrusteeGoals": [
+      "DATA_SOVEREIGNTY",
+      "FAIR_MARKET_COMPETITION"
+    ],
+    "motivationRightsHolder": [
+      "CONTRACT_FULFILLMENT"
+    ],
+    "motivationDataHolder": [
+      "TRUST_INTERMEDIARY",
+      "COMPLIANCE"
+    ],
+    "motivationDataConsumer": [
+      "INTEROPERABILITY",
+      "VALUE_CREATION"
+    ]
+  }
+}

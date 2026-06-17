@@ -1,0 +1,139 @@
+PREFIX :             <http://forgetrustee.kickstarttrustee.de/ontology/TRANSIT#>
+PREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>
+PREFIX dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+PREFIX dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+PREFIX dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+:ForwardingTRANSIT  rdf:type         owl:NamedIndividual , dtm-data:DataForwarding;
+        rdfs:label                   "ForwardingTRANSIT"@de;
+        dtm-data:hasForwardingFrequency
+                dtm-data:Manual;
+        dtm-data:hasForwardingTechnique
+                dtm-data:ReceptionAPI;
+        dtm-data:securedByTechnique  :CustomForwardingSecurityFreigabebasierteWeitergabe , dtm-data:TransportEncryption , dtm-data:Pseudonymisation , dtm-data:Anonymisation;
+        dtm-data:usesSystem          :TargetSystemLogistiksystemederDatennutzer .
+
+:PreparationTRANSIT  rdf:type  owl:NamedIndividual , dtm-data:DataPreparation;
+        rdfs:label  "PreparationTRANSIT"@de;
+        dtm-data:hasPreparationTechnique
+                dtm-data:Digitization , dtm-data:Aggregation , dtm-data:Transformation , :CustomPreparationDatenstandardisierung , :CustomPreparationKapazitaetsaggregation .
+
+:CustomForwardingSecurityFreigabebasierteWeitergabe
+        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;
+        rdfs:comment                 "Daten werden nur nach Freigabe an berechtigte Empfänger übertragen."@de;
+        rdfs:label                   "CustomForwardingSecurityFreigabebasierte Weitergabe"@de;
+        dtm-data:securesAsTechnique  :ForwardingTRANSIT .
+
+:TRANSIT  rdf:type                     dtm-business:Organisation , owl:NamedIndividual , dtm-core:DataTrustee;
+        rdfs:label                     "TRANSIT"@de;
+        dtm-business:affiliationType   dtm-business:Organisation;
+        dtm-business:hasBusinessForm   dtm-business:CooperativeSociety;
+        dtm-business:hasDataTrusteeGoal
+                dtm-business:Innovation , dtm-business:ScienceAndResearch , dtm-business:EconomicUtilization , dtm-business:DataSovereignty;
+        dtm-business:hasDataTrusteeOperator
+                :TRANSIT;
+        dtm-business:hasDomain         dtm-business:LogisticSector;
+        dtm-business:hasFundingSource  dtm-business:AndereFoerderung;
+        dtm-business:isOperatorOfDataTrustee
+                :TRANSIT;
+        dtm-core:dataTrusteeDescription
+                "TRANSIT ermöglicht den sicheren Austausch logistischer Geschäftsdaten zwischen Logistikunternehmen über eine neutrale Plattform."@de;
+        dtm-core:hasAffectedParty      :Logistikunternehmen;
+        dtm-core:hasDataConsumer       :Logistikunternehmen;
+        dtm-core:hasDataOwner          :Logistikunternehmen;
+        dtm-core:hasDataTrusteeModel   :DTM_TRANSIT;
+        dtm-data:triggersStorage       :StorageTRANSIT .
+
+:ReceptionTRANSIT  rdf:type             owl:NamedIndividual , dtm-data:DataReception;
+        rdfs:label                      "ReceptionTRANSIT"@de;
+        dtm-data:hasReceptionFrequency  dtm-data:Periodic;
+        dtm-data:hasReceptionTechnique  dtm-data:ReceptionAPI;
+        dtm-data:securedByTechnique     dtm-data:Anonymisation , :CustomReceptionSecurityTreuhandplattform , dtm-data:TransportEncryption , dtm-data:Pseudonymisation;
+        dtm-data:usesSystem             :SourceSystemLogistiksysteme .
+
+:       rdf:type  owl:Ontology .
+
+:SourceSystemLogistiksysteme
+        rdf:type                 owl:NamedIndividual , dtm-data:SourceSystem;
+        rdfs:label               "SourceSystemLogistiksysteme"@de;
+        dtm-data:isUsedAsSystem  :ReceptionTRANSIT .
+
+:CustomReceptionSecurityTreuhandplattform
+        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;
+        rdfs:comment                 "Daten werden zentral und abgesichert entgegengenommen."@de;
+        rdfs:label                   "CustomReceptionSecurityTreuhandplattform"@de;
+        dtm-data:securesAsTechnique  :ReceptionTRANSIT .
+
+:AnalysisTRANSIT  rdf:type  owl:NamedIndividual , dtm-data:DataAnalysis;
+        rdfs:label  "AnalysisTRANSIT"@de;
+        dtm-data:hasDataAnalysisTechnique
+                dtm-data:StatisticalAnalysis , :CustomAnalysisKooperativeDatenauswertung .
+
+:CustomPreparationDatenstandardisierung
+        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;
+        rdfs:comment  "Logistikdaten werden in ein einheitliches Format überführt."@de;
+        rdfs:label    "CustomPreparationDatenstandardisierung"@de;
+        dtm-data:isPreparationTechniqueOf
+                :PreparationTRANSIT .
+
+:Logistikunternehmen  rdf:type        dtm-core:Actor , dtm-core:DataOwner , dtm-core:DataConsumer , owl:NamedIndividual , dtm-core:AffectedParty;
+        rdfs:label                    "Logistikunternehmen"@de;
+        dtm-business:affiliationType  dtm-business:Organisation;
+        dtm-business:hasDataConsumerMotivation
+                dtm-business:Interoperability , dtm-business:ValueCreation , dtm-business:Innovation;
+        dtm-business:hasDataHolderMotivation
+                dtm-business:Interoperability , dtm-business:ValueCreation , dtm-business:Compliance;
+        dtm-business:hasRightsHolderMotivation
+                dtm-business:SocietalValue;
+        dtm-business:usesPayModelAsDataConsumer
+                dtm-business:Flatrate;
+        dtm-business:usesPayModelAsDataOwner
+                dtm-business:Flatrate;
+        dtm-core:administers          :Logistikdaten;
+        dtm-core:hasRightsOf          :Logistikdaten;
+        dtm-core:isAffectedPartyIn    :TRANSIT;
+        dtm-core:isDataConsumerOf     :TRANSIT;
+        dtm-core:isDataOwnerOf        :TRANSIT;
+        dtm-core:isGrantedAccess      :Logistikdaten;
+        dtm-legal:isBeneficiaryOf     dtm-legal:LegitimateInterest .
+
+:CustomPreparationKapazitaetsaggregation
+        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;
+        rdfs:comment  "Kapazitäts- und Standortdaten werden zusammengeführt."@de;
+        rdfs:label    "CustomPreparationKapazitätsaggregation"@de;
+        dtm-data:isPreparationTechniqueOf
+                :PreparationTRANSIT .
+
+:StorageTRANSIT  rdf:type             owl:NamedIndividual , dtm-data:DataStorage;
+        rdfs:label                    "StorageTRANSIT"@de;
+        dtm-data:hasRetentionPeriod   dtm-data:WithRetention;
+        dtm-data:hasStorageTechnique  dtm-data:CentralStorage;
+        dtm-data:performsStorage      :TRANSIT .
+
+:Logistikdaten  rdf:type            owl:NamedIndividual , dtm-core:Data;
+        rdfs:comment                "Geschäfts- und Transportdaten aus der Logistik."@de;
+        rdfs:label                  "Logistikdaten"@de;
+        dtm-core:administeredBy     :Logistikunternehmen;
+        dtm-core:isAccessGrantedTo  :Logistikunternehmen;
+        dtm-core:isRightlyOwnedBy   :Logistikunternehmen .
+
+:TargetSystemLogistiksystemederDatennutzer
+        rdf:type                  owl:NamedIndividual , dtm-data:TargetSystem;
+        rdfs:label                "TargetSystemLogistiksysteme der Datennutzer"@de;
+        dtm-data:isUsedAsSystemm  :ForwardingTRANSIT .
+
+:DTM_TRANSIT  rdf:type                 owl:NamedIndividual , dtm-core:ExternallyControlledValueAddedDataTrustee;
+        rdfs:label                     "DTM_TRANSIT"@de;
+        dtm-core:isDataTrusteeModelOf  :TRANSIT;
+        dtm-data:implementedOn         dtm-data:CentralDataStorageArchitecture .
+
+:CustomAnalysisKooperativeDatenauswertung
+        rdf:type      owl:NamedIndividual , dtm-data:AnalysisTechnique;
+        rdfs:comment  "Daten werden zur Verbesserung logistischer Kooperationen ausgewertet."@de;
+        rdfs:label    "CustomAnalysisKooperative Datenauswertung"@de;
+        dtm-data:isDataAnalysisTechniqueOf
+                :AnalysisTRANSIT .

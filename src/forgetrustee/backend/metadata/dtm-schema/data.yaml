@@ -1,0 +1,118 @@
+moduleId: data
+requestDtoClassName: DataTrusteeWizardDataRequestDto
+order: 20
+hints:
+  -
+    name: dataGeneralHint
+sections:
+  data:
+    fields:
+      dataCategory:
+        name: dataCategory
+        type: TEXT_WITH_DESCRIPTION
+        fields:
+          dataCategoryName:
+            name: dataCategoryName
+            type: TEXT
+          dataCategoryDescription:
+            name: dataCategoryDescription
+            type: LONGTEXT
+      containPersonalInformation:
+        name: containPersonalInformation
+        type: TAGS
+        options:
+          -
+            value: "true"
+          -
+            value: "false"
+        multiple: false
+        allowUnknown: true
+      specialPersonalInformation:
+        name: specialPersonalInformation
+        type: TAGS
+        options:
+          -
+            value: "true"
+          -
+            value: "false"
+        multiple: false
+        allowUnknown: true
+      containTradeSecrets:
+        name: containTradeSecrets
+        type: TAGS
+        options:
+          -
+            value: "true"
+          -
+            value: "false"
+        multiple: false
+        allowUnknown: true
+  legalBasis:
+    hints:
+      -
+        name: legalBasisContainsPersonalInformationHint
+        visibleBy:
+          -
+            name: containPersonalInformation
+            operator: EQUALS
+            value: "true"
+    fields:
+      processingBases:
+        name: processingBases
+        type: TAGS_WITH_TEXT_AND_DESCRIPTION_LIST
+        multiple: true
+        allowUnknown: true
+        allowNoAnswer: true
+        options:
+          - value: CONSENT
+            disableAdditionalDetails: true
+          - value: LEGAL_OBLIGATION
+          - value: PUBLIC_INTEREST
+          - value: LEGITIMATE_INTEREST
+        fields:
+          processingBasisDetail:
+            name: processingBasisDetail
+            type: TEXT
+            maxLength: 30
+          processingBasisDescription:
+            name: processingBasisDescription
+            type: LONGTEXT
+            maxLength: 2000
+  consentTypeSubSection:
+    visibleBy:
+      - name: processingBases
+        operator: IN
+        value: CONSENT
+    fields:
+      consentType:
+        name: consentType
+        type: TAGS
+        multiple: false
+        allowUnknown: true
+        options:
+          - value: INDIVIDUAL_CONSENT
+          - value: GENERAL_CONSENT
+        visibleBy:
+          - name: processingBases
+            operator: IN
+            value: CONSENT
+        requiredBy:
+          - name: processingBases
+            operator: IN
+            value: CONSENT
+      consentEnteredBy:
+        name: consentEnteredBy
+        type: TAGS
+        multiple: false
+        allowUnknown: true
+        options:
+          - value: RIGHTS_OWNER
+          - value: DATA_OWNER
+        visibleBy:
+          - name: consentType
+            operator: EQUALS
+            value: INDIVIDUAL_CONSENT
+        requiredBy:
+          - name: consentType
+            operator: EQUALS
+            value: INDIVIDUAL_CONSENT

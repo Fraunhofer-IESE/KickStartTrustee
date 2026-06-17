@@ -1,0 +1,7 @@
+modelId: dtm
+modules:
+  - core
+  - data
+  - objectives
+  - implementation
+  - business

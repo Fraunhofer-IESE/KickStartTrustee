@@ -1,0 +1,180 @@
+PREFIX :             <http://forgetrustee.kickstarttrustee.de/ontology/CarusoDataplace#>
+PREFIX dtm-business: <https://forgetrustee.kickstarttrustee.de/ontology/dtm-business#>
+PREFIX dtm-core:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-core#>
+PREFIX dtm-data:     <https://forgetrustee.kickstarttrustee.de/ontology/dtm-data#>
+PREFIX dtm-legal:    <https://forgetrustee.kickstarttrustee.de/ontology/dtm-legal#>
+PREFIX owl:          <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:          <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:         <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:          <http://www.w3.org/2001/XMLSchema#>
+
+:CustomForwardingSecuritySichererDatenaustauschimOekosystem
+        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;
+        rdfs:comment                 "Die Plattform ermöglicht einen kontrollierten und sicheren Austausch von Fahrzeug- und Telematikdaten zwischen Partnern."@de;
+        rdfs:label                   "CustomForwardingSecuritySicherer Datenaustausch im Ökosystem"@de;
+        dtm-data:securesAsTechnique  :ForwardingCarusoDataplace .
+
+:CarusoDataplace  rdf:type             owl:NamedIndividual , dtm-core:DataTrustee;
+        rdfs:label                     "Caruso Dataplace"@de;
+        dtm-business:hasBusinessForm   dtm-business:LimitedLiabilityCompany;
+        dtm-business:hasDataTrusteeGoal
+                dtm-business:FairMarketCompetition , dtm-business:EconomicUtilization , dtm-business:Innovation , dtm-business:DigitalSovereignty;
+        dtm-business:hasDataTrusteeOperator
+                :CarusoGmbH;
+        dtm-business:hasDomain         dtm-business:MobilitySector;
+        dtm-business:hasFundingSource  dtm-business:AndereFoerderung;
+        dtm-core:dataTrusteeDescription
+                "Offener und neutraler Daten- und Service-Marktplatz für den sicheren Austausch von Fahrzeug- und Telematikdaten im Automotive Aftermarket."@de;
+        dtm-core:hasAffectedParty      :Fahrzeughalter;
+        dtm-core:hasDataConsumer       :Dienstanbieter;
+        dtm-core:hasDataOwner          :Fahrzeughalter;
+        dtm-core:hasDataTrusteeModel   :DTM_CarusoDataplace;
+        dtm-data:triggersStorage       :StorageCarusoDataplace;
+        dtm-legal:operatesOnProcessingBasis
+                dtm-legal:Consent .
+
+:ReceptionCarusoDataplace
+        rdf:type                        owl:NamedIndividual , dtm-data:DataReception;
+        rdfs:label                      "ReceptionCarusoDataplace"@de;
+        dtm-data:hasReceptionFrequency  dtm-data:Continuous;
+        dtm-data:hasReceptionTechnique  dtm-data:ReceptionAPI;
+        dtm-data:securedByTechnique     dtm-data:Pseudonymisation , :CustomReceptionSecurityDatenschutzkonformeZugriffskontrolle , :CustomReceptionSecurityVerteiltesEinwilligungsmanagement , dtm-data:TransportEncryption;
+        dtm-data:usesSystem             :SourceSystemFahrzeugsystemeundHerstellersysteme .
+
+:       rdf:type  owl:Ontology .
+
+:ForwardingCarusoDataplace
+        rdf:type                     owl:NamedIndividual , dtm-data:DataForwarding;
+        rdfs:label                   "ForwardingCarusoDataplace"@de;
+        dtm-data:hasForwardingFrequency
+                dtm-data:Continuous;
+        dtm-data:hasForwardingTechnique
+                dtm-data:ReceptionAPI;
+        dtm-data:securedByTechnique  dtm-data:TransportEncryption , dtm-data:Pseudonymisation , :CustomForwardingSecuritySichererDatenaustauschimOekosystem;
+        dtm-data:usesSystem          :TargetSystemSystemederDienstanbieterundPlattformpartner .
+
+:CustomPreparationDatenkatalogundStandardisierung
+        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;
+        rdfs:comment  "Fahrzeugdaten werden strukturiert, vereinheitlicht und für die Nutzung im Datenmarktplatz aufbereitet."@de;
+        rdfs:label    "CustomPreparationDatenkatalog und Standardisierung"@de;
+        dtm-data:isPreparationTechniqueOf
+                :PreparationCarusoDataplace .
+
+:CustomAnalysisVertrauenswuerdigeAnalyseplattform
+        rdf:type      owl:NamedIndividual , dtm-data:AnalysisTechnique;
+        rdfs:comment  "Die Plattform ermöglicht geschützte Analysen von Fahrzeugdaten mit mehreren beteiligten Unternehmen."@de;
+        rdfs:label    "CustomAnalysisVertrauenswürdige Analyseplattform"@de;
+        dtm-data:isDataAnalysisTechniqueOf
+                :AnalysisCarusoDataplace .
+
+:CarusoGmbH  rdf:type                 owl:NamedIndividual , dtm-business:Organisation;
+        rdfs:label                    "Caruso GmbH"@de;
+        dtm-business:affiliationType  dtm-business:Organisation;
+        dtm-business:isOperatorOfDataTrustee
+                :CarusoDataplace .
+
+:Dienstanbieter  rdf:type             dtm-core:Actor , dtm-core:DataConsumer , owl:NamedIndividual;
+        rdfs:label                    "Dienstanbieter"@de;
+        dtm-business:affiliationType  dtm-business:Organisation;
+        dtm-business:hasDataConsumerMotivation
+                dtm-business:Innovation , dtm-business:ValueCreation , dtm-business:Optimization;
+        dtm-business:usesPayModelAsDataConsumer
+                dtm-business:AccessFee;
+        dtm-core:isDataConsumerOf     :CarusoDataplace;
+        dtm-core:isGrantedAccess      :Fahrzeug-undTelematikdaten;
+        dtm-legal:initiatesIndividualConsentWorkflow
+                :CarusoDataplace_IndividualConsentWorkflow;
+        dtm-legal:isBeneficiaryOf     dtm-legal:Consent , dtm-legal:LegitimateInterest .
+
+:CustomPreparationKonvertierungheterogenerFahrzeugdaten
+        rdf:type      owl:NamedIndividual , dtm-data:PreparationTechnique;
+        rdfs:comment  "Unterschiedliche Datenformate und Einheiten verschiedener Hersteller werden in ein gemeinsames Format überführt."@de;
+        rdfs:label    "CustomPreparationKonvertierung heterogener Fahrzeugdaten"@de;
+        dtm-data:isPreparationTechniqueOf
+                :PreparationCarusoDataplace .
+
+:Fahrzeughalter  rdf:type               dtm-core:Actor , owl:NamedIndividual , dtm-core:AffectedParty , dtm-core:DataOwner;
+        rdfs:label                      "Fahrzeughalter"@de;
+        dtm-business:affiliationType    dtm-business:Individual;
+        dtm-business:hasDataHolderMotivation
+                dtm-business:ValueCreation , dtm-business:Innovation , dtm-business:Interoperability;
+        dtm-business:hasRightsHolderMotivation
+                dtm-business:SocietalValue , dtm-business:QualityImprovement;
+        dtm-business:usesPayModelAsDataOwner
+                <https://forgetrustee.kickstarttrustee.de/ontology/dtm-misc#None>;
+        dtm-core:administers            :Fahrzeug-undTelematikdaten;
+        dtm-core:hasRightsOf            :Fahrzeug-undTelematikdaten;
+        dtm-core:isAffectedPartyIn      :CarusoDataplace;
+        dtm-core:isDataOwnerOf          :CarusoDataplace;
+        dtm-legal:givesConsentDirectly  :CarusoDataplace_IndividualConsentWorkflow .
+
+:CustomAnalysisQualitaetsanalysevonFahrzeugdaten
+        rdf:type      owl:NamedIndividual , dtm-data:AnalysisTechnique;
+        rdfs:comment  "Datenqualität und Anforderungen von Datenkonsumenten werden analysiert und bewertet."@de;
+        rdfs:label    "CustomAnalysisQualitätsanalyse von Fahrzeugdaten"@de;
+        dtm-data:isDataAnalysisTechniqueOf
+                :AnalysisCarusoDataplace .
+
+:CarusoDataplace_IndividualConsentWorkflow
+        rdf:type                       owl:NamedIndividual , dtm-legal:IndividualConsentWorkflow;
+        dtm-legal:getsConsentDirectly  :Fahrzeughalter;
+        dtm-legal:implementsConsentWorkflowFor
+                dtm-legal:Consent;
+        dtm-legal:individualConsentWorkflowInitiatedBy
+                :Dienstanbieter;
+        dtm-legal:processingBasisDescription
+                "Die Nutzung und Weitergabe fahrzeugbezogener Daten erfolgt kontrolliert und auf Basis der Zustimmung des Fahrzeughalters."@de .
+
+:SourceSystemFahrzeugsystemeundHerstellersysteme
+        rdf:type                 owl:NamedIndividual , dtm-data:SourceSystem;
+        rdfs:label               "SourceSystemFahrzeugsysteme und Herstellersysteme"@de;
+        dtm-data:isUsedAsSystem  :ReceptionCarusoDataplace .
+
+:DTM_CarusoDataplace  rdf:type         owl:NamedIndividual , dtm-core:ExternallyControlledValueAddedDataTrustee;
+        rdfs:label                     "DTM_CarusoDataplace"@de;
+        dtm-core:isDataTrusteeModelOf  :CarusoDataplace;
+        dtm-data:implementedOn         dtm-data:PeerToPeerArchitecture .
+
+:PreparationCarusoDataplace
+        rdf:type    owl:NamedIndividual , dtm-data:DataPreparation;
+        rdfs:label  "PreparationCarusoDataplace"@de;
+        dtm-data:hasPreparationTechnique
+                dtm-data:Aggregation , dtm-data:Transformation , :CustomPreparationDatenkatalogundStandardisierung , :CustomPreparationKonvertierungheterogenerFahrzeugdaten .
+
+:StorageCarusoDataplace
+        rdf:type                      owl:NamedIndividual , dtm-data:DataStorage;
+        rdfs:label                    "StorageCarusoDataplace"@de;
+        dtm-data:hasRetentionPeriod   dtm-data:ForTransmissionOnly;
+        dtm-data:hasStorageTechnique  dtm-data:DecentralStorage;
+        dtm-data:performsStorage      :CarusoDataplace .
+
+:AnalysisCarusoDataplace
+        rdf:type    owl:NamedIndividual , dtm-data:DataAnalysis;
+        rdfs:label  "AnalysisCarusoDataplace"@de;
+        dtm-data:hasDataAnalysisTechnique
+                dtm-data:PrivacyEnhancingTechnology , dtm-data:StatisticalAnalysis , :CustomAnalysisVertrauenswuerdigeAnalyseplattform , :CustomAnalysisQualitaetsanalysevonFahrzeugdaten .
+
+:TargetSystemSystemederDienstanbieterundPlattformpartner
+        rdf:type                  owl:NamedIndividual , dtm-data:TargetSystem;
+        rdfs:label                "TargetSystemSysteme der Dienstanbieter und Plattformpartner"@de;
+        dtm-data:isUsedAsSystemm  :ForwardingCarusoDataplace .
+
+:CustomReceptionSecurityDatenschutzkonformeZugriffskontrolle
+        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;
+        rdfs:comment                 "Der Zugriff auf Fahrzeugdaten erfolgt kontrolliert unter Berücksichtigung der DSGVO-Anforderungen."@de;
+        rdfs:label                   "CustomReceptionSecurityDatenschutzkonforme Zugriffskontrolle"@de;
+        dtm-data:securesAsTechnique  :ReceptionCarusoDataplace .
+
+:Fahrzeug-undTelematikdaten
+        rdf:type                    owl:NamedIndividual , dtm-core:Data;
+        rdfs:comment                "Fahrzeugbezogene Betriebs-, Zustands- und Nutzungsdaten aus dem Automotive Aftermarket."@de;
+        rdfs:label                  "Fahrzeug- und Telematikdaten"@de;
+        dtm-core:administeredBy     :Fahrzeughalter;
+        dtm-core:isAccessGrantedTo  :Dienstanbieter;
+        dtm-core:isRightlyOwnedBy   :Fahrzeughalter .
+
+:CustomReceptionSecurityVerteiltesEinwilligungsmanagement
+        rdf:type                     owl:NamedIndividual , dtm-data:SecurityReceptionTechnique;
+        rdfs:comment                 "Das Management der Zustimmung zur Datenverarbeitung erfolgt verteilt innerhalb der Datenaustauschplattform."@de;
+        rdfs:label                   "CustomReceptionSecurityVerteiltes Einwilligungsmanagement"@de;
+        dtm-data:securesAsTechnique  :ReceptionCarusoDataplace .
